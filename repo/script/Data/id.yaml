@@ -1,0 +1,15 @@
+keyedArchive:
+    Branch:
+        string: "master"
+    Framework:
+        string: "release/4.7.0"
+    BranchRev:
+        string: "59a8d8af2e4fab5ffe938bc3484d52846d36e990"
+    FrameworkRev:
+        string: "1aa852ac4d0a0ec17f7bb6a428880b5790fcae7d"
+    BuildId:
+        string: "4.7.0.409"
+    ConfigId:
+        string: "dava_wotblitz_Trunk_470_Bu_WotbWin7"
+    Date:
+        string: "20180214"

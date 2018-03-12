@@ -1,0 +1,2040 @@
+Common:
+    dlc: "http://by1-builddlc-01.corp.wargaming.local/DLC_Blitz"
+    smartDlc: "http://by1-smartdlc-01.corp.wargaming.local"
+    smartDlcOverrides: "http://by1-smartdlc-01.corp.wargaming.local"
+    public: "false"
+    latencyLimitMs: 200
+    realmDetect: "http://wgnwn.wgnt.iv/realm/detect"
+    wotBlitzPortal: "https://wotblitz.com"
+    wotBlitzPortalQRCode: "http://dl-wotblitz-gc.wargaming.net/qr_code/wotblitz_%(realm).png"
+    communityUrls:
+        http:
+            vk: "https://vk.com/wotblitz"
+            facebook: "https://www.facebook.com/wotblitz"
+            youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+            twitter: "https://twitter.com/WoTBlitz"
+            instagram: "https://instagram.com/wotblitz_ru/"
+            viber: "http://chats.viber.com/wot"
+            forum: "http://forum.wotblitz.ru"
+            portal: "https://wotblitz.ru"
+            wargaming: "http://www.wargaming.net"
+        native:
+            youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+            twitter: "twitter://user?id=1134245654"
+            viber: "viber://public?id=wot"
+        native_ios:
+            facebook: "fb://profile/572143336148627"
+        native_android:
+            facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+    tournamentEULA: "https://wotblitz.ru/%(locale)/mobile/blitz-1000/"
+    support_query: "blitz=1&locale=%s"
+    appleAppStore: "https://itunes.apple.com/app/id859204347"
+    appleMacAppStore: "macappstore://itunes.apple.com/app/id1068932208"
+    steamStore: "steam://nav/games/details/444200"
+    netEaseGas3Url: "https://testgbsdk.nie.netease.com/ma67/sdk/"
+    defaultLanguage: "ru"
+    unityAdsReward: 10
+    unityAdsAppId:
+        iOS: "1450604"
+        Android: "1450605"
+    blitzAssistant:
+        store:
+            default: "http://wotblitz.ru/assistant/"
+            iOS: "itms-apps://itunes.apple.com/app/id1047617794"
+            Android: "market://details?id=net.wargaming.wot.blitz.assistant"
+            "Windows Desktop UAP": "ms-windows-store://pdp/?ProductId=9nblggh5k75w"
+            "Windows Phone UAP": "ms-windows-store://pdp/?ProductId=9nblggh5k75w"
+    prizesWithdrawal: ""
+Regions:
+    REVIEW_NA:
+        realm: "us"
+        flag: "us"
+        wgnwn: "https://st30.wargaming.net"
+        clientId: "xQIHnSChfYHun4KN5H6rDIHNJ3RMvZqyHCoLlBVP"
+        news: "http://ptl-st30.wargaming.net/%s/rss/news/"
+        contentPages: "http://ptl-st30.wargaming.net/%s/content/blitz-client/%s/"
+        popupNews: "http://ptl-st30.wargaming.net/%s/promo/"
+        eula: "http://ptl-st30.wargaming.net/%s/mobile/user_agreement/"
+        tournamentEULA: "http://ptl-st30.wargaming.net/%(locale)/mobile/blitz-1000/"
+        hosts:
+            R1:
+                url: "login-st30.wotblitz.com:20017"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.com"
+                portal: "https://ptl-st30.wargaming.net"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://wdw-st30.wotblitz.com"
+        tmsPublicApi: 'https://tmsis-st30.wotblitz.com'
+    REVIEW_NA_test:
+        realm: "us"
+        flag: "us"
+        wgnwn: "https://st30.wargaming.net"
+        clientId: "xQIHnSChfYHun4KN5H6rDIHNJ3RMvZqyHCoLlBVP"
+        news: "http://ptl-st30.wargaming.net/%s/rss/news/"
+        contentPages: "http://ptl-st30.wargaming.net/%s/content/blitz-client/%s/"
+        popupNews: "http://ptl-st30.wargaming.net/%s/promo/"
+        eula: "http://ptl-st30.wargaming.net/%s/mobile/user_agreement/"
+        tournamentEULA: "http://ptl-st30.wargaming.net/%(locale)/mobile/blitz-1000/"
+        hosts:
+            R1:
+                url: "login-st30.wotblitz.com:32850"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.com"
+                portal: "https://ptl-st30.wargaming.net"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://wdw-st30.wotblitz.com"
+        tmsPublicApi: 'https://tmsis-st30.wotblitz.com'
+    Europe:
+        dlc: "http://by1-builddlc-01.corp.wargaming.local/DLC_Blitz"
+        public: "true"
+        wgnwn: "https://eu.wargaming.net"
+        clientId: "D6lcd51pjyFVaRWPGGbVfBS6AGVBaSyN3wYCh9y4"
+        news: "http://wotblitz.eu/%s/rss/news/"
+        contentPages: "http://wotblitz.eu/%s/content/blitz-client/%s/"
+        popupNews: "http://wotblitz.eu/%s/promo/"
+        eula: "http://wotblitz.eu/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.eu/%(locale)/mobile/blitz-1000/"
+        realm: "eu"
+        flag: "eu"
+        wotBlitzPortal: "https://wotblitz.eu"
+        hosts:
+            EU:
+                url: "login.wotblitz.eu:20016"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.eu"
+                portal: "https://wotblitz.eu"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UCLQd4upg6HQNjiXJYUJdxFw"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://payout.wotblitz.eu"
+        tmsPublicApi: 'https://tmsis.wotblitz.eu'
+    Europe Test:
+        dlc: "http://by1-builddlc-01.corp.wargaming.local/DLC_Blitz"
+        wgnwn: "https://eu.wargaming.net"
+        clientId: "D6lcd51pjyFVaRWPGGbVfBS6AGVBaSyN3wYCh9y4"
+        news: "http://wotblitz.eu/%s/rss/news/"
+        contentPages: "http://wotblitz.eu/%s/content/blitz-client/%s/"
+        popupNews: "http://wotblitz.eu/%s/promo/"
+        eula: "http://wotblitz.eu/%s/mobile/user_agreement/"
+        tournamentEULA: "https://wotblitz.eu/%(locale)/mobile/blitz-1000/"
+        realm: "eu"
+        flag: "eu"
+        wotBlitzPortal: "https://wotblitz.eu"
+        hosts:
+            EU:
+                url: "login.wotblitz.eu:32850"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.eu"
+                portal: "https://wotblitz.eu"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UCLQd4upg6HQNjiXJYUJdxFw"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://payout.wotblitz.eu"
+        tmsPublicApi: 'https://tmsis.wotblitz.eu'
+    Russia:
+        dlc: "http://by1-builddlc-01.corp.wargaming.local/DLC_Blitz"
+        public: "true"
+        wgnwn: "https://ru.wargaming.net"
+        clientId: "ESoha64ZYPisFEopdAlbw15Qx7VPQNszV49lUZOg"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wotblitz.ru/%s/content/blitz-client/%s/"
+        popupNews: "http://wotblitz.ru/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.ru/index.php?/topic/3316-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D0%B8%D0%B3%D1%80%D1%8B/"
+        tournamentEULA: "https://wotblitz.ru/%(locale)/mobile/blitz-1000/"
+        realm: "ru"
+        flag: "ru"
+        wotBlitzPortal: "https://wotblitz.ru"
+        hosts:
+            RU:
+                url: "login.wotblitz.ru:20016"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                vk: "https://vk.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                viber: "http://chats.viber.com/wot"
+                twitter: "https://twitter.com/WoTBlitz_ru"
+                forum: "http://forum.wotblitz.ru"
+                portal: "https://wotblitz.ru"
+                wargaming: "http://www.wargaming.net"
+            native:
+                twitter: "twitter://user?id=1471794794"
+                viber: "viber://public?id=wot"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://payout.wotblitz.ru/"
+        tmsPublicApi: 'https://tmsis.wotblitz.ru'
+    Russia Test:
+        dlc: "http://by1-builddlc-01.corp.wargaming.local/DLC_Blitz"
+        wgnwn: "https://ru.wargaming.net"
+        clientId: "ESoha64ZYPisFEopdAlbw15Qx7VPQNszV49lUZOg"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wotblitz.ru/%s/content/blitz-client/%s/"
+        popupNews: "http://wotblitz.ru/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        tournamentEULA: "https://wotblitz.ru/%(locale)/mobile/blitz-1000/"
+        realm: "ru"
+        flag: "ru"
+        wotBlitzPortal: "https://wotblitz.ru"
+        hosts:
+            RU:
+                url: "login.wotblitz.ru:32850"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                vk: "https://vk.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                viber: "http://chats.viber.com/wot"
+                twitter: "https://twitter.com/WoTBlitz_ru"
+                forum: "http://forum.wotblitz.ru"
+                portal: "https://wotblitz.ru"
+                wargaming: "http://www.wargaming.net"
+            native:
+                twitter: "twitter://user?id=1471794794"
+                viber: "viber://public?id=wot"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://payout.wotblitz.ru/"
+        tmsPublicApi: 'https://tmsis.wotblitz.ru'
+    North America:
+        public: "true"
+        wgnwn: "https://na.wargaming.net"
+        clientId: "2BPjeiZ09NBrHjc4rsV9KqN3za41nGCoRKmqUU9G"
+        news: "http://wotblitz.com/%s/rss/news/"
+        contentPages: "http://wotblitz.com/%s/content/blitz-client/%s/"
+        popupNews: "http://wotblitz.com/%s/promo/"
+        eula: "http://wotblitz.com/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.com/index.php?/forum-0/announcement-13-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        realm: "us"
+        flag: "us"
+        wotBlitzPortal: "https://wotblitz.com"
+        hosts:
+            NA:
+                url: "login.wotblitz.com:20016"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.com"
+                portal: "https://wotblitz.com"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        tmsPublicApi: 'https://tmsis.wotblitz.com'
+    North America Test:
+        wgnwn: "https://na.wargaming.net"
+        clientId: "2BPjeiZ09NBrHjc4rsV9KqN3za41nGCoRKmqUU9G"
+        news: "http://wotblitz.com/%s/rss/news/"
+        contentPages: "http://wotblitz.com/%s/content/blitz-client/%s/"
+        popupNews: "http://wotblitz.com/%s/promo/"
+        eula: "http://wotblitz.com/%s/mobile/user_agreement/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        realm: "us"
+        flag: "us"
+        wotBlitzPortal: "https://wotblitz.com"
+        hosts:
+            NA:
+                url: "login.wotblitz.com:32850"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.com"
+                portal: "https://wotblitz.com"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        tmsPublicApi: 'https://tmsis.wotblitz.com'
+    Asia:
+        dlc: "http://dl-wotblitz-gc.wargaming.net/dlc"
+        public: "true"
+        wgnwn: "https://asia.wargaming.net"
+        clientId: "CLGZNuOhfKFRQHEVkIQT6oUaoHNMYLG4YC9YG0uK"
+        news: "http://wotblitz.asia/%s/rss/news/"
+        contentPages: "http://wotblitz.asia/%s/content/blitz-client/%s/"
+        popupNews: "http://wotblitz.asia/%s/promo/"
+        eula: "http://wotblitz.asia/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.asia/index.php?/forum-26/announcement-2-wot-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.asia/%(locale)/mobile/blitz-1000/"
+        realm: "sg"
+        flag: "sg"
+        wotBlitzPortal: "https://wotblitz.asia"
+        hosts:
+            SG:
+                url: "login.wotblitz.asia:20016"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                youtube: "https://www.youtube.com/channel/UC4YbL5me4Z8F6drzIchk06w"
+                twitter: "https://twitter.com/BlitzAsia"
+                forum: "http://forum.wotblitz.asia"
+                portal: "https://wotblitz.asia"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC4YbL5me4Z8F6drzIchk06w"
+                twitter: "twitter://user?id=2616820147"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://payout.wotblitz.asia"
+        tmsPublicApi: 'https://tmsis.wotblitz.asia'
+    Asia Test:
+        dlc: "http://dl-wotblitz-gc.wargaming.net/dlc"
+        wgnwn: "https://asia.wargaming.net"
+        clientId: "CLGZNuOhfKFRQHEVkIQT6oUaoHNMYLG4YC9YG0uK"
+        news: "http://wotblitz.asia/%s/rss/news/"
+        contentPages: "http://wotblitz.asia/%s/content/blitz-client/%s/"
+        popupNews: "http://wotblitz.asia/%s/promo/"
+        eula: "http://wotblitz.asia/%s/mobile/user_agreement/"
+        tournamentEULA: "https://wotblitz.asia/%(locale)/mobile/blitz-1000/"
+        realm: "sg"
+        flag: "sg"
+        wotBlitzPortal: "https://wotblitz.asia"
+        hosts:
+            SG:
+                url: "login.wotblitz.asia:32850"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                youtube: "https://www.youtube.com/channel/UC4YbL5me4Z8F6drzIchk06w"
+                twitter: "https://twitter.com/BlitzAsia"
+                forum: "http://forum.wotblitz.asia"
+                portal: "https://wotblitz.asia"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC4YbL5me4Z8F6drzIchk06w"
+                twitter: "twitter://user?id=2616820147"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://payout.wotblitz.asia"
+        tmsPublicApi: 'https://tmsis.wotblitz.asia'
+    Arabian:
+        public: "true"
+        wgnwn: "https://eu.wargaming.net"
+        clientId: "D6lcd51pjyFVaRWPGGbVfBS6AGVBaSyN3wYCh9y4"
+        news: "http://wotblitz.eu/%s/rss/news/"
+        contentPages: "http://wotblitz.eu/%s/content/blitz-client/%s/"
+        popupNews: "http://wotblitz.eu/%s/promo/"
+        eula: "http://wotblitz.eu/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.eu/%(locale)/mobile/blitz-1000/"
+        realm: "eu"
+        flag: "ar"
+        wotBlitzPortal: "https://wotblitz.eu"
+        hosts:
+            EU:
+                url: "login.wotblitz.eu:20016"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                youtube: "https://www.youtube.com/channel/UCLQd4upg6HQNjiXJYUJdxFw"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.eu"
+                portal: "https://wotblitz.eu"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UCLQd4upg6HQNjiXJYUJdxFw"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        tmsPublicApi: 'https://tmsis.wotblitz.eu'
+    LATAM:
+        public: "true"
+        wgnwn: "https://na.wargaming.net"
+        clientId: "2BPjeiZ09NBrHjc4rsV9KqN3za41nGCoRKmqUU9G"
+        news: "http://wotblitz.com/%s/rss/news/"
+        contentPages: "http://wotblitz.com/%s/content/blitz-client/%s/"
+        popupNews: "http://wotblitz.com/%s/promo/"
+        eula: "http://wotblitz.com/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.com/index.php?/forum-0/announcement-13-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        realm: "us"
+        flag: "latam"
+        wotBlitzPortal: "https://wotblitz.com"
+        hosts:
+            NA:
+                url: "login.wotblitz.com:20016"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.com"
+                portal: "https://wotblitz.com"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        tmsPublicApi: 'https://tmsis.wotblitz.com'
+    TRUNK_QA:
+        dlc: "http://by1-builddlc-01.corp.wargaming.local/DLC_Blitz"
+        csis: "http://csis.wott.iv/csis/wotblitz713"
+        wgnwn: "https://us.wgnwn.wgnt.iv"
+        news: "https://wbp.wotb.com.wots.pw/%s/rss/news/"
+        contentPages: "http://wbp.wotb.com.wots.pw/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.com.wots.pw/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        clientId: "L6gcNOtLWE0HyYgpZpMExU3zaMtGmC9Wt292h0kb"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                portal: "https://wbp.wotb.com.wott.iv"
+                vk: "https://vk.com/wotblitz"
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "https://twitter.com/WoTBlitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                viber: "http://chats.viber.com/wot"
+                forum: "http://forum.wotblitz.ru"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "twitter://user?id=1134245654"
+                viber: "viber://public?id=wot"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        realm: "us"
+        flag: "us"
+        defaultLanguage: "en"
+        unityAdsZoneAlias: "trunk_qa"
+        hosts:
+            TRUNK_QA_P1:
+                peripheryID: 1
+                url: "by1-wotblitz-31.corp.wargaming.local:25000"
+            TRUNK_QA_P2:
+                peripheryID: 2
+                url: "by1-wotblitz-17.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.com.wott.iv/"
+        tmsPublicApi: 'https://tmsis.wotb.us.wott.iv'
+    Supertest:
+        public: "true"
+        wgnwn: "https://st31.wargaming.net"
+        clientId: "pUnAvxaqi5u8CBXM2JGR4YxAqJy7hjPiNRMBgfxU"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wotblitz.ru/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.ru.wots.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        realm: "ru"
+        flag: "ru"
+        wotBlitzPortal: "https://wotblitz.ru"
+        tournamentEULA: "https://ptl-st31.wargaming.net/%(locale)/mobile/blitz-1000/"
+        hosts:
+            Supertest:
+                url: "login-super-test.wotblitz.ru:20020"
+        tmsPublicApi: 'https://tmsis-st31.wotblitz.com'
+    Supertest_test:
+        wgnwn: "https://st31.wargaming.net"
+        clientId: "pUnAvxaqi5u8CBXM2JGR4YxAqJy7hjPiNRMBgfxU"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wotblitz.ru/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.ru.wots.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        realm: "ru"
+        flag: "ru"
+        wotBlitzPortal: "https://wotblitz.ru"
+        tournamentEULA: "https://ptl-st31.wargaming.net/%(locale)/mobile/blitz-1000/"
+        hosts:
+            Supertest_test:
+                url: "login-super-test.wotblitz.ru:32850"
+        tmsPublicApi: 'https://tmsis-st31.wotblitz.com'
+    Supertest2:
+        public: "true"
+        clientId: "WwZZujL4TmwaouQcBLZYWXEVEXcYBzMIakBLUSAF"
+        wgnwn: "https://st32.wargaming.net"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wotblitz.ru/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.ru.wots.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        realm: "ru"
+        flag: "ru"
+        wotBlitzPortal: "https://wotblitz.ru"
+        tournamentEULA: "https://ptl-st31.wargaming.net/%(locale)/mobile/blitz-1000/"
+        hosts:
+            Supertest:
+                url: "login-super-test-2.wotblitz.ru:20020"
+        tmsPublicApi: 'https://tmsis-st32.wotblitz.com'
+    Supertest2_test:
+        wgnwn: "https://st32.wargaming.net"
+        clientId: "WwZZujL4TmwaouQcBLZYWXEVEXcYBzMIakBLUSAF"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wotblitz.ru/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.ru.wots.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        realm: "ru"
+        flag: "ru"
+        wotBlitzPortal: "https://wotblitz.ru"
+        tournamentEULA: "https://ptl-st31.wargaming.net/%(locale)/mobile/blitz-1000/"
+        hosts:
+            Supertest_test:
+                url: "login-super-test-2.wotblitz.ru:32850"
+        tmsPublicApi: 'https://tmsis-st32.wotblitz.com'
+    TRUNK_QA_RU:
+        csis: "http://csis.wott.iv/csis/wotblitz713"
+        wgnwn: "https://us.wgnwn.wgnt.iv"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wotblitz.ru/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.ru.wott.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.ru/index.php?/topic/3316-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D0%B8%D0%B3%D1%80%D1%8B/"
+        clientId: "L6gcNOtLWE0HyYgpZpMExU3zaMtGmC9Wt292h0kb"
+        communityUrls:
+            http:
+                vk: "https://vk.com/wotblitz"
+                facebook: "https://www.facebook.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                viber: "http://chats.viber.com/wot"
+                twitter: "https://twitter.com/WoTBlitz_ru"
+                forum: "http://forum.wotblitz.ru"
+                portal: "https://wotblitz.ru"
+                wargaming: "http://www.wargaming.net"
+            native:
+                twitter: "twitter://user?id=1471794794"
+                viber: "viber://public?id=wot"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        realm: "ru"
+        flag: "ru"
+        unityAdsZoneAlias: "trunk_qa"
+        hosts:
+            TRUNK_QA_P1:
+                peripheryID: 1
+                url: "by1-wotblitz-31.corp.wargaming.local:25000"
+            TRUNK_QA_P2:
+                peripheryID: 2
+                url: "by1-wotblitz-17.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.com.wott.iv/"
+        tmsPublicApi: "https://tmsis.wotb.us.wott.iv"
+    TRUNK_QA_EU:
+        csis: "http://csis.wott.iv/csis/wotblitz713"
+        wgnwn: "https://us.wgnwn.wgnt.iv"
+        news: "http://wotblitz.eu/%s/rss/news/"
+        contentPages: "http://wotblitz.eu/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.eu.wott.iv/%s/promo/"
+        eula: "http://wbp.wotb.eu.wott.iv/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.eu/%(locale)/mobile/blitz-1000/"
+        clientId: "L6gcNOtLWE0HyYgpZpMExU3zaMtGmC9Wt292h0kb"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.eu"
+                portal: "https://wotblitz.eu"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        realm: "eu"
+        flag: "eu"
+        defaultLanguage: "en"
+        unityAdsZoneAlias: "trunk_qa"
+        hosts:
+            TRUNK_QA_P1:
+                peripheryID: 1
+                url: "by1-wotblitz-31.corp.wargaming.local:25000"
+            TRUNK_QA_P2:
+                peripheryID: 2
+                url: "by1-wotblitz-17.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.com.wott.iv/"
+        tmsPublicApi: "https://tmsis.wotb.us.wott.iv"
+    TRUNK_QA_SG:
+        csis: "http://csis.wott.iv/csis/wotblitz713"
+        wgnwn: "https://us.wgnwn.wgnt.iv"
+        news: "http://wotblitz.asia/%s/rss/news/"
+        contentPages: "http://wotblitz.asia/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.sg.wott.iv/%s/promo/"
+        eula: "http://wotblitz.asia/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.asia/index.php?/forum-26/announcement-2-wot-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.asia/%(locale)/mobile/blitz-1000/"
+        clientId: "L6gcNOtLWE0HyYgpZpMExU3zaMtGmC9Wt292h0kb"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/WoTBlitzAsia"
+                youtube: "https://www.youtube.com/channel/UC4YbL5me4Z8F6drzIchk06w"
+                twitter: "https://twitter.com/BlitzAsia"
+                forum: "http://forum.wotblitz.asia"
+                portal: "https://wotblitz.asia"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC4YbL5me4Z8F6drzIchk06w"
+                twitter: "twitter://user?id=2616820147"
+            native_ios:
+                facebook: "fb://profile/475922645851956"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/WoTBlitzAsia"
+        realm: "sg"
+        flag: "sg"
+        defaultLanguage: "en"
+        unityAdsZoneAlias: "trunk_qa"
+        hosts:
+            TRUNK_QA_P1:
+                peripheryID: 1
+                url: "by1-wotblitz-31.corp.wargaming.local:25000"
+            TRUNK_QA_P2:
+                peripheryID: 2
+                url: "by1-wotblitz-17.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.com.wott.iv/"
+        tmsPublicApi: "https://tmsis.wotb.us.wott.iv"
+    TRUNK_QA_US:
+        csis: "http://csis.wott.iv/csis/wotblitz713"
+        wgnwn: "https://us.wgnwn.wgnt.iv"
+        news: "http://wotblitz.com/%s/rss/news/"
+        contentPages: "http://wotblitz.com/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.com.wott.iv/%s/promo/"
+        eula: "http://wotblitz.com/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.com/index.php?/forum-0/announcement-13-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        clientId: "L6gcNOtLWE0HyYgpZpMExU3zaMtGmC9Wt292h0kb"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.com"
+                portal: "https://wotblitz.com"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        realm: "us"
+        flag: "us"
+        defaultLanguage: "en"
+        unityAdsZoneAlias: "trunk_qa"
+        hosts:
+            TRUNK_QA_P1:
+                peripheryID: 1
+                url: "by1-wotblitz-31.corp.wargaming.local:25000"
+            TRUNK_QA_P2:
+                peripheryID: 2
+                url: "by1-wotblitz-17.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.com.wott.iv/"
+        tmsPublicApi: "https://tmsis.wotb.us.wott.iv"
+    TRUNK_DEV:
+        realm: "ru"
+        flag: "ru"
+        news: "http://wbp.wotb.ru.wots.iv/%s/rss/news/"
+        contentPages: "http://wbp.wotb.ru.wots.iv/%s/content/blitz-client/%s/"
+        eula: "http://wbp.wotb.ru.wots.iv/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.com/index.php?/forum-0/announcement-13-world-of-tanks-blitz-game-rules/"
+        popupNews: "http://wbp.wotb.ru.wots.iv/%s/promo/"
+        hosts:
+            TRUNK_DEV:
+                url: "by1-wotblitz-39.corp.wargaming.local:25000"
+    WEB_STABLE:
+        wgnwn: "https://us.wgnwn.wgns.iv"
+        clientId: "HeAllbdCpUZ31rClTJSNOmLX88zA6eERisRoACwx"
+        wotBlitzPortal: "https://wbp.wotb.com.wots.pw"
+        news: "https://wbp.wotb.com.wots.pw/%s/rss/news/"
+        contentPages: "http://wbp.wotb.com.wots.pw/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.com.wots.pw/%s/promo/"
+        eula: "http://wbp.wotb.com.wots.pw/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        communityUrls:
+            http:
+                vk: "https://vk.com/wotblitz"
+                facebook: "https://www.facebook.com/wotblitz"
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "https://twitter.com/WoTBlitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                viber: "http://chats.viber.com/wot"
+                forum: "http://forum.wotblitz.ru"
+                portal: "https://wbp.wotb.com.wots.pw"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC1h424KQY-jGGQe3inlqfiA"
+                twitter: "twitter://user?id=1134245654"
+                viber: "viber://public?id=wot"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        realm: "us"
+        flag: "us"
+        defaultLanguage: "en"
+        unityAdsZoneAlias: "web_stable"
+        hosts:
+            WEB_STABLE:
+                url: "by1-wotblitz-28.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.com.wots.iv/"
+        tmsPublicApi: "https://tmsis.wotb.us.wots.iv"
+    WEB_STABLE_NEWS:
+        wgnwn: "https://us.wgnwn.wgns.iv"
+        clientId: "HeAllbdCpUZ31rClTJSNOmLX88zA6eERisRoACwx"
+        news: "http://wbp.wotb.ru.wots.iv/%s/rss/news/"
+        contentPages: "http://wbp.wotb.ru.wots.iv/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.ru.wots.iv/%s/promo/"
+        eula: "http://wbp.wotb.com.wots.pw/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        realm: "us"
+        flag: "us"
+        defaultLanguage: "en"
+        unityAdsZoneAlias: "web_stable"
+        hosts:
+            WEB_STABLE_NEWS:
+                url: "by1-wotblitz-28.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.com.wots.iv/"
+        tmsPublicApi: "https://tmsis.wotb.us.wots.iv"
+    WEB_STABLE_RU:
+        wgnwn: "https://ru.wgnwn.wgns.iv"
+        clientId: "b52w1zAMzt6q7IZDj9Ow49184qbewcKnfRdypUMi"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wotblitz.ru/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.ru.wots.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        wotBlitzPortal: "https://wotblitz.ru"
+        realm: "ru"
+        flag: "ru"
+        unityAdsZoneAlias: "web_stable"
+        hosts:
+            WEB_STABLE_RU:
+                url: "by1-wotblitz-28.corp.wargaming.local:25000"
+        communityUrls:
+            http:
+                vk: "https://vk.com/wotblitz"
+                facebook: "https://www.facebook.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                viber: "http://chats.viber.com/wot"
+                twitter: "https://twitter.com/WoTBlitz_ru"
+                forum: "http://forum.wotblitz.ru"
+                portal: "https://wotblitz.ru"
+                wargaming: "http://www.wargaming.net"
+            native:
+                twitter: "twitter://user?id=1471794794"
+                viber: "viber://public?id=wot"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://wdw.wotb.com.wots.iv/"
+        tmsPublicApi: "https://tmsis.wotb.us.wots.iv"
+    WEB_STABLE_US:
+        wgnwn: "https://us.wgnwn.wgns.iv"
+        clientId: "HeAllbdCpUZ31rClTJSNOmLX88zA6eERisRoACwx"
+        news: "http://wotblitz.com/%s/rss/news/"
+        contentPages: "http://wotblitz.com/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.com.wots.pw/%s/promo/"
+        eula: "http://wotblitz.com/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        wotBlitzPortal: "https://wotblitz.com"
+        realm: "us"
+        flag: "us"
+        defaultLanguage: "en"
+        unityAdsZoneAlias: "web_stable"
+        hosts:
+            WEB_STABLE_US:
+                url: "by1-wotblitz-28.corp.wargaming.local:25000"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.com"
+                portal: "https://wotblitz.com"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://wdw.wotb.com.wots.iv/"
+        tmsPublicApi: "https://tmsis.wotb.us.wots.iv"
+    WEB_STABLE_EU:
+        wgnwn: "https://eu.wgnwn.wgns.iv"
+        news: "http://wotblitz.eu/%s/rss/news/"
+        contentPages: "http://wotblitz.eu/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.eu.wots.iv/%s/promo/"
+        eula: "http://wotblitz.eu/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.eu/%(locale)/mobile/blitz-1000/"
+        wotBlitzPortal: "https://wotblitz.eu"
+        realm: "eu"
+        flag: "eu"
+        defaultLanguage: "en"
+        unityAdsZoneAlias: "web_stable"
+        hosts:
+            WEB_STABLE_EU:
+                url: "by1-wotblitz-28.corp.wargaming.local:25000"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                instagram: "https://www.instagram.com/wotblitz_official/"
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.eu"
+                portal: "https://wotblitz.eu"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC9lE09jxmMgMoG13WrNHPmA"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://wdw.wotb.com.wots.iv/"
+        tmsPublicApi: "https://tmsis.wotb.us.wots.iv"
+    WEB_STABLE_SG:
+        wgnwn: "https://sg.wgnwn.wgns.iv"
+        news: "http://wotblitz.asia/%s/rss/news/"
+        contentPages: "http://wotblitz.asia/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.sg.wots.iv/%s/promo/"
+        eula: "http://wotblitz.asia/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.asia/%(locale)/mobile/blitz-1000/"
+        wotBlitzPortal: "https://wotblitz.asia"
+        realm: "sg"
+        flag: "sg"
+        defaultLanguage: "en"
+        unityAdsZoneAlias: "web_stable"
+        hosts:
+            WEB_STABLE_SG:
+                url: "by1-wotblitz-28.corp.wargaming.local:25000"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/WoTBlitzAsia"
+                youtube: "https://www.youtube.com/channel/UC4YbL5me4Z8F6drzIchk06w"
+                twitter: "https://twitter.com/BlitzAsia"
+                forum: "http://forum.wotblitz.asia"
+                portal: "https://wotblitz.asia"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UC4YbL5me4Z8F6drzIchk06w"
+                twitter: "twitter://user?id=2616820147"
+            native_ios:
+                facebook: "fb://profile/475922645851956"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/WoTBlitzAsia"
+        prizesWithdrawal: "https://wdw.wotb.com.wots.iv/"
+        tmsPublicApi: "https://tmsis.wotb.us.wots.iv"
+    FRAMEWORK_QA:
+        realm: "us"
+        flag: "us"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        hosts:
+            FRAMEWORK_QA:
+                url: "by1-wotblitz-10.corp.wargaming.local:25000"
+    WEB_ASIA:
+        wgnwn: "https://asia.wgnwn.wgns.iv"
+        clientId: "ZOvMnCiV9xZZTgZBMugvKJJf9Tukd4pdC0snTgDx"
+        news: "http://wotblitz.asia/%s/rss/news/"
+        contentPages: "http://wotblitz.asia/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.sg.wots.iv/%s/promo/"
+        eula: "http://wotblitz.asia/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.asia/%(locale)/mobile/blitz-1000/"
+        wotBlitzPortal: "https://wotblitz.asia"
+        realm: "sg"
+        flag: "sg"
+        defaultLanguage: "en"
+        hosts:
+            WEB_ASIA:
+                url: "by1-wotblitz-11.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.sg.wots.iv/"
+        tmsPublicApi: "https://tmsis.wotb.sg.wots.iv"
+    AUTOTESTS_ART:
+        realm: "us"
+        flag: "us"
+        hosts:
+            AUTOTESTS_ART:
+                url: "by1-wotblitz-12.corp.wargaming.local:25000"
+    AUTOTESTS_TRUNK:
+        realm: "us"
+        flag: "us"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        hosts:
+            AUTOTESTS_TRUNK:
+                url: "by1-wotblitz-13.corp.wargaming.local:25000"
+    MAPS:
+        realm: "us"
+        flag: "us"
+        hosts:
+            MAPS:
+                url: "by1-wotblitz-14.corp.wargaming.local:25000"
+    BALANCING:
+        realm: "us"
+        flag: "us"
+        hosts:
+            BALANCING:
+                url: "by1-wotblitz-15.corp.wargaming.local:25000"
+    by1-wotblitz-16:
+        realm: "us"
+        flag: "us"
+        unityAdsZoneAlias: "dev4"
+        hosts:
+            by1-wotblitz-16:
+                url: "by1-wotblitz-16.corp.wargaming.local:25000"
+    by1-wotblitz-18:
+        realm: "us"
+        flag: "us"
+        hosts:
+            by1-wotblitz-18:
+                url: "by1-wotblitz-18.corp.wargaming.local:25000"
+    by1-wotblitz-19:
+        realm: "us"
+        flag: "us"
+        hosts:
+            by1-wotblitz-19:
+                url: "by1-wotblitz-19.corp.wargaming.local:25000"
+    by1-wotblitz-20:
+        wgnwn: "https://blitz2201.wgnwn.wgnt.iv"
+        realm: "us"
+        flag: "us"
+        hosts:
+            by1-wotblitz-20:
+                url: "by1-wotblitz-20.corp.wargaming.local:25000"
+    WEB_DEPENDENCIES:
+        wgnwn: "https://ru.wgnwn.wgnt.iv"
+        news: "http://wbp.wotb.ru.wott.iv/%s/rss/news/"
+        contentPages: "http://wbp.wotb.ru.wott.iv/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.ru.wots.iv/%s/promo/"
+        eula: "http://wbp.wotb.ru.wott.iv/%s/mobile/user_agreement/"
+        clientId: "4XXSARq1nfzdaTorprSccbnWr2JLt37V9WLkjTfv"
+        realm: "ru"
+        flag: "ru"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        netEaseClientId: "fQNyRfdsU1HBYrTlYzcr82fiyugoIj7SF174v1j4"
+        hosts:
+            WEB_DEPENDENCIES:
+                url: "by1-wotblitz-21.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.ru.wott.iv/"
+        tmsPublicApi: 'https://tmsis.wotb.ru.wott.iv'
+        communityUrls:
+            http:
+                portal: "https://wbp.wotb.ru.wott.iv"
+    wotblitz22:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz22:
+                url: "by1-wotblitz-22.corp.wargaming.local:25000"
+    wgt11:
+        wgnwn: "https://asia.wgnwn.wgnt.iv"
+        clientId: "2vCV1d0IO4J4qQ9e8HQSA6B10XaHOWtFkDZq2edQ"
+        news: "http://wbp.wotb.com.wots.pw/%s/rss/news/"
+        contentPages: "http://wbp.wotb.com.wots.pw/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.com.wots.pw/%s/promo/"
+        eula: "http://wotblitz.com/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        defaultLanguage: "en"
+        realm: "us"
+        flag: "us"
+        hosts:
+            wgt11:
+                url: "by1-wotblitz-23.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.sg.wott.iv/"
+        tmsPublicApi: 'https://tmsis.wotb.sg.wott.iv'
+        wotBlitzPortal: "https://wbp.wotb.com.wots.pw"
+    wotblitz24:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz24:
+                url: "by1-wotblitz-24.corp.wargaming.local:25000"
+    wotblitz25:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz25:
+                url: "by1-wotblitz-25.corp.wargaming.local:25000"
+    wotblitz26:
+        wgnwn: "https://wotblitz26.wgnwn.wgnt.iv"
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz26:
+                url: "by1-wotblitz-26.corp.wargaming.local:25000"
+    wotblitz27:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz27:
+                url: "by1-wotblitz-27.corp.wargaming.local:25000"
+    AUTOTESTS_MAPS_QA:
+        wgnwn: "https://wotblitz29.wgnwn.wgnt.iv"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wbp.wotb.wotblitz29.wott.iv/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.wotblitz29.wott.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        clientId: "VYeutkHlHCneCO6ctVShkiRY5cmiV1ZZlLqllbc3"
+        communityUrls:
+            http:
+                portal: "https://wbp.wotb.com.wots.pw"
+        defaultLanguage: "ru"
+        unityAdsZoneAlias: "trunk_qa"
+        realm: "us"
+        flag: "us"
+        hosts:
+            AUTOTESTS_MAPS_QA:
+                url: "by1-wotblitz-29.corp.wargaming.local:25000"
+        tmsPublicApi: "https://tmsis.wotb.blitz29.wott.iv"
+    AUTOTESTS_MAPS_QA_RU:
+        wgnwn: "https://wotblitz29.wgnwn.wgnt.iv"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wbp.wotb.wotblitz29.wott.iv/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.wotblitz29.wott.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        clientId: "VYeutkHlHCneCO6ctVShkiRY5cmiV1ZZlLqllbc3"
+        communityUrls:
+            http:
+                portal: "https://wbp.wotb.com.wots.pw"
+        defaultLanguage: "ru"
+        unityAdsZoneAlias: "trunk_qa"
+        realm: "ru"
+        flag: "ru"
+        hosts:
+            AUTOTESTS_MAPS_QA_RU:
+                url: "by1-wotblitz-29.corp.wargaming.local:25000"
+        tmsPublicApi: "https://tmsis.wotb.blitz29.wott.iv"
+    AUTOTESTS_MAPS_QA_EU:
+        wgnwn: "https://wotblitz29.wgnwn.wgnt.iv"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wbp.wotb.wotblitz29.wott.iv/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.wotblitz29.wott.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        clientId: "VYeutkHlHCneCO6ctVShkiRY5cmiV1ZZlLqllbc3"
+        communityUrls:
+            http:
+                portal: "https://wbp.wotb.com.wots.pw"
+        defaultLanguage: "ru"
+        unityAdsZoneAlias: "trunk_qa"
+        realm: "eu"
+        flag: "eu"
+        hosts:
+            AUTOTESTS_MAPS_QA_EU:
+                url: "by1-wotblitz-29.corp.wargaming.local:25000"
+        tmsPublicApi: "https://tmsis.wotb.blitz29.wott.iv"
+    AUTOTESTS_MAPS_QA_KR:
+        wgnwn: "https://wotblitz29.wgnwn.wgnt.iv"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wbp.wotb.wotblitz29.wott.iv/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.wotblitz29.wott.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        clientId: "VYeutkHlHCneCO6ctVShkiRY5cmiV1ZZlLqllbc3"
+        communityUrls:
+            http:
+                portal: "https://wbp.wotb.com.wots.pw"
+        defaultLanguage: "ru"
+        unityAdsZoneAlias: "trunk_qa"
+        realm: "kr"
+        flag: "kr"
+        hosts:
+            AUTOTESTS_MAPS_QA_KR:
+                url: "by1-wotblitz-29.corp.wargaming.local:25000"
+        tmsPublicApi: "https://tmsis.wotb.blitz29.wott.iv"
+    AUTOTESTS_MAPS_QA_SG:
+        wgnwn: "https://wotblitz29.wgnwn.wgnt.iv"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wbp.wotb.wotblitz29.wott.iv/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.wotblitz29.wott.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        clientId: "VYeutkHlHCneCO6ctVShkiRY5cmiV1ZZlLqllbc3"
+        communityUrls:
+            http:
+                portal: "https://wbp.wotb.com.wots.pw"
+        defaultLanguage: "ru"
+        unityAdsZoneAlias: "trunk_qa"
+        realm: "sg"
+        flag: "sg"
+        hosts:
+            AUTOTESTS_MAPS_QA_SG:
+                url: "by1-wotblitz-29.corp.wargaming.local:25000"
+        tmsPublicApi: "https://tmsis.wotb.blitz29.wott.iv"
+    wotblitz30:
+        realm: "us"
+        flag: "us"
+        contentPages: "http://wbp.wotb.ru.wots.iv/%s/content/blitz-client/%s/"
+        analyticsConfig:
+            keyedArchive:
+                started:
+                    bool: true
+                events:
+                    keyedArchive:
+                        all:
+                            bool: true
+        hosts:
+            wotblitz30:
+                url: "by1-wotblitz-30.corp.wargaming.local:25000"
+    FRAMEWORK_DEV:
+        realm: "us"
+        flag: "us"
+        news: "http://wotblitz.eu/%s/rss/news/"
+        hosts:
+            FRAMEWORK_DEV:
+                url: "by1-wotblitz-32.corp.wargaming.local:25000"
+    wotblitz33:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz33:
+                url: "by1-wotblitz-33.corp.wargaming.local:25000"
+    wgs12:
+        wgnwn: "https://eu.wgnwn.wgns.iv"
+        clientId: "7P1D9773gywekq662M7STUzoU1hC9I0FfSA0FyXH"
+        news: "http://wotblitz.eu/%s/rss/news/"
+        contentPages: "http://wotblitz.eu/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.eu.wots.iv/%s/promo/"
+        eula: "http://wotblitz.eu/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.eu/%(locale)/mobile/blitz-1000/"
+        wotBlitzPortal: "https://wotblitz.eu"
+        storyInteractions: "http://wbp.wotb.eu.wots.iv/%s/fair/"
+        realm: "eu"
+        flag: "eu"
+        defaultLanguage: "en"
+        hosts:
+            wgs12:
+                url: "by1-wotblitz-34.corp.wargaming.local:25000"
+        communityUrls:
+            http:
+                facebook: "https://www.facebook.com/wotblitz"
+                youtube: "https://www.youtube.com/channel/UCLQd4upg6HQNjiXJYUJdxFw"
+                twitter: "https://twitter.com/WoTBlitz"
+                forum: "http://forum.wotblitz.eu"
+                portal: "https://wotblitz.eu"
+                wargaming: "http://www.wargaming.net"
+            native:
+                youtube: "https://www.youtube.com/channel/UCLQd4upg6HQNjiXJYUJdxFw"
+                twitter: "twitter://user?id=1134245654"
+            native_ios:
+                facebook: "fb://profile/572143336148627"
+            native_android:
+                facebook: "fb://facewebmodal/f?href=https://www.facebook.com/wotblitz"
+        prizesWithdrawal: "https://wdw.wotb.eu.wots.iv/"
+        tmsPublicApi: "https://tmsis.wotb.eu.wots.iv"
+    wotblitz35:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz35:
+                url: "by1-wotblitz-35.corp.wargaming.local:25000"
+    CENTER:
+        realm: "us"
+        flag: "us"
+        hosts:
+            PERIPHERY_1:
+                peripheryID: 1
+                url: "by1-wotblitz-37.corp.wargaming.local:25000"
+    AUTOTESTS_STABLE:
+        wgnwn: "https://wotblitz38.wgnwn.wgns.iv"
+        clientId: "N3gf8CK9m9zYUaFkm4LXjC17lwk7vPtzs8KASMW4"
+        realm: "us"
+        flag: "us"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        hosts:
+            AUTOTESTS_STABLE:
+                url: "by1-wotblitz-38.corp.wargaming.local:25000"
+        tmsPublicApi: "https://tmsis.wotb.blitz38.wott.iv"
+    wotblitz40:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz40:
+                url: "by1-wotblitz-40.corp.wargaming.local:25000"
+    wotblitz41:
+        realm: "eu"
+        flag: "eu"
+        news: "http://wbp.wotb.com.wots.pw/%s/rss/news/"
+        contentPages: "http://wbp.wotb.com.wots.pw/%s/content/blitz-client/%s/"
+        eula: "http://wbp.wotb.com.wots.pw/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        tournamentEULA: "https://wotblitz.eu/%(locale)/mobile/blitz-1000/"
+        popupNews: "http://wbp.wotb.eu.wots.iv/%s/promo/"
+        wgnwn: "https://eu.wgnwn.wgnt.iv"
+        tmsPublicApi: "https://tmsiswotb.eu.wott.iv"
+        clientId: "yMK42n8ziWjkey6aN0mZE5Qm4HJIXJtCyEdphTJG"
+        defaultLanguage: "en"
+        hosts:
+            wotblitz41:
+                url: "by1-wotblitz-41.corp.wargaming.local:25000"
+    wotblitz42:
+        wgnwn: "https://wotblitz42.wgnwn.wgns.iv"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        realm: "us"
+        flag: "us"
+        clientId: "ABkCEvI63wFshAms2JoYZP1jdTDYat3BPd2gmTIz"
+        hosts:
+            wotblitz42:
+                url: "by1-wotblitz-42.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb42.wots.iv/"
+        tmsPublicApi: "https://tmsis.wotb.wotblitz42.wgns.iv"
+    wotblitz43:
+        wgnwn: "https://wotblitz43.wgnwn.wgns.iv"
+        tournamentEULA: "https://wotblitz.com/%(locale)/mobile/blitz-1000/"
+        realm: "us"
+        flag: "us"
+        clientId: "CxPj1rK9mtilsEwGIPciAfSOY5YiT19gnpYRNh93"
+        hosts:
+            wotblitz43:
+                url: "by1-wotblitz-43.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb43.wots.iv/"
+        tmsPublicApi: "https://tmsis.wotb.wotblitz43.wgns.iv"
+    wotblitz45:
+        wgnwn: "https://cnwotb.wgnwn.wgns.iv"
+        news: "https://wbp.wotb.com.wots.pw/%s/rss/news/"
+        popupNews: "http://wbp.wotb.com.wots.pw/%s/promo/"
+        realm: "us"
+        flag: "us"
+        clientId: "BWmUwglw6b48OMBmo8PrQryHScodD0UEgyD4ooJY"
+        netEaseHostId: 4
+        hosts:
+            wotblitz45:
+                url: "by1-wotblitz-45.corp.wargaming.local:25000"
+        tmsPublicApi: "https://tmsis.wotb.cnwotb.wgns.iv"
+        transferAccountUrl: 'https://wbp.wotb.eu.wots.iv/transfer/login/%(spaAuthDataDbId)'
+    wotblitz46:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz46:
+                url: "by1-wotblitz-46.corp.wargaming.local:25000"
+    wotblitz47:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz47:
+                url: "by1-wotblitz-47.corp.wargaming.local:25000"
+    wotblitz48:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz48:
+                url: "by1-wotblitz-48.corp.wargaming.local:25000"
+    wotblitz49:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz49:
+                url: "by1-wotblitz-49.corp.wargaming.local:25000"
+    wotsd2901:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotsd2901:
+                url: "by1-wotsd-29.corp.wargaming.local:10254"
+    wotsd30:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotsd30:
+                url: "by1-wotsd-30.corp.wargaming.local:25000"
+    wotsd31:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotsd31:
+                url: "by1-wotsd-31.corp.wargaming.local:25000"
+    wotsd32:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotsd32:
+                url: "by1-wotsd-32.corp.wargaming.local:25000"
+    wotsd33:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotsd33:
+                url: "by1-wotsd-33.corp.wargaming.local:25000"
+    wotsd34:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotsd34:
+                url: "by1-wotsd-34.corp.wargaming.local:25000"
+    wotblitz10317:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz10317:
+                url: "by1-wotblitz-01.corp.wargaming.local:25001"
+    wotblitz10318:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz10318:
+                url: "by1-wotblitz-01.corp.wargaming.local:25002"
+    DEV37:
+        csis: "http://csis.wots.iv/csis_ccu/blitz10319"
+        realm: "us"
+        flag: "us"
+        hosts:
+            DEV37_P1:
+                peripheryID: 1
+                url: "by1-wotblitz-01.corp.wargaming.local:25004"
+            DEV37_P2:
+                peripheryID: 2
+                url: "by1-wotblitz-01.corp.wargaming.local:25005"
+    DEV37_ip:
+        csis: "http://csis.wots.iv/csis_ccu/blitz10319"
+        realm: "us"
+        flag: "us"
+        hosts:
+            DEV37_P1:
+                peripheryID: 1
+                url: "10.128.12.135:25004"
+            DEV37_P2:
+                peripheryID: 2
+                url: "10.128.12.135:25005"
+    wotblitzsd02:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitzsd02:
+                url: "by1-wotbsd-02.corp.wargaming.local:25000"
+    wotbsd03:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotbsd03:
+                url: "by1-wotbsd-03.corp.wargaming.local:25000"
+    wotbsd04:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotbsd04:
+                url: "by1-wotbsd-04.corp.wargaming.local:25000"
+    wotbsd08:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotbsd08:
+                url: "by1-wotbsd-08.corp.wargaming.local:25000"
+    wotbsd09:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotbsd09:
+                url: "by1-wotbsd-09.corp.wargaming.local:25000"
+    wotbsd10:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotbsd10:
+                url: "by1-wotbsd-10.corp.wargaming.local:25000"
+    wotbsd11:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotbsd11:
+                url: "by1-wotbsd-11.corp.wargaming.local:25000"
+    wotblitzsd12:
+        realm: "us"
+        flag: "us"
+        hosts:
+            DEV52:
+                url: "by1-wotbsd-12.corp.wargaming.local:25000"
+    wotblitzsd13:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitzsd13:
+                url: "by1-wotbsd-13.corp.wargaming.local:25000"
+    bck_test:
+        realm: "us"
+        flag: "us"
+        hosts:
+            by1-bck-test-2:
+                url: "by1-bck-test-2.corp.wargaming.local:25000"
+    LINKUNX_C7:
+        realm: "us"
+        flag: "us"
+        hosts:
+            LINKUNX_C7:
+                url: "c7cls01.bigworldtech.com:20913"
+    wotblitz50:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz50:
+                url: "by1-wotblitz-50.corp.wargaming.local:25000"
+    wotblitz51:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz51:
+                url: "by1-wotblitz-51.corp.wargaming.local:25000"
+    wotblitz52:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz52:
+                url: "by1-wotblitz-52.corp.wargaming.local:25000"
+    wotblitz53:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz53:
+                url: "by1-wotblitz-53.corp.wargaming.local:25000"
+    wotblitz54:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz54:
+                url: "by1-wotblitz-54.corp.wargaming.local:25000"
+    wotblitz55:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz55:
+                url: "by1-wotblitz-55.corp.wargaming.local:25000"
+    wotblitz56:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz56:
+                url: "by1-wotblitz-56.corp.wargaming.local:25000"
+    wotblitz57:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz57:
+                url: "by1-wotblitz-57.corp.wargaming.local:25000"
+    wotblitz58:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz58:
+                url: "by1-wotblitz-58.corp.wargaming.local:25000"
+    wotblitz59:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz59:
+                url: "by1-wotblitz-59.corp.wargaming.local:25000"
+    wotblitz60:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz60:
+                url: "by1-wotblitz-60.corp.wargaming.local:25000"
+    wotblitz61:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz61:
+                url: "by1-wotblitz-61.corp.wargaming.local:25000"
+    wotblitz62:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz62:
+                url: "by1-wotblitz-62.corp.wargaming.local:25000"
+    wotblitz63:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz63:
+                url: "by1-wotblitz-63.corp.wargaming.local:25000"
+    wotblitz64:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz64:
+                url: "by1-wotblitz-64.corp.wargaming.local:25000"
+    wotblitz65:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz65:
+                url: "by1-wotblitz-65.corp.wargaming.local:25000"
+    wotblitz66:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz66:
+                url: "by1-wotblitz-66.corp.wargaming.local:25000"
+    wotblitz67:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz67:
+                url: "by1-wotblitz-67.corp.wargaming.local:25000"
+    wotblitz68:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz68:
+                url: "by1-wotblitz-68.corp.wargaming.local:25000"
+    wotblitz69:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz69:
+                url: "by1-wotblitz-69.corp.wargaming.local:25000"
+    wotblitz70:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz70:
+                url: "by1-wotblitz-70.corp.wargaming.local:25000"
+    wotblitz71:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz71:
+                url: "by1-wotblitz-71.corp.wargaming.local:25000"
+    wotblitz72:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz72:
+                url: "by1-wotblitz-72.corp.wargaming.local:25000"
+    wotblitz73:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz73:
+                url: "by1-wotblitz-73.corp.wargaming.local:25000"
+    wotblitz74:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz74:
+                url: "by1-wotblitz-74.corp.wargaming.local:25000"
+    wotblitz75:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz75:
+                url: "by1-wotblitz-75.corp.wargaming.local:25000"
+    wotblitz76:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz76:
+                url: "by1-wotblitz-76.corp.wargaming.local:25000"
+    wotblitz77:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz77:
+                url: "by1-wotblitz-77.corp.wargaming.local:25000"
+    wotblitz78:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz78:
+                url: "by1-wotblitz-78.corp.wargaming.local:25000"
+    wotblitz79:
+        realm: "us"
+        flag: "us"
+        wgnwn: "https://cn.wgnwn.wgnt.iv"
+        clientId: "BWmUwglw6b48OMBmo8PrQryHScodD0UEgyD4ooJY"
+        hosts:
+            wotblitz79:
+                url: "by1-wotblitz-79.corp.wargaming.local:25000"
+    wotblitz80:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz80:
+                url: "by1-wotblitz-80.corp.wargaming.local:25000"
+    wotblitz83:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz83:
+                url: "by1-wotblitz-83.corp.wargaming.local:25000"
+    wotblitz84:
+        realm: "us"
+        flag: "us"
+        hosts:
+            wotblitz84:
+                url: "by1-wotblitz-84.corp.wargaming.local:25000"
+    wotblitz85:
+        realm: "us"
+        flag: "us"
+        wgnwn: "https://cn.wgnwn.wgns.iv"
+        clientId: "BWmUwglw6b48OMBmo8PrQryHScodD0UEgyD4ooJY"
+        hosts:
+            wotblitz85:
+                url: "by1-wotblitz-85.corp.wargaming.local:25000"
+    LOCAL:
+        realm: "us"
+        flag: "us"
+        hosts:
+            LOCAL:
+                url: "192.168.50.50:5000"
+    RU6:
+        realm: "ru"
+        flag: "ru"
+        hosts:
+            RU6:
+                url: "92.223.4.11:32850"
+    SSE_ACTIONS_STABLE:
+        realm: "us"
+        flag: "us"
+        hosts:
+            SSE_ACTIONS_STABLE:
+                url: "wotblitzsse2118.wgdp.iv:62118"
+    SSE_ACTIONS_TRUNK:
+        realm: "us"
+        flag: "us"
+        hosts:
+            SSE_ACTIONS_TRUNK:
+                url: "by1-sse-12.corp.wargaming.local:25000"
+    ARTISTS:
+        realm: "us"
+        flag: "us"
+        hosts:
+            ARTISTS:
+                url: "by1-wotblitz-81.wargaming.local:25000"
+    STABLE:
+        wgnwn: "https://ru.wgnwn.wgns.iv"
+        clientId: "b52w1zAMzt6q7IZDj9Ow49184qbewcKnfRdypUMi"
+        news: "http://wotblitz.ru/%s/rss/news/"
+        contentPages: "http://wotblitz.ru/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.ru.wots.iv/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        realm: "ru"
+        flag: "ru"
+        hosts:
+            STABLE:
+                url: "by1-wotblitz-44.corp.wargaming.local:25000"
+        prizesWithdrawal: "https://wdw.wotb.ru.wots.iv"
+        tmsPublicApi: "https://tmsis.wotb.ru.wots.iv"
+    DZ_MAIN:
+        realm: "us"
+        flag: "us"
+        hosts:
+            DZ_MAIN:
+                url: "by1-dp-vm11.corp.wargaming.local:61112"
+    WEB_CENTOS7:
+        wgnwn: "https://wgt20.wgnwn.wgnt.iv"
+        realm: "us"
+        flag: "us"
+        hosts:
+            WEB_CENTOS7:
+                url: "by1-dp-wgt20-wotb-1.corp.wargaming.local:25001"
+    STABLE_EU:
+        realm: "eu"
+        flag: "eu"
+        hosts:
+            STABLE_EU:
+                url: "fr2-v-dava-1.fe.core.pw:20017"
+    STABLE_US:
+        realm: "us"
+        flag: "us"
+        hosts:
+            STABLE_US:
+                url: "login-st.wotblitz.com:20017"
+    STABLE_KR:
+        realm: "kr"
+        flag: "kr"
+        hosts:
+            STABLE_KR:
+                url: "sg2-v-kr1blitz-03.fe.core.pw:20016"
+    STABLE_CN:
+        wgnwn: "https://cnt.worldoftanks.cn"
+        realm: "cn"
+        flag: "cn"
+        hosts:
+            STABLE_CN:
+                url: "login-wotbcnt.worldoftanks.cn:20016"
+    CNT:
+        news: "https://wbp-cnt.wotblitz.asia/en/rss/news/"
+        popupNews: "https://wbp-cnt.wotblitz.asia/en/promo/"
+        dlc: "http://dl-wotblitz-gc.wargaming.net/dlc"
+        public: "true"
+        wgnwn: "https://cnt.wotblitz.asia"
+        clientId: "BWmUwglw6b48OMBmo8PrQryHScodD0UEgyD4ooJY"
+        netEaseHostId: 1
+        realm: "cn"
+        flag: "cn"
+        hosts:
+            CNT:
+                peripheryID: 1
+                url: "223.252.212.199:20017"
+    CNGV:
+        news: "https://wbp-cngv.wotblitz.asia/en/rss/news/"
+        popupNews: "https://wbp-cnt.wotblitz.asia/en/promo/"
+        dlc: "http://dl-wotblitz-gc.wargaming.net/dlc"
+        public: "true"
+        wotBlitzPortal: "https://wbp-cngv.wotblitz.asia"
+        wgnwn: "https://cngv.wotblitz.asia"
+        realm: "cn"
+        flag: "cn"
+        clientId: IkHLXmY97hL0fZwxKFQkkCpH5skz0vw8WvOxsnrr 
+        netEaseHostId: 3
+        hosts:
+            CNGV:
+                url: "wotblitzcngv.login.wargaming.net:20017"
+        tmsPublicApi: 'https://tmsis-cngv.wotblitz.asia'
+    CNGV_test:
+        news: "https://wbp-cngv.wotblitz.asia/en/rss/news/"
+        popupNews: "https://wbp-cnt.wotblitz.asia/en/promo/"
+        dlc: "http://dl-wotblitz-gc.wargaming.net/dlc"
+        public: "true"
+        wotBlitzPortal: "https://wbp-cngv.wotblitz.asia"
+        wgnwn: "https://cngv.wotblitz.asia"
+        realm: "cn"
+        flag: "cn"
+        clientId: IkHLXmY97hL0fZwxKFQkkCpH5skz0vw8WvOxsnrr 
+        netEaseHostId: 3
+        hosts:
+            CNGV:
+                url: "wotblitzcngv.login.wargaming.net:32850"
+        tmsPublicApi: 'https://tmsis-cngv.wotblitz.asia'
+    CN1:
+        wgnwn: "https://cn1.wotblitz.asia"
+        news: "https://wbp-cn1.wotblitz.asia/en/rss/news/"
+        popupNews: "https://wbp-cn1.wotblitz.asia/en/promo/"
+        realm: "cn"
+        flag: "cn"
+        clientId: "yFgIPcLBlKVLBs6K9mtK3yDnDsLJXqsDNidGESQL"
+        netEaseHostId: 2
+        tmsPublicApi: 'https://tmsis-wotblitzcn1.wotblitz.asia'
+        hosts:
+            CN1:
+                url: "wotblitzcn1.login.wargaming.net:20016"
+    CN1_test:
+        wgnwn: "https://cn1.wotblitz.asia"
+        news: "https://wbp-cn1.wotblitz.asia/en/rss/news/"
+        popupNews: "https://wbp-cn1.wotblitz.asia/en/promo/"
+        realm: "cn"
+        flag: "cn"
+        clientId: "yFgIPcLBlKVLBs6K9mtK3yDnDsLJXqsDNidGESQL"
+        netEaseHostId: 2
+        tmsPublicApi: 'https://tmsis-wotblitzcn1.wotblitz.asia'
+        hosts:
+            CN1:
+                url: "wotblitzcn1.login.wargaming.net:32850"
+    SDEV6:
+        realm: "us"
+        flag: "us"
+        hosts:
+            SDEV6:
+                url: "by1-wotsd-06.corp.wargaming.local:63206"
+    SDEV9:
+        realm: "us"
+        flag: "us"
+        hosts:
+            SDEV9:
+                url: "by1-wotsd-09.corp.wargaming.local:63209"
+    SDEV10:
+        realm: "us"
+        flag: "us"
+        hosts:
+            SDEV10:
+                url: "by1-wotsd-10.corp.wargaming.local:63210"
+    SDEV11:
+        realm: "us"
+        flag: "us"
+        hosts:
+            SDEV11:
+                url: "by1-wotsd-11.corp.wargaming.local:63211"
+    PROTOTYPING:
+        news: "http://wbp.wotb.com.wots.pw/%s/rss/news/"
+        contentPages: "http://wbp.wotb.com.wots.pw/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.com.wots.pw/%s/promo/"
+        eula: "http://wotblitz.ru/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        realm: "us"
+        flag: "us"
+        hosts:
+            PROTOTYPING:
+                url: "by1-dp-vm29.corp.wargaming.local:62901"
+    PROTOTYPING_TEST1:
+        wgnwn: "https://us.wgnwn.wgns.iv"
+        clientId: "HeAllbdCpUZ31rClTJSNOmLX88zA6eERisRoACwx"
+        news: "http://wotblitz.com/%s/rss/news/"
+        contentPages: "http://wotblitz.com/%s/content/blitz-client/%s/"
+        popupNews: "http://wbp.wotb.com.wots.pw/%s/promo/"
+        eula: "http://wotblitz.com/%s/mobile/user_agreement/"
+        clansEULA: "http://forum.wotblitz.eu/index.php?/forum-208/announcement-9-world-of-tanks-blitz-game-rules/"
+        wotBlitzPortal: "https://wotblitz.com"
+        realm: "us"
+        flag: "us"
+        hosts:
+            PROTOTYPING_TEST1:
+                url: "by1-dp-vm22.corp.wargaming.local:62228"
+    TRUNK_DEV BY IP:
+        realm: "us"
+        flag: "us"
+        hosts:
+            TRUNK_DEV BY IP:
+                url: "10.128.13.235:61314"
+ClanEmblems:
+    DefaultEmblem:
+        Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10001.png"
+        Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10001.png"
+    DefaultCreationEmblemID: 10001
+    List:
+        3:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-3.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-3.png"
+        4:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-4.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-4.png"
+        5:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-5.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-5.png"
+        6:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-6.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-6.png"
+        7:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-7.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-7.png"
+        8:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-8.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-8.png"
+        9:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-9.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-9.png"
+        10:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10.png"
+        11:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-11.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-11.png"
+        10001:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10001.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10001.png"
+        10002:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10002.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10002.png"
+        10003:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10003.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10003.png"
+        10004:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10004.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10004.png"
+        10005:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10005.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10005.png"
+        10006:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10006.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10006.png"
+        10007:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10007.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10007.png"
+        10008:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10008.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10008.png"
+        10009:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10009.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10009.png"
+        10010:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10010.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10010.png"
+        10011:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10011.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10011.png"
+        10012:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10012.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10012.png"
+        10013:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10013.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10013.png"
+        10014:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10014.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10014.png"
+        10015:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10015.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10015.png"
+        10016:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10016.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10016.png"
+        10017:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10017.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10017.png"
+        10018:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10018.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10018.png"
+        10019:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10019.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10019.png"
+        10020:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10020.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10020.png"
+        10021:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10021.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10021.png"
+        10022:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10022.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10022.png"
+        10023:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10023.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10023.png"
+        10024:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-10024.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-10024.png"
+        20002:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20002.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20002.png"
+        20003:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20003.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20003.png"
+        20004:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20004.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20004.png"
+        20005:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20005.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20005.png"
+        20006:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20006.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20006.png"
+        20007:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20007.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20007.png"
+        20008:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20008.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20008.png"
+        20009:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20009.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20009.png"
+        20010:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20010.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20010.png"
+        20011:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20011.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20011.png"
+        20012:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20012.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20012.png"
+        20013:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20013.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20013.png"
+        20014:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20014.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20014.png"
+        20015:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20015.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20015.png"
+        20016:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20016.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20016.png"
+        20017:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20017.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20017.png"
+        20018:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20018.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20018.png"
+        20019:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20019.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20019.png"
+        20020:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20020.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20020.png"
+        20021:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20021.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20021.png"
+        20022:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20022.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20022.png"
+        20023:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20023.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20023.png"
+        20024:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20024.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20024.png"
+        20025:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20025.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20025.png"
+        20026:
+            Gfx: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems1x/clan-icon-v2-20026.png"
+            Gfx2: "http://dl-wotblitz-gc.wargaming.net/icons/clanEmblems2x/clan-icon-v2-20026.png" 

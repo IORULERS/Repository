@@ -1,0 +1,29 @@
+nationTankMap: 
+    "usa":
+        name: "T1_Cunningham"
+        locKey: "#usa_vehicles:T1_Cunningham"
+        type: "Light"
+    "germany":
+        name: "Ltraktor"
+        locKey: "#germany_vehicles:Ltraktor"
+        type: "Light"
+    "ussr":
+        name: "MS-1"
+        locKey: "#ussr_vehicles:MS-1"
+        type: "Light"
+    "uk":
+        name: "GB01_Medium_Mark_I"
+        locKey: "#gb_vehicles:GB01_Medium_Mark_I"
+        type: "Medium"
+    "japan":
+        name: "NC27"
+        locKey: "#japan_vehicles:NC27"
+        type: "Light"
+    "france":
+        name: "RenaultFT"
+        locKey: "#france_vehicles:RenaultFT"
+        type: "Light"
+    "china":
+        name: "Ch06_Renault_NC31"
+        locKey: "#china_vehicles:Ch06_Renault_NC31"
+        type: "Light"

@@ -1,0 +1,67 @@
+keyedArchive:
+    averageThicknessWeight:
+        float: 0.600000
+    chassisRotationSpeedWeight:
+        float: 0.350000
+    enginePowerPerTonWeight:
+        float: 0.500000
+    maxHealthWeight:
+        float: 0.400000
+    maxSpeedWeight:
+        float: 0.150000
+    piercingPowerWeight:
+        float: 0.600000
+    shotAccuracyWeight:
+        float: 0.400000
+    averageThicknessMax:
+        float: 235.643372 # K-91
+    averageThicknessMin:
+        float: 5.756888 # GB39_Universal_CarrierQF2
+    chassisRotationSpeedMax:
+        float: 1.117011 # Pz35t
+    chassisRotationSpeedMin:
+        float: 0.209440 # T95
+    enginePowerPerTonMax:
+        float: 31739.067894 # BT-2
+    enginePowerPerTonMin:
+        float: 3687.346892 # T95
+    maxHealthMax:
+        float: 2500.000000 # Maus
+    maxHealthMin:
+        float: 200.000000 # RenaultFT
+    maxSpeedMax:
+        float: 22.222400 # G103_RU_251
+    maxSpeedMin:
+        float: 3.333360 # GB44_Archer_Custom
+    piercingPowerMax:
+        float: 310.000000 # GB48_FV215b_183
+    piercingPowerMin:
+        float: 20.000000 # GB07_Matilda
+    shotDamageMax:
+        float: 930.000000 # GB48_FV215b_183
+    shotDamageMin:
+        float: 8.000000 # Ch06_Renault_NC31
+    shotDispersionAngleMax:
+        float: 0.006000 # KV2
+    shotDispersionAngleMin:
+        float: 0.000001 # T49_Rocket
+    shotsPerMinuteMax:
+        float: 131.707317 # VK1602
+    shotsPerMinuteMin:
+        float: 2.500000 # KV2
+    firePowerMax:
+        float: 3365.853659 # JagdTiger
+    firePowerMin:
+        float: 388.489209 # GB01_Medium_Mark_I
+    mobilityMax:
+        float: 83.959276 # BT-2
+    mobilityMin:
+        float: 0.882353 # T95
+    protectabilityMax:
+        float: 95.526743 # Maus
+    protectabilityMin:
+        float: 1.377012 # GB01_Medium_Mark_I
+    shotEfficiencyMax:
+        float: 76.554725 # Object268
+    shotEfficiencyMin:
+        float: 1.954245 # Ch06_Renault_NC31
