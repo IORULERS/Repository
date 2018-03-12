@@ -1,0 +1,54 @@
+emitter:
+    size: [170.000000, 0.000000, 20.000000]
+    name: "fire_smoke"
+    type: "rect"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 0.000000
+    emissionVector: [0.000000, -1.000000, 0.000000]
+    emissionRange: 60.000000
+layer0:
+    name: "smoke"
+    enableFog: false
+    sprite: "../../../../../../Data/Gfx/Particles/UI/explosion_smoke_white"
+    type: "layer"
+    lifeVariation: 1.000000
+    isLong: false
+    layerType: "particles"
+    blending: 1
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 90.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    forceCount: 1
+    scaleVelocityFactor: 0.000000
+    life: 3.000000
+    number: 10.000000
+    spinVariation: 35.000000
+    size: [70.000000, 70.000000]
+    sizeVariation: [20.000000, 20.000000]
+    velocityVariation: 30.000000
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 0.990000, [2.000000, 2.000000]]
+    velocity: 30.000000
+    spin: 35.000000
+    randomSpinDirection: true
+    angleVariation: 90.000000
+    alphaOverLife: [0.000000, 0.000000, 0.060952, 0.313498, 0.702857, 0.319389, 1.000000, 0.000000]
+    colorOverLife: [106.000000, 81.000000, 85.000000, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+    force0: [10.000000, 0.000000, 0.000000]

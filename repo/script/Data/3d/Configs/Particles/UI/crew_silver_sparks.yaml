@@ -1,0 +1,231 @@
+emitter:
+    size: [0.000000, 200.000000, 1.000000]
+    name: "crew_silver_sparks"
+    type: "rect"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 0.000000
+    emissionRange: 60.000000
+    emissionVector: [1.000000, -1.000000, 0.000000]
+    radius: 700.000000
+layer0:
+    activeLODS: [1, 1, 1, 1]
+    stripeVScrollSpeed: 0.000000
+    stripeLifetime: 0.000000
+    deltaTime: 0.000000
+    startTime: 0.000000
+    stripeVertexSpawnStep: 1.000000
+    layerType: "particles"
+    isLong: true
+    stripeStartSize: 0.000000
+    number: 2.000000
+    stripeFadeDistanceFromTop: 0.000000
+    loopSpriteAnimation: true
+    stripeUScrollSpeed: 0.000000
+    enableFog: true
+    name: "sparks1"
+    type: "layer"
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    sprite: "../../../../../Data/Gfx/Particles/UI/Blur_sparks"
+    numberVariation: 2.000000
+    enableAlphaRemap: false
+    blending: 3
+    enableFlow: false
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    enableFlowAnimation: false
+    stripeInheritPositionForBase: false
+    frameOverLifeEnabled: false
+    enableNoise: false
+    useNoiseScroll: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.002000
+    life: 1.000000
+    size: [0.800000, 0.800000]
+    sizeVariation: [0.500000, 0.500000]
+    usePerspectiveMapping: false
+    velocityVariation: 15.000000
+    sizeOverLifeXY: [0.000000, [5.305300, 5.305300], 0.505050, [6.407060, 6.407060], 1.000000, [4.364100, 4.364100]]
+    velocity: 150.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.127273, 0.997372, 0.836700, 0.100000, 1.000000, 0.000000]
+    colorOverLife: [255.000000, 194.937744, 121.525291, 255.000000]
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 1
+    effectFormat: 1
+layer1:
+    activeLODS: [1, 1, 1, 1]
+    stripeVScrollSpeed: 0.000000
+    stripeLifetime: 0.000000
+    deltaTime: 0.000000
+    startTime: 0.000000
+    stripeVertexSpawnStep: 1.000000
+    layerType: "particles"
+    isLong: true
+    stripeStartSize: 0.000000
+    number: 2.000000
+    stripeFadeDistanceFromTop: 0.000000
+    loopSpriteAnimation: true
+    stripeUScrollSpeed: 0.000000
+    enableFog: true
+    name: "sparks2"
+    type: "layer"
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    sprite: "../../../../../Data/Gfx/Particles/UI/Blur"
+    numberVariation: 2.000000
+    enableAlphaRemap: false
+    blending: 3
+    enableFlow: false
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    enableFlowAnimation: false
+    stripeInheritPositionForBase: false
+    frameOverLifeEnabled: false
+    enableNoise: false
+    useNoiseScroll: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.004000
+    life: 1.000000
+    size: [0.800000, 0.800000]
+    sizeVariation: [0.500000, 0.500000]
+    usePerspectiveMapping: false
+    velocityVariation: 15.000000
+    sizeOverLifeXY: [0.000000, [5.305300, 5.305300], 0.505050, [6.407060, 6.407060], 1.000000, [4.364100, 4.364100]]
+    velocity: 100.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.100000, 0.500000, 0.836700, 0.100000, 1.000000, 0.000000]
+    colorOverLife: [244.373535, 235.077820, 255.000000, 255.000000]
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 1
+    effectFormat: 1
+layer2:
+    activeLODS: [1, 1, 1, 1]
+    stripeVScrollSpeed: 0.000000
+    stripeLifetime: 0.000000
+    deltaTime: 0.000000
+    startTime: 0.000000
+    stripeVertexSpawnStep: 1.000000
+    layerType: "particles"
+    isLong: true
+    stripeStartSize: 0.000000
+    stripeFadeDistanceFromTop: 0.000000
+    loopSpriteAnimation: true
+    stripeUScrollSpeed: 0.000000
+    enableFog: true
+    name: "sparks3"
+    type: "layer"
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    sprite: "../../../../../Data/Gfx/Particles/UI/Blur_sparks"
+    numberVariation: 2.000000
+    enableAlphaRemap: false
+    blending: 3
+    enableFlow: false
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    enableFlowAnimation: false
+    stripeInheritPositionForBase: false
+    frameOverLifeEnabled: false
+    enableNoise: false
+    useNoiseScroll: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.008000
+    life: 1.300000
+    size: [0.800000, 0.800000]
+    sizeVariation: [0.500000, 0.500000]
+    usePerspectiveMapping: false
+    velocityVariation: 15.000000
+    sizeOverLifeXY: [0.000000, [5.305300, 5.305300], 0.505050, [6.407060, 6.407060], 1.000000, [4.364100, 4.364100]]
+    velocity: 150.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.106818, 0.942336, 0.841751, 0.263358, 1.000000, 0.000000]
+    colorOverLife: [255.000000, 222.128403, 35.859921, 255.000000]
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 1
+    effectFormat: 1
+layer3:
+    activeLODS: [1, 1, 1, 1]
+    stripeVScrollSpeed: 0.000000
+    stripeLifetime: 0.000000
+    deltaTime: 0.000000
+    startTime: 0.000000
+    stripeVertexSpawnStep: 1.000000
+    layerType: "particles"
+    isLong: true
+    stripeStartSize: 0.000000
+    number: 3.000000
+    stripeFadeDistanceFromTop: 0.000000
+    loopSpriteAnimation: true
+    stripeUScrollSpeed: 0.000000
+    enableFog: true
+    name: "sparks"
+    type: "layer"
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    sprite: "../../../../../Data/Gfx/Particles/UI/sparks"
+    enableAlphaRemap: false
+    blending: 3
+    enableFlow: false
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    enableFlowAnimation: false
+    stripeInheritPositionForBase: false
+    frameOverLifeEnabled: false
+    enableNoise: false
+    useNoiseScroll: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.020000
+    life: 1.000000
+    size: [6.000000, 2.000000]
+    sizeVariation: [3.000000, 5.000000]
+    velocity: 200.000000
+    usePerspectiveMapping: false
+    velocityVariation: 60.000000
+    randomSpinDirection: false
+    alphaOverLife: 1.000000
+    colorOverLife: [150.408554, 193.988327, 255.000000, 255.000000]
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: false
+    particleOrientation: 1
+    effectFormat: 1

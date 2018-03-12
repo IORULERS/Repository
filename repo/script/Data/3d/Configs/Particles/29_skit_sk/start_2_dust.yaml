@@ -1,0 +1,100 @@
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "dust"
+    type: "point"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 60.000000
+    emissionRange: 50.000000
+    emissionVector: [0.100000, -0.010000, 1.000000]
+    radius: 2.000000
+layer0:
+    name: "dust"
+    enableFog: true
+    sprite: "../../../../../Data/Gfx/Particles/alpha/o2SMOKEB_one"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 1
+    degradeStrategy: 2
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 180.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    forceCount: 1
+    scaleVelocityFactor: 0.000000
+    life: 3.000000
+    number: 20.000000
+    size: [0.750000, 0.750000]
+    sizeVariation: [0.500000, 0.500000]
+    velocityVariation: 1.000000
+    sizeOverLifeXY: [0.000000, [3.445100, 3.445100], 0.355700, [3.504900, 3.504900], 0.900000, [4.240400, 4.240400]]
+    velocity: 2.000000
+    velocityOverLife: [0.000000, 4.000000, 0.052500, 0.587800, 0.420000, 0.100000, 0.896300, 0.131400]
+    spin: [0.000000, 5.000000, 0.300000, 0.000000]
+    angleVariation: 180.000000
+    spinOverLife: [0.000000, 1.000000, 0.300000, 0.000000]
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.050000, 0.800000, 0.820900, 0.420400, 0.990000, 0.000000]
+    colorOverLife: [122.000000, 109.000000, 77.000000, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.300000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 8.000000
+    inheritPosition: false
+    particleOrientation: 1
+    activeLODS: [0, 1, 0, 0]
+    effectFormat: 1
+    force0: [0.000000, [0.000000, 0.000000, -2.000000], 0.300000, [0.010000, 0.000000, 0.000000], 0.900000, [0.000000, 0.000000, -0.938700]]
+layer1:
+    name: "dirt"
+    enableFog: true
+    sprite: "../../../../../Data/Gfx/Particles/alpha/pul"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 1
+    degradeStrategy: 2
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 180.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    forceCount: 1
+    scaleVelocityFactor: 0.000000
+    life: 2.000000
+    number: 20.000000
+    size: [0.500000, 0.500000]
+    sizeVariation: [0.500000, 0.500000]
+    velocityVariation: 2.000000
+    sizeOverLifeXY: [0.000000, [2.000000, 2.000000], 0.355700, [3.504900, 3.504900], 0.900000, [4.240400, 4.240400]]
+    velocity: 1.000000
+    spin: [0.000000, 5.000000, 0.300000, 0.000000]
+    angleVariation: 180.000000
+    spinOverLife: [0.000000, 1.000000, 0.300000, 0.000000]
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.050000, 0.800000, 0.796000, 0.099300, 0.990000, 0.000000]
+    colorOverLife: [152.000000, 135.000000, 96.000000, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.300000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 8.000000
+    inheritPosition: false
+    particleOrientation: 1
+    activeLODS: [0, 1, 0, 0]
+    effectFormat: 1
+    force0: [0.000000, 0.000000, -1.000000]
+    forceOverLife0: [0.000000, 0.000000, 1.000000, 15.000000]

@@ -1,0 +1,47 @@
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "fire"
+    type: "shockwave"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 0.000000
+    emissionRange: 1.000000
+    emissionVector: [0.000000, 1.000000, 0.000000]
+    radius: 0.150000
+layer0:
+    name: "fire"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/additive/fire"
+    type: "layer"
+    isLong: true
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 2
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 0.000000
+    scaleVelocityFactor: 0.100000
+    life: 0.200000
+    number: 300.000000
+    size: [0.100000, 0.100000]
+    velocityVariation: 1.000000
+    sizeOverLifeXY: [0.000000, [0.700000, 0.700000], 1.000000, [12.000000, 12.000000]]
+    velocity: 5.000000
+    velocityOverLife: [0.000000, 1.000000, 0.050000, 0.020000, 0.996500, 0.000000]
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.147500, 0.921200, 0.990000, 0.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 5.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: false
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 4.000000
+    inheritPosition: false
+    particleOrientation: 1
+    activeLODS: [0, 1, 0, 0]
+    effectFormat: 1

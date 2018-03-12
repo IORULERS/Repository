@@ -1,0 +1,310 @@
+layer4:
+    activeLODS: [1, 1, 0, 0]
+    stripeVScrollSpeed: 0.000000
+    stripeLifetime: 0.000000
+    deltaTime: 0.000000
+    startTime: 0.000000
+    stripeVertexSpawnStep: 1.000000
+    layerType: "particles"
+    isLong: false
+    stripeStartSize: 0.000000
+    number: 10.000000
+    stripeFadeDistanceFromTop: 0.000000
+    loopSpriteAnimation: true
+    stripeUScrollSpeed: 0.000000
+    enableFog: true
+    name: "debris"
+    type: "layer"
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    sprite: "../../../../../Data/Gfx/Particles/alpha/Glass"
+    enableAlphaRemap: false
+    blending: 1
+    enableFlow: false
+    loopVariation: 0.000000
+    angle: 100.000000
+    enableFrameBlend: false
+    enableFlowAnimation: false
+    stripeInheritPositionForBase: false
+    frameOverLifeEnabled: true
+    enableNoise: false
+    useNoiseScroll: false
+    scaleVelocityBase: 1.000000
+    forceCount: 1
+    scaleVelocityFactor: 0.000000
+    life: 4.000000
+    spinVariation: 60.000000
+    size: [0.050000, 0.050000]
+    sizeVariation: [0.250600, 0.250600]
+    velocity: 1.000000
+    usePerspectiveMapping: false
+    velocityVariation: 1.000000
+    forceOverLife0: [0.000000, 0.000000, 0.990000, 30.000000]
+    velocityOverLife: [0.000000, 1.000000, 0.480000, 0.300000, 0.990000, 1.003400]
+    randomSpinDirection: false
+    angleVariation: 100.000000
+    colorOverLife: [222.000000, 196.000000, 150.000000, 255.000000]
+    frameOverLifeFPS: 20.000000
+    randomFrameOnStart: false
+    endTime: 0.300000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 0.000000
+    inheritPosition: false
+    particleOrientation: 1
+    effectFormat: 1
+    force0: [0.000000, 0.000000, -1.000000]
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "debris"
+    type: "shockwave"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 0.000000
+    emissionRange: 60.000000
+    emissionVector: [0.000000, 0.000000, 0.500000]
+    radius: 0.200000
+layer0:
+    activeLODS: [1, 1, 0, 0]
+    stripeVScrollSpeed: 0.000000
+    stripeLifetime: 0.000000
+    deltaTime: 0.000000
+    startTime: 0.000000
+    stripeVertexSpawnStep: 1.000000
+    layerType: "particles"
+    isLong: false
+    stripeStartSize: 0.000000
+    number: 10.000000
+    stripeFadeDistanceFromTop: 0.000000
+    loopSpriteAnimation: true
+    stripeUScrollSpeed: 0.000000
+    enableFog: true
+    name: "debris1"
+    type: "layer"
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    sprite: "../../../../../Data/Gfx/Particles/alpha/Glass_one"
+    enableAlphaRemap: false
+    blending: 1
+    enableFlow: false
+    loopVariation: 0.000000
+    angle: 100.000000
+    enableFrameBlend: false
+    enableFlowAnimation: false
+    stripeInheritPositionForBase: false
+    frameOverLifeEnabled: true
+    enableNoise: false
+    useNoiseScroll: false
+    scaleVelocityBase: 1.000000
+    forceCount: 1
+    scaleVelocityFactor: 0.000000
+    life: 4.000000
+    spinVariation: 60.000000
+    size: [0.050000, 0.050000]
+    sizeVariation: [0.200000, 0.200000]
+    velocity: 1.000000
+    usePerspectiveMapping: false
+    velocityVariation: 2.000000
+    forceOverLife0: [0.000000, 0.000000, 0.990000, 30.000000]
+    velocityOverLife: [0.000000, 1.000000, 0.480000, 0.300000, 0.990000, 1.003400]
+    randomSpinDirection: false
+    angleVariation: 100.000000
+    colorOverLife: [222.000000, 196.000000, 150.000000, 255.000000]
+    frameOverLifeFPS: 20.000000
+    randomFrameOnStart: false
+    endTime: 0.300000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 0.000000
+    inheritPosition: false
+    particleOrientation: 1
+    effectFormat: 1
+    force0: [0.000000, 0.000000, -1.000000]
+layer1:
+    activeLODS: [1, 1, 0, 0]
+    stripeVScrollSpeed: 0.000000
+    stripeLifetime: 0.000000
+    deltaTime: 0.000000
+    startTime: 0.000000
+    stripeVertexSpawnStep: 1.000000
+    layerType: "particles"
+    isLong: false
+    stripeStartSize: 0.000000
+    number: 20.000000
+    stripeFadeDistanceFromTop: 0.000000
+    loopSpriteAnimation: true
+    stripeUScrollSpeed: 0.000000
+    enableFog: true
+    name: "debris2"
+    type: "layer"
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    sprite: "../../../../../Data/Gfx/Particles/alpha/Glass_two"
+    enableAlphaRemap: false
+    blending: 1
+    enableFlow: false
+    loopVariation: 0.000000
+    angle: 100.000000
+    enableFrameBlend: false
+    enableFlowAnimation: false
+    stripeInheritPositionForBase: false
+    frameOverLifeEnabled: true
+    enableNoise: false
+    useNoiseScroll: false
+    scaleVelocityBase: 1.000000
+    forceCount: 1
+    scaleVelocityFactor: 0.000000
+    life: 4.000000
+    spinVariation: 60.000000
+    size: [0.050000, 0.050000]
+    sizeVariation: [0.100000, 0.100000]
+    velocity: 2.000000
+    usePerspectiveMapping: false
+    velocityVariation: 2.000000
+    forceOverLife0: [0.000000, 0.000000, 0.990000, 30.000000]
+    velocityOverLife: [0.000000, 1.000000, 0.480000, 0.300000, 0.990000, 1.003400]
+    spin: 60.000000
+    randomSpinDirection: false
+    angleVariation: 100.000000
+    colorOverLife: [222.000000, 196.000000, 150.000000, 255.000000]
+    frameOverLifeFPS: 15.000000
+    randomFrameOnStart: false
+    endTime: 0.300000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 0.000000
+    inheritPosition: false
+    particleOrientation: 1
+    effectFormat: 1
+    force0: [0.000000, 0.000000, -1.000000]
+layer2:
+    activeLODS: [1, 1, 0, 0]
+    stripeVScrollSpeed: 0.000000
+    stripeLifetime: 0.000000
+    deltaTime: 0.000000
+    startTime: 0.000000
+    stripeVertexSpawnStep: 1.000000
+    layerType: "particles"
+    isLong: false
+    stripeStartSize: 0.000000
+    number: 20.000000
+    stripeFadeDistanceFromTop: 0.000000
+    loopSpriteAnimation: true
+    stripeUScrollSpeed: 0.000000
+    enableFog: true
+    name: "debris3"
+    type: "layer"
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    sprite: "../../../../../Data/Gfx/Particles/alpha/Glass"
+    enableAlphaRemap: false
+    blending: 1
+    enableFlow: false
+    loopVariation: 0.000000
+    angle: 100.000000
+    enableFrameBlend: false
+    enableFlowAnimation: false
+    stripeInheritPositionForBase: false
+    frameOverLifeEnabled: true
+    enableNoise: false
+    useNoiseScroll: false
+    scaleVelocityBase: 1.000000
+    forceCount: 1
+    scaleVelocityFactor: 0.000000
+    life: 4.000000
+    spinVariation: 60.000000
+    size: [0.050000, 0.050000]
+    sizeVariation: [0.050000, 0.050000]
+    velocity: 1.000000
+    usePerspectiveMapping: false
+    velocityVariation: 2.000000
+    forceOverLife0: [0.000000, 0.000000, 0.990000, 30.000000]
+    velocityOverLife: [0.000000, 1.000000, 0.480000, 0.300000, 0.990000, 1.003400]
+    spin: 60.000000
+    randomSpinDirection: false
+    angleVariation: 100.000000
+    colorOverLife: [222.000000, 196.000000, 150.000000, 255.000000]
+    frameOverLifeFPS: 26.000000
+    randomFrameOnStart: false
+    endTime: 0.300000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 0.000000
+    inheritPosition: false
+    particleOrientation: 1
+    effectFormat: 1
+    force0: [0.000000, 0.000000, -1.000000]
+layer3:
+    activeLODS: [1, 1, 0, 0]
+    stripeVScrollSpeed: 0.000000
+    stripeLifetime: 0.000000
+    deltaTime: 0.000000
+    startTime: 0.000000
+    stripeVertexSpawnStep: 1.000000
+    layerType: "particles"
+    lifeVariation: 1.000000
+    isLong: true
+    stripeStartSize: 0.000000
+    number: 100.000000
+    stripeFadeDistanceFromTop: 0.000000
+    loopSpriteAnimation: true
+    stripeUScrollSpeed: 0.000000
+    enableFog: true
+    name: "sparks1"
+    type: "layer"
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    sprite: "../../../../../Data/Gfx/Particles/alpha/o2_expGlowB"
+    enableAlphaRemap: false
+    blending: 2
+    enableFlow: false
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    enableFlowAnimation: false
+    stripeInheritPositionForBase: false
+    frameOverLifeEnabled: false
+    enableNoise: false
+    useNoiseScroll: false
+    scaleVelocityBase: 0.010000
+    forceCount: 1
+    scaleVelocityFactor: 0.500000
+    life: 1.000000
+    size: [0.005000, 0.015000]
+    sizeVariation: [0.020000, 0.020000]
+    velocity: 1.000000
+    usePerspectiveMapping: false
+    velocityVariation: 10.000000
+    velocityOverLife: [0.000000, 1.000000, 0.093000, 0.560100, 0.996500, 0.507600]
+    randomSpinDirection: false
+    alphaOverLife: 0.200000
+    colorOverLife: [255.000000, 252.210114, 234.081711, 255.000000]
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 4.000000
+    inheritPosition: false
+    particleOrientation: 1
+    effectFormat: 1
+    force0: [0.000000, 0.000000, -50.000000]

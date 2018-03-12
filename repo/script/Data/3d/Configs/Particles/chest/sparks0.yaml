@@ -1,0 +1,49 @@
+emitter:
+    size: [1.500000, 0.100000, 0.100000]
+    name: "sparks0"
+    type: "rect"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionVector: [0.000000, 0.500000, -1.000000]
+    emissionRange: 120.000000
+layer0:
+    name: "sparks0"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/UI/o2_expGlowB"
+    type: "layer"
+    isLong: true
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    forceCount: 1
+    scaleVelocityFactor: 0.100000
+    life: 2.000000
+    number: 300.000000
+    size: [0.040000, 0.100000]
+    velocity: 2.000000
+    randomSpinDirection: false
+    colorRandom:
+        externalVariable: "grade_box"
+        value_line: [255.000000, 255.000000, 255.000000, 255.000000]
+        modification_line: [0.000000, [255.000000, 198.000000, 40.000000, 255.000000], 0.168478, [255.000000, 198.000000, 40.000000, 255.000000], 0.274457, [154.000000, 163.000000, 232.000000, 255.000000], 0.358696, [154.062256, 163.155640, 232.000000, 255.000000], 0.453804, [154.000000, 163.000000, 232.000000, 255.000000], 0.576087, [205.000000, 151.000000, 236.000000, 255.000000], 0.671196, [205.000000, 151.000000, 236.000000, 255.000000], 0.758152, [204.902725, 151.186768, 236.000000, 255.000000], 0.855978, [228.000000, 196.000000, 175.000000, 255.000000], 0.997283, [228.000000, 187.000000, 129.000000, 255.000000]]
+    alphaOverLife: [0.000000, 1.000000, 0.700000, 1.000000, 0.990000, 0.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 1.600000
+    endTime: 1.700000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: false
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+    force0: [0.000000, 0.000000, -3.000000]
+    forceOverLife0: [0.000000, 0.000000, 0.990000, 1.000000]

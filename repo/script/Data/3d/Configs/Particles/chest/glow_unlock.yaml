@@ -1,0 +1,127 @@
+emitter:
+    size: [1.000000, 1.200000, 0.000000]
+    name: "glow_unlock"
+    type: "point"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 1.000000
+    emissionRange: 10.000000
+    emissionVector: [0.000000, 0.000000, 1.000000]
+    radius: 0.300000
+layer0:
+    name: "glow1"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/UI/treil"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 95.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 0.300000
+    number: 20.000000
+    size: [0.200000, 3.000000]
+    sizeOverLifeXY: [0.000000, [0.200000, 0.200000], 1.000000, [1.600000, 1.600000]]
+    randomSpinDirection: false
+    colorRandom:
+        externalVariable: "grade_box"
+        value_line: [255.000000, 255.000000, 255.000000, 255.000000]
+        modification_line: [0.000000, [255.000000, 198.000000, 40.000000, 255.000000], 0.125000, [255.000000, 198.000000, 40.000000, 255.000000], 0.290761, [36.000000, 108.000000, 232.000000, 255.000000], 0.383152, [36.000000, 108.000000, 232.000000, 255.000000], 0.461957, [36.000000, 108.000000, 232.000000, 255.000000], 0.567935, [156.000000, 36.000000, 236.000000, 255.000000], 0.649457, [156.000000, 36.000000, 236.000000, 255.000000], 0.722826, [156.000000, 36.000000, 236.000000, 255.000000], 0.850543, [228.000000, 224.000000, 205.000000, 255.000000], 0.997283, [228.000000, 224.000000, 205.000000, 255.000000]]
+    alphaOverLife: [0.000000, 0.837372, 0.990000, 0.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 1.400000
+    endTime: 1.500000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 10
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer1:
+    name: "glow2"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/UI/glow_white_min"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 95.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 0.300000
+    number: 20.000000
+    size: [3.000000, 4.000000]
+    spin: 100.000000
+    randomSpinDirection: false
+    colorRandom:
+        externalVariable: "grade_box"
+        value_line: [255.000000, 255.000000, 255.000000, 255.000000]
+        modification_line: [0.000000, [255.000000, 198.000000, 40.000000, 255.000000], 0.114130, [255.000000, 198.000000, 40.000000, 255.000000], 0.244565, [36.000000, 108.000000, 232.000000, 255.000000], 0.326087, [36.000000, 108.000000, 232.000000, 255.000000], 0.413043, [36.000000, 108.000000, 232.000000, 255.000000], 0.524457, [156.000000, 36.000000, 236.000000, 255.000000], 0.622283, [156.000000, 36.000000, 236.000000, 255.000000], 0.722826, [156.000000, 36.000000, 236.000000, 255.000000], 0.853261, [228.000000, 224.000000, 205.000000, 255.000000], 0.997283, [228.000000, 224.000000, 205.000000, 255.000000]]
+    alphaOverLife: [0.000000, 0.837372, 0.990000, 0.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 1.400000
+    endTime: 1.500000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 8
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer2:
+    name: "glow2 Clone"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/UI/glow_white_min"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 95.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 0.300000
+    number: 20.000000
+    size: [3.000000, 12.000000]
+    spin: 100.000000
+    randomSpinDirection: false
+    colorRandom:
+        externalVariable: "grade_box"
+        value_line: [255.000000, 255.000000, 255.000000, 255.000000]
+        modification_line: [0.000000, [255.000000, 198.000000, 40.000000, 255.000000], 0.122283, [255.000000, 198.000000, 40.000000, 255.000000], 0.274457, [36.000000, 108.000000, 232.000000, 255.000000], 0.353261, [36.000000, 108.000000, 232.000000, 255.000000], 0.440217, [36.000000, 108.000000, 232.000000, 255.000000], 0.557065, [156.000000, 36.000000, 236.000000, 255.000000], 0.657609, [156.000000, 36.000000, 236.000000, 255.000000], 0.739130, [156.000000, 36.000000, 236.000000, 255.000000], 0.864130, [228.000000, 224.000000, 205.000000, 255.000000], 0.997283, [228.000000, 224.000000, 205.000000, 255.000000]]
+    alphaOverLife: [0.000000, 0.837372, 0.990000, 0.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 1.400000
+    endTime: 1.500000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 8
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

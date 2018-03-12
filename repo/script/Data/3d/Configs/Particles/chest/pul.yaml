@@ -1,0 +1,48 @@
+emitter:
+    size: [15.000000, 20.000000, 10.000000]
+    name: "pul"
+    type: "rect"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 0.000000
+    emissionVector: [0.000000, 0.000000, 1.000000]
+    emissionRange: 360.000000
+layer0:
+    name: "pul"
+    enableFog: true
+    sprite: "../../../../../Data/Gfx/Particles/hangar/fog"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 10.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 30.000000
+    number: 10.000000
+    size: [0.050000, 0.050000]
+    velocity: 0.020000
+    velocityVariation: 0.000000
+    velocityOverLife: 2.000000
+    spin: 10.000000
+    randomSpinDirection: false
+    angleVariation: 180.000000
+    alphaOverLife: [0.000000, 0.000000, 0.075600, 0.300000, 0.202700, 0.000000, 0.326500, 0.000000, 0.513700, 0.310900, 0.606500, 0.314000, 0.728500, 0.000000, 0.843600, 0.322300, 0.902100, 0.216400, 1.000000, 0.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 1000000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 0.000000
+    inheritPosition: false
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

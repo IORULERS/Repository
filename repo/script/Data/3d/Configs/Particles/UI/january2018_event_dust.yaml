@@ -1,0 +1,70 @@
+emitter:
+    name: "5_dust"
+    emissionVector: [-1.000000, 0.000000, 0.000000]
+    type: "rect"
+    size: [0.000000, 0.000000, 0.000000]
+    shortEffect: false
+    emissionRange: 0.000000
+    emissionVectorInverted: true
+layer0:
+    life: 2.000000
+    stripeLifetime: 0.000000
+    endTime: 1000.000000
+    scaleVelocityBase: 1.000000
+    stripeVertexSpawnStep: 1.000000
+    stripeStartSize: 0.000000
+    type: "layer"
+    stripeUScrollSpeed: 0.000000
+    enableFlow: false
+    stripeVScrollSpeed: 0.000000
+    colorOverLife: [94.747078, 105.000000, 97.992218, 255.000000]
+    stripeFadeDistanceFromTop: 0.000000
+    name: "dust"
+    layerType: "particles"
+    degradeStrategy: 0
+    particleOrientation: 1
+    inheritPosition: true
+    isLong: false
+    randomSpinDirection: true
+    pivotPoint: [0.000000, 0.000000]
+    effectFormat: 1
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    size: [100.000000, 100.000000]
+    sprite: "../../../../../Data/Gfx/Particles/UI/Shop/type59_giftshop/fog"
+    alphaOverLife: [0.000000, 0.000000, 0.178414, 0.107319, 0.647577, 0.104656, 0.755507, 0.032532, 0.914097, 0.102462, 1.000000, 0.000000]
+    enableAlphaRemap: false
+    blending: 1
+    deltaTime: 0.000000
+    enableFlowAnimation: false
+    enableNoise: false
+    useNoiseScroll: false
+    useThreePointGradient: false
+    stripeInheritPositionForBase: false
+    enableFog: true
+    enableFrameBlend: false
+    loopEndTime: 100.000000
+    scaleVelocityFactor: 0.000000
+    startTime: 0.000000
+    gradientMiddlePoint: 0.500000
+    applyGlobalForces: false
+    loopVariation: 0.000000
+    loopSpriteAnimation: true
+    number: 15.000000
+    sizeVariation: [20.000000, 20.000000]
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 1.000000, [2.000000, 2.000000]]
+    velocity: 70.000000
+    frameOverLifeEnabled: false
+    velocityVariation: 40.000000
+    frameOverLifeFPS: 0.000000
+    spin: 30.000000
+    spinVariation: 10.000000
+    angle: 1.000000
+    angleVariation: 300.000000
+    randomFrameOnStart: false
+    isLooped: false
+    deltaVariation: 0.000000
+    usePerspectiveMapping: false
+    activeLODS: [1, 1, 1, 1]

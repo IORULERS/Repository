@@ -1,0 +1,43 @@
+emitter:
+    size: [1.000000, 1.200000, 0.000000]
+    name: "glow_spot"
+    type: "point"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 1.000000
+    emissionRange: 10.000000
+    emissionVector: [0.000000, 0.000000, 1.000000]
+    radius: 0.300000
+layer0:
+    name: "glow1"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/chest/spot_light"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 2.000000
+    number: 2.000000
+    size: [8.000000, 8.000000]
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.520388, 1.000000, 0.990000, 0.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 2
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

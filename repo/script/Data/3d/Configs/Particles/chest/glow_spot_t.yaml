@@ -1,0 +1,42 @@
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "glow_spot_t"
+    type: "point"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionVector: [0.000000, 0.000000, -1.000000]
+    emissionRange: 90.000000
+layer0:
+    name: "glow"
+    enableFog: true
+    sprite: "../../../../../Data/Gfx/Particles/UI/o2_expGlowB"
+    type: "layer"
+    isLong: true
+    layerType: "particles"
+    blending: 1
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 50.000000
+    life: 1.000000
+    number: 6.000000
+    size: [0.100000, 0.100000]
+    velocity: 1.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.490000, 0.300000, 0.992000, 0.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: false
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

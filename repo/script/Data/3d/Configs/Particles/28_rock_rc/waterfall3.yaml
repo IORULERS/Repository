@@ -1,0 +1,93 @@
+emitter:
+    emissionAngleVariation: 120.000000
+    name: "water3"
+    type: "oncircle_edges"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 1.000000
+    emissionRange: 0.000000
+    emissionVector: [0.000000, 0.000000, 1.000000]
+    radius: 9.000000
+    size: [10.000000, 1.000000, 0.000000]
+layer0:
+    name: "water1 Clone Clone"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/alpha/water"
+    type: "layer"
+    lifeVariation: 0.500000
+    isLong: true
+    layerType: "particles"
+    blending: 1
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 1.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.050000
+    life: 1.000000
+    number: 300.000000
+    size: [2.500000, 1.000000]
+    sizeVariation: [2.500000, 5.000000]
+    velocity: 2.000000
+    velocityVariation: 17.000000
+    velocityOverLife: [0.000000, 2.000000, 0.196000, 0.478832, 0.680000, 0.000000]
+    randomSpinDirection: false
+    angleVariation: 360.000000
+    alphaOverLife: [0.000000, 0.000000, 0.460000, 0.300000, 0.990000, 0.000000]
+    colorOverLife: [214.544739, 218.996109, 227.898834, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: false
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer1:
+    name: "water1 Clone"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/alpha/water"
+    type: "layer"
+    lifeVariation: 0.500000
+    isLong: true
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 1.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.050000
+    life: 1.000000
+    number: 300.000000
+    size: [2.500000, 1.000000]
+    sizeVariation: [2.500000, 5.000000]
+    velocity: 2.000000
+    velocityVariation: 17.000000
+    velocityOverLife: [0.000000, 2.000000, 0.196000, 0.478832, 0.680000, 0.000000]
+    randomSpinDirection: false
+    angleVariation: 360.000000
+    alphaOverLife: [0.000000, 0.000000, 0.460000, 0.200000, 0.990000, 0.000000]
+    colorOverLife: [214.544739, 218.996109, 227.898834, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: false
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

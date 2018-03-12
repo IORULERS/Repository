@@ -1,0 +1,50 @@
+emitter:
+    size: [300.000000, 5.000000, 1.000000]
+    name: "glow_flow"
+    type: "rect"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 0.000000
+    emissionRange: 60.000000
+    emissionVector: [-1.000000, -1.000000, 0.000000]
+    radius: 700.000000
+layer0:
+    name: "glow_flow"
+    enableFog: true
+    sprite: "../../../../../../Data/Gfx/Particles/UI/glow_blur"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 5.000000
+    numberVariation: 1.000000
+    spinVariation: 2.000000
+    size: [2.000000, 2.000000]
+    sizeVariation: [1.000000, 1.000000]
+    velocityVariation: 15.000000
+    sizeOverLifeXY: [0.000000, [5.305300, 5.305300], 0.505050, [6.407060, 6.407060], 1.000000, [4.364100, 4.364100]]
+    velocity: 30.000000
+    spin: 2.000000
+    randomSpinDirection: true
+    alphaOverLife: [0.000000, 0.000000, 0.120229, 0.348321, 0.836700, 0.100000, 1.000000, 0.000000]
+    colorOverLife: [0.000000, [255.000000, 180.377426, 110.568092, 255.000000], 0.992051, [255.000000, 102.996109, 37.852139, 255.000000]]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

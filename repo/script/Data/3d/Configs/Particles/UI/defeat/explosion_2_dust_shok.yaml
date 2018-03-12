@@ -1,0 +1,52 @@
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "dust_shok"
+    type: "shockwave"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 60.000000
+    emissionRange: 180.000000
+    emissionVector: [0.000000, -1.000000, 0.000000]
+    radius: 0.500000
+layer0:
+    name: "smoke2"
+    enableFog: true
+    sprite: "../../../../../../Data/Gfx/Particles/UI/fog"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 1
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 90.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 0.000000
+    scaleVelocityFactor: 0.000000
+    life: 2.000000
+    number: 600.000000
+    spinVariation: 30.000000
+    size: [10.000000, 10.000000]
+    velocityVariation: 100.000000
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 0.108800, [2.515300, 2.515300], 1.000000, [6.000000, 6.000000]]
+    velocity: 100.000000
+    velocityOverLife: [0.000000, 1.000000, 0.157900, 0.211700, 0.996500, 0.000000]
+    spin: 30.000000
+    randomSpinDirection: true
+    angleVariation: 90.000000
+    alphaOverLife: [0.000000, 0.198900, 0.990000, 0.000000]
+    colorOverLife: [113.828796, 115.478600, 120.416344, 255.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 16.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.020000
+    endTime: 0.200000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 4.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

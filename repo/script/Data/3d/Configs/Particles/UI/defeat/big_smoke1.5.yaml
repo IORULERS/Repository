@@ -1,0 +1,50 @@
+emitter:
+    size: [0.000000, 1.200000, 0.000000]
+    name: "big_smoke"
+    type: "rect"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 1.000000
+    emissionRange: 10.000000
+    emissionVector: [1.000000, 0.000000, 0.000000]
+    radius: 1.000000
+layer0:
+    name: "smoke3"
+    enableFog: false
+    sprite: "../../../../../../Data/Gfx/Particles/UI/Fx_DustSpray_two"
+    type: "layer"
+    isLong: true
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 180.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.020000
+    life: 10.000000
+    number: 3.000000
+    spinVariation: 10.000000
+    size: [300.000000, 300.000000]
+    velocity: 80.000000
+    velocityVariation: 30.000000
+    spin: 5.000000
+    randomSpinDirection: true
+    angleVariation: 180.000000
+    alphaOverLife: [0.000000, 0.000000, 0.180000, 0.150000, 0.881679, 0.148341, 0.990000, 0.000000]
+    colorOverLife: [71.447464, 55.875484, 55.875484, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

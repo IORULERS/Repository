@@ -1,0 +1,68 @@
+emitter:
+    name: "dust1"
+    emissionVector: [-1.000000, 0.000000, 0.000000]
+    type: "point"
+    size: [100.000000, 0.000000, 0.000000]
+    shortEffect: false
+    emissionRange: 0.000000
+    emissionVectorInverted: true
+layer0:
+    life: 1.000000
+    stripeLifetime: 0.000000
+    endTime: 1000.000000
+    scaleVelocityBase: 1.000000
+    stripeVertexSpawnStep: 1.000000
+    stripeStartSize: 0.000000
+    type: "layer"
+    stripeUScrollSpeed: 0.000000
+    enableFlow: false
+    stripeVScrollSpeed: 0.000000
+    colorOverLife: [194.828796, 197.054474, 206.957199, 255.000000]
+    stripeFadeDistanceFromTop: 0.000000
+    name: "dust_t"
+    layerType: "particles"
+    degradeStrategy: 0
+    particleOrientation: 1
+    inheritPosition: true
+    isLong: true
+    randomSpinDirection: false
+    pivotPoint: [0.000000, 0.000000]
+    effectFormat: 1
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    size: [15.000000, 15.000000]
+    sprite: "../../../../../Data/Gfx/Particles/UI/fog"
+    alphaOverLife: [0.000000, 0.000000, 0.135671, 0.124784, 0.577744, 0.000000, 1.000000, 0.000000]
+    enableAlphaRemap: false
+    blending: 1
+    deltaTime: 0.000000
+    enableFlowAnimation: false
+    enableNoise: false
+    useNoiseScroll: false
+    useThreePointGradient: false
+    stripeInheritPositionForBase: false
+    enableFog: true
+    enableFrameBlend: false
+    loopEndTime: 100.000000
+    scaleVelocityFactor: 0.005000
+    startTime: 0.000000
+    gradientMiddlePoint: 0.500000
+    applyGlobalForces: false
+    loopVariation: 0.000000
+    loopSpriteAnimation: true
+    number: 30.000000
+    sizeVariation: [3.000000, 3.000000]
+    sizeOverLifeXY: [0.000000, [0.300000, 0.300000], 0.990000, [1.500000, 1.500000]]
+    velocity: 40.000000
+    frameOverLifeEnabled: false
+    velocityVariation: 40.000000
+    angle: 1.000000
+    angleVariation: 300.000000
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    isLooped: false
+    deltaVariation: 0.000000
+    usePerspectiveMapping: false
+    activeLODS: [1, 1, 1, 1]

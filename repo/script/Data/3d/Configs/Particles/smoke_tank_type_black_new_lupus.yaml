@@ -1,0 +1,12 @@
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "emitter"
+    type: "point"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 0.000000
+    emissionVector:
+        externalVariable: "Velosity"
+        value_line: [-0.000000, -0.100000, 0.100000]
+        modification_line: [0.000000, [0.000000, 0.000000, 0.000000], 0.990000, [0.000000, 0.000000, 1.000000]]
+    emissionRange: 38.133999

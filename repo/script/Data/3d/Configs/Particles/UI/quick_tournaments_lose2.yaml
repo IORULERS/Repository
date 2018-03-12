@@ -1,0 +1,62 @@
+emitter:
+    name: "quick_tournaments_lose2"
+    emissionVector: [0.000000, 0.000000, 1.000000]
+    type: "point"
+    size: [0.000000, 0.000000, 0.000000]
+    shortEffect: false
+    emissionRange: 0.000000
+    emissionVectorInverted: true
+layer0:
+    life: 1.000000
+    stripeLifetime: 0.000000
+    endTime: 1000.000000
+    scaleVelocityBase: 1.000000
+    stripeVertexSpawnStep: 1.000000
+    stripeStartSize: 0.000000
+    type: "layer"
+    stripeUScrollSpeed: 0.000000
+    enableFlow: false
+    stripeVScrollSpeed: 0.000000
+    colorOverLife: [255.000000, 109.155640, 4.980545, 255.000000]
+    stripeFadeDistanceFromTop: 0.000000
+    name: "glow2"
+    layerType: "particles"
+    degradeStrategy: 0
+    particleOrientation: 1
+    inheritPosition: true
+    isLong: false
+    randomSpinDirection: false
+    pivotPoint: [0.000000, 0.000000]
+    effectFormat: 1
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    size: [200.000000, 200.000000]
+    sprite: "../../../../../Data/Gfx/Particles/UI/glow_anim_min"
+    alphaOverLife: [0.000000, 0.000000, 0.470000, 0.400000, 0.990000, 0.000000]
+    enableAlphaRemap: false
+    blending: 3
+    deltaTime: 0.000000
+    enableFlowAnimation: false
+    enableNoise: false
+    useNoiseScroll: false
+    stripeInheritPositionForBase: false
+    enableFog: false
+    enableFrameBlend: false
+    loopEndTime: 100.000000
+    scaleVelocityFactor: 0.000000
+    applyGlobalForces: false
+    loopVariation: 0.000000
+    loopSpriteAnimation: true
+    number: 2.000000
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 1.000000, [1.700000, 1.700000]]
+    frameOverLifeFPS: 0.000000
+    spin: -15.000000
+    frameOverLifeEnabled: false
+    randomFrameOnStart: false
+    startTime: 0.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    usePerspectiveMapping: false
+    activeLODS: [1, 1, 1, 1]

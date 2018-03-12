@@ -1,0 +1,51 @@
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "fireworks2"
+    type: "oncircle"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 0.000000
+    emissionRange: 30.000000
+    emissionVector: [0.000000, 0.000000, 1.000000]
+    radius: 1.000000
+layer0:
+    name: "5"
+    enableFog: true
+    sprite: "../../../../../Data/Gfx/Particles/UI/fog_white"
+    type: "layer"
+    lifeVariation: 0.300000
+    isLong: false
+    layerType: "particles"
+    blending: 1
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.100000
+    angle: 90.000000
+    enableFrameBlend: true
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 1.000000
+    life: 4.000000
+    number: 100.000000
+    size: [1.000000, 1.000000]
+    velocityVariation: 4.000000
+    sizeOverLifeXY: [0.000000, [0.500000, 0.500000], 1.000000, [4.000000, 4.000000]]
+    velocity: 2.000000
+    velocityOverLife: [0.000000, 1.000000, 0.300000, 0.100000]
+    randomSpinDirection: false
+    angleVariation: 90.000000
+    alphaOverLife: [0.000000, 0.000000, 0.040000, 0.150000, 0.586500, 0.015200, 0.990000, 0.000000]
+    colorOverLife: [211.000000, 186.000000, 144.000000, 255.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 16.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.100000
+    startTime: 1.600000
+    endTime: 1.900000
+    isLooped: false
+    deltaVariation: 0.100000
+    loopEndTime: 1.000000
+    inheritPosition: false
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

@@ -1,0 +1,8 @@
+emitter:
+    name: "baner"
+    emissionVector: [1.000000, 0.000000, 0.000000]
+    type: "point"
+    size: [0.000000, 0.000000, 0.000000]
+    shortEffect: false
+    emissionRange: 0.000000
+    emissionVectorInverted: true

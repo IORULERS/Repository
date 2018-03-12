@@ -1,0 +1,95 @@
+emitter:
+    size: [0.000000, 1.200000, 0.000000]
+    name: "church_smoke"
+    type: "point"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 1.000000
+    emissionRange: 10.000000
+    emissionVector: [0.200000, -0.300000, 0.000000]
+    radius: 1.000000
+layer0:
+    name: "smoke1"
+    enableFog: true
+    sprite: "../../../../../../Data/Gfx/Particles/UI/Fx_DustSpray_two"
+    type: "layer"
+    lifeVariation: 2.000000
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    forceCount: 1
+    scaleVelocityFactor: 0.000000
+    life: 6.000000
+    number: 2.000000
+    numberVariation: 3.000000
+    spinVariation: -8.000000
+    size: [25.000000, 25.000000]
+    sizeVariation: [0.000000, [2.000000, 2.000000], 7.190000, [2.000000, 2.000000]]
+    velocityVariation: 20.000000
+    sizeOverLifeXY: [0.000000, [0.000000, 0.000000], 0.990000, [4.000000, 4.000000]]
+    velocity: 20.000000
+    randomSpinDirection: false
+    angleVariation: 120.000000
+    alphaOverLife: [0.000000, 0.000000, 0.078300, 0.000000, 0.153100, 0.339400, 0.654100, 0.253900, 0.980000, 0.000000]
+    colorOverLife: [0.001500, [230.361862, 180.688705, 64.789879, 255.000000], 0.997600, [142.688705, 135.809296, 140.968903, 255.000000]]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 10.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 10000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 0.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer1:
+    name: "smoke3"
+    enableFog: true
+    sprite: "../../../../../../Data/Gfx/Particles/UI/dum_anim"
+    type: "layer"
+    lifeVariation: [0.000000, 2.000000, 7.000000, 2.000000]
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: true
+    scaleVelocityBase: 1.000000
+    forceCount: 1
+    scaleVelocityFactor: 0.000000
+    life: [0.000000, 2.000000, 7.000000, 2.000000]
+    number: [0.000000, 5.000000, 44.607800, 5.000000]
+    numberVariation: 5.000000
+    size: [25.000000, 25.000000]
+    sizeVariation: [1.000000, 1.000000]
+    velocityVariation: 20.000000
+    sizeOverLifeXY: [0.000000, [0.483200, 0.483200], 0.179700, [0.636600, 0.636600], 1.000000, [1.297900, 1.297900]]
+    velocity: 20.000000
+    randomSpinDirection: false
+    angleVariation: 120.000000
+    alphaOverLife: [0.000000, 0.000000, 0.050800, 0.000000, 0.094800, 0.087300, 0.161000, 0.180900, 0.439400, 0.128700, 0.664000, 0.095100, 0.877500, 0.029200, 1.000000, 0.000000]
+    colorOverLife: [170.000000, 134.972763, 29.883268, 255.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 6.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: false
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 10000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 0.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

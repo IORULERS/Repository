@@ -1,0 +1,53 @@
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "smoke"
+    type: "point"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 0.000000
+    emissionRange: 20.000000
+    emissionVector: [1.000000, 0.000000, 0.500000]
+    radius: 2.000000
+layer0:
+    name: "smoke Clone"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/animation/smoke"
+    type: "layer"
+    lifeVariation: 0.200000
+    isLong: true
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 1.000000
+    enableFrameBlend: true
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.005000
+    life: 0.500000
+    number: 200.000000
+    spinVariation: 20.000000
+    size: [3.000000, 3.000000]
+    velocityVariation: 100.000000
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 1.000000, [3.000000, 3.000000]]
+    velocity: 100.000000
+    velocityOverLife: [0.000000, 1.000000, 0.200000, 0.100000, 0.600000, 0.000000]
+    spin: 20.000000
+    randomSpinDirection: true
+    angleVariation: 360.000000
+    alphaOverLife: [0.000000, 0.000000, 0.328244, 1.000000, 0.591603, 1.000000, 1.000000, 0.000000]
+    colorOverLife: [237.754868, 88.645912, 8.357976, 255.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 50.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: false
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 4.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

@@ -1,0 +1,130 @@
+layer1:
+    life: 6.000000
+    stripeLifetime: 0.000000
+    endTime: 1000.000000
+    scaleVelocityBase: 1.000000
+    stripeVertexSpawnStep: 1.000000
+    stripeStartSize: 0.000000
+    type: "layer"
+    stripeUScrollSpeed: 0.000000
+    enableFlow: false
+    stripeVScrollSpeed: 0.000000
+    colorOverLife: [228.548630, 242.108948, 247.918289, 255.000000]
+    stripeFadeDistanceFromTop: 0.000000
+    name: "snow"
+    layerType: "particles"
+    degradeStrategy: 0
+    particleOrientation: 1
+    inheritPosition: true
+    isLong: false
+    randomSpinDirection: true
+    pivotPoint: [0.000000, 0.000000]
+    effectFormat: 1
+    useFresToAlpha: false
+    numberVariation: 2.000000
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    size: [0.300000, 0.300000]
+    sprite: "../../../../../Data/Gfx/Particles/UI/Blur11"
+    alphaOverLife: [0.000000, 0.000000, 0.102713, 0.000000, 0.465201, 0.623368, 1.000000, 0.000000]
+    enableAlphaRemap: false
+    blending: 3
+    deltaTime: 0.000000
+    enableFlowAnimation: false
+    enableNoise: false
+    useNoiseScroll: false
+    stripeInheritPositionForBase: false
+    enableFog: false
+    enableFrameBlend: false
+    loopEndTime: 100.000000
+    scaleVelocityFactor: 0.010000
+    loopVariation: 0.000000
+    loopSpriteAnimation: true
+    number: 20.000000
+    sizeVariation: [0.500000, 0.500000]
+    sizeOverLifeXY: [0.000000, [5.305300, 5.305300], 0.510000, [6.000000, 6.000000], 1.000000, [4.364100, 4.364100]]
+    velocity: 10.000000
+    frameOverLifeEnabled: false
+    velocityVariation: 15.000000
+    frameOverLifeFPS: 0.000000
+    spin: 30.000000
+    spinVariation: 15.000000
+    angle: 1.000000
+    angleVariation: 360.000000
+    randomFrameOnStart: false
+    startTime: 0.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    usePerspectiveMapping: false
+    activeLODS: [1, 1, 1, 1]
+emitter:
+    name: "snow"
+    emissionVector: [0.000000, 1.000000, 0.000000]
+    emissionAngle: 0.000000
+    type: "rect"
+    size: [140.000000, 0.000000, 1.000000]
+    shortEffect: false
+    radius: 700.000000
+    emissionRange: 30.000000
+    emissionVectorInverted: true
+layer0:
+    life: 3.000000
+    stripeLifetime: 0.000000
+    endTime: 1000.000000
+    scaleVelocityBase: 1.000000
+    stripeVertexSpawnStep: 1.000000
+    stripeStartSize: 0.000000
+    type: "layer"
+    stripeUScrollSpeed: 0.000000
+    enableFlow: false
+    stripeVScrollSpeed: 0.000000
+    colorOverLife: [228.548630, 242.108948, 247.918289, 255.000000]
+    stripeFadeDistanceFromTop: 0.000000
+    name: "snow Clone"
+    layerType: "particles"
+    degradeStrategy: 0
+    particleOrientation: 1
+    inheritPosition: true
+    isLong: false
+    randomSpinDirection: true
+    pivotPoint: [0.000000, 0.000000]
+    effectFormat: 1
+    useFresToAlpha: false
+    numberVariation: 2.000000
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    size: [0.500000, 0.500000]
+    sprite: "../../../../../Data/Gfx/Particles/UI/Blur11"
+    alphaOverLife: [0.000000, 0.000000, 0.102713, 0.000000, 0.465116, 0.878615, 1.000000, 0.000000]
+    enableAlphaRemap: false
+    blending: 3
+    deltaTime: 0.000000
+    enableFlowAnimation: false
+    enableNoise: false
+    useNoiseScroll: false
+    stripeInheritPositionForBase: false
+    enableFog: false
+    enableFrameBlend: false
+    loopEndTime: 100.000000
+    scaleVelocityFactor: 0.010000
+    loopVariation: 0.000000
+    loopSpriteAnimation: true
+    number: 20.000000
+    sizeVariation: [1.000000, 1.000000]
+    sizeOverLifeXY: [0.000000, [5.305300, 5.305300], 0.510000, [6.000000, 6.000000], 1.000000, [4.364100, 4.364100]]
+    velocity: 35.000000
+    frameOverLifeEnabled: false
+    velocityVariation: 15.000000
+    frameOverLifeFPS: 0.000000
+    spin: 30.000000
+    spinVariation: 15.000000
+    angle: 1.000000
+    angleVariation: 360.000000
+    randomFrameOnStart: false
+    startTime: 0.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    usePerspectiveMapping: false
+    activeLODS: [1, 1, 1, 1]

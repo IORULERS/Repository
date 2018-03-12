@@ -1,0 +1,44 @@
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "seagull"
+    type: "shockwave"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionVector: [0.000000, 0.000000, 1.000000]
+    emissionRange: 0.000000
+    radius: 100.000000
+layer0:
+    name: "seagull"
+    enableFog: true
+    sprite: "../../../../../Data/Gfx/Particles/28_rock_rc/seagull"
+    type: "layer"
+    isLong: true
+    layerType: "single"
+    blending: 1
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 30.000000
+    number: 1.000000
+    size: [0.900000, 0.600000]
+    velocity: -6.000000
+    velocityVariation: -0.400000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.107100, 1.000000, 0.480000, 1.000000, 0.888000, 1.000000, 0.996700, 0.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 5.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: false
+    particleOrientation: 8
+    activeLODS: [1, 1, 1, 0]
+    effectFormat: 1

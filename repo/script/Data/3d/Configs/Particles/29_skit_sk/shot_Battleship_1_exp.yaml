@@ -1,0 +1,267 @@
+layer4:
+    name: "smoke"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/alpha/fog"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 1
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 1.000000
+    enableFrameBlend: true
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 0.300000
+    number: 120.000000
+    size: [2.000000, 2.000000]
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 1.000000, [6.000000, 6.000000]]
+    velocity: 40.000000
+    randomSpinDirection: false
+    angleVariation: 360.000000
+    alphaOverLife: [0.000000, 0.900000, 1.000000, 0.000000]
+    colorOverLife: [104.198441, 103.782097, 112.101166, 255.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 50.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: false
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 4.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "exp"
+    type: "point"
+    emissionVectorInverted: true
+    shortEffect: true
+    emissionAngle: 0.000000
+    emissionVector: [1.000000, 0.000000, 0.500000]
+    emissionRange: 0.000000
+layer0:
+    name: "exp1"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/additive/exp_anim_fire"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 100.000000
+    enableFrameBlend: true
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 0.300000
+    number: 30.000000
+    size: [3.000000, 3.000000]
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 1.000000, [6.000000, 6.000000]]
+    velocity: 20.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 1.000000, 0.646947, 1.000000, 1.000000, 0.000000]
+    colorOverLife: [255.000000, 106.000000, 6.000000, 255.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 50.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: false
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 4.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer1:
+    name: "exp2"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/additive/exp_anim_L"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 100.000000
+    enableFrameBlend: true
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 0.200000
+    number: 30.000000
+    size: [3.000000, 3.000000]
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 1.000000, [4.000000, 4.000000]]
+    velocity: 40.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 1.000000, 0.540076, 1.000000, 1.000000, 0.000000]
+    colorOverLife: [255.000000, 106.000000, 6.000000, 255.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 100.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: false
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 4.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer2:
+    name: "Layer"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/alpha/o2_expGlowB"
+    type: "layer"
+    isLong: false
+    layerType: "single"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 0.100000
+    size: [10.000000, 10.000000]
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 0.990000, [3.000000, 3.000000]]
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 1.000000, 0.996183, 0.000000]
+    colorOverLife: [255.000000, 123.517509, 15.937743, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: false
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer3:
+    name: "smoke"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/alpha/fog"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 1
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 1.000000
+    enableFrameBlend: true
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 0.300000
+    number: 120.000000
+    size: [2.000000, 2.000000]
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 1.000000, [6.000000, 6.000000]]
+    velocity: 20.000000
+    randomSpinDirection: false
+    angleVariation: 360.000000
+    alphaOverLife: [0.000000, 0.800000, 1.000000, 0.000000]
+    colorOverLife: [104.198441, 103.782097, 112.101166, 255.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 50.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: false
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 4.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer5:
+    name: "exp3"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/additive/exp_anim_L"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 100.000000
+    enableFrameBlend: true
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 0.200000
+    number: 30.000000
+    size: [4.000000, 4.000000]
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 1.000000, [4.000000, 4.000000]]
+    velocity: 60.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 1.000000, 0.758095, 1.000000, 1.000000, 0.000000]
+    colorOverLife: [255.000000, 106.000000, 6.000000, 255.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 100.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: false
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 0.100000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 4.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer6:
+    name: "exp1 Clone"
+    enableFog: false
+    sprite: "../../../../../Data/Gfx/Particles/additive/exp_anim_fire"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    angle: 100.000000
+    enableFrameBlend: true
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 0.300000
+    number: 30.000000
+    size: [2.000000, 2.000000]
+    sizeOverLifeXY: [0.000000, [1.000000, 1.000000], 1.000000, [6.000000, 6.000000]]
+    velocity: 20.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.646947, 1.000000, 1.000000, 0.000000]
+    colorOverLife: [255.000000, 106.000000, 6.000000, 255.000000]
+    frameOverLifeEnabled: true
+    frameOverLifeFPS: 50.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: false
+    deltaTime: 0.000000
+    startTime: 0.100000
+    endTime: 0.200000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 4.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

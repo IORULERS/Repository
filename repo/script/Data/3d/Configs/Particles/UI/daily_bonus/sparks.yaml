@@ -1,0 +1,126 @@
+emitter:
+    size: [0.000000, 300.000000, 1.000000]
+    name: "sparks"
+    type: "rect"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionAngle: 0.000000
+    emissionRange: 60.000000
+    emissionVector: [1.000000, -1.000000, 0.000000]
+    radius: 700.000000
+layer0:
+    name: "sparks1"
+    enableFog: true
+    sprite: "../../../../../../Data/Gfx/Particles/UI/Blur_sparks"
+    type: "layer"
+    isLong: true
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.008000
+    life: 1.300000
+    number: 2.000000
+    numberVariation: 2.000000
+    size: [0.500000, 0.500000]
+    sizeVariation: [0.500000, 0.500000]
+    velocityVariation: 15.000000
+    sizeOverLifeXY: [0.000000, [5.305300, 5.305300], 0.505100, [6.407100, 6.407100], 1.000000, [4.364100, 4.364100]]
+    velocity: 150.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.100000, 0.600000, 0.836700, 0.100000, 1.000000, 0.000000]
+    colorOverLife: [7.968874, 255.000000, 40.906612, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer1:
+    name: "sparks2"
+    enableFog: true
+    sprite: "../../../../../../Data/Gfx/Particles/UI/Blur"
+    type: "layer"
+    isLong: true
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.012000
+    life: 1.300000
+    number: 2.000000
+    numberVariation: 2.000000
+    size: [0.500000, 0.500000]
+    sizeVariation: [0.500000, 0.500000]
+    velocityVariation: 15.000000
+    sizeOverLifeXY: [0.000000, [5.305300, 5.305300], 0.505100, [6.407100, 6.407100], 1.000000, [4.364100, 4.364100]]
+    velocity: 100.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.100000, 0.800000, 0.836700, 0.100000, 1.000000, 0.000000]
+    colorOverLife: [5.976654, 255.000000, 26.727627, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1
+layer2:
+    name: "sparks3"
+    enableFog: true
+    sprite: "../../../../../../Data/Gfx/Particles/UI/Blur_sparks"
+    type: "layer"
+    isLong: true
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.016000
+    life: 1.300000
+    numberVariation: 2.000000
+    size: [0.500000, 0.500000]
+    sizeVariation: [0.500000, 0.500000]
+    velocityVariation: 15.000000
+    sizeOverLifeXY: [0.000000, [5.305300, 5.305300], 0.505100, [6.407100, 6.407100], 1.000000, [4.364100, 4.364100]]
+    velocity: 150.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.100000, 0.700000, 0.841800, 0.263400, 1.000000, 0.000000]
+    colorOverLife: [3.984436, 255.000000, 58.369648, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

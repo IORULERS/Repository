@@ -1,0 +1,46 @@
+emitter:
+    size: [0.000000, 0.000000, 0.000000]
+    name: "purple_flow"
+    type: "rect"
+    emissionVectorInverted: true
+    shortEffect: false
+    emissionVector: [-1.000000, -1.000000, 0.000000]
+    emissionRange: 70.000000
+layer0:
+    name: "glow_flow"
+    enableFog: true
+    sprite: "../../../../../../../Data/Gfx/Particles/UI/glow_blur"
+    type: "layer"
+    isLong: false
+    layerType: "particles"
+    blending: 3
+    degradeStrategy: 0
+    pivotPoint: [0.000000, 0.000000]
+    loopVariation: 0.000000
+    enableFrameBlend: false
+    scaleVelocityBase: 1.000000
+    scaleVelocityFactor: 0.000000
+    life: 5.000000
+    number: 1.000000
+    size: [2.000000, 2.000000]
+    sizeVariation: [1.000000, 1.000000]
+    velocityVariation: 15.000000
+    sizeOverLifeXY: [0.000000, [5.305300, 5.305300], 0.505050, [6.407060, 6.407060], 1.000000, [4.364100, 4.364100]]
+    velocity: 30.000000
+    randomSpinDirection: false
+    alphaOverLife: [0.000000, 0.000000, 0.100000, 0.200000, 0.836700, 0.100000, 1.000000, 0.000000]
+    colorOverLife: [194.000000, 45.000000, 230.000000, 255.000000]
+    frameOverLifeEnabled: false
+    frameOverLifeFPS: 0.000000
+    randomFrameOnStart: false
+    loopSpriteAnimation: true
+    deltaTime: 0.000000
+    startTime: 0.000000
+    endTime: 1000.000000
+    isLooped: false
+    deltaVariation: 0.000000
+    loopEndTime: 100.000000
+    inheritPosition: true
+    particleOrientation: 1
+    activeLODS: [1, 1, 1, 1]
+    effectFormat: 1

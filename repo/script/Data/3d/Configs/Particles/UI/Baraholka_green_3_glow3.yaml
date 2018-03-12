@@ -1,0 +1,62 @@
+emitter:
+    name: "glow3"
+    emissionVector: [0.100000, 0.000000, 0.000000]
+    type: "point"
+    shortEffect: false
+    emissionRange: 0.000000
+    emissionVectorInverted: true
+layer0:
+    life: 2.000000
+    stripeLifetime: 0.000000
+    endTime: 1000.000000
+    scaleVelocityBase: 1.000000
+    stripeVertexSpawnStep: 1.000000
+    stripeStartSize: 0.000000
+    type: "layer"
+    stripeUScrollSpeed: 0.000000
+    enableFlow: false
+    stripeVScrollSpeed: 0.000000
+    colorOverLife: [120.000000, 255.000000, 63.000000, 255.000000]
+    stripeFadeDistanceFromTop: 0.000000
+    name: "glow"
+    layerType: "particles"
+    degradeStrategy: 0
+    particleOrientation: 1
+    inheritPosition: true
+    isLong: false
+    randomSpinDirection: false
+    pivotPoint: [0.000000, 0.000000]
+    effectFormat: 1
+    useFresToAlpha: false
+    fresToAlphaBias: 0.000000
+    fresToAlphaPower: 0.000000
+    alphaRemapLoopCount: 1.000000
+    size: [40.000000, 40.000000]
+    sprite: "../../../../../Data/Gfx/Particles/UI/glow_anim_min"
+    alphaOverLife: [0.000000, 0.000000, 0.164634, 0.000000, 0.460000, 0.400000, 0.800305, 0.000000, 0.994286, 0.000000]
+    enableAlphaRemap: false
+    blending: 3
+    deltaTime: 0.000000
+    enableFlowAnimation: false
+    enableNoise: false
+    useNoiseScroll: false
+    useThreePointGradient: false
+    stripeInheritPositionForBase: false
+    enableFog: false
+    enableFrameBlend: false
+    loopEndTime: 100.000000
+    scaleVelocityFactor: 0.000000
+    startTime: 0.000000
+    gradientMiddlePoint: 0.500000
+    applyGlobalForces: false
+    loopVariation: 0.000000
+    loopSpriteAnimation: true
+    number: 1.000000
+    frameOverLifeFPS: 0.000000
+    spin: 5.000000
+    frameOverLifeEnabled: false
+    randomFrameOnStart: false
+    isLooped: false
+    deltaVariation: 0.000000
+    usePerspectiveMapping: false
+    activeLODS: [1, 1, 1, 1]
