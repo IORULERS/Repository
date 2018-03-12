@@ -1,0 +1,51 @@
+<?xml version  ="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version ="1.0">
+<dict>
+	<key>ETCOM TEAM:etcom</key>
+	<dict>
+		<key>Skin:skin</key>
+		<dict>
+			<key>E-50 사냥꾼 스킨:e50_0</key>
+			<string>4.7.0:aw</string>
+			<key>4호 구축전차 스킨:jagd_0</key>
+			<string>4.7.0:aw</string>
+		</dict>
+		<key>Graphic:gfx</key>
+		<dict>
+			<key>Simple Aim:aim_0</key>
+			<string>4.7.0:aw</string>
+		</dict>
+		<key>Sound:sfx</key>
+		<dict>
+			<key>PC WoT GUI Sound Pack:pc_sound_pak</key>
+			<string>4.7.0:aw</string>
+		</dict>
+		<key>Etc:etc</key>
+		<dict>
+			<key>윾땅 욕쟁이모드:fxxk</key>
+			<string>4.7.0:aw</string>
+		</dict>
+	</dict>
+	<key>CAFE MODDER:cafe</key>
+	<dict>
+		<key>Skin:skin</key>
+		<dict>
+			<key>test1:t1</key>
+			<string>4.7.0:aw</string>
+			<key>test2:t2</key>
+			<string>4.7.0:aw</string>
+		</dict>
+		<key>Graphic:gfx</key>
+		<dict>
+			<key>test3:t3</key>
+			<string>4.7.0:aw</string>
+		</dict>
+		<key>Sound:sfx</key>
+		<dict>
+			<key>test4:t4</key>
+			<string>4.7.0:aw</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
