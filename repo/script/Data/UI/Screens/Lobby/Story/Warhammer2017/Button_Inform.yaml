@@ -1,0 +1,88 @@
+Header:
+    version: "18"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Layout"
+        position: [0.000000, 0.000000]
+        children: []
+    -   path: "Layout/IconContainer"
+        components:
+            SizePolicy:
+                horizontalValue: 75.000000
+            Anchor:
+                leftAnchorEnabled: true
+                topAnchorEnabled: true
+        children:
+        -   class: "UIParticles"
+            name: "Fire"
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            visible: false
+            enabled: false
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_info_fire.sc2"
+            autoStart: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+        -   class: "UIParticles"
+            name: "Glow"
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            visible: false
+            enabled: false
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_info_glow.sc2"
+            autoStart: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+        -   class: "UIControl"
+            name: "Icon"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 1.000000
+                    topAnchorEnabled: true
+                    topAnchor: 6.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 2.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Story/Warhammer_2017/HangarIcon_inform.psd"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   path: "Layout/TextContainer"
+        components:
+            IgnoreLayout: {}
+            SizePolicy:
+                horizontalPolicy: "FixedSize"
+                horizontalValue: 170.000000
+            Anchor:
+                rightAnchorEnabled: true
+        children: []
+    -   path: "Layout/TextContainer/Title"
+        classes: "header5 text-color-gold"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 3.000000
+            UITextComponent:
+                text: "halloween2017_event/Title"
+                align: ["RIGHT", "VCENTER"]
+    -   path: "Layout/TextContainer/ExpireTimer"
+        position: [87.000000, 50.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+        children: []

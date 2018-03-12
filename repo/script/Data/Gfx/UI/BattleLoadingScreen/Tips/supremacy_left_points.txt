@@ -1,0 +1,5 @@
+1
+supremacy_left_points0.tex
+256 128
+1
+0 0 163 112 46 14 0 frame0

@@ -1,0 +1,23 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UICobrandRewardNotification"
+    name: "CobrandReward"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                frame: 3
+    -   prototype: "Notification/Content"
+        name: "Content"
+        components:
+            Anchor:
+                topAnchorEnabled: true
+                topAnchor: 5.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 10.000000

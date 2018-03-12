@@ -1,0 +1,20 @@
+name: "lunar_event/Title"
+priority: 1
+stages:
+ lunar_inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/ChineseEvent2017/Button_Inform.yaml"
+  info: "event-info"
+ lunar_process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/ChineseEvent2017/Button_Process.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/ChineseEvent2017/TreesChineseEvent.yaml"
+ lunar_buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/ChineseEvent2017/Button_Buy.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/ChineseEvent2017/TreesChineseEvent.yaml"
+currencyKeys:
+  mascot: "lunar_event/Currencies/Charms/Terms"
+  fangs: "lunar_event/Currencies/Tusks/Terms"

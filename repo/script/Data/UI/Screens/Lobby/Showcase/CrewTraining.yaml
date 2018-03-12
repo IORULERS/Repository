@@ -1,0 +1,283 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Showcase/ShowcasePrototypes.yaml"
+- "~res:/UI/Screens/Lobby/Crew/TrainingType.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/GradientPane.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Showcase"
+    size: [960.000000, 550.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 0.000000
+            rightAnchorEnabled: true
+            rightAnchor: 0.000000
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+        Background:
+            color: [0.000000, 0.000000, 0.000000, 0.800000]
+    children:
+    -   class: "UIControl"
+        name: "TrainingDialog"
+        position: [0.000000, 0.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   prototype: "GradientPane/GradientPane"
+            name: "GradientPane"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+        -   class: "UIControl"
+            name: "MasterySelector"
+            noInput: true
+            components:
+                FlowLayout:
+                    hDynamicInLinePadding: true
+                    hSpacing: 26.000000
+                    vDynamicPadding: true
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 24.000000
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [1.000000, 1.000000, 1.000000, 0.000000]
+            children:
+            -   prototype: "TrainingType/TrainingType"
+                name: "BaseTraining"
+                tag: 50
+                children:
+                -   path: "TypeText"
+                    components:
+                        UITextComponent:
+                            text: "AVATAR_BASE_TRAINING_TEXT"
+                -   path: "PriceLabel"
+                    position: [0.000000, 151.000000]
+                    children: []
+                -   path: "PriceLabel/CostText"
+                    components:
+                        UITextComponent:
+                            text: "AVATAR_BASE_TRAINING_PRICE"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   path: "PriceLabel/Image"
+                    visible: false
+                -   path: "UpgradeToLabel"
+                    classes: "text2-small text-color-blue"
+                -   path: "LevelText"
+                    components:
+                        UITextComponent:
+                            text: "50%"
+                -   path: "Discount"
+                    visible: false
+                    children: []
+                -   path: "Icon"
+                    components:
+                        Background:
+                            frame: 0
+            -   prototype: "TrainingType/TrainingType"
+                name: "RegimentSchool"
+                children:
+                -   path: "PriceLabel"
+                    position: [0.000000, 151.000000]
+                    children: []
+                -   path: "PriceLabel/CostText"
+                    components:
+                        UITextComponent:
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   path: "UpgradeToLabel"
+                    classes: "text2-small text-color-blue"
+                -   path: "IconBackground"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/LobbyCommon/skills75.psd"
+                -   path: "effects/sparks"
+                    effectPath: "~res:/3d/FX/UI/crew_silver_sparks.sc2"
+                -   path: "effects/line"
+                    effectPath: "~res:/3d/FX/UI/crew_silver_line.sc2"
+            -   prototype: "TrainingType/TrainingType"
+                name: "TankAcademy"
+                tag: 100
+                children:
+                -   path: "Bg"
+                    components:
+                        Background:
+                            frame: 2
+                -   path: "Button"
+                    classes: "button button-color-orange button-ok-sound"
+                    children: []
+                -   path: "TypeText"
+                    components:
+                        UITextComponent:
+                            text: "AVATAR_TANK_ACADEMY_TEXT"
+                -   path: "PriceLabel/CostText"
+                    components:
+                        UITextComponent:
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   path: "PriceLabel/Image"
+                    components:
+                        Background:
+                            frame: 0
+                -   path: "UpgradeToLabel"
+                    classes: "text2-small text-color-premium"
+                -   path: "LevelText"
+                    components:
+                        UITextComponent:
+                            text: "100%"
+                -   path: "IconBackground"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/LobbyCommon/skills100.psd"
+                -   path: "Icon"
+                    components:
+                        Background:
+                            frame: 2
+                -   path: "effects/sparks"
+                    effectPath: "~res:/3d/FX/UI/crew_gold_sparks.sc2"
+                -   path: "effects/line"
+                    effectPath: "~res:/3d/FX/UI/crew_gold_line.sc2"
+    -   class: "UIControl"
+        name: "DealInfo"
+        size: [960.000000, 200.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Details"
+            size: [960.000000, 120.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                Background:
+                    frame: 1
+            children:
+            -   prototype: "GradientPane/GradientPane"
+                name: "GradientPane"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "Control"
+                    size: [32.000000, 32.000000]
+                    noInput: true
+            -   class: "UIControl"
+                name: "MessageContainer"
+                position: [0.000000, 0.000000]
+                size: [960.000000, 80.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                    Background:
+                        drawType: "DRAW_SCALE_TO_RECT"
+                children:
+                -   class: "UIStaticText"
+                    name: "Message"
+                    size: [960.000000, 80.000000]
+                    visible: true
+                    noInput: true
+                    classes: "text1 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 0.000000
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 0.000000
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            text: "msg"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            shadowOffset: [1.000000, 1.000000]
+                            fitting: "FITTING_REDUCE"
+        -   class: "UIControl"
+            name: "Prices"
+            position: [0.000000, 120.000000]
+            size: [960.000000, 80.000000]
+            noInput: true
+            classes: "footer-background"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+                Background: {}
+            children:
+            -   prototype: "ShowcasePrototypes/DetailsLine"
+                name: "PriceLine"
+                position: [44.000000, 0.000000]
+                size: [872.000000, 80.000000]
+                components:
+                    Anchor:
+                        bottomAnchor: 0.000000
+                children:
+                -   path: "LabelContainer"
+                    components:
+                        Anchor:
+                            leftAnchor: 215.000000
+                    children: []
+    -   prototype: "StyledButton/StyledButton"
+        name: "GetTankButton"
+        position: [712.000000, 478.000000]
+        size: [196.000000, 64.000000]
+        classes: "button color=button-color-green"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 8.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                Anchor:
+                    leftAnchor: 8.000000
+                    rightAnchor: 8.000000
+                UITextComponent:
+                    text: "Get Tank"
+                    fitting: "FITTING_REDUCE"

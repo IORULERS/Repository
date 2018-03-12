@@ -1,0 +1,25 @@
+Header:
+    version: "20"
+Controls:
+-   class: "UIControl"
+    name: "Cell"
+    size: [110.000000, 64.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIStaticText"
+        name: "Text"
+        size: [110.000000, 26.000000]
+        classes: "header3"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                hCenterAnchorEnabled: false
+                rightAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "Text"
+                fontName: "WarHeliosCondC_Bold_21"
+                colorInheritType: "COLOR_IGNORE_PARENT"

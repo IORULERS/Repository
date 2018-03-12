@@ -1,0 +1,5 @@
+1
+marker_switching0.tex
+512 256
+1
+0 0 499 255 6 0 0 frame0

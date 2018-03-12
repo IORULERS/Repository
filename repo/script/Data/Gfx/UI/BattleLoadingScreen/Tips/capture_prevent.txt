@@ -1,0 +1,5 @@
+1
+capture_prevent0.tex
+256 128
+1
+0 0 200 112 31 14 0 frame0

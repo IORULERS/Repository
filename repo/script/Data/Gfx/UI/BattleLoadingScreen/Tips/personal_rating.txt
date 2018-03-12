@@ -1,0 +1,5 @@
+1
+personal_rating0.tex
+256 128
+1
+0 0 233 105 7 23 0 frame0

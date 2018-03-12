@@ -1,0 +1,28 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Styles/ColorStyles.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "TransparentButton"
+    size: [80.000000, 80.000000]
+    classes: "button"
+    components:
+        Background: {}
+        Sound: {}
+    children:
+    -   class: "UIControl"
+        name: "Back"
+        noInput: true
+        classes: "color-black-semitransparent"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Background:
+                drawType: "DRAW_TILED"
+                sprite: "~res:/Gfx/UI/CommonUIElements/square_SmallAngle.psd"
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                leftRightStretchCap: 3.000000
+                topBottomStretchCap: 3.000000

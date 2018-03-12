@@ -1,0 +1,448 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Hangar/HangarBaseScreen.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Screens/CommonStyles.yaml"
+- "~res:/UI/Screens/Lobby/Clan/ClanEmblem.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/Clans/ClansStyles.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   prototype: "HangarBaseScreen/Screen"
+    name: "Screen"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+    children:
+    -   path: "Header"
+        visible: true
+        children: []
+    -   path: "Header/Layout"
+        components:
+            Anchor:
+                leftAnchor: 200.000000
+        children: []
+    -   path: "Header/Layout/leftContent"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 100.000000
+        children:
+        -   prototype: "RichText/RichText"
+            name: "RichHeader"
+            size: [10.000000, 0.000000]
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+    -   path: "Header/Layout/leftContent/labels/primaryLabel"
+        components:
+            UITextComponent:
+                align: ["HCENTER", "VCENTER"]
+    -   path: "Header/Layout/leftContent/labels/secondaryLabel"
+        components:
+            UITextComponent:
+                align: ["HCENTER", "VCENTER"]
+    -   path: "Header/Layout/leftContent/userInfo"
+        visible: false
+        children: []
+    -   path: "Header/Layout/rightContent"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "FixedSize"
+                horizontalValue: 200.000000
+        children: []
+    -   path: "Header/Layout/rightContent/CurrencyPanel"
+        visible: false
+        children: []
+    -   path: "Content"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                enabled: false
+        children:
+        -   class: "UIControl"
+            name: "TeamsListContainer"
+            size: [896.000000, 588.000000]
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 50.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 50.000000
+                    topAnchorEnabled: true
+                    topAnchor: 50.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 50.000000
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                    leftInsetCorrection: -30.000000
+                    rightSafeInset: "INSET"
+                    rightInsetCorrection: -30.000000
+            children:
+            -   class: "UIControl"
+                name: "TitleAndList"
+                size: [896.000000, 294.000000]
+                visible: true
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                children:
+                -   class: "UIControl"
+                    name: "ListTitle"
+                    size: [896.000000, 50.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            padding: 10.000000
+                            spacing: 10.000000
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                        DebugRender:
+                            enabled: false
+                    children:
+                    -   class: "UIStaticText"
+                        name: "TournamentName"
+                        size: [285.333344, 50.000000]
+                        classes: "text1 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfParent"
+                            UITextComponent:
+                                text: "#clans:TournamentScreen/Table/Tournament"
+                                fitting: "FITTING_POINTS"
+                                align: ["LEFT", "VCENTER"]
+                    -   class: "UIStaticText"
+                        name: "TeamName"
+                        size: [285.333344, 50.000000]
+                        classes: "text1 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfParent"
+                            UITextComponent:
+                                text: "#clans:TournamentScreen/Table/Team"
+                                fitting: "FITTING_POINTS"
+                                align: ["LEFT", "VCENTER"]
+                    -   class: "UIStaticText"
+                        name: "End"
+                        size: [285.333344, 50.000000]
+                        classes: "text1 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfParent"
+                            UITextComponent:
+                                text: "#clans:TournamentScreen/Table/End"
+                                align: ["HCENTER", "VCENTER"]
+                    -   class: "UIStaticText"
+                        name: "Result"
+                        size: [184.000000, 50.000000]
+                        visible: false
+                        classes: "text1 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfParent"
+                            UITextComponent:
+                                text: "#clans:TournamentScreen/Table/Result"
+                                align: ["LEFT", "VCENTER"]
+                    -   class: "UIStaticText"
+                        name: "Reward"
+                        size: [184.000000, 50.000000]
+                        visible: false
+                        classes: "text1 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfParent"
+                            UITextComponent:
+                                text: "#clans:TournamentScreen/Table/Reward"
+                                align: ["RIGHT", "VCENTER"]
+                -   class: "UIControl"
+                    name: "Content"
+                    noInput: true
+                    classes: ""
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfParent"
+                    children:
+                    -   class: "UIList"
+                        name: "TeamsList"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfParent"
+                    -   prototype: "Common/VerticalScrollBar"
+                        name: "ScrollBar"
+                        classes: ""
+                        components:
+                            Anchor:
+                                rightAnchorEnabled: true
+                                rightAnchor: -15.000000
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            ScrollBarDelegate:
+                                delegate: "../TeamsList"
+                    -   class: "UIStaticText"
+                        name: "LoadingLabel"
+                        size: [896.000000, 244.000000]
+                        classes: "text1 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfParent"
+                            UITextComponent:
+                                text: "Loading..."
+                                fitting: "FITTING_POINTS"
+                                align: ["HCENTER", "VCENTER"]
+            -   class: "UIControl"
+                name: "EmptyContainer"
+                size: [896.000000, 294.000000]
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                children:
+                -   class: "UIControl"
+                    name: "CenteredGroup"
+                    size: [160.000000, 210.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            padding: 20.000000
+                            spacing: 10.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfMaxChild"
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                    children:
+                    -   class: "UIControl"
+                        name: "Image"
+                        position: [0.000000, 20.000000]
+                        size: [160.000000, 160.000000]
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            Background:
+                                sprite: "~res:/Gfx/UI/Tournament/empty_teams"
+                    -   class: "UIStaticText"
+                        name: "Title"
+                        size: [0.000000, 0.000000]
+                        classes: "header4"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            UITextComponent:
+                                multiline: "MULTILINE_ENABLED"
+-   class: "UIListCell"
+    name: "TeamEntry"
+    size: [924.000000, 64.000000]
+    noInput: true
+    classes: ""
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIControl"
+        name: "Button"
+        size: [924.000000, 64.000000]
+        classes: "button"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIControl"
+            name: "Back"
+            size: [924.000000, 64.000000]
+            noInput: true
+            classes: "panel-background"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Background:
+                    drawType: "DRAW_FILL"
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIControl"
+            name: "Content"
+            size: [924.000000, 64.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    padding: 10.000000
+                    spacing: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+            children:
+            -   class: "UIControl"
+                name: "TournamentCell"
+                size: [294.666656, 64.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                children:
+                -   class: "UIStaticText"
+                    name: "TournamentName"
+                    size: [294.666656, 64.000000]
+                    classes: "header3 text-color-white"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            horizontalValue: 100.000000
+                            verticalPolicy: "PercentOfParent"
+                        UITextComponent:
+                            text: "lklkjklj"
+                            fitting: "FITTING_POINTS"
+                            align: ["LEFT", "VCENTER"]
+                -   class: "UIStaticText"
+                    name: "TournamentStatus"
+                    size: [294.666656, 32.000000]
+                    visible: false
+                    classes: "text1 text-color-blue"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            horizontalValue: 100.000000
+                            verticalPolicy: "PercentOfParent"
+                        UITextComponent:
+                            text: "7"
+            -   class: "UIControl"
+                name: "TeamCell"
+                size: [294.666656, 64.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        spacing: 10.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                children:
+                -   prototype: "ClanEmblem/ClanEmblem"
+                    name: "ClanEmblem"
+                    size: [32.000000, 32.000000]
+                    visible: true
+                    components:
+                        Anchor:
+                            vCenterAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                -   class: "UIStaticText"
+                    name: "Tag"
+                    size: [52.000000, 64.000000]
+                    classes: "header3 clan-tag"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfParent"
+                        UITextComponent:
+                            text: "[AS-S]"
+                -   class: "UIStaticText"
+                    name: "Name"
+                    size: [190.666656, 64.000000]
+                    classes: "header3"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfParent"
+                        UITextComponent:
+                            text: "TEST Team Name"
+                            fitting: "FITTING_POINTS"
+                            align: ["LEFT", "VCENTER"]
+            -   class: "UIStaticText"
+                name: "FinishLabel"
+                size: [294.666656, 64.000000]
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalValue: 100.000000
+                        verticalPolicy: "PercentOfParent"
+                    UITextComponent:
+                        text: "7"
+            -   class: "UIStaticText"
+                name: "ResultLabel"
+                size: [184.800003, 64.000000]
+                visible: false
+                classes: "header3 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalValue: 100.000000
+                        verticalPolicy: "PercentOfParent"
+                    UITextComponent:
+                        text: "7"
+            -   class: "UIControl"
+                name: "RewardCell"
+                size: [184.800003, 64.000000]
+                visible: false
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+    -   class: "UIControl"
+        name: "bottomSelector"
+        size: [924.000000, 1.000000]
+        noInput: true
+        classes: "selector"
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [1.000000, 1.000000, 1.000000, 0.141176]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+-   class: "UIListCell"
+    name: "LoadingEntry"
+    size: [1024.000000, 64.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIStaticText"
+        name: "LoadingLabel"
+        size: [1024.000000, 64.000000]
+        classes: "text1 text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            UITextComponent:
+                text: "Loading..."
+                fontName: "WarHeliosCondC_21"

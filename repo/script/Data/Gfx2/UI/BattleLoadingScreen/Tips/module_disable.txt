@@ -1,0 +1,5 @@
+1
+module_disable0.tex
+512 256
+1
+0 0 153 120 177 112 0 frame0

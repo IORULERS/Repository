@@ -1,0 +1,7 @@
+Header:
+    version: "11"
+StyleSheets:
+-   selector: ".resource-count"
+    properties:
+        bg-drawType: "DRAW_FILL"
+        bg-color: [0.262745, 0.392157, 0.341176, 1.000000]

@@ -1,0 +1,97 @@
+Header:
+    version: "20"
+StyleSheets:
+-   selector: ".finger-button:pressed_inside"
+    properties:
+        scale:
+            value: [1.100000, 1.100000]
+            transitionTime: 0.150000
+            transitionFunction: "LINEAR"
+        bg-color: [1.000000, 1.000000, 1.000000, 0.996078]
+-   selector: ".finger-button"
+    properties:
+        scale:
+            value: [1.000000, 1.000000]
+            transitionTime: 0.150000
+            transitionFunction: "LINEAR"
+        bg-color: [1.000000, 1.000000, 1.000000, 1.000000]
+Controls:
+-   class: "UIControl"
+    name: "tutorialHoldTip"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            color: [0.000000, 0.000000, 0.000000, 1.000000]
+    children:
+    -   class: "UIStaticText"
+        name: "title"
+        position: [0.000000, 35.000000]
+        size: [1024.000000, 40.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 35.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "#battle_tutorial:grip/comment"
+                fontName: "WarHeliosCondC_Bold_25"
+                colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                multiline: "MULTILINE_ENABLED"
+    -   class: "UIControl"
+        name: "tip"
+        position: [427.500000, 95.000000]
+        size: [169.000000, 106.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 95.000000
+            Background:
+                sprite: "~res:/Gfx/UI/Tutorial/IpadIcon"
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "button1"
+        position: [188.000000, 550.000000]
+        size: [136.000000, 156.000000]
+        pivot: [0.500000, 0.500000]
+        classes: "finger-button"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 120.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 140.000000
+            Background:
+                drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+                sprite: "~res:/Gfx/UI/Tutorial/button_fingerprint_over"
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "button2"
+        position: [836.000000, 550.000000]
+        size: [136.000000, 156.000000]
+        pivot: [0.500000, 0.500000]
+        classes: "finger-button"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 120.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 140.000000
+            Background:
+                drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+                sprite: "~res:/Gfx/UI/Tutorial/button_fingerprint_over"
+                spriteModification: ["FLIP_HORIZONTAL"]
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"

@@ -1,0 +1,124 @@
+Header:
+    version: "13"
+Controls:
+-   class: "UIControl"
+    name: "BannerBackground"
+    size: [1024.000000, 260.000000]
+    clip: true
+    noInput: true
+    children:
+    -   class: "UIControl"
+        name: "SpriteLayer1"
+        size: [1024.000000, 260.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/Lose/HeadBackgroundDefeatRating"
+        children:
+        -   class: "UIParticles"
+            name: "Smoke"
+            position: [16.000000, 82.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/defeat/big_smoke1.5.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Fire2"
+            position: [260.000000, 188.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/defeat/fire_big1.4.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Glow"
+            position: [733.000000, 146.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/defeat/heaven_glow1.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Glow"
+            position: [496.000000, 130.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/defeat/heaven_glow1.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Fire4"
+            position: [938.000000, 233.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/defeat/fire1.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "explosion"
+            position: [831.000000, 196.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/defeat/explosion.sc2"
+            autoStart: true
+    -   class: "UIControl"
+        name: "SpriteLayer2"
+        size: [1024.000000, 260.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/Lose/HeadBackgroundDefeatRating"
+                frame: 1
+        children:
+        -   class: "UIParticles"
+            name: "Fire1"
+            position: [166.000000, 235.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/defeat/fire3.5.sc2"
+            autoStart: true
+    -   class: "UIControl"
+        name: "SpriteLayer3"
+        size: [1024.000000, 260.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/Lose/HeadBackgroundDefeatRating"
+                frame: 2
+        children:
+        -   class: "UIParticles"
+            name: "Fire3"
+            position: [411.000000, 154.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/defeat/fire.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Glow"
+            position: [163.000000, 244.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/defeat/sparks3.5.sc2"
+            autoStart: true
+    -   class: "UIControl"
+        name: "SpriteLayer4"
+        size: [1024.000000, 260.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/Lose/HeadBackgroundDefeatRating"
+                frame: 3
+        children:
+        -   class: "UIParticles"
+            name: "Glowtank"
+            position: [411.000000, 146.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/defeat/glow_tank1.sc2"
+            autoStart: true

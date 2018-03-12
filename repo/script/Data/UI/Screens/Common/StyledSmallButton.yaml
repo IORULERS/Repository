@@ -1,0 +1,18 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Screens/Common/IconButton.yaml"
+Prototypes:
+-   prototype: "IconButton/IconButton"
+    name: "StyledSmallButton"
+    size: [80.000000, 64.000000]
+    components:
+        Background:
+            leftRightStretchCap: 10.000000
+            topBottomStretchCap: 0.000000
+    children:
+    -   path: "icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"

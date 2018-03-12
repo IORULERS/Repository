@@ -1,0 +1,211 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Lobby/Clan/ClanCommon.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Screens/Lobby/Chat/ChatMessageStyle.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "Section"
+    size: [1024.000000, 50.000000]
+    classes: "button-color-gray"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        Background:
+            drawType: "DRAW_TILED_MULTILAYER"
+            mask: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+            detail: "~res:/Gfx/UI/CommonUIElements/Button/detail"
+            gradientMode: "Overlay"
+            leftRightStretchCap: 9.000000
+        DebugRender:
+            enabled: false
+        ClipContent:
+            enabled: true
+    children:
+    -   prototype: "UnreadIcon/UnreadIcon"
+        name: "messagesCount"
+        size: [33.000000, 33.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 15.000000
+                vCenterAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+    -   class: "UIControl"
+        name: "title"
+        size: [400.000000, 50.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                dynamicPadding: true
+                spacing: 5.000000
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "text"
+            classes: "header4 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfParent"
+                UITextComponent:
+                    text: "ПРИГЛАШЕНИЯ В КЛАН"
+        -   class: "UIControl"
+            name: "icon"
+            size: [30.000000, 50.000000]
+            noInput: true
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/CommonUIElements/IconArrowDropDownMenu"
+Controls:
+-   class: "UIControl"
+    name: "Notifications"
+    size: [1024.000000, 688.000000]
+    classes: "limited-width"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Anchor:
+            hCenterAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "verticalBox"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   prototype: "Section"
+            name: "invitationsSection"
+            children:
+            -   path: "title/text"
+                components:
+                    UITextComponent:
+                        text: "#clans:NotificationScreen/Invites/Header"
+        -   class: "UIList"
+            name: "invitationsList"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+        -   prototype: "Section"
+            name: "messagesSection"
+            position: [0.000000, 50.000000]
+            children:
+            -   path: "title/text"
+                components:
+                    UITextComponent:
+                        text: "#clans:NotificationScreen/Messages/Header"
+        -   class: "UIList"
+            name: "messagesList"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+-   class: "UIControl"
+    customClass: "UIClanNotificationCell"
+    name: "NotificationsListItem"
+    size: [960.000000, 64.000000]
+    components:
+        LinearLayout:
+            padding: 15.000000
+            safeAreaPaddingInset: true
+            spacing: 15.000000
+    children:
+    -   class: "UIControl"
+        name: "background"
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.200000, 0.274510, 0.321569, 0.705882]
+        children:
+        -   prototype: "ClanCommon/ListLine"
+            name: "footer"
+    -   class: "UIControl"
+        customClass: "UIClanEmblemView"
+        name: "clanEmblem"
+        size: [36.000000, 36.000000]
+        components:
+            Anchor:
+                vCenterAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+    -   class: "UIControl"
+        name: "leftContent"
+        position: [110.000000, 0.000000]
+        size: [576.000000, 64.000000]
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIStaticText"
+            name: "message"
+            size: [576.000000, 56.000000]
+            classes: "header4 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 4.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 4.000000
+                UITextComponent:
+                    text: "Вы разжалованы до звания Рядовой."
+                    align: ["LEFT", "VCENTER"]
+    -   class: "UIControl"
+        name: "rightContent"
+        size: [200.000000, 64.000000]
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIStaticText"
+            name: "quantity"
+            size: [200.000000, 30.000000]
+            classes: "header4 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 4.000000
+                UITextComponent:
+                    text: "35 / 50"
+                    align: ["RIGHT", "VCENTER"]
+        -   class: "UIStaticText"
+            name: "date"
+            size: [200.000000, 30.000000]
+            classes: "text2 chat-date-text-color"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 4.000000
+                UITextComponent:
+                    text: "15.03.2015 08:44"
+                    align: ["RIGHT", "VCENTER"]

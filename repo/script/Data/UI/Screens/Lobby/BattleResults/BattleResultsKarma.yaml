@@ -1,0 +1,430 @@
+Header:
+    version: "18"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+StyleSheets:
+-   selector: "#RelationUnavailablePopup #Dialog #Content ?"
+    properties:
+        visible: false
+-   selector: "#RelationUnavailablePopup.daily-limit #Dialog #Content #DailyLimitReached"
+    properties:
+        visible: true
+-   selector: "#RelationUnavailablePopup.expired #Dialog #Content #TimeExpiredMessage"
+    properties:
+        visible: true
+-   selector: "#RelationUnavailablePopup.already-rated #Dialog #Content #AlreadyRatedMessage"
+    properties:
+        visible: true
+-   selector: "#KarmaRelationOption #Selection, #KarmaRelationOption #SelectionBackground"
+    properties:
+        visible: false
+-   selector: "#KarmaRelationOption:selected #Selection, #KarmaRelationOption:selected #SelectionBackground"
+    properties:
+        visible: true
+-   selector: ".popup-arrow"
+    properties:
+        visible: false
+-   selector: ".left #Dialog ? #LeftPopupArrow"
+    properties:
+        visible: true
+-   selector: ".right #Dialog ? #RightPopupArrow"
+    properties:
+        visible: true
+-   selector: ".ally #RelationsList .only-enemy, .enemy #RelationsList .only-ally"
+    properties:
+        visible: false
+-   selector: ".no-compliments #RelationsList .compliment, .no-complaints #RelationsList .complaint"
+    properties:
+        visible: false
+-   selector: ".text-color-blue-grey"
+    properties:
+        text-color: [0.627451, 0.725490, 0.800000, 1.000000]
+Prototypes:
+-   class: "UIControl"
+    name: "ListSeparator"
+    size: [100.000000, 1.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 16.000000
+            rightAnchorEnabled: true
+            rightAnchor: 16.000000
+        Background:
+            drawType: "DRAW_FILL"
+            color: [1.000000, 1.000000, 1.000000, 0.188235]
+-   class: "UIControl"
+    name: "KarmaRelationOption"
+    size: [325.000000, 60.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfMaxChild"
+            verticalMin: 60.000000
+    children:
+    -   class: "UIControl"
+        name: "SelectionBackground"
+        classes: "popup-option-selection"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background: {}
+    -   class: "UIControl"
+        name: "Icon"
+        size: [44.000000, 44.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 4.000000
+                vCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/Karma/honor_icons"
+    -   class: "UIStaticText"
+        name: "Title"
+        size: [245.000000, 26.000000]
+        classes: "text1 text-color-white"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 48.000000
+                rightAnchorEnabled: true
+                rightAnchor: 32.000000
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "Неспортивное поведение"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "VCENTER"]
+    -   class: "UIControl"
+        name: "Selection"
+        size: [32.000000, 32.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 4.000000
+                vCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/select_mark"
+                frame: 1
+    -   prototype: "ListSeparator"
+        name: "ListSeparator"
+        components:
+            Anchor:
+                bottomAnchorEnabled: true
+-   class: "UIControl"
+    name: "KarmaRelationControl"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfMaxChild"
+            horizontalMin: 320.000000
+            verticalPolicy: "PercentOfChildrenSum"
+        Background:
+            drawType: "DRAW_STRETCH_BOTH"
+            sprite: "~res:/Gfx/UI/CommonUIElements/popup_new"
+            leftRightStretchCap: 14.000000
+            topBottomStretchCap: 14.000000
+    children:
+    -   class: "UIControl"
+        name: "RelationsList"
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 50.000000
+        children:
+        -   prototype: "KarmaRelationOption"
+            name: "KarmaRelationOption"
+            tag: 1
+            classes: "compliment everyone"
+            children:
+            -   path: "Title"
+                components:
+                    UITextComponent:
+                        text: "Karma/Compliments/SociablePlayer"
+        -   prototype: "KarmaRelationOption"
+            name: "KarmaRelationOption"
+            tag: 2
+            classes: "compliment only-ally"
+            children:
+            -   path: "Icon"
+                components:
+                    Background:
+                        frame: 1
+            -   path: "Title"
+                components:
+                    UITextComponent:
+                        text: "Karma/Compliments/AssistanceInBattle"
+        -   prototype: "KarmaRelationOption"
+            name: "KarmaRelationOption"
+            tag: 3
+            classes: "compliment only-ally"
+            children:
+            -   path: "Icon"
+                components:
+                    Background:
+                        frame: 2
+            -   path: "Title"
+                components:
+                    UITextComponent:
+                        text: "Karma/Compliments/EffectivePlayer"
+        -   prototype: "KarmaRelationOption"
+            name: "KarmaRelationOption"
+            tag: 4
+            classes: "compliment only-enemy"
+            children:
+            -   path: "Icon"
+                components:
+                    Background:
+                        frame: 3
+            -   path: "Title"
+                components:
+                    UITextComponent:
+                        text: "Karma/Compliments/WorthyEnemy"
+        -   prototype: "KarmaRelationOption"
+            name: "KarmaRelationOption"
+            tag: 5
+            classes: "compliment everyone"
+            children:
+            -   path: "Icon"
+                components:
+                    Background:
+                        frame: 4
+            -   path: "Title"
+                components:
+                    UITextComponent:
+                        text: "Karma/Compliments/Lucky"
+        -   prototype: "KarmaRelationOption"
+            name: "KarmaRelationOption"
+            tag: 6
+            classes: "complaint everyone"
+            children:
+            -   path: "Icon"
+                components:
+                    Background:
+                        frame: 5
+            -   path: "Title"
+                components:
+                    UITextComponent:
+                        text: "Karma/Complaints/OffensiveBehaviour"
+        -   prototype: "KarmaRelationOption"
+            name: "KarmaRelationOption"
+            tag: 7
+            classes: "complaint everyone"
+            children:
+            -   path: "Icon"
+                components:
+                    Background:
+                        frame: 6
+            -   path: "Title"
+                components:
+                    UITextComponent:
+                        text: "Karma/Complaints/UnsportingBehaviour"
+        -   prototype: "KarmaRelationOption"
+            name: "KarmaRelationOption"
+            tag: 8
+            classes: "complaint everyone"
+            children:
+            -   path: "Icon"
+                components:
+                    Background:
+                        frame: 7
+            -   path: "Title"
+                components:
+                    UITextComponent:
+                        text: "Karma/Complaints/InactivityInBattle"
+    -   class: "UIControl"
+        name: "ListFooter"
+        size: [320.000000, 50.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background: {}
+        children:
+        -   class: "UIStaticText"
+            name: "LimitsText"
+            size: [320.000000, 50.000000]
+            classes: "text1 text-color-blue-grey"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UITextComponent:
+                    text: "#battle_results:TeamPage/Karma/Comment/ActionsLeft"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+-   class: "UIControl"
+    name: "LeftPopupArrowContainer"
+    size: [32.000000, 32.000000]
+    noInput: true
+    children:
+    -   class: "UIControl"
+        name: "LeftPopupArrow"
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        angle: -90.000000
+        noInput: true
+        classes: "popup-arrow"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/CommonUIElements/popup_triangle"
+-   class: "UIControl"
+    name: "RightPopupArrowContainer"
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfMaxChild"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIControl"
+        name: "RightPopupArrow"
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        angle: 90.000000
+        noInput: true
+        classes: "popup-arrow"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/CommonUIElements/popup_triangle"
+Controls:
+-   class: "UIControl"
+    name: "KarmaRelationPopup"
+    size: [368.000000, 530.000000]
+    components:
+        IgnoreLayout: {}
+        SizePolicy:
+            horizontalPolicy: "PercentOfFirstChild"
+            verticalPolicy: "PercentOfFirstChild"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Dialog"
+        noInput: true
+        components:
+            LinearLayout:
+                spacing: -8.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+        children:
+        -   prototype: "LeftPopupArrowContainer"
+            name: "LeftPopupArrowContainer"
+        -   prototype: "KarmaRelationControl"
+            name: "KarmaRelationControl"
+            children:
+            -   path: "ListFooter/LimitsText"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:TeamPage/Karma/Comment/ActionsLeft"
+        -   prototype: "RightPopupArrowContainer"
+            name: "RightPopupArrowContainer"
+-   class: "UIControl"
+    name: "RelationUnavailablePopup"
+    components:
+        IgnoreLayout: {}
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Dialog"
+        position: [0.000000, 2.000000]
+        size: [368.000000, 60.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                spacing: -8.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+        children:
+        -   prototype: "LeftPopupArrowContainer"
+            name: "LeftPopupArrowContainer"
+            children:
+            -   path: "LeftPopupArrow"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: false
+        -   class: "UIControl"
+            name: "Content"
+            size: [320.000000, 60.000000]
+            pivot: [0.000000, 0.500000]
+            noInput: true
+            components:
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/CommonUIElements/popup_new"
+                    leftRightStretchCap: 14.000000
+                    topBottomStretchCap: 14.000000
+            children:
+            -   class: "UIStaticText"
+                name: "TimeExpiredMessage"
+                size: [320.000000, 60.000000]
+                classes: "text1 text-color-blue-grey"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UITextComponent:
+                        text: "#battle_results:TeamPage/Karma/Comment/NoTimeLeft"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+            -   class: "UIStaticText"
+                name: "DailyLimitReached"
+                size: [320.000000, 60.000000]
+                classes: "text1 text-color-blue-grey"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UITextComponent:
+                        text: "#battle_results:TeamPage/Karma/Comment/NoActionsLeft"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+            -   class: "UIStaticText"
+                name: "AlreadyRatedMessage"
+                classes: "text1 text-color-blue-grey"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UITextComponent:
+                        text: "#battle_results:TeamPage/Karma/Comment/AlreadyRated"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+        -   prototype: "RightPopupArrowContainer"
+            name: "RightPopupArrowContainer"

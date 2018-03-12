@@ -1,0 +1,38 @@
+name: "march_event/Header"
+priority: 1
+stages:
+ info-mrt:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/MRT2018/Button_Inform.yaml"
+  info: "event-info-mrt"
+ progress-mrt:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/MRT2018/Button_Process.yaml"
+  info: "event-progress-mrt"
+  tree: "~res:/UI/Screens/Lobby/Story/MRT2018/MRT2018StoryTree.yaml"
+  detailedInfo:
+    titleKey: "march_event/Info/DamageCurrency/Header"
+    descriptionKey: "march_event/Info/DamageCurrency/Description"
+    imagePath: "~res:/Gfx/UI/StorageItemIcons/springEvent_1.psd"
+  subprogressQuest:
+    progress1:
+      labelKey: "march_event/ProgressStage/Battles"
+    progress2:
+      labelKey: "march_event/ProgressStage/Damage"
+    progress3:
+      labelKey: "march_event/ProgressStage/Tasks"
+    processHint: "march_event/ProgressStage/DamageTask"  
+ buy-mrt:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/MRT2018/Button_Buy.yaml"
+  info: "event-progress-mrt"
+  tree: "~res:/UI/Screens/Lobby/Story/MRT2018/MRT2018StoryTree.yaml"
+  detailedInfo:
+    titleKey: "march_event/Info/DamageCurrency/Header"
+    descriptionKey: "march_event/Info/DamageCurrency/Description"
+    imagePath: "~res:/Gfx/UI/StorageItemIcons/springEvent_1.psd"
+  subprogressQuest:
+    buyHint: "template_event/ProgressStage/RocketPlaywar/Error/TimeIsOver"  
+currencyKeys:
+  mrt_prx1: "march_event/Currencies/DamageCurrency/Terms"
+  mrt_prx2: "march_event/Currencies/QuestCurrency/Terms"

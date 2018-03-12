@@ -1,0 +1,186 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Lobby/Clan/Supply/ResearchProgress.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader3.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".button:disabled"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+        bg-frame: 0
+-   selector: ".button"
+    properties:
+        bg-frame: 2
+Controls:
+-   class: "UIControl"
+    name: "MyAccess"
+    size: [1024.000000, 768.000000]
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            padding: 10.000000
+            safeAreaPaddingInset: true
+            spacing: 20.000000
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "ProgressBarBg"
+        size: [776.000000, 86.000000]
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalMax: 870.000000
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 80.000000
+                hCenterAnchorEnabled: false
+                rightAnchorEnabled: true
+                rightAnchor: 80.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.207843, 0.274510, 0.325490, 1.000000]
+        children:
+        -   prototype: "ResearchProgress/ResearchProgressBar"
+            name: "ResearchProgressBar"
+            position: [0.000000, 0.000000]
+            size: [776.000000, 86.000000]
+            components:
+                LinearLayout:
+                    padding: 0.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   path: "IconWrapper"
+                position: [0.000000, 0.000000]
+                size: [86.000000, 86.000000]
+                components:
+                    Background:
+                        drawType: "DRAW_FILL"
+                        color: [0.254902, 0.313726, 0.364706, 1.000000]
+                children: []
+            -   path: "IconWrapper/Icon"
+                size: [86.000000, 86.000000]
+                components:
+                    Background:
+                        frame: 1
+            -   path: "VertContainer"
+                components:
+                    LinearLayout:
+                        dynamicPadding: true
+                children: []
+            -   path: "VertContainer/CaptionContainer"
+                components:
+                    LinearLayout:
+                        dynamicPadding: true
+                        spacing: 10.000000
+                        dynamicSpacing: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                children: []
+            -   path: "VertContainer/CaptionContainer/CaptionBar"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalValue: 100.000000
+                    Anchor:
+                        enabled: false
+                children: []
+            -   path: "VertContainer/CaptionContainer/CaptionBar/LabelProgress"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                    UITextComponent:
+                        fitting: "FITTING_REDUCE"
+            -   path: "VertContainer/CaptionContainer/ScoreBar"
+                components:
+                    LinearLayout:
+                        spacing: 8.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        horizontalValue: 100.000000
+                    Anchor:
+                        enabled: false
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                children: []
+            -   path: "VertContainer/CaptionContainer/ScoreBar/LabelValues"
+                classes: "text2"
+                components:
+                    UITextComponent:
+                        color: [0.627451, 0.725490, 0.800000, 1.000000]
+            -   prototype: "StyledButton/StyledButton"
+                name: "SpeedUpButton"
+                classes: "button button-color-green"
+                components:
+                    Anchor:
+                        enabled: true
+                        vCenterAnchorEnabled: true
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "#clans:SupplyScreen/PersonalAccess/SpeedUp/Button"
+            -   class: "UIControl"
+                name: "Spacer"
+                position: [775.000000, 0.000000]
+                size: [1.000000, 86.000000]
+    -   prototype: "SectionHeader3/SectionHeader3"
+        name: "Header"
+        children:
+        -   class: "UIStaticText"
+            name: "Text"
+            classes: "header3 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIControl"
+        name: "Bonuses"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIScrollView"
+            name: "Scroll"
+            autoUpdate: true
+            centerContent: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+        -   prototype: "Common/VerticalScrollBar"
+            name: "ScrollBar"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -1.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true

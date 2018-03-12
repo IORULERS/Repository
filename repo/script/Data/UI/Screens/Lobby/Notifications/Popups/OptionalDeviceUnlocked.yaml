@@ -1,0 +1,55 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UIOptionalDeviceUnlockedNotification"
+    name: "OptionalDeviceUnlocked"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                frame: 10
+    -   prototype: "RichText/RichText"
+        name: "Content"
+        size: [641.000000, 26.000000]
+        components:
+            FlowLayout:
+                hPadding: 0.000000
+                useRtl: true
+            SizePolicy:
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 75.000000
+                rightAnchorEnabled: true
+                rightAnchor: 220.000000
+                vCenterAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+            RichContent:
+                text: "<text_blue>Исследование слота оборудования на танке </text_blue><text_white_bold>%(tankName)</text_white_bold><text_blue> завершено!</text_blue>"
+    -   prototype: "StyledButton/StyledButton"
+        name: "DetailsButton"
+        size: [196.000000, 64.000000]
+        classes: "button button-color-gray button-ok-sound"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 11.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -2.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "HANGAR_NOTIFICATIONS_DETAILS"

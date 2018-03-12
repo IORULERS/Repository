@@ -1,0 +1,48 @@
+Header:
+    version: "20"
+Controls:
+-   class: "UIControl"
+    name: "HeaderCurrencies"
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+        Anchor:
+            vCenterAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Container"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                dynamicPadding: true
+                dynamicSpacing: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfMaxChild"
+                verticalPolicy: "PercentOfChildrenSum"
+        children:
+        -   class: "UIControl"
+            name: "Top"
+            components:
+                LinearLayout:
+                    spacing: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+        -   class: "UIControl"
+            name: "Bottom"
+            components:
+                LinearLayout:
+                    spacing: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+    -   class: "UIControl"
+        name: "Space"
+        size: [20.000000, 0.000000]
+        noInput: true

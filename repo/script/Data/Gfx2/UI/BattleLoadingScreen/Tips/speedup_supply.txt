@@ -1,0 +1,5 @@
+1
+speedup_supply0.tex
+512 256
+1
+0 0 349 230 90 10 0 frame0

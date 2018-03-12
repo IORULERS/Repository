@@ -1,0 +1,941 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyHeader.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleParamsTable.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/ModulesTechTree/Premiumization.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/LobbyStyles.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".number-param-prototype"
+    properties:
+        visible: true
+Prototypes:
+-   prototype: "StyledButton/StyledButton"
+    name: "ModuleStyledButton"
+    size: [200.000000, 64.000000]
+    classes: "button button-color-green"
+Controls:
+-   class: "UIControl"
+    name: "Screen"
+    size: [1024.000000, 768.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "LobbyHeader/Header"
+        name: "Header"
+        size: [1024.000000, 80.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+            Background:
+                color: [0.200000, 0.200000, 0.200000, 1.000000]
+    -   class: "UIControl"
+        name: "TreeInfo"
+        size: [936.000000, 80.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+        children:
+        -   class: "UIControl"
+            name: "VehicleNode"
+            position: [100.000000, 8.000000]
+            size: [173.000000, 64.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 100.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+            children:
+            -   class: "UIStaticText"
+                name: "TankName"
+                size: [300.000000, 32.000000]
+                noInput: true
+                classes: "text1"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        topAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "asdasd"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIStaticText"
+                name: "TankXP"
+                position: [22.000000, 32.000000]
+                size: [131.000000, 32.000000]
+                noInput: true
+                classes: "text1"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 22.000000
+                        vCenterAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "99 99 99"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        shadowOffset: [0.000000, 1.000000]
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "Currency"
+                position: [0.000000, 32.000000]
+                size: [22.000000, 32.000000]
+                noInput: true
+                classes: "currency-icon-small"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background: {}
+        -   prototype: "ModuleStyledButton"
+            name: "DumpTreeControl"
+            position: [300.000000, 8.000000]
+            size: [100.000000, 64.000000]
+            classes: "button button-color-gray"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    leftRightStretchCap: 10.000000
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "DumpTree"
+    -   class: "UIControl"
+        name: "Content"
+        size: [1024.000000, 688.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 80.000000
+                bottomAnchorEnabled: true
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "ModulesTree"
+            position: [0.000000, 0.000000]
+            size: [1024.000000, 688.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                ClipContent: {}
+            children:
+            -   class: "UIControl"
+                name: "VerticalLayout"
+                position: [-0.000003, 0.000000]
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                children:
+                -   class: "UIControl"
+                    name: "Container"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfParent"
+                    children:
+                    -   class: "UIScrollView"
+                        name: "TreeScrollView"
+                        position: [0.000000, 0.000000]
+                        noInput: true
+                        autoUpdate: true
+                        centerContent: true
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                rightAnchor: 425.000000
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            Background:
+                                drawType: "DRAW_SCALE_TO_RECT"
+                        children:
+                        -   class: "UIScrollViewContainer"
+                            name: "scrollContainerControl"
+                            size: [0.000000, 0.000000]
+                            noInput: false
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfMaxChild"
+                                    verticalPolicy: "PercentOfMaxChild"
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                            children:
+                            -   class: "UIControl"
+                                name: "Container"
+                                components:
+                                    SizePolicy: {}
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                children:
+                                -   class: "UIControl"
+                                    customClass: "UITanksTreeContent"
+                                    name: "TreeContent"
+                                    size: [109.000000, 395.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy: {}
+                        -   class: "UIScrollBar"
+                            name: "HorizontalScrollbar"
+                            position: [0.000000, 584.000000]
+                            size: [589.000000, 10.000000]
+                            noInput: true
+                            orientation: "ORIENTATION_HORIZONTAL"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 10.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 0.000000
+                                ScrollBarDelegate:
+                                    delegate: ".."
+                            children:
+                            -   class: "UIControl"
+                                name: "slider"
+                                size: [30.000000, 10.000000]
+                                noInput: true
+                                components:
+                                    Background:
+                                        drawType: "DRAW_STRETCH_HORIZONTAL"
+                                        sprite: "~res:/Gfx/UI/CommonUIElements/HorizontalScroll"
+                                        leftRightStretchCap: 10.000000
+                        -   class: "UIScrollBar"
+                            name: "VerticalScrollbar"
+                            size: [10.000000, 584.000000]
+                            noInput: true
+                            orientation: "ORIENTATION_VERTICAL"
+                            components:
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 10.000000
+                                ScrollBarDelegate:
+                                    delegate: ".."
+                            children:
+                            -   class: "UIControl"
+                                name: "slider"
+                                size: [10.000000, 30.000000]
+                                noInput: true
+                                components:
+                                    Background:
+                                        drawType: "DRAW_STRETCH_VERTICAL"
+                                        sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                                        topBottomStretchCap: 10.000000
+                    -   class: "UIControl"
+                        name: "ModuleInfo"
+                        size: [425.000000, 594.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                        children:
+                        -   class: "UIControl"
+                            name: "HeaderInfo"
+                            size: [381.000000, 40.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    padding: 10.000000
+                                    spacing: 6.000000
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                UIAnchorSafeAreaComponent:
+                                    rightSafeInset: "INSET"
+                                Background:
+                                    align: ["RIGHT", "BOTTOM"]
+                            children:
+                            -   class: "UIControl"
+                                name: "Background"
+                                size: [425.000000, 40.000000]
+                                noInput: true
+                                classes: "section-header1"
+                                components:
+                                    IgnoreLayout: {}
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        rightAnchorEnabled: true
+                                        topAnchorEnabled: true
+                                        bottomAnchorEnabled: true
+                                    UIAnchorSafeAreaComponent:
+                                        rightSafeInset: "REVERSE"
+                                    Background: {}
+                            -   class: "UIStaticText"
+                                name: "ItemTypeName"
+                                noInput: true
+                                classes: "header1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfParent"
+                                    Background:
+                                        align: ["LEFT", "TOP"]
+                                    UITextComponent:
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        align: ["LEFT", "VCENTER"]
+                                        useRtlAlign: "DONT_USE"
+                            -   class: "UIStaticText"
+                                name: "ItemName"
+                                noInput: true
+                                classes: "header1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "Formula"
+                                        horizontalFormula: "min(parentRest, content)"
+                                        verticalPolicy: "PercentOfParent"
+                                    Background:
+                                        align: ["LEFT", "TOP"]
+                                    UITextComponent:
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        fitting: "FITTING_REDUCE"
+                                        align: ["LEFT", "VCENTER"]
+                                        useRtlAlign: "DONT_USE"
+                        -   class: "UIControl"
+                            name: "ParamsControl"
+                            position: [0.000000, 40.000000]
+                            size: [425.000000, 554.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    topAnchor: 40.000000
+                                    bottomAnchorEnabled: true
+                            children:
+                            -   class: "UIScrollView"
+                                name: "scroll"
+                                size: [425.000000, 554.000000]
+                                noInput: true
+                                autoUpdate: true
+                                components:
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        leftAnchor: 0.000000
+                                        rightAnchorEnabled: true
+                                        rightAnchor: 0.000000
+                                        topAnchorEnabled: true
+                                        topAnchor: 0.000000
+                                        bottomAnchorEnabled: true
+                                        bottomAnchor: 0.000000
+                                    Background: {}
+                                children:
+                                -   class: "UIScrollViewContainer"
+                                    name: "scrollContainerControl"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfChildrenSum"
+                                    children:
+                                    -   prototype: "VehicleParamsTable/VehicleParamsTable"
+                                        name: "VehicleParamsTable"
+                                        children:
+                                        -   path: "BaseParam/BaseParamHeader/bg/title"
+                                            position: [10.000000, 0.000000]
+                                        -   path: "BaseParam/Protectability/Content"
+                                            position: [0.000000, 0.000000]
+                                            children: []
+                                        -   path: "DetalesParam/ProtectabilityParams/HeaderStrength/bg/title"
+                                            position: [10.000000, 0.000000]
+                                        -   path: "DetalesParam/GunParams/CircularVisionRadius"
+                                            visible: true
+                                            enabled: false
+                                            children: []
+                                        -   path: "ModulesParam"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfParent"
+                                            children: []
+                                        -   path: "ModulesParam/Engine/HeaderEngine/bg/title"
+                                            components:
+                                                UITextComponent:
+                                                    align: ["LEFT", "VCENTER"]
+                                        -   path: "ModulesParam/Turret/HeaderTurret/bg/title"
+                                            components:
+                                                UITextComponent:
+                                                    align: ["LEFT", "VCENTER"]
+                                        -   path: "ModulesParam/Chassi/HeaderChassi/bg/title"
+                                            components:
+                                                UITextComponent:
+                                                    align: ["LEFT", "VCENTER"]
+                            -   class: "UIScrollBar"
+                                name: "scrollBar"
+                                position: [419.000000, 0.000000]
+                                size: [6.000000, 554.000000]
+                                noInput: true
+                                classes: "notch-tightly-right-inset"
+                                orientation: "ORIENTATION_VERTICAL"
+                                components:
+                                    Anchor:
+                                        rightAnchorEnabled: true
+                                        rightAnchor: 0.000000
+                                        topAnchorEnabled: true
+                                        topAnchor: 0.000000
+                                        bottomAnchorEnabled: true
+                                        bottomAnchor: 0.000000
+                                    UIAnchorSafeAreaComponent: {}
+                                    Background:
+                                        drawType: "DRAW_SCALE_TO_RECT"
+                                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                                children:
+                                -   class: "UIControl"
+                                    name: "slider"
+                                    size: [6.000000, 50.000000]
+                                    noInput: true
+                                    components:
+                                        Background:
+                                            drawType: "DRAW_STRETCH_VERTICAL"
+                                            sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                                            topBottomStretchCap: 4.000000
+                -   class: "UIControl"
+                    name: "StateControl"
+                    position: [0.000000, 594.000000]
+                    size: [1024.000000, 94.000000]
+                    noInput: true
+                    classes: "footer-background"
+                    components:
+                        LinearLayout:
+                            safeAreaPaddingInset: true
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        Background: {}
+                    children:
+                    -   class: "UIControl"
+                        name: "Spacer"
+                        noInput: true
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "FixedSize"
+                                horizontalValue: 10.000000
+                                verticalPolicy: "PercentOfParent"
+                    -   prototype: "Premiumization/PremiumizationHolder"
+                        name: "PremiumizationHolder"
+                        components:
+                            LinearLayout:
+                                spacing: 15.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfParent"
+                        children:
+                        -   path: "AlreadyPremiumized"
+                            position: [20.000000, 34.000000]
+                            components:
+                                IgnoreLayout: {}
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 20.000000
+                            children: []
+                        -   path: "AlreadyPremiumized/ExpireTimer/Timer/Hours"
+                            components:
+                                UITextComponent:
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   path: "AlreadyPremiumized/ExpireTimer/Timer/ColonHM"
+                            components:
+                                UITextComponent:
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   path: "AlreadyPremiumized/ExpireTimer/Timer/Minutes"
+                            components:
+                                UITextComponent:
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   path: "AlreadyPremiumized/ExpireTimer/Label"
+                            components:
+                                UITextComponent:
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   path: "Button"
+                            size: [200.000000, 64.000000]
+                            children: []
+                        -   path: "OptionsText"
+                            classes: "text1 text-color-blue"
+                    -   class: "UIControl"
+                        name: "StateControlPart"
+                        position: [350.000000, 0.000000]
+                        noInput: true
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfMaxChild"
+                                verticalPolicy: "PercentOfParent"
+                            Anchor:
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   class: "UIControl"
+                            name: "ResearchPanel"
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "RightToLeft"
+                                    padding: 10.000000
+                                    spacing: 15.000000
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                    verticalPolicy: "PercentOfMaxChild"
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    vCenterAnchorEnabled: true
+                            children:
+                            -   prototype: "ModuleStyledButton"
+                                name: "ResearchButton"
+                                components:
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                children:
+                                -   path: "Caption"
+                                    components:
+                                        UITextComponent:
+                                            text: "#modules_tech_tree:ResearchButton"
+                            -   class: "UIControl"
+                                name: "Price"
+                                position: [10.000000, 19.500000]
+                                size: [312.000000, 25.000000]
+                                noInput: true
+                                components:
+                                    LinearLayout:
+                                        orientation: "RightToLeft"
+                                        spacing: 5.000000
+                                        useRtl: true
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfChildrenSum"
+                                    Anchor:
+                                        rightAnchorEnabled: true
+                                children:
+                                -   class: "UIControl"
+                                    name: "CurrencyLayout"
+                                    size: [90.000000, 26.000000]
+                                    components:
+                                        LinearLayout: {}
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfChildrenSum"
+                                            verticalPolicy: "PercentOfMaxChild"
+                                    children:
+                                    -   class: "UIStaticText"
+                                        name: "Value"
+                                        noInput: true
+                                        classes: "header3"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Background:
+                                                align: ["LEFT", "TOP"]
+                                            UITextComponent:
+                                                text: "999 999"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                                align: ["RIGHT", "VCENTER"]
+                                                useRtlAlign: "DONT_USE"
+                                    -   class: "UIControl"
+                                        name: "Currency"
+                                        position: [68.000000, 2.000000]
+                                        size: [22.000000, 22.000000]
+                                        noInput: true
+                                        components:
+                                            Anchor:
+                                                vCenterAnchorEnabled: true
+                                                vCenterAnchor: 0.000000
+                                            Background:
+                                                drawType: "DRAW_SCALE_PROPORTIONAL"
+                                                sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+                                                frame: 3
+                                -   class: "UIStaticText"
+                                    name: "DescriptionControl"
+                                    noInput: true
+                                    classes: "text1 text-color-blue"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfContent"
+                                            verticalPolicy: "PercentOfContent"
+                                        Background:
+                                            align: ["LEFT", "TOP"]
+                                        UITextComponent:
+                                            text: "#modules_tech_tree:ResearchDescription"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            align: ["LEFT", "VCENTER"]
+                                            useRtlAlign: "DONT_USE"
+                        -   class: "UIControl"
+                            name: "InstallPanel"
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "RightToLeft"
+                                    padding: 10.000000
+                                    spacing: 15.000000
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                    verticalPolicy: "PercentOfParent"
+                                Anchor:
+                                    rightAnchorEnabled: true
+                            children:
+                            -   prototype: "ModuleStyledButton"
+                                name: "InstallButton"
+                                components:
+                                    Anchor:
+                                        hCenterAnchorEnabled: false
+                                        rightAnchorEnabled: true
+                                        rightAnchor: 20.000000
+                                        vCenterAnchorEnabled: true
+                                children:
+                                -   path: "Caption"
+                                    components:
+                                        UITextComponent:
+                                            text: "#modules_tech_tree:InstallButton"
+                            -   class: "UIStaticText"
+                                name: "DescriptionControl"
+                                size: [0.000000, 30.000000]
+                                visible: false
+                                noInput: true
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIControl"
+                            name: "EmptyPanel"
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                    verticalPolicy: "PercentOfParent"
+                                Anchor:
+                                    rightAnchorEnabled: true
+                            children:
+                            -   class: "UIStaticText"
+                                name: "DescriptionControl"
+                                noInput: true
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        rightAnchorEnabled: true
+                                        rightAnchor: 30.000000
+                                        vCenterAnchorEnabled: true
+                                    Background:
+                                        align: ["LEFT", "TOP"]
+                                    UITextComponent:
+                                        text: "#modules_tech_tree:InstalledDescription"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                        -   class: "UIControl"
+                            name: "VehiclelPanel"
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "RightToLeft"
+                                    padding: 10.000000
+                                    spacing: 15.000000
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                    verticalPolicy: "PercentOfParent"
+                                Anchor:
+                                    rightAnchorEnabled: true
+                            children:
+                            -   class: "UIControl"
+                                name: "ButtonContainer"
+                                size: [200.000000, 64.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfMaxChild"
+                                        verticalPolicy: "PercentOfMaxChild"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                children:
+                                -   prototype: "ModuleStyledButton"
+                                    name: "ResearchButton"
+                                    children:
+                                    -   path: "Caption"
+                                        components:
+                                            UITextComponent:
+                                                text: "#modules_tech_tree:ResearchButton"
+                                -   prototype: "ModuleStyledButton"
+                                    name: "SellButton"
+                                    classes: "button button-color-red"
+                                    children:
+                                    -   path: "Caption"
+                                        components:
+                                            UITextComponent:
+                                                text: "#modules_tech_tree:SellButton"
+                                -   prototype: "ModuleStyledButton"
+                                    name: "BuyButton"
+                                    children:
+                                    -   path: "Caption"
+                                        components:
+                                            UITextComponent:
+                                                text: "#modules_tech_tree:BuyButton"
+                                -   prototype: "ModuleStyledButton"
+                                    name: "ModulesButton"
+                                    classes: "button button-color-gray"
+                                    children:
+                                    -   path: "Caption"
+                                        components:
+                                            Anchor:
+                                                leftAnchor: 10.000000
+                                                rightAnchor: 10.000000
+                                            UITextComponent:
+                                                text: "#modules_tech_tree:ModulesButton"
+                                                fitting: "FITTING_REDUCE"
+                                -   prototype: "ModuleStyledButton"
+                                    name: "RepairButton"
+                                    classes: "button button-color-gray"
+                                    children:
+                                    -   path: "Caption"
+                                        classes: "header3 text-color-white"
+                                        components:
+                                            UITextComponent:
+                                                text: "hangar repair button"
+                            -   class: "UIControl"
+                                name: "DescriptionContainer"
+                                size: [395.000000, 101.000000]
+                                noInput: true
+                                components:
+                                    LinearLayout:
+                                        orientation: "TopDown"
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfMaxChild"
+                                        verticalPolicy: "PercentOfChildrenSum"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                children:
+                                -   class: "UIControl"
+                                    name: "XpCost"
+                                    size: [320.000000, 25.000000]
+                                    noInput: true
+                                    components:
+                                        LinearLayout:
+                                            orientation: "RightToLeft"
+                                            spacing: 5.000000
+                                            useRtl: true
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfChildrenSum"
+                                        Anchor:
+                                            rightAnchorEnabled: true
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "UIControl"
+                                        size: [98.000000, 30.000000]
+                                        components:
+                                            LinearLayout: {}
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfChildrenSum"
+                                                verticalPolicy: "PercentOfMaxChild"
+                                        children:
+                                        -   class: "UIStaticText"
+                                            name: "Value"
+                                            noInput: true
+                                            classes: "header3"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                Background:
+                                                    align: ["LEFT", "TOP"]
+                                                UITextComponent:
+                                                    text: "999 999"
+                                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                                    align: ["RIGHT", "VCENTER"]
+                                                    useRtlAlign: "DONT_USE"
+                                        -   class: "UIControl"
+                                            name: "Currency"
+                                            size: [30.000000, 30.000000]
+                                            noInput: true
+                                            components:
+                                                Anchor:
+                                                    vCenterAnchorEnabled: true
+                                                    vCenterAnchor: 0.000000
+                                                Background:
+                                                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+                                                    frame: 3
+                                    -   class: "UIStaticText"
+                                        name: "DescriptionControl"
+                                        noInput: true
+                                        classes: "text1 text-color-blue"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Background:
+                                                align: ["LEFT", "TOP"]
+                                            UITextComponent:
+                                                text: "#modules_tech_tree:ResearchDescription"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                                align: ["LEFT", "VCENTER"]
+                                -   class: "UIControl"
+                                    name: "CreditPrice"
+                                    size: [339.000000, 25.000000]
+                                    noInput: true
+                                    components:
+                                        LinearLayout:
+                                            orientation: "RightToLeft"
+                                            spacing: 5.000000
+                                            useRtl: true
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfChildrenSum"
+                                        Anchor:
+                                            rightAnchorEnabled: true
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "UIControl"
+                                        size: [98.000000, 30.000000]
+                                        components:
+                                            LinearLayout: {}
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfChildrenSum"
+                                                verticalPolicy: "PercentOfMaxChild"
+                                        children:
+                                        -   class: "UIStaticText"
+                                            name: "Value"
+                                            noInput: true
+                                            classes: "header3"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                Background:
+                                                    align: ["LEFT", "TOP"]
+                                                UITextComponent:
+                                                    text: "999 999"
+                                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                                    align: ["RIGHT", "VCENTER"]
+                                                    useRtlAlign: "DONT_USE"
+                                        -   class: "UIControl"
+                                            name: "Currency"
+                                            size: [30.000000, 30.000000]
+                                            noInput: true
+                                            components:
+                                                Anchor:
+                                                    vCenterAnchorEnabled: true
+                                                Background:
+                                                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+                                                    frame: 1
+                                    -   class: "UIControl"
+                                        name: "DescriptionControl"
+                                        noInput: true
+                                        components:
+                                            LinearLayout:
+                                                spacing: 5.000000
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfChildrenSum"
+                                                verticalPolicy: "PercentOfChildrenSum"
+                                            Anchor:
+                                                leftAnchorEnabled: true
+                                                leftAnchor: 0.000000
+                                        children:
+                                        -   class: "UIStaticText"
+                                            name: "Label"
+                                            position: [0.000000, -2.000000]
+                                            noInput: true
+                                            classes: "text1 text-color-blue"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                Background:
+                                                    align: ["LEFT", "TOP"]
+                                                UITextComponent:
+                                                    text: "#modules_tech_tree:PurchaseDescription"
+                                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                                    align: ["LEFT", "VCENTER"]
+                                                    useRtlAlign: "DONT_USE"
+                                        -   prototype: "DiscountLabel/DiscountLabel"
+                                            name: "Discount"
+                                            classes: "discount-label type=clan_supply"
+                                            children:
+                                            -   path: "Value"
+                                                components:
+                                                    SizePolicy:
+                                                        verticalPolicy: "PercentOfContent"
+                                                    Anchor:
+                                                        vCenterAnchor: -4.000000
+                                -   class: "UIStaticText"
+                                    name: "SellDescription"
+                                    noInput: true
+                                    classes: "text1 text-color-blue"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfContent"
+                                            verticalPolicy: "PercentOfContent"
+                                        UITextComponent:
+                                            text: "#modules_tech_tree:SellDescription"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            align: ["RIGHT"]
+                                -   class: "UIStaticText"
+                                    name: "BirthdayDate"
+                                    noInput: true
+                                    classes: "text1"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfContent"
+                                            verticalPolicy: "PercentOfContent"
+                                        Anchor:
+                                            rightAnchorEnabled: true
+                                        UITextComponent:
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                -   class: "UIStaticText"
+                                    name: "RepairDescription"
+                                    size: [395.000000, 25.000000]
+                                    noInput: true
+                                    classes: "text1 text-color-blue"
+                                    components:
+                                        UITextComponent:
+                                            text: "LOCK_IS_BROKEN"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            align: ["HCENTER", "RIGHT"]

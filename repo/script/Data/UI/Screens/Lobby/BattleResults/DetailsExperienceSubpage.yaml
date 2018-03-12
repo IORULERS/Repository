@@ -1,0 +1,175 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/BattleResults/DetailsRewardSubpage.yaml"
+- "~res:/UI/Screens/Lobby/BattleResults/BattleResultsCommon.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   prototype: "DetailsRewardSubpage/Page"
+    name: "Page"
+    children:
+    -   path: "Content"
+        components:
+            Background:
+                drawType: "DRAW_ALIGNED"
+        children: []
+    -   path: "Content/UIScrollView/scrollContainerControl/Container/Table"
+        children:
+        -   prototype: "DetailsRewardSubpage/RewardRow"
+            name: "Earned"
+            children:
+            -   path: "Label"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/ExperiencePage/Xp"
+            -   class: "UIStaticText"
+                name: "LabelRecord"
+                position: [185.000000, 0.000000]
+                size: [370.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/CreditsExperiencePage/EarnedRecord"
+                        fontName: "WarHeliosCondC_Bold_21"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIStaticText"
+                name: "LabelXpFactor"
+                position: [185.000000, 0.000000]
+                size: [370.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    UITextComponent:
+                        fontName: "WarHeliosCondC_21"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+        -   prototype: "DetailsRewardSubpage/RewardSubRow"
+            name: "Damage"
+            children:
+            -   path: "Label"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/ExperiencePage/XpForDamage"
+        -   prototype: "DetailsRewardSubpage/RewardSubRow"
+            name: "Assist"
+            children:
+            -   path: "Label"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/ExperiencePage/XpForHelp"
+        -   prototype: "DetailsRewardSubpage/RewardSubRow"
+            name: "Other"
+            children:
+            -   path: "Label"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/ExperiencePage/OtherXp"
+        -   prototype: "DetailsRewardSubpage/RewardSubRow"
+            name: "TeamBonus"
+            children:
+            -   path: "Label"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/ExperiencePage/TeamBonus"
+        -   prototype: "DetailsRewardSubpage/RewardSubRow"
+            name: "HeroReward"
+            children:
+            -   path: "Label"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/ExperiencePage/heroRewardXp"
+        -   prototype: "DetailsRewardSubpage/RewardRow"
+            name: "QuestsReward"
+            position: [0.000000, 192.000000]
+            children:
+            -   path: "Label"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/CreditsExperiencePage/Quest_Reward"
+        -   prototype: "DetailsRewardSubpage/RewardRow"
+            name: "Free"
+            children:
+            -   path: "Label"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/ExperiencePage/FreeXp"
+            -   class: "UIStaticText"
+                name: "LabelXpFactor"
+                position: [185.000000, 0.000000]
+                size: [370.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    UITextComponent:
+                        fontName: "WarHeliosCondC_21"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+        -   prototype: "DetailsRewardSubpage/RewardRow"
+            name: "Avatar"
+            position: [0.000000, 256.000000]
+            children:
+            -   path: "Label"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/ExperiencePage/CrewXp"
+            -   class: "UIStaticText"
+                name: "LabelXpFactor"
+                position: [185.000000, 0.000000]
+                size: [370.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    UITextComponent:
+                        fontName: "WarHeliosCondC_21"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+    -   path: "Banner/PremiumBanner"
+        classes: ""
+    -   class: "UIControl"
+        name: "TrainingNoteContainer"
+        size: [1024.000000, 50.000000]
+        classes: "notch-tightly-bottom-inset"
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent: {}
+        children:
+        -   prototype: "BattleResultsCommon/TrainingNote"
+            name: "TrainingNote"
+            components:
+                IgnoreLayout: {}
+                SizePolicy:
+                    horizontalPolicy: "Ignore"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                DebugRender:
+                    enabled: false
+-   prototype: "DetailsRewardSubpage/RewardCell"
+    name: "RewardCell"

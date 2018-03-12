@@ -1,0 +1,18 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/CommonStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Cell"
+    size: [200.000000, 60.000000]
+    exclusiveInput: true
+    classes: "panel-background"
+    components:
+        LinearLayout:
+            safeAreaPaddingInset: true
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"

@@ -1,0 +1,150 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Chat/ChatCommon.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+StyleSheets:
+-   selector: ".cell #Background"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.101961]
+-   selector: ".cell:selected #Background"
+    properties:
+        bg-color: [0.235294, 0.596078, 1.000000, 0.301961]
+Prototypes:
+-   class: "UIControl"
+    name: "ClanRoomHeader"
+    size: [400.000000, 81.000000]
+    classes: "cell"
+    components:
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        size: [400.000000, 80.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            Background:
+                drawType: "DRAW_FILL"
+    -   class: "UIControl"
+        name: "ClanRoomView"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+        children:
+        -   prototype: "StyledButton/DefaultStyledButton"
+            name: "expandBtn"
+            size: [84.000000, 70.000000]
+            classes: "button button-color-gray"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 13.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "icon"
+                position: [0.000000, 0.000000]
+                size: [84.000000, 70.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background:
+                        drawType: "DRAW_ALIGNED"
+                        sprite: "~res:/Gfx/UI/Hangar/SidebarIcons"
+                        frame: 14
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            -   prototype: "ChatCommon/UnreadIcon"
+                name: "UnreadIcon"
+                size: [16.000000, 16.000000]
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 4.000000
+                        topAnchorEnabled: true
+                        topAnchor: 4.000000
+                    Background:
+                        drawType: "DRAW_SCALE_PROPORTIONAL"
+        -   class: "UIControl"
+            name: "Titles"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    dynamicPadding: true
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    rightAnchor: 100.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "name"
+                size: [216.000000, 41.000000]
+                classes: "header4 text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 20.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UITextComponent:
+                        text: "#xchat/ClanChat"
+                        fitting: "FITTING_POINTS"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIStaticText"
+                name: "Online"
+                position: [20.000000, 41.000000]
+                size: [156.000000, 40.000000]
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfParent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 80.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 15.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "12 онлайн"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["LEFT", "TOP"]
+                        useRtlAlign: "DONT_USE"
+        -   prototype: "UnreadIcon/UnreadIcon"
+            name: "AlertText"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 110.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 1.000000

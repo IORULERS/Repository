@@ -1,0 +1,5 @@
+1
+consumables_extinguisher0.tex
+256 128
+1
+0 0 62 73 93 42 0 frame0

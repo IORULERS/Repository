@@ -1,0 +1,84 @@
+Header:
+    version: "13"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/CheckMark.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+StyleSheets:
+-   selector: ".slot:selected #Selection"
+    properties:
+        visible: true
+-   selector: ".slot #Selection, .slot #CheckMark"
+    properties:
+        visible: false
+-   selector: ".slot.installed #CheckMark"
+    properties:
+        visible: true
+-   selector: ".slot-blinking.in-transition #OpenBlinkUnder, .slot-blinking.in-transition #OpenBlinkOver"
+    properties:
+        visible: true
+-   selector: ".slot-blinking #OpenBlinkUnder, .slot-blinking #OpenBlinkOver"
+    properties:
+        visible: false
+-   selector: ".slot.unlocked"
+    properties:
+        sound-touchUpInside: "GUI/buttons/ok"
+-   selector: ".slot"
+    properties:
+        sound-touchUpInside: "GUI/buttons/choose"
+Prototypes:
+-   prototype: "StyledButton/StyledButton"
+    name: "OptionalDevicesItem"
+    position: [0.000000, 0.000000]
+    size: [65.000000, 65.000000]
+    noInput: true
+    classes: "button-color-gray slot slot-blinking"
+    children:
+    -   path: "Caption"
+        visible: false
+        text: "Button"
+    -   class: "UIParticles"
+        name: "OpenBlinkUnder"
+        noInput: true
+        effectPath: "~res:/3d/FX/UI/glow_do2.sc2"
+        autoStart: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "DeviceIcon"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIParticles"
+        name: "OpenBlinkOver"
+        noInput: true
+        effectPath: "~res:/3d/FX/UI/glow_do2_2.sc2"
+        autoStart: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+    -   prototype: "Selection/Selection"
+        name: "Selection"
+        classes: "selection-color-orange"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "CheckMark/CheckMark"
+        name: "CheckMark"
+        position: [37.000000, 37.000000]
+        components:
+            Background:
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"

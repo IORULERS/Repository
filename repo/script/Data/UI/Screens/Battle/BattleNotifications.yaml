@@ -1,0 +1,16 @@
+Header:
+    version: "19"
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIBattleNotifications"
+    name: "BattleNotifications"
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            spacing: 10.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfMaxChild"
+            verticalPolicy: "PercentOfChildrenSum"
+        Anchor:
+            hCenterAnchorEnabled: true

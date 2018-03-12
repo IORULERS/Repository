@@ -1,0 +1,56 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Styles/Battle/BattleHUD.yaml"
+StyleSheets:
+-   selector: ".red-mark"
+    properties:
+        bg-frame: 1
+-   selector: ".green-mark"
+    properties:
+        bg-frame: 0
+-   selector: ".map-specific"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 1.000000]
+        bg-drawType: "DRAW_SCALE_TO_RECT"
+-   selector: ".map-random"
+    properties:
+        bg-color: [0.200000, 0.274510, 0.321569, 0.862745]
+        bg-drawType: "DRAW_FILL"
+-   selector: ".right-red-icon #icon"
+    properties:
+        bg-frame: 1
+        scale: [1.000000, 1.000000]
+-   selector: ".right-green-icon #icon"
+    properties:
+        scale: [-1.000000, 1.000000]
+        bg-frame: 0
+-   selector: ".left-green-icon #icon"
+    properties:
+        bg-frame: 0
+        scale: [1.000000, 1.000000]
+-   selector: ".left-red-icon #icon"
+    properties:
+        bg-frame: 1
+        scale: [-1.000000, 1.000000]
+-   selector: ".right-to-left"
+    properties:
+        linearLayout-orientation: "RightToLeft"
+-   selector: ".button:disabled"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+        bg-frame: 0
+-   selector: ".down"
+    properties:
+        scale: [1.000000, -1.000000]
+-   selector: ".map-white-back"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.600000]
+        bg-drawType: "DRAW_FILL"
+        bg-colorInherit: "COLOR_ADD_TO_PARENT"
+-   selector: ".observer-button-team #mode"
+    properties:
+        bg-frame: 1
+-   selector: ".observer-button-both #mode"
+    properties:
+        bg-frame: 0

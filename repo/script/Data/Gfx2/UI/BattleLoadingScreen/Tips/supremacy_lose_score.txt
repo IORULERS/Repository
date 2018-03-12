@@ -1,0 +1,5 @@
+1
+supremacy_lose_score0.tex
+512 256
+1
+0 0 432 210 26 43 0 frame0

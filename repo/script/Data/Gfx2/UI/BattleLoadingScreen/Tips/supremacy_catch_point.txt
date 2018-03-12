@@ -1,0 +1,5 @@
+1
+supremacy_catch_point0.tex
+512 256
+1
+0 0 390 209 63 32 0 frame0

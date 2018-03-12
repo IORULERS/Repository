@@ -1,0 +1,855 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryTreePrototypes.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+StyleSheets:
+-   selector: ".unique"
+    properties:
+        bg-color: [0.549020, 0.023529, 0.803922, 1.000000]
+-   selector: ".common"
+    properties:
+        bg-color: [0.517647, 0.521569, 0.525490, 1.000000]
+-   selector: ".step.selected.readyToComplete #NormalState #Image #ToCompleteUnderLocal, .step.readyToComplete #ExpandedState #Image #ToCompleteUnderLocal, .step #NormalState #Image #ToCompleteUnderLocal, .step #ExpandedState #Image #ToCompleteUnderLocal"
+    properties:
+        visible: false
+-   selector: ".step.readyToComplete #NormalState #Image #ToCompleteUnderLocal, .step.selected.readyToComplete #ExpandedState #Image #ToCompleteUnderLocal"
+    properties:
+        visible: true
+Prototypes:
+-   class: "UIControl"
+    name: "StoryStepLocal"
+    size: [86.000000, 70.000000]
+    noInput: true
+    classes: "step"
+    components:
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "ExpandedState"
+        position: [43.000000, 35.000000]
+        size: [100.000000, 115.000000]
+        pivot: [0.500000, 0.500000]
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "SelectionInside"
+            position: [0.000000, 0.000000]
+            size: [58.823502, 39.500000]
+            scale: [1.700000, 1.700000]
+            noInput: true
+            components:
+                Background:
+                    drawType: "DRAW_TILED_MULTILAYER"
+                    mask: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+                    detail: "~res:/Gfx/UI/CommonUIElements/Button/detail"
+                    gradient: "~res:/Gfx/UI/CommonUIElements/Button/gray_gradient"
+                    contour: "~res:/Gfx/UI/CommonUIElements/Button/gray_contour"
+                    gradientMode: "Overlay"
+                    color: [0.400000, 0.400000, 0.400000, 1.000000]
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    leftRightStretchCap: 10.000000
+        -   class: "UIControl"
+            name: "Image"
+            position: [0.000000, 2.000000]
+            size: [100.000000, 66.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 2.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Storage/Items_back.psd"
+                    colorInherit: "COLOR_REPLACE_ALPHA_ONLY"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            children:
+            -   class: "UIParticles"
+                name: "ToCompleteUnderLocal"
+                size: [0.000000, 0.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                effectPath: "~res:/3d/FX/UI/steps_event_glow.sc2"
+                autoStart: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 33.000000
+                        vCenterAnchorEnabled: false
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "Icon"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   prototype: "StoryTreePrototypes/ExpandedStateButton"
+            name: "Button"
+            components:
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            children:
+            -   path: "Background"
+                components:
+                    Background:
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_FORCED"
+        -   class: "UIControl"
+            name: "Selection"
+            size: [100.000000, 115.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/dynamic_control"
+                    frame: 1
+                    color: [0.325490, 0.572549, 0.160784, 1.000000]
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    leftRightStretchCap: 6.000000
+                    topBottomStretchCap: 6.000000
+    -   class: "UIControl"
+        name: "NormalState"
+        size: [85.000000, 70.000000]
+        noInput: true
+        components:
+            Background: {}
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "Button"
+            size: [85.000000, 70.000000]
+            classes: "button button-color-gray"
+            components:
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_FORCED"
+            children:
+            -   path: "Caption"
+                visible: false
+                enabled: false
+                components:
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   class: "UIControl"
+            name: "Image"
+            size: [83.000000, 83.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Storage/Items_back.psd"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            children:
+            -   class: "UIParticles"
+                name: "ToCompleteUnderLocal"
+                size: [0.000000, 0.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                effectPath: "~res:/3d/FX/UI/steps_event_glow.sc2"
+                autoStart: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "Icon"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIControl"
+            name: "Highlight"
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: -2.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: -2.000000
+                    topAnchorEnabled: true
+                    topAnchor: -2.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: -2.000000
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/Story/btn_glow"
+                    color: [0.325490, 0.572549, 0.160784, 1.000000]
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                    leftRightStretchCap: 9.000000
+                    topBottomStretchCap: 9.000000
+        -   class: "UIParticles"
+            name: "ToCompleteOver"
+            position: [42.500000, 35.000000]
+            size: [0.000000, 0.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/steps_event_unlock.sc2"
+            autoStart: true
+            startDelay: 0.005000
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   class: "UIControl"
+            name: "CheckMark"
+            position: [66.000000, 51.000000]
+            size: [24.000000, 24.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -5.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: -5.000000
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/mark"
+                    frame: 5
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+Controls:
+-   class: "UIControl"
+    name: "Stories"
+    position: [0.000000, 0.000000]
+    size: [900.000000, 388.000000]
+    noInput: true
+    children:
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [763.000000, 193.000000]
+        size: [22.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [17.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/HorizontalLine"
+        name: "HorizontalLine"
+        position: [16.000000, 371.000000]
+        size: [748.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/HorizontalLine"
+        name: "HorizontalLine2"
+        position: [16.000000, 15.000000]
+        size: [748.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/VerticalLine"
+        name: "VerticalLine"
+        position: [16.000000, 15.000000]
+        size: [2.000000, 358.000000]
+    -   prototype: "StoryTreePrototypes/VerticalLine"
+        name: "VerticalLine2"
+        position: [763.000000, 15.000000]
+        size: [2.000000, 358.000000]
+    -   prototype: "StoryStepLocal"
+        name: "23"
+        position: [242.000000, 159.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "unique"
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience2.psd"
+        -   path: "NormalState/Image"
+            classes: "unique"
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience2.psd"
+    -   prototype: "StoryStepLocal"
+        name: "33"
+        position: [242.000000, 269.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "unique"
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience2.psd"
+        -   path: "NormalState/Image"
+            classes: "unique"
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience2.psd"
+    -   prototype: "StoryStepLocal"
+        name: "24"
+        position: [348.000000, 159.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "unique"
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience0.psd"
+        -   path: "NormalState/Image"
+            classes: "unique"
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience0.psd"
+    -   prototype: "StoryStepLocal"
+        name: "34"
+        position: [348.000000, 269.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "unique"
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience0.psd"
+        -   path: "NormalState/Image"
+            classes: "unique"
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience0.psd"
+    -   prototype: "StoryStepLocal"
+        name: "37"
+        position: [665.000000, 269.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "unique"
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_battle0.psd"
+        -   path: "NormalState/Image"
+            classes: "unique"
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_battle0.psd"
+    -   prototype: "StoryStepLocal"
+        name: "15"
+        position: [453.000000, 49.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "rare"
+            components:
+                Background:
+                    sprite: ""
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/BigStar.psd"
+        -   path: "NormalState/Image"
+            classes: "rare"
+            components:
+                Background:
+                    sprite: ""
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/BigStar.psd"
+    -   prototype: "StoryStepLocal"
+        name: "25"
+        position: [453.000000, 159.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "rare"
+            components:
+                Background:
+                    sprite: ""
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/BigStar.psd"
+        -   path: "NormalState/Image"
+            classes: "rare"
+            components:
+                Background:
+                    sprite: ""
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/BigStar.psd"
+    -   prototype: "StoryStepLocal"
+        name: "35"
+        position: [453.000000, 269.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "rare"
+            components:
+                Background:
+                    sprite: ""
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/BigStar.psd"
+        -   path: "NormalState/Image"
+            classes: "rare"
+            components:
+                Background:
+                    sprite: ""
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/BigStar.psd"
+    -   prototype: "StoryStepLocal"
+        name: "31"
+        position: [30.000000, 269.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "rare"
+            components:
+                Background:
+                    sprite: ""
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 61.000000]
+            components:
+                Anchor:
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Quests/AddCurrencyIconsHuge_200percent.psd"
+                    frame: 7
+        -   path: "NormalState/Image"
+            classes: "rare"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: ""
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [83.000000, 63.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 10.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 10.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Quests/AddCurrencyIconsHuge_200percent.psd"
+                    frame: 7
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "16"
+        position: [559.000000, 49.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [60.000000, 70.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/NY_2016/tickets"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/NY_2016/tickets"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "26"
+        position: [559.000000, 159.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [60.000000, 70.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/NY_2016/tickets"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/NY_2016/tickets"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "27"
+        position: [665.000000, 159.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [60.000000, 70.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/NY_2016/tickets"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/NY_2016/tickets"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "41"
+        position: [784.000000, 159.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [60.000000, 70.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/NY_2016/tickets"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/NY_2016/tickets"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "36"
+        position: [559.000000, 269.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [60.000000, 70.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/NY_2016/tickets"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/NY_2016/tickets"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "17"
+        position: [665.000000, 49.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/SlotCertificate_1.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/SlotCertificate_1.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "11"
+        position: [30.000000, 49.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+    -   prototype: "StoryStepLocal"
+        name: "22"
+        position: [136.000000, 159.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "unique"
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience1.psd"
+        -   path: "NormalState/Image"
+            classes: "unique"
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience1.psd"
+    -   prototype: "StoryStepLocal"
+        name: "32"
+        position: [136.000000, 269.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "unique"
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience1.psd"
+        -   path: "NormalState/Image"
+            classes: "unique"
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience1.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "12"
+        position: [136.000000, 49.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+                    frame: 0
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "13"
+        position: [242.000000, 49.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+                    frame: 0
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "14"
+        position: [347.000000, 49.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+                    frame: 0
+    -   prototype: "StoryStepLocal"
+        name: "21"
+        position: [30.000000, 159.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "common"
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/PremCertificate_1.psd"
+        -   path: "NormalState/Image"
+            classes: "common"
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/PremCertificate_1.psd"

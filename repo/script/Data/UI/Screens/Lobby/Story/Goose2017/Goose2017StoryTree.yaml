@@ -1,0 +1,755 @@
+Header:
+    version: "16"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryTreePrototypes.yaml"
+Prototypes:
+-   prototype: "StoryTreePrototypes/StoryStep"
+    name: "LocalPrototype"
+    children:
+    -   path: "ExpandedState/Image"
+        components:
+            Anchor:
+                topAnchor: 37.000000
+            Background:
+                sprite: "~res:/Gfx/UI/Story/Common/medal.psd"
+        children:
+        -   class: "UIControl"
+            name: "Number"
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/golden_number.psd"
+                    frame: 2
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   path: "NormalState/Image"
+        components:
+            Anchor:
+                vCenterAnchor: 3.000000
+            Background:
+                sprite: "~res:/Gfx/UI/Story/Common/medal.psd"
+        children:
+        -   class: "UIControl"
+            name: "Number"
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/golden_number.psd"
+                    frame: 1
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+Controls:
+-   class: "UIControl"
+    name: "Stories"
+    position: [0.000000, 0.000000]
+    size: [950.000000, 446.000000]
+    noInput: true
+    children:
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [112.000000, 156.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [220.000000, 156.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [329.428558, 156.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [397.000000, 190.797623]
+        size: [62.250000, 2.000000]
+        angle: 90.000000
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [57.250000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [436.000000, 287.333374]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [436.000000, 155.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [544.000000, 157.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [612.666809, 189.047623]
+        size: [63.000000, 2.000000]
+        angle: 90.000000
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [58.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [652.666809, 288.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [19.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [653.000000, 157.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "LocalPrototype"
+        name: "1"
+        position: [29.000000, 121.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            position: [50.000000, 37.000000]
+            children: []
+        -   path: "ExpandedState/Image/Number"
+            components:
+                Background:
+                    frame: 1
+        -   path: "NormalState/Image/Number"
+            components:
+                Background:
+                    frame: 1
+    -   prototype: "LocalPrototype"
+        name: "2"
+        position: [137.000000, 121.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            position: [50.000000, 37.000000]
+            children: []
+        -   path: "NormalState/Image/Number"
+            components:
+                Background:
+                    frame: 2
+    -   prototype: "LocalPrototype"
+        name: "3"
+        position: [245.000000, 121.000000]
+        children:
+        -   path: "ExpandedState/Image/Number"
+            components:
+                Background:
+                    frame: 3
+        -   path: "NormalState/Image/Number"
+            components:
+                Background:
+                    frame: 3
+    -   prototype: "LocalPrototype"
+        name: "4"
+        position: [353.000000, 121.000000]
+        children:
+        -   path: "ExpandedState/Button/Background"
+            position: [0.000000, 0.000000]
+            size: [139.000000, 69.500000]
+        -   path: "ExpandedState/Image/Number"
+            components:
+                Background:
+                    frame: 4
+        -   path: "NormalState/Image/Number"
+            components:
+                Background:
+                    frame: 4
+    -   prototype: "LocalPrototype"
+        name: "5"
+        position: [460.000000, 121.000000]
+        children:
+        -   path: "ExpandedState/Image/Number"
+            components:
+                Background:
+                    frame: 5
+        -   path: "NormalState/Image/Number"
+            components:
+                Background:
+                    frame: 5
+    -   prototype: "LocalPrototype"
+        name: "6"
+        position: [569.000000, 121.000000]
+        children:
+        -   path: "ExpandedState/Image/Number"
+            components:
+                Background:
+                    frame: 6
+        -   path: "NormalState/Image/Number"
+            components:
+                Background:
+                    frame: 6
+    -   prototype: "LocalPrototype"
+        name: "7"
+        position: [677.000000, 121.000000]
+        children:
+        -   path: "ExpandedState/Image/Number"
+            components:
+                Background:
+                    frame: 7
+        -   path: "NormalState/Image/Number"
+            components:
+                Background:
+                    frame: 7
+    -   prototype: "StoryTreePrototypes/StoryBigStep"
+        name: "8"
+        position: [795.000000, 25.000000]
+        children:
+        -   path: "ExpandedState"
+            position: [64.000000, 53.000000]
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [20.000000, 0.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 16
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [-3.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -3.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIControl"
+                name: "class"
+                position: [-3.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -3.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 8
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIControl"
+                name: "level"
+                position: [113.000000, 0.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        enabled: false
+                        leftAnchorEnabled: false
+                        leftAnchor: 23.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 113.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 17
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [88.666687, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: false
+                        leftAnchor: -1.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 25.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 8
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class"
+                position: [89.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        enabled: false
+                        leftAnchorEnabled: false
+                        leftAnchor: -1.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 89.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "ExpandedState/Image"
+            position: [85.000000, 49.000000]
+            scale: [0.750000, 0.750000]
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: false
+                    topAnchorEnabled: true
+                    topAnchor: 49.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Goose2017/double_tanks"
+        -   path: "NormalState"
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [93.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        enabled: false
+                        leftAnchorEnabled: false
+                        leftAnchor: 23.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 93.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 17
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [68.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: false
+                        leftAnchor: -1.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 26.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 8
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class"
+                position: [69.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        enabled: false
+                        leftAnchorEnabled: false
+                        leftAnchor: -1.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 60.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "level"
+                position: [23.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 23.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 16
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 8
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "NormalState/Button"
+            components:
+                DebugRender:
+                    enabled: false
+            children: []
+        -   path: "NormalState/Image"
+            position: [65.250000, 52.500000]
+            scale: [0.780000, 0.780000]
+            components:
+                Anchor:
+                    enabled: true
+                    hCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 45.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Goose2017/double_tanks"
+        -   path: "NormalState/Label"
+            position: [6.000000, 74.000000]
+            size: [118.000000, 28.000000]
+            text: "goose_event/StageAward/BothVehicles"
+            font: "WarHeliosCondC_21"
+    -   prototype: "StoryTreePrototypes/StoryBigStep"
+        name: "9"
+        position: [795.000000, 170.000000]
+        children:
+        -   path: "ExpandedState"
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [20.000000, 0.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 16
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [-3.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -3.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIControl"
+                name: "class"
+                position: [-3.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -3.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 8
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "ExpandedState/Image"
+            scale: [0.700000, 0.700000]
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/BigTankIcons/usa-M6A2E1"
+        -   path: "NormalState"
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [23.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 23.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 16
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 8
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "NormalState/Image"
+            scale: [0.700000, 0.700000]
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/BigTankIcons/usa-M6A2E1"
+        -   path: "NormalState/Label"
+            text: "#usa_vehicles:M6A2E1"
+            font: "WarHeliosCondC_21"
+    -   prototype: "StoryTreePrototypes/StoryBigStep"
+        name: "10"
+        position: [795.000000, 315.000000]
+        enabled: true
+        selected: false
+        children:
+        -   path: "ExpandedState"
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [20.000000, 0.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 17
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [-3.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -3.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIControl"
+                name: "class"
+                position: [-3.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -3.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 8
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "ExpandedState/Image"
+            scale: [0.700000, 0.700000]
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/BigTankIcons/usa-M6A2E1_exp"
+        -   path: "NormalState"
+            position: [0.000000, 2.000000]
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [23.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 23.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 17
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 8
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "NormalState/Image"
+            scale: [0.700000, 0.700000]
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/BigTankIcons/usa-M6A2E1_exp"
+        -   path: "NormalState/Label"
+            text: "#usa_vehicles:M6A2E1_exp"
+            font: "WarHeliosCondC_21"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "11"
+        position: [353.000000, 252.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/1level_icon"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/1level_icon"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "12"
+        position: [460.000000, 252.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/1level_icon"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/1level_icon"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "13"
+        position: [569.000000, 252.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/1level_icon"
+        -   path: "NormalState"
+            position: [0.000000, 0.000000]
+            children: []
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/1level_icon"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "14"
+        position: [678.000000, 252.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/1level_icon"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/1level_icon"

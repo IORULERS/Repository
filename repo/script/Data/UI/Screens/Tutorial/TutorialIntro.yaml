@@ -1,0 +1,81 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+Controls:
+-   class: "UIControl"
+    name: "tutorialIntro"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            color: [0.000000, 0.000000, 0.000000, 0.698000]
+    children:
+    -   class: "UIStaticText"
+        name: "text"
+        position: [0.000000, 170.000000]
+        size: [1024.000000, 100.000000]
+        noInput: true
+        classes: "text1 text-color-blue"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 170.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "#battle_tutorial:welcome/comment"
+                colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                multiline: "MULTILINE_ENABLED"
+                align: ["HCENTER", "TOP"]
+                useRtlAlign: "USE_BY_CONTENT"
+    -   class: "UIStaticText"
+        name: "title"
+        position: [0.000000, 140.000000]
+        size: [1024.000000, 30.000000]
+        noInput: true
+        classes: "header1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 140.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "#battle_tutorial:welcome/header"
+                colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                multiline: "MULTILINE_ENABLED"
+                align: ["HCENTER", "BOTTOM"]
+                useRtlAlign: "DONT_USE"
+    -   class: "UIStaticText"
+        name: "tapToContinue"
+        position: [0.000000, 688.000000]
+        size: [1024.000000, 40.000000]
+        noInput: true
+        classes: "text1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 40.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "#battle_tutorial:welcome/tap_hint"
+                colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                multiline: "MULTILINE_ENABLED"

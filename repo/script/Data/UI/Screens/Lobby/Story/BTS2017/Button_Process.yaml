@@ -1,0 +1,56 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Layout"
+        position: [0.000000, 0.000000]
+        components:
+            ClipContent: {}
+        children: []
+    -   path: "Layout/Footer/Type"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Story/passing_icon"
+                frame: 0
+    -   path: "Layout/IconContainer"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                topAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 1.000000
+                    rightAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -4.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Story/BTS2017/HangarIcon_1.psd"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   path: "Layout/TextContainer/Title"
+        position: [-3.000000, 0.000000]
+        size: [140.000000, 50.000000]
+        textalign: ["RIGHT", "VCENTER"]
+        text: "rocketPlaywar_event/Title"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 3.000000
+    -   path: "Layout/TextContainer/ExpireTimer"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+        children: []

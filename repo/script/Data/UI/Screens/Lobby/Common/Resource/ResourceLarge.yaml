@@ -1,0 +1,164 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceStyle.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+- "~res:/UI/Styles/SlotStyles.yaml"
+StyleSheets:
+-   selector: ".resource ? #Selection, .resource.marked-off ? #Mark"
+    properties:
+        visible: false
+-   selector: ".resource.have-badge-on ? #Badge"
+    properties:
+        visible: true
+-   selector: ".resource.have-badge-off ? #Badge"
+    properties:
+        visible: false
+-   selector: ".resource:selected ? #Selection, .resource.marked-on ? #Mark"
+    properties:
+        visible: true
+-   selector: ".resource.quantity-on ? #ItemCount"
+    properties:
+        visible: true
+-   selector: ".resource.quantity-off ? #ItemCount"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIResourceLargeControl"
+    name: "ResourceLarge"
+    size: [100.000000, 120.000000]
+    classes: "resource resource-type=resource-stuff quantity=quantity-on marked=marked-off have-badge=have-badge-off"
+    components:
+        Background:
+            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        noInput: true
+        classes: "slot-bg installed"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                leftRightStretchCap: 20.000000
+                topBottomStretchCap: 20.000000
+    -   class: "UIControl"
+        name: "IconContainer"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "Foreground"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIControl"
+            name: "Badge"
+            size: [16.000000, 16.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -2.000000
+                    topAnchorEnabled: true
+                    topAnchor: -1.000000
+                Background:
+                    drawType: "DRAW_SCALE_TO_RECT"
+                    sprite: "~res:/Gfx/UI/CommonUIElements/WhiteCircle"
+                    color: [1.000000, 0.000000, 0.000000, 1.000000]
+        -   prototype: "Selection/Selection"
+            name: "Selection"
+            classes: "selection-color-orange"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: -1.000000
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+        -   class: "UIControl"
+            name: "Mark"
+            size: [32.000000, 32.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -4.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: -4.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/mark"
+        -   class: "UIControl"
+            name: "ItemCount"
+            size: [17.000000, 21.000000]
+            noInput: true
+            classes: "resource-count"
+            components:
+                LinearLayout:
+                    padding: 4.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    horizontalValue: 100.000000
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 4.000000
+                    topAnchorEnabled: true
+                    topAnchor: 4.000000
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            children:
+            -   class: "UIStaticText"
+                name: "Value"
+                size: [9.000000, 21.000000]
+                classes: "text2-small text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "0"
+                        colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "BoosterEffects"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIParticles"
+            name: "InstallEffect"
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/receiving_booster.sc2"
+            startDelay: 0.100000
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+        -   class: "UIParticles"
+            name: "CombineEffect"
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/grade_booster.sc2"
+            startDelay: 0.500000
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true

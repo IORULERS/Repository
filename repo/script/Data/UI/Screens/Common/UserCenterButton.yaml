@@ -1,0 +1,24 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/IconButton.yaml"
+- "~res:/UI/Styles/NetEaseStyles.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+Prototypes:
+-   prototype: "IconButton/IconButton"
+    name: "UserCenterButton"
+    size: [80.000000, 64.000000]
+    classes: "button button-color-gray button-ok-sound"
+    children:
+    -   path: "icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/CommonUIElements/UserIcon.psd"
+                mask: ""
+    -   prototype: "UnreadIcon/Badge"
+        name: "Badge"
+        components:
+            Anchor:
+                rightAnchor: -2.000000
+                topAnchor: -2.000000

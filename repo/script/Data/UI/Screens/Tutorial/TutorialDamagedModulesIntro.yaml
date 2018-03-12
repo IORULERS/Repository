@@ -1,0 +1,48 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+Controls:
+-   class: "UIControl"
+    name: "tutorialDamagedModulesIntro"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background: {}
+    children:
+    -   class: "UIStaticText"
+        name: "engineNotification"
+        position: [0.000000, 513.000000]
+        size: [1024.000000, 55.000000]
+        noInput: true
+        classes: "header4"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 200.000000
+            UITextComponent:
+                text: "engine_damaged"
+                color: [1.000000, 0.502000, 0.251000, 1.000000]
+                colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIStaticText"
+        name: "driverNotification"
+        position: [0.000000, 538.000000]
+        size: [1024.000000, 55.000000]
+        noInput: true
+        classes: "header4"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 175.000000
+            UITextComponent:
+                text: "driver_contused"
+                color: [1.000000, 0.502000, 0.251000, 1.000000]
+                colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"

@@ -1,0 +1,159 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Common/Settings/Settings.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Common/Settings/SettingsCommon.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Page"
+    size: [1025.000000, 2000.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIScrollView"
+        name: "ScrollView"
+        size: [1025.000000, 2000.000000]
+        noInput: true
+        autoUpdate: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                color: [0.192200, 0.192200, 0.192200, 1.000000]
+        children:
+        -   class: "UIScrollViewContainer"
+            name: "scrollContainerControl"
+            size: [1025.000000, 688.000000]
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    safeAreaPaddingInset: true
+                    spacing: 1.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+            children:
+            -   prototype: "SettingsCommon/Button"
+                name: "GraphicsOptionsButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "GRAPHICS OPTIONS"
+            -   prototype: "SettingsCommon/Button"
+                name: "DevFunctionsButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "DEV FUNCTIONS"
+            -   prototype: "SettingsCommon/Button"
+                name: "DevOptionsButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "DEV OPTIONS"
+            -   prototype: "SettingsCommon/Button"
+                name: "DevConsoleButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "DEV CONSOLE"
+            -   prototype: "SettingsCommon/Button"
+                name: "TutorialStepButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "TUTORIAL STEP"
+            -   prototype: "SettingsCommon/Button"
+                name: "EnqueueInTutorialButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "ENQUEUE IN TUTORIAL"
+            -   prototype: "SettingsCommon/Button"
+                name: "TipsViewButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "TIPS VIEW"
+            -   prototype: "SettingsCommon/Button"
+                name: "CrashAppButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "CRASH APP"
+            -   prototype: "SettingsCommon/Button"
+                name: "ThrowUnobservedExceptionButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "THROW UNOBSERVED TASK EXCEPTION"
+            -   prototype: "SettingsCommon/Button"
+                name: "ActivateLiveTileButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "ACTIVATE LIVE TILE"
+            -   prototype: "SettingsCommon/Button"
+                name: "DumpGraphicsOptionsSchemaButton"
+                size: [1025.000000, 80.000000]
+                classes: "pane-bg touchable settings-button"
+                children:
+                -   path: "TextContainer/Text"
+                    components:
+                        UITextComponent:
+                            text: "DUMP GRAPHICS OPTIONS SCHEMA"
+        -   prototype: "Common/VerticalScrollBar"
+            name: "VerticalScrollBar"
+            classes: "notch-tightly-right-inset"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+                ScrollBarDelegate:
+                    delegate: ".."

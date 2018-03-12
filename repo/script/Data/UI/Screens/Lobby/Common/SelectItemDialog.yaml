@@ -1,0 +1,112 @@
+Header:
+    version: "11"
+ImportedPackages:
+- "~res:/UI/Screens/DialogView.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Tournament/CellSelectionFrame.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+Prototypes:
+-   class: "UIListCell"
+    name: "SelectItemEntry"
+    size: [350.000000, 56.000000]
+    noInput: true
+    classes: "selectable"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIControl"
+        name: "Button"
+        size: [350.000000, 56.000000]
+        classes: "button"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Background: {}
+        children:
+        -   class: "UIStaticText"
+            name: "ItemText"
+            size: [350.000000, 56.000000]
+            classes: "header3 text-color-white"
+            text: "Header3"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+    -   class: "UIControl"
+        name: "deviderRight"
+        size: [175.000000, 1.000000]
+        noInput: true
+        components:
+            IgnoreLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalValue: 50.000000
+            Anchor:
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/LobbyCommon/GradientDivider"
+    -   class: "UIControl"
+        name: "deviderLeft"
+        size: [175.000000, 1.000000]
+        noInput: true
+        components:
+            IgnoreLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalValue: 50.000000
+            Anchor:
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/LobbyCommon/GradientDivider"
+                spriteModification: ["FLIP_HORIZONTAL"]
+    -   prototype: "CellSelectionFrame/SelectionFrame"
+        name: "SelectionFrame"
+Controls:
+-   prototype: "DialogView/WarningDialog"
+    name: "SelectItemDialog"
+    children:
+    -   path: "Dialog/Header/TitleText"
+        text: "#Заголовок"
+    -   path: "Dialog/Content/InfoContent"
+        children:
+        -   class: "UIControl"
+            name: "ItemListContainer"
+            size: [460.000000, 392.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfFirstChild"
+            children:
+            -   class: "UIList"
+                name: "ItemList"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 392.000000
+                children:
+                -   prototype: "SelectItemEntry"
+                    name: "SelectItemEntry"
+            -   prototype: "Common/VerticalScrollBar"
+                name: "ScrollBar"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: -15.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+    -   path: "Dialog/Content/Buttons/OkButton"
+        visible: false
+        children: []
+    -   path: "Dialog/Content/Buttons/CancelButton"
+        components:
+            Sound:
+                touchUpInside: GUI/buttons/cancel
+        children: []

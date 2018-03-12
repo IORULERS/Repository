@@ -1,0 +1,14 @@
+name: "personal_event/1/Title"
+stages:
+ process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/PersonalEventOne/Button_Process.yaml"
+  info: "p-event1-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/PersonalEventOne/PersonalEventOneTree.yaml"
+ buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/PersonalEventOne/Button_Buy.yaml"
+  info: "p-event1-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/PersonalEventOne/PersonalEventOneTree.yaml"
+currencyKeys:
+  pers_prx_bm-1-1: "personal_event/Currencies/BattleCurrency/Terms"

@@ -1,0 +1,5 @@
+1
+clan_recruiting0.tex
+256 128
+1
+0 0 198 65 30 59 0 frame0

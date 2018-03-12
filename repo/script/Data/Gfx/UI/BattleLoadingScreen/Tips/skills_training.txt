@@ -1,0 +1,5 @@
+1
+skills_training0.tex
+256 128
+1
+0 0 159 93 48 22 0 frame0

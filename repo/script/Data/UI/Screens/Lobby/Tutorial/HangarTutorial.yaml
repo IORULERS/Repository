@@ -1,0 +1,237 @@
+Header:
+    version: "18"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+Controls:
+-   class: "UIControl"
+    name: "NewSkillLevelDialog"
+    size: [600.000000, 90.000000]
+    noInput: true
+    components:
+        Background: {}
+    children:
+    -   class: "UIStaticText"
+        name: "Title"
+        size: [600.000000, 30.000000]
+        visible: true
+        enabled: true
+        noInput: true
+        classes: "text1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+            UITextComponent:
+                text: "#hangar_tutorial:hangar/skill_received/hint"
+                multiline: "MULTILINE_ENABLED"
+    -   class: "UIControl"
+        name: "Description"
+        size: [600.000000, 40.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 30.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 20.000000
+-   class: "UIControl"
+    name: "VehicleType"
+    size: [180.000000, 43.000000]
+    noInput: true
+    components:
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "icon"
+        position: [0.000000, 0.000000]
+        size: [30.000000, 43.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesBig"
+                frame: 1
+    -   class: "UIStaticText"
+        name: "name"
+        classes: "text1"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UITextComponent:
+                text: "Light"
+                align: ["HCENTER", "RIGHT", "VCENTER"]
+                useRtlAlign: "USE_BY_CONTENT"
+-   class: "UIControl"
+    customClass: "UITutorialTapHookControl"
+    name: "TapHookControl"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIStaticText"
+        name: "description"
+        size: [990.000000, 74.000000]
+        classes: "text1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 17.000000
+                rightAnchorEnabled: true
+                rightAnchor: 17.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 105.000000
+            UITextComponent:
+                text: "hangar tutorial tap hint"
+-   class: "UIControl"
+    name: "HintDialog"
+    size: [400.000000, 180.000000]
+    noInput: true
+    components:
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "content"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 25.000000
+                rightAnchorEnabled: true
+                rightAnchor: 25.000000
+                topAnchorEnabled: true
+                topAnchor: 25.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 25.000000
+        children:
+        -   class: "UIControl"
+            name: "bg"
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/HangarTutorial/SpechBubbleTile"
+                    leftRightStretchCap: 7.000000
+                    topBottomStretchCap: 7.000000
+        -   class: "UIStaticText"
+            name: "description"
+            classes: "text1"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 17.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 17.000000
+                    topAnchorEnabled: true
+                    topAnchor: 17.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 17.000000
+                UITextComponent:
+                    text: "description"
+                    color: [0.000000, 0.000000, 0.000000, 1.000000]
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "USE_BY_CONTENT"
+        -   class: "UIControl"
+            name: "icon"
+            size: [46.000000, 43.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 7.000000
+                    topAnchorEnabled: true
+                    topAnchor: 4.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesBig"
+                    frame: 1
+        -   class: "UIStaticText"
+            name: "title"
+            size: [297.000000, 43.000000]
+            classes: "header1"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 53.000000
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 4.000000
+                UITextComponent:
+                    text: "title"
+                    color: [0.000000, 0.000000, 0.000000, 1.000000]
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "USE_BY_CONTENT"
+    -   class: "UIControl"
+        name: "bottomTail"
+        position: [226.000000, 167.000000]
+        size: [26.000000, 26.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        components:
+            Anchor:
+                bottomAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/HangarTutorial/SpechBubbleTail"
+    -   class: "UIControl"
+        name: "topTail"
+        position: [226.000000, 13.000000]
+        size: [26.000000, 26.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        components:
+            Anchor:
+                topAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/HangarTutorial/SpechBubbleTail"
+                spriteModification: ["FLIP_VERTICAL"]
+    -   class: "UIControl"
+        name: "leftTail"
+        position: [13.000000, 168.000000]
+        size: [26.000000, 26.000000]
+        pivot: [0.500000, 0.500000]
+        angle: 90.000000
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/HangarTutorial/SpechBubbleTail"
+    -   class: "UIControl"
+        name: "rightTail"
+        position: [387.000000, 168.000000]
+        size: [26.000000, 26.000000]
+        pivot: [0.500000, 0.500000]
+        angle: -90.000000
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/HangarTutorial/SpechBubbleTail"
+-   class: "UIControl"
+    name: "HintShareBattleResults"
+    size: [600.000000, 90.000000]
+    noInput: true
+    components:
+        FlowLayout:
+            hPadding: 5.000000
+            hSpacing: 5.000000
+        Background: {}
+        RichContent: {}
+        RichContentAliases0:
+            aliases: "text_white,<span class=\"text-color-white text1\" />;reward,<object control=\"EmptyControl\" path=\"~res:/UI/Screens/Common/EmptyControl.yaml\" />;"

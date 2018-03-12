@@ -1,0 +1,362 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/LoadingSpinner.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+StyleSheets:
+-   selector: "#NewsList.MiniTablet"
+    properties:
+        sizePolicy-horizontalValue: 45.000000
+-   selector: "#NewsList.Tablet"
+    properties:
+        sizePolicy-horizontalValue: 45.000000
+-   selector: "#NewsList.Desktop"
+    properties:
+        sizePolicy-horizontalValue: 45.000000
+-   selector: "#NewsViewer.MiniTablet"
+    properties:
+        sizePolicy-horizontalValue: 55.000000
+-   selector: "#NewsViewer.Tablet"
+    properties:
+        sizePolicy-horizontalValue: 55.000000
+-   selector: "#NewsViewer.Desktop"
+    properties:
+        sizePolicy-horizontalValue: 55.000000
+-   selector: ".cell #Background"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.109804]
+-   selector: ".cell:selected #Background"
+    properties:
+        bg-color: [0.235294, 0.596078, 1.000000, 0.301961]
+-   selector: ".header5.Phone"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_25"
+-   selector: ".cell.Phone"
+    properties:
+        sizePolicy-verticalValue: 140.000000
+-   selector: ".text2-small.Phone"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_23"
+Controls:
+-   class: "UIControl"
+    name: "Page"
+    size: [1024.000000, 570.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIList"
+        customClass: "UIListPullRefresh"
+        name: "NewsList"
+        size: [1024.000000, 570.000000]
+        classes: "NewsList"
+        orientation: "ORIENTATION_VERTICAL"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                leftAnchorEnabled: true
+                topAnchorEnabled: true
+        children:
+        -   class: "UIScrollBar"
+            name: "VerticalScrollbar"
+            position: [1014.000000, 0.000000]
+            size: [10.000000, 570.000000]
+            noInput: true
+            classes: "notch-tightly-right-inset"
+            orientation: "ORIENTATION_VERTICAL"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+                ScrollBarDelegate:
+                    delegate: ".."
+            children:
+            -   class: "UIControl"
+                name: "slider"
+                size: [10.000000, 30.000000]
+                noInput: true
+                components:
+                    Background:
+                        drawType: "DRAW_STRETCH_VERTICAL"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                        topBottomStretchCap: 10.000000
+        -   class: "UIControl"
+            name: "ReadAllPanel"
+            position: [44.000000, 490.000000]
+            size: [936.000000, 80.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                    rightSafeInset: "INSET"
+            children:
+            -   class: "UIControl"
+                name: "Bg"
+                noInput: true
+                classes: "footer-background"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "REVERSE"
+                        rightSafeInset: "REVERSE"
+                    Background: {}
+            -   class: "UIStaticText"
+                name: "TitleText"
+                noInput: true
+                classes: "header1 text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 80.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 5.000000
+                        topAnchorEnabled: true
+                        topAnchor: 5.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 5.000000
+                    Background:
+                        colorInherit: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "#news:markAsRead"
+                        colorInheritType: "COLOR_ADD_TO_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   prototype: "StyledButton/DefaultStyledButton"
+                name: "ReadButton"
+                position: [5.000000, 5.000000]
+                size: [70.000000, 70.000000]
+                classes: "button button-color-gray button-ok-sound"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 5.000000
+                        topAnchorEnabled: true
+                        topAnchor: 5.000000
+                children:
+                -   class: "UIControl"
+                    name: "icon"
+                    size: [70.000000, 70.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 0.000000
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 0.000000
+                        Background:
+                            sprite: "~res:/Gfx/UI/NewsScreen/icon_read_all_news"
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "NewsViewer"
+        noInput: true
+        classes: "NewsViewer"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Bg"
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.000000, 0.000000, 0.000000, 1.000000]
+        -   class: "UIWebView"
+            name: "WebView"
+            size: [936.000000, 570.000000]
+            visible: false
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                    rightSafeInset: "INSET"
+                Background: {}
+        -   prototype: "LoadingSpinner/LoadingSpinner"
+            name: "ProgressControl"
+            visible: false
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+-   class: "UIControl"
+    customClass: "NewsCell"
+    name: "NewsCell"
+    size: [480.000000, 100.000000]
+    classes: "cell"
+    components:
+        SizePolicy:
+            verticalPolicy: "FixedSize"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        UIAnchorSafeAreaComponent:
+            leftSafeInset: "INSET"
+        Sound:
+            touchUpInside: "GUI/buttons/ok"
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "REVERSE"
+            Background:
+                drawType: "DRAW_FILL"
+    -   class: "UIControl"
+        name: "Unread"
+        position: [49.000000, 42.000000]
+        size: [16.000000, 16.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 5.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+            Background:
+                sprite: "~res:/Gfx/UI/NewsScreen/IconAlert"
+                color: [1.000000, 0.180400, 0.192200, 1.000000]
+    -   class: "UIControl"
+        name: "Image"
+        position: [74.000000, 0.000000]
+        size: [110.000000, 100.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 30.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+            Background:
+                drawType: "DRAW_SCALE_PROPORTIONAL"
+                sprite: "~res:/Gfx/UI/NewsScreen/Logotype"
+    -   class: "UIControl"
+        name: "Container"
+        size: [276.000000, 90.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 150.000000
+                rightAnchorEnabled: true
+                rightAnchor: 10.000000
+                topAnchorEnabled: true
+                topAnchor: 5.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 5.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+        children:
+        -   class: "UIStaticText"
+            name: "Title"
+            position: [0.000000, 0.000000]
+            size: [206.000000, 45.000000]
+            noInput: true
+            classes: "header5"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    rightAnchor: 70.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    vCenterAnchorEnabled: true
+                Background:
+                    align: ["LEFT", "VCENTER"]
+                ClipContent: {}
+                UITextComponent:
+                    text: "FSDVBDFSABVSFD FGSDF sdagvkjnfasdvbl;knsdfb;lknsdfb dfbaslvknlkndfb lknfdbslknfbds DFGLJKNLKJNFDBS"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "TOP"]
+                    useRtlAlign: "USE_BY_CONTENT"
+        -   class: "UIStaticText"
+            name: "Description"
+            position: [0.000000, 45.000000]
+            size: [276.000000, 45.000000]
+            noInput: true
+            classes: "text-color-blue text2-small"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    vCenterAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+                Background:
+                    align: ["LEFT", "VCENTER"]
+                ClipContent: {}
+                UITextComponent:
+                    text: "sdgvsdvsdv sdvkljnkjndvs dsvcljknsdjklvn dvsljknsdv"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "TOP"]
+                    useRtlAlign: "USE_BY_CONTENT"
+    -   class: "UIStaticText"
+        name: "Date"
+        size: [64.000000, 20.000000]
+        noInput: true
+        classes: "text3-small text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 10.000000
+                topAnchorEnabled: true
+                topAnchor: 10.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "99.99 99:99"
+                colorInheritType: "COLOR_IGNORE_PARENT"

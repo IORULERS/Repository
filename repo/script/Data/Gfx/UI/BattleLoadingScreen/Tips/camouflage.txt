@@ -1,0 +1,5 @@
+1
+camouflage0.tex
+256 128
+1
+0 0 125 125 66 2 0 frame0

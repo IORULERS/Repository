@@ -1,0 +1,5 @@
+1
+dispersion0.tex
+256 128
+1
+0 0 111 95 73 27 0 frame0

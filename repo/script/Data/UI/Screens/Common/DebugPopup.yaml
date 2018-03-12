@@ -1,0 +1,151 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Popup"
+    size: [1024.000000, 768.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIStaticText"
+        name: "memoryUsage"
+        position: [5.000000, 334.000000]
+        size: [507.000000, 100.000000]
+        noInput: true
+        classes: "text2-small text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 5.000000
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 0.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowOffset: [0.000000, 1.000000]
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+    -   class: "UIStaticText"
+        name: "ambientSounds"
+        position: [5.000000, 442.000000]
+        size: [507.000000, 100.000000]
+        noInput: true
+        classes: "header5"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 5.000000
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 0.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 108.000000
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowOffset: [0.000000, 1.000000]
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+    -   class: "UIStaticText"
+        name: "screensInfo"
+        size: [250.000000, 640.000000]
+        classes: "text2-small text-color-white"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+            UITextComponent:
+                text: "screens"
+                shadowOffset: [1.000000, 1.000000]
+                align: ["LEFT", "TOP"]
+    -   class: "UIStaticText"
+        name: "fpsText"
+        position: [919.000000, 748.000000]
+        size: [100.000000, 20.000000]
+        noInput: true
+        classes: "text1"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+                bottomAnchorEnabled: true
+            UITextComponent:
+                shadowOffset: [0.000000, 1.000000]
+                align: ["RIGHT", "VCENTER"]
+    -   class: "UIStaticText"
+        name: "ControlsCount"
+        position: [834.000000, 728.000000]
+        size: [185.000000, 20.000000]
+        noInput: true
+        classes: "text1"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 20.000000
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.596078, 0.650980, 1.000000, 0.705882]
+            UITextComponent:
+                text: "Controls Total Count: 0"
+                shadowOffset: [0.000000, 1.000000]
+                align: ["RIGHT", "VCENTER"]
+    -   class: "UIStaticText"
+        name: "soundMemory"
+        position: [539.000000, 688.000000]
+        size: [480.000000, 20.000000]
+        noInput: true
+        classes: "text1"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 60.000000
+            UITextComponent:
+                shadowOffset: [0.000000, 1.000000]
+                align: ["RIGHT", "VCENTER"]
+    -   prototype: "StyledButton/StyledButton"
+        name: "OverlayButton"
+        position: [954.000000, 0.000000]
+        size: [70.000000, 70.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+            Background:
+                color: [1.000000, 1.000000, 1.000000, 0.784314]
+        children:
+        -   path: "Caption"
+            classes: "text2-small text-color-white"
+            components:
+                UITextComponent:
+                    text: "Overlay"
+    -   prototype: "StyledButton/StyledButton"
+        name: "ConsoleButton"
+        position: [954.000000, 80.000000]
+        size: [70.000000, 70.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 80.000000
+                vCenterAnchorEnabled: false
+            Background:
+                color: [1.000000, 1.000000, 1.000000, 0.784314]
+        children:
+        -   path: "Caption"
+            classes: "text2-small text-color-white"
+            components:
+                UITextComponent:
+                    text: "Console"

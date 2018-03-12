@@ -1,0 +1,49 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Common/WebViewWithLoader.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Screen"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "Overlay"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.000000, 0.000000, 0.000000, 0.700000]
+    -   prototype: "StyledBackButton/StyledBackButton"
+        name: "BackButton"
+        classes: "button button-color-gray button-close-sound"
+    -   prototype: "WebViewWithLoader/WebViewWithLoader"
+        name: "WebViewWithLoader"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 100.000000
+                rightAnchorEnabled: true
+                rightAnchor: 100.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+        children:
+        -   path: "LoadingControl/FadeBackground"
+            visible: false

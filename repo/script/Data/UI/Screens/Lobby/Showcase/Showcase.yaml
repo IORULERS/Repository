@@ -1,0 +1,127 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Hangar/HangarBaseScreen.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleParamsTable.yaml"
+- "~res:/UI/Screens/Lobby/Common/ShopFooter.yaml"
+- "~res:/UI/Screens/Lobby/Showcase/ShowcasePrototypes.yaml"
+- "~res:/UI/Screens/Lobby/SmartDLC/DLCDownloadProgress.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: "#Screen.fullscreen-on #Header"
+    properties:
+        anchor-topAnchor:
+            value: -80.000000
+            transitionTime: 0.160000
+            transitionFunction: "LINEAR"
+-   selector: "#Screen.fullscreen-off #Header"
+    properties:
+        anchor-topAnchor:
+            value: 0.000000
+            transitionTime: 0.160000
+            transitionFunction: "LINEAR"
+-   selector: "#PreviewButton"
+    properties:
+        visible: false
+        anchor-topAnchor: 87.000000
+-   selector: "#TankName"
+    properties:
+        visible: false
+-   selector: "#Screen.show-tank-name #Content #TankName"
+    properties:
+        visible: true
+Prototypes:
+-   prototype: "HangarBaseScreen/Screen"
+    name: "Screen"
+    children:
+    -   path: "Header/Layout/leftContent"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 100.000000
+        children: []
+    -   path: "Header/Layout/leftContent/labels/primaryLabel"
+        components:
+            UITextComponent:
+                align: ["HCENTER", "VCENTER"]
+    -   path: "Header/Layout/leftContent/labels/secondaryLabel"
+        components:
+            UITextComponent:
+                align: ["HCENTER", "VCENTER"]
+    -   path: "Header/Layout/rightContent"
+        noInput: true
+        children: []
+    -   path: "Content"
+        children:
+        -   prototype: "ShowcasePrototypes/TankName"
+            name: "TankName"
+        -   class: "UIControl"
+            name: "TankDownloadProgress"
+            size: [1024.000000, 688.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+        -   prototype: "DLCDownloadProgress/DownloadProgress"
+            name: "DownloadProgress"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 68.000000
+            children:
+            -   path: "Content/Holder/LevelsRow"
+                children:
+                -   prototype: "DLCDownloadProgress/TankLevelsStatusBar"
+                    name: "TankLevelsStatusBar"
+                    children:
+                    -   path: "Levels"
+                        children:
+                        -   prototype: "DLCDownloadProgress/Level"
+                            name: "Level"
+                        -   prototype: "DLCDownloadProgress/Level"
+                            name: "Level_1"
+                        -   prototype: "DLCDownloadProgress/Level"
+                            name: "Level_2"
+                        -   prototype: "DLCDownloadProgress/Level"
+                            name: "Level_3"
+                        -   prototype: "DLCDownloadProgress/Level"
+                            name: "Level_4"
+                        -   prototype: "DLCDownloadProgress/Level"
+                            name: "Level_5"
+                        -   prototype: "DLCDownloadProgress/Level"
+                            name: "Level_6"
+                        -   prototype: "DLCDownloadProgress/Level"
+                            name: "Level_7"
+                        -   prototype: "DLCDownloadProgress/Level"
+                            name: "Level_8"
+                        -   prototype: "DLCDownloadProgress/Level"
+                            name: "Level_9"
+    -   prototype: "StyledButton/DefaultStyledButton"
+        name: "PreviewButton"
+        position: [29.000000, 87.000000]
+        size: [64.000000, 64.000000]
+        classes: "button button-color-gray"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 7.000000
+                topAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+        children:
+        -   class: "UIControl"
+            name: "icon"
+            pivot: [0.500000, 0.500000]
+            classes: "preview_icon"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/CamouflagesShop/icon_camouflage_preview"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"

@@ -1,0 +1,12 @@
+Header:
+    version: "6"
+Controls:
+-   class: "UIListCell"
+    name: "XChatContactSectionSeparator"
+    size: [400.000000, 3.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Background:
+            drawType: "DRAW_FILL"
+            color: [1.000000, 1.000000, 1.000000, 0.247059]

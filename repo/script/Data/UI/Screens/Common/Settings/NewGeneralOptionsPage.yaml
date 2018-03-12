@@ -1,0 +1,561 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Common/Settings/Settings.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Common/Settings/SettingsCommon.yaml"
+- "~res:/UI/Styles/NetEaseStyles.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Page"
+    size: [1025.000000, 688.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIScrollView"
+        name: "ScrollView"
+        position: [0.000000, 0.000000]
+        noInput: true
+        autoUpdate: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                color: [0.192200, 0.192200, 0.192200, 1.000000]
+        children:
+        -   class: "UIScrollViewContainer"
+            name: "scrollContainerControl"
+            position: [0.000000, 0.000000]
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 2.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+            children:
+            -   class: "UIControl"
+                name: "Container"
+                position: [5.000000, 0.000000]
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        safeAreaPaddingInset: true
+                        spacing: 1.000000
+                    SizePolicy:
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 5.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 5.000000
+                children:
+                -   prototype: "SettingsCommon/Button"
+                    name: "ChangeLanguageButton"
+                    size: [1015.000000, 80.000000]
+                    classes: "pane-bg touchable settings-button netease-hidden"
+                    children:
+                    -   path: "TextContainer"
+                        children:
+                        -   class: "UIStaticText"
+                            name: "CurrentLanguageText"
+                            classes: "header3"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 10.000000
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 50.000000
+                                    topAnchorEnabled: true
+                                    vCenterAnchorEnabled: true
+                                    vCenterAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                UITextComponent:
+                                    text: "TEST"
+                                    align: ["RIGHT", "VCENTER"]
+                        -   class: "UIControl"
+                            name: "Arrow"
+                            components:
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    sprite: "~res:/Gfx/UI/SettingsScreen/arrow_settings"
+                                    colorInherit: "COLOR_REPLACE_ALPHA_ONLY"
+                    -   path: "TextContainer/Text"
+                        components:
+                            UITextComponent:
+                                text: "SETTINGS_BUTTON_LANGUAGE"
+                -   prototype: "SettingsCommon/Row"
+                    name: "Row1"
+                    noInput: false
+                    components:
+                        LinearLayout:
+                            spacing: 1.000000
+                    children:
+                    -   prototype: "SettingsCommon/SliderWithCaption"
+                        name: "SoundVolume"
+                        components:
+                            LinearLayout:
+                                padding: 10.000000
+                                spacing: 15.000000
+                                dynamicSpacing: true
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                        children:
+                        -   path: "ValueAndCaption"
+                            components:
+                                LinearLayout:
+                                    spacing: 5.000000
+                            children: []
+                        -   path: "ValueAndCaption/GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "SETTINGS_GROUP_CAPTION_VOLUME"
+                        -   path: "ValueAndCaption/Value"
+                            components:
+                                SizePolicy:
+                                    horizontalMin: 54.000000
+                        -   path: "Slider"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    horizontalMax: 440.000000
+                                Anchor:
+                                    rightAnchorEnabled: false
+                                    rightAnchor: 0.000000
+                                    topAnchorEnabled: false
+                                    topAnchor: 0.000000
+                                    vCenterAnchorEnabled: true
+                                    bottomAnchorEnabled: false
+                                    bottomAnchor: 0.000000
+                            children: []
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "MuteInBackground"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/MuteInBackground/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/MuteInBackground/Description"
+                -   prototype: "SettingsCommon/SelectorWithCaptionAndDescription"
+                    name: "PushNotificationsMode"
+                    position: [0.000000, 162.000000]
+                    children:
+                    -   path: "TextContainer/GroupCaption"
+                        components:
+                            UITextComponent:
+                                text: "SETTINGS_LABEL_GENERAL_PUSH"
+                -   prototype: "SettingsCommon/SelectorWithCaptionAndDescription"
+                    name: "MinimapSize"
+                    position: [0.000000, 243.000000]
+                    children:
+                    -   path: "TextContainer/GroupCaption"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Other/MinimapSize/Title"
+                -   prototype: "SettingsCommon/SelectorWithCaptionAndDescription"
+                    name: "DamageMarkerStyle"
+                    position: [0.000000, 324.000000]
+                    visible: true
+                    children:
+                    -   path: "TextContainer/GroupCaption"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Other/DamageMarkerStyle/Title"
+                -   prototype: "SettingsCommon/Row"
+                    name: "Row2"
+                    noInput: false
+                    children:
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "ClanInvites"
+                        position: [508.500000, 0.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: false
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 1.000000
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/ClanInvites/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/ClanInvites/Description"
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "Minimap"
+                        size: [507.500000, 80.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                hCenterAnchorEnabled: true
+                                rightAnchorEnabled: false
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "SETTINGS_GROUP_CAPTION_MINIMAP"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "SETTINGS_DESCRIPTION_MINIMAP"
+                -   prototype: "SettingsCommon/Row"
+                    name: "Row3"
+                    noInput: false
+                    children:
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "TrainingRoomInvites"
+                        position: [508.500000, 0.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: false
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 1.000000
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/TrainingRoomInvites/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/TrainingRoomInvites/Description"
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "ChatFriendsInvites"
+                        size: [507.500000, 80.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                hCenterAnchorEnabled: true
+                                rightAnchorEnabled: false
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/ChatFriendsInvites/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/ChatFriendsInvites/Description"
+                -   prototype: "SettingsCommon/Row"
+                    name: "RowMarker"
+                    visible: true
+                    noInput: false
+                    children:
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "Rangefinder"
+                        position: [0.000000, 0.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                hCenterAnchorEnabled: true
+                                rightAnchorEnabled: false
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/Rangefinder/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/Rangefinder/Description"
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "ReloadTimer"
+                        size: [506.500000, 80.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: false
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 1.000000
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/ReloadTimer/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/ReloadTimer/Description"
+                -   prototype: "SettingsCommon/Row"
+                    name: "Row4"
+                    noInput: false
+                    children:
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "SkillsDisplay"
+                        size: [507.500000, 80.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                hCenterAnchorEnabled: true
+                                rightAnchorEnabled: false
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/SkillsDisplay/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/SkillsDisplay/Description"
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "DrivingDirectionIndicator"
+                        size: [506.500000, 80.000000]
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 1.000000
+                                rightAnchorEnabled: true
+                                rightAnchor: 0.000000
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/DrivingDirectionIndicator/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/DrivingDirectionIndicator/Description"
+                -   prototype: "SettingsCommon/Row"
+                    name: "Row5"
+                    noInput: false
+                    children:
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "Supremacy"
+                        position: [0.000000, 0.000000]
+                        size: [507.500000, 80.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                hCenterAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/Supremacy/Title"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/Supremacy/Description"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "SameControlType"
+                        position: [508.500000, 0.000000]
+                        size: [506.500000, 80.000000]
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 1.000000
+                                rightAnchorEnabled: true
+                                rightAnchor: 0.000000
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/SameControlType/Title"
+                                    fontName: "WarHeliosCondC_Bold_19"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/SameControlType/Description"
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "SameControlTypeMouse"
+                        position: [508.500000, 0.000000]
+                        size: [506.500000, 80.000000]
+                        visible: false
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 1.000000
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/SameControlType/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/SameControlType/Description"
+                -   prototype: "SettingsCommon/Row"
+                    name: "Row6"
+                    noInput: false
+                    children:
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "WifiDownloadOnly"
+                        size: [507.500000, 80.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                hCenterAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/WifiDownloadOnly/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "settings:Other/WifiDownloadOnly/Description"
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "DownloadFullClient"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: false
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 1.000000
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/DownloadFullClient/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "settings:Other/DownloadFullClient/Description"
+                -   prototype: "SettingsCommon/Row"
+                    name: "Row7"
+                    noInput: false
+                    children:
+                    -   prototype: "SettingsCommon/SwitchWithCaptionAndDescription"
+                        name: "DownloadHDTextures"
+                        size: [507.500000, 80.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                hCenterAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   path: "GroupCaption"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/DownloadHDTextures/Title"
+                        -   path: "Description"
+                            components:
+                                UITextComponent:
+                                    text: "#settings:Other/DownloadHDTextures/Off/Description"
+                -   prototype: "SettingsCommon/Button"
+                    name: "SelectMapButton"
+                    position: [0.000000, 972.000000]
+                    size: [1015.000000, 80.000000]
+                    visible: true
+                    classes: "pane-bg touchable settings-button"
+                    children:
+                    -   path: "TextContainer"
+                        children:
+                        -   class: "UIStaticText"
+                            name: "SelectMapText"
+                            classes: "header3"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 50.000000
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                                UITextComponent:
+                                    text: "TEST"
+                                    align: ["RIGHT", "VCENTER"]
+                        -   class: "UIControl"
+                            name: "Arrow"
+                            components:
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    sprite: "~res:/Gfx/UI/SettingsScreen/arrow_settings"
+                                    colorInherit: "COLOR_REPLACE_ALPHA_ONLY"
+                    -   path: "TextContainer/Text"
+                        components:
+                            UITextComponent:
+                                text: "MAP"
+                -   prototype: "SettingsCommon/Button"
+                    name: "NetEaseUserAgreementButton"
+                    size: [1015.000000, 80.000000]
+                    classes: "background settings-button netease-content"
+                    children:
+                    -   path: "TextContainer"
+                        children:
+                        -   class: "UIControl"
+                            name: "Arrow"
+                            components:
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    sprite: "~res:/Gfx/UI/SettingsScreen/arrow_settings"
+                                    colorInherit: "COLOR_REPLACE_ALPHA_ONLY"
+                    -   path: "TextContainer/Text"
+                        components:
+                            UITextComponent:
+                                text: "#settings:NetEaseUserAgreement"
+                -   prototype: "SettingsCommon/Button"
+                    name: "LegalNoticesButton"
+                    size: [1015.000000, 80.000000]
+                    classes: "pane-bg touchable settings-button"
+                    children:
+                    -   path: "TextContainer"
+                        children:
+                        -   class: "UIControl"
+                            name: "Arrow"
+                            components:
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    sprite: "~res:/Gfx/UI/SettingsScreen/arrow_settings"
+                                    colorInherit: "COLOR_REPLACE_ALPHA_ONLY"
+                    -   path: "TextContainer/Text"
+                        components:
+                            UITextComponent:
+                                text: "#settings:LegalNotices"
+        -   prototype: "Common/VerticalScrollBar"
+            name: "VerticalScrollBar"
+            classes: "notch-tightly-right-inset"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+                ScrollBarDelegate:
+                    delegate: ".."

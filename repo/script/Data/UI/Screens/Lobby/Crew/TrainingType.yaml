@@ -1,0 +1,244 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+StyleSheets:
+-   selector: ".training-type #Selection"
+    properties:
+        visible: false
+-   selector: ".training-type:selected #Selection"
+    properties:
+        visible: true
+Prototypes:
+-   class: "UIControl"
+    name: "TrainingType"
+    position: [0.000000, 0.000000]
+    size: [234.000000, 186.000000]
+    tag: 75
+    classes: "training-type"
+    components:
+        Anchor:
+            hCenterAnchorEnabled: false
+            vCenterAnchorEnabled: false
+    children:
+    -   class: "UIControl"
+        name: "Bg"
+        size: [234.000000, 160.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/CrewSkills"
+    -   prototype: "StyledButton/StyledButton"
+        name: "Button"
+        position: [6.000000, 28.000000]
+        size: [222.000000, 126.000000]
+        noInput: true
+        classes: "button button-color-gray button-ok-sound"
+        children:
+        -   path: "Caption"
+            visible: false
+            components:
+                UITextComponent:
+                    text: "Button"
+    -   prototype: "Selection/Selection"
+        name: "Selection"
+        classes: "selection-color-orange"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 6.000000
+                rightAnchorEnabled: true
+                rightAnchor: 6.000000
+                topAnchorEnabled: true
+                topAnchor: 28.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 32.000000
+    -   class: "UIControl"
+        name: "highlight"
+        size: [240.000000, 145.000000]
+        pivot: [0.500000, 0.500000]
+        visible: false
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -2.000000
+            Background:
+                drawType: "DRAW_STRETCH_BOTH"
+                sprite: "~res:/Gfx/UI/HangarTutorial/HighlightTile"
+                leftRightStretchCap: 15.000000
+                topBottomStretchCap: 15.000000
+    -   class: "UIStaticText"
+        name: "TypeText"
+        position: [0.000000, 52.000000]
+        size: [234.000000, 30.000000]
+        noInput: true
+        classes: "header3 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 52.000000
+            Background:
+                drawType: "DRAW_ALIGNED"
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "AVATAR_REGIMENT_SCHOOL_TEXT"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowOffset: [0.000000, 1.000000]
+                shadowColor: [0.000000, 0.000000, 0.000000, 0.749000]
+    -   class: "UIControl"
+        name: "PriceLabel"
+        position: [0.000000, 151.000000]
+        size: [234.000000, 35.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                dynamicPadding: true
+                spacing: 5.000000
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [1.000000, 1.000000, 1.000000, 0.000000]
+        children:
+        -   class: "UIStaticText"
+            name: "CostText"
+            position: [94.000000, 0.000000]
+            size: [11.000000, 35.000000]
+            noInput: true
+            classes: "header3 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfParent"
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    align: ["LEFT", "VCENTER"]
+                UITextComponent:
+                    text: "0"
+        -   class: "UIControl"
+            name: "Image"
+            size: [30.000000, 35.000000]
+            noInput: true
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                    frame: 1
+    -   class: "UIStaticText"
+        name: "UpgradeToLabel"
+        position: [12.000000, 83.000000]
+        size: [210.000000, 50.000000]
+        noInput: true
+        classes: "text2-small text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 12.000000
+                rightAnchorEnabled: true
+                rightAnchor: 12.000000
+                topAnchorEnabled: true
+                topAnchor: 83.000000
+            Background:
+                drawType: "DRAW_ALIGNED"
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "AVATAR_SCREEN_UPDARADE_UP_TO"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowOffset: [0.000000, 1.000000]
+                shadowColor: [0.000000, 0.000000, 0.000000, 0.749000]
+                multiline: "MULTILINE_ENABLED"
+                align: ["HCENTER", "TOP"]
+    -   class: "UIStaticText"
+        name: "LevelText"
+        position: [63.500000, 100.000000]
+        size: [107.000000, 40.000000]
+        noInput: true
+        classes: "header0 text-color-white"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 100.000000
+            Background:
+                drawType: "DRAW_ALIGNED"
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "75%"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowOffset: [0.000000, 1.000000]
+                shadowColor: [0.000000, 0.000000, 0.000000, 0.749000]
+                align: ["HCENTER", "TOP"]
+    -   prototype: "DiscountLabel/DiscountLabel"
+        name: "Discount"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 6.000000
+                topAnchorEnabled: true
+                topAnchor: 28.000000
+    -   class: "UIControl"
+        name: "IconBackground"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/skills50.psd"
+    -   class: "UIControl"
+        name: "Icon"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/CrewSkills_icon.psd"
+                frame: 1
+    -   class: "UIControl"
+        name: "effects"
+        position: [7.000000, 29.000000]
+        size: [220.000000, 124.000000]
+        pivot: [0.000000, 0.000000]
+        noInput: true
+        components:
+            ClipContent: {}
+        children:
+        -   class: "UIParticles"
+            name: "sparks"
+            position: [56.000000, 141.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            autoStart: true
+        -   class: "UIParticles"
+            name: "line"
+            position: [0.000000, 125.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            autoStart: true

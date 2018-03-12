@@ -1,0 +1,5 @@
+1
+france-BDR_G1B0.tex
+160 100
+1
+0 0 131 100 16 0 0 frame0

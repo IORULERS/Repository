@@ -1,0 +1,10 @@
+Header:
+    version: "15"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Shop/PremiumImages/PremiumStatic.yaml"
+Controls:
+-   prototype: "PremiumStatic/Image"
+    name: "Image"
+    children:
+    -   path: "PremNumber/Numbers/One"
+        classes: "digit digit-3"

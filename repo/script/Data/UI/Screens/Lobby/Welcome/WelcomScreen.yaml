@@ -1,0 +1,165 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyHeader.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/LoadingSpinner.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+StyleSheets:
+-   selector: ".button-type.iap #Shop, .button-type.premium #Shop"
+    properties:
+        visible: true
+-   selector: ".button-type.iap #ReadMore, .button-type.premium #ReadMore"
+    properties:
+        visible: false
+-   selector: ".button-type #Shop"
+    properties:
+        visible: false
+-   selector: ".button-type #ReadMore"
+    properties:
+        visible: true
+Controls:
+-   class: "UIControl"
+    name: "Screen"
+    size: [1024.000000, 768.000000]
+    classes: "button-type"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.000000, 0.000000, 0.000000, 0.800000]
+    children:
+    -   class: "UIControl"
+        name: "ShopCellHolder"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "ImageHolder"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+    -   class: "UIStaticText"
+        name: "Title"
+        size: [646.000000, 50.000000]
+        classes: "header1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 40.000000
+                rightAnchorEnabled: true
+                rightAnchor: 250.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 100.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+            UITextComponent:
+                text: "Header"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_DISABLED"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "USE_BY_CONTENT"
+    -   class: "UIStaticText"
+        name: "Description"
+        size: [646.000000, 78.000000]
+        classes: "header1 text-color-blue"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 40.000000
+                rightAnchorEnabled: true
+                rightAnchor: 250.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 20.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+            UITextComponent:
+                text: "body text"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                fitting: "FITTING_REDUCE"
+                align: ["LEFT", "TOP", "VCENTER"]
+                useRtlAlign: "USE_BY_CONTENT"
+    -   prototype: "StyledButton/StyledButton"
+        name: "Shop"
+        classes: "button button-color-green button-ok-sound"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 20.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 25.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "NEWS_NOTIFICATION_SHOP"
+    -   prototype: "StyledButton/StyledButton"
+        name: "ReadMore"
+        classes: "button button-color-gray button-ok-sound"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 20.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 25.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "NEWS_NOTIFICATION_READ_MORE"
+    -   class: "UIControl"
+        name: "VerticalLine"
+        position: [64.000000, 618.000000]
+        size: [4.000000, 150.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 20.000000
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+            Background:
+                drawType: "DRAW_STRETCH_BOTH"
+                sprite: "~res:/Gfx/UI/LobbyCommon/line_news"
+                color: [1.000000, 1.000000, 1.000000, 1.000000]
+    -   prototype: "LobbyHeader/Header"
+        name: "Header"
+        children:
+        -   path: "bg"
+            visible: false
+            enabled: false
+        -   path: "menuButton/icon"
+            components:
+                Background:
+                    frame: 30
+        -   path: "menuButton/UnreadNews"
+            visible: false
+        -   path: "Layout/leftContent"
+            visible: false
+            enabled: false
+            children: []
+        -   path: "Layout/rightContent"
+            visible: false
+            enabled: false
+        -   path: "Line"
+            visible: false

@@ -1,0 +1,19 @@
+name: "may_event/Title"
+stages:
+ may_inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/May2017/Button_Inform.yaml"
+  info: "event-info"
+ may_process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/May2017/Button_Process.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/May2017/MayEventStoryTree.yaml"
+ may_buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/May2017/Button_Buy.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/May2017/MayEventStoryTree.yaml"
+currencyKeys:
+  proxy_BM: "common_event/Currencies/Signs/Terms"
+  proxy_XP: "common_event/Currencies/Streamers/Terms"

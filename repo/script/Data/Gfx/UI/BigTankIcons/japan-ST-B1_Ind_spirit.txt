@@ -1,0 +1,5 @@
+1
+japan-ST-B1_Ind_spirit0.tex
+160 100
+1
+0 0 157 100 3 0 0 frame0

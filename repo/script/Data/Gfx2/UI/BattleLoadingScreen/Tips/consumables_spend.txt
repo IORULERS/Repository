@@ -1,0 +1,5 @@
+1
+consumables_spend0.tex
+512 256
+1
+0 0 454 137 30 93 0 frame0

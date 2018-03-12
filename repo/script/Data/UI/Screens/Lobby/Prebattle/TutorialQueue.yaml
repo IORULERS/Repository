@@ -1,0 +1,246 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "Panel"
+    size: [125.000000, 35.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            padding: 5.000000
+            spacing: 10.000000
+            useRtl: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+    children:
+    -   class: "UIControl"
+        name: "Icon"
+        size: [35.000000, 35.000000]
+        noInput: true
+        components:
+            Background:
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIStaticText"
+        name: "Text"
+        position: [50.000000, 0.000000]
+        size: [0.000000, 35.000000]
+        classes: "text2 text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfParent"
+            Background:
+                align: ["LEFT", "VCENTER"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                useRtlAlign: "USE_BY_SYSTEM"
+    -   class: "UIStaticText"
+        name: "Value"
+        position: [60.000000, 0.000000]
+        size: [60.000000, 35.000000]
+        classes: "text2"
+        components:
+            SizePolicy:
+                horizontalPolicy: "FixedSize"
+                horizontalValue: 60.000000
+                verticalPolicy: "PercentOfParent"
+            Background:
+                align: ["LEFT", "VCENTER"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                useRtlAlign: "USE_BY_SYSTEM"
+Controls:
+-   class: "UIControl"
+    name: "TutorialQueue"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        size: [1024.000000, 768.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+    -   class: "UIControl"
+        name: "TopPanel"
+        size: [1024.000000, 80.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+        children:
+        -   class: "UIControl"
+            name: "bg"
+            size: [1024.000000, 80.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/Header"
+        -   class: "UIStaticText"
+            name: "HeaderText1"
+            size: [1024.000000, 80.000000]
+            noInput: true
+            classes: "header1 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+                UITextComponent:
+                    text: "TutorialQueue_Header_title"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "Line"
+            size: [1024.000000, 1.000000]
+            noInput: true
+            classes: "header-line"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background: {}
+    -   class: "UIControl"
+        name: "BottomPanel"
+        position: [0.000000, 674.000000]
+        size: [1024.000000, 94.000000]
+        classes: "footer-background"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "SkipTutorialPanel"
+            size: [1024.000000, 94.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "SkipButton"
+                classes: "button button-color-red"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 5.000000
+                        vCenterAnchorEnabled: true
+                    UIAnchorSafeAreaComponent:
+                        rightSafeInset: "INSET"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "TutorialQueue_Skip_button_text"
+                            multiline: "MULTILINE_ENABLED"
+    -   class: "UIControl"
+        name: "InfoPanel"
+        position: [0.000000, 80.000000]
+        size: [1024.000000, 42.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                dynamicPadding: true
+                dynamicSpacing: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.000000, 0.000000, 0.000000, 1.000000]
+        children:
+        -   prototype: "Panel"
+            name: "LeftTimeHolder"
+            children:
+            -   path: "Icon"
+                components:
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                        frame: 10
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "TutorialQueue_Elapsed_time"
+            -   path: "Value"
+                components:
+                    UITextComponent:
+                        text: "--:--"
+        -   prototype: "Panel"
+            name: "WaitTimeHolder"
+            children:
+            -   path: "Icon"
+                components:
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                        frame: 11
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "TutorialQueue_Average_time"
+            -   path: "Value"
+                components:
+                    UITextComponent:
+                        text: "--:--"
+        -   prototype: "Panel"
+            name: "TotalTanksHolder"
+            children:
+            -   path: "Icon"
+                components:
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                        frame: 12
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "TutorialQueue_Players_in_queue"
+            -   path: "Value"
+                components:
+                    UITextComponent:
+                        text: "--"

@@ -1,0 +1,31 @@
+name: "winter_event/Header"
+stages:
+ inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/NY2017/Button_Inform.yaml"
+  info: "event-info"
+ process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/NY2017/Button_Process.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/NY2017/NY2017StoryTree.yaml"
+  web:
+   buttonName: "winter_event/GoToWeb/Button"
+   buttonDescription: ""
+   eventUrl: "/%s/new-year-2018"
+  leaderboard:
+    processHint: "winter_event/GoToWeb/Comment"
+ buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/NY2017/Button_Buy.yaml"
+  info: "event-buy"
+  tree: "~res:/UI/Screens/Lobby/Story/NY2017/NY2017StoryTree.yaml"
+  web:
+   buttonName: "winter_event/GoToWeb/Button"
+   buttonDescription: ""
+   eventUrl: "/%s/new-year-2018"
+  leaderboard:
+    buyHint: "winter_event/GoToWeb/Comment"
+currencyKeys:
+  ticket: "winter_event/Currencies/tickets/Terms"
+  star: "winter_event/Currencies/streamers/Terms"

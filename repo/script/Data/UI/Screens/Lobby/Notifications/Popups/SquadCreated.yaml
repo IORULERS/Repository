@@ -1,0 +1,83 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UISquadCreatedNotification"
+    name: "SquadCreated"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                frame: 5
+    -   prototype: "Notification/Content"
+        name: "Content"
+        components:
+            LinearLayout:
+                spacing: 10.000000
+            Anchor:
+                rightAnchor: 210.000000
+        children:
+        -   class: "UIStaticText"
+            name: "Text"
+            position: [0.000000, 4.000000]
+            size: [133.000000, 76.000000]
+            noInput: true
+            classes: "text1 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 75.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "SQUAD_NOTIFICATION_CREATED"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    shadowColor: [0.000000, 0.000000, 0.000000, 0.750000]
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIStaticText"
+            name: "PlayerName"
+            size: [144.000000, 76.000000]
+            noInput: true
+            classes: "header3 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "Аркадий Укупник"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    shadowColor: [0.000000, 0.000000, 0.000000, 0.750000]
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+    -   prototype: "StyledButton/StyledButton"
+        name: "HangarButton"
+        size: [196.000000, 64.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 11.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -2.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "SQUAD_NOTIFICATION_CREATED_HANGAR"

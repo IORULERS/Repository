@@ -1,0 +1,5 @@
+1
+capture_base0.tex
+512 256
+1
+0 0 343 208 68 40 0 frame0

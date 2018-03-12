@@ -1,0 +1,5 @@
+1
+diamond_stance0.tex
+256 128
+1
+0 0 126 126 65 1 0 frame0

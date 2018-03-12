@@ -1,0 +1,34 @@
+
+Find_Tournaments.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 282, 193
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 282, 285
+  size: 191, 191
+  orig: 191, 191
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 2, 2
+  size: 194, 194
+  orig: 194, 194
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 2, 198
+  size: 278, 278
+  orig: 278, 278
+  offset: 0, 0
+  index: -1

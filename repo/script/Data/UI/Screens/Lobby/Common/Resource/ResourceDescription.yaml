@@ -1,0 +1,264 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/RarityTitle.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourcePreview.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Storage/TankCaptionSmall.yaml"
+- "~res:/UI/Screens/Lobby/Storage/ChestContent.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "TextSection"
+    size: [645.000000, 58.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfChildrenSum"
+    children:
+    -   class: "UIStaticText"
+        name: "Label"
+        position: [0.000000, 0.000000]
+        size: [645.000000, 32.000000]
+        classes: "text1 text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+            UITextComponent:
+                text: "storage/Items/Description"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "USE_BY_SYSTEM"
+    -   class: "UIStaticText"
+        name: "Text"
+        position: [0.000000, 32.000000]
+        size: [645.000000, 26.000000]
+        classes: "text1 text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfContent"
+            UITextComponent:
+                text: "description"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "USE_BY_SYSTEM"
+Controls:
+-   class: "UIControl"
+    name: "Content"
+    size: [960.000000, 640.000000]
+    classes: "button-close-sound"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+        Background:
+            drawType: "DRAW_FILL"
+            gradientMode: "Overlay"
+            color: [0.070588, 0.125490, 0.160784, 0.921569]
+        ModalInput: {}
+        Sound: {}
+    children:
+    -   prototype: "StyledBackButton/StyledBackButton"
+        name: "BackButton"
+        classes: "button button-color-gray button-close-sound"
+    -   class: "UIControl"
+        name: "VerticalScrollView"
+        size: [768.000000, 630.000000]
+        noInput: true
+        classes: "limited-width"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalValue: 80.000000
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 10.000000
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIScrollView"
+            name: "ScrollArea"
+            autoUpdate: true
+            centerContent: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    rightAnchor: 10.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                        rightSafeInset: "INSET"
+                children:
+                -   class: "UIControl"
+                    name: "HorizontalLayout"
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            spacing: 25.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfMaxChild"
+                    children:
+                    -   class: "UIControl"
+                        name: "Resource"
+                        size: [98.000000, 116.000000]
+                        noInput: true
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfFirstChild"
+                                verticalPolicy: "PercentOfFirstChild"
+                        children:
+                        -   class: "UIControl"
+                            name: "ResourceContainer"
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                    verticalPolicy: "PercentOfMaxChild"
+                            children:
+                            -   prototype: "ResourcePreview/ResourcePreview"
+                                name: "ResourcePreview"
+                                classes: "resource resource-type=resource-stuff grade=unknown preview-mode=preview-mode-off"
+                        -   class: "UIControl"
+                            name: "Border"
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    verticalPolicy: "PercentOfParent"
+                                Background:
+                                    drawType: "DRAW_SCALE_TO_RECT"
+                                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                            children:
+                            -   class: "UIControl"
+                                name: "BorderTop"
+                                position: [0.000000, 0.000000]
+                                size: [98.000000, 1.000000]
+                                noInput: true
+                                components:
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        rightAnchorEnabled: true
+                                        topAnchorEnabled: true
+                                    Background:
+                                        drawType: "DRAW_FILL"
+                                        color: [0.313726, 0.384314, 0.423529, 1.000000]
+                                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                            -   class: "UIControl"
+                                name: "BorderBottom"
+                                size: [98.000000, 1.000000]
+                                noInput: true
+                                components:
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        rightAnchorEnabled: true
+                                        bottomAnchorEnabled: true
+                                    Background:
+                                        drawType: "DRAW_FILL"
+                                        color: [0.313726, 0.384314, 0.423529, 1.000000]
+                                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                            -   class: "UIControl"
+                                name: "BorderLeft"
+                                size: [1.000000, 116.000000]
+                                noInput: true
+                                components:
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        rightAnchorEnabled: false
+                                        topAnchorEnabled: true
+                                        bottomAnchorEnabled: true
+                                    Background:
+                                        drawType: "DRAW_FILL"
+                                        color: [0.313726, 0.384314, 0.423529, 1.000000]
+                                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                            -   class: "UIControl"
+                                name: "BorderRight"
+                                size: [1.000000, 116.000000]
+                                noInput: true
+                                components:
+                                    Anchor:
+                                        rightAnchorEnabled: true
+                                        topAnchorEnabled: true
+                                        bottomAnchorEnabled: true
+                                    Background:
+                                        drawType: "DRAW_FILL"
+                                        color: [0.313726, 0.384314, 0.423529, 1.000000]
+                                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                    -   class: "UIControl"
+                        name: "DescriptionSection"
+                        noInput: true
+                        classes: ""
+                        components:
+                            LinearLayout:
+                                orientation: "TopDown"
+                                safeAreaPaddingInset: true
+                                spacing: 20.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfChildrenSum"
+                        children:
+                        -   class: "UIStaticText"
+                            name: "ItemName"
+                            position: [0.000000, 0.000000]
+                            size: [547.000000, 32.000000]
+                            classes: "header3 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                UITextComponent:
+                                    text: "name"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["LEFT", "VCENTER"]
+                                    useRtlAlign: "USE_BY_SYSTEM"
+                        -   prototype: "RarityTitle/Rarity"
+                            name: "Rarity"
+                            position: [0.000000, 52.000000]
+                            size: [547.000000, 48.000000]
+                        -   prototype: "TextSection"
+                            name: "Description"
+                        -   prototype: "TextSection"
+                            name: "Features"
+                            children:
+                            -   path: "Label"
+                                components:
+                                    UITextComponent:
+                                        text: "storage/Items/Features"
+                        -   prototype: "TextSection"
+                            name: "Obtainment"
+                            children:
+                            -   path: "Label"
+                                components:
+                                    UITextComponent:
+                                        text: "storage/Items/Obtainment"
+                        -   prototype: "ChestContent/Content"
+                            name: "Content"
+        -   prototype: "ScrollBar/VerticalScrollBar"
+            name: "VerticalScrollBar"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+                ScrollBarDelegate:
+                    delegate: "../ScrollArea"

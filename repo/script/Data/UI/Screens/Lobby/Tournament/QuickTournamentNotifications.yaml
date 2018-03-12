@@ -1,0 +1,735 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Hangar/BasePopup.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+- "~res:/UI/Screens/Lobby/Common/Separator.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceDetailed.yaml"
+- "~res:/UI/Screens/Lobby/Tournament/TournamentButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Hangar/UIStrangeHMTimer.yaml"
+- "~res:/UI/Screens/Lobby/Tournament/TournamentTimer.yaml"
+StyleSheets:
+-   selector: ".live #img"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Tournament/tips_life.psd"
+-   selector: ".achieve #img"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Tournament/tips_achieve.psd"
+-   selector: ".search #img"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Tournament/tips_search.psd"
+-   selector: ".win #Header #ResultStatus #IMG"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Tournament/top_win.psd"
+-   selector: ".loss #Header #ResultStatus #IMG"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Tournament/top_lose.psd"
+-   selector: ".loss.continue ? ? ? ? ? ? #Continue, .loss.continue ? ? ? ? ? ? ? #YesLives, .loss.continue ? ? ? ? ? ? #TimerContinue, .lose ? ? ? ? ? #Lives, .loss.continue #Header #HeaderLoss"
+    properties:
+        visible: true
+-   selector: ".loss.continue ? ? ? ? ? ? #Loss, .loss.continue ? ? ? ? ? ? ? #Nolives, .loss.continue ? ? ? ? ? ? #TimerLossContainer, .loss.continue #Header #HeaderWin, .loss.continue ? ? ? ? ? ? #Win, .loss.continue ? #TextWinOver, .loss.continue ? #TextWinContinue, .loss.continue #Header #SubtitleWinOver, .loss.continue #Header #SubtitleWinContinue"
+    properties:
+        visible: false
+-   selector: ".alive"
+    properties:
+        bg-frame: 1
+-   selector: ".dead"
+    properties:
+        bg-frame: 0
+-   selector: ".win.continue ? ? ? ? ? #Lives, .win.continue ? ? ? ? #SeparatorTop, .win.continue #Header #HeaderLoss, .win.continue ? ? ? ? ? ? #Win, .win.continue ? ? ? ? ? ? #Loss, .win.continue ? #TextWinOver, .win.continue #Header #SubtitleWinOver, .win.continue #Header #SubtitleLossOver"
+    properties:
+        visible: false
+-   selector: ".loss.over ? ? ? ? ? ? #Continue, .loss.over ? ? ? ? ? ? ? #YesLives, .loss.over ? ? ? ? ? ? #TimerContinue, .lose ? ? ? ? ? #Lives, .loss.over #Header #HeaderWin, .loss.over ? ? ? ? ? ? #Win, .loss.over ? #TextWinContinue, .loss.over ? #TextWinOver, .loss.over #Header #SubtitleWinOver, .loss.over #Header #SubtitleWinContinue"
+    properties:
+        visible: false
+-   selector: ".loss.over ? ? ? ? ? ? #Loss, .loss.over ? ? ? ? ? ? ? #Nolives, .loss.over ? ? ? ? ? ? #TimerLossContainer, .loss.continue #Header #HeaderLoss"
+    properties:
+        visible: true
+-   selector: ".win.over ? ? ? ? ? #Lives, .win.over ? ? ? ? #SeparatorTop, .win.over #Header #HeaderLoss, .win.over ? ? ? ? ? ? #Continue, .win.over ? ? ? ? ? ? #Loss, .win.over ? #TextWinContinue, .win.over #Header #SubtitleWinContinue, .win.over #Header #SubtitleLossOver"
+    properties:
+        visible: false
+-   selector: ".win #Header #ResultStatus #IMG #glow_win"
+    properties:
+        visible: true
+-   selector: ".loss #Header #ResultStatus #IMG #glow_win"
+    properties:
+        visible: false
+-   selector: ".win #Header #ResultStatus #fire, .win #Header #ResultStatus #IMG #glow"
+    properties:
+        visible: false
+-   selector: ".loss #Header #ResultStatus #fire, .loss #Header #ResultStatus #IMG #glow"
+    properties:
+        visible: true
+Prototypes:
+-   class: "UIControl"
+    name: "TankLife"
+    size: [83.000000, 44.000000]
+    noInput: true
+    classes: "state=alive"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfContent"
+            verticalPolicy: "PercentOfContent"
+        Background:
+            sprite: "~res:/Gfx/UI/Tournament/tank_life.psd"
+Controls:
+-   prototype: "BasePopup/BasePopup"
+    name: "BasePopup"
+    size: [1024.000000, 768.000000]
+    children:
+    -   path: "Content"
+        position: [0.000000, 0.000000]
+        classes: "status=win state=continue"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            Anchor:
+                topAnchor: 0.000000
+        children:
+        -   class: "UIControl"
+            name: "Header"
+            size: [819.200012, 263.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 80.000000
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    hCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "ResultStatus"
+                size: [819.200012, 170.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfMaxChild"
+                children:
+                -   class: "UIParticles"
+                    name: "fire"
+                    position: [409.600006, 69.000000]
+                    size: [32.000000, 32.000000]
+                    pivot: [0.500000, 0.500000]
+                    noInput: true
+                    effectPath: "~res:/3d/FX/UI/quick_tournaments_lose1.sc2"
+                    autoStart: true
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                -   class: "UIControl"
+                    name: "IMG"
+                    size: [295.000000, 170.000000]
+                    noInput: true
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "FixedSize"
+                            verticalValue: 170.000000
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        Background: {}
+                    children:
+                    -   class: "UIParticles"
+                        name: "glow"
+                        position: [123.000000, 77.000000]
+                        size: [32.000000, 32.000000]
+                        pivot: [0.500000, 0.500000]
+                        noInput: true
+                        effectPath: "~res:/3d/FX/UI/quick_tournaments_lose2.sc2"
+                        autoStart: true
+                    -   class: "UIParticles"
+                        name: "glow_win"
+                        position: [152.000000, 91.000000]
+                        size: [32.000000, 32.000000]
+                        pivot: [0.500000, 0.500000]
+                        noInput: true
+                        effectPath: "~res:/3d/FX/UI/quick_tournaments_win.sc2"
+                        autoStart: true
+            -   class: "UIStaticText"
+                name: "HeaderWin"
+                size: [106.000000, 38.000000]
+                classes: "header0 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "tournaments/QuickTournaments/Notification/Header/Victory"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIStaticText"
+                name: "HeaderLoss"
+                size: [153.000000, 38.000000]
+                classes: "header0 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "tournaments/QuickTournaments/Notification/Header/Regret"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   prototype: "RichText/RichText"
+                name: "SubtitleLossOver"
+                position: [0.000000, 208.000000]
+                size: [819.200012, 32.000000]
+                components:
+                    FlowLayout:
+                        hDynamicPadding: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 32.000000
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    RichContent:
+                        text: "tournaments/QuickTournaments/Notification/TourLost"
+                        baseClasses: "text-color-blue text1"
+                        classesInheritance: false
+            -   prototype: "RichText/RichText"
+                name: "SubtitleWinContinue"
+                size: [819.200012, 32.000000]
+                components:
+                    FlowLayout:
+                        hDynamicPadding: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 32.000000
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    RichContent:
+                        text: "tournaments/QuickTournaments/Notification/TourWon"
+                        baseClasses: "text-color-blue text1"
+                        classesInheritance: false
+            -   prototype: "RichText/RichText"
+                name: "SubtitleWinOver"
+                position: [0.000000, 208.000000]
+                size: [819.200012, 32.000000]
+                components:
+                    FlowLayout:
+                        hDynamicPadding: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 32.000000
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    RichContent:
+                        text: "tournaments/QuickTournaments/Notification/AllToursWon"
+                        baseClasses: "text-color-blue text1"
+                        classesInheritance: false
+            -   class: "UIStaticText"
+                name: "TextWinContinue"
+                size: [819.200012, 23.000000]
+                classes: "text2 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "tournaments/QuickTournaments/Notification/VictoryWish"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+            -   class: "UIStaticText"
+                name: "TextWinOver"
+                size: [819.200012, 46.000000]
+                classes: "text2 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "tournaments/QuickTournaments/Notification/StartFromBeginning"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+        -   class: "UIControl"
+            name: "Content"
+            size: [1024.000000, 505.000000]
+            noInput: true
+            classes: "limited-width"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    hCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "VerticalScrollView"
+                size: [1024.000000, 505.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                children:
+                -   class: "UIScrollView"
+                    name: "ScrollArea"
+                    position: [0.000000, 0.000000]
+                    autoUpdate: true
+                    centerContent: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            rightAnchor: 10.000000
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                    children:
+                    -   class: "UIScrollViewContainer"
+                        name: "scrollContainerControl"
+                        position: [115.500000, 11.000000]
+                        components:
+                            LinearLayout:
+                                orientation: "TopDown"
+                                padding: 20.000000
+                                spacing: 28.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfMaxChild"
+                                verticalPolicy: "PercentOfChildrenSum"
+                            Anchor:
+                                vCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIControl"
+                            name: "LivesRewards"
+                            size: [410.000000, 340.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    dynamicPadding: true
+                                    spacing: 80.000000
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                    verticalPolicy: "PercentOfMaxChild"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                            children:
+                            -   class: "UIControl"
+                                name: "Lives"
+                                size: [273.000000, 338.399994]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfMaxChild"
+                                        verticalPolicy: "PercentOfChildrenSum"
+                                        verticalValue: 90.000000
+                                children:
+                                -   class: "UIControl"
+                                    name: "HeaderTextControl"
+                                    position: [0.000000, 0.000000]
+                                    size: [273.000000, 52.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfMaxChild"
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                            topAnchorEnabled: true
+                                    children:
+                                    -   prototype: "RichText/RichText"
+                                        name: "YesLives"
+                                        size: [273.000000, 48.000000]
+                                        components:
+                                            FlowLayout:
+                                                hDynamicPadding: true
+                                                hDynamicInLinePadding: true
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                verticalPolicy: "PercentOfChildrenSum"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                            RichContent:
+                                                text: "tournaments/QuickTournaments/Notification/LifeSpent"
+                                                baseClasses: "text-color-blue text2"
+                                                classesInheritance: false
+                                            RichContentAliases3:
+                                                aliases: "text_white_bold,<span class=\"text-color-white header4\" />;text_mono,<span class=\"text-mono\" />;text_white,<span class=\"text-color-white text1\" />;"
+                                    -   class: "UIStaticText"
+                                        name: "Nolives"
+                                        size: [260.000000, 52.000000]
+                                        classes: "text1 text-color-blue"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                horizontalMax: 260.000000
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                topAnchorEnabled: true
+                                                topAnchor: -2.000000
+                                            UITextComponent:
+                                                text: "tournaments/QuickTournaments/Notification/AllLivesSpent"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                                multiline: "MULTILINE_ENABLED"
+                                -   class: "UIControl"
+                                    name: "LivesContainer"
+                                    position: [36.500000, 83.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfMaxChild"
+                                            horizontalMin: 200.000000
+                                            verticalPolicy: "FixedSize"
+                                            verticalValue: 200.000000
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                            topAnchorEnabled: true
+                                            topAnchor: 83.000000
+                                        Background:
+                                            drawType: "DRAW_STRETCH_BOTH"
+                                            sprite: "~res:/Gfx/UI/LobbyCommon/info_background.psd"
+                                            leftRightStretchCap: 7.000000
+                                            topBottomStretchCap: 7.000000
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Tanks"
+                                        size: [129.000000, 44.000000]
+                                        noInput: true
+                                        components:
+                                            LinearLayout:
+                                                padding: 20.000000
+                                                spacing: 2.000000
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfChildrenSum"
+                                                verticalPolicy: "PercentOfMaxChild"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                vCenterAnchorEnabled: true
+                                                vCenterAnchor: -36.000000
+                                        children:
+                                        -   prototype: "TankLife"
+                                            name: "TankLife_1"
+                                            classes: "state=dead"
+                                        -   prototype: "TankLife"
+                                            name: "TankLife_2"
+                                            visible: false
+                                        -   prototype: "TankLife"
+                                            name: "TankLife_3"
+                                            visible: false
+                                -   class: "UIControl"
+                                    name: "TimerLossContainer"
+                                    size: [273.000000, 92.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfMaxChild"
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                            topAnchorEnabled: true
+                                            topAnchor: 236.000000
+                                    children:
+                                    -   class: "UIStaticText"
+                                        name: "TimerLoss"
+                                        size: [273.000000, 92.000000]
+                                        classes: "text2 text-color-blue"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                vCenterAnchorEnabled: true
+                                            UITextComponent:
+                                                text: "tournaments/QuickTournaments/Notification/StartFromBeginning"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                                multiline: "MULTILINE_ENABLED"
+                                -   class: "UIControl"
+                                    name: "TimerContinue"
+                                    size: [273.000000, 32.000000]
+                                    noInput: true
+                                    components:
+                                        LinearLayout:
+                                            orientation: "TopDown"
+                                            spacing: 2.000000
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfChildrenSum"
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                            rightAnchorEnabled: false
+                                            vCenterAnchorEnabled: true
+                                            vCenterAnchor: 43.000000
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Timer"
+                                        size: [102.000000, 23.000000]
+                                        noInput: true
+                                        components:
+                                            LinearLayout: {}
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfChildrenSum"
+                                                verticalPolicy: "PercentOfMaxChild"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                        children:
+                                        -   class: "UIControl"
+                                            name: "Control"
+                                            size: [0.000000, 0.000000]
+                                            visible: false
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                Background: {}
+                                        -   class: "UIStaticText"
+                                            name: "Header1"
+                                            size: [56.000000, 31.000000]
+                                            visible: false
+                                            classes: "header1 text-color-white"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                UITextComponent:
+                                                    text: "00:29"
+                                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                        -   prototype: "TournamentTimer/TournamentTimer"
+                                            name: "TournamentTimer"
+                                    -   class: "UIStaticText"
+                                        name: "TimerSubtitle"
+                                        size: [171.000000, 23.000000]
+                                        classes: "text2 text-color-blue"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                horizontalMax: 260.000000
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                            UITextComponent:
+                                                text: "tournaments/QuickTournaments/Notification/EnemySearchCountdown"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                                multiline: "MULTILINE_ENABLED"
+                            -   class: "UIControl"
+                                name: "Rewards"
+                                size: [410.000000, 340.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfMaxChild"
+                                        verticalPolicy: "FixedSize"
+                                        verticalValue: 340.000000
+                                children:
+                                -   class: "UIStaticText"
+                                    name: "Continue"
+                                    size: [400.000000, 46.000000]
+                                    classes: "text2 text-color-blue"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfContent"
+                                            horizontalMax: 400.000000
+                                            verticalPolicy: "PercentOfContent"
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                        UITextComponent:
+                                            text: "tournaments/QuickTournaments/Notification/CurrentReward"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            multiline: "MULTILINE_ENABLED"
+                                -   class: "UIStaticText"
+                                    name: "Loss"
+                                    size: [109.000000, 23.000000]
+                                    classes: "text2 text-color-blue"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfContent"
+                                            verticalPolicy: "PercentOfContent"
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                        UITextComponent:
+                                            text: "tournaments/QuickTournaments/Notification/ReceivedReward"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                -   class: "UIStaticText"
+                                    name: "Win"
+                                    size: [109.000000, 23.000000]
+                                    classes: "text2 text-color-blue"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfContent"
+                                            verticalPolicy: "PercentOfContent"
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                        UITextComponent:
+                                            text: "tournaments/QuickTournaments/Notification/ReceivedMaxReward"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                -   class: "UIControl"
+                                    name: "Items"
+                                    size: [410.000000, 233.000000]
+                                    noInput: true
+                                    components:
+                                        LinearLayout:
+                                            spacing: 10.000000
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfChildrenSum"
+                                            verticalPolicy: "PercentOfMaxChild"
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                            topAnchorEnabled: true
+                                            topAnchor: 50.000000
+                                            vCenterAnchorEnabled: false
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Team"
+                                        size: [200.000000, 233.000000]
+                                        noInput: true
+                                        components:
+                                            LinearLayout:
+                                                orientation: "TopDown"
+                                                spacing: 10.000000
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfMaxChild"
+                                                verticalPolicy: "PercentOfChildrenSum"
+                                        children:
+                                        -   class: "UIStaticText"
+                                            name: "Text2"
+                                            size: [101.000000, 23.000000]
+                                            classes: "text2 text-color-blue"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                UITextComponent:
+                                                    text: "tournaments/QuickTournaments/Notification/TeamReward"
+                                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                        -   class: "UIControl"
+                                            name: "Item"
+                                            size: [200.000000, 200.000000]
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfChildrenSum"
+                                                    verticalPolicy: "PercentOfChildrenSum"
+                                            children:
+                                            -   prototype: "ResourceDetailed/ResourceDetailed"
+                                                name: "ResourceDetailed"
+                                    -   class: "UIControl"
+                                        name: "Personal"
+                                        size: [200.000000, 233.000000]
+                                        noInput: true
+                                        components:
+                                            LinearLayout:
+                                                orientation: "TopDown"
+                                                dynamicPadding: false
+                                                spacing: 10.000000
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfMaxChild"
+                                                verticalPolicy: "PercentOfChildrenSum"
+                                        children:
+                                        -   class: "UIStaticText"
+                                            name: "Text2"
+                                            size: [65.000000, 23.000000]
+                                            classes: "text2 text-color-blue"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                UITextComponent:
+                                                    text: "tournaments/QuickTournaments/Notification/PersonalReward"
+                                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                        -   class: "UIControl"
+                                            name: "Item"
+                                            size: [200.000000, 200.000000]
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfChildrenSum"
+                                                    verticalPolicy: "PercentOfChildrenSum"
+                                            children:
+                                            -   prototype: "ResourceDetailed/ResourceDetailed"
+                                                name: "ResourceDetailed"
+                                -   prototype: "TournamentButton/Button"
+                                    name: "ButtonWhite"
+                                    position: [105.000000, 290.000000]
+                                    wheelSensitivity: 0.000000
+                                    classes: "button button-ok-sound"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfMaxChild"
+                                            horizontalValue: 130.000000
+                                            horizontalMin: 200.000000
+                                            horizontalMax: 400.000000
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                            topAnchorEnabled: true
+                                            topAnchor: 290.000000
+                                    children:
+                                    -   path: "Caption"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            UITextComponent:
+                                                text: "tournaments/Button/AllRewards"
+                        -   prototype: "Separator/Line"
+                            name: "SeparatorBottom"
+                        -   class: "UIControl"
+                            name: "Hints"
+                            size: [783.000000, 46.000000]
+                            noInput: true
+                            classes: "hintType=live"
+                            components:
+                                LinearLayout:
+                                    spacing: 10.000000
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                    verticalPolicy: "PercentOfMaxChild"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                            children:
+                            -   class: "UIControl"
+                                name: "img"
+                                size: [173.000000, 42.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                    Background: {}
+                            -   class: "UIStaticText"
+                                name: "HintTxt"
+                                size: [600.000000, 46.000000]
+                                classes: "text2 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        horizontalMax: 600.000000
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "tournaments/QuickTournaments/Notification/LivesHint"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT"]
+                -   prototype: "ScrollBar/VerticalScrollBar"
+                    name: "VerticalScrollBar"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        ScrollBarDelegate:
+                            delegate: "../ScrollArea"

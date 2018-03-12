@@ -1,0 +1,10 @@
+Header:
+    version: "19"
+Controls:
+-   class: "UIControl"
+    name: "ResourceContainer"
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"

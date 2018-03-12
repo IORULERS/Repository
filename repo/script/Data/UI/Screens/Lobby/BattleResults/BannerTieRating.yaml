@@ -1,0 +1,66 @@
+Header:
+    version: "13"
+Controls:
+-   class: "UIControl"
+    name: "BannerBackground"
+    size: [1024.000000, 260.000000]
+    clip: true
+    noInput: true
+    children:
+    -   class: "UIControl"
+        name: "SpriteLayer1"
+        size: [1024.000000, 260.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/Tie/HeadBackgroundDrawRating"
+        children:
+        -   class: "UIParticles"
+            name: "Fire"
+            position: [747.000000, 211.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/draw/fire_big2.5.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Smoke3"
+            position: [365.000000, 195.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/draw/church_smoke2.5.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Sparks2"
+            position: [763.000000, 179.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/draw/sparks2.5.sc2"
+            autoStart: true
+    -   class: "UIControl"
+        name: "SpriteLayer2"
+        size: [1024.000000, 260.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/Tie/HeadBackgroundDrawRating"
+                frame: 1
+        children:
+        -   class: "UIParticles"
+            name: "Sparks"
+            position: [16.000000, 211.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/draw/sparks3.5.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Smoke1"
+            position: [512.000000, 243.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/draw/big_smoke3.5.sc2"
+            autoStart: true

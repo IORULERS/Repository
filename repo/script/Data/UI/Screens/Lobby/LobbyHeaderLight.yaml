@@ -1,0 +1,73 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledMenuButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "Header"
+    position: [0.000000, 0.000000]
+    size: [1024.000000, 80.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "FixedSize"
+            verticalValue: 80.000000
+        Anchor:
+            topAnchorEnabled: true
+        Background:
+            drawType: "DRAW_ALIGNED"
+            leftRightStretchCap: 2.000000
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_STRETCH_BOTH"
+                sprite: "~res:/Gfx/UI/LobbyCommon/Header"
+        children:
+        -   class: "UIControl"
+            name: "Line"
+            size: [1024.000000, 1.000000]
+            noInput: true
+            classes: "header-line"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background: {}
+    -   class: "UIControl"
+        name: "Layout"
+        noInput: true
+        components:
+            LinearLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 8.000000
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+        children:
+        -   prototype: "StyledMenuButton/StyledMenuButton"
+            name: "menuButton"
+        -   class: "UIControl"
+            name: "CustomContent"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    vCenterAnchorEnabled: true

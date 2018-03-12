@@ -1,0 +1,58 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Layout"
+        components:
+            ClipContent:
+                enabled: true
+        children: []
+    -   path: "Layout/Footer/Type"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Story/coins_icon"
+    -   path: "Layout/IconContainer"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 1.000000
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            visible: true
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    horizontalValue: 80.000000
+                    verticalPolicy: "PercentOfContent"
+                    verticalValue: 90.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 1.000000
+                    topAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Story/China_release/HangarIcon_pay.psd"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   path: "Layout/TextContainer/Title"
+        position: [-4.000000, 0.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 4.000000
+            Background: {}
+            UITextComponent:
+                text: "release_event/Title"
+                align: ["RIGHT", "VCENTER"]
+    -   path: "Layout/TextContainer/ExpireTimer"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+        children: []

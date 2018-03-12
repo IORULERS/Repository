@@ -1,0 +1,206 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/Templates/WebInteractionButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledInfoButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+StyleSheets:
+-   selector: "#ContentHeader #Captions #LeaderboardInfoLayout, #ContentHeader #Captions #ProcessHint, #ContentHeader #Captions #BuyHint, #ContentHeader #Captions #BuyText"
+    properties:
+        visible: false
+-   selector: "#ContentHeader #WebInteraction"
+    properties:
+        visible: false
+-   selector: "#ContentHeader #InfoButton"
+    properties:
+        visible: false
+-   selector: "#ContentHeader #Captions #LeaderboardInfoLayout #ProgressContainer1, #ContentHeader #Captions #LeaderboardInfoLayout #ProgressContainer2, #ContentHeader #Captions #LeaderboardInfoLayout #ProgressContainer3"
+    properties:
+        visible: false
+-   selector: "#ContentHeader.web #WebInteraction"
+    properties:
+        visible: true
+-   selector: "#ContentHeader.web.netease #WebInteraction"
+    properties:
+        visible: false
+-   selector: "#ContentHeader.process #Captions #LeaderboardInfoLayout, #ContentHeader.process #Captions #ProcessHint"
+    properties:
+        visible: true
+-   selector: "#ContentHeader.buy #Captions #BuyHint, #ContentHeader.buy #Captions #BuyText"
+    properties:
+        visible: true
+-   selector: "#ContentHeader.progress1 #Captions #LeaderboardInfoLayout #ProgressContainer1"
+    properties:
+        visible: true
+-   selector: "#ContentHeader.progress2 #Captions #LeaderboardInfoLayout #ProgressContainer2"
+    properties:
+        visible: true
+-   selector: "#ContentHeader.progress3 #Captions #LeaderboardInfoLayout #ProgressContainer3"
+    properties:
+        visible: true
+-   selector: "#ContentHeader.info #InfoButton"
+    properties:
+        visible: true
+Prototypes:
+-   class: "UIControl"
+    name: "ProgressContainer"
+    noInput: true
+    components:
+        LinearLayout:
+            safeAreaPaddingInset: true
+            spacing: 10.000000
+            useRtl: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+    children:
+    -   class: "UIStaticText"
+        name: "ProgressLabel"
+        classes: "text1 text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            UITextComponent:
+                text: "Progress:"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                align: ["LEFT", "VCENTER"]
+    -   class: "UIStaticText"
+        name: "Progress"
+        classes: "text1 text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            UITextComponent:
+                text: "#symbols:Dash"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+Controls:
+-   class: "UIControl"
+    name: "ContentHeader"
+    noInput: true
+    components:
+        LinearLayout:
+            padding: 10.000000
+            spacing: 10.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfMaxChild"
+        Anchor:
+            hCenterAnchorEnabled: true
+        Background:
+            drawType: "DRAW_STRETCH_BOTH"
+            sprite: "~res:/Gfx/UI/LobbyCommon/Header"
+    children:
+    -   class: "UIControl"
+        name: "Image"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                vCenterAnchorEnabled: true
+            Background: {}
+    -   class: "UIControl"
+        name: "Captions"
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                padding: 20.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "ProcessHint"
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "Formula"
+                    horizontalFormula: "min(content, parent)-2*safeAreaInsets.left"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                UITextComponent:
+                    text: "Process Hint"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+        -   class: "UIStaticText"
+            name: "BuyHint"
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "Formula"
+                    horizontalFormula: "min(parent, content)-2*safeAreaInsets.left"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                UITextComponent:
+                    text: "Buy Hint"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+        -   class: "UIStaticText"
+            name: "BuyText"
+            classes: "text1 text-color-red"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "Formula"
+                    horizontalFormula: "min(parent, content)-2*safeAreaInsets.left"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                UITextComponent:
+                    text: "Buy Text"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+        -   class: "UIControl"
+            name: "LeaderboardInfoLayout"
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 20.000000
+                    useRtl: true
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    leftAnchorEnabled: true
+            children:
+            -   prototype: "ProgressContainer"
+                name: "ProgressContainer1"
+            -   prototype: "ProgressContainer"
+                name: "ProgressContainer2"
+            -   prototype: "ProgressContainer"
+                name: "ProgressContainer3"
+    -   prototype: "WebInteractionButton/WebInteraction"
+        name: "WebInteraction"
+        classes: "netease-hidden"
+        components:
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Button"
+            components:
+                Sound:
+                    touchDown: "GUI/buttons/open"
+            children: []
+    -   prototype: "StyledInfoButton/StyledInfoButton"
+        name: "InfoButton"
+        classes: "button button-color-gray button-open-sound"
+        components:
+            Anchor:
+                vCenterAnchorEnabled: true

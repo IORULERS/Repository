@@ -1,0 +1,35 @@
+Header:
+    version: "18"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Screen"
+    size: [1024.000000, 768.000000]
+    noInput: false
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.000000, 0.000000, 0.000000, 1.000000]
+    children:
+    -   class: "UIControl"
+        name: "Text"
+        size: [358.000000, 50.000000]
+        noInput: true
+        classes: "header0"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 50.000000
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "Please wait"
+                colorInheritType: "COLOR_IGNORE_PARENT"

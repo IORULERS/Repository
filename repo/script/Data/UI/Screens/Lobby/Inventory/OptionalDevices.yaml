@@ -1,0 +1,800 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/LobbyHeader.yaml"
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Inventory/OptionalDevicesSlot.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Hangar/StatsInfo.yaml"
+- "~res:/UI/Screens/Lobby/Common/ParamsPrototype.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleParamsTable.yaml"
+- "~res:/UI/Screens/Common/IconButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+- "~res:/UI/Screens/Lobby/ExpireTimer.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/Footer.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".openSlotView #OpenSlotPart"
+    properties:
+        visible: true
+-   selector: ".interruptView #InterruptPart"
+    properties:
+        visible: true
+-   selector: ".closedSlotView #ClosedSlotPart"
+    properties:
+        visible: true
+-   selector: ".researchInProgressView #ResearchInProgressPart"
+    properties:
+        visible: true
+-   selector: ".changeDeviceView #ChangeDevicePart"
+    properties:
+        visible: true
+-   selector: "#OpenSlotPart, #InterruptPart, #ClosedSlotPart, #ResearchInProgressPart, #ChangeDevicePart"
+    properties:
+        visible: false
+-   selector: ".number-param-prototype"
+    properties:
+        visible: false
+Prototypes:
+-   prototype: "StatsInfo/EmptyCurrencyPanel"
+    name: "CurrencyPanel"
+    children:
+    -   path: "statContainer"
+        children:
+        -   prototype: "StatsInfo/Stat"
+            name: "optionalDeviceCurrency"
+            children:
+            -   path: "Value/Icon"
+                position: [7.000000, 1.000000]
+                components:
+                    Background:
+                        frame: 6
+            -   path: "Title/Text"
+                components:
+                    UITextComponent:
+                        text: "storage/Items/DeviceProxy/Title"
+        -   prototype: "StatsInfo/Stat"
+            name: "freeXP"
+            children:
+            -   path: "Value/Icon"
+                components:
+                    Background:
+                        frame: 2
+            -   path: "Title/Text"
+                components:
+                    UITextComponent:
+                        text: "hangar/freeXP"
+        -   prototype: "StatsInfo/Stat"
+            name: "credits"
+            children:
+            -   path: "Value/Icon"
+                components:
+                    Background:
+                        frame: 1
+            -   path: "Title/Text"
+                components:
+                    UITextComponent:
+                        text: "hangar/credits"
+        -   prototype: "StatsInfo/Stat"
+            name: "gold"
+            children:
+            -   path: "Title/Text"
+                components:
+                    UITextComponent:
+                        text: "hangar/gold"
+-   prototype: "ExpireTimer/ExpireTimer"
+    name: "ExpireTimer"
+    classes: "view=detailed"
+    children:
+    -   path: "Shadow"
+        components:
+            Background:
+                sprite: ""
+-   class: "UIControl"
+    name: "SlotsLayerLayout"
+    noInput: true
+    components:
+        LinearLayout: {}
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+        Anchor:
+            hCenterAnchorEnabled: true
+    children:
+    -   class: "UIStaticText"
+        name: "layerNumber"
+        size: [25.000000, 135.000000]
+        classes: "header3"
+        components:
+            Anchor:
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "I"
+Controls:
+-   class: "UIControl"
+    name: "OptionalDevices"
+    size: [1024.000000, 688.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   prototype: "LobbyHeader/Header"
+        name: "Header"
+        children:
+        -   path: "Layout/rightContent"
+            children:
+            -   prototype: "CurrencyPanel"
+                name: "CurrencyPanel"
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        classes: "notch-tightly-bottom-inset"
+        components:
+            LinearLayout: {}
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+        children:
+        -   class: "UIControl"
+            name: "VerticalScrollView"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+            children:
+            -   class: "UIScrollView"
+                name: "ScrollArea"
+                autoUpdate: true
+                centerContent: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   class: "UIControl"
+                        name: "SlotsMainLayout"
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                orientation: "TopDown"
+                                padding: 20.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfMaxChild"
+                                verticalPolicy: "PercentOfChildrenSum"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIControl"
+                            name: "Headers"
+                            size: [547.000000, 45.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    skipInvisible: false
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                            children:
+                            -   class: "UIStaticText"
+                                name: "layerNumber"
+                                size: [25.000000, 25.000000]
+                                visible: false
+                                classes: "header3"
+                                components:
+                                    UITextComponent:
+                                        text: "I"
+                                        align: ["HCENTER", "TOP"]
+                            -   class: "UIStaticText"
+                                name: "firstHeader"
+                                size: [174.000000, 25.000000]
+                                classes: "header4"
+                                components:
+                                    UITextComponent:
+                                        text: "optionalDevices/Type/attack"
+                                        align: ["HCENTER", "TOP"]
+                            -   class: "UIStaticText"
+                                name: "secondHeader"
+                                size: [174.000000, 25.000000]
+                                classes: "header4"
+                                components:
+                                    UITextComponent:
+                                        text: "optionalDevices/Type/defence"
+                                        align: ["HCENTER", "TOP"]
+                            -   class: "UIStaticText"
+                                name: "thirdHeader"
+                                size: [174.000000, 25.000000]
+                                classes: "header4"
+                                components:
+                                    UITextComponent:
+                                        text: "optionalDevices/Type/specialization"
+                                        align: ["HCENTER", "TOP"]
+            -   prototype: "ScrollBar/VerticalScrollBar"
+                name: "VerticalScrollBar"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    ScrollBarDelegate:
+                        delegate: "../ScrollArea"
+        -   class: "UIScrollView"
+            name: "Info"
+            autoUpdate: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "Formula"
+                    horizontalFormula: "safeAreaInsets.left+350"
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background: {}
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                classes: ""
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "Formula"
+                        verticalFormula: "max(parent, childrenSum)"
+                children:
+                -   class: "UIControl"
+                    name: "HorizontalLayout"
+                    noInput: true
+                    classes: "section-header1"
+                    components:
+                        LinearLayout:
+                            orientation: "LeftToRight"
+                            padding: 10.000000
+                            spacing: 10.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "FixedSize"
+                            verticalValue: 70.000000
+                        Background: {}
+                    children:
+                    -   class: "UIControl"
+                        name: "icon"
+                        position: [10.000000, 10.000000]
+                        size: [50.000000, 50.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 10.000000
+                                vCenterAnchorEnabled: true
+                            Background:
+                                drawType: "DRAW_SCALE_TO_RECT"
+                    -   class: "UIStaticText"
+                        name: "Title"
+                        position: [70.000000, 10.000000]
+                        size: [240.000000, 50.000000]
+                        noInput: true
+                        classes: "header3 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 100.000000
+                                rightAnchorEnabled: true
+                                rightAnchor: 10.000000
+                                topAnchorEnabled: true
+                                topAnchor: 10.000000
+                                bottomAnchorEnabled: true
+                                bottomAnchor: 10.000000
+                            UIAnchorSafeAreaComponent:
+                                rightSafeInset: "INSET"
+                            Background:
+                                align: ["LEFT", "TOP"]
+                            UITextComponent:
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                multiline: "MULTILINE_ENABLED"
+                                fitting: "FITTING_REDUCE"
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "DONT_USE"
+                -   class: "UIControl"
+                    name: "Spacer"
+                    size: [350.000000, 1.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                -   class: "UIControl"
+                    name: "DescriptionContainer"
+                    noInput: true
+                    classes: "pane-bg"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Background: {}
+                    children:
+                    -   class: "UIControl"
+                        name: "SpaserAfterDescriprion"
+                        noInput: true
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "FixedSize"
+                                verticalValue: 7.000000
+                    -   class: "UIStaticText"
+                        name: "Description"
+                        noInput: true
+                        classes: "text1 text-color-blue"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 10.000000
+                                rightAnchorEnabled: true
+                                rightAnchor: 10.000000
+                                topAnchorEnabled: true
+                            UIAnchorSafeAreaComponent:
+                                rightSafeInset: "INSET"
+                            Background:
+                                align: ["LEFT", "TOP"]
+                            UITextComponent:
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                multiline: "MULTILINE_ENABLED"
+                                align: ["LEFT", "TOP"]
+                                useRtlAlign: "USE_BY_CONTENT"
+                    -   class: "UIControl"
+                        name: "SpaserAfterDescriprion"
+                        noInput: true
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "FixedSize"
+                                verticalValue: 7.000000
+                -   prototype: "VehicleParamsTable/VehicleParamsTable"
+                    name: "VehicleParamsTable"
+                    children:
+                    -   path: "BaseParam"
+                        visible: false
+                        children: []
+                    -   path: "ModulesParam/Gun/ModuleShellTypesPiercingPower_1"
+                        position: [0.000000, 36.000000]
+                        children: []
+                    -   path: "ModulesParam/Gun/ModuleShellTypesPiercingPower_1/TextContainer/name"
+                        position: [-3.000000, 0.000000]
+                        classes: "text1 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchor: -3.000000
+                            UITextComponent:
+                                text: ""
+                    -   path: "ModulesParam/Gun/ModuleShellTypesPiercingPower_2/TextContainer/name"
+                        classes: "text1 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchor: -3.000000
+                    -   path: "ModulesParam/Gun/ModuleShellTypesPiercingPower_3"
+                        position: [0.000000, 112.000000]
+                        children: []
+                    -   path: "ModulesParam/Gun/ModuleShellTypesPiercingPower_3/TextContainer/name"
+                        classes: "text1 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchor: -3.000000
+                    -   path: "ModulesParam/Gun/ModuleShellTypesDamage_1"
+                        position: [0.000000, 150.000000]
+                        children: []
+                    -   path: "ModulesParam/Gun/ModuleShellTypesDamage_1/TextContainer/name"
+                        classes: "text1 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchor: -3.000000
+                    -   path: "ModulesParam/Gun/ModuleShellTypesDamage_2/TextContainer/name"
+                        classes: "text1 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchor: -3.000000
+                    -   path: "ModulesParam/Gun/ModuleShellTypesDamage_3"
+                        position: [0.000000, 227.000000]
+                        children: []
+                    -   path: "ModulesParam/Gun/ModuleShellTypesDamage_3/TextContainer/name"
+                        classes: "text1 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchor: -3.000000
+                    -   path: "ModulesParam/Gun/ModuleGunShotDispersionAngle"
+                        position: [0.000000, 264.000000]
+                        children: []
+                    -   path: "ModulesParam/Gun/ModuleGunShotDispersionAngle/TextContainer/name"
+                        classes: "text1 text-color-white"
+                    -   path: "ModulesParam/Gun/ModuleGunWeight"
+                        position: [0.000000, 264.000000]
+                        children: []
+                    -   path: "ModulesParam/Chassi/HeaderChassi/bg"
+                        components:
+                            Anchor:
+                                bottomAnchor: 0.000000
+                        children: []
+                -   class: "UIControl"
+                    name: "Spacer"
+                    noInput: true
+                    classes: "pane-bg"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "Formula"
+                            verticalFormula: "parentRest"
+                        Background: {}
+            -   prototype: "ScrollBar/VerticalScrollBar"
+                name: "InfoScrollBar"
+                classes: "notch-tightly-right-inset"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UIAnchorSafeAreaComponent: {}
+                    ScrollBarDelegate:
+                        delegate: ".."
+    -   prototype: "Footer/Footer"
+        name: "StateControl"
+        children:
+        -   prototype: "IconButton/IconButton"
+            name: "InfoButton"
+            size: [64.000000, 64.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 8.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "icon"
+                components:
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                        frame: 26
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIControl"
+            name: "OpenSlotPart"
+            components:
+                LinearLayout:
+                    spacing: 20.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "VerticalLayout"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "PriceHorizontalLayout"
+                    components:
+                        LinearLayout:
+                            spacing: 5.000000
+                            useRtl: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfChildrenSum"
+                            verticalPolicy: "PercentOfMaxChild"
+                        Anchor:
+                            rightAnchorEnabled: true
+                    children:
+                    -   class: "UIStaticText"
+                        name: "PriceDescription"
+                        classes: "text2 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                vCenterAnchorEnabled: true
+                            UITextComponent:
+                                text: "#common:Cost"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                    -   class: "UIControl"
+                        name: "ResourceContainer"
+                        size: [71.000000, 32.000000]
+                        noInput: true
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                        children:
+                        -   prototype: "ResourceSmall/ResourceSmall"
+                            name: "ResourceSmall"
+                            position: [71.000000, 16.000000]
+                            children:
+                            -   path: "Value"
+                                classes: "header3 text-color-light-green"
+                            -   path: "DiscountLabel/Value"
+                                components:
+                                    UITextComponent:
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "TimeLayout"
+                    components:
+                        LinearLayout:
+                            spacing: 5.000000
+                            useRtl: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfChildrenSum"
+                            verticalPolicy: "PercentOfMaxChild"
+                        Anchor:
+                            rightAnchorEnabled: true
+                    children:
+                    -   class: "UIStaticText"
+                        name: "TimeToOpenDescription"
+                        classes: "text2 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                text: "#common:Timer"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                    -   prototype: "ExpireTimer/ExpireTimer"
+                        name: "TimeCost"
+                        components:
+                            Anchor:
+                                bottomAnchorEnabled: true
+                            Background:
+                                colorInherit: "COLOR_IGNORE_PARENT"
+                        children:
+                        -   path: "Timer"
+                            components:
+                                Background:
+                                    colorInherit: "COLOR_IGNORE_PARENT"
+                            children: []
+                        -   path: "Timer/Hours"
+                            components:
+                                UITextComponent:
+                                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   path: "Timer/ColonHM"
+                            components:
+                                UITextComponent:
+                                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   path: "Timer/Minutes"
+                            components:
+                                UITextComponent:
+                                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+            -   prototype: "StyledButton/StyledButton"
+                name: "OpenButton"
+                classes: "button button-color-green"
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    Sound:
+                        touchUpInside: "GUI/buttons/ok"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "#common:DialogButton/Open"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "InterruptPart"
+            components:
+                LinearLayout:
+                    spacing: 20.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "VerticalLayout"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "PriceHorizontalLayout"
+                    components:
+                        LinearLayout:
+                            spacing: 5.000000
+                            useRtl: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfChildrenSum"
+                            verticalPolicy: "PercentOfMaxChild"
+                    children:
+                    -   class: "UIStaticText"
+                        name: "PriceDescription"
+                        classes: "text2 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                vCenterAnchorEnabled: true
+                            UITextComponent:
+                                text: "#common:Repayment"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                    -   class: "UIControl"
+                        name: "ResourceContainer"
+                        size: [71.000000, 32.000000]
+                        noInput: true
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                        children:
+                        -   prototype: "ResourceSmall/ResourceSmall"
+                            name: "ResourceSmall"
+                            position: [71.000000, 16.000000]
+                            children:
+                            -   path: "Value"
+                                classes: "header3 text-color-light-green"
+                            -   path: "DiscountLabel/Value"
+                                components:
+                                    UITextComponent:
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   prototype: "StyledButton/StyledButton"
+                name: "InterruptButton"
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    Sound:
+                        touchUpInside: "GUI/buttons/ok"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "#common:DialogButton/Stop"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "ClosedSlotPart"
+            components:
+                LinearLayout:
+                    spacing: 20.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "PriceDescription"
+                classes: "text2 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "optionalDevices/OpenPreviousLevel/Comment"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   prototype: "StyledButton/StyledButton"
+                name: "OpenButton"
+                enabled: false
+                classes: "button button-color-green"
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    Sound:
+                        touchUpInside: "GUI/buttons/ok"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "#common:DialogButton/Open"
+        -   class: "UIControl"
+            name: "ResearchInProgressPart"
+            components:
+                LinearLayout:
+                    spacing: 20.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "PriceDescription"
+                classes: "text2 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "optionalDevices/WaitForTimeshift/Comment"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   prototype: "StyledButton/StyledButton"
+                name: "OpenButton"
+                enabled: false
+                classes: "button button-color-green"
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    Sound:
+                        touchUpInside: "GUI/buttons/ok"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "#common:DialogButton/Open"
+        -   class: "UIControl"
+            name: "ChangeDevicePart"
+            components:
+                LinearLayout:
+                    spacing: 20.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "ChangeDeviceDescription"
+                classes: "text2 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "optionalDevices/ChangeDevice/Comment"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+CustomData:
+    Guides:
+        OptionalDevices:
+            Vertical:
+            - 681.000000

@@ -1,0 +1,24 @@
+Header:
+    version: "19"
+StyleSheets:
+-   selector: ".aligning-in-rich-text"
+    properties:
+        anchor-vCenterAnchor: 0.000000
+-   selector: ".aligning-in-rich-text.vi, .aligning-in-rich-text.ja, .aligning-in-rich-text.ko, .aligning-in-rich-text.zh-Hant, .aligning-in-rich-text.zh-Hans"
+    properties:
+        anchor-vCenterAnchor: -2.000000
+Prototypes:
+-   class: "UIControl"
+    name: "VehicleClassIcon"
+    classes: "aligning-in-rich-text"
+    components:
+        SizePolicy:
+            horizontalPolicy: "FixedSize"
+            horizontalValue: 16.000000
+            verticalPolicy: "FixedSize"
+            verticalValue: 32.000000
+        Anchor:
+            vCenterAnchorEnabled: true
+        Background:
+            sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+            frame: 3

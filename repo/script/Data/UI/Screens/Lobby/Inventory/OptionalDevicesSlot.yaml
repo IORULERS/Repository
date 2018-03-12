@@ -1,0 +1,401 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Inventory/InventoryPurchaseItem.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Lobby/ExpireTimer.yaml"
+- "~res:/UI/Screens/Lobby/Common/FooterPriceControl.yaml"
+- "~res:/UI/Screens/Lobby/Inventory/OptionalDevicesItem.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+StyleSheets:
+-   selector: ".slot.speedup-available #SpeedupContainer"
+    properties:
+        anchor-topAnchor:
+            value: 45.000000
+            transitionTime: 0.150000
+            transitionFunction: "EASE_IN_EASY_OUT"
+-   selector: ".slot #SpeedupContainer"
+    properties:
+        anchor-topAnchor:
+            value: 10.000000
+            transitionTime: 0.150000
+            transitionFunction: "EASE_IN_EASY_OUT"
+-   selector: ".slot:selected #Background #Selected"
+    properties:
+        visible: true
+-   selector: ".slot #Background #Selected"
+    properties:
+        visible: false
+-   selector: ".slot.speedup-available #HorizontalLayout"
+    properties:
+        anchor-topAnchor:
+            value: -45.000000
+            transitionTime: 0.150000
+            transitionFunction: "EASE_IN_EASY_OUT"
+-   selector: ".slot #HorizontalLayout"
+    properties:
+        anchor-topAnchor:
+            value: -10.000000
+            transitionTime: 0.150000
+            transitionFunction: "EASE_IN_EASY_OUT"
+-   selector: ".slot.speedup-available #Background"
+    properties:
+        anchor-bottomAnchor:
+            value: -26.000000
+            transitionTime: 0.150000
+            transitionFunction: "EASE_IN_EASY_OUT"
+        anchor-topAnchor:
+            value: -45.000000
+            transitionTime: 0.150000
+            transitionFunction: "EASE_IN_EASY_OUT"
+-   selector: ".slot #Background"
+    properties:
+        anchor-bottomAnchor:
+            value: -10.000000
+            transitionTime: 0.150000
+            transitionFunction: "EASE_IN_EASY_OUT"
+        anchor-topAnchor:
+            value: -10.000000
+            transitionTime: 0.150000
+            transitionFunction: "EASE_IN_EASY_OUT"
+-   selector: ".slot.speedup-available #SpeedupContainer, .slot.speedup-available #HorizontalLayout #ExpireTimer, .slot.speedup-available #DiscountLabel"
+    properties:
+        bg-color:
+            value: [1.000000, 1.000000, 1.000000, 1.000000]
+            transitionTime: 0.150000
+            transitionFunction: "EASE_IN_EASY_OUT"
+-   selector: ".slot #SpeedupContainer, .slot #HorizontalLayout #ExpireTimer, .slot #DiscountLabel"
+    properties:
+        bg-color:
+            value: [1.000000, 1.000000, 1.000000, 0.000000]
+            transitionTime: 0.150000
+            transitionFunction: "EASE_OUT"
+-   selector: ".slot.speedup-available #SpeedupContainer #Button"
+    properties:
+        noInput: false
+-   selector: ".slot #SpeedupContainer #Button"
+    properties:
+        noInput: true
+-   selector: ".locked ? ? #LeftItem, .locked ? ? #RightItem"
+    properties:
+        bg-contour: "~res:/Gfx/UI/CommonUIElements/Button/gray_contour.txt"
+        bg-gradient: "~res:/Gfx/UI/CommonUIElements/Button/gray_gradient.txt"
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: ".ready-to-unlock ? ? #LeftItem, .ready-to-unlock ? ? #RightItem"
+    properties:
+        bg-contour: "~res:/Gfx/UI/CommonUIElements/Button/gray_contour.txt"
+        bg-gradient: "~res:/Gfx/UI/CommonUIElements/Button/gray_gradient.txt"
+-   selector: ".speedup-available ? ? #LeftItem, .speedup-available ? ? #RightItem"
+    properties:
+        bg-contour: "~res:/Gfx/UI/CommonUIElements/Button/gray_contour.txt"
+        bg-gradient: "~res:/Gfx/UI/CommonUIElements/Button/gray_gradient.txt"
+-   selector: ".locked #LockIcon"
+    properties:
+        visible: true
+-   selector: "#Slot.slot.speedup-available"
+    properties:
+        anchor-vCenterAnchor: -10.000000
+-   selector: "#Slot.slot"
+    properties:
+        anchor-vCenterAnchor: 0.000000
+-   selector: "#LockIcon"
+    properties:
+        visible: false
+-   selector: ".left-unlocked ? ? #LeftItem"
+    properties:
+        bg-contour: "~res:/Gfx/UI/CommonUIElements/Button/green_contour.txt"
+        bg-gradient: "~res:/Gfx/UI/CommonUIElements/Button/green_gradient.txt"
+-   selector: ".left-unlocked ? ? #RightItem"
+    properties:
+        bg-contour: "~res:/Gfx/UI/CommonUIElements/Button/green_dark_contour.psd"
+        bg-gradient: "~res:/Gfx/UI/CommonUIElements/Button/green_dark_gradient.psd"
+-   selector: ".right-unlocked ? ? #LeftItem"
+    properties:
+        bg-contour: "~res:/Gfx/UI/CommonUIElements/Button/green_dark_contour.psd"
+        bg-gradient: "~res:/Gfx/UI/CommonUIElements/Button/green_dark_gradient.psd"
+-   selector: ".right-unlocked ? ? #RightItem"
+    properties:
+        bg-contour: "~res:/Gfx/UI/CommonUIElements/Button/green_contour.psd"
+        bg-gradient: "~res:/Gfx/UI/CommonUIElements/Button/green_gradient.psd"
+Prototypes:
+-   class: "UIControl"
+    name: "SlotMainContainer"
+    size: [174.000000, 135.000000]
+    noInput: true
+    children:
+    -   class: "UIControl"
+        name: "Slot"
+        size: [160.000000, 65.000000]
+        noInput: true
+        classes: "slot"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Background"
+            size: [160.000000, 85.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_TILED"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/dynamic_control"
+                    gradientMode: "Multiply"
+                    color: [0.000000, 0.000000, 0.000000, 0.501961]
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                    leftRightStretchCap: 5.000000
+                    topBottomStretchCap: 5.000000
+            children:
+            -   prototype: "Selection/Selection"
+                name: "Selected"
+                classes: "selection-color-orange"
+                components:
+                    IgnoreLayout: {}
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: -1.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: -1.000000
+                    Background:
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   class: "UIControl"
+            name: "HorizontalLayout"
+            size: [160.000000, 85.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "LeftItemPushableArea"
+                size: [80.000000, 85.000000]
+                classes: "button slot"
+                components:
+                    Background: {}
+                    Sound: {}
+                children:
+                -   prototype: "OptionalDevicesItem/OptionalDevicesItem"
+                    name: "LeftItem"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 10.000000
+                            vCenterAnchorEnabled: true
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "RightItemPushableArea"
+                position: [80.000000, 0.000000]
+                size: [80.000000, 85.000000]
+                classes: "button slot"
+                components:
+                    Background: {}
+                    Sound: {}
+                children:
+                -   prototype: "OptionalDevicesItem/OptionalDevicesItem"
+                    name: "RightItem"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: 10.000000
+                            vCenterAnchorEnabled: true
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   prototype: "ExpireTimer/ExpireTimer"
+                name: "ExpireTimer"
+                components:
+                    IgnoreLayout: {}
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                children:
+                -   path: "Shadow"
+                    components:
+                        Anchor:
+                            leftAnchor: -5.000000
+                            rightAnchor: -5.000000
+                            topAnchor: -5.000000
+                            bottomAnchor: -5.000000
+                        Background:
+                            drawType: "DRAW_FILL"
+                            sprite: ""
+                            color: [0.000000, 0.000000, 0.000000, 0.498039]
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Label"
+                    textcolorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIControl"
+            name: "SpeedupContainer"
+            size: [160.000000, 118.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 2.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 37.000000
+                Background:
+                    frame: 0
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "Button"
+                size: [154.000000, 50.000000]
+                classes: "button mode=button-payment"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 3.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 3.000000
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                children:
+                -   path: "Caption"
+                    text: "#common:DialogButton/SpeedUp"
+            -   prototype: "FooterPriceControl/FooterPriceControl"
+                name: "PriceItem"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                children:
+                -   path: "Gold"
+                    components:
+                        LinearLayout:
+                            spacing: 5.000000
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "Gold/LeftPart"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "Gold/LeftPart/Label"
+                    classes: "text2 text-color-blue"
+                    textcolorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Gold/LeftPart/Discount"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "Gold/LeftPart/Discount/Image"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Gold/LeftPart/Discount/Value"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Gold/RightPart"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "Gold/RightPart/Price"
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfParent"
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "Gold/RightPart/Price/Text"
+                    classes: "header4"
+                    textcolorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Gold/RightPart/Price/Icon"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Credits"
+                    components:
+                        LinearLayout:
+                            spacing: 5.000000
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "Credits/LeftPart"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "Credits/LeftPart/Label"
+                    classes: "text2 text-color-blue"
+                    textcolorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Credits/LeftPart/Discount"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "Credits/LeftPart/Discount/Image"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Credits/LeftPart/Discount/Value"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Credits/RightPart"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "Credits/RightPart/Price"
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfParent"
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "Credits/RightPart/Price/Text"
+                    classes: "header4"
+                    textcolorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Credits/RightPart/Price/Icon"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   prototype: "DiscountLabel/DiscountLabel"
+            name: "DiscountLabel"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -4.000000
+                    topAnchorEnabled: true
+                    topAnchor: -50.000000
+            children:
+            -   path: "Image"
+                components:
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            -   path: "Value"
+                components:
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIControl"
+            name: "LockIcon"
+            size: [32.000000, 32.000000]
+            noInput: true
+            components:
+                IgnoreLayout: {}
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/lock"

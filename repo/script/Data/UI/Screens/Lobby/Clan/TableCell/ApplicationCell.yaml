@@ -1,0 +1,45 @@
+Header:
+    version: "20"
+StyleSheets:
+-   selector: ".local-button"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+        exclusiveInput: true
+-   selector: ".local-button:pressed_inside"
+    properties:
+        bg-sprite: ""
+Controls:
+-   class: "UIControl"
+    name: "Cell"
+    size: [110.000000, 64.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIControl"
+        name: "DeclineButton"
+        size: [54.000000, 64.000000]
+        classes: "local-button"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                hCenterAnchorEnabled: true
+                hCenterAnchor: -1.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                frame: 5
+    -   class: "UIControl"
+        name: "AcceptButton"
+        size: [54.000000, 64.000000]
+        classes: "local-button"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 1.000000
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                frame: 6

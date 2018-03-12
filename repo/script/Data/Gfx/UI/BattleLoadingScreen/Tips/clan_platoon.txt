@@ -1,0 +1,5 @@
+1
+clan_platoon0.tex
+256 128
+1
+0 0 174 99 54 29 0 frame0

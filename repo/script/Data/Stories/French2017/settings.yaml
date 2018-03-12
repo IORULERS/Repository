@@ -1,0 +1,12 @@
+name: "french_event/Title"
+stages:
+ french_inform_1:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/French2017/Button_Inform.yaml"
+  info: "event-info-1"
+ french_inform_2:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/French2017/Button_Buy.yaml"
+  info: "event-info-2"
+currencyKeys:
+  french_chest_1_part: "storage/Items/IntelligenceDataPieces/Features"

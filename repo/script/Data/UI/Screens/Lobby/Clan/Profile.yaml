@@ -1,0 +1,1634 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Lobby/Quests/QuestDescription.yaml"
+- "~res:/UI/Screens/Lobby/Clan/Roster.yaml"
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Lobby/Clan/ClanCommon.yaml"
+- "~res:/UI/Screens/Lobby/Clan/ClanEmblem.yaml"
+- "~res:/UI/Screens/Lobby/Clan/Supply.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Lobby/Clan/Supply/BonusIcons.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/StyledMenuButton.yaml"
+- "~res:/UI/Screens/CommonStyles.yaml"
+- "~res:/UI/Styles/Lobby/Inventory/InventoryNormalStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader3.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/FlatIconButtonWithArrow.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Training/RoomList.yaml"
+StyleSheets:
+-   selector: ".clan-efficiency-item:pressed_inside #gradient"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.498039]
+-   selector: ".small-bonus-item"
+    properties:
+        bg-drawType: "DRAW_SCALE_PROPORTIONAL"
+        sizePolicy-horizontalPolicy: "FixedSize"
+        sizePolicy-verticalValue: 32.000000
+        sizePolicy-horizontalValue: 32.000000
+        sizePolicy-verticalPolicy: "FixedSize"
+-   selector: ".small-container"
+    properties:
+        linearLayout-spacing: 5.000000
+Prototypes:
+-   class: "UIControl"
+    name: "BattleEfficiencyItem"
+    size: [164.000000, 160.000000]
+    exclusiveInput: true
+    classes: "clan-efficiency-item"
+    children:
+    -   class: "UIControl"
+        name: "gradient"
+        position: [82.000000, 80.000000]
+        size: [164.000000, 160.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_STRETCH_BOTH"
+                sprite: "~res:/Gfx/UI/LobbyCommon/info_background.psd"
+                leftRightStretchCap: 7.000000
+                topBottomStretchCap: 7.000000
+    -   class: "UIControl"
+        name: "Icon"
+        size: [80.000000, 80.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/Clan/icon_stats"
+                frame: 1
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIStaticText"
+        name: "Value"
+        size: [140.000000, 34.000000]
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 68.000000
+            UITextComponent:
+                text: "-"
+                fontName: "WarHeliosCondC_Bold_30"
+    -   class: "UIStaticText"
+        name: "Description"
+        size: [150.000000, 60.000000]
+        classes: "text2 text-color-blue"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 110.000000
+            UITextComponent:
+                multiline: "MULTILINE_ENABLED"
+                align: ["HCENTER", "TOP"]
+    -   class: "UIControl"
+        name: "infoIcon"
+        size: [32.000000, 32.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/info_butt"
+Controls:
+-   class: "UIControl"
+    name: "Profile"
+    size: [1024.000000, 768.000000]
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        customClass: "UIClanInfoPanel"
+        name: "ClanInfo"
+        size: [1024.000000, 90.000000]
+        noInput: true
+        classes: "panel-background"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+        children:
+        -   class: "UIControl"
+            name: "Container"
+            position: [44.000000, 0.000000]
+            size: [936.000000, 90.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                    rightSafeInset: "INSET"
+            children:
+            -   class: "UIControl"
+                name: "InputHolder"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        rightAnchor: 160.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    DebugRender:
+                        enabled: false
+            -   prototype: "ClanEmblem/ClanEmblem"
+                name: "ClanEmblem"
+                size: [64.000000, 64.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 13.000000
+                        vCenterAnchorEnabled: true
+                children:
+                -   path: "BorderTop"
+                    noInput: true
+                -   path: "BorderBottom"
+                    noInput: true
+                -   path: "BorderLeft"
+                    noInput: true
+                -   class: "UIControl"
+                    name: "image"
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+            -   class: "UIControl"
+                name: "ClanShortLeftInfo"
+                size: [350.000000, 70.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 90.000000
+                        hCenterAnchorEnabled: false
+                        topAnchorEnabled: true
+                        topAnchor: 10.000000
+                        vCenterAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 10.000000
+                    Background: {}
+                children:
+                -   class: "UIStaticText"
+                    name: "ClanName"
+                    classes: "header3"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            useRtl: true
+                        UITextComponent:
+                            color: [0.960784, 0.650980, 0.137255, 1.000000]
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            fitting: "FITTING_POINTS"
+                            align: ["LEFT", "VCENTER"]
+                            useRtlAlign: "USE_BY_CONTENT"
+                -   class: "UIControl"
+                    name: "ClanMembersCount"
+                    size: [0.000000, 23.333334]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            useRtl: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfChildrenSum"
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            useRtl: true
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Label"
+                        size: [0.000000, 23.333336]
+                        classes: "text2 text-color-white"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfParent"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 0.000000
+                                topAnchorEnabled: false
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "USE_BY_SYSTEM"
+                    -   class: "UIStaticText"
+                        name: "Text"
+                        size: [0.000000, 23.333336]
+                        classes: "text2 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfParent"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                topAnchorEnabled: false
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                fitting: "FITTING_POINTS"
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "USE_BY_SYSTEM"
+                -   class: "UIControl"
+                    name: "ClanLanguages"
+                    size: [0.000000, 23.333334]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            useRtl: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfChildrenSum"
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            useRtl: true
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Label"
+                        size: [0.000000, 23.333336]
+                        classes: "text2 text-color-white"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfParent"
+                            Anchor:
+                                topAnchorEnabled: false
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "USE_BY_SYSTEM"
+                    -   class: "UIStaticText"
+                        name: "Text"
+                        size: [0.000000, 23.333336]
+                        classes: "text2 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfParent"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                topAnchorEnabled: false
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                fitting: "FITTING_POINTS"
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "USE_BY_SYSTEM"
+            -   class: "UIControl"
+                name: "ClanText"
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 450.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 185.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background: {}
+                children:
+                -   class: "UIControl"
+                    name: "Line"
+                    position: [0.000000, 10.000000]
+                    size: [1.000000, 70.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 10.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 10.000000
+                        Background:
+                            drawType: "DRAW_FILL"
+                            color: [1.000000, 1.000000, 1.000000, 0.300000]
+                            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                -   class: "UIControl"
+                    name: "ClanMotto"
+                    size: [291.000000, 30.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            useRtl: true
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 10.000000
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 15.000000
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Label"
+                        size: [0.000000, 30.000000]
+                        classes: "text2 text-color-white"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                            Anchor:
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "USE_BY_CONTENT"
+                    -   class: "UIStaticText"
+                        name: "Text"
+                        size: [291.000000, 30.000000]
+                        classes: "text2 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                            Anchor:
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                fitting: "FITTING_POINTS"
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "USE_BY_SYSTEM"
+                -   class: "UIControl"
+                    name: "ClanDescription"
+                    size: [291.000000, 30.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            useRtl: true
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 10.000000
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 48.000000
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Label"
+                        size: [0.000000, 30.000000]
+                        classes: "text2 text-color-white"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                            Anchor:
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "USE_BY_CONTENT"
+                    -   class: "UIStaticText"
+                        name: "Text"
+                        size: [291.000000, 30.000000]
+                        classes: "text2 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                            Anchor:
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                fitting: "FITTING_POINTS"
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "USE_BY_SYSTEM"
+            -   prototype: "ClanCommon/ListLine"
+                name: "ListLine"
+                components:
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "REVERSE"
+                        rightSafeInset: "REVERSE"
+            -   prototype: "StyledButton/StyledButton"
+                name: "RosterButton"
+                size: [176.000000, 64.000000]
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 8.000000
+                        vCenterAnchorEnabled: true
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "#clans:ProfileScreen/MembersButton"
+                -   prototype: "UnreadIcon/UnreadIcon"
+                    name: "UnreadApplications"
+                    size: [33.000000, 33.000000]
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: -4.000000
+                            topAnchorEnabled: true
+                            topAnchor: -4.000000
+                        UITextComponent:
+                            text: "!"
+    -   class: "UIScrollView"
+        name: "scrollableArea"
+        position: [0.000000, 90.000000]
+        size: [1024.000000, 678.000000]
+        classes: "limited-width"
+        autoUpdate: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                hCenterAnchorEnabled: true
+        children:
+        -   class: "UIScrollViewContainer"
+            name: "scrollContainerControl"
+            position: [0.000000, 0.000000]
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "panels"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        safeAreaPaddingInset: true
+                        spacing: 20.000000
+                    SizePolicy:
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    customClass: "UIClanEfficiencyPanel"
+                    name: "ClanEfficiency"
+                    visible: true
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            spacing: 20.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   prototype: "SectionHeader3/SectionHeader3"
+                        name: "Header"
+                        children:
+                        -   class: "UIStaticText"
+                            name: "Text"
+                            classes: "header3 text-color-white"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                                UITextComponent:
+                                    text: "#clans:ProfileScreen/BattleEfficiency/Title"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    -   class: "UIControl"
+                        name: "Items"
+                        size: [1024.000000, 160.000000]
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                dynamicPadding: true
+                                spacing: 20.000000
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                        children:
+                        -   prototype: "BattleEfficiencyItem"
+                            name: "BattlesPerDay"
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        frame: 0
+                            -   path: "Description"
+                                components:
+                                    UITextComponent:
+                                        text: "#clans:ProfileScreen/BattleEfficiency/BattlesperDay"
+                        -   prototype: "BattleEfficiencyItem"
+                            name: "BattlesTotal"
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        frame: 1
+                            -   path: "Description"
+                                components:
+                                    UITextComponent:
+                                        text: "#clans:ProfileScreen/BattleEfficiency/BattlesTottaly"
+                        -   prototype: "BattleEfficiencyItem"
+                            name: "Wins"
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        frame: 2
+                            -   path: "Description"
+                                components:
+                                    UITextComponent:
+                                        text: "#clans:ProfileScreen/BattleEfficiency/Victories"
+                        -   prototype: "BattleEfficiencyItem"
+                            name: "AverageDamage"
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        frame: 4
+                            -   path: "Description"
+                                components:
+                                    UITextComponent:
+                                        text: "#clans:ProfileScreen/BattleEfficiency/Table/AverageDamage"
+                        -   prototype: "BattleEfficiencyItem"
+                            name: "TankLevel"
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        frame: 5
+                            -   path: "Description"
+                                components:
+                                    UITextComponent:
+                                        text: "#clans:ProfileScreen/BattleEfficiency/Table/VehicleLevel"
+                    -   class: "UIStaticText"
+                        name: "NotEnoughMembers"
+                        size: [1024.000000, 30.000000]
+                        classes: "text2 text-color-red"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                            UITextComponent:
+                                text: "#clans:ProfileScreen/BattleEfficiency/Comment"
+                -   class: "UIControl"
+                    name: "ClanButtonsGroup"
+                    size: [1024.000000, 80.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            dynamicPadding: true
+                            spacing: 20.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfMaxChild"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                    children:
+                    -   prototype: "Supply/Status"
+                        name: "SupplyStatus"
+                        size: [440.000000, 80.000000]
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "FixedSize"
+                                horizontalValue: 440.000000
+                                verticalPolicy: "PercentOfMaxChild"
+                        children:
+                        -   path: "Background"
+                            position: [0.000000, 0.000000]
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    verticalPolicy: "PercentOfMaxChild"
+                                Anchor:
+                                    enabled: false
+                                    vCenterAnchorEnabled: false
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 10.000000
+                            children: []
+                        -   path: "Background/IconBackground"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfParent"
+                            children: []
+                        -   path: "Background/IconBackground/Icon"
+                            components:
+                                Background:
+                                    sprite: "~res:/Gfx/UI/Clan/ScalableIcons/SupplyBoxes"
+                        -   path: "Background/IconContent"
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                    dynamicPadding: true
+                                SizePolicy:
+                                    verticalMax: 97.000000
+                            children:
+                            -   prototype: "BonusIcons/BonusBigIcons"
+                                name: "BonusBigIcons"
+                                size: [38.000000, 20.000000]
+                                classes: "small-container"
+                                components:
+                                    FlowLayout:
+                                        orientation: "RightToLeft"
+                                        hPadding: 5.000000
+                                        hDynamicPadding: false
+                                        hDynamicInLinePadding: false
+                                        vDynamicPadding: true
+                                    SizePolicy:
+                                        verticalMax: 90.000000
+                                    ClipContent: {}
+                    -   prototype: "FlatIconButtonWithArrow/FlatIconButtonWithArrow"
+                        name: "ClanTeamsButton"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "FixedSize"
+                                horizontalValue: 440.000000
+                        children:
+                        -   path: "IconBackground/Icon"
+                            components:
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/tournament_attend.psd"
+                        -   path: "LeftContent/Label"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:TournamentList/Button"
+                -   class: "UIControl"
+                    customClass: "UIClanLeaderboard"
+                    name: "Leaderboard"
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                            verticalMax: 280.000000
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                    children:
+                    -   class: "UIControl"
+                        customClass: "UITable"
+                        name: "MembersTable"
+                        size: [1024.000000, 60.000000]
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfChildrenSum"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                        children:
+                        -   prototype: "ClanCommon/Header"
+                            name: "Header"
+                            size: [1024.000000, 60.000000]
+                        -   class: "UIScrollView"
+                            name: "Content"
+                            size: [1024.000000, 0.000000]
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    topAnchor: 60.000000
+                            children:
+                            -   class: "UIScrollViewContainer"
+                                name: "scrollContainerControl"
+                                size: [1024.000000, 0.000000]
+                                components:
+                                    LinearLayout:
+                                        orientation: "TopDown"
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfChildrenSum"
+                    -   class: "UIControl"
+                        name: "Tip"
+                        size: [1024.000000, 152.000000]
+                        exclusiveInput: true
+                        components:
+                            LinearLayout:
+                                spacing: 15.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                            Anchor: {}
+                        children:
+                        -   prototype: "Common/WhiteLine"
+                            name: "LineLeft"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    color: [1.000000, 1.000000, 1.000000, 0.141176]
+                                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        -   class: "UIStaticText"
+                            name: "Text"
+                            size: [394.000000, 30.000000]
+                            classes: "text2 text-color-blue"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                    vCenterAnchorEnabled: true
+                                UITextComponent:
+                                    text: "#clans:ProfileScreen/Invite/Comment"
+                        -   prototype: "Common/WhiteLine"
+                            name: "LineRight"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    color: [1.000000, 1.000000, 1.000000, 0.141176]
+                                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   prototype: "Common/VerticalScrollBar"
+            name: "VerticalScrollBar"
+            classes: "notch-tightly-right-inset"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -1.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+-   class: "UIControl"
+    customClass: "UIClanProfileHeader"
+    name: "HeaderRight"
+    size: [300.000000, 80.000000]
+    noInput: true
+    components:
+        Anchor:
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_ALIGNED"
+    children:
+    -   class: "UIControl"
+        name: "Application"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "SendApplicationButton"
+            size: [240.000000, 64.000000]
+            visible: false
+            classes: "button button-color-gray"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    topAnchorEnabled: true
+                    topAnchor: 8.000000
+            children:
+            -   path: "Caption"
+                classes: "header3 text-color-white"
+                components:
+                    UITextComponent:
+                        text: "#clans:ProfileScreen/SendRequestButton"
+        -   prototype: "StyledButton/StyledButton"
+            name: "AcceptInviteButton"
+            visible: false
+            classes: "button button-color-green"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    topAnchorEnabled: true
+                    topAnchor: 8.000000
+            children:
+            -   path: "Caption"
+                classes: "header3 text-color-white"
+                components:
+                    UITextComponent:
+                        text: "#clans:ProfileScreen/AcceprInviteButton"
+        -   prototype: "StyledButton/StyledButton"
+            name: "JoinButton"
+            visible: false
+            classes: "button button-color-green"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    topAnchorEnabled: true
+                    topAnchor: 8.000000
+            children:
+            -   path: "Caption"
+                classes: "header3 text-color-white"
+                components:
+                    UITextComponent:
+                        text: "#clans:ProfileScreen/AcceprInviteButton"
+        -   class: "UIStaticText"
+            name: "ApplicationSent"
+            size: [220.000000, 50.000000]
+            visible: false
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 5.000000
+                    vCenterAnchorEnabled: true
+                UITextComponent:
+                    text: "#clans:ProfileScreen/RequestSentButton"
+                    fontName: "WarHeliosCondC_21"
+                    color: [0.647059, 0.725490, 0.800000, 1.000000]
+    -   class: "UIControl"
+        name: "Member"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   prototype: "StyledMenuButton/StyledMenuButton"
+            name: "NotificationsButton"
+            components:
+                Anchor:
+                    leftAnchorEnabled: false
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 94.000000
+                    topAnchorEnabled: true
+                    topAnchor: 8.000000
+            children:
+            -   path: "icon"
+                components:
+                    Background:
+                        sprite: "~res:/Gfx/UI/Hangar/SidebarIcons"
+                        frame: 1
+        -   prototype: "StyledBackButton/StyledBackButton"
+            name: "SearchButton"
+            components:
+                Anchor:
+                    leftAnchorEnabled: false
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 8.000000
+            children:
+            -   path: "icon"
+                components:
+                    Background:
+                        sprite: "~res:/Gfx/UI/Clan/search_clan"
+                        frame: 1
+-   class: "UIControl"
+    customClass: "UIClanProfilePopup"
+    name: "Popup"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "Common/PopUp"
+        name: "Bubble"
+        size: [400.000000, 300.000000]
+        pivot: [0.500000, 1.000000]
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 80.000000
+        children:
+        -   path: "Arrow"
+            components:
+                IgnoreLayout: {}
+                Anchor:
+                    hCenterAnchor: 0.000000
+        -   class: "UIControl"
+            name: "ChangeNameButton"
+            size: [400.000000, 60.000000]
+            classes: "button"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Text"
+                size: [400.000000, 32.000000]
+                classes: "header3 text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "#clans:ProfileScreen/Dropdown/ChangeName"
+            -   prototype: "Common/WhiteLine"
+                name: "WhiteLineBottom"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background:
+                        color: [0.188235, 0.254902, 0.298039, 1.000000]
+        -   class: "UIControl"
+            name: "ChangeDescriptionButton"
+            size: [400.000000, 60.000000]
+            classes: "button"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Text"
+                size: [400.000000, 32.000000]
+                classes: "header3 text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "#clans:ProfileScreen/Dropdown/ChangeDescription"
+            -   prototype: "Common/WhiteLine"
+                name: "WhiteLineBottom"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background:
+                        color: [0.188235, 0.254902, 0.298039, 1.000000]
+        -   class: "UIControl"
+            name: "ChangeLanguageButton"
+            size: [400.000000, 60.000000]
+            classes: "button"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Text"
+                size: [400.000000, 32.000000]
+                classes: "header3 text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "#clans:ProfileScreen/Dropdown/ChooseLanguages"
+        -   class: "UIControl"
+            name: "DismissButton"
+            size: [400.000000, 60.000000]
+            classes: "button"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Text"
+                size: [400.000000, 32.000000]
+                classes: "header3 text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "#clans:StaffScreen/DismissButton"
+            -   prototype: "Common/WhiteLine"
+                name: "WhiteLineBottom"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                    Background:
+                        color: [0.188235, 0.254902, 0.298039, 1.000000]
+        -   class: "UIControl"
+            name: "LeaveButton"
+            size: [400.000000, 60.000000]
+            classes: "button"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Text"
+                size: [400.000000, 32.000000]
+                classes: "header3 text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "#clans:StaffScreen/LeaveButton"
+-   class: "UIControl"
+    customClass: "UIClanFullInfo"
+    name: "ClanFullInfo"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        classes: "limited-width"
+        components:
+            LinearLayout:
+                safeAreaPaddingInset: true
+                spacing: 4.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalValue: 75.000000
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 30.000000
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                bottomSafeInset: "INSET"
+        children:
+        -   class: "UIScrollView"
+            name: "ScrollView"
+            autoUpdate: true
+            centerContent: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    hCenterAnchorEnabled: true
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                children:
+                -   class: "UIControl"
+                    name: "Center"
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            padding: 1.000000
+                            spacing: 20.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                    children:
+                    -   prototype: "ClanEmblem/ClanEmblem"
+                        name: "ClanEmblem"
+                        size: [128.000000, 128.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                topAnchorEnabled: true
+                                topAnchor: 7.000000
+                            Background:
+                                drawType: "DRAW_SCALE_TO_RECT"
+                    -   class: "UIControl"
+                        name: "DataContainer"
+                        components:
+                            LinearLayout:
+                                orientation: "TopDown"
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfMaxChild"
+                                verticalPolicy: "PercentOfChildrenSum"
+                            Anchor:
+                                leftAnchorEnabled: false
+                                leftAnchor: 150.000000
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   class: "UIControl"
+                            name: "NameAndDate"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                    verticalPolicy: "PercentOfMaxChild"
+                            children:
+                            -   class: "UIStaticText"
+                                name: "ClanName"
+                                size: [300.000000, 30.000000]
+                                classes: "header1"
+                                components:
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        leftAnchor: 0.000000
+                                        topAnchorEnabled: true
+                                        topAnchor: 0.000000
+                                    UITextComponent:
+                                        color: [0.960784, 0.650980, 0.137255, 1.000000]
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        fitting: "FITTING_REDUCE"
+                                        align: ["LEFT", "TOP"]
+                            -   class: "UIStaticText"
+                                name: "CreatedAt"
+                                size: [250.000000, 30.000000]
+                                components:
+                                    Anchor:
+                                        rightAnchorEnabled: true
+                                        topAnchorEnabled: true
+                                        topAnchor: 0.000000
+                                    UITextComponent:
+                                        fontName: "WarHeliosCondC_21"
+                                        color: [0.447059, 0.447059, 0.447059, 1.000000]
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        align: ["RIGHT", "TOP"]
+                        -   class: "UIControl"
+                            name: "Spacer"
+                            size: [0.000000, 30.000000]
+                        -   class: "UIControl"
+                            name: "ClanMembersCountContainer"
+                            size: [550.000000, 30.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    spacing: 5.000000
+                                    useRtl: true
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 0.000000
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: false
+                                    topAnchor: 0.000000
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Title"
+                                classes: "text1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfParent"
+                                    UITextComponent:
+                                        text: "#clans:ProfileScreen/Members"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT", "TOP"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+                            -   class: "UIStaticText"
+                                name: "ClanMembersCount"
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfParent"
+                                    UITextComponent:
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT", "TOP"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+                        -   class: "UIControl"
+                            name: "ClanLanguagesContainer"
+                            size: [550.000000, 0.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    useRtl: true
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 0.000000
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: false
+                                    topAnchor: 0.000000
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Title"
+                                classes: "text1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfParent"
+                                    UITextComponent:
+                                        text: "#clans:ProfileScreen/Languages"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT", "TOP"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+                            -   class: "UIStaticText"
+                                name: "Languages"
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfParent"
+                                    UITextComponent:
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT", "TOP"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+                        -   class: "UIControl"
+                            name: "Spacer"
+                            size: [0.000000, 30.000000]
+                        -   class: "UIControl"
+                            name: "MottoContainer"
+                            size: [550.000000, 26.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                SizePolicy:
+                                    horizontalPolicy: "FixedSize"
+                                    verticalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 0.000000
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: false
+                                    topAnchor: 0.000000
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Title"
+                                classes: "text1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfContent"
+                                    UITextComponent:
+                                        text: "#clans:ProfileScreen/Slogan"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT", "TOP"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+                            -   class: "UIStaticText"
+                                name: "Motto"
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfContent"
+                                    UITextComponent:
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT", "TOP"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+                        -   class: "UIControl"
+                            name: "DescriptionContainer"
+                            size: [550.000000, 26.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                SizePolicy:
+                                    horizontalPolicy: "FixedSize"
+                                    verticalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 0.000000
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: false
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Title"
+                                size: [550.000000, 26.000000]
+                                classes: "text1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfContent"
+                                    UITextComponent:
+                                        text: "#clans:ProfileScreen/Description"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT", "TOP"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+                            -   class: "UIStaticText"
+                                name: "Description"
+                                size: [550.000000, 0.000000]
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfContent"
+                                    UITextComponent:
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT", "TOP"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+        -   prototype: "Common/VerticalScrollBar"
+            name: "ScrollBar"
+            position: [714.000000, 0.000000]
+            size: [10.000000, 717.000000]
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -1.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+    -   prototype: "StyledBackButton/StyledBackButton"
+        name: "BackButton"
+-   class: "UIControl"
+    customClass: "UIClanEfficiencyInfo"
+    name: "ClanEfficiencyInfo"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "StyledBackButton/StyledBackButton"
+        name: "BackButton"
+    -   class: "UIControl"
+        name: "Center"
+        size: [700.000000, 768.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            size: [128.000000, 128.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 50.000000
+                    topAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/Clan/icon_clan"
+            children:
+            -   class: "UIControl"
+                name: "BorderTop"
+                size: [128.000000, 1.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_FILL"
+                        color: [0.313726, 0.384314, 0.423529, 1.000000]
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIControl"
+                name: "BorderBottom"
+                size: [128.000000, 1.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: false
+                        bottomAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_FILL"
+                        color: [0.313726, 0.384314, 0.423529, 1.000000]
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIControl"
+                name: "BorderLeft"
+                size: [1.000000, 128.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: false
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background:
+                        drawType: "DRAW_FILL"
+                        color: [0.313726, 0.384314, 0.423529, 1.000000]
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIControl"
+                name: "BorderRight"
+                size: [1.000000, 128.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: false
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background:
+                        drawType: "DRAW_FILL"
+                        color: [0.313726, 0.384314, 0.423529, 1.000000]
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   class: "UIStaticText"
+            name: "Title"
+            size: [500.000000, 30.000000]
+            classes: "header1 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 200.000000
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "TOP"]
+        -   class: "UIStaticText"
+            name: "Description"
+            size: [500.000000, 30.000000]
+            classes: "text1 text-color-blue"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 200.000000
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 34.000000
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "TOP"]
+                    useRtlAlign: "USE_BY_SYSTEM"
+-   class: "UIControl"
+    customClass: "UIPlayerStatsTableHeaderColumn"
+    name: "LeaderboardTableHeaderColumn"
+    size: [120.000000, 60.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Anchor:
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+    children:
+    -   class: "UIStaticText"
+        name: "Text"
+        size: [96.000000, 42.000000]
+        classes: "header3 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 12.000000
+                hCenterAnchorEnabled: false
+                rightAnchorEnabled: true
+                rightAnchor: 12.000000
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+    -   class: "UIControl"
+        name: "SortDirImage"
+        position: [102.000000, 22.000000]
+        size: [16.000000, 16.000000]
+        visible: false
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 2.000000
+                vCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/Clan/sort_icon"
+                frame: 0
+    -   prototype: "Common/WhiteLine"
+        name: "Line"
+        size: [1.000000, 60.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 1.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                color: [0.000000, 0.000000, 0.000000, 0.301961]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+-   class: "UIControl"
+    name: "LeaderboardTableRow"
+    size: [200.000000, 60.000000]
+    classes: "panel-background"
+    components:
+        LinearLayout:
+            safeAreaPaddingInset: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Background:
+            drawType: "DRAW_FILL"
+    children:
+    -   prototype: "ClanCommon/ListLine"
+        name: "BottomLine"
+-   class: "UIControl"
+    name: "LeaderboardTableCell"
+    size: [320.000000, 64.000000]
+    exclusiveInput: true
+    classes: "panel-background"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+        Background: {}
+    children:
+    -   class: "UIStaticText"
+        name: "Number"
+        size: [40.000000, 62.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                hCenterAnchorEnabled: false
+                topAnchorEnabled: true
+                topAnchor: 1.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.200000, 0.274510, 0.321569, 0.705882]
+            UITextComponent:
+                fontName: "WarHeliosCondC_Bold_21"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        components:
+            LinearLayout:
+                spacing: 5.000000
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 50.000000
+                rightAnchorEnabled: true
+                rightAnchor: 10.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "Name"
+            size: [255.000000, 26.000000]
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+                UITextComponent:
+                    text: ""
+                    fontName: "WarHeliosCondC_Bold_21"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    fitting: "FITTING_POINTS"
+                    align: ["LEFT", "VCENTER"]
+        -   class: "UIStaticText"
+            name: "Value"
+            size: [0.000000, 0.000000]
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+                UITextComponent:
+                    fontName: "WarHeliosCondC_Bold_21"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["RIGHT", "VCENTER"]
+    -   prototype: "ClanCommon/ListLine"
+        name: "RightLine"
+        components:
+            Anchor:
+                leftAnchorEnabled: false
+                rightAnchor: 1.000000
+                topAnchorEnabled: true
+-   prototype: "ClanCommon/HeaderTitle"
+    name: "HeaderTitle"

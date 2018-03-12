@@ -1,0 +1,14 @@
+Header:
+    version: "13"
+Prototypes:
+-   class: "UIControl"
+    name: "Highlight"
+    pivot: [0.500000, 0.500000]
+    noInput: true
+    components:
+        Background:
+            drawType: "DRAW_STRETCH_BOTH"
+            sprite: "~res:/Gfx/UI/HangarTutorial/HighlightTile.psd"
+            colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            leftRightStretchCap: 15.000000
+            topBottomStretchCap: 15.000000

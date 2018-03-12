@@ -1,0 +1,64 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UIStorageItemsReceivedNotification"
+    name: "StorageItemsReceived"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                frame: 3
+    -   prototype: "Notification/Content"
+        name: "Content"
+        components:
+            FlowLayout:
+                hDynamicPadding: true
+                hSpacing: 5.000000
+                vDynamicPadding: true
+                useRtl: true
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                rightAnchor: 220.000000
+        children:
+        -   class: "UIStaticText"
+            name: "Text"
+            classes: "text1 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                UITextComponent:
+                    text: "NEWS_NOTIFICATION_ITEMS_RECEIVES"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIStaticText"
+            name: "Value"
+            classes: "header3 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+    -   prototype: "StyledButton/StyledButton"
+        name: "GoToStorageBtn"
+        size: [196.000000, 64.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 11.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -2.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "storage/Title"

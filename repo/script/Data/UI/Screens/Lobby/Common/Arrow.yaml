@@ -1,0 +1,23 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Styles/ColorStyles.yaml"
+StyleSheets:
+-   selector: ".up"
+    properties:
+        bg-spriteModification: ["FLIP_VERTICAL"]
+-   selector: ".down"
+    properties:
+        bg-spriteModification: []
+Prototypes:
+-   class: "UIControl"
+    name: "ArrowPrototype"
+    size: [10.000000, 10.000000]
+    noInput: true
+    classes: "state=down"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfContent"
+            verticalPolicy: "PercentOfContent"
+        Background:
+            sprite: "~res:/Gfx/UI/Hangar/CharacterArrow_white.psd"

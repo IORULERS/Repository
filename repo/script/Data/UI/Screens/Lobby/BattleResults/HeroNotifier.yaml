@@ -1,0 +1,108 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".reward_description"
+    properties:
+        text-fontName: "WarHeliosCondC_17"
+        text-color: [0.298039, 0.203922, 0.105882, 1.000000]
+Controls:
+-   class: "UIControl"
+    name: "Notifier"
+    position: [-359.000000, 0.000000]
+    size: [315.000000, 112.000000]
+    components:
+        IgnoreLayout: {}
+        SizePolicy:
+            horizontalPolicy: "Formula"
+            horizontalFormula: "safeAreaInsets.left + 315"
+        Anchor:
+            vCenterAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Bg"
+        noInput: true
+        components:
+            LinearLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Left"
+            position: [0.000000, 0.000000]
+            size: [17.000000, 109.000000]
+            noInput: true
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/BattleResultsScreen/resistReward_left.psd"
+        -   class: "UIControl"
+            name: "Middle"
+            size: [40.000000, 109.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Background:
+                    drawType: "DRAW_TILED"
+                    sprite: "~res:/Gfx/UI/BattleResultsScreen/resistReward_middle.psd"
+        -   class: "UIControl"
+            name: "Right"
+            position: [57.000000, 0.000000]
+            size: [258.000000, 109.000000]
+            noInput: true
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/BattleResultsScreen/resistReward_right.psd"
+    -   class: "UIControl"
+        name: "Text"
+        position: [0.000000, 20.000000]
+        size: [315.000000, 72.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "title"
+            position: [10.000000, 0.000000]
+            size: [285.000000, 30.000000]
+            classes: "header2"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                UITextComponent:
+                    text: "#battle_results:heroReward/title"
+                    shadowOffset: [0.000000, 1.000000]
+                    shadowColor: [0.000000, 0.000000, 0.000000, 0.749000]
+                    fitting: "FITTING_REDUCE"
+                    align: ["LEFT", "VCENTER"]
+        -   class: "UIStaticText"
+            name: "increaseReward"
+            position: [10.000000, 30.000000]
+            size: [285.000000, 42.000000]
+            classes: "reward_description"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "FixedSize"
+                    horizontalValue: 285.000000
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                UITextComponent:
+                    text: "#battle_results:heroReward/descr"
+                    multiline: "MULTILINE_ENABLED"
+                    fitting: "FITTING_NONE"
+                    align: ["LEFT", "TOP"]

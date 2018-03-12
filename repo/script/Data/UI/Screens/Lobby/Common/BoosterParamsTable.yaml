@@ -1,0 +1,243 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/ParamsPrototype.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+StyleSheets:
+-   selector: ".up ? #deltaValueUpDown"
+    properties:
+        visible: true
+        bg-frame: 0
+-   selector: ".down ? #deltaValueUpDown"
+    properties:
+        visible: true
+        bg-frame: 1
+-   selector: ".up.worse ? #deltaValueUpDown"
+    properties:
+        bg-frame: 1
+        bg-spriteModification: ["FLIP_VERTICAL"]
+-   selector: ".down.better ? #deltaValueUpDown"
+    properties:
+        bg-frame: 0
+        bg-spriteModification: ["FLIP_VERTICAL"]
+-   selector: ".worse ? #deltaValue"
+    properties:
+        visible: true
+        text-color: [1.000000, 0.000000, 0.000000, 1.000000]
+-   selector: ".better ? #deltaValue"
+    properties:
+        visible: true
+        text-color: [0.494118, 0.827451, 0.129412, 1.000000]
+-   selector: "#deltaValueUpDown"
+    properties:
+        visible: false
+-   selector: "#deltaValue"
+    properties:
+        visible: false
+-   selector: "UIStaticText"
+    properties:
+        text-colorInheritType: "COLOR_IGNORE_PARENT"
+Prototypes:
+-   class: "UIControl"
+    name: "TableElement"
+    size: [350.000000, 110.833000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "Formula"
+            horizontalFormula: "safeAreaInsets.left+350"
+        Background: {}
+    children:
+    -   class: "UIStaticText"
+        name: "paramName"
+        position: [17.500000, 8.400045]
+        size: [181.700012, 52.433338]
+        classes: "text1"
+        components:
+            UITextComponent:
+                text: "ParamName"
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "TOP"]
+-   prototype: "TableElement"
+    name: "RelativeElement"
+    children:
+    -   class: "UIControl"
+        customClass: "UIHangarTankBaseParamBar"
+        name: "progressBar"
+        components:
+            SizePolicy:
+                verticalPolicy: "FixedSize"
+                verticalValue: 5.000000
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 18.000000
+                rightAnchorEnabled: true
+                rightAnchor: 18.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 38.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            Background: {}
+    -   class: "UIControl"
+        name: "valueLayout"
+        position: [201.699997, 44.833401]
+        size: [128.300003, 16.000000]
+        components:
+            LinearLayout:
+                orientation: "RightToLeft"
+                spacing: 10.000000
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 20.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   class: "UIStaticText"
+            name: "value"
+            size: [0.000000, 16.000000]
+            classes: "header3"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                UITextComponent:
+                    align: ["RIGHT", "VCENTER"]
+        -   class: "UIControl"
+            name: "deltaValueUpDown"
+            size: [10.000000, 16.000004]
+            noInput: true
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIStaticText"
+            name: "deltaValue"
+            size: [0.000000, 16.000000]
+            classes: "header3"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                UITextComponent:
+                    align: ["RIGHT", "VCENTER"]
+    -   class: "UIStaticText"
+        name: "maxValue"
+        position: [235.554672, 75.833366]
+        size: [94.445328, 15.999998]
+        classes: "text2-small text-color-blue"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 20.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            UITextComponent:
+                align: ["RIGHT", "VCENTER"]
+-   prototype: "TableElement"
+    name: "AbsoluteElement"
+    children:
+    -   path: "paramName"
+        position: [17.500000, 8.400045]
+        size: [313.700012, 52.433334]
+    -   prototype: "ResourceSmall/ResourceSmall"
+        name: "valueContainer"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 18.000000
+                vCenterAnchor: 22.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Back/Grade"
+            components:
+                Background:
+                    colorInherit: "COLOR_IGNORE_PARENT"
+        -   path: "Back/Icon"
+            components:
+                Background:
+                    colorInherit: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    name: "Table"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            spacing: 1.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfMaxChild"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   prototype: "ParamsPrototype/HeaderPrototype"
+        name: "HeaderPrototype"
+        children:
+        -   path: "bg"
+            components:
+                Anchor:
+                    bottomAnchor: 0.000000
+            children: []
+        -   path: "bg/title"
+            components:
+                UITextComponent:
+                    text: "boosters/Impact/Title"
+    -   prototype: "RelativeElement"
+        name: "xpBoostFactor"
+        position: [0.000000, 37.000000]
+        classes: "pane-bg"
+        children:
+        -   path: "paramName"
+            components:
+                UITextComponent:
+                    text: "boosters/Impact/BattleXP"
+    -   prototype: "RelativeElement"
+        name: "xpFreeBoostFactor"
+        classes: "pane-bg"
+        children:
+        -   path: "paramName"
+            components:
+                UITextComponent:
+                    text: "boosters/Impact/FreeXP"
+    -   prototype: "RelativeElement"
+        name: "xpAvBoostFactor"
+        classes: "pane-bg"
+        children:
+        -   path: "paramName"
+            components:
+                UITextComponent:
+                    text: "boosters/Impact/CrewXP"
+    -   prototype: "RelativeElement"
+        name: "credistBoostFactor"
+        angle: 0.000000
+        classes: "pane-bg"
+        children:
+        -   path: "paramName"
+            components:
+                UITextComponent:
+                    text: "boosters/Impact/Credits"
+    -   prototype: "RelativeElement"
+        name: "reloadEqFactor"
+        classes: "pane-bg"
+        children:
+        -   path: "paramName"
+            components:
+                UITextComponent:
+                    text: "boosters/Impact/ReloadingTime"
+    -   prototype: "AbsoluteElement"
+        name: "creditsBoost"
+        classes: "pane-bg"
+        children:
+        -   path: "paramName"
+            components:
+                UITextComponent:
+                    text: "boosters/Impact/CreditsBonus"
+        -   path: "valueContainer"
+            classes: "resource resource-type=resource-credit quantity=quantity-show discount=discount-off"
+            children: []
+    -   prototype: "AbsoluteElement"
+        name: "sparePartsBoost"
+        classes: "pane-bg"
+        children:
+        -   path: "paramName"
+            components:
+                UITextComponent:
+                    text: "boosters/Impact/SpareParts"
+        -   path: "valueContainer/Back/Icon"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency"

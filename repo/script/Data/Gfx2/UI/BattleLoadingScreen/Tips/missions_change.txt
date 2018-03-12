@@ -1,0 +1,5 @@
+1
+missions_change0.tex
+512 256
+1
+0 0 200 229 153 18 0 frame0

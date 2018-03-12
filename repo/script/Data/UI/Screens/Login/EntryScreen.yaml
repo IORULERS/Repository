@@ -1,0 +1,285 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Dialogs.yaml"
+- "~res:/UI/Screens/Login/LoginCommon.yaml"
+- "~res:/UI/Screens/Common/AOGASControl.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/NetEaseStyles.yaml"
+- "~res:/UI/Screens/Common/UserCenterButton.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".social-button"
+    properties:
+        exclusiveInput: true
+-   selector: ".social-button:disabled"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: ".social-button:pressed_inside"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: ".social-button.steam #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/CommonUIElements/IconsSocialBigOn.psd"
+        bg-frame: 4
+-   selector: ".social-button.live #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/CommonUIElements/IconsSocialBigOn.psd"
+        bg-frame: 3
+-   selector: ".social-button.google #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/CommonUIElements/IconsSocialBigOn.psd"
+        bg-frame: 2
+-   selector: ".social-button.gc #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/CommonUIElements/IconsSocialBigOn.psd"
+        bg-frame: 1
+-   selector: ".social-button.fb #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/CommonUIElements/IconsSocialBigOn.psd"
+        bg-frame: 0
+-   selector: ".social-button.netease #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/CommonUIElements/china_user_center.psd"
+        bg-frame: 0
+Prototypes:
+-   class: "UIControl"
+    name: "SocialButton"
+    size: [64.000000, 64.000000]
+    classes: "social-button button-color-gray"
+    components:
+        Anchor:
+            vCenterAnchorEnabled: true
+        Background:
+            drawType: "DRAW_TILED_MULTILAYER"
+            mask: "~res:/Gfx/UI/CommonUIElements/Button/mask.psd"
+            detail: "~res:/Gfx/UI/CommonUIElements/Button/detail.psd"
+            gradientMode: "Overlay"
+            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            leftRightStretchCap: 20.000000
+            topBottomStretchCap: 20.000000
+    children:
+    -   class: "UIControl"
+        name: "Icon"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+Controls:
+-   prototype: "LoginCommon/ScreenBlank"
+    name: "Screen"
+    children:
+    -   path: "Background"
+        size: [1024.000000, 768.000000]
+        children:
+        -   class: "UIControl"
+            name: "ExternalLogin"
+            components:
+                LinearLayout:
+                    spacing: 2.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   prototype: "SocialButton"
+                name: "FB"
+                classes: "social-button fb button-color-gray"
+                components:
+                    Background:
+                        frame: 0
+            -   prototype: "SocialButton"
+                name: "GC"
+                visible: false
+                classes: "social-button gc button-color-gray"
+                components:
+                    Background:
+                        frame: 1
+            -   prototype: "SocialButton"
+                name: "Google"
+                visible: false
+                classes: "social-button google button-color-gray"
+                components:
+                    Background:
+                        frame: 2
+            -   prototype: "SocialButton"
+                name: "Live"
+                visible: false
+                classes: "social-button live button-color-gray"
+                components:
+                    Background:
+                        frame: 3
+            -   prototype: "SocialButton"
+                name: "Steam"
+                visible: false
+                classes: "social-button steam button-color-gray"
+                components:
+                    Background:
+                        frame: 4
+            -   prototype: "SocialButton"
+                name: "NetEase"
+                visible: false
+                classes: "social-button netease button-color-gray"
+        -   class: "UIStaticText"
+            name: "ExternalText"
+            size: [600.000000, 40.000000]
+            noInput: false
+            classes: "text1 text-color-white"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -65.000000
+                UITextComponent:
+                    text: "#entry:text/externalLogin"
+        -   prototype: "StyledButton/StyledButton"
+            name: "WGNLoginButton"
+            size: [462.000000, 64.000000]
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 100.000000
+            children:
+            -   path: "Caption"
+                classes: "header3 text-color-white"
+                components:
+                    UITextComponent:
+                        text: "#entry:button/wgnLogin"
+                        fitting: "FITTING_REDUCE"
+        -   prototype: "StyledButton/StyledButton"
+            name: "DemoLoginButton"
+            position: [281.000000, 532.000000]
+            size: [462.000000, 64.000000]
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 180.000000
+        -   prototype: "AOGASControl/AOGASControl"
+            name: "AOGASControl"
+        -   prototype: "UserCenterButton/UserCenterButton"
+            name: "UserCenterButton"
+            visible: false
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    topAnchorEnabled: true
+                    topAnchor: 8.000000
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+            children:
+            -   path: "Badge"
+                classes: "header3 bg-color=unread-icon-bg"
+    -   path: "Background/BackButton"
+        visible: true
+        children: []
+    -   class: "UIControl"
+        name: "TextContainer"
+        noInput: true
+        classes: "netease-content"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                spacing: 3.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfMaxChild"
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                hCenterAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 120.000000
+        children:
+        -   class: "UIControl"
+            name: "TextTop"
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 15.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    hCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "ClearanceNumberGAPP"
+                classes: "text2 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "netease/loginScreen/clearanceNumberGAPP"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIStaticText"
+                name: "PublicationNumberGAPP"
+                classes: "text2 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "netease/loginScreen/publicationNumberGAPP"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIStaticText"
+            name: "CopyrightOwner"
+            classes: "text2 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                UITextComponent:
+                    text: "netease/loginScreen/gameCopyrightOwner"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIStaticText"
+            name: "PublisherInformation"
+            classes: "text2 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                UITextComponent:
+                    text: "netease/loginScreen/publisherInformation"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIStaticText"
+            name: "PublisherInformation_1"
+            classes: "text2 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                UITextComponent:
+                    text: "netease/loginScreen/clearanceNumberMOC"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+-   prototype: "Dialogs/WarningDialogWithoutCaption"
+    name: "ExternalNotRegisteredDialog"
+    children:
+    -   path: "Dialog"
+        size: [540.000000, 300.000000]
+        children: []
+    -   path: "Dialog/Middle/ButtonHolder/OkButton/Caption"
+        components:
+            UITextComponent:
+                text: "#entry:social/dialog/register"
+    -   path: "Dialog/Middle/ButtonHolder/CancelButton/Caption"
+        components:
+            UITextComponent:
+                text: "#entry:social/dialog/back"

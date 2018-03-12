@@ -1,0 +1,60 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Layout"
+        position: [0.000000, 0.000000]
+        children: []
+    -   path: "Layout/IconContainer"
+        children:
+        -   class: "UIParticles"
+            name: "Fire"
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            visible: false
+            enabled: false
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_info_fire.sc2"
+            autoStart: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+        -   class: "UIParticles"
+            name: "Glow"
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            visible: false
+            enabled: false
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_info_glow.sc2"
+            autoStart: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+        -   class: "UIControl"
+            name: "Icon"
+            position: [16.000000, 0.000000]
+            noInput: true
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Goose2017/HangarIcon_0"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+    -   path: "Layout/TextContainer/Title"
+        position: [-5.000000, 0.000000]
+        textalign: ["RIGHT", "VCENTER"]
+        text: "goose_event/Title"
+    -   path: "Layout/TextContainer/ExpireTimer"
+        position: [57.000000, 50.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+        children: []

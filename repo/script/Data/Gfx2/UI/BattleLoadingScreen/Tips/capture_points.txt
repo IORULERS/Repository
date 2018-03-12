@@ -1,0 +1,5 @@
+1
+capture_points0.tex
+512 256
+1
+0 0 402 201 57 50 0 frame0

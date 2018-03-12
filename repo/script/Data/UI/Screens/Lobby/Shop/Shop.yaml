@@ -1,0 +1,128 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyHeader.yaml"
+- "~res:/UI/Screens/Common/Tab.yaml"
+StyleSheets:
+-   selector: ".tab #selected"
+    properties:
+        visible: false
+-   selector: ".tab:selected #selected"
+    properties:
+        visible: true
+-   selector: ".tab #unselected"
+    properties:
+        visible: true
+-   selector: ".tab:selected #unselected"
+    properties:
+        visible: false
+-   selector: ".buy_mode #tabGoldConversion, .buy_mode #tabXpTransfer"
+    properties:
+        visible: false
+-   selector: ".exchange_mode #tabPackages, .exchange_mode #tabBuyGold, .exchange_mode #tabBuyPremium, .exchange_mode #tabBoosters, .exchange_mode #tabVehicles, .exchange_mode #tabGoldPackages"
+    properties:
+        visible: false
+Controls:
+-   class: "UIControl"
+    name: "Screen"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "LobbyHeader/Header"
+        name: "Header"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+    -   prototype: "Tab/TabPane"
+        name: "tabsContainer"
+        classes: "tab-pane-bg"
+        components:
+            Anchor:
+                topAnchor: 80.000000
+        children:
+        -   prototype: "Tab/TextTab"
+            name: "tabPackages"
+            selected: true
+            tag: 4
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "shop/Packages"
+        -   prototype: "Tab/TextTab"
+            name: "tabGoldPackages"
+            tag: 7
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "shop/InternalPackages"
+        -   prototype: "Tab/TextTab"
+            name: "tabVehicles"
+            tag: 5
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "shop/Buy/Vehicles"
+        -   prototype: "Tab/TextTab"
+            name: "tabBuyGold"
+            tag: 0
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "shop/Buy/Gold"
+        -   prototype: "Tab/TextTab"
+            name: "tabBuyPremium"
+            tag: 1
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "shop/Buy/Premium"
+        -   prototype: "Tab/TextTab"
+            name: "tabGoldConversion"
+            tag: 2
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "shop/GoldConversion"
+        -   prototype: "Tab/TextTab"
+            name: "tabXpTransfer"
+            tag: 3
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "shop/XpTransfer"
+        -   prototype: "Tab/TextTab"
+            name: "tabBoosters"
+            tag: 6
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "shop/Boosters"
+    -   class: "UIControl"
+        name: "Content"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 154.000000
+                bottomAnchorEnabled: true
+            Background: {}
+            ClipContent: {}

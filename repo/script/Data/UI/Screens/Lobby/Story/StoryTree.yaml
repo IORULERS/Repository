@@ -1,0 +1,193 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledMenuButton.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Story/Templates/WebInteractionButton.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".comment #ProcessComment, .comment #BuyComment"
+    properties:
+        visible: false
+-   selector: ".process #Clipper #TreeScrollView #scrollContainerControl .comment #ProcessComment"
+    properties:
+        visible: true
+-   selector: ".buy #Clipper #TreeScrollView #scrollContainerControl .comment #BuyComment"
+    properties:
+        visible: true
+Controls:
+-   class: "UIControl"
+    name: "Content"
+    size: [1027.000000, 768.000000]
+    components:
+        LinearLayout:
+            enabled: false
+            orientation: "TopDown"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.070588, 0.125490, 0.160784, 0.200000]
+    children:
+    -   class: "UIControl"
+        name: "Clipper"
+        size: [1027.000000, 862.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                enabled: true
+                leftAnchorEnabled: true
+                rightAnchorEnabled: false
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: -94.000000
+            ClipContent: {}
+        children:
+        -   class: "UIScrollView"
+            name: "TreeScrollView"
+            size: [1027.000000, 768.000000]
+            autoUpdate: true
+            centerContent: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 94.000000
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "Formula"
+                        horizontalFormula: "max(parent, maxChild)"
+                        verticalPolicy: "PercentOfChildrenSum"
+                children:
+                -   class: "UIControl"
+                    name: "DeselectArea"
+                    components:
+                        IgnoreLayout: {}
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                -   class: "UIControl"
+                    name: "CommentContainer"
+                    noInput: true
+                    classes: "comment"
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfMaxChild"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                        UIAnchorSafeAreaComponent:
+                            leftSafeInset: "INSET"
+                            rightSafeInset: "INSET"
+                    children:
+                    -   class: "UIStaticText"
+                        name: "ProcessComment"
+                        classes: "text1 text-color-blue"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                vCenterAnchorEnabled: true
+                            UIAnchorSafeAreaComponent:
+                                leftSafeInset: "INSET"
+                                rightSafeInset: "INSET"
+                            UITextComponent:
+                                text: "template_event/ProgressStage/StepTree/Comment"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                multiline: "MULTILINE_ENABLED"
+                    -   class: "UIStaticText"
+                        name: "BuyComment"
+                        classes: "text1 text-color-red"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                vCenterAnchorEnabled: true
+                            UIAnchorSafeAreaComponent:
+                                leftSafeInset: "INSET"
+                                rightSafeInset: "INSET"
+                            UITextComponent:
+                                text: "template_event/FinalStage/Hint/BuyCurrenciesToComplete"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                multiline: "MULTILINE_ENABLED"
+                -   class: "UIControl"
+                    name: "TreeContainer"
+                    noInput: true
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfFirstChild"
+                            verticalPolicy: "PercentOfFirstChild"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        Background: {}
+            -   class: "UIScrollBar"
+                name: "HorizontalScrollbar"
+                position: [10.000000, 758.000000]
+                size: [1017.000000, 10.000000]
+                noInput: true
+                classes: "notch-tightly-bottom-inset"
+                orientation: "ORIENTATION_HORIZONTAL"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 10.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                children:
+                -   class: "UIControl"
+                    name: "slider"
+                    size: [20.000000, 10.000000]
+                    noInput: true
+                    components:
+                        Background:
+                            drawType: "DRAW_STRETCH_HORIZONTAL"
+                            sprite: "~res:/Gfx/UI/CommonUIElements/HorizontalScroll"
+                            leftRightStretchCap: 10.000000
+            -   class: "UIScrollBar"
+                name: "VerticalScrollbar"
+                size: [10.000000, 758.000000]
+                noInput: true
+                classes: "notch-tightly-right-inset"
+                orientation: "ORIENTATION_VERTICAL"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 10.000000
+                    UIAnchorSafeAreaComponent: {}
+                children:
+                -   class: "UIControl"
+                    name: "slider"
+                    size: [10.000000, 20.000000]
+                    noInput: true
+                    components:
+                        Background:
+                            drawType: "DRAW_STRETCH_VERTICAL"
+                            sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                            topBottomStretchCap: 10.000000

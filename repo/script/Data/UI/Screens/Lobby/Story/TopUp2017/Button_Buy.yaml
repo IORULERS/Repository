@@ -1,0 +1,66 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Layout"
+        components:
+            ClipContent: {}
+        children: []
+    -   path: "Layout/Footer/Type"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Story/coins_icon"
+    -   path: "Layout/IconContainer"
+        position: [0.000000, 0.000000]
+        children:
+        -   class: "UIParticles"
+            name: "Fire"
+            position: [55.000000, 37.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            enabled: false
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_buy_fire.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Glow"
+            position: [55.000000, 37.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            visible: true
+            enabled: false
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_buy_glow.sc2"
+            autoStart: true
+        -   class: "UIControl"
+            name: "Icon"
+            visible: true
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 12.000000
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/TopUp2017/HangarIcon_pay.psd"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   path: "Layout/TextContainer/Title"
+        position: [-5.000000, 0.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+            Background: {}
+            UITextComponent:
+                text: "Way_of_Dragon_event/Title"
+                align: ["RIGHT", "VCENTER"]
+    -   path: "Layout/TextContainer/ExpireTimer"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+        children: []

@@ -1,0 +1,51 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Back"
+        classes: "background-french"
+        components:
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/Story/button_french_event"
+    -   path: "Layout"
+        position: [-0.000000, 0.000000]
+        clip: true
+        children: []
+    -   path: "Layout/Footer/Type"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Story/coins_icon"
+    -   path: "Layout/IconContainer"
+        visible: false
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+    -   path: "Layout/TextContainer"
+        components:
+            LinearLayout:
+                padding: 1.000000
+        children: []
+    -   path: "Layout/TextContainer/Title"
+        text: "french_event/Title"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+    -   path: "Layout/TextContainer/ExpireTimer"
+        pivot: [1.000000, 0.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+        children: []

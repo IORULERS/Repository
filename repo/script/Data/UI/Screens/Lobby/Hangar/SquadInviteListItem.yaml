@@ -1,0 +1,98 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Common/PlayerNameWithTag.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "SquadInviteListItem"
+    size: [400.000000, 80.000000]
+    noInput: true
+    components:
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "cellBack"
+        size: [400.000000, 79.000000]
+        noInput: true
+        classes: "pane-bg touchable"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "userIcon"
+            position: [30.000000, 7.500000]
+            size: [64.000000, 64.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 30.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                    frame: 20
+        -   class: "UIStaticText"
+            name: "inviteSent"
+            position: [284.000000, 6.000000]
+            size: [100.000000, 67.000000]
+            noInput: true
+            classes: "text2-small text-color-blue"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 16.000000
+                    topAnchorEnabled: true
+                    topAnchor: 6.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 6.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "SQUAD_INVITE_LIST_INVITE_SENT"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["RIGHT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "iconOnline"
+            position: [17.000000, 33.500000]
+            size: [12.000000, 12.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 17.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_TO_RECT"
+                    sprite: "~res:/Gfx/UI/CommonUIElements/WhiteCircle.psd"
+        -   prototype: "PlayerNameWithTag/PlayerNameWithTag"
+            name: "accountName"
+            size: [190.000000, 26.000000]
+            components:
+                SizePolicy:
+                    horizontalPolicy: "Ignore"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 100.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 110.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "name"
+                components:
+                    UITextComponent:
+                        align: ["LEFT", "VCENTER"]
+            -   path: "tag"
+                components:
+                    UITextComponent:
+                        color: [0.960784, 0.650980, 0.137255, 1.000000]

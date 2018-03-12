@@ -1,0 +1,40 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UITankReceivedNotification"
+    name: "TankReceivedNotification"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                frame: 4
+    -   prototype: "Notification/Content"
+        name: "Content"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                rightAnchor: 220.000000
+    -   prototype: "StyledButton/StyledButton"
+        name: "ToTankButton"
+        position: [773.000000, 8.000000]
+        size: [196.000000, 64.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 11.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -2.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "NOTIFICATIONS_TO_TANK"

@@ -1,0 +1,240 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+StyleSheets:
+-   selector: ".base-dialog.without-header #Header"
+    properties:
+        visible: false
+-   selector: ".base-dialog #Header"
+    properties:
+        visible: true
+Prototypes:
+-   prototype: "StyledButton/StyledButton"
+    name: "DialogButton"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+-   class: "UIControl"
+    name: "BaseDialog"
+    size: [500.000000, 220.000000]
+    noInput: true
+    classes: "base-dialog"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            verticalPolicy: "PercentOfChildrenSum"
+        Background:
+            drawType: "DRAW_STRETCH_BOTH"
+            sprite: "~res:/Gfx/UI/CommonUIElements/PopupBackMiddle"
+            leftRightStretchCap: 4.000000
+            topBottomStretchCap: 4.000000
+    children:
+    -   class: "UIControl"
+        name: "Header"
+        size: [500.000000, 56.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+            Background:
+                drawType: "DRAW_TILED"
+                sprite: "~res:/Gfx/UI/CommonUIElements/PopupBackTop"
+                leftRightStretchCap: 4.000000
+        children:
+        -   class: "UIStaticText"
+            name: "TitleText"
+            classes: "header1 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UITextComponent:
+                    text: "Warning"
+    -   class: "UIControl"
+        name: "Content"
+        size: [460.000000, 164.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                padding: 20.000000
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 20.000000
+                rightAnchorEnabled: true
+                rightAnchor: 20.000000
+                topAnchorEnabled: false
+                topAnchor: 0.000000
+                bottomAnchorEnabled: false
+                bottomAnchor: 0.000000
+        children:
+        -   class: "UIControl"
+            name: "Spacing20px"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "FixedSize"
+                    verticalValue: 20.000000
+        -   class: "UIControl"
+            name: "InfoContent"
+            size: [460.000000, 0.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+            children:
+            -   class: "UIStaticText"
+                name: "Info"
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+            -   prototype: "RichText/RichText"
+                name: "InfoRich"
+                components:
+                    FlowLayout:
+                        hDynamicInLinePadding: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    RichContentAliases4:
+                        aliases: "resource_small,<object control=\"ResourceContainer\" name=\"resource_small\" path=\"~res:/UI/Screens/Lobby/Common/Resource/ResourceContainer.yaml\" />;"
+        -   class: "UIControl"
+            name: "Spacing40px"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "FixedSize"
+                    verticalValue: 40.000000
+        -   class: "UIControl"
+            name: "Buttons"
+            size: [460.000000, 64.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 20.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfFirstChild"
+            children:
+            -   prototype: "DialogButton"
+                name: "OkButton"
+                classes: "button button-color-green"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "#common:DialogButton/OK"
+-   class: "UIControl"
+    name: "ModalDialog"
+    size: [1024.000000, 768.000000]
+    classes: "screen-background"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+        Background: {}
+        ModalInput: {}
+    children:
+    -   prototype: "BaseDialog"
+        name: "Dialog"
+        position: [262.000000, 274.000000]
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+-   prototype: "ModalDialog"
+    name: "WarningDialog"
+    children:
+    -   path: "Dialog/Content/InfoContent/InfoRich"
+        components:
+            RichContent:
+                baseClasses: "text1 text-color-blue"
+    -   path: "Dialog/Content/Buttons"
+        components:
+            LinearLayout:
+                orientation: "RightToLeft"
+        children:
+        -   prototype: "DialogButton"
+            name: "CancelButton"
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#common:DialogButton/Cancel"
+-   class: "UIControl"
+    name: "ModalDialogVerticalScroll"
+    size: [1024.000000, 768.000000]
+    classes: "screen-background"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+        Background: {}
+        ModalInput: {}
+    children:
+    -   class: "UIControl"
+        name: "VerticalScrollView"
+        size: [1024.000000, 768.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIScrollView"
+            name: "ScrollArea"
+            autoUpdate: true
+            centerContent: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    rightAnchor: 10.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                        verticalPolicy: "PercentOfMaxChild"
+                children:
+                -   prototype: "BaseDialog"
+                    name: "Dialog"
+        -   prototype: "ScrollBar/VerticalScrollBar"
+            name: "VerticalScrollBar"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                ScrollBarDelegate:
+                    delegate: "../ScrollArea"

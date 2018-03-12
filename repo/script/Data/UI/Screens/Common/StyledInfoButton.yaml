@@ -1,0 +1,15 @@
+Header:
+    version: "16"
+ImportedPackages:
+- "~res:/UI/Screens/Common/IconButton.yaml"
+Prototypes:
+-   prototype: "IconButton/IconButton"
+    name: "StyledInfoButton"
+    size: [70.000000, 70.000000]
+    children:
+    -   path: "icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                frame: 26
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"

@@ -1,0 +1,22 @@
+Header:
+    version: "17"
+Controls:
+-   class: "UIControl"
+    name: "EliteIcon"
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfContent"
+            verticalPolicy: "PercentOfContent"
+        Background:
+            sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+-   class: "UIControl"
+    name: "ElitePremiumIcon"
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfContent"
+            verticalPolicy: "PercentOfContent"
+        Background:
+            sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+            frame: 5

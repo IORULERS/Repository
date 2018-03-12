@@ -1,0 +1,744 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Lobby/Crew/CrewScreenBlank.yaml"
+- "~res:/UI/Screens/Lobby/Crew/CrewCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+- "~res:/UI/Screens/Lobby/Common/CheckMark.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".limited-width.Desktop"
+    properties:
+        sizePolicy-horizontalMax: 650.000000
+Prototypes:
+-   class: "UIControl"
+    name: "DescriptionItem"
+    size: [450.000000, 63.000000]
+    visible: true
+    classes: "pane-bg"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            verticalPolicy: "PercentOfChildrenSum"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "Space"
+        size: [0.000000, 20.000000]
+    -   class: "UIStaticText"
+        name: "Title"
+        size: [388.000000, 0.000000]
+        classes: "text2 text-color-white"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 20.000000
+                rightAnchorEnabled: true
+                rightAnchor: 20.000000
+                topAnchorEnabled: true
+                topAnchor: 20.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                align: ["LEFT", "TOP"]
+                useRtlAlign: "USE_BY_CONTENT"
+    -   class: "UIStaticText"
+        name: "Text"
+        classes: "text2 text-color-blue"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 20.000000
+                rightAnchorEnabled: true
+                rightAnchor: 20.000000
+                topAnchorEnabled: true
+                topAnchor: 45.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            UITextComponent:
+                text: "Description"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowColor: [0.000000, 0.000000, 0.000000, 1.000000]
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "TOP"]
+                useRtlAlign: "USE_BY_CONTENT"
+    -   class: "UIControl"
+        name: "Space"
+        size: [0.000000, 20.000000]
+-   class: "UIControl"
+    customClass: "UISkillDescriptionControl"
+    name: "SkillDescription"
+    size: [472.000000, 550.000000]
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "Formula"
+            horizontalFormula: "safeAreaInsets.left+450"
+        Background: {}
+    children:
+    -   prototype: "CrewCommon/ShortSkillDescription"
+        name: "ShortSkillDescr"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+        children:
+        -   path: "Header"
+            components:
+                LinearLayout:
+                    padding: 10.000000
+            children: []
+        -   path: "Header/Spacer"
+            visible: false
+        -   path: "Header/NameAndStatus/Name"
+            position: [0.000000, 0.000000]
+        -   path: "Progress/Value"
+            position: [370.000000, 0.000000]
+            components:
+                Anchor:
+                    rightAnchor: 20.000000
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+        -   path: "Progress/ProgressBarAnimated"
+            components:
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+            children: []
+        -   path: "Price/Caption"
+            components:
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+        -   path: "Price/Value"
+            components:
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+        -   path: "Price/Icon"
+            components:
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+    -   class: "UIScrollView"
+        name: "DescriptionView"
+        autoUpdate: true
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_ALIGNED"
+                color: [1.000000, 0.325500, 0.325500, 0.502000]
+        children:
+        -   class: "UIScrollViewContainer"
+            name: "scrollContainerControl"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 1.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "Formula"
+                    verticalFormula: "max(parentRest, childrenSum)"
+            children:
+            -   class: "UIControl"
+                name: "Holder"
+                size: [472.000000, 371.000000]
+                classes: ""
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        spacing: 1.000000
+                        skipInvisible: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Background: {}
+                children:
+                -   class: "UIControl"
+                    name: "BattlesLeft"
+                    size: [472.000000, 54.000000]
+                    classes: "pane-bg"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                        Background: {}
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Caption"
+                        size: [452.000000, 54.000000]
+                        classes: "text2 text-color-blue"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 20.000000
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                text: "#crew:skills/skillDescription/battleCount"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "USE_BY_CONTENT"
+                    -   class: "UIStaticText"
+                        name: "Count"
+                        size: [150.000000, 54.000000]
+                        classes: "header4 text-color-white"
+                        components:
+                            Anchor:
+                                rightAnchorEnabled: true
+                                rightAnchor: 20.000000
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UIAnchorSafeAreaComponent:
+                                rightSafeInset: "INSET"
+                            UITextComponent:
+                                text: "~3"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                align: ["RIGHT", "VCENTER"]
+                                useRtlAlign: "DONT_USE"
+                -   prototype: "DescriptionItem"
+                    name: "EffectDescription"
+                    children:
+                    -   path: "Title"
+                        components:
+                            UITextComponent:
+                                text: "#crew:skills/skillDescription/effect"
+                -   prototype: "DescriptionItem"
+                    name: "FeatureDescription"
+                    children:
+                    -   path: "Title"
+                        components:
+                            UITextComponent:
+                                text: "#crew:skills/skillDescription/features"
+                -   prototype: "DescriptionItem"
+                    name: "TipDescription"
+                    children:
+                    -   path: "Title"
+                        components:
+                            UITextComponent:
+                                text: "#crew:skills/skillDescription/hints"
+                -   class: "UIControl"
+                    customClass: "UITable"
+                    name: "LevelsDescription"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            spacing: 1.000000
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                        Background: {}
+                    children:
+                    -   class: "UIControl"
+                        name: "Header"
+                        size: [472.000000, 54.000000]
+                        components:
+                            LinearLayout:
+                                spacing: 1.000000
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                    -   class: "UIScrollView"
+                        name: "Content"
+                        position: [0.000000, 55.000000]
+                        size: [472.000000, 0.000000]
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfFirstChild"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                        children:
+                        -   class: "UIScrollViewContainer"
+                            name: "scrollContainerControl"
+                            size: [472.000000, 0.000000]
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                    spacing: 1.000000
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    verticalPolicy: "PercentOfChildrenSum"
+            -   class: "UIControl"
+                name: "AdditionalControl"
+                noInput: true
+                classes: "pane-bg"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                    Background: {}
+-   class: "UIControl"
+    name: "VehicleClassBackground"
+    size: [574.000000, 2.000000]
+    noInput: true
+    classes: "pane-bg crew"
+    components:
+        SizePolicy:
+            verticalPolicy: "PercentOfParent"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        Background: {}
+-   class: "UIControl"
+    customClass: "UITableHeaderColumn"
+    name: "TableHeaderColumn"
+    size: [37.500000, 54.000000]
+    noInput: true
+    classes: "section-header1"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            horizontalValue: 25.000000
+        Background: {}
+    children:
+    -   class: "UIStaticText"
+        name: "Name"
+        size: [37.500000, 54.000000]
+        classes: "header4 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UITextComponent:
+                text: "Title"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    name: "TableCell"
+    size: [150.000000, 54.000000]
+    noInput: true
+    classes: "pane-bg"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            horizontalValue: 25.000000
+        Background: {}
+    children:
+    -   class: "UIStaticText"
+        name: "Name"
+        size: [150.000000, 54.000000]
+        classes: "text2 textColor=text-color-blue"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UITextComponent:
+                text: "Title"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    name: "PerksContainer"
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "PercentOfMaxChild"
+            verticalPolicy: "PercentOfParent"
+        Background: {}
+    children:
+    -   prototype: "RichText/RichText"
+        name: "HintLayout"
+        position: [0.000000, 0.000000]
+        components:
+            FlowLayout:
+                hPadding: 0.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                leftAnchorEnabled: true
+            RichContent:
+                text: "#crew:skills/skillDescription/maxLevel/lightTank/tip"
+                baseClasses: "text-color-blue text1"
+            RichContentAliases0:
+                aliases: "text_blue,<span class=\"text-color-blue text1\" />;text_white_bold,<span class=\"text-color-white header3\" />;text_mono,<span class=\"text-mono\" />;timer,<object name=\"ExpireTimer\" path=\"~res:/UI/Screens/Lobby/ExpireTimer.yaml\" prototype=\"ExpireTimer\" />;price,<object class=\"gold\" name=\"Price\" path=\"~res:/UI/Screens/Lobby/Common/Price.yaml\" prototype=\"Price\" />;player_name_with_tag,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTag\" />;player_teams_header_text,<span class=\"header1\" />;clan_name_with_tag,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTag\" />;player_name_with_tag_header1,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTagHeader1\" />;clan_name_with_tag_header1,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTagHeader1\" />;vehicle_class,<object path=\"~res:/UI/Screens/Lobby/Crew/VehicleClassIcon.yaml\" prototype=\"VehicleClassIcon\" />;crew_exp,<object path=\"~res:/UI/Screens/Lobby/Crew/UndistributedXP.yaml\" prototype=\"UndistributedXP\" />;"
+    -   class: "UIControl"
+        name: "SkillsContainer"
+        size: [0.000000, 0.000000]
+        pivot: [0.000000, 0.500000]
+        noInput: true
+        components:
+            LinearLayout:
+                spacing: 12.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+Controls:
+-   prototype: "CrewScreenBlank/Screen"
+    customClass: "UICrewSkillsControl"
+    name: "Screen"
+    position: [0.000000, 0.000000]
+    size: [960.000000, 558.000000]
+    children:
+    -   path: "Content"
+        position: [0.000000, 0.000000]
+        children: []
+    -   path: "Content/LeftPart"
+        position: [0.000000, 0.000000]
+        components:
+            Anchor:
+                rightAnchor: 426.000000
+        children: []
+    -   path: "Content/LeftPart/Title"
+        visible: false
+        children: []
+    -   path: "Content/LeftPart/Title/Icon"
+        visible: true
+    -   path: "Content/LeftPart/Title/Label"
+        components:
+            DebugRender:
+                enabled: false
+            UITextComponent:
+                text: "#crew:mastery/skills"
+    -   path: "Content/LeftPart/Content"
+        position: [0.000000, 0.000000]
+        components:
+            Anchor:
+                topAnchor: 0.000000
+        children:
+        -   class: "UIControl"
+            name: "ConstrainedContent"
+            noInput: true
+            classes: "limited-width"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                    verticalMax: 600.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIScrollView"
+                name: "Skills"
+                noInput: true
+                autoUpdate: true
+                centerContent: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background:
+                        color: [1.000000, 0.129400, 0.725500, 0.502000]
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    noInput: false
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfFirstChild"
+                            verticalPolicy: "PercentOfParent"
+                    children:
+                    -   class: "UIControl"
+                        name: "AllSkillsContainer"
+                        components:
+                            LinearLayout:
+                                orientation: "TopDown"
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfMaxChild"
+                                verticalPolicy: "PercentOfParent"
+                                verticalValue: 97.000000
+                            Anchor:
+                                leftAnchorEnabled: true
+                                vCenterAnchorEnabled: true
+                        children:
+                        -   prototype: "PerksContainer"
+                            name: "lightTank"
+                            children:
+                            -   path: "HintLayout"
+                                components:
+                                    RichContent:
+                                        text: "#crew:skills/skillDescription/vehicleType/lightTank/tip"
+                        -   prototype: "PerksContainer"
+                            name: "mediumTank"
+                            position: [0.000000, 139.360001]
+                            children:
+                            -   path: "HintLayout"
+                                components:
+                                    RichContent:
+                                        text: "#crew:skills/skillDescription/maxLevel/mediumTank/tip"
+                        -   prototype: "PerksContainer"
+                            name: "heavyTank"
+                            position: [0.000000, 278.720001]
+                            children:
+                            -   path: "HintLayout"
+                                position: [0.000000, 0.000000]
+                                components:
+                                    RichContent:
+                                        text: "#crew:skills/skillDescription/vehicleType/heavyTank/tip"
+                        -   prototype: "PerksContainer"
+                            name: "AT-SPG"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfChildrenSum"
+                            children:
+                            -   path: "HintLayout"
+                                components:
+                                    RichContent:
+                                        text: "#crew:skills/skillDescription/vehicleType/AT-SPG/tip"
+        -   prototype: "Common/HorizontalScrollBar"
+            name: "HorizontalScrollBar"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                ScrollBarDelegate:
+                    delegate: "../ConstrainedContent/Skills"
+            children:
+            -   path: "slider"
+                position: [0.000000, 0.000000]
+    -   path: "Content/RightPart"
+        position: [513.000000, 0.000000]
+        size: [447.000000, 464.000000]
+        components:
+            SizePolicy:
+                horizontalPolicy: "Formula"
+                horizontalFormula: "safeAreaInsets.left+425"
+        children: []
+    -   path: "Content/RightPart/Title"
+        visible: false
+        children: []
+    -   path: "Content/RightPart/Title/Label"
+        components:
+            UITextComponent:
+                text: "#crew:skills/skillDescription/header"
+    -   path: "Content/RightPart/Content"
+        components:
+            Anchor:
+                topAnchor: 0.000000
+        children:
+        -   prototype: "SkillDescription"
+            name: "SkillDescription"
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 1.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   path: "DescriptionView"
+                children:
+                -   prototype: "Common/VerticalScrollBar"
+                    name: "VerticalScrollBar"
+                    classes: "notch-tightly-right-inset"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        UIAnchorSafeAreaComponent: {}
+            -   path: "DescriptionView/scrollContainerControl/Holder"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                children: []
+            -   path: "DescriptionView/scrollContainerControl/Holder/BattlesLeft/Caption"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        useRtl: true
+                    UITextComponent:
+                        useRtlAlign: "USE_BY_SYSTEM"
+            -   path: "DescriptionView/scrollContainerControl/Holder/BattlesLeft/Count"
+                components:
+                    Anchor:
+                        useRtl: true
+                    UITextComponent:
+                        useRtlAlign: "USE_BY_SYSTEM"
+    -   path: "Footer"
+        children:
+        -   class: "UIStaticText"
+            name: "Description"
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 440.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -2.000000
+                UITextComponent:
+                    text: "#crew:skills/skillDescription/tip2"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "USE_BY_CONTENT"
+        -   class: "UIControl"
+            name: "RightPart"
+            size: [450.000000, 94.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "RightToLeft"
+                    padding: 10.000000
+                    spacing: 10.000000
+                    skipInvisible: true
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "TrainButtonLayout"
+                components:
+                    LinearLayout:
+                        spacing: 10.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "FreeString"
+                    classes: "text1 text-color-blue"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: -2.000000
+                        UITextComponent:
+                            text: "#crew:skills/skillDescription/hint/freeSpeedUp"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   prototype: "StyledButton/StyledButton"
+                    name: "TrainButton"
+                    size: [246.000000, 64.000000]
+                    classes: "button button-color-green"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                    children:
+                    -   path: "Caption"
+                        components:
+                            UITextComponent:
+                                text: "#crew:skills/skillDescription/train"
+            -   class: "UIControl"
+                name: "ForceTrainButtonLayout"
+                components:
+                    LinearLayout:
+                        spacing: 5.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   prototype: "DiscountLabel/DiscountLabel"
+                    name: "Sale"
+                    position: [0.000000, 14.000000]
+                    visible: false
+                    children:
+                    -   path: "Value"
+                        components:
+                            UITextComponent:
+                                text: "%"
+                -   prototype: "StyledButton/StyledButton"
+                    name: "ForceTrainButton"
+                    size: [246.000000, 64.000000]
+                    classes: "button button-color-green"
+                    components:
+                        Anchor:
+                            vCenterAnchorEnabled: true
+                    children:
+                    -   path: "Caption"
+                        components:
+                            UITextComponent:
+                                text: "#crew:skills/skillDescription/speedUp"
+-   prototype: "TableCell"
+    name: "TableSkillCell"
+    components:
+        SizePolicy:
+            horizontalValue: 50.000000
+    children:
+    -   path: "Name"
+        components:
+            Anchor:
+                rightAnchor: 45.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            UITextComponent:
+                align: ["RIGHT", "VCENTER"]
+    -   class: "UIControl"
+        name: "Icon"
+        size: [35.000000, 25.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 10.000000
+                vCenterAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                frame: 4
+-   prototype: "TableHeaderColumn"
+    name: "HeaderLevelColumn"
+    children:
+    -   path: "Name"
+        components:
+            UITextComponent:
+                text: "#crew:skills/skillDescription/table/level"
+-   prototype: "TableHeaderColumn"
+    name: "HeaderEffectColumn"
+    children:
+    -   path: "Name"
+        components:
+            UITextComponent:
+                text: "#crew:skills/skillDescription/table/effect"
+-   prototype: "TableHeaderColumn"
+    name: "HeaderXpColumn"
+    components:
+        SizePolicy:
+            horizontalValue: 50.000000
+    children:
+    -   path: "Name"
+        components:
+            UITextComponent:
+                text: "#crew:skills/skillDescription/table/needXP"
+CustomData:
+    Guides:
+        PerksContainer:
+            Horizontal:
+            - 19.000000

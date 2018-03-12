@@ -1,0 +1,5 @@
+1
+fuel_hit_copy0.tex
+256 128
+1
+0 0 191 76 34 41 0 frame0

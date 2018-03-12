@@ -1,0 +1,572 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Lobby/LobbyStyles.yaml"
+- "~res:/UI/Styles/Lobby/Inventory/InventoryBigStyles.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+StyleSheets:
+-   selector: ".ammo-slot-cell.ap #sliderArea #ammoBgContainer #ammoBg"
+    properties:
+        bg-color: [0.580392, 0.031373, 0.000000, 1.000000]
+-   selector: ".ammo-slot-cell.ap_premium #sliderArea #ammoBgContainer #ammoBg"
+    properties:
+        bg-color: [0.650980, 0.156863, 0.117647, 1.000000]
+-   selector: ".ammo-slot-cell.ap_cr #sliderArea #ammoBgContainer #ammoBg"
+    properties:
+        bg-color: [0.168627, 0.349020, 0.388235, 1.000000]
+-   selector: ".ammo-slot-cell.he #sliderArea #ammoBgContainer #ammoBg, .ammo-slot-cell.he_premium #sliderArea #ammoBgContainer #ammoBg"
+    properties:
+        bg-color: [0.549020, 0.262745, 0.078431, 1.000000]
+-   selector: ".ammo-slot-cell.hc #sliderArea #ammoBgContainer #ammoBg"
+    properties:
+        bg-color: [0.713726, 0.431373, 0.164706, 1.000000]
+-   selector: ".ammo-slot-cell ? #text"
+    properties:
+        text-color: [1.000000, 1.000000, 1.000000, 1.000000]
+-   selector: ".ammo-slot-cell.mode-price #cost"
+    properties:
+        visible: false
+-   selector: ".ammo-slot-cell.mode-sell ? #text"
+    properties:
+        text-color: [0.701961, 1.000000, 0.701961, 1.000000]
+-   selector: ".ammo-slot-cell.mode-purchase-gold ? #text"
+    properties:
+        text-color: [1.000000, 0.819608, 0.000000, 1.000000]
+-   selector: "#convertIcon"
+    properties:
+        bg-frame: 1
+-   selector: "#convertIcon.converted"
+    properties:
+        bg-frame: 2
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIAutoRepeatButton"
+    name: "btnAmmo"
+    size: [64.000000, 64.000000]
+    tag: 1
+    classes: "button button-color-gray"
+    components:
+        Anchor:
+            vCenterAnchorEnabled: true
+        Background:
+            drawType: "DRAW_TILED_MULTILAYER"
+            mask: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+            detail: "~res:/Gfx/UI/CommonUIElements/Button/detail"
+            gradientMode: "Overlay"
+            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            leftRightStretchCap: 20.000000
+            topBottomStretchCap: 20.000000
+    children:
+    -   class: "UIControl"
+        name: "icon"
+        size: [72.000000, 78.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 0.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            Background:
+                sprite: "~res:/Gfx/UI/CommonUIElements/IconsSmall"
+                colorInherit: "COLOR_REPLACE_ALPHA_ONLY"
+Controls:
+-   class: "UIControl"
+    customClass: "UIAmmoSlotCell"
+    name: "AmmoSlotCell"
+    size: [1024.000000, 150.000000]
+    classes: "ammo-slot-cell"
+    components:
+        SizePolicy:
+            verticalPolicy: "PercentOfParent"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        UIAnchorSafeAreaComponent:
+            leftSafeInset: "INSET"
+            rightSafeInset: "INSET"
+        Background:
+            color: [0.000000, 0.000000, 0.000000, 1.000000]
+    children:
+    -   prototype: "StyledButton/StyledButton"
+        name: "currentItem"
+        size: [88.000000, 88.000000]
+        classes: "button ammo_item full button-color-gray"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 10.000000
+                vCenterAnchorEnabled: true
+            Background:
+                drawType: "DRAW_TILED_MULTILAYER"
+        children:
+        -   class: "UIControl"
+            name: "icon"
+            position: [5.000000, 5.000000]
+            size: [78.000000, 78.000000]
+            noInput: true
+            classes: "ammo_bg"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 5.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 5.000000
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 5.000000
+                Background:
+                    drawType: "DRAW_SCALE_TO_RECT"
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIStaticText"
+            name: "typeText"
+            position: [9.000000, 3.000000]
+            size: [79.000000, 30.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 9.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 3.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    fontName: "WarHeliosCondC_Bold_21"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    shadowOffset: [0.000000, -2.000000]
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   prototype: "DiscountLabel/DiscountLabel"
+            name: "discount"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+    -   class: "UIStaticText"
+        name: "title"
+        position: [115.000000, 32.500000]
+        size: [140.000000, 25.000000]
+        noInput: true
+        classes: "header3"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 115.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -30.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_REDUCE"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+    -   class: "UIControl"
+        name: "penetrationIcon"
+        position: [115.000000, 60.000000]
+        size: [30.000000, 30.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 115.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            Background:
+                sprite: "~res:/Gfx/UI/InventoryScreen/AmmoParamIcons"
+                frame: 1
+    -   class: "UIStaticText"
+        name: "penetration"
+        position: [145.000000, 62.500000]
+        size: [110.000000, 25.000000]
+        noInput: true
+        classes: "header3"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 145.000000
+                vCenterAnchorEnabled: true
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+    -   class: "UIControl"
+        name: "damageIcon"
+        position: [115.000000, 90.000000]
+        size: [30.000000, 30.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 115.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 30.000000
+            Background:
+                sprite: "~res:/Gfx/UI/InventoryScreen/AmmoParamIcons"
+    -   class: "UIStaticText"
+        name: "damage"
+        position: [145.000000, 92.500000]
+        size: [110.000000, 25.000000]
+        noInput: true
+        classes: "header3"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 145.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 30.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_REDUCE"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+    -   prototype: "StyledButton/StyledButton"
+        name: "convertCurrency"
+        size: [190.000000, 64.000000]
+        classes: "button button-color-gray"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+                vCenterAnchorEnabled: true
+    -   class: "UIStaticText"
+        name: "action"
+        position: [834.000000, 0.000000]
+        size: [180.000000, 40.000000]
+        noInput: true
+        classes: "text1 text-color-blue"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 10.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -55.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "Ammo cost"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                fitting: "FITTING_REDUCE"
+                align: ["LEFT", "BOTTOM"]
+                useRtlAlign: "USE_BY_CONTENT"
+    -   class: "UIControl"
+        name: "price"
+        position: [834.000000, 45.000000]
+        size: [140.000000, 30.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 50.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -15.000000
+        children:
+        -   class: "UIStaticText"
+            name: "text"
+            size: [110.000000, 30.000000]
+            noInput: true
+            classes: "header3"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 30.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    fitting: "FITTING_REDUCE"
+                    align: ["RIGHT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "icon"
+            position: [113.000000, 0.000000]
+            size: [30.000000, 30.000000]
+            noInput: true
+            classes: "currency-icon-big"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -3.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background: {}
+    -   class: "UIControl"
+        name: "cost"
+        position: [834.000000, 75.000000]
+        size: [140.000000, 30.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 50.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 15.000000
+        children:
+        -   class: "UIStaticText"
+            name: "text"
+            size: [108.000000, 30.000000]
+            noInput: true
+            classes: "header1"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 32.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["RIGHT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "icon"
+            position: [113.000000, 0.000000]
+            size: [30.000000, 30.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -3.000000
+                Background: {}
+    -   class: "UIControl"
+        name: "sliderArea"
+        position: [270.000000, 5.000000]
+        size: [554.000000, 140.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 270.000000
+                rightAnchorEnabled: true
+                rightAnchor: 200.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+        children:
+        -   class: "UIControl"
+            name: "sliderFrame"
+            position: [-4.000000, 31.000000]
+            size: [562.000000, 78.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: -4.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: -4.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    leftRightStretchCap: 15.000000
+        -   class: "UIControl"
+            name: "sliderBg"
+            position: [65.000000, 66.500000]
+            size: [424.000000, 7.000000]
+            noInput: true
+            classes: "slider-background"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 65.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 65.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background: {}
+        -   class: "UIControl"
+            name: "sliderFreeContainer"
+            position: [126.000000, 66.500000]
+            size: [363.000000, 7.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 126.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 65.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+            children:
+            -   class: "UIControl"
+                name: "sliderFree"
+                size: [363.000000, 7.000000]
+                noInput: true
+                classes: "slider-full-background"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                    Background: {}
+        -   class: "UIControl"
+            name: "ammoBgContainer"
+            position: [67.000000, 66.500000]
+            size: [420.000000, 7.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 67.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 67.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+            children:
+            -   class: "UIControl"
+                name: "ammoBg"
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                    Background:
+                        drawType: "DRAW_FILL"
+        -   prototype: "btnAmmo"
+            name: "btnAmmoPlus"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+        -   prototype: "btnAmmo"
+            name: "btnAmmoMinus"
+            position: [0.000000, 38.000000]
+            tag: -1
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+            children:
+            -   path: "icon"
+                components:
+                    Background:
+                        frame: 1
+        -   class: "UIControl"
+            name: "sliderLeftContainer"
+            position: [64.000000, 66.500000]
+            size: [425.000000, 7.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 64.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 65.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+            children:
+            -   class: "UIControl"
+                name: "sliderLeft"
+                size: [425.000000, 7.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                    Background:
+                        drawType: "DRAW_FILL"
+                        color: [0.282353, 0.298039, 0.298039, 1.000000]
+        -   class: "UISlider"
+            name: "slider"
+            position: [64.000000, 37.500000]
+            size: [426.000000, 65.000000]
+            minValue: 0.000000
+            maxValue: 100.000000
+            value: 0.000000
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 64.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 64.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+            children:
+            -   class: "UIControl"
+                name: "thumbSpriteControl"
+                size: [64.000000, 64.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                classes: "button-color-gray"
+                components:
+                    Background:
+                        drawType: "DRAW_TILED_MULTILAYER"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+                        mask: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+                        detail: "~res:/Gfx/UI/CommonUIElements/Button/detail"
+                        gradientMode: "Overlay"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_FORCED"
+                children:
+                -   class: "UIStaticText"
+                    name: "currentAmmoCount"
+                    size: [64.000000, 30.000000]
+                    noInput: true
+                    classes: "header3 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 0.000000
+                            topAnchorEnabled: true
+                            topAnchor: -30.000000
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "Icon"
+                    size: [64.000000, 60.000000]
+                    noInput: true
+                    components:
+                        SizePolicy: {}
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        Background:
+                            sprite: "~res:/Gfx/UI/LobbyCommon/icon_slider"
+                            perPixelAccuracy: "PER_PIXEL_ACCURACY_FORCED"
+                -   class: "UIControl"
+                    name: "highlight"
+                    size: [84.000000, 84.000000]
+                    pivot: [0.500000, 0.500000]
+                    visible: false
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: -10.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: -10.000000
+                            topAnchorEnabled: true
+                            topAnchor: -10.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: -10.000000
+                        Background:
+                            drawType: "DRAW_STRETCH_BOTH"
+                            sprite: "~res:/Gfx/UI/HangarTutorial/HighlightTile"
+                            leftRightStretchCap: 15.000000
+                            topBottomStretchCap: 15.000000
+    -   class: "UIControl"
+        name: "convertIcon"
+        position: [950.000000, 45.000000]
+        size: [60.000000, 30.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 14.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -15.000000
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/ButtonConvertCurrency"
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"

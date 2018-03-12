@@ -1,0 +1,5 @@
+1
+enemy_discovered0.tex
+512 256
+1
+0 0 250 250 131 3 0 frame0

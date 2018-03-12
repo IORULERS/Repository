@@ -1,0 +1,15 @@
+Header:
+    version: "20"
+StyleSheets:
+-   selector: ".notch-tightly-right-inset"
+    properties:
+        anchorSafeArea-rightSafeInset: "INSET_ONLY_IF_NOTCH"
+        anchorSafeArea-rightInsetCorrection: -24.000000
+-   selector: ".notch-tightly-bottom-inset"
+    properties:
+        anchorSafeArea-bottomSafeInset: "INSET"
+        anchorSafeArea-bottomInsetCorrection: -21.000000
+-   selector: ".notch-tightly-bottom-inset.inventory"
+    properties:
+        anchorSafeArea-bottomSafeInset: "INSET"
+        anchorSafeArea-bottomInsetCorrection: -16.000000

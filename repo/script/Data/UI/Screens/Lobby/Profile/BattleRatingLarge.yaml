@@ -1,0 +1,71 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Styles/Lobby/BattleRating/BattleRatingStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".battle-rating #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon.sc2"
+-   selector: ".battle-rating.bronze #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_bronze.sc2"
+-   selector: ".battle-rating.silver #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_silver.sc2"
+-   selector: ".battle-rating.gold #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_gold.sc2"
+-   selector: ".battle-rating.platinum #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_platinum.sc2"
+-   selector: ".battle-rating.diamond #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_diamond.sc2"
+Prototypes:
+-   class: "UIControl"
+    name: "RatingLarge"
+    size: [100.000000, 120.000000]
+    noInput: true
+    classes: "battle-rating"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfMaxChild"
+    children:
+    -   class: "UIParticles"
+        name: "PlayerProfileFx"
+        position: [50.000000, 44.000000]
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        autoStart: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 28.000000
+    -   class: "UIControl"
+        name: "LeagueBanner"
+        size: [100.000000, 100.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+            Background:
+                drawType: "DRAW_STRETCH_BOTH"
+                sprite: "~res:/Gfx/UI/ProfileScreen/league_medium"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIStaticText"
+        name: "Value"
+        position: [50.000000, 94.000000]
+        size: [0.000000, 26.000000]
+        classes: "header3 text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"

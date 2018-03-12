@@ -1,0 +1,5 @@
+1
+clan_creation0.tex
+512 256
+1
+0 0 321 196 97 59 0 frame0

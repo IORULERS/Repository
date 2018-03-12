@@ -1,0 +1,631 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/BattleResults/ScrollableMedalContainer.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Lobby/BattleResults/BattleResultsContainers.yaml"
+- "~res:/UI/Screens/Common/KarmaCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Lobby/Profile/ProfileTankListCell.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Common/PlayerNameWithTag.yaml"
+- "~res:/UI/Screens/Lobby/Profile/BattleRatingLarge.yaml"
+- "~res:/UI/Styles/Lobby/BattleResults/BattleResultsStyles.yaml"
+StyleSheets:
+-   selector: ".china_region #Nation"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/China/SmallTankCellFlag"
+-   selector: "#Nation"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/Default/SmallTankCellFlag"
+-   selector: ".star-small, .star-small #Overlay"
+    properties:
+        bg-drawType: "DRAW_SCALE_TO_RECT"
+        sizePolicy-horizontalPolicy: "FixedSize"
+        sizePolicy-horizontalValue: 24.000000
+        sizePolicy-verticalPolicy: "FixedSize"
+        sizePolicy-verticalValue: 24.000000
+Prototypes:
+-   class: "UIControl"
+    name: "Stat"
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            padding: 4.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfChildrenSum"
+    children:
+    -   class: "UIControl"
+        name: "Icon"
+        size: [41.000000, 50.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/ProfileScreen/IconsStats"
+    -   class: "UIStaticText"
+        name: "Text"
+        size: [0.000000, 55.000000]
+        classes: "text2 text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 55.000000
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+    -   class: "UIStaticText"
+        name: "Value"
+        size: [11.000000, 26.000000]
+        classes: "header3 text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+            UITextComponent:
+                text: "0"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+Controls:
+-   class: "UIControl"
+    name: "Dialog"
+    size: [960.000000, 640.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "background"
+        position: [0.000000, 0.000000]
+        noInput: true
+        classes: "screen-background"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "DoubleBg"
+            noInput: true
+            classes: "screen-background"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background: {}
+        -   prototype: "StyledBackButton/StyledBackButton"
+            name: "BackButton"
+            classes: "button button-color-gray button-close-sound"
+        -   prototype: "StyledButton/StyledButton"
+            name: "ProfileButton"
+            size: [202.000000, 64.000000]
+            classes: "button button-color-gray button-open-sound"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    topAnchorEnabled: true
+                    topAnchor: 8.000000
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+                Background:
+                    leftRightStretchCap: 7.000000
+                    topBottomStretchCap: 7.000000
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#hangar:button/Achievements"
+        -   class: "UIControl"
+            name: "LeftSide"
+            position: [122.000000, 0.000000]
+            size: [586.000000, 80.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "LeftToRight"
+                SizePolicy:
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 100.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 230.000000
+                    topAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                    rightSafeInset: "INSET"
+            children:
+            -   class: "UIControl"
+                name: "VehicleCell"
+                size: [198.000000, 80.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfFirstChild"
+                        verticalPolicy: "PercentOfFirstChild"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   prototype: "ProfileTankListCell/Nation"
+                    name: "Nation"
+                    position: [0.000000, 0.000000]
+                    children:
+                    -   path: "Selection"
+                        size: [176.000000, 66.000000]
+                        scale: [1.000000, 1.000000]
+                        visible: false
+            -   class: "UIControl"
+                name: "TextContron"
+                position: [198.000000, 8.000000]
+                size: [388.000000, 64.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        spacing: 2.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   prototype: "PlayerNameWithTag/PlayerNameWithTag"
+                    name: "PlayerName"
+                    components:
+                        LinearLayout:
+                            useRtl: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                    children:
+                    -   path: "name"
+                        classes: "header1"
+                    -   path: "tag"
+                        classes: "header1 clan-tag"
+                -   class: "UIStaticText"
+                    name: "StatusText"
+                    size: [388.000000, 30.000000]
+                    classes: "text1 text-color-blue"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                        Background:
+                            leftRightStretchCap: 7.000000
+                            topBottomStretchCap: 7.000000
+                        UITextComponent:
+                            text: "UIStaticText3"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            fitting: "FITTING_POINTS"
+                            align: ["LEFT", "VCENTER"]
+        -   class: "UIControl"
+            name: "Body"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 20.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 30.000000
+            children:
+            -   class: "UIControl"
+                name: "Header"
+                size: [960.000000, 219.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        spacing: 10.000000
+                    SizePolicy:
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "PlayerInfo"
+                    size: [960.000000, 139.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            dynamicPadding: true
+                            safeAreaPaddingInset: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfMaxChild"
+                    children:
+                    -   class: "UIControl"
+                        name: "RightSide"
+                        noInput: true
+                        classes: "limited-width"
+                        components:
+                            LinearLayout:
+                                padding: 120.000000
+                                spacing: 20.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfLastChild"
+                            Anchor:
+                                vCenterAnchorEnabled: true
+                        children:
+                        -   prototype: "BattleRatingLarge/RatingLarge"
+                            name: "RatingLarge"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfParent"
+                            children:
+                            -   path: "Value"
+                                components:
+                                    Anchor:
+                                        bottomAnchor: 4.000000
+                        -   prototype: "Stat"
+                            name: "Wins"
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        frame: 1
+                            -   path: "Text"
+                                components:
+                                    UITextComponent:
+                                        text: "#achievementScreen:Brief/Wins"
+                            -   path: "Value"
+                                classes: "header3"
+                        -   prototype: "Stat"
+                            name: "AverageDmg"
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        frame: 4
+                            -   path: "Text"
+                                position: [0.000004, 54.000000]
+                                size: [113.666656, 55.000000]
+                                components:
+                                    UITextComponent:
+                                        text: "#battle_results:DetailsPage/Achievements/AverageDamage"
+                        -   prototype: "Stat"
+                            name: "Battles"
+                            children:
+                            -   path: "Text"
+                                components:
+                                    UITextComponent:
+                                        text: "#achievementScreen:Brief/Battles"
+                        -   class: "UIControl"
+                            name: "KarmaButtonContainer"
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                    padding: 4.000000
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfMaxChild"
+                                    verticalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                Sound: {}
+                            children:
+                            -   prototype: "KarmaCommon/Stars"
+                                name: "Stars"
+                                components:
+                                    LinearLayout:
+                                        padding: 10.000000
+                                    SizePolicy:
+                                        verticalPolicy: "FixedSize"
+                                        verticalValue: 50.000000
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                children:
+                                -   path: "Star1"
+                                    size: [24.000000, 24.000000]
+                                    classes: "star star-small"
+                                    components:
+                                        SizePolicy: {}
+                                        Anchor:
+                                            vCenterAnchorEnabled: true
+                                    children: []
+                                -   path: "Star1/Overlay"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "FixedSize"
+                                            verticalPolicy: "FixedSize"
+                                        Background:
+                                            drawType: "DRAW_SCALE_TO_RECT"
+                                -   path: "Star2"
+                                    classes: "star star-small"
+                                    components:
+                                        SizePolicy: {}
+                                        Anchor:
+                                            vCenterAnchorEnabled: true
+                                    children: []
+                                -   path: "Star2/Overlay"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "FixedSize"
+                                            verticalPolicy: "FixedSize"
+                                -   path: "Star3"
+                                    classes: "star star-small"
+                                    components:
+                                        SizePolicy: {}
+                                        Anchor:
+                                            vCenterAnchorEnabled: true
+                                    children: []
+                                -   path: "Star3/Overlay"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "FixedSize"
+                                            verticalPolicy: "FixedSize"
+                                -   path: "Star4"
+                                    classes: "star star-small"
+                                    components:
+                                        SizePolicy: {}
+                                        Anchor:
+                                            vCenterAnchorEnabled: true
+                                    children: []
+                                -   path: "Star4/Overlay"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "FixedSize"
+                                            verticalPolicy: "FixedSize"
+                                -   path: "Star5"
+                                    classes: "star star-small"
+                                    components:
+                                        SizePolicy: {}
+                                        Anchor:
+                                            vCenterAnchorEnabled: true
+                                    children: []
+                                -   path: "Star5/Overlay"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "FixedSize"
+                                            verticalPolicy: "FixedSize"
+                            -   class: "UIStaticText"
+                                name: "Text"
+                                position: [0.000000, 54.000000]
+                                size: [155.000000, 55.000000]
+                                classes: "text2 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "FixedSize"
+                                        verticalValue: 55.000000
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "#clans:ProfileScreen/BattleEfficiency/Table/Karma"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                            -   class: "UIControl"
+                                name: "TitleContainer"
+                                noInput: true
+                                components:
+                                    LinearLayout: {}
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfFirstChild"
+                                        verticalPolicy: "PercentOfMaxChild"
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                children:
+                                -   class: "UIStaticText"
+                                    name: "Title"
+                                    classes: "header3 text-color-white"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfContent"
+                                            verticalPolicy: "PercentOfContent"
+                                        UITextComponent:
+                                            text: "Karma/PlayerStatus/3/Title"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   prototype: "ScrollableMedalContainer/MedalContainer"
+                    name: "MedalContainer"
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 20.000000
+            -   class: "UIControl"
+                name: "Content"
+                position: [0.000000, 239.000000]
+                size: [960.000000, 254.000000]
+                noInput: true
+                classes: "limited-width"
+                components:
+                    LinearLayout:
+                        padding: 30.000000
+                        safeAreaPaddingInset: true
+                        spacing: 30.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "LeftPanel"
+                    size: [413.000000, 254.000000]
+                    noInput: true
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   prototype: "BattleResultsContainers/Container"
+                        name: "Container"
+                        size: [413.000000, 254.000000]
+                        children:
+                        -   path: "Header"
+                            components:
+                                UITextComponent:
+                                    text: "#battle_results:VehicleInfo/Effectiveness"
+                        -   path: "Table"
+                            children:
+                            -   prototype: "BattleResultsContainers/TableRow"
+                                name: "Shots"
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/Shots"
+                            -   prototype: "BattleResultsContainers/TableSubRow"
+                                name: "HitsAndPierced"
+                                position: [0.000000, 32.000000]
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/HitsAndPierced"
+                            -   prototype: "BattleResultsContainers/TableSubRow"
+                                name: "HeHits"
+                                position: [0.000000, 64.000000]
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/HeHits"
+                            -   prototype: "BattleResultsContainers/TableSubRow"
+                                name: "DamagedAndKills"
+                                position: [0.000000, 96.000000]
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/DamagedAndKills"
+                            -   prototype: "BattleResultsContainers/TableRow"
+                                name: "DamageDealt"
+                                position: [0.000000, 128.000000]
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/DamageDealt"
+                            -   prototype: "BattleResultsContainers/TableRow"
+                                name: "Spotted"
+                                position: [0.000000, 160.000000]
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/Spotted"
+                            -   prototype: "BattleResultsContainers/TableRow"
+                                name: "DamageAssisted"
+                                position: [0.000000, 192.000000]
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/DamageAssisted"
+                -   class: "UIControl"
+                    name: "RightPanel"
+                    position: [495.000000, 0.000000]
+                    size: [413.000000, 254.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            dynamicSpacing: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfParent"
+                    children:
+                    -   prototype: "BattleResultsContainers/Container"
+                        name: "Container1"
+                        children:
+                        -   path: "Header"
+                            components:
+                                UITextComponent:
+                                    text: "#battle_results:VehicleInfo/DamageReceived"
+                        -   path: "Table"
+                            children:
+                            -   prototype: "BattleResultsContainers/TableRow"
+                                name: "ShotsReceived"
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/ShotsReceived"
+                            -   prototype: "BattleResultsContainers/TableSubRow"
+                                name: "PiercedReceived"
+                                position: [0.000000, 32.000000]
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/PiercedReceived"
+                            -   prototype: "BattleResultsContainers/TableSubRow"
+                                name: "NoDamageShotsReceived"
+                                position: [0.000000, 64.000000]
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/NoDamageShotsReceived"
+                    -   prototype: "BattleResultsContainers/Container"
+                        name: "Container2"
+                        size: [435.000000, 158.000000]
+                        children:
+                        -   path: "Header"
+                            components:
+                                UITextComponent:
+                                    text: "#battle_results:DetailsPage/StatisticPage/Etc"
+                        -   path: "Table"
+                            size: [435.000000, 128.000000]
+                            classes: "gameplay=domination"
+                            children:
+                            -   prototype: "BattleResultsContainers/TableRow"
+                                name: "WinPoints"
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/ScoreEarned"
+                            -   prototype: "BattleResultsContainers/TableRow"
+                                name: "WinPointsStolen"
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/ScoreDetracted"
+                            -   prototype: "BattleResultsContainers/TableRow"
+                                name: "CapturePoints"
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/CapturePoints"
+                            -   prototype: "BattleResultsContainers/TableRow"
+                                name: "DroppedCapturePoints"
+                                position: [0.000000, 96.000000]
+                                children:
+                                -   path: "Content/Text"
+                                    components:
+                                        UITextComponent:
+                                            text: "#battle_results:DetailsPage/StatisticPage/DroppedCapturePoints"

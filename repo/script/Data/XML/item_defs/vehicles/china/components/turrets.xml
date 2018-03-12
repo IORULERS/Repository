@@ -1,0 +1,34 @@
+<root>
+	<nextAvailableId>42</nextAvailableId>
+	<ids>
+		<Turret_1_Ch01_Type59_2>0</Turret_1_Ch01_Type59_2>
+		<Turret_1_Ch02_Type62>1</Turret_1_Ch02_Type62>
+		<Turret_1_Ch03_WZ-111>3</Turret_1_Ch03_WZ-111>
+		<Turret_1_Ch04_T34_1>4</Turret_1_Ch04_T34_1>
+		<Turret_2_Ch04_T34_1>5</Turret_2_Ch04_T34_1>
+		<Turret_1_Ch06_Renault_NC31>6</Turret_1_Ch06_Renault_NC31>
+		<Turret_2_Ch06_Renault_NC31>7</Turret_2_Ch06_Renault_NC31>
+		<Turret_1_Ch05_T34_2>8</Turret_1_Ch05_T34_2>
+		<Turret_2_Ch05_T34_2>9</Turret_2_Ch05_T34_2>
+		<Turret_1_Ch18_WZ-120>10</Turret_1_Ch18_WZ-120>
+		<Turret_2_Ch18_WZ-120>11</Turret_2_Ch18_WZ-120>
+		<Turret_1_Ch07_Vickers_MkE_Type_BT26>14</Turret_1_Ch07_Vickers_MkE_Type_BT26>
+		<Turret_2_Ch07_Vickers_MkE_Type_BT26>15</Turret_2_Ch07_Vickers_MkE_Type_BT26>
+		<Turret_1_Ch09_M5>19</Turret_1_Ch09_M5>
+		<Turret_2_Ch09_M5>20</Turret_2_Ch09_M5>
+		<Turret_1_Ch19_121>27</Turret_1_Ch19_121>
+		<Turret_1_Ch08_Type97_Chi_Ha>28</Turret_1_Ch08_Type97_Chi_Ha>
+		<Turret_2_Ch08_Type97_Chi_Ha>29</Turret_2_Ch08_Type97_Chi_Ha>
+		<Turret_1_Ch21_T34>30</Turret_1_Ch21_T34>
+		<Turret_2_Ch21_T34>31</Turret_2_Ch21_T34>
+		<Turret_1_Ch20_Type58>34</Turret_1_Ch20_Type58>
+		<Turret_2_Ch20_Type58>35</Turret_2_Ch20_Type58>
+		<Turret_1_Ch22_113>37</Turret_1_Ch22_113>
+		<Turret_1_Ch23_112>39</Turret_1_Ch23_112>
+		<Turret_1_Ch25_121_mod_1971B>36</Turret_1_Ch25_121_mod_1971B>
+		<Turret_1_Ch24_Type64>16</Turret_1_Ch24_Type64>
+		<Turret_1_Ch26_59_Patton>40</Turret_1_Ch26_59_Patton>
+		<Turret_1_Ch14_T34_3>41</Turret_1_Ch14_T34_3>
+	</ids>
+	<shared/>
+</root>

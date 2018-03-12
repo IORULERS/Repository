@@ -1,0 +1,5 @@
+1
+supremacy_team_bonus0.tex
+256 128
+1
+0 0 174 94 41 34 0 frame0

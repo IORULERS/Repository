@@ -1,0 +1,5 @@
+1
+surround_enemy0.tex
+512 256
+1
+0 0 250 250 132 4 0 frame0

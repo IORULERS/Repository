@@ -1,0 +1,70 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+Controls:
+-   class: "UIControl"
+    name: "SquadInviteListHeader"
+    size: [400.000000, 66.000000]
+    components:
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "cellBack"
+        size: [400.000000, 65.000000]
+        noInput: true
+        classes: "pane-bg"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            Background: {}
+        children:
+        -   class: "UIStaticText"
+            name: "headerText"
+            position: [16.000000, 8.000000]
+            size: [384.000000, 24.500000]
+            noInput: true
+            classes: "header3 text-color-white"
+            textcolorInheritType: "COLOR_IGNORE_PARENT"
+            textalign: ["LEFT", "VCENTER"]
+            textUseRtlAlign: "DONT_USE"
+            text: "SQUAD_DIALOG_INVITE_SEND"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 16.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 8.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+        -   class: "UIStaticText"
+            name: "headerHint"
+            position: [16.000000, 32.500000]
+            size: [384.000000, 26.500000]
+            noInput: true
+            classes: "text2-small text-color-blue"
+            textcolorInheritType: "COLOR_IGNORE_PARENT"
+            textalign: ["LEFT", "VCENTER"]
+            textUseRtlAlign: "DONT_USE"
+            text: "SQUAD_DIALOG_INVITE_SEND_HINT"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 16.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 6.000000
+                Background:
+                    align: ["LEFT", "TOP"]

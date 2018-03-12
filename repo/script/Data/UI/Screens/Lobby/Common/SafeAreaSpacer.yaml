@@ -1,0 +1,26 @@
+Header:
+    version: "20"
+Prototypes:
+-   class: "UIControl"
+    name: "SafeAreaSpacer"
+    noInput: true
+    tag: -1
+    components:
+        SizePolicy:
+            horizontalPolicy: "Formula"
+            horizontalFormula: "safeAreaInsets.left"
+            verticalPolicy: "PercentOfParent"
+-   prototype: "SafeAreaSpacer"
+    name: "SafeAreaTitleSpacerLeft"
+    components:
+        IgnoreLayout: {}
+        Anchor:
+            leftAnchorEnabled: true
+-   prototype: "SafeAreaSpacer"
+    name: "SafeAreaTitleSpacerRight"
+    components:
+        IgnoreLayout: {}
+        SizePolicy:
+            horizontalFormula: "safeAreaInsets.right"
+        Anchor:
+            rightAnchorEnabled: true

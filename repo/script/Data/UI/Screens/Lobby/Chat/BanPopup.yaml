@@ -1,0 +1,180 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/CommonInputField.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/TextFieldWithHint.yaml"
+- "~res:/UI/Screens/DialogView.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Popup"
+    size: [1024.000000, 768.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.000000, 0.000000, 0.000000, 0.498000]
+            leftRightStretchCap: 7.000000
+            topBottomStretchCap: 7.000000
+        ModalInput: {}
+    children:
+    -   prototype: "DialogView/BaseDialog"
+        name: "Dialog"
+        position: [424.000000, 80.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 100.000000
+                topAnchorEnabled: true
+                topAnchor: 80.000000
+        children:
+        -   path: "Content/InfoContent"
+            children:
+            -   class: "UIControl"
+                name: "Period"
+                size: [460.000000, 70.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        padding: 20.000000
+                        spacing: 20.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                children:
+                -   class: "UIStaticText"
+                    name: "PeriodText"
+                    noInput: true
+                    classes: "header3 text-color-white"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "FixedSize"
+                            verticalValue: 70.000000
+                        UITextComponent:
+                            text: "XChatBanPeriod"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            align: ["LEFT", "VCENTER"]
+                -   class: "UIControl"
+                    customClass: "UINumericSpinner"
+                    name: "BanPeriod"
+                    size: [101.000000, 64.000000]
+                    components:
+                        Anchor:
+                            vCenterAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_FILL"
+                    children:
+                    -   class: "UIStaticText"
+                        name: "BanPeriodText"
+                        size: [101.000000, 64.000000]
+                        noInput: true
+                        classes: "header0 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 0.000000
+                                rightAnchorEnabled: true
+                                rightAnchor: 0.000000
+                                topAnchorEnabled: true
+                                topAnchor: 0.000000
+                                bottomAnchorEnabled: true
+                                bottomAnchor: 0.000000
+                            UITextComponent:
+                                text: "--"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIControl"
+                name: "BanReason"
+                position: [4.000000, 70.000000]
+                size: [452.000000, 72.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 4.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 4.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background:
+                        drawType: "DRAW_STRETCH_HORIZONTAL"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/InputField"
+                        leftRightStretchCap: 6.000000
+                children:
+                -   class: "UITextField"
+                    customClass: "UITextFieldWithHint"
+                    name: "InputMessage"
+                    size: [428.000000, 48.000000]
+                    font: "WarHeliosCondC_19"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 12.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 12.000000
+                            topAnchorEnabled: true
+                            topAnchor: 12.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 12.000000
+                        Background:
+                            leftRightStretchCap: 4.000000
+                            topBottomStretchCap: 4.000000
+                        Focus: {}
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Hint"
+                        classes: "text1 text-color-grey"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                text: "enterMessageHint"
+                                align: ["HCENTER", "VCENTER"]
+        -   path: "Content/Buttons"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    verticalPolicy: "PercentOfChildrenSum"
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "CancelButton"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "Cancel"
+            -   prototype: "StyledButton/StyledButton"
+                name: "WarningButton"
+                classes: "button button-color-orange"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "XChatWarning"
+            -   prototype: "StyledButton/StyledButton"
+                name: "BanButton"
+                classes: "button button-color-red"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "XChatBan"
+        -   path: "Content/Buttons/OkButton"
+            visible: false
+            children: []

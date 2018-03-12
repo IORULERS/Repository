@@ -1,0 +1,309 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Hangar/BasePopup.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".level0 .star, .level1 .star"
+    properties:
+        bg-color: [0.839216, 0.635294, 0.576471, 1.000000]
+-   selector: ".level2 .star"
+    properties:
+        bg-color: [0.627451, 0.725490, 0.800000, 1.000000]
+-   selector: ".level3 .star"
+    properties:
+        bg-color: [0.776471, 0.890196, 0.658824, 1.000000]
+-   selector: ".level4 .star"
+    properties:
+        bg-color: [0.266667, 0.662745, 0.945098, 1.000000]
+-   selector: ".level5 .star"
+    properties:
+        bg-color: [0.607843, 0.529412, 0.937255, 1.000000]
+-   selector: ".level4 #Star5 #Overlay, .level3 #Star5 #Overlay, .level3 #Star4 #Overlay, .level2 #Star5 #Overlay, .level2 #Star4 #Overlay, .level2 #Star3 #Overlay, .level1 #Star5 #Overlay, .level1 #Star4 #Overlay, .level1 #Star3 #Overlay, .level1 #Star2 #Overlay, .level0 #Star5 #Overlay, .level0 #Star4 #Overlay, .level0 #Star3 #Overlay, .level0 #Star2 #Overlay, .level0 #Star1 #Overlay"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.000000]
+-   selector: ".level1 #Star1 #Overlay, .level2 #Star2 #Overlay, .level2 #Star1 #Overlay, .level3 #Star3 #Overlay, .level3 #Star2 #Overlay, .level3 #Star1 #Overlay, .level4 #Star4 #Overlay, .level4 #Star3 #Overlay, .level4 #Star2 #Overlay, .level4 #Star1 #Overlay, .level5 #Star5 #Overlay, .level5 #Star4 #Overlay, .level5 #Star3 #Overlay, .level5 #Star2 #Overlay, .level5 #Star1 #Overlay"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 1.000000]
+-   selector: ".level0-animate .star, .level1-animate .star"
+    properties:
+        bg-color:
+            value: [0.839216, 0.635294, 0.576471, 1.000000]
+            transitionTime: 2.000000
+            transitionFunction: "LINEAR"
+-   selector: ".level2-animate .star"
+    properties:
+        bg-color:
+            value: [0.627451, 0.725490, 0.800000, 1.000000]
+            transitionTime: 2.000000
+            transitionFunction: "LINEAR"
+-   selector: ".level3-animate .star"
+    properties:
+        bg-color:
+            value: [0.776471, 0.890196, 0.658824, 1.000000]
+            transitionTime: 2.000000
+            transitionFunction: "LINEAR"
+-   selector: ".level4-animate .star"
+    properties:
+        bg-color:
+            value: [0.266667, 0.662745, 0.945098, 1.000000]
+            transitionTime: 2.000000
+            transitionFunction: "LINEAR"
+-   selector: ".level5-animate .star"
+    properties:
+        bg-color:
+            value: [0.607843, 0.529412, 0.937255, 1.000000]
+            transitionTime: 2.000000
+            transitionFunction: "LINEAR"
+-   selector: ".level4-animate #Star5 #Overlay, .level3-animate #Star5 #Overlay, .level3-animate #Star4 #Overlay, .level2-animate #Star5 #Overlay, .level2-animate #Star4 #Overlay, .level2-animate #Star3 #Overlay, .level1-animate #Star5 #Overlay, .level1-animate #Star4 #Overlay, .level1-animate #Star3 #Overlay, .level1-animate #Star2 #Overlay, .level0-animate #Star5 #Overlay, .level0-animate #Star4 #Overlay, .level0-animate #Star3 #Overlay, .level0-animate #Star2 #Overlay, .level0-animate #Star1 #Overlay"
+    properties:
+        bg-color:
+            value: [1.000000, 1.000000, 1.000000, 0.000000]
+            transitionTime: 2.000000
+            transitionFunction: "LINEAR"
+-   selector: ".level1-animate #Star1 #Overlay, .level2-animate #Star2 #Overlay, .level2-animate #Star1 #Overlay, .level3-animate #Star3 #Overlay, .level3-animate #Star2 #Overlay, .level3-animate #Star1 #Overlay, .level4-animate #Star4 #Overlay, .level4-animate #Star3 #Overlay, .level4-animate #Star2 #Overlay, .level4-animate #Star1 #Overlay, .level5-animate #Star5 #Overlay, .level5-animate #Star4 #Overlay, .level5-animate #Star3 #Overlay, .level5-animate #Star2 #Overlay, .level5-animate #Star1 #Overlay"
+    properties:
+        bg-color:
+            value: [1.000000, 1.000000, 1.000000, 1.000000]
+            transitionTime: 2.000000
+            transitionFunction: "LINEAR"
+Prototypes:
+-   class: "UIControl"
+    name: "Star"
+    size: [30.000000, 30.000000]
+    noInput: true
+    classes: "star"
+    components:
+        Background:
+            sprite: "~res:/Gfx/UI/Karma/Star_icon"
+    children:
+    -   class: "UIControl"
+        name: "Overlay"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Background:
+                sprite: "~res:/Gfx/UI/Karma/Star_icon"
+                frame: 1
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+-   class: "UIControl"
+    name: "Stars"
+    noInput: true
+    components:
+        LinearLayout:
+            spacing: 3.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+    children:
+    -   prototype: "Star"
+        name: "Star1"
+    -   prototype: "Star"
+        name: "Star2"
+    -   prototype: "Star"
+        name: "Star3"
+    -   prototype: "Star"
+        name: "Star4"
+    -   prototype: "Star"
+        name: "Star5"
+-   class: "UIControl"
+    name: "KarmaLevelDescr"
+    components:
+        LinearLayout:
+            spacing: 25.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            horizontalMin: 600.000000
+            verticalPolicy: "PercentOfMaxChild"
+        Anchor:
+            hCenterAnchorEnabled: true
+    children:
+    -   prototype: "Stars"
+        name: "Stars"
+    -   class: "UIControl"
+        name: "DescriptionSection"
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                spacing: 5.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfChildrenSum"
+        children:
+        -   class: "UIStaticText"
+            name: "Title"
+            classes: "header3 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfContent"
+                UITextComponent:
+                    text: "Title"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "USE_BY_SYSTEM"
+        -   class: "UIStaticText"
+            name: "Description"
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfContent"
+                UITextComponent:
+                    text: "description"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "USE_BY_SYSTEM"
+-   prototype: "BasePopup/BasePopup"
+    name: "KarmaLevelInfoDialog"
+    children:
+    -   path: "DialogBackground"
+        classes: "button-close-sound"
+        components:
+            Sound: {}
+        children: []
+    -   path: "Content"
+        classes: "notch-tightly-bottom-inset"
+        components:
+            Anchor:
+                topAnchor: 0.000000
+            UIAnchorSafeAreaComponent: {}
+        children:
+        -   class: "UIControl"
+            name: "VerticalScrollView"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+            children:
+            -   class: "UIScrollView"
+                name: "ScrollArea"
+                autoUpdate: true
+                centerContent: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                    Anchor: {}
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            padding: 60.000000
+                            spacing: 25.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            horizontalValue: 75.000000
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   prototype: "KarmaLevelDescr"
+                        name: "Level5"
+                        noInput: true
+                        children:
+                        -   path: "Stars"
+                            classes: "stars=level5"
+                            children: []
+                        -   path: "DescriptionSection/Title"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/5/Title"
+                        -   path: "DescriptionSection/Description"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/5/Description"
+                    -   prototype: "KarmaLevelDescr"
+                        name: "Level4"
+                        noInput: true
+                        children:
+                        -   path: "Stars"
+                            classes: "stars=level4"
+                            children: []
+                        -   path: "DescriptionSection/Title"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/4/Title"
+                        -   path: "DescriptionSection/Description"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/4/Description"
+                    -   prototype: "KarmaLevelDescr"
+                        name: "Level3"
+                        noInput: true
+                        children:
+                        -   path: "Stars"
+                            classes: "stars=level3"
+                            children: []
+                        -   path: "DescriptionSection/Title"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/3/Title"
+                        -   path: "DescriptionSection/Description"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/3/Description"
+                    -   prototype: "KarmaLevelDescr"
+                        name: "Level2"
+                        noInput: true
+                        children:
+                        -   path: "Stars"
+                            classes: "stars=level2"
+                            children: []
+                        -   path: "DescriptionSection/Title"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/2/Title"
+                        -   path: "DescriptionSection/Description"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/2/Description"
+                    -   prototype: "KarmaLevelDescr"
+                        name: "Level1"
+                        noInput: true
+                        children:
+                        -   path: "Stars"
+                            classes: "stars=level1"
+                            children: []
+                        -   path: "DescriptionSection/Title"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/1/Title"
+                        -   path: "DescriptionSection/Description"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/1/Description"
+                    -   prototype: "KarmaLevelDescr"
+                        name: "Level0"
+                        noInput: true
+                        children:
+                        -   path: "Stars"
+                            classes: "stars=level0"
+                            children: []
+                        -   path: "DescriptionSection/Title"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/0/Title"
+                        -   path: "DescriptionSection/Description"
+                            components:
+                                UITextComponent:
+                                    text: "Karma/PlayerStatus/0/Description"
+            -   prototype: "ScrollBar/VerticalScrollBar"
+                name: "VerticalScrollBar"
+                classes: "notch-tightly-right-inset"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UIAnchorSafeAreaComponent: {}
+                    ScrollBarDelegate:
+                        delegate: "../ScrollArea"

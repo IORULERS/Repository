@@ -1,0 +1,35 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/Footer.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "Tab"
+    size: [1024.000000, 617.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 0.000000
+            rightAnchorEnabled: true
+            rightAnchor: 0.000000
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+    children:
+    -   prototype: "Footer/Footer"
+        name: "Footer"
+    -   class: "UIControl"
+        name: "Content"
+        size: [1024.000000, 523.000000]
+        classes: "notch-tightly-bottom-inset"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 94.000000
+            UIAnchorSafeAreaComponent: {}

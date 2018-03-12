@@ -1,0 +1,31 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/LoadingControl.yaml"
+- "~res:/UI/Screens/Common/AOGASControl.yaml"
+- "~res:/UI/Screens/Login/RegionSelector.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   prototype: "LoadingControl/LoadingControl"
+    name: "ConnectingScreen"
+    visible: true
+    children:
+    -   path: "FadeBackground"
+        visible: false
+    -   prototype: "AOGASControl/AOGASControl"
+        name: "AOGASControl"
+    -   prototype: "RegionSelector/RegionSelector"
+        name: "RegionSelector"
+        visible: false
+        enabled: false
+        classes: "notch-tightly-bottom-inset"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 5.000000
+            UIAnchorSafeAreaComponent: {}
+        children:
+        -   path: "RegionButton"
+            enabled: false
+            children: []

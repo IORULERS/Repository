@@ -1,0 +1,13 @@
+Header:
+    version: "17"
+Controls:
+-   class: "UIControl"
+    name: "EliteIcon"
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfContent"
+            verticalPolicy: "PercentOfContent"
+        Background:
+            sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+            frame: 7

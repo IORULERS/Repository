@@ -1,0 +1,257 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/Settings/Settings.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Dialogs.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Options/OptionEditor.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Page"
+    size: [1024.000000, 1276.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIScrollView"
+        name: "ScrollView"
+        noInput: true
+        autoUpdate: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Background:
+                color: [0.192200, 0.192200, 0.192200, 1.000000]
+        children:
+        -   class: "UIScrollViewContainer"
+            name: "scrollContainerControl"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    safeAreaPaddingInset: true
+                    spacing: 1.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+            children:
+            -   prototype: "OptionEditor/Selector"
+                name: "PresetSelector"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 4.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 4.000000
+                children:
+                -   path: "Background"
+                    classes: "section-header1"
+                    children: []
+                -   path: "Background/NameAndDescription/Name"
+                    components:
+                        UITextComponent:
+                            text: "#settings:Graphics/Quality/Title"
+                -   path: "Background/Editor"
+                    children:
+                    -   class: "UIControl"
+                        name: "CustomizedPresetMark"
+                        size: [10.000000, 10.000000]
+                        pivot: [0.500000, 0.500000]
+                        visible: true
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                                bottomAnchor: 7.000000
+                            Background:
+                                sprite: "~res:/Gfx/UI/SettingsScreen/dot"
+                -   path: "Background/Editor/Selector"
+                    size: [700.000000, 60.000000]
+            -   class: "UIControl"
+                name: "OptionsView"
+                size: [1016.000000, 1133.000000]
+                noInput: true
+                components:
+                    FlowLayout:
+                        vSpacing: 1.000000
+                    SizePolicy:
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 4.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 4.000000
+                children:
+                -   prototype: "OptionEditor/Selector"
+                    name: "WaterQuality"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/WaterQuality/Title"
+                -   prototype: "OptionEditor/Selector"
+                    name: "ObjectsQuality"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/ObjectsQuality/Title"
+                -   prototype: "OptionEditor/Selector"
+                    name: "VehiclesQuality"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/VehiclesQuality/Title"
+                -   prototype: "OptionEditor/Selector"
+                    name: "EffectsQuality"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/EffectsQuality/Title"
+                -   prototype: "OptionEditor/Selector"
+                    name: "LevelOfDetail"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/LevelOfDetail/Title"
+                    -   path: "Background/NameAndDescription/Description"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/LevelOfDetail/Description"
+                -   prototype: "OptionEditor/Selector"
+                    name: "FogQuality"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/FogQuality/Title"
+                -   prototype: "OptionEditor/Selector"
+                    name: "AnisotropicFiltering"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/AnisotropicFiltering/Title"
+                    -   path: "Background/NameAndDescription/Description"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/AnisotropicFiltering/Description"
+                -   prototype: "OptionEditor/Selector"
+                    name: "Antialiasing"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/Antialiasing/Title"
+                    -   path: "Background/NameAndDescription/Description"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/Antialiasing/Description"
+                -   prototype: "OptionEditor/Selector"
+                    name: "FPSLimit"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/FPSLimit/Title"
+                    -   path: "Background/NameAndDescription/Description"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/FPSLimit/Description"
+                -   prototype: "OptionEditor/Selector"
+                    name: "Camouflage"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/Camouflage/Title"
+                    -   path: "Background/NameAndDescription/Description"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/Camouflage/Description"
+                -   prototype: "OptionEditor/Selector"
+                    name: "GrassQuality"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/GrassQuality/Title"
+                -   prototype: "OptionEditor/Switch"
+                    name: "GrassInSniperMode"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/GrassInSniperMode/Title"
+                -   prototype: "OptionEditor/Switch"
+                    name: "Shadows"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/Shadows/Title"
+                -   prototype: "OptionEditor/Switch"
+                    name: "HDTextures"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/HDTextures/Title"
+                -   prototype: "OptionEditor/Switch"
+                    name: "HDSounds"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Other/HDSounds/Title"
+                    -   path: "Background/NameAndDescription/Description"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Other/HDSounds/Comment"
+                -   prototype: "OptionEditor/Switch"
+                    name: "HalfResolution"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/HalfResolution/Title"
+                -   prototype: "OptionEditor/Switch"
+                    name: "MetalAPI"
+                    children:
+                    -   path: "Background/NameAndDescription/Name"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/MetalAPI/Title"
+                    -   path: "Background/NameAndDescription/Description"
+                        components:
+                            UITextComponent:
+                                text: "#settings:Graphics/MetalAPI/Description"
+        -   prototype: "Common/VerticalScrollBar"
+            name: "VerticalScrollBar"
+            classes: "notch-tightly-right-inset"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+                ScrollBarDelegate:
+                    delegate: ".."
+-   prototype: "Dialogs/ErrorDialogWithoutCaption"
+    name: "PleaseRebootDialog"
+    children:
+    -   path: "Dialog/Middle/DialogText"
+        components:
+            UITextComponent:
+                text: "#settings:Graphics/Quality/Reboot/Notification"
+    -   path: "Dialog/Middle/ButtonHolder/OkButton/Caption"
+        components:
+            UITextComponent:
+                text: "#settings:Graphics/Quality/Reboot/Notification/OK"

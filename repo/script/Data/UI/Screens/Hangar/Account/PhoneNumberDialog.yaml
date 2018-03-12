@@ -1,0 +1,271 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/DialogView.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/NumericTextField.yaml"
+- "~res:/UI/Screens/Common/TextFieldPanel.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+Prototypes:
+-   prototype: "TextFieldPanel/TextFieldPanel"
+    name: "TextFieldPanel"
+    children:
+    -   prototype: "NumericTextField/NumericTextField"
+        name: "NumericTextField"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 20.000000
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+Controls:
+-   prototype: "DialogView/ModalDialogVerticalScroll"
+    name: "ActivationCodeDialog"
+    children:
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog"
+        position: [0.000000, 0.000000]
+        children: []
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Header/TitleText"
+        components:
+            UITextComponent:
+                text: "#account:Blocks/MobilePhone/ConfirmationCode/Header"
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Content/InfoContent"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                spacing: 20.000000
+        children:
+        -   class: "UIControl"
+            name: "Text"
+            size: [460.000000, 57.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 5.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+            children:
+            -   class: "UIStaticText"
+                name: "Description"
+                position: [0.000000, 0.000000]
+                size: [460.000000, 26.000000]
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "#account:Blocks/MobilePhone/ConfirmationCode/Text"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIStaticText"
+                name: "PhoneNumber"
+                classes: "header3 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "86 - 12345678901"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "PhoneNumber"
+            size: [460.000000, 50.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 8.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfMaxChild"
+            children:
+            -   prototype: "TextFieldPanel"
+                name: "SMSCodePanel"
+                position: [0.000000, 0.000000]
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                children:
+                -   path: "NumericTextField"
+                    font: "WarHeliosCondC_21"
+                    components:
+                        Anchor:
+                            rightAnchor: 50.000000
+                -   class: "UIStaticText"
+                    name: "Placeholder"
+                    position: [0.000000, 0.000000]
+                    size: [460.000000, 50.000000]
+                    classes: "text1 text-color-blue"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        UITextComponent:
+                            text: "#account:Blocks/MobilePhone/ConfirmationCode/Example"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "Clear"
+                    position: [410.000000, 0.000000]
+                    size: [50.000000, 50.000000]
+                    visible: false
+                    noInput: false
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        Background:
+                            sprite: "~res:/Gfx/UI/CommonUIElements/InputClear"
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Content/InfoContent/Info"
+        visible: false
+        components:
+            UITextComponent:
+                text: "Enter your phone number."
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Content/InfoContent/InfoRich"
+        visible: false
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Content/Buttons"
+        components:
+            LinearLayout:
+                orientation: "RightToLeft"
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "ResendCodeButton"
+            position: [238.000000, 0.000000]
+            classes: "button button-color-green button-ok-sound"
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#account:Blocks/MobilePhone/ResendCode/Button"
+        -   prototype: "DialogView/DialogButton"
+            name: "CancelButton"
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#common:DialogButton/Cancel"
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Content/Buttons/OkButton"
+        visible: false
+        children: []
+    -   prototype: "StyledBackButton/StyledBackButton"
+        name: "BackButton"
+        position: [8.000000, 8.000000]
+        classes: "button button-color-gray button-close-sound"
+-   prototype: "DialogView/ModalDialogVerticalScroll"
+    name: "PhoneNumberDialog"
+    children:
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Header/TitleText"
+        components:
+            UITextComponent:
+                text: "#account:Blocks/MobilePhone/EnterPhoneNumber/Header"
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Content/InfoContent"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                spacing: 20.000000
+        children:
+        -   class: "UIControl"
+            name: "PhoneNumber"
+            size: [460.000000, 50.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 8.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfMaxChild"
+            children:
+            -   prototype: "TextFieldPanel"
+                name: "CodePanel"
+                position: [0.000000, 0.000000]
+                size: [70.000000, 50.000000]
+                children:
+                -   path: "NumericTextField"
+                    text: "86"
+                    font: "WarHeliosCondC_21"
+                    textalign: ["HCENTER", "VCENTER"]
+                    maxLength: 3
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+            -   class: "UIControl"
+                name: "Control"
+                size: [8.000000, 2.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_FILL"
+            -   prototype: "TextFieldPanel"
+                name: "PhoneNumberPanel"
+                position: [94.000000, 0.000000]
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                children:
+                -   path: "NumericTextField"
+                    font: "WarHeliosCondC_21"
+                    maxLength: 16
+                    components:
+                        Anchor:
+                            rightAnchor: 50.000000
+                -   class: "UIStaticText"
+                    name: "Placeholder"
+                    position: [0.000000, 0.000000]
+                    size: [366.000000, 50.000000]
+                    classes: "text1 text-color-blue"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        UITextComponent:
+                            text: "#account:Blocks/MobilePhone/EnterPhoneNumber/Example"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "Clear"
+                    position: [316.000000, 0.000000]
+                    size: [50.000000, 50.000000]
+                    visible: false
+                    noInput: false
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        Background:
+                            sprite: "~res:/Gfx/UI/CommonUIElements/InputClear"
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Content/InfoContent/Info"
+        components:
+            UITextComponent:
+                text: "#account:Blocks/MobilePhone/EnterPhoneNumber/Text"
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Content/InfoContent/InfoRich"
+        visible: false
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Content/Buttons"
+        components:
+            LinearLayout:
+                orientation: "RightToLeft"
+        children:
+        -   prototype: "DialogView/DialogButton"
+            name: "CancelButton"
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#common:DialogButton/Cancel"
+    -   path: "VerticalScrollView/ScrollArea/scrollContainerControl/Dialog/Content/Buttons/OkButton/Caption"
+        components:
+            UITextComponent:
+                text: "#account:Blocks/MobilePhone/RequestCode/Button"
+    -   prototype: "StyledBackButton/StyledBackButton"
+        name: "BackButton"
+        position: [8.000000, 8.000000]
+        classes: "button button-color-gray button-close-sound"

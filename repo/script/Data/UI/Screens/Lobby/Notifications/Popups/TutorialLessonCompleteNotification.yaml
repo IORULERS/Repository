@@ -1,0 +1,121 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UITutorialLessonCompleteNotification"
+    name: "TutorialLessonCompleteNotification"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Notifications/NotificationIcons"
+                frame: 8
+    -   prototype: "Notification/Content"
+        name: "Content"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                rightAnchor: 10.000000
+        children:
+        -   class: "UIStaticText"
+            name: "Result"
+            position: [0.000000, 2.000000]
+            size: [275.000000, 76.000000]
+            noInput: true
+            classes: "header3 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -2.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "#hangar_tutorial:notification/complete"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    shadowOffset: [0.000000, 1.000000]
+                    shadowColor: [0.000000, 0.000000, 0.000000, 0.750000]
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "divider"
+            size: [2.000000, 84.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 279.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Notifications/NotificationBarDivider"
+        -   class: "UIStaticText"
+            name: "LessonName"
+            size: [445.000000, 76.000000]
+            noInput: true
+            classes: "header3 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 294.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -2.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "#hangar_tutorial:task/optional_devices/short"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    shadowOffset: [0.000000, 1.000000]
+                    shadowColor: [0.000000, 0.000000, 0.000000, 0.750000]
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "divider2"
+            size: [2.000000, 84.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 200.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Notifications/NotificationBarDivider"
+        -   class: "UIControl"
+            name: "Reward"
+            size: [194.000000, 76.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -2.000000
+            children:
+            -   class: "UIStaticText"
+                name: "text"
+                size: [194.000000, 76.000000]
+                noInput: true
+                classes: "header3 text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 0.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "#hangar_tutorial:hangar/task_reward"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        shadowOffset: [0.000000, 1.000000]
+                        shadowColor: [0.000000, 0.000000, 0.000000, 0.750000]
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"

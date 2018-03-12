@@ -1,0 +1,24 @@
+gradeExternals:
+    common: 1.0
+    rare: 0.3
+    unique: 0.6
+    legendary: 0.0
+chestFashions:
+    chest: "Default"
+    chestFrenchBox: "French"
+    chestPremiumAMX: "French"
+    chestPremiumFCM: "French"
+    chestPremiumIS2: "French"
+    chestUniqueFrenchBox: "French"
+    chest4julyUnlocked1: "chest4julyUnlocked2"
+    chest4julyUnlocked2: "chest4julyUnlocked3"
+    chest4julyUnlocked3: "chest4julyUnlocked4"
+    chest4julyUnlocked4: "chest4julyUnlocked5"
+    chest4julyUnlocked5: "chest4julyUnlocked1"
+    bts_chest1: "chestbts2017"
+    bts_chest2: "chestbts2017"
+    pers_chest: "Default"
+    moon_chest_1: "january2018"
+    chest_121B_MoonNY18: "january2018"
+chestProgressRewards:
+     bts_chest2: "~res:/Gfx/UI/BigTankIcons/germany-KpfPz_70"

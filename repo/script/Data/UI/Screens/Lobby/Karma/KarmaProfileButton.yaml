@@ -1,0 +1,51 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Common/KarmaCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "KarmaButton"
+    size: [222.000000, 153.000000]
+    classes: "button-open-sound"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Background:
+            drawType: "DRAW_TILED"
+            sprite: "~res:/Gfx/UI/ProfileScreen/StatsBack"
+            color: [1.000000, 1.000000, 1.000000, 0.098039]
+            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            leftRightStretchCap: 5.000000
+            topBottomStretchCap: 5.000000
+        Sound: {}
+    children:
+    -   class: "UIControl"
+        name: "StarsContainer"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfMaxChild"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -20.000000
+        children:
+        -   prototype: "KarmaCommon/Stars"
+            name: "Stars"
+    -   prototype: "StyledButton/StyledButton"
+        name: "Button"
+        size: [224.000000, 50.000000]
+        classes: "button button-color-gray button-open-sound"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: -1.000000
+                rightAnchorEnabled: true
+                rightAnchor: -1.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: -1.000000
+        children:
+        -   path: "Caption"
+            text: "Karma/Title"

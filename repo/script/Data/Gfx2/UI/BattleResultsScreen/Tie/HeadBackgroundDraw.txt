@@ -1,0 +1,8 @@
+2
+texture0.tex
+texture1.tex
+2048 520
+3
+0 1519 2048 433 0 0 0 frame0
+0 0 2048 419 0 0 1 frame1
+0 0 2048 520 0 0 0 frame2

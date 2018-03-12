@@ -1,0 +1,463 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyHeader.yaml"
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Common/Settings/SettingsCommon.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/Tab.yaml"
+- "~res:/UI/Screens/Lobby/Common/SafeAreaSpacer.yaml"
+StyleSheets:
+-   selector: "#KeyboardTab ? #icon"
+    properties:
+        bg-frame: 6
+-   selector: "#TouchTab ? #icon"
+    properties:
+        bg-frame: 5
+-   selector: ".tab #selected"
+    properties:
+        visible: false
+-   selector: ".tab:selected #selected"
+    properties:
+        visible: true
+-   selector: ".tab #unselected"
+    properties:
+        visible: true
+-   selector: ".tab:selected #unselected"
+    properties:
+        visible: false
+-   selector: ".bg-battle #Content #Background"
+    properties:
+        visible: true
+-   selector: ".bg-lobby #Content #Background"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIControl"
+    name: "SettingsTabControl"
+    size: [150.000000, 74.000000]
+    noInput: true
+    tag: 0
+    classes: "tab"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Anchor:
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+    children:
+    -   class: "UIControl"
+        name: "selected"
+        size: [150.000000, 74.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_STRETCH_BOTH"
+                sprite: "~res:/Gfx/UI/SettingsScreen/over_button_tab_bar"
+                leftRightStretchCap: 5.000000
+                topBottomStretchCap: 5.000000
+        children:
+        -   class: "UIStaticText"
+            name: "text"
+            size: [150.000000, 72.000000]
+            noInput: true
+            classes: "header5 text-color-selectable"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 2.000000
+                UITextComponent:
+                    text: ""
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["HCENTER", "BOTTOM"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "icon"
+            size: [32.000000, 32.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -8.000000
+                Background:
+                    sprite: ""
+    -   class: "UIControl"
+        name: "unselected"
+        size: [150.000000, 74.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+        children:
+        -   class: "UIStaticText"
+            name: "text"
+            size: [150.000000, 72.000000]
+            noInput: true
+            classes: "header5 text-color-selectable"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 2.000000
+                UITextComponent:
+                    text: ""
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["HCENTER", "BOTTOM"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "icon"
+            size: [32.000000, 32.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -8.000000
+                Background:
+                    sprite: ""
+                    color: [0.745098, 0.800000, 0.807843, 1.000000]
+Controls:
+-   class: "UIControl"
+    name: "Settings"
+    size: [1024.000000, 768.000000]
+    classes: "bg=bg-lobby"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "ingameBackground"
+        size: [1025.000000, 768.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: -1.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.000000, 0.000000, 0.000000, 1.000000]
+    -   prototype: "LobbyHeader/Header"
+        name: "header"
+        size: [1024.000000, 80.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+        children:
+        -   class: "UIControl"
+            name: "resetButton"
+            position: [602.000000, 0.000000]
+            size: [400.000000, 80.000000]
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+            children:
+            -   class: "UIControl"
+                name: "dropArrow"
+                position: [360.000000, 0.000000]
+                size: [40.000000, 80.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/CommonUIElements/IconArrowDropDownMenu"
+            -   class: "UIStaticText"
+                name: "title"
+                size: [360.000000, 80.000000]
+                noInput: true
+                classes: "header3"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 40.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "#settings:ResetButton"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+    -   class: "UIControl"
+        name: "Content"
+        size: [1024.000000, 688.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 80.000000
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Background"
+            noInput: true
+            classes: "screen-background"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background: {}
+        -   class: "UIControl"
+            customClass: "UITabSwitcher"
+            name: "tabs"
+            size: [1014.000000, 74.000000]
+            classes: "tab-pane-bg"
+            components:
+                LinearLayout:
+                    safeAreaPaddingInset: true
+                    spacing: 2.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 5.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 5.000000
+                    topAnchorEnabled: true
+                    topAnchor: 1.000000
+                Background: {}
+            children:
+            -   prototype: "SettingsTabControl"
+                name: "graphicsTab"
+                tag: 1
+                children:
+                -   path: "selected/text"
+                    components:
+                        UITextComponent:
+                            text: "#settings:Graphics"
+                -   path: "selected/icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/SettingsScreen/IconTabs_new"
+                            frame: 4
+                -   path: "unselected/text"
+                    components:
+                        UITextComponent:
+                            text: "#settings:Graphics"
+                -   path: "unselected/icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/SettingsScreen/IconTabs_new"
+                            frame: 4
+            -   prototype: "SettingsTabControl"
+                name: "TouchTab"
+                position: [216.399994, 0.000000]
+                tag: 2
+                children:
+                -   path: "selected/text"
+                    components:
+                        UITextComponent:
+                            text: "#settings:Controls"
+                -   path: "selected/icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/SettingsScreen/IconTabs_new"
+                -   path: "unselected/text"
+                    components:
+                        UITextComponent:
+                            text: "#settings:Controls"
+                -   path: "unselected/icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/SettingsScreen/IconTabs_new"
+            -   prototype: "SettingsTabControl"
+                name: "markersTab"
+                position: [410.799988, 0.000000]
+                tag: 3
+                children:
+                -   path: "selected/text"
+                    components:
+                        UITextComponent:
+                            text: "#settings:Markers"
+                -   path: "selected/icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/SettingsScreen/IconTabs_new"
+                            frame: 1
+                -   path: "unselected/text"
+                    components:
+                        UITextComponent:
+                            text: "#settings:Markers"
+                -   path: "unselected/icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/SettingsScreen/IconTabs_new"
+                            frame: 1
+            -   prototype: "SettingsTabControl"
+                name: "generalTab"
+                tag: 0
+                children:
+                -   path: "selected/text"
+                    components:
+                        UITextComponent:
+                            text: "#settings:Other"
+                -   path: "selected/icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/SettingsScreen/IconTabs_new"
+                            frame: 0
+                -   path: "unselected/text"
+                    components:
+                        UITextComponent:
+                            text: "#settings:Other"
+                -   path: "unselected/icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/SettingsScreen/IconTabs_new"
+                            frame: 0
+            -   prototype: "SettingsTabControl"
+                name: "devOptionsTab"
+                tag: 4
+                children:
+                -   path: "selected/text"
+                    components:
+                        UITextComponent:
+                            text: "DEV OPTIONS"
+                -   path: "unselected/text"
+                    components:
+                        UITextComponent:
+                            text: "DEV OPTIONS"
+        -   class: "UIControl"
+            name: "tabsContent"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 76.000000
+                    bottomAnchorEnabled: true
+                ClipContent: {}
+    -   class: "UIControl"
+        name: "resetPopUp"
+        visible: false
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   prototype: "Common/PopUp"
+            name: "PopUp"
+            size: [340.000000, 150.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 10.000000
+                    topAnchorEnabled: true
+                    topAnchor: 75.000000
+            children:
+            -   class: "UIControl"
+                name: "resetAllPagesButton"
+                classes: "reset-button"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background: {}
+                children:
+                -   class: "UIStaticText"
+                    name: "Text"
+                    classes: "header4 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        UITextComponent:
+                            text: "#settings:Dropdown/ResetAll"
+                -   class: "UIControl"
+                    name: "whiteLine"
+                    size: [340.000000, 1.000000]
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_FILL"
+                            color: [0.188235, 0.254902, 0.298039, 0.298039]
+            -   class: "UIControl"
+                name: "resetCurrentPageButton"
+                classes: "reset-button"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background: {}
+                children:
+                -   class: "UIStaticText"
+                    name: "Text"
+                    classes: "header4 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        UITextComponent:
+                            text: "#settings:Dropdown/ResetScreen"

@@ -1,0 +1,413 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Hangar/HangarBaseScreen.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/Price.yaml"
+- "~res:/UI/Screens/Lobby/Common/Footer.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "SlotPurchaseItem"
+    size: [240.000000, 313.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "PercentOfMaxChild"
+            verticalPolicy: "PercentOfChildrenSum"
+    children:
+    -   class: "UIControl"
+        name: "Button"
+        size: [240.000000, 273.000000]
+        classes: "button"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/SlotPurchase/tank_slot.psd"
+            Sound: {}
+        children:
+        -   prototype: "Selection/Selection"
+            name: "Selection"
+            classes: "selection-color-orange"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 3.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 3.000000
+                    topAnchorEnabled: true
+                    topAnchor: 3.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 3.000000
+        -   prototype: "DiscountLabel/DiscountLabel"
+            name: "ActionDiscount"
+            classes: "discount-label type=action big"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 1.000000
+                    topAnchorEnabled: true
+                    topAnchor: 2.000000
+        -   prototype: "DiscountLabel/DiscountLabel"
+            name: "DefaultDiscount"
+            size: [75.000000, 36.000000]
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -10.000000
+                    topAnchorEnabled: true
+                    topAnchor: -7.000000
+                    vCenterAnchorEnabled: false
+            children:
+            -   path: "Image"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "FixedSize"
+                        horizontalValue: 75.000000
+                    Background:
+                        drawType: "DRAW_STRETCH_HORIZONTAL"
+                        align: ["RIGHT", "VCENTER"]
+                        leftRightStretchCap: 24.000000
+            -   path: "Value"
+                position: [2.000000, -3.000000]
+                classes: "header4"
+                components:
+                    UITextComponent:
+                        color: [1.000000, 1.000000, 1.000000, 1.000000]
+    -   class: "UIControl"
+        name: "Price"
+        position: [45.000000, 273.000000]
+        size: [150.000000, 40.000000]
+        noInput: true
+        components:
+            LinearLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                hCenterAnchorEnabled: true
+        children:
+        -   prototype: "Price/Price"
+            name: "Price"
+        -   prototype: "StyledButton/StyledButton"
+            name: "ConvertButton"
+            size: [70.000000, 40.000000]
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/ButtonConvertCurrency"
+            children:
+            -   path: "Caption"
+                visible: false
+            -   class: "UIControl"
+                name: "Icon"
+                size: [70.000000, 40.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/ButtonConvertCurrency"
+                        frame: 1
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "CountContainer"
+        size: [0.000000, 0.000000]
+        scale: [0.550000, 0.500000]
+        noInput: true
+        components:
+            LinearLayout: {}
+            IgnoreLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 12.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 13.000000
+        children:
+        -   class: "UIControl"
+            name: "Count"
+            size: [0.000000, 0.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Background: {}
+Controls:
+-   prototype: "HangarBaseScreen/Screen"
+    name: "Screen"
+    children:
+    -   path: "Header/Layout/leftContent"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 100.000000
+        children: []
+    -   path: "Header/Layout/leftContent/labels/primaryLabel"
+        components:
+            UITextComponent:
+                align: ["HCENTER", "VCENTER"]
+    -   path: "Header/Layout/leftContent/labels/secondaryLabel"
+        components:
+            UITextComponent:
+                align: ["HCENTER", "VCENTER"]
+    -   path: "Header/Layout/rightContent"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfMaxChild"
+        children: []
+    -   path: "Header/Layout/rightContent/CurrencyPanel"
+        visible: false
+        children: []
+-   class: "UIControl"
+    customClass: "UISlotPurchase"
+    name: "Content"
+    position: [0.000000, 80.000000]
+    size: [1024.000000, 688.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "ContainerInside"
+        classes: "notch-tightly-bottom-inset"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 94.000000
+            UIAnchorSafeAreaComponent: {}
+        children:
+        -   class: "UIControl"
+            name: "ConstrainedContent"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    dynamicPadding: true
+                    spacing: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Caption"
+                size: [345.000000, 30.000000]
+                noInput: true
+                classes: "header1 text-color-white"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: 0.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "SLOT_PURCHASE"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIControl"
+                name: "Spaser"
+                size: [0.000000, 5.000000]
+            -   class: "UIControl"
+                name: "Container"
+                size: [760.000000, 313.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        spacing: 20.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   prototype: "SlotPurchaseItem"
+                    name: "SlotPurchase1"
+                    children:
+                    -   path: "CountContainer"
+                        components:
+                            Anchor:
+                                hCenterAnchor: 9.000000
+                                vCenterAnchor: 9.000000
+                        children: []
+                    -   path: "CountContainer/Count"
+                        scale: [1.000000, 0.980000]
+                        components:
+                            Background:
+                                sprite: "~res:/Gfx/UI/LobbyCommon/PremNumbers/1.psd"
+                -   prototype: "SlotPurchaseItem"
+                    name: "SlotPurchase5"
+                    children:
+                    -   path: "CountContainer"
+                        scale: [0.550000, 0.540000]
+                        components:
+                            Anchor:
+                                hCenterAnchor: 15.000000
+                                vCenterAnchor: 8.000000
+                        children: []
+                    -   path: "CountContainer/Count"
+                        components:
+                            Background:
+                                sprite: "~res:/Gfx/UI/LobbyCommon/PremNumbers/5.psd"
+                -   prototype: "SlotPurchaseItem"
+                    name: "SlotPurchase10"
+                    children:
+                    -   path: "CountContainer"
+                        components:
+                            Anchor:
+                                hCenterAnchor: 20.000000
+                                vCenterAnchor: 11.000000
+                        children:
+                        -   class: "UIControl"
+                            name: "Count2"
+                            size: [48.000000, 95.000000]
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfContent"
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/PremNumbers/0.psd"
+                    -   path: "CountContainer/Count"
+                        scale: [1.000000, 0.980000]
+                        components:
+                            Background:
+                                sprite: "~res:/Gfx/UI/LobbyCommon/PremNumbers/1.psd"
+            -   class: "UIStaticText"
+                name: "Hint"
+                position: [0.000000, 378.000000]
+                size: [1024.000000, 30.000000]
+                noInput: true
+                classes: "text1 text-color-blue"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "SLOT_PURCHASE_INFO"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        shadowOffset: [0.000000, 1.000000]
+    -   prototype: "Footer/Footer"
+        name: "Footer"
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "PurchaseButton"
+            size: [220.000000, 64.000000]
+            classes: "button button-color-green"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "SLOT_BUY"
+        -   class: "UIControl"
+            name: "Cost"
+            size: [158.000000, 32.000000]
+            components:
+                LinearLayout: {}
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 255.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -20.000000
+            children:
+            -   class: "UIStaticText"
+                name: "Label"
+                size: [95.000000, 26.000000]
+                noInput: true
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    Background:
+                        align: ["RIGHT", "VCENTER"]
+                    UITextComponent:
+                        text: "#common:Cost"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   prototype: "DiscountLabel/DiscountLabel"
+                name: "Discount"
+        -   class: "UIControl"
+            name: "ClanSlots"
+            size: [376.000000, 32.000000]
+            components:
+                LinearLayout:
+                    spacing: 5.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 255.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -20.000000
+            children:
+            -   class: "UIStaticText"
+                name: "Label"
+                size: [319.000000, 26.000000]
+                noInput: true
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    Background:
+                        align: ["RIGHT", "VCENTER"]
+                    UITextComponent:
+                        text: "AVAILABLE_SLOTS"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "ClanDiscount"
+                size: [52.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor: {}
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/DiscountClanSmall"
+        -   prototype: "Price/Price"
+            name: "Price"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 250.000000
+                    vCenterAnchor: 15.000000
+CustomData:
+    Guides:
+        Content:
+            Horizontal:
+            - 316.000000
+            - 267.000000

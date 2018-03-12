@@ -1,0 +1,5 @@
+1
+lookaround_control0.tex
+512 256
+1
+0 0 362 161 74 84 0 frame0

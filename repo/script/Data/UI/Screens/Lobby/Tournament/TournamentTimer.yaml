@@ -1,0 +1,234 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "TournamentLargeScaleTimer"
+    noInput: true
+    components:
+        LinearLayout: {}
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+    children:
+    -   class: "UIControl"
+        name: "HourAndMinutes"
+        visible: true
+        noInput: true
+        components:
+            LinearLayout:
+                spacing: 5.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            size: [16.000000, 16.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/timer_icon"
+                    colorInherit: "COLOR_IGNORE_PARENT"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   class: "UIControl"
+            name: "Timer"
+            size: [69.000000, 23.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    skipInvisible: false
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+            children:
+            -   class: "UIStaticText"
+                name: "Hours"
+                position: [0.000000, 0.000000]
+                size: [19.000000, 23.000000]
+                classes: "text2"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "11"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+            -   class: "UIStaticText"
+                name: "ColonHours"
+                position: [19.000000, 0.000000]
+                size: [6.000000, 23.000000]
+                classes: "text2"
+                components:
+                    UITextComponent:
+                        text: ":"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIStaticText"
+                name: "Minutes"
+                position: [25.000000, 0.000000]
+                size: [19.000000, 23.000000]
+                classes: "text2"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "11"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+            -   class: "UIStaticText"
+                name: "ColonMS"
+                position: [44.000000, 0.000000]
+                size: [6.000000, 23.000000]
+                classes: "text2"
+                components:
+                    UITextComponent:
+                        text: ":"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIStaticText"
+                name: "Seconds"
+                position: [50.000000, 0.000000]
+                size: [19.000000, 23.000000]
+                classes: "text2"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "47"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+    -   class: "UIStaticText"
+        name: "DayAndHour"
+        size: [37.000000, 21.000000]
+        classes: "text2-small text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            UITextComponent:
+                text: "dd:hh"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    name: "TournamentTimer"
+    noInput: true
+    components:
+        LinearLayout: {}
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+    children:
+    -   class: "UIControl"
+        name: "HourAndMinutes"
+        visible: true
+        noInput: true
+        components:
+            LinearLayout:
+                spacing: 5.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+        children:
+        -   class: "UIControl"
+            name: "Shadow"
+            noInput: true
+            components:
+                IgnoreLayout: {}
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: -10.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: -10.000000
+                    topAnchorEnabled: true
+                    topAnchor: -10.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: -10.000000
+                Background:
+                    drawType: "DRAW_SCALE_TO_RECT"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/TextShadow"
+        -   class: "UIControl"
+            name: "Icon"
+            size: [16.000000, 16.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/timer_icon"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   class: "UIControl"
+            name: "Timer"
+            size: [44.000000, 23.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    skipInvisible: false
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+            children:
+            -   class: "UIStaticText"
+                name: "Minutes"
+                position: [0.000000, 0.000000]
+                size: [19.000000, 23.000000]
+                classes: "text2"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "11"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+                        align: ["RIGHT", "VCENTER"]
+            -   class: "UIStaticText"
+                name: "ColonMS"
+                position: [19.000000, 0.000000]
+                size: [6.000000, 23.000000]
+                classes: "text2"
+                components:
+                    UITextComponent:
+                        text: ":"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+            -   class: "UIStaticText"
+                name: "Seconds"
+                position: [25.000000, 0.000000]
+                size: [19.000000, 23.000000]
+                classes: "text2"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "47"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+                        align: ["LEFT", "VCENTER"]
+    -   class: "UIStaticText"
+        name: "DayAndHour"
+        size: [37.000000, 21.000000]
+        classes: "text2-small text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            UITextComponent:
+                text: "dd:hh"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    customClass: "UITournamentRoomTimer"
+    name: "UITournamentRoomTimer"
+    size: [127.000000, 23.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+    children:
+    -   prototype: "TournamentLargeScaleTimer"
+        name: "TournamentLargeScaleTimer"

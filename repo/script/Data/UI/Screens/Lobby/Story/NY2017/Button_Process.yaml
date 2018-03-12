@@ -1,0 +1,86 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Layout"
+        position: [0.000000, 0.000000]
+        components:
+            ClipContent: {}
+        children: []
+    -   path: "Layout/Footer/Type"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Story/passing_icon"
+                frame: 0
+    -   path: "Layout/IconContainer"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                topAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 130.000000
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 1.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -12.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Story/NY_2017/HangarIcon_process.psd"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   path: "Layout/TextContainer/Title"
+        position: [-3.000000, 0.000000]
+        size: [140.000000, 50.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 3.000000
+            UITextComponent:
+                text: "winter_event/Title"
+                align: ["RIGHT", "VCENTER"]
+    -   path: "Layout/TextContainer/ExpireTimer"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+        children: []
+    -   class: "UIControl"
+        name: "FXLayer"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            ClipContent: {}
+        children:
+        -   class: "UIParticles"
+            name: "Snow"
+            position: [45.000000, -16.000000]
+            size: [31.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/snow_newyear2018.sc2"
+            autoStart: true
+            components:
+                IgnoreLayout: {}
+        -   class: "UIParticles"
+            name: "Glow"
+            position: [45.000000, 37.000000]
+            size: [31.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/glow1_newyear2018.sc2"
+            autoStart: true
+            components:
+                IgnoreLayout: {}

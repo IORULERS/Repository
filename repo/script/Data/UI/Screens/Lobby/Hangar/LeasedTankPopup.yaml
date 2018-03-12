@@ -1,0 +1,42 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Dialogs.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Storage/TankCaptionSmall.yaml"
+Prototypes:
+-   prototype: "Dialogs/WarningDialog"
+    name: "WarningDialog"
+    children:
+    -   path: "Dialog/Middle"
+        children:
+        -   class: "UIControl"
+            name: "DialogRichText"
+            size: [460.000000, 200.000000]
+            components:
+                FlowLayout:
+                    enabled: true
+                    hDynamicInLinePadding: true
+                    hSpacing: 5.000000
+                    vDynamicPadding: true
+                    useRtl: true
+                Anchor:
+                    enabled: true
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    topAnchorEnabled: true
+                    topAnchor: 70.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 100.000000
+                RichContent:
+                    text: "<text_blue>You have received <tank/> which is temporary and will be available for use for <timer/> </text_blue>"
+                RichContentAliases0:
+                    aliases: "text_blue,<span class=\"text-color-blue text1\" />;timer,<object path=\"~res:/UI/Screens/Lobby/ExpireTimer.yaml\" prototype=\"ExpireTimerForText\" />;tank,<object control=\"TankCaption\" name=\"tank\" path=\"~res:/UI/Screens/Lobby/Hangar/LeasedTankPopup.yaml\" />;text_white_bold,<span class=\"text-color-white header3\" />;price,<object control=\"PriceContainer\" name=\"price\" path=\"~res:/UI/Screens/Lobby/Inventory/InterruptPopup.yaml\" />;"
+    -   path: "Dialog/Middle/ButtonHolder/CancelButton"
+        visible: false
+        children: []
+Controls:
+-   prototype: "TankCaptionSmall/TankCaption"
+    name: "TankCaption"

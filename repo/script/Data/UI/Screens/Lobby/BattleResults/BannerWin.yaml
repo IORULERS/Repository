@@ -1,0 +1,58 @@
+Header:
+    version: "13"
+Controls:
+-   class: "UIControl"
+    name: "BannerBackground"
+    size: [1024.000000, 260.000000]
+    clip: true
+    noInput: true
+    children:
+    -   class: "UIControl"
+        name: "SpriteLayer1"
+        size: [1024.000000, 260.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/Win/HeadBackgroundVictory"
+        children:
+        -   class: "UIParticles"
+            name: "Smoke"
+            position: [1008.000000, 88.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/victory/big_smoke1.5.sc2"
+            autoStart: true
+    -   class: "UIControl"
+        name: "SpriteLayer2"
+        size: [1024.000000, 260.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/Win/HeadBackgroundVictory"
+                frame: 1
+        children:
+        -   class: "UIParticles"
+            name: "Glow"
+            position: [512.000000, 130.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/victory/glow_environment2.6.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Glow_flow1"
+            position: [343.000000, 244.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/victory/glow_flow2.5.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Glow_flow1"
+            position: [854.000000, 244.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/victory/glow_flow2.51.sc2"
+            autoStart: true

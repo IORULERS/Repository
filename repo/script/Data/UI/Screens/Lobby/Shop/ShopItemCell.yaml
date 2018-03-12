@@ -1,0 +1,305 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Common/LoadingSpinner.yaml"
+- "~res:/UI/Screens/Lobby/ExpireTimer.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleInfo.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+StyleSheets:
+-   selector: ".no-discount #PriceContainer #RegularPriceText #Strike, .no-discount #PriceContainer #SalePriceText"
+    properties:
+        visible: false
+-   selector: ".discount #PriceContainer #RegularPriceText #Strike, .discount #PriceContainer #SalePriceText"
+    properties:
+        visible: true
+-   selector: ".no-price #PriceContainer"
+    properties:
+        visible: false
+-   selector: ".price .plain-text"
+    properties:
+        sizePolicy-horizontalPolicy: "PercentOfContent"
+-   selector: ".price .complex"
+    properties:
+        sizePolicy-horizontalPolicy: "PercentOfFirstChild"
+Prototypes:
+-   class: "UIListCell"
+    customClass: "UIShopItemCell"
+    name: "ItemCell"
+    size: [270.000000, 380.000000]
+    pivot: [0.500000, 0.500000]
+    classes: "sale"
+    identifier: "ItemCell"
+    children:
+    -   class: "UIControl"
+        name: "ImageHolder"
+        size: [241.000000, 274.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 10.000000
+            Background:
+                drawType: "DRAW_SCALE_PROPORTIONAL"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "progress"
+        position: [14.500000, 63.000000]
+        size: [241.000000, 274.000000]
+        visible: false
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 10.000000
+            Background:
+                drawType: "DRAW_ALIGNED"
+                sprite: "~res:/Gfx/UI/ShopScreen/Slot"
+                frame: 0
+                color: [1.000000, 1.000000, 1.000000, 0.850000]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        children:
+        -   prototype: "LoadingSpinner/LoadingSpinner"
+            name: "spinner"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+        -   class: "UIStaticText"
+            name: "text"
+            position: [15.000000, 150.000000]
+            size: [211.000000, 74.000000]
+            classes: "text2-small text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    hCenterAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 50.000000
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+    -   prototype: "Selection/Selection"
+        name: "Selection"
+        classes: "selection-color-orange"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 18.000000
+                rightAnchorEnabled: true
+                rightAnchor: 18.000000
+                topAnchorEnabled: true
+                topAnchor: 66.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 46.000000
+            Background:
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIStaticText"
+        name: "description"
+        position: [10.000000, 3.000000]
+        size: [250.000000, 60.000000]
+        noInput: true
+        classes: "header1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 10.000000
+                rightAnchorEnabled: true
+                rightAnchor: 10.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -157.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                align: ["HCENTER", "BOTTOM"]
+                useRtlAlign: "DONT_USE"
+    -   class: "UIControl"
+        name: "highlight"
+        position: [135.000000, 200.000000]
+        size: [245.000000, 279.000000]
+        pivot: [0.500000, 0.500000]
+        visible: false
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 10.000000
+            Background:
+                drawType: "DRAW_STRETCH_BOTH"
+                sprite: "~res:/Gfx/UI/HangarTutorial/HighlightTile"
+                leftRightStretchCap: 15.000000
+                topBottomStretchCap: 15.000000
+    -   class: "UIStaticText"
+        name: "Expires"
+        position: [25.000000, 300.000000]
+        size: [139.000000, 30.000000]
+        visible: false
+        noInput: true
+        classes: "header5"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 25.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 50.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                color: [1.000000, 0.819608, 0.000000, 1.000000]
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_REDUCE"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+    -   prototype: "DiscountLabel/DiscountLabel"
+        name: "Discount"
+        visible: false
+        classes: "discount-label type=action big"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 18.000000
+                topAnchorEnabled: true
+                topAnchor: 66.000000
+    -   class: "UIControl"
+        name: "Sale"
+        size: [94.000000, 54.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 16.000000
+                topAnchorEnabled: true
+                topAnchor: 65.000000
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/DiscountBig"
+        children:
+        -   class: "UIStaticText"
+            name: "Text"
+            size: [89.000000, 50.000000]
+            classes: "header0"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 5.000000
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 4.000000
+                UITextComponent:
+                    text: "%"
+                    color: [1.000000, 0.835294, 0.011765, 1.000000]
+    -   class: "UIControl"
+        name: "PriceContainer"
+        size: [232.000000, 42.000000]
+        noInput: true
+        classes: "price"
+        components:
+            LinearLayout:
+                dynamicPadding: true
+                dynamicSpacing: true
+            Anchor:
+                hCenterAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 8.000000
+        children:
+        -   class: "UIStaticText"
+            name: "RegularPriceText"
+            noInput: true
+            classes: "header1 type=plain-text"
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfParent"
+                Background:
+                    align: ["LEFT", "VCENTER"]
+                UITextComponent:
+                    text: "9999"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+            children:
+            -   class: "UIControl"
+                name: "ResourceContainer"
+                size: [0.000000, 42.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                        verticalPolicy: "PercentOfParent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+            -   class: "UIControl"
+                name: "Strike"
+                size: [60.000000, 1.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -5.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: -5.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 1.000000
+                    Background:
+                        drawType: "DRAW_FILL"
+        -   class: "UIStaticText"
+            name: "SalePriceText"
+            noInput: true
+            classes: "header1 text-color-gold type=plain-text"
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfParent"
+                Background:
+                    align: ["LEFT", "VCENTER"]
+                UITextComponent:
+                    text: "9999"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIControl"
+        name: "RibbonNew"
+        size: [86.000000, 86.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 18.000000
+                topAnchorEnabled: true
+                topAnchor: 66.000000
+            Background:
+                sprite: "~res:/Gfx/UI/ShopScreen/promo_lable"
+    -   class: "UIControl"
+        name: "RibbonHot"
+        size: [86.000000, 86.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 18.000000
+                topAnchorEnabled: true
+                topAnchor: 66.000000
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/ShopScreen/promo_lable"
+                frame: 1
+    -   prototype: "ExpireTimer/ExpireTimer"
+        name: "ExpireTimer"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 25.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 55.000000
+    -   prototype: "VehicleInfo/VehicleInfoBig"
+        name: "VehicleInfo"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 25.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 55.000000

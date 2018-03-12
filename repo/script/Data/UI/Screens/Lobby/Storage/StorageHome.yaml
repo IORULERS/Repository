@@ -1,0 +1,693 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/LobbyHeader.yaml"
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleInfo.yaml"
+- "~res:/UI/Screens/Lobby/Storage/TankCaptionSmall.yaml"
+- "~res:/UI/Screens/Common/ProgressBar.yaml"
+- "~res:/UI/Screens/Lobby/Common/RarityTitle.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Common/Tab.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader1.yaml"
+- "~res:/UI/Screens/Lobby/Storage/ChestContent.yaml"
+- "~res:/UI/Screens/Lobby/Common/SafeAreaSpacer.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".emptyIcon #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Storage/empty_icons"
+-   selector: ".emptyIcon.certificates #Icon"
+    properties:
+        bg-frame: 1
+-   selector: ".emptyIcon.chests #Icon"
+    properties:
+        bg-frame: 2
+-   selector: ".emptyIcon.other #Icon"
+    properties:
+        bg-frame: 0
+-   selector: ".emptyIcon, .no-items .description"
+    properties:
+        visible: false
+-   selector: ".no-items .emptyIcon, .description, .selected #Selection"
+    properties:
+        visible: true
+-   selector: ".description.no-rate #DescriptionScrollView #scrollContainerControl #TextBackground #TextContainer #Exchange #ExchangeRateContainer, .description.no-rate #DescriptionScrollView #scrollContainerControl #TextBackground #TextContainer #Exchange #CombineLabel"
+    properties:
+        visible: false
+-   selector: ".description.no-progress #DescriptionScrollView #scrollContainerControl #TextBackground #TextContainer #Exchange"
+    properties:
+        visible: false
+-   selector: ".description.no-progress-bar #DescriptionScrollView #scrollContainerControl #TextBackground #TextContainer #Exchange #ProgressBarCaption"
+    properties:
+        visible: false
+-   selector: ".description #DescriptionScrollView #scrollContainerControl #TextBackground #TextContainer #Exchange #CombineLabel"
+    properties:
+        visible: true
+-   selector: ".description #DescriptionScrollView #scrollContainerControl #TextBackground #TextContainer #Exchange #AmountLabel"
+    properties:
+        visible: false
+-   selector: ".description.no-rate #DescriptionScrollView #scrollContainerControl #TextBackground #TextContainer #Exchange #AmountLabel"
+    properties:
+        visible: true
+Prototypes:
+-   class: "UIControl"
+    name: "Tab"
+    size: [400.000000, 80.000000]
+    noInput: false
+    classes: "tab"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIStaticText"
+        name: "Selected"
+        size: [400.000000, 80.000000]
+        classes: "header1 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UITextComponent:
+                text: "Header"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIStaticText"
+        name: "Deselected"
+        size: [400.000000, 80.000000]
+        classes: "header1 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.000000, 0.000000, 0.000000, 1.000000]
+            UITextComponent:
+                text: "Header"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIControl"
+        name: "Badge"
+        size: [16.000000, 16.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 7.000000
+                topAnchorEnabled: true
+                topAnchor: 7.000000
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/CommonUIElements/WhiteCircle"
+                color: [1.000000, 0.000000, 0.000000, 1.000000]
+Controls:
+-   class: "UIControl"
+    name: "HeaderLeft"
+    size: [130.000000, 32.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIStaticText"
+        name: "Label"
+        size: [130.000000, 32.000000]
+        classes: "header1 text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+            Anchor:
+                leftAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "storage/Title"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    name: "StorageHome"
+    size: [1024.000000, 768.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   prototype: "LobbyHeader/Header"
+        name: "Header"
+    -   prototype: "Tab/TabPane"
+        name: "Tabs"
+        classes: "tab-pane-bg"
+        children:
+        -   prototype: "Tab/TextTab"
+            name: "certificates"
+            noInput: false
+            tag: 0
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "storage/certificates/Title"
+            -   class: "UIControl"
+                name: "Badge"
+                size: [16.000000, 16.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 7.000000
+                        topAnchorEnabled: true
+                        topAnchor: 7.000000
+                    Background:
+                        drawType: "DRAW_SCALE_TO_RECT"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/WhiteCircle"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+        -   prototype: "Tab/TextTab"
+            name: "chests"
+            noInput: false
+            tag: 1
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "storage/chests/Title"
+            -   class: "UIControl"
+                name: "Badge"
+                size: [16.000000, 16.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 7.000000
+                        topAnchorEnabled: true
+                        topAnchor: 7.000000
+                    Background:
+                        drawType: "DRAW_SCALE_TO_RECT"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/WhiteCircle"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+        -   prototype: "Tab/TextTab"
+            name: "other"
+            noInput: false
+            tag: 2
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "storage/other/Title"
+            -   class: "UIControl"
+                name: "Badge"
+                size: [16.000000, 16.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 7.000000
+                        topAnchorEnabled: true
+                        topAnchor: 7.000000
+                    Background:
+                        drawType: "DRAW_SCALE_TO_RECT"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/WhiteCircle"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        components:
+            LinearLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIScrollView"
+            name: "ItemsScroll"
+            autoUpdate: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 60.000000
+                    verticalPolicy: "PercentOfParent"
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    FlowLayout:
+                        hPadding: 20.000000
+                        hSafeAreaPaddingInset: true
+                        hSpacing: 20.000000
+                        vPadding: 20.000000
+                        vSpacing: 20.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+            -   class: "UIScrollBar"
+                name: "VerticalScrollbar"
+                noInput: true
+                orientation: "ORIENTATION_VERTICAL"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "FixedSize"
+                        horizontalValue: 10.000000
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 10.000000
+                children:
+                -   class: "UIControl"
+                    name: "slider"
+                    size: [10.000000, 20.000000]
+                    noInput: true
+                    components:
+                        Background:
+                            drawType: "DRAW_STRETCH_VERTICAL"
+                            sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                            topBottomStretchCap: 10.000000
+        -   class: "UIControl"
+            name: "ItemDescription"
+            noInput: true
+            classes: "description"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 1.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 40.000000
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIScrollView"
+                name: "DescriptionScrollView"
+                autoUpdate: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            spacing: 1.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "Formula"
+                            verticalFormula: "max(parentRest, childrenSum)"
+                    children:
+                    -   class: "UIControl"
+                        name: "Header"
+                        noInput: true
+                        classes: "section-header1"
+                        components:
+                            LinearLayout:
+                                padding: 16.000000
+                                spacing: 16.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "Formula"
+                                verticalFormula: "maxChild+32"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                            Background: {}
+                        children:
+                        -   class: "UIControl"
+                            name: "DescrResourceContainer"
+                            size: [64.000000, 64.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                                Background: {}
+                        -   class: "UIStaticText"
+                            name: "ItemName"
+                            classes: "header3 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    verticalPolicy: "PercentOfParent"
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                UIAnchorSafeAreaComponent:
+                                    rightSafeInset: "INSET"
+                                UITextComponent:
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    multiline: "MULTILINE_ENABLED"
+                                    align: ["LEFT", "VCENTER"]
+                        -   prototype: "SafeAreaSpacer/SafeAreaSpacer"
+                            name: "SafeAreaSpacer"
+                    -   prototype: "RarityTitle/Rarity"
+                        name: "Rarity"
+                    -   class: "UIControl"
+                        name: "TextBackground"
+                        noInput: true
+                        classes: "pane-bg"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "Formula"
+                                verticalFormula: "max(parentRest, maxChild)"
+                            Background: {}
+                        children:
+                        -   class: "UIControl"
+                            name: "TextContainer"
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                    padding: 5.000000
+                                    safeAreaPaddingInset: true
+                                    spacing: 16.000000
+                                    useRtl: true
+                                SizePolicy:
+                                    verticalPolicy: "Formula"
+                                    verticalFormula: "max(parentRest, childrenSum) + 5*2 + safeAreaInsets.bottom/2"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 24.000000
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 24.000000
+                                UIAnchorSafeAreaComponent:
+                                    rightSafeInset: "INSET"
+                            children:
+                            -   class: "UIControl"
+                                name: "Exchange"
+                                noInput: true
+                                components:
+                                    LinearLayout:
+                                        orientation: "TopDown"
+                                        spacing: 10.000000
+                                        useRtl: true
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfChildrenSum"
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        rightAnchorEnabled: true
+                                children:
+                                -   class: "UIStaticText"
+                                    name: "CombineLabel"
+                                    classes: "text1 text-color-white"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfContent"
+                                        UITextComponent:
+                                            text: "storage/Items/Combining"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            align: ["LEFT", "VCENTER"]
+                                            useRtlAlign: "USE_BY_SYSTEM"
+                                -   class: "UIStaticText"
+                                    name: "AmountLabel"
+                                    classes: "text1 text-color-white"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfContent"
+                                        UITextComponent:
+                                            text: "storage/Items/Amount"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            align: ["LEFT", "VCENTER"]
+                                            useRtlAlign: "USE_BY_SYSTEM"
+                                -   class: "UIControl"
+                                    name: "ExchangeRateContainer"
+                                    noInput: true
+                                    components:
+                                        LinearLayout:
+                                            dynamicPadding: true
+                                            spacing: 10.000000
+                                            useRtl: true
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfMaxChild"
+                                        Background: {}
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "From"
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfMaxChild"
+                                                verticalPolicy: "PercentOfMaxChild"
+                                            Anchor:
+                                                vCenterAnchorEnabled: true
+                                    -   class: "UIStaticText"
+                                        name: "Equals"
+                                        classes: "text1 text-color-white"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            UITextComponent:
+                                                text: "="
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                    -   class: "UIControl"
+                                        name: "To"
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfMaxChild"
+                                                verticalPolicy: "PercentOfMaxChild"
+                                            Anchor:
+                                                vCenterAnchorEnabled: true
+                                -   prototype: "ProgressBar/ProgressBarCaption"
+                                    name: "ProgressBarCaption"
+                            -   class: "UIControl"
+                                name: "Description"
+                                noInput: true
+                                components:
+                                    LinearLayout:
+                                        orientation: "TopDown"
+                                        spacing: 5.000000
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfChildrenSum"
+                                children:
+                                -   class: "UIStaticText"
+                                    name: "Label"
+                                    classes: "text1 text-color-white"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfContent"
+                                        UITextComponent:
+                                            text: "storage/Items/Description"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            align: ["LEFT", "VCENTER"]
+                                            useRtlAlign: "USE_BY_SYSTEM"
+                                -   class: "UIStaticText"
+                                    name: "Text"
+                                    classes: "text2 text-color-blue"
+                                    components:
+                                        LinearLayout:
+                                            orientation: "TopDown"
+                                            spacing: 5.000000
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfContent"
+                                        UITextComponent:
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            multiline: "MULTILINE_ENABLED"
+                                            align: ["LEFT", "TOP"]
+                                            useRtlAlign: "USE_BY_SYSTEM"
+                            -   class: "UIControl"
+                                name: "Features"
+                                noInput: true
+                                components:
+                                    LinearLayout:
+                                        orientation: "TopDown"
+                                        spacing: 5.000000
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfChildrenSum"
+                                children:
+                                -   class: "UIStaticText"
+                                    name: "Label"
+                                    classes: "text1 text-color-white"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfContent"
+                                        UITextComponent:
+                                            text: "storage/Items/Features"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            align: ["LEFT", "VCENTER"]
+                                            useRtlAlign: "USE_BY_SYSTEM"
+                                -   class: "UIStaticText"
+                                    name: "Text"
+                                    classes: "text2 text-color-blue"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfContent"
+                                        UITextComponent:
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            multiline: "MULTILINE_ENABLED"
+                                            align: ["LEFT", "TOP"]
+                                            useRtlAlign: "USE_BY_SYSTEM"
+                            -   class: "UIControl"
+                                name: "Obtainment"
+                                noInput: true
+                                components:
+                                    LinearLayout:
+                                        orientation: "TopDown"
+                                        spacing: 5.000000
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfChildrenSum"
+                                children:
+                                -   class: "UIStaticText"
+                                    name: "Label"
+                                    classes: "text1 text-color-white"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfContent"
+                                        UITextComponent:
+                                            text: "storage/Items/Obtainment"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            align: ["LEFT", "VCENTER"]
+                                            useRtlAlign: "USE_BY_SYSTEM"
+                                -   class: "UIStaticText"
+                                    name: "Text"
+                                    classes: "text2 text-color-blue"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfContent"
+                                        UITextComponent:
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                                            multiline: "MULTILINE_ENABLED"
+                                            align: ["LEFT", "TOP"]
+                                            useRtlAlign: "USE_BY_SYSTEM"
+                            -   prototype: "ChestContent/Content"
+                                name: "Content"
+                -   class: "UIScrollBar"
+                    name: "VerticalScrollbar"
+                    noInput: true
+                    classes: "notch-tightly-right-inset"
+                    orientation: "ORIENTATION_VERTICAL"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "FixedSize"
+                            horizontalValue: 10.000000
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            rightAnchorEnabled: true
+                        UIAnchorSafeAreaComponent: {}
+                    children:
+                    -   class: "UIControl"
+                        name: "slider"
+                        size: [10.000000, 20.000000]
+                        noInput: true
+                        components:
+                            Background:
+                                drawType: "DRAW_STRETCH_VERTICAL"
+                                sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                                topBottomStretchCap: 10.000000
+            -   class: "UIControl"
+                name: "Footer"
+                visible: false
+                noInput: true
+                classes: "footer-background"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        padding: 5.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Background: {}
+                children:
+                -   class: "UIControl"
+                    name: "ButtonContainer"
+                    position: [44.000000, 5.000000]
+                    size: [321.600006, 64.000000]
+                    noInput: true
+                    components:
+                        FlowLayout:
+                            hPadding: 5.000000
+                            hSpacing: 5.000000
+                            vSpacing: 5.000000
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                        UIAnchorSafeAreaComponent:
+                            leftSafeInset: "INSET"
+                            rightSafeInset: "INSET"
+                    children:
+                    -   prototype: "StyledButton/StyledButton"
+                        name: "Button"
+                        classes: "button"
+                        components:
+                            SizePolicy: {}
+        -   class: "UIControl"
+            name: "EmptyContainer"
+            noInput: true
+            classes: "emptyIcon"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    padding: 0.000000
+                    spacing: 50.000000
+                    dynamicSpacing: true
+                IgnoreLayout: {}
+                SizePolicy:
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                    rightSafeInset: "INSET"
+            children:
+            -   class: "UIControl"
+                name: "Icon"
+                size: [145.000000, 157.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    Background: {}
+            -   class: "UIStaticText"
+                name: "Description"
+                size: [748.799988, 0.000000]
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalValue: 80.000000
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+            -   prototype: "StyledButton/StyledButton"
+                name: "EmptyScreenButton"
+                size: [258.000000, 70.000000]
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "Button"

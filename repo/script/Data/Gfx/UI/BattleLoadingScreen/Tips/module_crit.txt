@@ -1,0 +1,5 @@
+1
+module_crit0.tex
+256 128
+1
+0 0 79 82 88 33 0 frame0

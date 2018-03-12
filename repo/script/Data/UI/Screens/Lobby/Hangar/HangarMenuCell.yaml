@@ -1,0 +1,100 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/CommonStyles.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Styles/SmartDLCStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "HangarMenuCell"
+    size: [380.000000, 77.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "Formula"
+            horizontalFormula: "safeAreaInsets.left+336"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIControl"
+        name: "cell"
+        size: [380.000000, 77.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+        children:
+        -   class: "UIControl"
+            name: "bg"
+            size: [380.000000, 76.000000]
+            classes: "pane-bg touchable"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 1.000000
+                Background: {}
+            children:
+            -   class: "UIControl"
+                name: "icon"
+                position: [44.000000, 6.000000]
+                size: [64.000000, 64.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 0.000000
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                    Background:
+                        sprite: "~res:/Gfx/UI/Hangar/SidebarIcons"
+            -   class: "UIControl"
+                name: "arrow"
+                size: [20.000000, 20.000000]
+                visible: false
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 11.000000
+                        topAnchorEnabled: false
+                        vCenterAnchorEnabled: true
+                        bottomAnchorEnabled: false
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/triangle_icon"
+            -   prototype: "UnreadIcon/UnreadIcon"
+                name: "UnreadNews"
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 16.000000
+                        vCenterAnchorEnabled: true
+            -   class: "UIStaticText"
+                name: "title"
+                size: [248.000000, 30.000000]
+                noInput: true
+                classes: "header4"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 86.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 2.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 0.000000
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "HANGAR"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        fitting: "FITTING_REDUCE"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"

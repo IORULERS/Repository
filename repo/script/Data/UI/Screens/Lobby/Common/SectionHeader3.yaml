@@ -1,0 +1,36 @@
+Header:
+    version: "10"
+Prototypes:
+-   class: "UIControl"
+    name: "SectionHeader3"
+    size: [960.000000, 40.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            horizontalMax: 1350.000000
+        Anchor:
+            hCenterAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Left"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/LobbyCommon/back_title"
+    -   class: "UIControl"
+        name: "Right"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/LobbyCommon/back_title"
+                spriteModification: ["FLIP_HORIZONTAL"]

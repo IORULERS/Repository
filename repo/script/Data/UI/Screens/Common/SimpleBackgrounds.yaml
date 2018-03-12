@@ -1,0 +1,19 @@
+Header:
+    version: "7"
+Prototypes:
+-   class: "UIControl"
+    name: "SimpleBackground"
+    size: [100.000000, 32.000000]
+    noInput: true
+    components:
+        Background:
+            drawType: "DRAW_FILL"
+            color: [1.000000, 1.000000, 1.000000, 0.101961]
+-   class: "UIControl"
+    name: "AdditionalSimpleBackground"
+    size: [100.000000, 32.000000]
+    noInput: true
+    components:
+        Background:
+            drawType: "DRAW_FILL"
+            color: [1.000000, 1.000000, 1.000000, 0.050980]

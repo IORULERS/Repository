@@ -1,0 +1,35 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".currency-gold"
+    properties:
+        bg-frame: 0
+-   selector: ".currency-credit"
+    properties:
+        bg-frame: 1
+-   selector: ".currency-free-xp"
+    properties:
+        bg-frame: 2
+-   selector: ".currency-xp"
+    properties:
+        bg-frame: 3
+-   selector: ".currency-crew-xp"
+    properties:
+        bg-frame: 4
+-   selector: ".currency-jetton"
+    properties:
+        bg-frame: 5
+-   selector: ".currency-elite-xp"
+    properties:
+        bg-frame: 7
+-   selector: ".currency-icon-small"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+-   selector: ".currency-icon-big"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+-   selector: ".currency-icon-huge"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsHuge"

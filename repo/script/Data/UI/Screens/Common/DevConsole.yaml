@@ -1,0 +1,230 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".autocomplete-text"
+    properties:
+        text-fontName: "Lang_Independence_WarHeliosCondC_21"
+-   selector: ".confluence-link:hover"
+    properties:
+        text-color: [0.000000, 1.000000, 1.000000, 1.000000]
+-   selector: ".confluence-link"
+    properties:
+        text-color: [0.000000, 0.000000, 1.000000, 1.000000]
+Controls:
+-   class: "UIStaticText"
+    name: "AutoCompleteElement"
+    size: [28.000000, 21.000000]
+    noInput: false
+    classes: "text2-small text-color-white"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfContent"
+            verticalPolicy: "PercentOfContent"
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.243137, 0.247059, 0.458824, 0.862745]
+        UITextComponent:
+            text: "Test"
+-   class: "UIControl"
+    name: "Console"
+    size: [1024.000000, 768.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        ModalInput: {}
+    children:
+    -   class: "UIControl"
+        name: "Command"
+        position: [0.000000, 0.000000]
+        size: [1024.000000, 384.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+                verticalValue: 50.000000
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.368627, 0.372549, 0.670588, 0.862745]
+        children:
+        -   class: "UIList"
+            name: "Output"
+            size: [1014.000000, 304.000000]
+            classes: "text2-small text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 5.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 5.000000
+        -   class: "UIControl"
+            name: "HelpContainer"
+            size: [1014.000000, 40.000000]
+            noInput: true
+            components:
+                LinearLayout: {}
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "FixedSize"
+                    verticalValue: 40.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 5.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 5.000000
+            children:
+            -   class: "UIStaticText"
+                name: "Help"
+                size: [552.000000, 40.000000]
+                noInput: true
+                classes: "text1 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfParent"
+                    UITextComponent:
+                        text: "Enter command or type 'help' for commands list. For more info, visit "
+                        colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+            -   class: "UIStaticText"
+                name: "ConfluenceLink"
+                size: [90.000000, 40.000000]
+                noInput: false
+                classes: "text1 confluence-link"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfParent"
+                    UITextComponent:
+                        text: "Confluence"
+                        colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIControl"
+            name: "TextFieldBack"
+            size: [1024.000000, 40.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "FixedSize"
+                    verticalValue: 40.000000
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.301961, 0.301961, 0.301961, 0.392157]
+            children:
+            -   class: "UITextField"
+                name: "TextField"
+                size: [1014.000000, 40.000000]
+                font: "Lang_Independence_WarHeliosCondC_21"
+                startEditPolicy: "WhenFocused"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 5.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 5.000000
+                        bottomAnchorEnabled: true
+                    Focus:
+                        requestFocus: true
+                children:
+                -   class: "UIStaticText"
+                    name: "AutocompleteCaption"
+                    size: [1014.000000, 40.000000]
+                    classes: "autocomplete-text"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        UITextComponent:
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                            align: ["LEFT", "VCENTER"]
+    -   class: "UIControl"
+        name: "AutoComplete"
+        position: [0.000000, 0.000000]
+        size: [1024.000000, 344.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "Formula"
+                verticalFormula: "parent/2-40"
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: false
+        children:
+        -   class: "UIControl"
+            name: "AutoCompleteList"
+            position: [0.000000, 292.000000]
+            size: [44.000000, 52.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    leftAnchorEnabled: true
+                    topAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.243137, 0.247059, 0.458824, 0.862745]
+            children:
+            -   class: "UIStaticText"
+                name: "Options"
+                position: [0.000000, 0.000000]
+                size: [44.000000, 52.000000]
+                classes: "text1 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UITextComponent:
+                        text: "Text\nText2"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["LEFT", "VCENTER"]
+-   class: "UIListCell"
+    name: "ConsoleLine"
+    size: [32.000000, 0.000000]
+    identifier: "ConsoleLineCell"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfMaxChild"
+    children:
+    -   class: "UIStaticText"
+        name: "Content"
+        size: [32.000000, 0.000000]
+        classes: "text2-small"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfContent"
+            UITextComponent:
+                color: [1.000000, 1.000000, 1.000000, 1.000000]
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "VCENTER"]

@@ -1,0 +1,115 @@
+Header:
+    version: "15"
+StyleSheets:
+-   selector: ".resource.resource-rare-achievement #Icon"
+    properties:
+        visible: true
+-   selector: ".resource.resource-credit #Icon"
+    properties:
+        visible: true
+        bg-frame: 1
+        bg-sprite: "~res:/Gfx/UI/Quests/AddCurrencyIconsHuge_200percent"
+-   selector: ".resource.resource-gold #Icon"
+    properties:
+        visible: true
+        bg-frame: 0
+        bg-sprite: "~res:/Gfx/UI/Quests/AddCurrencyIconsHuge_200percent"
+-   selector: ".resource.resource-xp #Icon"
+    properties:
+        visible: true
+        bg-frame: 3
+        bg-sprite: "~res:/Gfx/UI/Quests/AddCurrencyIconsHuge_200percent"
+-   selector: ".resource.resource-free-xp #Icon"
+    properties:
+        visible: true
+        bg-frame: 2
+        bg-sprite: "~res:/Gfx/UI/Quests/AddCurrencyIconsHuge_200percent"
+-   selector: ".resource.resource-crew-xp #Icon"
+    properties:
+        visible: true
+        bg-frame: 4
+        bg-sprite: "~res:/Gfx/UI/Quests/AddCurrencyIconsHuge_200percent"
+-   selector: ".resource.resource-premium #Icon"
+    properties:
+        visible: true
+        bg-frame: 7
+        bg-sprite: "~res:/Gfx/UI/Quests/AddCurrencyIconsHuge_200percent"
+-   selector: ".resource.resource-vehicle #Icon"
+    properties: {}
+-   selector: ".resource.resource-unlock #Icon"
+    properties:
+        bg-drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+        sizePolicy-horizontalMax: 100.000000
+        sizePolicy-verticalMax: 100.000000
+-   selector: ".resource.resource-slot #Icon"
+    properties: {}
+-   selector: ".resource.resource-stuff #Icon"
+    properties: {}
+-   selector: ".resource.resource-stuff #Grade"
+    properties:
+        visible: true
+-   selector: ".resource.rare #Grade"
+    properties:
+        bg-color: [0.141176, 0.349020, 0.941176, 1.000000]
+-   selector: ".resource.unique #Grade"
+    properties:
+        bg-color: [0.549020, 0.023529, 0.803922, 1.000000]
+-   selector: ".resource.legendary #Grade"
+    properties:
+        bg-color: [1.000000, 0.752941, 0.000000, 1.000000]
+-   selector: ".resource.common #Grade"
+    properties:
+        bg-color: [0.517647, 0.521569, 0.525490, 1.000000]
+-   selector: ".resource #Grade"
+    properties:
+        visible: false
+-   selector: ".resource-stuff.resource.preview-mode-on #Grade"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIResourceLargeControl"
+    name: "ResourcePreview"
+    position: [0.000000, 0.000000]
+    size: [98.000000, 116.000000]
+    noInput: true
+    classes: "resource resource-type=resource-stuff grade=unknown preview-mode=preview-mode-off"
+    components:
+        Anchor:
+            hCenterAnchorEnabled: true
+            vCenterAnchorEnabled: true
+        Background:
+            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    children:
+    -   class: "UIControl"
+        name: "Grade"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background:
+                drawType: "DRAW_STRETCH_HORIZONTAL"
+                sprite: "~res:/Gfx/UI/Storage/Items_back"
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "IconBack"
+        size: [98.000000, 116.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+    -   class: "UIControl"
+        name: "Icon"
+        size: [98.000000, 116.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"

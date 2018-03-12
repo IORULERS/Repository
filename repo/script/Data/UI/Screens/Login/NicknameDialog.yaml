@@ -1,0 +1,102 @@
+Header:
+    version: "4"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Login/LoginCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/SmartTextField.yaml"
+StyleSheets:
+-   selector: ".button #Caption"
+    properties:
+        visible: true
+-   selector: ".button:disabled #Caption"
+    properties:
+        visible: false
+Controls:
+-   prototype: "Common/ResizableDialog"
+    customClass: "NicknameDialog"
+    name: "NicknameDialog"
+    components:
+        Anchor:
+            hCenterAnchorEnabled: true
+            vCenterAnchorEnabled: true
+    children:
+    -   path: "Top/TitleText"
+        text: "#nickname:dialog/title"
+    -   path: "Middle/VerticalBox"
+        children:
+        -   prototype: "SmartTextField/SmartTextField"
+            name: "NicknameTextField"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   path: "VerticalBox/Background/TextField/Hint"
+                text: ""
+            -   path: "VerticalBox/ErrorText"
+                textColor: [1.000000, 0.305882, 0.000000, 1.000000]
+        -   class: "UIControl"
+            name: "SuggestionHolder"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "SuggestionButton1"
+                visible: false
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+            -   prototype: "StyledButton/StyledButton"
+                name: "SuggestionButton2"
+                visible: false
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+            -   prototype: "StyledButton/StyledButton"
+                name: "SuggestionButton3"
+                visible: false
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+        -   class: "UIControl"
+            name: "ButtonsContainer"
+            size: [460.000000, 70.000000]
+            visible: false
+            components:
+                LinearLayout:
+                    spacing: 10.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "CancelButton"
+                children:
+                -   path: "Caption"
+                    text: "#nickname:dialog/button/cancel"
+            -   prototype: "StyledButton/StyledButton"
+                name: "ConfirmButton"
+                classes: "button button-color-green"
+                children:
+                -   path: "Caption"
+                    text: "#nickname:dialog/button/change"
+        -   prototype: "StyledButton/StyledButton"
+            name: "ConfirmButton"
+            classes: "button button-color-green"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   path: "Caption"
+                text: "#nickname:dialog/button/confirm"

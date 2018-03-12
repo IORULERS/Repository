@@ -1,0 +1,515 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Tutorial/TutorialCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/StyledMenuButton.yaml"
+StyleSheets:
+-   selector: ".text-color-complete"
+    properties:
+        bg-color: [0.752941, 1.000000, 0.360784, 1.000000]
+Controls:
+-   class: "UIControl"
+    name: "overlay"
+    size: [1024.000000, 768.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "tutorialDialog"
+        position: [-44.000000, 24.000000]
+        size: [1112.000000, 100.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 24.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "REVERSE"
+                rightSafeInset: "REVERSE"
+            Background:
+                drawType: "DRAW_STRETCH_BOTH"
+        children:
+        -   class: "UIControl"
+            name: "bg"
+            size: [1112.000000, 100.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.000000, 0.000000, 0.000000, 0.600000]
+        -   class: "UIControl"
+            name: "task"
+            position: [556.000000, 50.000000]
+            size: [1032.000000, 100.000000]
+            pivot: [0.500000, 0.500000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 40.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 40.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                Background: {}
+            children:
+            -   class: "UIStaticText"
+                name: "descriptionText"
+                position: [0.000000, 30.000000]
+                size: [1032.000000, 70.000000]
+                noInput: true
+                classes: "text1 text-color-blue"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        colorInheritType: "COLOR_REPLACE_ALPHA_ONLY"
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["HCENTER", "TOP"]
+                        useRtlAlign: "USE_BY_CONTENT"
+            -   class: "UIStaticText"
+                name: "taskText"
+                size: [1032.000000, 30.000000]
+                noInput: true
+                classes: "header1"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        colorInheritType: "COLOR_REPLACE_ALPHA_ONLY"
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["HCENTER", "TOP"]
+                        useRtlAlign: "DONT_USE"
+    -   class: "UIControl"
+        name: "arrowMarker"
+        position: [512.000000, 384.000000]
+        size: [96.000000, 96.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Tutorial/Arrow_2"
+    -   class: "UIControl"
+        name: "progressBarBg"
+        size: [1112.000000, 24.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "REVERSE"
+                rightSafeInset: "REVERSE"
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.000000, 0.000000, 0.000000, 0.600000]
+        children:
+        -   class: "UIControl"
+            name: "bg"
+            position: [306.000000, 0.000000]
+            size: [500.000000, 24.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_STRETCH_HORIZONTAL"
+                    sprite: "~res:/Gfx/UI/Tutorial/background"
+        -   class: "UIControl"
+            customClass: "UITutorialProgressBar"
+            name: "progressBar"
+            position: [323.000000, 1.000000]
+            size: [466.000000, 22.000000]
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 0.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+            children:
+            -   class: "UIControl"
+                name: "lessons"
+                size: [466.000000, 22.000000]
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 0.000000
+                    Background:
+                        drawType: "DRAW_STRETCH_BOTH"
+                children:
+                -   class: "UIControl"
+                    name: "lesson0Cont"
+                    position: [71.000000, 4.000000]
+                    size: [60.000000, 14.000000]
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: -132.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        Background:
+                            drawType: "DRAW_STRETCH_BOTH"
+                            sprite: "~res:/Gfx/UI/Tutorial/progress_point"
+                            color: [1.000000, 1.000000, 1.000000, 0.298000]
+                            leftRightStretchCap: 1.000000
+                            topBottomStretchCap: 1.000000
+                    children:
+                    -   class: "UIControl"
+                        name: "progress0"
+                        size: [60.000000, 14.000000]
+                        noInput: true
+                        components:
+                            Background:
+                                drawType: "DRAW_STRETCH_BOTH"
+                                sprite: "~res:/Gfx/UI/Tutorial/progress_point"
+                                color: [0.494100, 0.827500, 0.129400, 1.000000]
+                                align: ["LEFT", "VCENTER"]
+                                leftRightStretchCap: 1.000000
+                                topBottomStretchCap: 1.000000
+                            ClipContent: {}
+                    -   class: "UIControl"
+                        name: "progress0Anim"
+                        size: [60.000000, 14.000000]
+                        visible: false
+                        noInput: true
+                        components:
+                            Background:
+                                sprite: "~res:/Gfx/UI/Tutorial/TaskStatus"
+                                frame: 2
+                                align: ["LEFT", "VCENTER"]
+                            ClipContent: {}
+                -   class: "UIControl"
+                    name: "lesson1Cont"
+                    position: [137.000000, 4.000000]
+                    size: [60.000000, 14.000000]
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: -66.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        Background:
+                            drawType: "DRAW_STRETCH_BOTH"
+                            sprite: "~res:/Gfx/UI/Tutorial/progress_point"
+                            color: [1.000000, 1.000000, 1.000000, 0.298000]
+                            leftRightStretchCap: 1.000000
+                            topBottomStretchCap: 1.000000
+                    children:
+                    -   class: "UIControl"
+                        name: "progress1"
+                        size: [60.000000, 14.000000]
+                        noInput: true
+                        components:
+                            Background:
+                                drawType: "DRAW_STRETCH_BOTH"
+                                sprite: "~res:/Gfx/UI/Tutorial/progress_point"
+                                color: [0.494100, 0.827500, 0.129400, 1.000000]
+                                align: ["LEFT", "VCENTER"]
+                                leftRightStretchCap: 1.000000
+                                topBottomStretchCap: 1.000000
+                            ClipContent: {}
+                    -   class: "UIControl"
+                        name: "progress1Anim"
+                        size: [60.000000, 14.000000]
+                        visible: false
+                        noInput: true
+                        components:
+                            Background:
+                                sprite: "~res:/Gfx/UI/Tutorial/TaskStatus"
+                                frame: 2
+                                align: ["LEFT", "VCENTER"]
+                            ClipContent: {}
+                -   class: "UIControl"
+                    name: "lesson2Cont"
+                    position: [203.000000, 4.000000]
+                    size: [60.000000, 14.000000]
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: 0.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        Background:
+                            drawType: "DRAW_STRETCH_BOTH"
+                            sprite: "~res:/Gfx/UI/Tutorial/progress_point"
+                            color: [1.000000, 1.000000, 1.000000, 0.298000]
+                            leftRightStretchCap: 1.000000
+                            topBottomStretchCap: 1.000000
+                    children:
+                    -   class: "UIControl"
+                        name: "progress2"
+                        size: [60.000000, 14.000000]
+                        noInput: true
+                        components:
+                            Background:
+                                drawType: "DRAW_STRETCH_BOTH"
+                                sprite: "~res:/Gfx/UI/Tutorial/progress_point"
+                                color: [0.494100, 0.827500, 0.129400, 1.000000]
+                                align: ["LEFT", "VCENTER"]
+                                leftRightStretchCap: 1.000000
+                                topBottomStretchCap: 1.000000
+                            ClipContent: {}
+                    -   class: "UIControl"
+                        name: "progress2Anim"
+                        size: [60.000000, 14.000000]
+                        visible: false
+                        noInput: true
+                        components:
+                            Background:
+                                sprite: "~res:/Gfx/UI/Tutorial/TaskStatus"
+                                frame: 2
+                                align: ["LEFT", "VCENTER"]
+                            ClipContent: {}
+                -   class: "UIControl"
+                    name: "lesson3Cont"
+                    position: [269.000000, 4.000000]
+                    size: [60.000000, 14.000000]
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: 66.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        Background:
+                            drawType: "DRAW_STRETCH_BOTH"
+                            sprite: "~res:/Gfx/UI/Tutorial/progress_point"
+                            color: [1.000000, 1.000000, 1.000000, 0.298000]
+                            leftRightStretchCap: 1.000000
+                            topBottomStretchCap: 1.000000
+                    children:
+                    -   class: "UIControl"
+                        name: "progress3"
+                        size: [60.000000, 14.000000]
+                        noInput: true
+                        components:
+                            Background:
+                                drawType: "DRAW_STRETCH_BOTH"
+                                sprite: "~res:/Gfx/UI/Tutorial/progress_point"
+                                color: [0.494100, 0.827500, 0.129400, 1.000000]
+                                align: ["LEFT", "VCENTER"]
+                                leftRightStretchCap: 1.000000
+                                topBottomStretchCap: 1.000000
+                            ClipContent: {}
+                    -   class: "UIControl"
+                        name: "progress3Anim"
+                        size: [60.000000, 14.000000]
+                        visible: false
+                        noInput: true
+                        components:
+                            Background:
+                                sprite: "~res:/Gfx/UI/Tutorial/TaskStatus"
+                                frame: 2
+                                align: ["LEFT", "VCENTER"]
+                            ClipContent: {}
+                -   class: "UIControl"
+                    name: "lesson4Cont"
+                    position: [335.000000, 4.000000]
+                    size: [60.000000, 14.000000]
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: 132.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        Background:
+                            drawType: "DRAW_STRETCH_BOTH"
+                            sprite: "~res:/Gfx/UI/Tutorial/progress_point"
+                            color: [1.000000, 1.000000, 1.000000, 0.298000]
+                            leftRightStretchCap: 1.000000
+                            topBottomStretchCap: 1.000000
+                    children:
+                    -   class: "UIControl"
+                        name: "progress4"
+                        size: [60.000000, 14.000000]
+                        noInput: true
+                        components:
+                            Background:
+                                drawType: "DRAW_STRETCH_BOTH"
+                                sprite: "~res:/Gfx/UI/Tutorial/progress_point"
+                                color: [0.494100, 0.827500, 0.129400, 1.000000]
+                                align: ["LEFT", "VCENTER"]
+                                leftRightStretchCap: 1.000000
+                                topBottomStretchCap: 1.000000
+                            ClipContent: {}
+                    -   class: "UIControl"
+                        name: "progress4Anim"
+                        size: [60.000000, 14.000000]
+                        visible: false
+                        noInput: true
+                        components:
+                            Background:
+                                sprite: "~res:/Gfx/UI/Tutorial/TaskStatus"
+                                frame: 2
+                                align: ["LEFT", "VCENTER"]
+                            ClipContent: {}
+    -   class: "UIControl"
+        name: "customContent"
+        position: [-44.000000, 0.000000]
+        size: [1112.000000, 789.000000]
+        visible: true
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "REVERSE"
+                topSafeInset: "REVERSE"
+                rightSafeInset: "REVERSE"
+                bottomSafeInset: "REVERSE"
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.000000, 0.000000, 0.000000, 0.694100]
+    -   prototype: "StyledMenuButton/StyledMenuButton"
+        name: "MenuButton"
+        components:
+            Anchor:
+                leftAnchorEnabled: false
+                rightAnchorEnabled: true
+                rightAnchor: 4.000000
+                topAnchor: 10.000000
+        children:
+        -   path: "UnreadNews"
+            visible: false
+    -   class: "UIControl"
+        name: "keyboardJoypad"
+        size: [200.000000, 150.000000]
+        pivot: [0.500000, 0.500000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        children:
+        -   prototype: "TutorialCommon/keyboardButton"
+            name: "backwardButton"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 26.000000
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            children:
+            -   path: "text"
+                components:
+                    UITextComponent:
+                        text: "S"
+        -   prototype: "TutorialCommon/keyboardButton"
+            name: "leftButton"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: -62.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 26.000000
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            children:
+            -   path: "text"
+                components:
+                    UITextComponent:
+                        text: "A"
+        -   prototype: "TutorialCommon/keyboardButton"
+            name: "rightButton"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 62.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 26.000000
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            children:
+            -   path: "text"
+                components:
+                    UITextComponent:
+                        text: "D"
+        -   prototype: "TutorialCommon/keyboardButton"
+            name: "forwardButton"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -36.000000
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            children:
+            -   path: "text"
+                components:
+                    UITextComponent:
+                        text: "W"
+    -   prototype: "TutorialCommon/keyboardButton"
+        name: "sniperModeButton"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 30.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 30.000000
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        children:
+        -   path: "text"
+            components:
+                UITextComponent:
+                    text: "SHIFT"
+    -   prototype: "TutorialCommon/mouse"
+        name: "mouseShootButton"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 60.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 70.000000
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "joypadFinger"
+        position: [0.000000, 0.000000]
+        size: [200.000000, 352.000000]
+        pivot: [0.500000, 0.100000]
+        noInput: true
+        components:
+            Background:
+                drawType: "DRAW_ALIGNED"
+                sprite: "~res:/Gfx/UI/Tutorial/HandSlaid.psd"

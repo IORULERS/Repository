@@ -1,0 +1,543 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleInfo.yaml"
+- "~res:/UI/Screens/Lobby/Common/AchievementItem.yaml"
+StyleSheets:
+-   selector: ".usa #Back"
+    properties:
+        bg-frame: 0
+-   selector: ".china #Back"
+    properties:
+        bg-frame: 5
+-   selector: ".uk #Back"
+    properties:
+        bg-frame: 3
+-   selector: ".ussr #Back"
+    properties:
+        bg-frame: 2
+-   selector: ".nation #Back"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/Default/TankSlotFlags"
+-   selector: ".nation.china_region #Back"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/China/TankSlotFlags"
+-   selector: ".japan #Back"
+    properties:
+        bg-frame: 4
+-   selector: ".germany #Back"
+    properties:
+        bg-frame: 1
+-   selector: ".france #Back"
+    properties:
+        bg-frame: 6
+-   selector: ".other #Back"
+    properties:
+        bg-frame: 7
+-   selector: ".with-series #Spacer"
+    properties:
+        visible: true
+-   selector: "#Spacer"
+    properties:
+        visible: false
+-   selector: ".netease #Logo"
+    properties:
+        bg-frame: 3
+-   selector: "#Logo"
+    properties:
+        bg-frame: 4
+Prototypes:
+-   class: "UIControl"
+    name: "containerPrototype"
+    position: [230.000000, 0.000000]
+    size: [180.000000, 60.000000]
+    noInput: true
+    components:
+        Anchor:
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+    children:
+    -   class: "UIStaticText"
+        name: "Text"
+        size: [175.000000, 25.000000]
+        noInput: true
+        classes: "text1 text-color-blue"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                align: ["RIGHT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+    -   class: "UIControl"
+        name: "Icon"
+        position: [145.000000, 31.000000]
+        size: [35.000000, 29.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsSharing/icons"
+    -   class: "UIStaticText"
+        name: "Value"
+        position: [0.000000, 30.000000]
+        size: [145.000000, 30.000000]
+        noInput: true
+        classes: "header1 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 35.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowOffset: [0.000000, 1.000000]
+                align: ["RIGHT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+-   class: "UIControl"
+    name: "AchievementItemWithDescription"
+    size: [200.000000, 100.000000]
+    noInput: true
+    components:
+        LinearLayout: {}
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+    children:
+    -   prototype: "AchievementItem/AchievementItem"
+        name: "AchievementItem"
+        size: [80.000000, 100.000000]
+        components:
+            SizePolicy:
+                horizontalPolicy: "FixedSize"
+                horizontalValue: 80.000000
+    -   class: "UIControl"
+        name: "Spacer"
+        size: [20.000000, 0.000000]
+        noInput: true
+    -   class: "UIStaticText"
+        name: "ShortDescription"
+        size: [120.000000, 100.000000]
+        classes: "text3-small text-color-light-beige"
+        components:
+            SizePolicy:
+                horizontalPolicy: "FixedSize"
+                horizontalValue: 120.000000
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                topAnchorEnabled: true
+                topAnchor: 15.000000
+            UITextComponent:
+                text: "#achievements:sniper_descr_short"
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "TOP"]
+Controls:
+-   class: "UIControl"
+    name: "BattleResultsShare"
+    size: [1200.000000, 630.000000]
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        size: [1200.000000, 630.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsSharing/backgrounds_no_logo.psd"
+        children:
+        -   class: "UIStaticText"
+            name: "ResultText"
+            position: [0.000000, 256.500000]
+            size: [1200.000000, 77.000000]
+            noInput: true
+            classes: "text-big"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -20.000000
+                Background:
+                    align: ["HCENTER", "BOTTOM"]
+                UITextComponent:
+                    text: "#battle_results:Result_Win"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["HCENTER", "BOTTOM"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "Ribbon"
+            position: [0.000000, 335.500000]
+            size: [1200.000000, 89.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 65.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/BattleResultsSharing/ribbon"
+            children:
+            -   class: "UIControl"
+                name: "Holder"
+                position: [600.000000, 44.500000]
+                size: [1200.000000, 100.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        dynamicPadding: true
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: 0.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 0.000000
+        -   class: "UIControl"
+            name: "Middle"
+            position: [0.000000, 435.000000]
+            size: [1200.000000, 60.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    dynamicPadding: true
+                    spacing: 10.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 150.000000
+            children:
+            -   prototype: "containerPrototype"
+                name: "Credits"
+                children:
+                -   path: "Text"
+                    components:
+                        UITextComponent:
+                            text: "Battle_Results_Share_Credits"
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "999 999"
+                            fitting: "FITTING_REDUCE"
+                -   class: "UIStaticText"
+                    name: "Modifier"
+                    position: [178.000000, 28.000000]
+                    size: [40.000000, 30.000000]
+                    noInput: true
+                    classes: "header1 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 178.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 2.000000
+                        UITextComponent:
+                            text: "(x2)"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            shadowOffset: [0.000000, 1.000000]
+                            fitting: "FITTING_REDUCE"
+                            align: ["LEFT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+            -   prototype: "containerPrototype"
+                name: "Experience"
+                children:
+                -   path: "Text"
+                    components:
+                        UITextComponent:
+                            text: "Battle_Results_Share_Experience"
+                -   path: "Icon"
+                    components:
+                        Background:
+                            frame: 1
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "999 999"
+                            fitting: "FITTING_REDUCE"
+                -   class: "UIStaticText"
+                    name: "Modifier"
+                    position: [178.000000, 28.000000]
+                    size: [40.000000, 30.000000]
+                    noInput: true
+                    classes: "header1 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 178.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 2.000000
+                        UITextComponent:
+                            text: "(x2)"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            shadowOffset: [0.000000, 1.000000]
+                            fitting: "FITTING_REDUCE"
+                            align: ["LEFT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+            -   prototype: "containerPrototype"
+                name: "Damage"
+                children:
+                -   path: "Text"
+                    components:
+                        UITextComponent:
+                            text: "Battle_Results_Share_Damage"
+                -   path: "Icon"
+                    components:
+                        Background:
+                            frame: 2
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "999 999"
+                            fitting: "FITTING_REDUCE"
+            -   prototype: "containerPrototype"
+                name: "Frags"
+                size: [150.000000, 60.000000]
+                children:
+                -   path: "Text"
+                    components:
+                        UITextComponent:
+                            text: "Battle_Results_Share_Frags"
+                -   path: "Icon"
+                    components:
+                        Background:
+                            frame: 3
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "7"
+                            fitting: "FITTING_REDUCE"
+        -   class: "UIControl"
+            name: "Bottom"
+            position: [0.000000, 505.000000]
+            size: [1200.000000, 125.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+            children:
+            -   class: "UIControl"
+                name: "Tank"
+                size: [182.000000, 122.000000]
+                classes: "nation"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -120.000000
+                        vCenterAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "Back"
+                    size: [182.000000, 122.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 0.000000
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 0.000000
+                        Background: {}
+                -   class: "UIControl"
+                    name: "Icon"
+                    position: [8.000000, 8.000000]
+                    size: [166.000000, 106.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 8.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 8.000000
+                            topAnchorEnabled: true
+                            topAnchor: 8.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 8.000000
+                        Background:
+                            drawType: "DRAW_SCALE_PROPORTIONAL"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/noImage"
+                            align: ["HCENTER", "BOTTOM"]
+                        ClipContent: {}
+                -   class: "UIStaticText"
+                    name: "Name"
+                    position: [10.000000, 88.000000]
+                    size: [142.000000, 30.000000]
+                    noInput: true
+                    classes: "text1"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 10.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 30.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 4.000000
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            text: "unknownVehicleName"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            fitting: "FITTING_REDUCE"
+                            align: ["LEFT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+                -   prototype: "VehicleInfo/VehicleInfo"
+                    name: "VehicleInfo"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 7.000000
+                            topAnchorEnabled: true
+                            topAnchor: 1.000000
+            -   class: "UIStaticText"
+                name: "UserName"
+                position: [580.000000, 5.000000]
+                size: [620.000000, 30.000000]
+                noInput: true
+                classes: "header4 text-color-white"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        topAnchorEnabled: true
+                        topAnchor: 5.000000
+                    UITextComponent:
+                        text: "vasily_pupkin"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        shadowOffset: [0.000000, 1.000000]
+                        fitting: "FITTING_POINTS"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIStaticText"
+                name: "AccountType"
+                position: [580.000000, 40.000000]
+                size: [620.000000, 25.000000]
+                noInput: true
+                classes: "text1 text-color-blue"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        topAnchorEnabled: true
+                        topAnchor: 40.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "Базовый аккаунт"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIStaticText"
+                name: "Status"
+                position: [580.000000, 95.000000]
+                size: [620.000000, 25.000000]
+                noInput: true
+                classes: "text1 text-color-white"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 5.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "Убит выстрелом Nagibator1999"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "QRCodeContainer"
+            size: [340.000000, 100.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 10.000000
+                    topAnchorEnabled: true
+                    topAnchor: 10.000000
+            children:
+            -   class: "UIStaticText"
+                name: "LetsBattle"
+                size: [230.000000, 100.000000]
+                classes: "header1 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        horizontalMax: 230.000000
+                        verticalPolicy: "PercentOfParent"
+                    UITextComponent:
+                        text: "Battle_Results_Share_QR"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["RIGHT", "VCENTER"]
+            -   class: "UIControl"
+                name: "QRCode"
+                size: [100.000000, 100.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "FixedSize"
+                        verticalPolicy: "FixedSize"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+                        sprite: "~res:/Gfx/UI/BattleResultsSharing/qr_code_wotblitz-ConvertImage.psd"
+        -   class: "UIControl"
+            name: "Logo"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor: {}
+                Background:
+                    sprite: "~res:/Gfx/UI/BattleResultsSharing/backgrounds_no_logo.psd"

@@ -1,0 +1,47 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Login/RegionSelector.yaml"
+- "~res:/UI/Screens/Common/EULANotice.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "ScreenBlank"
+    size: [1024.000000, 768.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        position: [0.000000, 0.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   prototype: "StyledBackButton/StyledBackButton"
+            name: "BackButton"
+        -   prototype: "RegionSelector/RegionSelector"
+            name: "RegionSelector"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 37.000000
+        -   prototype: "EULANotice/EULANotice"
+            name: "EULANotice"
+            size: [512.000000, 37.000000]
+            classes: "netease-hidden notch-tightly-bottom-inset"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}

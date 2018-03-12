@@ -1,0 +1,25 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/BattleRating.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Cell"
+    size: [110.000000, 64.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   prototype: "BattleRating/Rating"
+        name: "Rating"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 13.000000
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "UpDownMark"
+            visible: false
+        -   path: "RatingDiff"
+            visible: false

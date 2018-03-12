@@ -1,0 +1,649 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/SectionHeader3.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/Lobby/BattleRating/BattleRatingStyles.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/FlatIconButtonWithArrow.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+- "~res:/UI/Screens/Lobby/Common/Footer.yaml"
+- "~res:/UI/Styles/NetEaseStyles.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".battle-rating.no-league #RatingValue"
+    properties:
+        visible: false
+-   selector: ".battle-rating #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon.sc2"
+-   selector: ".battle-rating.bronze #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_bronze.sc2"
+-   selector: ".battle-rating.silver #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_silver.sc2"
+-   selector: ".battle-rating.gold #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_gold.sc2"
+-   selector: ".battle-rating.platinum #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_platinum.sc2"
+-   selector: ".battle-rating.diamond #PlayerProfileFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_diamond.sc2"
+Prototypes:
+-   class: "UIControl"
+    name: "StatsGroup"
+    size: [222.000000, 153.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Background:
+            drawType: "DRAW_STRETCH_BOTH"
+            sprite: "~res:/Gfx/UI/ProfileScreen/StatsBack"
+            color: [1.000000, 1.000000, 1.000000, 0.100000]
+            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            leftRightStretchCap: 5.000000
+            topBottomStretchCap: 5.000000
+    children:
+    -   class: "UIControl"
+        name: "Icon"
+        size: [41.000000, 34.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 14.000000
+            Background:
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIStaticText"
+        name: "Value"
+        size: [202.000000, 38.000000]
+        classes: "header0 text-color-white"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 10.000000
+                rightAnchorEnabled: true
+                rightAnchor: 10.000000
+                topAnchorEnabled: true
+                topAnchor: 54.000000
+            UITextComponent:
+                text: "Header0"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_REDUCE"
+    -   class: "UIStaticText"
+        name: "Description"
+        position: [10.000000, 93.000000]
+        size: [202.000000, 50.000000]
+        classes: "text1 text-color-blue"
+        components:
+            SizePolicy:
+                verticalPolicy: "FixedSize"
+                verticalValue: 50.000000
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 10.000000
+                rightAnchorEnabled: true
+                rightAnchor: 10.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 10.000000
+            UITextComponent:
+                text: "Text2"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                fitting: "FITTING_REDUCE"
+                align: ["HCENTER", "VCENTER"]
+-   prototype: "StyledButton/StyledButton"
+    name: "PlayerActionsButton"
+    size: [250.000000, 72.000000]
+    components:
+        Anchor:
+            vCenterAnchorEnabled: true
+    children:
+    -   path: "Caption"
+        size: [250.000000, 72.000000]
+Controls:
+-   class: "UIControl"
+    name: "tabBrief"
+    position: [0.000000, 0.000000]
+    size: [960.000000, 560.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            dynamicPadding: true
+            dynamicSpacing: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIControl"
+        name: "Body"
+        position: [0.000000, 0.000000]
+        size: [960.000000, 466.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalMax: 1100.000000
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                hCenterAnchorEnabled: true
+        children:
+        -   class: "UIScrollView"
+            name: "ScrollArea"
+            classes: "notch-tightly-bottom-inset"
+            autoUpdate: true
+            centerContent: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        spacing: 10.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   prototype: "SectionHeader3/SectionHeader3"
+                    name: "batlleEfficiencyHeader"
+                    children:
+                    -   class: "UIStaticText"
+                        name: "batlleEfficiencyLabel"
+                        classes: "header3 text-color-white"
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                text: "#achievementScreen:Brief/BattleEfficience"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "Stats"
+                    visible: true
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            padding: 15.000000
+                            spacing: 15.000000
+                        SizePolicy:
+                            horizontalPolicy: "FixedSize"
+                            horizontalValue: 860.000000
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 45.000000
+                    children:
+                    -   class: "UIControl"
+                        name: "General"
+                        size: [860.000000, 153.000000]
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                spacing: 20.000000
+                                dynamicSpacing: true
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                        children:
+                        -   prototype: "StatsGroup"
+                            name: "BattlesCount"
+                            position: [0.000000, 0.000000]
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/ProfileScreen/IconsStats"
+                            -   path: "Description"
+                                components:
+                                    UITextComponent:
+                                        text: "#achievementScreen:Brief/Battles"
+                        -   prototype: "StatsGroup"
+                            name: "PersonalRating"
+                            size: [273.333344, 153.000000]
+                            classes: "battle-rating"
+                            components:
+                                Background:
+                                    drawType: "DRAW_TILED"
+                            children:
+                            -   path: "Icon"
+                                visible: false
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/ProfileScreen/BlitzPennant"
+                            -   path: "Value"
+                                components:
+                                    UITextComponent:
+                                        text: "1150"
+                            -   path: "Description"
+                                visible: false
+                                components:
+                                    UITextComponent:
+                                        text: "#achievementScreen:Brief/AverageDamage"
+                            -   class: "UIParticles"
+                                name: "PlayerProfileFx"
+                                position: [136.666672, 21.000000]
+                                size: [32.000000, 32.000000]
+                                pivot: [0.500000, 0.500000]
+                                noInput: true
+                                autoStart: true
+                                components:
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                        topAnchorEnabled: true
+                                        topAnchor: 5.000000
+                            -   class: "UIControl"
+                                name: "LeagueBanner"
+                                position: [94.666672, -20.000000]
+                                size: [84.000000, 84.000000]
+                                noInput: true
+                                components:
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                        topAnchorEnabled: true
+                                        topAnchor: -20.000000
+                                    Background:
+                                        drawType: "DRAW_STRETCH_BOTH"
+                                        sprite: "~res:/Gfx/UI/ProfileScreen/league_medium"
+                                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                            -   class: "UIControl"
+                                name: "RatingButtonContainer"
+                                size: [273.333344, 153.000000]
+                                classes: "button-open-sound netease-hidden"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfParent"
+                                children:
+                                -   prototype: "StyledButton/StyledButton"
+                                    name: "RatingButton"
+                                    size: [275.333344, 50.000000]
+                                    classes: "button button-color-green button-ok-sound"
+                                    components:
+                                        Anchor:
+                                            leftAnchorEnabled: true
+                                            leftAnchor: -1.000000
+                                            rightAnchorEnabled: true
+                                            rightAnchor: -1.000000
+                                            bottomAnchorEnabled: true
+                                            bottomAnchor: -1.000000
+                                    children:
+                                    -   path: "Caption"
+                                        components:
+                                            UITextComponent:
+                                                text: "#achievementScreen:BattleRating/Button"
+                        -   class: "UIControl"
+                            name: "KarmaButtonContainer"
+                            size: [273.333344, 153.000000]
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                    -   class: "UIControl"
+                        name: "Divider"
+                        size: [860.000000, 32.000000]
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                spacing: 20.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfMaxChild"
+                        children:
+                        -   class: "UIControl"
+                            name: "LeftLine"
+                            size: [353.000000, 1.000000]
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    verticalPolicy: "FixedSize"
+                                    verticalValue: 1.000000
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    drawType: "DRAW_FILL"
+                                    color: [0.647059, 0.725490, 0.803922, 1.000000]
+                        -   class: "UIStaticText"
+                            name: "Header"
+                            size: [114.000000, 32.000000]
+                            classes: "text1 text-color-blue"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                UITextComponent:
+                                    text: "#achievementScreen:RegularBattles"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIControl"
+                            name: "LeftLine"
+                            size: [353.000000, 1.000000]
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    verticalPolicy: "FixedSize"
+                                    verticalValue: 1.000000
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    drawType: "DRAW_FILL"
+                                    color: [0.647059, 0.725490, 0.803922, 1.000000]
+                    -   class: "UIControl"
+                        name: "RandomBattles"
+                        size: [860.000000, 153.000000]
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                spacing: 20.000000
+                                dynamicSpacing: true
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                        children:
+                        -   prototype: "StatsGroup"
+                            name: "Wins"
+                            position: [0.000000, 0.000000]
+                            size: [200.000000, 153.000000]
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/ProfileScreen/IconsStats"
+                                        frame: 1
+                            -   path: "Value"
+                                classes: "header0"
+                            -   path: "Description"
+                                components:
+                                    UITextComponent:
+                                        text: "#achievementScreen:Brief/Wins"
+                        -   prototype: "StatsGroup"
+                            name: "AverageDamage"
+                            size: [200.000000, 153.000000]
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/ProfileScreen/IconsStats"
+                                        frame: 4
+                            -   path: "Description"
+                                components:
+                                    UITextComponent:
+                                        text: "#achievementScreen:Brief/AverageDamage"
+                        -   prototype: "StatsGroup"
+                            name: "AverageXp"
+                            size: [200.000000, 153.000000]
+                            children:
+                            -   path: "Icon"
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/ProfileScreen/IconsStats"
+                                        frame: 2
+                            -   path: "Description"
+                                components:
+                                    UITextComponent:
+                                        text: "#achievementScreen:Brief/AverageExp"
+                        -   prototype: "StatsGroup"
+                            name: "Masters"
+                            size: [200.000000, 153.000000]
+                            children:
+                            -   path: "Icon"
+                                position: [79.500000, 14.000000]
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/ProfileScreen/IconsStats"
+                                        frame: 7
+                            -   path: "Description"
+                                components:
+                                    SizePolicy:
+                                        horizontalValue: 90.000000
+                                    UITextComponent:
+                                        text: "#achievementScreen:Brief/Mastery"
+                -   prototype: "SectionHeader3/SectionHeader3"
+                    name: "battleMedalsHeader"
+                    children:
+                    -   class: "UIStaticText"
+                        name: "battleMedalsLabel"
+                        classes: "header3 text-color-white"
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                text: "#achievementScreen:Brief/NotableAchievements"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "battleMedals"
+                    size: [960.000000, 109.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                    children:
+                    -   class: "UIControl"
+                        name: "list"
+                        position: [480.000000, 0.000000]
+                        size: [0.000000, 109.000000]
+                        components:
+                            LinearLayout: {}
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 0.000000
+                                topAnchorEnabled: true
+                                topAnchor: 0.000000
+                                bottomAnchorEnabled: true
+                                bottomAnchor: 0.000000
+                            Background:
+                                color: [1.000000, 0.125000, 0.160300, 1.000000]
+                    -   class: "UIStaticText"
+                        name: "noMedalsLabel"
+                        position: [280.000000, 39.500000]
+                        size: [400.000000, 30.000000]
+                        noInput: true
+                        classes: "text1 text-color-blue"
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 0.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: 0.000000
+                            Background:
+                                align: ["LEFT", "TOP"]
+                            UITextComponent:
+                                text: "#achievementScreen:Brief/NoNotableAchievements"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                -   prototype: "FlatIconButtonWithArrow/FlatIconButtonWithArrow"
+                    name: "PlayerTeamsButton"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "FixedSize"
+                            horizontalValue: 800.000000
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                    children:
+                    -   path: "IconBackground/Icon"
+                        components:
+                            Background:
+                                sprite: "~res:/Gfx/UI/LobbyCommon/tournament_attend.psd"
+                    -   path: "LeftContent/Label"
+                        components:
+                            UITextComponent:
+                                text: "#achievementScreen:TournamentList/Button"
+                -   class: "UIStaticText"
+                    name: "createdAtText"
+                    size: [500.000000, 30.000000]
+                    noInput: true
+                    classes: "text2 text-color-blue"
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "EmptyControlForBottomPadding"
+                    size: [32.000000, 15.000000]
+                    noInput: true
+        -   prototype: "ScrollBar/VerticalScrollBar"
+            name: "VerticalScrollBar"
+            classes: "notch-tightly-right-inset"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+                ScrollBarDelegate:
+                    delegate: "../ScrollArea"
+    -   prototype: "Footer/Footer"
+        name: "PlayerActions"
+        children:
+        -   class: "UIStaticText"
+            name: "InviteSent"
+            size: [400.000000, 40.000000]
+            visible: false
+            noInput: true
+            classes: "text1 text-color-blue"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 0.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "#achievementScreen:InviteToClan/Invited"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+        -   prototype: "PlayerActionsButton"
+            name: "MessageButton"
+            visible: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                Sound:
+                    touchUpInside: "GUI/buttons/open"
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#achievementScreen:SendMessage/Button"
+        -   prototype: "PlayerActionsButton"
+            name: "ViewClanButton"
+            visible: false
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                Sound:
+                    touchUpInside: "GUI/buttons/open"
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#achievementScreen:ClanInfo/Button"
+        -   prototype: "PlayerActionsButton"
+            name: "InviteToClanButton"
+            visible: false
+            classes: "button button-color-green"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                Sound:
+                    touchUpInside: "GUI/buttons/open"
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#achievementScreen:InviteToClan/Button"
+        -   prototype: "PlayerActionsButton"
+            name: "AddFriendButton"
+            visible: false
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                Sound:
+                    touchUpInside: "GUI/buttons/open"
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#achievementScreen:SendRequest/Button"
+        -   prototype: "PlayerActionsButton"
+            name: "RemoveFriendButton"
+            visible: false
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                Sound:
+                    touchUpInside: "GUI/buttons/open"
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#achievementScreen:DeleteFriend/Button"
+    -   prototype: "StyledButton/StyledButton"
+        name: "externalAchievementsButton"
+        size: [245.000000, 70.000000]
+        visible: false
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 2.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 2.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            Sound:
+                touchUpInside: "GUI/buttons/open"
+        children:
+        -   path: "Caption"
+            components:
+                Anchor:
+                    leftAnchor: 70.000000
+                    rightAnchor: 5.000000
+                UITextComponent:
+                    text: "EXTERNAL_ACHIEVEMENTS"
+        -   class: "UIControl"
+            name: "icon"
+            position: [8.000000, 5.000000]
+            size: [60.000000, 60.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 8.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/ProfileScreen/GooglePlayGames"
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"

@@ -1,0 +1,41 @@
+name: "lunar_new_year_event/Header"
+stages:
+ MoonNY2018_inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/MoonNY2018/Button_Inform.yaml"
+  info: "event-info-mny"
+ MoonNY2018_process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/MoonNY2018/Button_Process.yaml"
+  info: "event-progress-mny"
+  tree: "~res:/UI/Screens/Lobby/Story/MoonNY2018/MoonNY2018StoryTree.yaml"
+  web:
+   buttonName: "rocketPlaywar_event/GoToLeaderboard/Comment"
+   buttonDescription: ""
+   eventUrl: "/%s/event-leaderboard-place/user/?id=%s"
+  leaderboard:
+   processHint: "template_event/ProgressStage/RocketPlaywar/DamageTask"
+   apiUrl: "/%s/event-leaderboard-place/user/%s/"
+   progress1:
+    labelKey: "template_event/ProgressStage/RocketPlaywar/Battles"
+   progress2:
+    labelKey: "template_event/ProgressStage/RocketPlaywar/Place"
+   progress3:
+    labelKey: "template_event/ProgressStage/RocketPlaywar/Top"
+ MoonNY2018_buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/MoonNY2018/Button_Buy.yaml"
+  info: "event-progress-mny"
+  tree: "~res:/UI/Screens/Lobby/Story/MoonNY2018/MoonNY2018StoryTree.yaml"
+  web:
+   buttonName: "rocketPlaywar_event/GoToLeaderboard/Comment"
+   buttonDescription: ""
+   eventUrl: "/%s/event-leaderboard-place/user/?id=%s"
+  leaderboard:
+   buyHint: "template_event/ProgressStage/RocketPlaywar/DamageTask"
+   buy: "template_event/ProgressStage/RocketPlaywar/Error/TimeIsOver"
+   apiUrl: "/%s/event-leaderboard-place/user/%s/"
+currencyKeys:
+  moon_prx_bmbts: "rocketPlaywar_event/Currencies/QuestCurrency/Terms"
+  moon_prx_ldbrd: "rocketPlaywar_event/Currencies/DamageCurrency/Terms"
+  121B_progress: "storage/Items/LunarNewYearEvent/ChestCurrency/Obtainment"

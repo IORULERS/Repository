@@ -1,0 +1,189 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Dialogs.yaml"
+- "~res:/UI/Screens/Common/StyledMenuButton.yaml"
+- "~res:/UI/Screens/Hangar/PopupFullScreenNotification.yaml"
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+StyleSheets:
+-   selector: ".notification"
+    properties:
+        visible: true
+-   selector: ".notification.smart-dlc-full-client #Content #Dialog #Dialog #Middle #DescriptionContainer #DLCComment"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIControl"
+    name: "BasePopup"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "LobbyCommon/DialogBackground"
+        name: "DialogBackground"
+        children:
+        -   path: "Darkness"
+            noInput: true
+    -   prototype: "StyledBackButton/StyledBackButton"
+        name: "BackButton"
+        classes: "button button-color-gray"
+        children:
+        -   prototype: "UnreadIcon/UnreadIcon"
+            name: "UnreadNews"
+            size: [32.000000, 32.000000]
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -4.000000
+                    topAnchorEnabled: true
+                    topAnchor: -4.000000
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 80.000000
+                bottomAnchorEnabled: true
+            DebugRender:
+                enabled: false
+Controls:
+-   prototype: "BasePopup"
+    name: "PremiumGift"
+    children:
+    -   path: "BackButton"
+        position: [52.000000, 8.000000]
+        children: []
+    -   path: "Content"
+        position: [0.000000, 80.000000]
+        children:
+        -   prototype: "Dialogs/ErrorDialogWithoutCaption"
+            name: "Dialog"
+            position: [0.000000, 0.000000]
+            components:
+                ModalInput:
+                    enabled: false
+            children:
+            -   path: "Dialog"
+                position: [262.000000, 154.000000]
+                size: [500.000000, 380.000000]
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                        verticalPolicy: "PercentOfMaxChild"
+                children:
+                -   class: "UIControl"
+                    name: "Wreath"
+                    size: [32.000000, 32.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            topAnchorEnabled: true
+                        Background:
+                            sprite: "~res:/Gfx/UI/LobbyCommon/icon_premium_wreath.psd"
+                            frame: 9
+                    children:
+                    -   class: "UIControl"
+                        name: "Logo"
+                        size: [32.000000, 32.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: -12.000000
+                            Background:
+                                sprite: "~res:/Gfx/UI/LobbyCommon/PremNumbers/logo.psd"
+            -   path: "Dialog/Middle"
+                position: [0.000000, 0.000000]
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        padding: 20.000000
+                        spacing: 10.000000
+                    SizePolicy:
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        enabled: true
+                        topAnchorEnabled: false
+                        bottomAnchorEnabled: false
+                children:
+                -   class: "UIControl"
+                    name: "Padding"
+                    size: [0.000000, 70.000000]
+                -   class: "UIControl"
+                    name: "DescriptionContainer"
+                    position: [25.000000, 100.000000]
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            spacing: 15.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfMaxChild"
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Congratulations"
+                        size: [450.000000, 26.000000]
+                        classes: "header3 text-color-white"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            UITextComponent:
+                                text: "#common:Title/Congrats"
+                                multiline: "MULTILINE_ENABLED"
+                    -   class: "UIControl"
+                        name: "Message"
+                        position: [0.000000, 41.000000]
+                        size: [450.000000, 52.000000]
+                        noInput: true
+                        components:
+                            FlowLayout:
+                                hDynamicPadding: true
+                                hDynamicInLinePadding: true
+                                hSpacing: 5.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfChildrenSum"
+                            RichContent:
+                                text: "#hangar_showcase:Congratulation/FirstPremiumPurchase"
+                                baseClasses: "text1 text-color-blue"
+                            RichContentAliases0:
+                                aliases: "icon,<object control=\"PremiumIcon\" path=\"~res:/UI/Screens/Lobby/Notifications/PremiumIcon.yaml\" />;"
+                    -   class: "UIStaticText"
+                        name: "DLCComment"
+                        size: [450.000000, 52.000000]
+                        visible: true
+                        classes: "text1 text-color-blue"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            UITextComponent:
+                                text: "dlc/Download/IncompleteData"
+                                multiline: "MULTILINE_ENABLED"
+                -   class: "UIControl"
+                    name: "Padding"
+                    size: [0.000000, 90.000000]
+            -   path: "Dialog/Middle/DialogText"
+                visible: false
+            -   path: "Dialog/Middle/ButtonHolder"
+                components:
+                    IgnoreLayout: {}
+                children: []

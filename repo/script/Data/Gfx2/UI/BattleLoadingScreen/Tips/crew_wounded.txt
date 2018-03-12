@@ -1,0 +1,5 @@
+1
+crew_wounded0.tex
+512 256
+1
+0 0 335 148 81 92 0 frame0

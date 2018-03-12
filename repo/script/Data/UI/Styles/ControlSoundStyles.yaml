@@ -1,0 +1,6 @@
+Header:
+    version: "19"
+StyleSheets:
+-   selector: ".switch-sound"
+    properties:
+        sound-valueChanged: "GUI/buttons/checkbox"

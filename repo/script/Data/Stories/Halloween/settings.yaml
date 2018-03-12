@@ -1,0 +1,19 @@
+name: "halloween_event/Title"
+stages:
+ haloween_inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/Winter2016/Button_Inform.yaml"
+  info: "halloween-info"
+ haloween_process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/Winter2016/Button_Inform.yaml"
+  info: "halloween-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/HalloweenStoryTree.yaml"
+ haloween_buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/Winter2016/Button_Inform.yaml"
+  info: "halloween-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/HalloweenStoryTree.yaml"
+currencyKeys:
+ lightSign: "halloween_event/Currencies/lightSigns"
+ darkSeal: "halloween_event/Currencies/darkSeals"

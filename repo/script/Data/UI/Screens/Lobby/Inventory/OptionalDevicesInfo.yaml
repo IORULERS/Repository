@@ -1,0 +1,204 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Hangar/BasePopup.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "DescriptionElement"
+    size: [1024.000000, 146.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            spacing: 20.000000
+        SizePolicy:
+            verticalPolicy: "PercentOfMaxChild"
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 50.000000
+            rightAnchorEnabled: true
+            rightAnchor: 50.000000
+    children:
+    -   class: "UIControl"
+        name: "Images"
+        size: [0.000000, 0.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                spacing: 5.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfMaxChild"
+                verticalPolicy: "PercentOfChildrenSum"
+    -   class: "UIControl"
+        name: "Text"
+        size: [1004.000000, 146.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                spacing: 10.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfChildrenSum"
+        children:
+        -   class: "UIStaticText"
+            name: "Header"
+            size: [1004.000000, 32.000000]
+            classes: "header1 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                UITextComponent:
+                    text: "Header1"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "VCENTER"]
+        -   class: "UIStaticText"
+            name: "Description"
+            size: [1004.000000, 104.000000]
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfContent"
+                UITextComponent:
+                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+Controls:
+-   prototype: "BasePopup/BasePopup"
+    name: "Popup"
+    components:
+        ModalInput: {}
+    children:
+    -   path: "Content"
+        children:
+        -   class: "UIControl"
+            name: "VerticalScrollView"
+            size: [980.000000, 688.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                    rightSafeInset: "INSET"
+            children:
+            -   class: "UIScrollView"
+                name: "ScrollArea"
+                autoUpdate: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            padding: 30.000000
+                            spacing: 30.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   prototype: "DescriptionElement"
+                        name: "DescriptionElement"
+                        children:
+                        -   path: "Images"
+                            children:
+                            -   class: "UIControl"
+                                name: "Control"
+                                size: [150.000000, 146.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/InventoryScreen/EquimentPopup_0"
+                        -   path: "Text/Header"
+                            components:
+                                UITextComponent:
+                                    text: "optionalDevices/InfoScreen/WorkingProcess/Title"
+                        -   path: "Text/Description"
+                            components:
+                                UITextComponent:
+                                    text: "optionalDevices/InfoScreen/WorkingProcess/Description"
+                    -   prototype: "DescriptionElement"
+                        name: "DescriptionElement"
+                        children:
+                        -   path: "Images"
+                            children:
+                            -   class: "UIControl"
+                                name: "Control"
+                                size: [150.000000, 80.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/InventoryScreen/EquimentPopup_1"
+                        -   path: "Text/Header"
+                            components:
+                                UITextComponent:
+                                    text: "optionalDevices/InfoScreen/DeviceUsage/Title"
+                        -   path: "Text/Description"
+                            components:
+                                UITextComponent:
+                                    text: "optionalDevices/InfoScreen/DeviceUsage/Description"
+                    -   prototype: "DescriptionElement"
+                        name: "DescriptionElement"
+                        children:
+                        -   path: "Images"
+                            children:
+                            -   class: "UIControl"
+                                name: "Control"
+                                size: [149.000000, 46.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/InventoryScreen/EquimentPopup_2.psd"
+                        -   path: "Text/Header"
+                            components:
+                                UITextComponent:
+                                    text: "optionalDevices/InfoScreen/Indication/Title"
+                        -   path: "Text/Description"
+                            components:
+                                UITextComponent:
+                                    text: "optionalDevices/InfoScreen/Indication/Description"
+            -   prototype: "ScrollBar/VerticalScrollBar"
+                name: "VerticalScrollBar"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    ScrollBarDelegate:
+                        delegate: "../ScrollArea"
+    -   class: "UIStaticText"
+        name: "HeaderText"
+        size: [1024.000000, 80.000000]
+        classes: "header0 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+            UITextComponent:
+                text: "optionalDevices/InfoScreen/Header"
+                colorInheritType: "COLOR_IGNORE_PARENT"

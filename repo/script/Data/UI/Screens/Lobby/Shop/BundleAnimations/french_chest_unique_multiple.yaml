@@ -1,0 +1,10 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Shop/BundleAnimations/french_chest_unique.yaml"
+Controls:
+-   prototype: "french_chest_unique/Image"
+    name: "Image"
+    components:
+        Background:
+            sprite: "~res:/Gfx/UI/ShopScreen/french_chest_cards/chest_purple_0"

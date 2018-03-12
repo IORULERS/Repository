@@ -1,0 +1,523 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Clan/Supply/ResearchProgress.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Shop/BaseShopTab.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader3.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/Footer.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".button"
+    properties:
+        bg-frame: 2
+-   selector: ".button:disabled"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+        bg-frame: 0
+Controls:
+-   class: "UIControl"
+    customClass: "UIClanSupplySpeedUp"
+    name: "SpeedUpSupply"
+    size: [1024.000000, 768.000000]
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "SectionHeader3/SectionHeader3"
+        name: "Header"
+        children:
+        -   class: "UIStaticText"
+            name: "Text"
+            classes: "header3 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UITextComponent:
+                    text: "#clans:SupplyScreen/PersonalAccess/SpeedUp/Title"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIControl"
+        name: "Middle"
+        classes: "limited-width"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                hCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "VerticalScrollView"
+            size: [1024.000000, 634.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIScrollView"
+                name: "ScrollArea"
+                autoUpdate: true
+                centerContent: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            padding: 10.000000
+                            spacing: 20.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   class: "UIControl"
+                        name: "ProgressBarBg"
+                        size: [650.000000, 86.000000]
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                horizontalMax: 650.000000
+                                verticalPolicy: "FixedSize"
+                                verticalValue: 86.000000
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            Background:
+                                drawType: "DRAW_FILL"
+                                color: [0.207843, 0.274510, 0.325490, 1.000000]
+                        children:
+                        -   prototype: "ResearchProgress/ResearchProgressBar"
+                            name: "ResearchProgressBar"
+                            position: [0.000000, 0.000000]
+                            size: [650.000000, 86.000000]
+                            components:
+                                LinearLayout:
+                                    padding: 0.000000
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                            children:
+                            -   path: "IconWrapper"
+                                position: [0.000000, 0.000000]
+                                size: [86.000000, 86.000000]
+                                components:
+                                    Background:
+                                        drawType: "DRAW_FILL"
+                                        color: [0.254902, 0.313726, 0.364706, 1.000000]
+                                children: []
+                            -   path: "IconWrapper/Icon"
+                                size: [86.000000, 86.000000]
+                                components:
+                                    Background:
+                                        frame: 1
+                            -   path: "VertContainer"
+                                components:
+                                    LinearLayout:
+                                        dynamicPadding: true
+                                children: []
+                            -   path: "VertContainer/CaptionContainer"
+                                components:
+                                    Anchor:
+                                        rightAnchorEnabled: true
+                                        rightAnchor: 0.000000
+                                children: []
+                            -   path: "VertContainer/CaptionContainer/ScoreBar"
+                                components:
+                                    Anchor:
+                                        enabled: true
+                                        rightAnchorEnabled: true
+                                        vCenterAnchorEnabled: true
+                                children: []
+                            -   path: "VertContainer/BarContainer/ProgressBar"
+                                children:
+                                -   class: "UIControl"
+                                    name: "ProgressBarForegroundAdditional"
+                            -   class: "UIControl"
+                                name: "Spacer"
+                                position: [649.000000, 0.000000]
+                                size: [1.000000, 86.000000]
+                    -   class: "UIControl"
+                        name: "ExchangeInfo"
+                        size: [650.000000, 170.000000]
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                horizontalValue: 100.000000
+                                horizontalMax: 650.000000
+                                verticalPolicy: "FixedSize"
+                                verticalValue: 170.000000
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            Background:
+                                drawType: "DRAW_FILL"
+                                color: [0.207843, 0.274510, 0.325490, 1.000000]
+                        children:
+                        -   class: "UIControl"
+                            name: "Header"
+                            size: [650.000000, 50.000000]
+                            components:
+                                LinearLayout:
+                                    dynamicPadding: true
+                                    spacing: 5.000000
+                                    useRtl: true
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                Background:
+                                    drawType: "DRAW_FILL"
+                                    color: [0.254902, 0.313726, 0.364706, 1.000000]
+                            children:
+                            -   class: "UIStaticText"
+                                name: "ConversionRateLabel"
+                                noInput: true
+                                classes: "header1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfParent"
+                                    UITextComponent:
+                                        text: "#clans:SupplyScreen/PersonalAccess/SpeedUp/ExchangeCourse"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        align: ["RIGHT", "VCENTER"]
+                                        useRtlAlign: "USE_BY_CONTENT"
+                            -   class: "UIStaticText"
+                                name: "ConversionDiscretionText1"
+                                size: [12.000000, 50.000000]
+                                noInput: true
+                                classes: "header1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfParent"
+                                    UITextComponent:
+                                        text: "1"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        align: ["LEFT", "VCENTER"]
+                                        useRtlAlign: "DONT_USE"
+                            -   class: "UIControl"
+                                name: "XpImage"
+                                size: [30.000000, 50.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        verticalPolicy: "PercentOfParent"
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                                        frame: 2
+                            -   class: "UIStaticText"
+                                name: "EqualsLabel"
+                                size: [20.000000, 50.000000]
+                                noInput: true
+                                classes: "header1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        verticalPolicy: "PercentOfParent"
+                                    Background:
+                                        align: ["LEFT", "TOP"]
+                                    UITextComponent:
+                                        text: "="
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                            -   class: "UIStaticText"
+                                name: "ConversionDiscretionText2"
+                                position: [408.000000, 0.000000]
+                                size: [13.000000, 50.000000]
+                                noInput: true
+                                classes: "header1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfParent"
+                                    UITextComponent:
+                                        text: "0"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        align: ["LEFT", "VCENTER"]
+                                        useRtlAlign: "DONT_USE"
+                            -   class: "UIControl"
+                                name: "XpImage"
+                                size: [30.000000, 50.000000]
+                                noInput: true
+                                components:
+                                    Anchor:
+                                        topAnchorEnabled: true
+                                        topAnchor: 0.000000
+                                        bottomAnchorEnabled: true
+                                        bottomAnchor: 0.000000
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                                        frame: 3
+                        -   class: "UIControl"
+                            name: "Center"
+                            components:
+                                LinearLayout:
+                                    padding: 10.000000
+                                    spacing: 20.000000
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                    verticalPolicy: "PercentOfMaxChild"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                    vCenterAnchorEnabled: true
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Title"
+                                classes: "header2"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                        vCenterAnchor: 25.000000
+                                    UITextComponent:
+                                        text: "#clans:SupplyScreen/PersonalAccess/SpeedUp/FreeXP"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                            -   class: "UIControl"
+                                name: "Icon"
+                                size: [32.000000, 32.000000]
+                                components:
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                        vCenterAnchor: 25.000000
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                                        frame: 2
+                            -   class: "UIControl"
+                                customClass: "UINumericSpinner"
+                                name: "FreeXpSpinner"
+                                position: [239.000000, 25.000000]
+                                size: [213.000000, 64.000000]
+                                components:
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                        hCenterAnchor: 0.000000
+                                        vCenterAnchorEnabled: true
+                                        vCenterAnchor: 25.000000
+                                    Background:
+                                        drawType: "DRAW_FILL"
+                                children:
+                                -   class: "UITextField"
+                                    name: "FreeXpTextField"
+                                    position: [10.000000, 0.000000]
+                                    size: [153.000000, 64.000000]
+                                    text: "0"
+                                    font: "WarHeliosCondC_23"
+                                    keyboardType: "KEYBOARD_TYPE_NUMBER_PAD"
+                                    components:
+                                        Anchor:
+                                            leftAnchorEnabled: true
+                                            leftAnchor: 10.000000
+                                            rightAnchorEnabled: true
+                                            rightAnchor: 50.000000
+                                            topAnchorEnabled: true
+                                            topAnchor: 0.000000
+                                            bottomAnchorEnabled: true
+                                            bottomAnchor: 0.000000
+                                        Focus: {}
+                    -   class: "UIStaticText"
+                        name: "MotivationText"
+                        size: [650.000000, 69.000000]
+                        classes: "text2 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                horizontalMax: 650.000000
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            UITextComponent:
+                                text: "#clans:SupplyScreen/PersonalAccess/SpeedUp/Motivation"
+                                multiline: "MULTILINE_ENABLED"
+                                align: ["HCENTER", "TOP"]
+            -   prototype: "ScrollBar/VerticalScrollBar"
+                name: "VerticalScrollBar"
+                classes: "notch-tightly-right-inset"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UIAnchorSafeAreaComponent: {}
+                    ScrollBarDelegate:
+                        delegate: "../ScrollArea"
+    -   prototype: "Footer/Footer"
+        name: "Footer"
+        position: [44.000000, 674.000000]
+        size: [936.000000, 94.000000]
+        components:
+            SizePolicy:
+                verticalPolicy: "Formula"
+                verticalFormula: "94 + safeAreaInsets.bottom*(6/10)"
+            UIAnchorSafeAreaComponent:
+                bottomSafeInset: "NONE"
+                bottomInsetCorrection: 0.000000
+        children:
+        -   path: "FooterBackground"
+            components:
+                UIAnchorSafeAreaComponent:
+                    bottomSafeInset: "NONE"
+        -   class: "UIControl"
+            name: "Centroid"
+            classes: "notch-tightly-bottom-inset"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "SpeedUpButton"
+                classes: "button button-color-green"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 20.000000
+                        vCenterAnchorEnabled: true
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "#clans:SupplyScreen/PersonalAccess/SpeedUp/Button"
+            -   class: "UIControl"
+                name: "DividerImage"
+                position: [480.000000, 3.500000]
+                size: [46.000000, 78.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 410.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/Slash"
+            -   class: "UIStaticText"
+                name: "XPLeftLabel"
+                position: [494.000000, 7.500000]
+                size: [157.000000, 30.000000]
+                noInput: true
+                classes: "text1 text-color-blue"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 285.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -20.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "shop/Balance"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "LeftFreeXpImage"
+                position: [626.000000, 42.500000]
+                size: [30.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 280.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                        frame: 2
+            -   class: "UIStaticText"
+                name: "XpAfterConversionText"
+                position: [421.000000, 42.500000]
+                size: [200.000000, 30.000000]
+                noInput: true
+                classes: "header1 text-color-white"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 315.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                        leftRightStretchCap: 7.000000
+                    UITextComponent:
+                        text: "0"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "SupplyPointsImage"
+                position: [416.000000, 42.500000]
+                size: [30.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 490.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                        frame: 3
+            -   class: "UIStaticText"
+                name: "SupplyAfterConversionText"
+                position: [152.000000, 42.500000]
+                size: [259.000000, 30.000000]
+                noInput: true
+                classes: "header1 text-color-white"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 525.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "0"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIStaticText"
+                name: "WillAchieveLabel"
+                position: [230.000000, 7.500000]
+                size: [211.000000, 30.000000]
+                noInput: true
+                classes: "text1 text-color-blue"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 495.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -20.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "shop/WillAchieve"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"

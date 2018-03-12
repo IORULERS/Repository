@@ -1,0 +1,76 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Styles/NetEaseStyles.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".text-color-spec-blue"
+    properties:
+        text-color: [0.615686, 0.788235, 1.000000, 1.000000]
+-   selector: ".text1.vi"
+    properties:
+        text-fontName: "WarHeliosCondC_19"
+        text-color: [1.000000, 1.000000, 1.000000, 1.000000]
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIRegionSelector"
+    name: "RegionSelector"
+    size: [284.000000, 70.000000]
+    components:
+        LinearLayout:
+            spacing: 10.000000
+            useRtl: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+    children:
+    -   class: "UIStaticText"
+        name: "Label"
+        size: [104.000000, 20.000000]
+        classes: "text1 text-color-spec-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+            Anchor:
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "#login:footer/region"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "USE_BY_CONTENT"
+    -   class: "UIStaticText"
+        name: "RegionName"
+        size: [60.000000, 20.000000]
+        classes: "text1 text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+            Anchor:
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "Россия"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "USE_BY_CONTENT"
+    -   class: "UIControl"
+        name: "Spacer"
+        size: [10.000000, 10.000000]
+    -   prototype: "StyledButton/DefaultStyledButton"
+        name: "RegionButton"
+        size: [80.000000, 64.000000]
+        components:
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "RegionIcon"
+            noInput: true
+            classes: "region-flag"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"

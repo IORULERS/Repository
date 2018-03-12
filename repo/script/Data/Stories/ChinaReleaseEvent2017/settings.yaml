@@ -1,0 +1,28 @@
+name: "release_event/Title"
+priority: 1
+stages:
+ inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/ChinaRelease2017/Button_Inform.yaml"
+  info: "event-info-cre"
+ process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/ChinaRelease2017/Button_Process.yaml"
+  info: "event-progress-cre"
+  tree: "~res:/UI/Screens/Lobby/Story/ChinaRelease2017/ChinaReleaseEvent2017Tree.yaml"
+  leaderboard:
+   processHint: "halloween2017_event/ProgressStage/DamageTask"
+   progress1:
+    labelKey: "halloween2017_event/ProgressStage/Victories"
+ buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/ChinaRelease2017/Button_Buy.yaml"
+  info: "event-progress-cre"
+  tree: "~res:/UI/Screens/Lobby/Story/ChinaRelease2017/ChinaReleaseEvent2017Tree.yaml"
+  leaderboard:
+   buyHint: "halloween2017_event/ProgressStage/DamageTask"
+   buy: "template_event/ProgressStage/RocketPlaywar/Error/TimeIsOver"
+currencyKeys:
+  prx_cre_1: "halloween2017_event/Currencies/BlueSigns/Terms"
+  prx_cre_2: "halloween2017_event/Currencies/YellowSigns/Terms"
+  prx_cre_3: "halloween2017_event/Currencies/GreenSigns/Terms"

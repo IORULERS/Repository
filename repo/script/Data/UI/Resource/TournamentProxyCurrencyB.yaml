@@ -1,0 +1,71 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceMedium.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourcePreview.yaml"
+Controls:
+-   prototype: "ResourceSmall/ResourceSmall"
+    name: "ResourceSmall"
+    children:
+    -   path: "Back/IconBack"
+        children:
+        -   class: "UIParticles"
+            name: "Particle"
+            position: [16.000000, 16.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/currency_glowS1.sc2"
+            autoStart: true
+    -   path: "Back/Icon"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: false
+                vCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/StorageItemIcons/Proxy_GoldenIcon"
+-   prototype: "ResourceMedium/ResourceMedium"
+    name: "ResourceMedium"
+    children:
+    -   path: "Back/IconBack"
+        children:
+        -   class: "UIParticles"
+            name: "Particle"
+            position: [25.000000, 25.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/currency_glowS1.sc2"
+            autoStart: true
+    -   path: "Back/Icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/StorageItemIcons/Proxy_GoldenIcon"
+-   prototype: "ResourcePreview/ResourcePreview"
+    name: "ResourcePreview"
+    children:
+    -   path: "IconBack"
+        children:
+        -   class: "UIParticles"
+            name: "Particle"
+            position: [49.000000, 58.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/currency_glow1.sc2"
+            autoStart: true
+    -   path: "Icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/StorageItemIcons/Proxy_GoldenIcon"
+        children:
+        -   class: "UIParticles"
+            name: "Particle"
+            position: [65.000000, 88.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/currency_glow2.sc2"
+            autoStart: true

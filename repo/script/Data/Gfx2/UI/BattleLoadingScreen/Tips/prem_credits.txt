@@ -1,0 +1,5 @@
+1
+prem_credits0.tex
+512 256
+1
+0 0 208 212 146 42 0 frame0

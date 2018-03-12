@@ -1,0 +1,186 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/FooterPriceControl.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/CheckBox.yaml"
+StyleSheets:
+-   selector: ".button.button-payment:disabled, .button.button-sell:disabled"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: ".checkbox"
+    properties:
+        bg-frame: 0
+-   selector: ".checkbox:selected"
+    properties:
+        bg-frame: 1
+-   selector: ".footer_price ? ? #Price, .footer_descr ? ? #Descr, .footer_full ? ? #Price, .footer_full ? ? #Descr"
+    properties:
+        visible: true
+-   selector: ".footer_descr ? ? #Price, .footer_price ? ? #Descr"
+    properties:
+        visible: false
+-   selector: ".footer_full ? #PriceDescrContainer"
+    properties:
+        linearLayout-orientation: "TopDown"
+-   selector: ".footer_price ? #PriceDescrContainer, .footer_descr ? #PriceDescrContainer"
+    properties:
+        linearLayout-orientation: "RightToLeft"
+Prototypes:
+-   class: "UIControl"
+    name: "ShopFooter"
+    position: [0.000000, 594.000000]
+    size: [1024.000000, 94.000000]
+    noInput: true
+    classes: "footer_mode=footer_price"
+    components:
+        LinearLayout:
+            padding: 5.000000
+            dynamicSpacing: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "FixedSize"
+            verticalValue: 94.000000
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 0.000000
+            rightAnchorEnabled: true
+            rightAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+        UIAnchorSafeAreaComponent:
+            leftSafeInset: "INSET"
+            rightSafeInset: "INSET"
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "FooterBackground"
+        size: [1068.000000, 94.000000]
+        noInput: true
+        classes: "footer-background"
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "REVERSE"
+                rightSafeInset: "REVERSE"
+            Background: {}
+    -   class: "UIControl"
+        name: "ResupplyContainer"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfFirstChild"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIControl"
+            name: "Resupply"
+            visible: true
+            noInput: true
+            components:
+                LinearLayout:
+                    padding: 5.000000
+                    spacing: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 5.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+            children:
+            -   prototype: "CheckBox/CheckBox"
+                name: "Checkbox"
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+            -   class: "UIStaticText"
+                name: "Text"
+                size: [140.000000, 94.000000]
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "FixedSize"
+                        horizontalValue: 140.000000
+                        verticalPolicy: "PercentOfParent"
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "Automatically resupply"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+    -   class: "UIControl"
+        name: "Apply"
+        noInput: true
+        components:
+            LinearLayout:
+                enabled: true
+                orientation: "RightToLeft"
+                padding: 5.000000
+                spacing: 10.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "Button"
+            classes: "button mode=button-payment"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "Apply"
+        -   class: "UIControl"
+            name: "PriceDescrContainer"
+            components:
+                LinearLayout:
+                    padding: 5.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    vCenterAnchorEnabled: true
+            children:
+            -   prototype: "FooterPriceControl/FooterPriceControl"
+                name: "Price"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                children:
+                -   path: "Gold/RightPart/Price/Icon"
+                    components:
+                        Background:
+                            frame: 0
+            -   class: "UIStaticText"
+                name: "Descr"
+                size: [500.000000, 0.000000]
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalMax: 500.000000
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "USE_BY_CONTENT"

@@ -1,0 +1,383 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Login/LoginCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/SmartTextField.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Prototypes:
+-   prototype: "StyledButton/StyledButton"
+    name: "SkipButton"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 10.000000
+            rightAnchorEnabled: true
+            rightAnchor: 10.000000
+    children:
+    -   path: "Caption"
+        components:
+            Anchor:
+                leftAnchor: 20.000000
+            UITextComponent:
+                fontName: "WarHeliosCondC_21"
+                align: ["LEFT", "VCENTER"]
+    -   prototype: "Selection/Selection"
+        name: "Selection"
+        classes: "selection-color-orange"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Check"
+            size: [64.000000, 64.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/CommonUIElements/chekbox_icon.psd"
+                    frame: 1
+                DebugRender:
+                    enabled: false
+Controls:
+-   prototype: "LoginCommon/ScreenBlank"
+    name: "Screen"
+    children:
+    -   path: "Background"
+        children:
+        -   class: "UIScrollView"
+            name: "Scroll"
+            size: [500.000000, 768.000000]
+            classes: "notch-tightly-bottom-inset"
+            autoUpdate: true
+            centerContent: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+                ClipContent:
+                    enabled: false
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                size: [500.000000, 404.000000]
+                pivot: [0.000000, 0.000000]
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                children:
+                -   prototype: "Common/ResizableDialog"
+                    name: "Panel"
+                    size: [500.000000, 404.000000]
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                    children:
+                    -   path: "Top/TitleText"
+                        components:
+                            UITextComponent:
+                                text: "#login:dialog/header"
+                    -   path: "Middle/VerticalBox"
+                        children:
+                        -   prototype: "SmartTextField/SmartTextField"
+                            name: "LoginTextField"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                DebugRender:
+                                    enabled: false
+                        -   prototype: "SmartTextField/SmartTextField"
+                            name: "PasswordTextField"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: false
+                                    topAnchor: 0.000000
+                        -   class: "UIStaticText"
+                            name: "LoginErrorText"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                UITextComponent:
+                                    fontName: "WarHeliosCondC_21"
+                                    color: [1.000000, 0.305882, 0.000000, 1.000000]
+                                    multiline: "MULTILINE_ENABLED"
+                        -   class: "UIControl"
+                            name: "ButtonsPanel"
+                            components:
+                                LinearLayout:
+                                    orientation: "RightToLeft"
+                                    spacing: 20.000000
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    verticalPolicy: "PercentOfMaxChild"
+                                Anchor:
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 20.000000
+                            children:
+                            -   prototype: "StyledButton/StyledButton"
+                                name: "LoginButton"
+                                classes: "button button-color-green"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                children:
+                                -   path: "Caption"
+                                    components:
+                                        UITextComponent:
+                                            text: "#login:button/connect"
+                            -   prototype: "StyledButton/StyledButton"
+                                name: "ChangePasswordButton"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                children:
+                                -   path: "Caption"
+                                    components:
+                                        Anchor:
+                                            leftAnchor: 4.000000
+                                            rightAnchor: 4.000000
+                                        UITextComponent:
+                                            text: "#login:button/changePassword"
+                                            fitting: "FITTING_REDUCE"
+                        -   prototype: "StyledButton/StyledButton"
+                            name: "WGNRegistrationButton"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                            children:
+                            -   path: "Caption"
+                                components:
+                                    UITextComponent:
+                                        text: "#login:button/createWgId"
+                -   class: "UIStaticText"
+                    name: "LastSessionHint"
+                    size: [0.000000, 32.000000]
+                    visible: false
+                    classes: "text2-small text-color-white"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "ContainerButton"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "GraphicsOptionsButton"
+                size: [190.000000, 64.000000]
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "Graphics Options"
+            -   prototype: "StyledButton/StyledButton"
+                name: "MyReplaysButton"
+                size: [190.000000, 64.000000]
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "My Replays"
+            -   prototype: "StyledButton/StyledButton"
+                name: "StartReplayButton"
+                size: [190.000000, 64.000000]
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "Start Replay"
+            -   prototype: "StyledButton/StyledButton"
+                name: "SkipTutorialButton"
+                size: [190.000000, 64.000000]
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "Tutorial Options"
+            -   prototype: "StyledButton/StyledButton"
+                name: "ChoosePeripheryButton"
+                size: [190.000000, 64.000000]
+                children:
+                -   path: "Caption"
+                    size: [190.000000, 64.000000]
+                    components:
+                        UITextComponent:
+                            text: "Choose Periphery"
+    -   path: "Background/BackButton"
+        visible: true
+        children: []
+    -   path: "Background/RegionSelector"
+        components:
+            DebugRender:
+                enabled: false
+                drawColor: [0.333333, 1.000000, 1.000000, 1.000000]
+        children: []
+    -   path: "Background/RegionSelector/RegionName"
+        components:
+            DebugRender:
+                enabled: false
+                drawColor: [0.333333, 0.333333, 1.000000, 1.000000]
+    -   path: "Background/RegionSelector/RegionButton"
+        components:
+            DebugRender:
+                enabled: false
+                drawColor: [1.000000, 0.000000, 1.000000, 1.000000]
+        children: []
+-   class: "UIControl"
+    name: "SkipTutorialDialog"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.070588, 0.090196, 0.109804, 0.780392]
+    children:
+    -   prototype: "Common/ResizableDialog"
+        name: "Dialog"
+        size: [500.000000, 312.000000]
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Top/TitleText"
+            components:
+                UITextComponent:
+                    text: "LOGIN_SKIP_TUTORIAL"
+        -   path: "Middle/VerticalBox"
+            children:
+            -   prototype: "SkipButton"
+                name: "SkipBattleTutorialButton"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "LOGIN_SKIP_BATTLE_TUTORIAL"
+            -   prototype: "SkipButton"
+                name: "SkipHangarTutorialButton"
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "LOGIN_SKIP_HANGAR_TUTORIAL"
+            -   prototype: "StyledButton/StyledButton"
+                name: "OkButton"
+                classes: "button button-color-green"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 10.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "OK"
+                            fontName: "WarHeliosCondC_Bold_25"
+-   class: "UIControl"
+    name: "ChoosePeripheryDialog"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.070588, 0.090196, 0.109804, 0.780392]
+    children:
+    -   prototype: "Common/ResizableDialog"
+        name: "Dialog"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Top/TitleText"
+            components:
+                UITextComponent:
+                    text: "Choose Periphery"
+-   prototype: "StyledButton/StyledButton"
+    name: "ChoosePeripheryButton"
+    size: [360.000000, 64.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+    children:
+    -   path: "Caption"
+        components:
+            Anchor:
+                leftAnchor: 20.000000
+            UITextComponent:
+                fontName: "WarHeliosCondC_21"
+                align: ["LEFT", "VCENTER"]
+    -   prototype: "Selection/Selection"
+        name: "Selection"
+        visible: false
+        classes: "selection-color-orange"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Check"
+            size: [64.000000, 64.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/CommonUIElements/chekbox_icon.psd"
+                    frame: 6
+                DebugRender:
+                    enabled: false

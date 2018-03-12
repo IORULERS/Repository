@@ -1,0 +1,158 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/SectionHeader1.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "AchievementGroup"
+    size: [490.000000, 60.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            verticalPolicy: "PercentOfChildrenSum"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        customClass: "UIAchievementGroupHeader"
+        name: "Header"
+        size: [490.000000, 60.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Selection"
+            size: [490.000000, 60.000000]
+            noInput: true
+            classes: "section-header1"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background: {}
+        -   class: "UIStaticText"
+            name: "Title"
+            noInput: true
+            classes: "header3"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 30.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 50.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                    rightSafeInset: "INSET"
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIStaticText"
+            name: "Count"
+            size: [400.000000, 60.000000]
+            noInput: true
+            classes: "header3"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 50.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["RIGHT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "Arrow"
+            size: [60.000000, 60.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                    frame: 9
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        components:
+            FlowLayout:
+                hDynamicPadding: true
+                hSpacing: 10.000000
+                vSpacing: 10.000000
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+Controls:
+-   class: "UIControl"
+    name: "MedalGroups"
+    size: [400.000000, 386.000000]
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            safeAreaPaddingInset: true
+            spacing: 1.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfChildrenSum"
+    children:
+    -   prototype: "AchievementGroup"
+        name: "BattleHero"
+        children:
+        -   path: "Header/Title"
+            components:
+                UITextComponent:
+                    text: "#achievementScreen:BattleHero"
+    -   prototype: "AchievementGroup"
+        name: "TitleOfHonor"
+        children:
+        -   path: "Header/Title"
+            components:
+                UITextComponent:
+                    text: "#achievementScreen:TitleOfHonor"
+    -   prototype: "AchievementGroup"
+        name: "EpicAchievements"
+        children:
+        -   path: "Header/Title"
+            components:
+                UITextComponent:
+                    text: "#achievementScreen:EpicAchievemnts"
+    -   prototype: "AchievementGroup"
+        name: "CommemorateAchievements"
+        children:
+        -   path: "Header/Title"
+            components:
+                UITextComponent:
+                    text: "#achievementScreen:CommemorateAchievements"
+    -   prototype: "AchievementGroup"
+        name: "StepAchievements"
+        children:
+        -   path: "Header/Title"
+            components:
+                UITextComponent:
+                    text: "#achievementScreen:StepAchievements"
+    -   prototype: "AchievementGroup"
+        name: "PlatoonAchievements"
+        children:
+        -   path: "Header/Title"
+            components:
+                UITextComponent:
+                    text: "#achievementScreen:PlatoonAchievements"

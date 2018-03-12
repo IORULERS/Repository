@@ -1,0 +1,5 @@
+1
+capture_quick0.tex
+512 256
+1
+0 0 438 218 40 33 0 frame0

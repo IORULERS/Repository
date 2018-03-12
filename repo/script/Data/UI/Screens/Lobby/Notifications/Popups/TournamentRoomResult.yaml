@@ -1,0 +1,41 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UITournamentRoomResultNotification"
+    name: "TournamentRoomResult"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Hangar/SidebarIcons"
+                frame: 15
+    -   class: "UIStaticText"
+        name: "Text"
+        position: [119.000000, 4.000000]
+        size: [843.000000, 76.000000]
+        noInput: true
+        classes: "text1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 75.000000
+                rightAnchorEnabled: true
+                rightAnchor: 18.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowColor: [0.000000, 0.000000, 0.000000, 0.750000]
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "DONT_USE"

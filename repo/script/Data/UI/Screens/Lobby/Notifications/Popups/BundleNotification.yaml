@@ -1,0 +1,38 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UIBundleNotification"
+    name: "BundleNotification"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                frame: 26
+    -   prototype: "Notification/Content"
+        name: "Content"
+        components:
+            LinearLayout:
+                dynamicPadding: true
+                useRtl: true
+            SizePolicy:
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "Description"
+            classes: "text1 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                UITextComponent:
+                    text: "shop/Notification/TransactionProcessing"
+                    colorInheritType: "COLOR_IGNORE_PARENT"

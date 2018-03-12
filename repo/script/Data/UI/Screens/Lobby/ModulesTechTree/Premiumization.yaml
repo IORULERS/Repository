@@ -1,0 +1,330 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/FooterPriceControl.yaml"
+- "~res:/UI/Screens/Dialogs.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+- "~res:/UI/Screens/Lobby/ExpireTimer.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+StyleSheets:
+-   selector: ".premiumization #AlreadyPremiumized, .premiumization #Button, .premiumization #OptionsText, .premiumization #PriceHolder"
+    properties:
+        visible: false
+-   selector: ".premiumization.premiumized #AlreadyPremiumized"
+    properties:
+        visible: true
+-   selector: ".premiumization.premiumization-buy #Button, .premiumization.premiumization-buy #PriceHolder"
+    properties:
+        visible: true
+-   selector: ".premiumization.premiumization-options #Button, .premiumization.premiumization-options #OptionsText"
+    properties:
+        visible: true
+-   selector: ".cell #Selection"
+    properties:
+        visible: false
+-   selector: ".cell:selected #Selection"
+    properties:
+        visible: true
+Prototypes:
+-   class: "UIControl"
+    name: "CellPrototype"
+    size: [500.000000, 60.000000]
+    noInput: false
+    classes: "cell"
+    children:
+    -   class: "UIControl"
+        name: "TopLine"
+        size: [500.000000, 1.000000]
+        noInput: true
+        components:
+            Anchor:
+                topAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                sprite: "~res:/Gfx/UI/CommonUIElements/BlueLine"
+                color: [0.211765, 0.254902, 0.290196, 1.000000]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "BottomLine"
+        size: [500.000000, 1.000000]
+        noInput: true
+        components:
+            Anchor:
+                bottomAnchorEnabled: true
+                bottomAnchor: -1.000000
+            Background:
+                drawType: "DRAW_FILL"
+                sprite: "~res:/Gfx/UI/CommonUIElements/BlueLine"
+                color: [0.211765, 0.254902, 0.290196, 1.000000]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "Selection/Selection"
+        name: "Selection"
+        classes: "selection-color-orange"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: -1.000000
+                rightAnchorEnabled: true
+                rightAnchor: -1.000000
+                topAnchorEnabled: true
+                topAnchor: -1.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: -1.000000
+    -   class: "UIControl"
+        name: "Content"
+        size: [500.000000, 60.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   prototype: "FooterPriceControl/FooterPriceControl"
+            name: "PriceItem"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 2.000000
+            children:
+            -   path: "Gold"
+                components:
+                    LinearLayout:
+                        spacing: 10.000000
+                children: []
+            -   path: "Gold/LeftPart"
+                noInput: true
+                children: []
+            -   path: "Gold/RightPart"
+                noInput: true
+                children: []
+            -   path: "Gold/RightPart/Price/Text"
+                classes: "header3"
+            -   path: "Credits"
+                components:
+                    LinearLayout:
+                        spacing: 10.000000
+                children: []
+            -   path: "Credits/RightPart/Price/Text"
+                classes: "header3"
+        -   class: "UIStaticText"
+            name: "PremTypeText"
+            size: [0.000000, 60.000000]
+            classes: "text1 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "VCENTER"]
+-   class: "UIControl"
+    name: "PremiumizationHolder"
+    size: [390.000000, 64.000000]
+    noInput: true
+    classes: "premiumization premiumization-tag=premiumization-buy"
+    components:
+        LinearLayout:
+            spacing: 10.000000
+    children:
+    -   class: "UIControl"
+        name: "AlreadyPremiumized"
+        size: [363.000000, 26.000000]
+        noInput: true
+        components:
+            FlowLayout:
+                hSpacing: 5.000000
+                useRtl: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "AlreadyPremiumizedText"
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                UITextComponent:
+                    text: "#modules_tech_tree:PremializedPermanently"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+        -   prototype: "ExpireTimer/ExpireTimer"
+            name: "ExpireTimer"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "Icon"
+                position: [0.000000, 6.000000]
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: false
+                    Background:
+                        colorInherit: "COLOR_IGNORE_PARENT"
+            -   path: "Timer/Hours"
+                components:
+                    UITextComponent:
+                        fontName: "WarHeliosCondC_21"
+            -   path: "Timer/ColonHM"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "FixedSize"
+                        horizontalValue: 7.000000
+                    UITextComponent:
+                        fontName: "WarHeliosCondC_21"
+            -   path: "Timer/Minutes"
+                components:
+                    UITextComponent:
+                        fontName: "WarHeliosCondC_21"
+            -   path: "Label"
+                components:
+                    UITextComponent:
+                        fontName: "WarHeliosCondC_21"
+    -   prototype: "StyledButton/StyledButton"
+        name: "Button"
+        size: [200.000000, 64.000000]
+        classes: "button button-color-orange"
+        components:
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Caption"
+            position: [0.000000, 0.000000]
+            components:
+                UITextComponent:
+                    text: "#hangar_showcase:PremializationButton"
+        -   class: "UIControl"
+            name: "highlight"
+            visible: false
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: -10.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: -10.000000
+                    topAnchorEnabled: true
+                    topAnchor: -10.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: -10.000000
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/HangarTutorial/HighlightTile"
+                    leftRightStretchCap: 15.000000
+                    topBottomStretchCap: 15.000000
+    -   class: "UIStaticText"
+        name: "OptionsText"
+        position: [232.000000, 0.000000]
+        size: [180.000000, 64.000000]
+        classes: "text2 text-color-blue"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "#modules_tech_tree:PremializationOptions"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "VCENTER"]
+    -   class: "UIControl"
+        name: "PriceHolder"
+        size: [180.000000, 92.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "PriceText"
+            size: [180.000000, 26.000000]
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfContent"
+                UITextComponent:
+                    text: "#modules_tech_tree:Install/Cost"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "VCENTER"]
+        -   prototype: "FooterPriceControl/FooterPriceControl"
+            name: "PriceControl"
+            children:
+            -   path: "Gold"
+                components:
+                    LinearLayout:
+                        spacing: 10.000000
+                children: []
+            -   path: "Gold/RightPart/Price/Text"
+                classes: "header3"
+            -   path: "Credits"
+                components:
+                    LinearLayout:
+                        spacing: 10.000000
+                children: []
+            -   path: "Credits/RightPart/Price/Text"
+                classes: "header3"
+-   prototype: "Dialogs/WarningDialogWithoutCaption"
+    name: "SelectPremiumizationTypeDialog"
+    children:
+    -   path: "Dialog/Middle"
+        components:
+            LinearLayout:
+                orientation: "BottomUp"
+                padding: 20.000000
+                spacing: 20.000000
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                topAnchorEnabled: false
+                vCenterAnchorEnabled: true
+                bottomAnchorEnabled: false
+        children:
+        -   class: "UIControl"
+            name: "Options"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+        -   prototype: "RichText/RichText"
+            name: "DialogRichText"
+            components:
+                FlowLayout:
+                    hDynamicInLinePadding: true
+                SizePolicy:
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                RichContent:
+                    text: "premialization/Notification/TemporaryOrPermanent"
+                    baseClasses: "text1 text-color-blue"
+    -   path: "Dialog/Middle/DialogText"
+        visible: false
+        components:
+            SizePolicy: {}
+    -   path: "Dialog/Middle/ButtonHolder"
+        components:
+            Anchor:
+                enabled: false
+        children: []

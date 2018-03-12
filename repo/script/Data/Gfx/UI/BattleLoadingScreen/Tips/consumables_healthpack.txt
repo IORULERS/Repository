@@ -1,0 +1,5 @@
+1
+consumables_healthpack0.tex
+256 128
+1
+0 0 72 73 92 43 0 frame0

@@ -1,0 +1,43 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Common/StyledMenuButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "BasePopup"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "LobbyCommon/DialogBackground"
+        name: "DialogBackground"
+        children:
+        -   path: "Darkness"
+            noInput: true
+    -   prototype: "StyledMenuButton/StyledMenuButton"
+        name: "BackButton"
+        classes: "button button-color-gray"
+        children:
+        -   path: "icon"
+            components:
+                Background:
+                    frame: 3
+        -   path: "UnreadNews"
+            classes: "header3 bg-color=unread-icon-bg state=hide-unread-icon"
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 80.000000
+                bottomAnchorEnabled: true

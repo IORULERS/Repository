@@ -1,0 +1,524 @@
+Header:
+    version: "18"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "HangarTutorialExcellentBattleDialog"
+    size: [960.000000, 640.000000]
+    classes: "screen-background"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+        Anchor:
+            vCenterAnchorEnabled: true
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "dialog"
+        size: [960.000000, 605.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 35.000000
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "TopContainer"
+            position: [0.000000, 0.000000]
+            size: [960.000000, 116.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    topAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "header"
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Background:
+                        drawType: "DRAW_STRETCH_HORIZONTAL"
+                children:
+                -   class: "UIControl"
+                    name: "LeftImagePart"
+                    size: [480.000000, 70.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: 0.000000
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/bgMedalsLeft"
+                -   class: "UIControl"
+                    name: "RightImagePart"
+                    position: [480.000000, 0.000000]
+                    size: [480.000000, 70.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/bgMedalsRight"
+                -   class: "UIStaticText"
+                    name: "txtSpecialOffer"
+                    position: [480.000000, 35.000000]
+                    size: [800.000000, 70.000000]
+                    pivot: [0.500000, 0.500000]
+                    noInput: true
+                    classes: "text-color-gold header0"
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "#hangar_tutorial:premium_custom/header"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIStaticText"
+                name: "txtSpecialOffer"
+                position: [480.000000, 98.000000]
+                size: [960.000000, 36.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                classes: "text-color-white header1"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UITextComponent:
+                        text: "#hangar_tutorial:premium_custom/descr1"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "footer"
+            noInput: true
+            components:
+                SizePolicy:
+                    verticalPolicy: "FixedSize"
+                    verticalValue: 87.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "btnGet"
+                size: [218.000000, 64.000000]
+                classes: "button button-color-green"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "#hangar_tutorial:premium_custom/complete_button"
+        -   class: "UIControl"
+            name: "content"
+            size: [960.000000, 400.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "FixedSize"
+                    verticalValue: 400.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "description"
+                position: [480.000000, 100.000000]
+                size: [667.000000, 300.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                components:
+                    SizePolicy: {}
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: -50.000000
+                    Background:
+                        drawType: "DRAW_SCALE_TO_RECT"
+                        sprite: "~res:/Gfx/UI/BattleResultsScreen/SpecialOffer/glow"
+                children:
+                -   class: "UIControl"
+                    name: "banner50"
+                    position: [191.000000, 105.000000]
+                    size: [171.000000, 74.000000]
+                    noInput: true
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/BuyPremiumBanner/Banner+50"
+                -   class: "UIControl"
+                    name: "icon"
+                    position: [356.000000, 113.000000]
+                    size: [88.000000, 60.000000]
+                    noInput: true
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/BattleResultsScreen/SpecialOffer/imagexpmoney"
+                -   class: "UIStaticText"
+                    name: "txtDescription"
+                    position: [25.500000, 177.000000]
+                    size: [616.000000, 35.000000]
+                    noInput: true
+                    classes: "text1 text-color-blue"
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 177.000000
+                        UITextComponent:
+                            text: "#hangar_tutorial:premium_custom/descr2"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIControl"
+                name: "price"
+                position: [167.000000, 353.000000]
+                size: [626.000000, 47.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "offerPrice"
+                    position: [183.375000, 6.000000]
+                    size: [259.250000, 30.000000]
+                    noInput: true
+                    classes: "header3 text-color-gold"
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: 0.000000
+                        UITextComponent:
+                            text: "#hangar_tutorial:premium_custom/free"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIControl"
+                name: "benefits"
+                position: [480.000000, 263.000000]
+                size: [678.000000, 180.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 47.000000
+                    Background:
+                        drawType: "DRAW_STRETCH_BOTH"
+                        sprite: "~res:/Gfx/UI/BattleResultsScreen/tankSelect"
+                        color: [0.996100, 0.560800, 0.000000, 1.000000]
+                        leftRightStretchCap: 3.000000
+                        topBottomStretchCap: 3.000000
+                children:
+                -   class: "UIControl"
+                    name: "xpIconBig"
+                    position: [75.500000, 18.000000]
+                    size: [75.000000, 71.000000]
+                    noInput: true
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/BattleResultsScreen/SpecialOffer/iconsoffer"
+                            frame: 3
+                -   class: "UIControl"
+                    name: "creditsIconBig"
+                    position: [301.000000, 17.000000]
+                    size: [75.000000, 71.000000]
+                    noInput: true
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/BattleResultsScreen/SpecialOffer/iconsoffer"
+                -   class: "UIControl"
+                    name: "iconPremium"
+                    position: [528.000000, 18.000000]
+                    size: [75.000000, 71.000000]
+                    noInput: true
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/BattleResultsScreen/SpecialOffer/iconsoffer"
+                            frame: 2
+                -   class: "UIStaticText"
+                    name: "txtPremium"
+                    position: [477.000000, 101.000000]
+                    size: [179.000000, 52.000000]
+                    noInput: true
+                    classes: "header3 text-color-gold"
+                    components:
+                        UITextComponent:
+                            text: "#hangar_tutorial:premium_custom/reward"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            multiline: "MULTILINE_ENABLED_BY_SYMBOL"
+                -   class: "UIControl"
+                    name: "xpIncomeBase"
+                    position: [113.500000, 114.000000]
+                    size: [125.000000, 26.000000]
+                    pivot: [0.504000, 0.500000]
+                    noInput: true
+                    children:
+                    -   class: "UIControl"
+                        name: "xpValueBase"
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                dynamicPadding: true
+                                spacing: 5.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIStaticText"
+                            customClass: "UIStaticTextStriked"
+                            name: "text"
+                            size: [46.000000, 26.000000]
+                            noInput: true
+                            classes: "text1 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                UITextComponent:
+                                    text: "1 000"
+                                    fontName: "WarHeliosCondC_21"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                            children:
+                            -   class: "UIControl"
+                                name: "strike"
+                                position: [63.000000, 14.000000]
+                                size: [50.000000, 1.000000]
+                                noInput: true
+                                components:
+                                    Background:
+                                        drawType: "DRAW_FILL"
+                        -   class: "UIControl"
+                            name: "icon"
+                            position: [51.000000, 0.000000]
+                            size: [22.000000, 26.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 0.000000
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+                                    frame: 3
+                -   class: "UIControl"
+                    name: "xpIncomePrem"
+                    position: [113.000000, 140.000000]
+                    size: [125.000000, 26.000000]
+                    pivot: [0.504000, 0.500000]
+                    noInput: true
+                    children:
+                    -   class: "UIControl"
+                        name: "xpValuePrem"
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                dynamicPadding: true
+                                spacing: 5.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIStaticText"
+                            name: "text"
+                            size: [47.000000, 26.000000]
+                            noInput: true
+                            classes: "text-color-gold header3"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                UITextComponent:
+                                    text: "1 000"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIControl"
+                            name: "icon"
+                            position: [52.000000, 0.000000]
+                            size: [22.000000, 26.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 0.000000
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+                                    frame: 3
+                -   class: "UIControl"
+                    name: "creditsIncomePrem"
+                    position: [340.000000, 140.000000]
+                    size: [125.000000, 26.000000]
+                    pivot: [0.504000, 0.500000]
+                    noInput: true
+                    children:
+                    -   class: "UIControl"
+                        name: "creditsValuePrem"
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                dynamicPadding: true
+                                spacing: 5.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIStaticText"
+                            name: "text"
+                            size: [47.000000, 26.000000]
+                            noInput: true
+                            classes: "header3 text-color-gold"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                UITextComponent:
+                                    text: "1 000"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIControl"
+                            name: "icon"
+                            position: [52.000000, 0.000000]
+                            size: [22.000000, 25.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 1.000000
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+                                    frame: 1
+                                    align: ["HCENTER", "BOTTOM"]
+                -   class: "UIControl"
+                    name: "creditsIncomeBase"
+                    position: [340.000000, 114.000000]
+                    size: [125.000000, 26.000000]
+                    pivot: [0.504000, 0.500000]
+                    noInput: true
+                    children:
+                    -   class: "UIControl"
+                        name: "creditsValueBase"
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                dynamicPadding: true
+                                spacing: 5.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIStaticText"
+                            customClass: "UIStaticTextStriked"
+                            name: "text"
+                            size: [46.000000, 26.000000]
+                            noInput: true
+                            classes: "text1 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                UITextComponent:
+                                    text: "1 000"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                            children:
+                            -   class: "UIControl"
+                                name: "strike"
+                                position: [63.000000, 14.000000]
+                                size: [50.000000, 1.000000]
+                                noInput: true
+                                components:
+                                    Background:
+                                        drawType: "DRAW_FILL"
+                        -   class: "UIControl"
+                            name: "icon"
+                            position: [51.000000, 0.000000]
+                            size: [22.000000, 25.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 1.000000
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+                                    frame: 1
+                                    align: ["HCENTER", "BOTTOM"]
+                -   class: "UIControl"
+                    name: "dividerUp"
+                    position: [226.000000, 90.000000]
+                    size: [76.000000, 1.000000]
+                    pivot: [1.000000, 1.000000]
+                    angle: 90.000206
+                    noInput: true
+                    components:
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/GradientDivider"
+                -   class: "UIControl"
+                    name: "dividerDown"
+                    position: [226.000000, 90.000000]
+                    size: [76.000000, 1.000000]
+                    pivot: [0.000000, 1.000000]
+                    angle: 90.000206
+                    noInput: true
+                    components:
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/GradientDivider"
+                            spriteModification: ["FLIP_HORIZONTAL"]
+                -   class: "UIControl"
+                    name: "dividerUp"
+                    position: [452.000000, 90.000000]
+                    size: [76.000000, 1.000000]
+                    pivot: [1.000000, 1.000000]
+                    angle: 90.000206
+                    noInput: true
+                    components:
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/GradientDivider"
+                -   class: "UIControl"
+                    name: "dividerDown"
+                    position: [452.000000, 90.000000]
+                    size: [76.000000, 1.000000]
+                    pivot: [0.000000, 1.000000]
+                    angle: 90.000206
+                    noInput: true
+                    components:
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/GradientDivider"
+                            spriteModification: ["FLIP_HORIZONTAL"]

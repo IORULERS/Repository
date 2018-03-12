@@ -1,0 +1,271 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+StyleSheets:
+-   selector: ".text-color-green"
+    properties:
+        text-color: [0.705882, 1.000000, 0.580392, 1.000000]
+-   selector: ".dlc-text"
+    properties:
+        text-fontName: "WarHeliosCondC_21"
+-   selector: ".text-color-blue"
+    properties:
+        text-color: [0.615686, 0.788235, 1.000000, 1.000000]
+-   selector: ".selectable-button:selected #OrangeSelection"
+    properties:
+        visible: true
+-   selector: ".selectable-button #OrangeSelection"
+    properties:
+        visible: false
+-   selector: ".dlc-num-text"
+    properties:
+        text-fontName: "WarHeliosCondC_21"
+-   selector: "#Internal.notEnoughSpace #ContainerAligne #FreeSpace, #External.notEnoughSpace #ContainerAligne #FreeSpace"
+    properties:
+        text-color: [1.000000, 0.000000, 0.000000, 1.000000]
+Controls:
+-   prototype: "Common/Dialog"
+    customClass: "ChooseStorageDialog"
+    name: "ChooseDestinationDialog"
+    components:
+        SizePolicy:
+            verticalPolicy: "PercentOfChildrenSum"
+        Anchor:
+            hCenterAnchorEnabled: true
+            vCenterAnchorEnabled: true
+    children:
+    -   path: "Middle"
+        position: [0.000000, 54.000000]
+        size: [500.000000, 378.000000]
+        selected: false
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                padding: 25.000000
+                spacing: 10.000000
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                topAnchor: 54.000000
+        children:
+        -   class: "UIStaticText"
+            name: "Caption"
+            size: [460.000000, 104.000000]
+            noInput: true
+            classes: "dlc-text text-color-blue"
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                    leftRightStretchCap: 7.000000
+                UITextComponent:
+                    text: "dlc/Install/SpaceRequired"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+        -   prototype: "StyledButton/DefaultStyledButton"
+            name: "Internal"
+            classes: "button button-color-gray selectable-button"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                Sound:
+                    touchUpInside: "GUI/buttons/choose"
+            children:
+            -   class: "UIControl"
+                name: "ContainerAligne"
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 15.000000
+                        useRtl: true
+                children:
+                -   class: "UIStaticText"
+                    name: "FreeSpace"
+                    position: [0.000000, 0.000000]
+                    size: [27.000000, 72.000000]
+                    noInput: true
+                    classes: "dlc-num-text text-color-white"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                        Anchor:
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 0.000000
+                            useRtl: true
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        UITextComponent:
+                            text: "Progress_data_mb"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                            align: ["HCENTER", "VCENTER"]
+                            useRtlAlign: "USE_BY_SYSTEM"
+            -   class: "UIStaticText"
+                name: "Name"
+                position: [15.000000, 0.000000]
+                size: [300.000000, 64.000000]
+                noInput: true
+                classes: "dlc-text text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 15.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                        useRtl: true
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    UITextComponent:
+                        text: "dlc/Install/InternalMemory"
+                        colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "USE_BY_SYSTEM"
+            -   prototype: "Selection/Selection"
+                name: "OrangeSelection"
+                classes: "selection-color-orange"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+        -   prototype: "StyledButton/DefaultStyledButton"
+            name: "External"
+            visible: true
+            classes: "button button-color-gray selectable-button"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                Sound:
+                    touchUpInside: "GUI/buttons/choose"
+            children:
+            -   class: "UIStaticText"
+                name: "Name"
+                position: [15.000000, 0.000000]
+                size: [300.000000, 64.000000]
+                noInput: true
+                classes: "dlc-text text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 15.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                        useRtl: true
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    UITextComponent:
+                        text: "dlc/Install/ExternalMemory"
+                        colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "USE_BY_SYSTEM"
+            -   class: "UIControl"
+                name: "ContainerAligne"
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 15.000000
+                        useRtl: true
+                children:
+                -   class: "UIStaticText"
+                    name: "FreeSpace"
+                    size: [21.000000, 72.000000]
+                    noInput: true
+                    classes: "dlc-num-text text-color-white"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                        Anchor:
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 0.000000
+                            useRtl: true
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        UITextComponent:
+                            text: "Progress_data_gb"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                            align: ["HCENTER", "VCENTER"]
+                            useRtlAlign: "USE_BY_SYSTEM"
+            -   prototype: "Selection/Selection"
+                name: "OrangeSelection"
+                classes: "selection-color-orange"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+        -   prototype: "StyledButton/StyledButton"
+            name: "OkButton"
+            classes: "button button-color-green"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+            children:
+            -   path: "Caption"
+                classes: "header3 text-color-white"
+                components:
+                    UITextComponent:
+                        text: "#common:DialogButton/OK"
+        -   class: "UIStaticText"
+            name: "WarningCaption"
+            size: [460.000000, 26.000000]
+            visible: false
+            noInput: true
+            classes: "text1"
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                    leftRightStretchCap: 7.000000
+                UITextComponent:
+                    text: "dlc/Install/NotEnoughSpace"
+                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+    -   path: "Top/TitleText"
+        classes: "header1 text-color-white"
+        components:
+            UITextComponent:
+                text: "dlc/Install/Header"

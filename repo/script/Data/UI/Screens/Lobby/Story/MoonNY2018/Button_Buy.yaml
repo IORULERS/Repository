@@ -1,0 +1,85 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Layout"
+        components:
+            ClipContent: {}
+        children: []
+    -   path: "Layout/Footer/Type"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Story/coins_icon"
+    -   path: "Layout/IconContainer"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+            Anchor:
+                leftAnchorEnabled: true
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 110.000000
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 1.000000
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Story/january2018_event/HangarIcon_pay.psd"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   path: "Layout/TextContainer/Title"
+        position: [-3.000000, 0.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 3.000000
+            Background: {}
+            UITextComponent:
+                text: "lunar_new_year_event/Title"
+                align: ["RIGHT", "VCENTER"]
+    -   path: "Layout/TextContainer/ExpireTimer"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+        children: []
+    -   class: "UIControl"
+        name: "FXLayer"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            ClipContent: {}
+        children:
+        -   class: "UIParticles"
+            name: "dust"
+            position: [76.000000, 73.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/january2018_event_dust.sc2"
+            autoStart: true
+            components:
+                IgnoreLayout: {}
+        -   class: "UIParticles"
+            name: "smoke"
+            position: [15.000000, 32.000000]
+            size: [31.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/january2018_event_smoke.sc2"
+            autoStart: true
+            components:
+                IgnoreLayout: {}

@@ -1,0 +1,709 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Hangar/HangarTankCell.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Lobby/Prebattle/BattleType.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+StyleSheets:
+-   selector: "#RandomQueue.regular #Table #ContainerInside #QueueInfo #AverageWaitTimeHolder"
+    properties:
+        visible: false
+-   selector: "#RandomQueue.rating #Table #ContainerInside #QueueuInfo #AverageWaitTimeHolder"
+    properties:
+        visible: true
+Prototypes:
+-   class: "UIControl"
+    name: "Cell"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            padding: 3.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfContent"
+            verticalPolicy: "PercentOfMaxChild"
+        Anchor:
+            hCenterAnchorEnabled: true
+            topAnchorEnabled: true
+        Background:
+            sprite: "~res:/Gfx/UI/QueueScreen/HorizontalYellowLine"
+            align: ["HCENTER", "BOTTOM"]
+    children:
+    -   class: "UIControl"
+        name: "ContainerAligne"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfMaxChild"
+        children:
+        -   class: "UIControl"
+            name: "ValueContainer"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 50.000000
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Value"
+                position: [0.000000, 0.000000]
+                size: [51.750000, 21.000000]
+                noInput: true
+                classes: "text2-small text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalValue: 50.000000
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "--"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "TextContainer"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 50.000000
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    leftAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Text"
+                position: [51.750000, 0.000000]
+                size: [51.750000, 0.000000]
+                noInput: true
+                classes: "text2-small text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalValue: 50.000000
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+-   class: "UIControl"
+    name: "QueueInfoCell"
+    size: [254.000000, 90.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            padding: 8.000000
+        Background:
+            color: [0.207843, 0.243137, 0.278431, 1.000000]
+            perPixelAccuracy: "PER_PIXEL_ACCURACY_FORCED"
+            leftRightStretchCap: 2.000000
+            topBottomStretchCap: 2.000000
+    children:
+    -   class: "UIStaticText"
+        name: "Value"
+        size: [180.000000, 26.000000]
+        classes: "header3 text-color-white"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+            UITextComponent:
+                text: "--"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIStaticText"
+        name: "Description"
+        size: [180.000000, 48.000000]
+        classes: "text2 text-color-blue"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                hCenterAnchorEnabled: true
+            UITextComponent:
+                text: "Среднее время ожидания"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+    -   prototype: "Box"
+        name: "Box"
+        components:
+            IgnoreLayout: {}
+-   class: "UIControl"
+    name: "Line"
+    noInput: true
+    components:
+        Anchor: {}
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.207843, 0.243137, 0.278431, 1.000000]
+-   class: "UIControl"
+    name: "Box"
+    size: [32.000000, 32.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "Line"
+        name: "TopLine"
+        size: [32.000000, 1.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+    -   prototype: "Line"
+        name: "LeftLine"
+        size: [1.000000, 32.000000]
+        components:
+            Anchor:
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+    -   prototype: "Line"
+        name: "BottomLine"
+        size: [32.000000, 1.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+    -   prototype: "Line"
+        name: "RightLine"
+        size: [1.000000, 32.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+Controls:
+-   class: "UIControl"
+    name: "RandomQueue"
+    size: [1024.000000, 768.000000]
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Head"
+        size: [1024.000000, 184.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "BackgroundHolder"
+            size: [1024.000000, 184.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+        -   prototype: "StyledBackButton/StyledBackButton"
+            name: "BackToHangarButton"
+            classes: "button button-color-gray button-close-sound"
+            children:
+            -   path: "icon"
+                components:
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall.psd"
+                        frame: 30
+        -   class: "UIControl"
+            name: "BattleTypesContainer"
+            size: [200.000000, 124.000000]
+            angle: 0.000000
+            components:
+                LinearLayout: {}
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 20.000000
+            children:
+            -   prototype: "BattleType/BattleType"
+                name: "BattleType"
+    -   class: "UIControl"
+        name: "Table"
+        position: [0.000000, 184.000000]
+        size: [1024.000000, 584.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 220.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_TILED"
+                sprite: "~res:/Gfx/UI/QueueScreen/BackgroundPattern"
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "startBattleButtonWithBots"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 225.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 15.000000
+            children:
+            -   path: "Caption"
+                classes: "header4 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "Start With Bots"
+        -   prototype: "StyledButton/StyledButton"
+            name: "startBattleButton"
+            size: [190.000000, 64.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 15.000000
+            children:
+            -   path: "Caption"
+                classes: "header4 text-color-white"
+                components:
+                    UITextComponent:
+                        text: "Start Battle"
+        -   class: "UIControl"
+            name: "ContainerInside"
+            noInput: true
+            classes: "limited-width"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    padding: 10.000000
+                    spacing: 12.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "MatchmakingText"
+                position: [0.000000, 10.000000]
+                size: [1024.000000, 23.000000]
+                noInput: true
+                classes: "text2 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfContent"
+                    UITextComponent:
+                        text: "Matchmaking"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIControl"
+                name: "QueueInfo"
+                size: [507.000000, 90.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        spacing: -1.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   prototype: "QueueInfoCell"
+                    name: "TotalTanksHolder"
+                    children:
+                    -   path: "Description"
+                        components:
+                            UITextComponent:
+                                text: "Total tanks in queue"
+                -   prototype: "QueueInfoCell"
+                    name: "AverageWaitTimeHolder"
+                    visible: false
+                    children:
+                    -   path: "Description"
+                        components:
+                            UITextComponent:
+                                text: "AverageWaitTime"
+                -   prototype: "QueueInfoCell"
+                    name: "WaitTimeHolder"
+                    position: [253.000000, 0.000000]
+                    children:
+                    -   path: "Description"
+                        components:
+                            UITextComponent:
+                                text: "WaitTime"
+            -   class: "UIControl"
+                name: "ContainerInside"
+                position: [0.000000, 147.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        dynamicPadding: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalMax: 1100.000000
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "ContainerAlign"
+                    position: [131.000000, 0.000000]
+                    size: [254.000000, 122.000000]
+                    noInput: true
+                    children:
+                    -   class: "UIControl"
+                        name: "HangarTankCellHolder"
+                        size: [181.000000, 122.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                        children:
+                        -   prototype: "HangarTankCell/HangarTankCell"
+                            name: "TankCell"
+                            position: [0.000000, 0.000000]
+                            size: [181.000000, 122.000000]
+                            noInput: true
+                            components:
+                                Anchor: {}
+                -   class: "UIControl"
+                    name: "TanksByLevel"
+                    position: [385.000000, 0.000000]
+                    size: [254.000000, 330.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                    children:
+                    -   class: "UIControl"
+                        name: "Header"
+                        size: [254.000000, 30.000000]
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                topAnchorEnabled: true
+                                topAnchor: 0.000000
+                            Background:
+                                sprite: "~res:/Gfx/UI/QueueScreen/HorizontalYellowLine"
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                                align: ["HCENTER", "BOTTOM"]
+                        children:
+                        -   class: "UIStaticText"
+                            name: "Text"
+                            position: [0.000000, -4.000000]
+                            size: [254.000000, 34.000000]
+                            noInput: true
+                            classes: "header4 text-color-white"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    topAnchor: -4.000000
+                                    bottomAnchorEnabled: true
+                                Background:
+                                    align: ["LEFT", "TOP"]
+                                UITextComponent:
+                                    text: "TanksByLevel"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    fitting: "FITTING_REDUCE"
+                                    align: ["HCENTER", "TOP"]
+                                    useRtlAlign: "DONT_USE"
+                    -   prototype: "Cell"
+                        name: "Cell_10"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                UITextComponent:
+                                    text: "X"
+                    -   prototype: "Cell"
+                        name: "Cell_9"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                UITextComponent:
+                                    text: "IX"
+                    -   prototype: "Cell"
+                        name: "Cell_8"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                UITextComponent:
+                                    text: "VIII"
+                    -   prototype: "Cell"
+                        name: "Cell_7"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                UITextComponent:
+                                    text: "VII"
+                    -   prototype: "Cell"
+                        name: "Cell_6"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                UITextComponent:
+                                    text: "VI"
+                    -   prototype: "Cell"
+                        name: "Cell_5"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                UITextComponent:
+                                    text: "V"
+                    -   prototype: "Cell"
+                        name: "Cell_4"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                UITextComponent:
+                                    text: "IV"
+                    -   prototype: "Cell"
+                        name: "Cell_3"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                UITextComponent:
+                                    text: "III"
+                    -   prototype: "Cell"
+                        name: "Cell_2"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                UITextComponent:
+                                    text: "II"
+                    -   prototype: "Cell"
+                        name: "Cell_1"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                UITextComponent:
+                                    text: "I"
+                -   class: "UIControl"
+                    name: "TanksByType"
+                    position: [639.000000, 0.000000]
+                    size: [254.000000, 150.000000]
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                    children:
+                    -   class: "UIControl"
+                        name: "Header"
+                        size: [254.000000, 30.000000]
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                topAnchorEnabled: true
+                            Background:
+                                sprite: "~res:/Gfx/UI/QueueScreen/HorizontalYellowLine"
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                                align: ["HCENTER", "BOTTOM"]
+                        children:
+                        -   class: "UIStaticText"
+                            name: "Text"
+                            position: [0.000000, -4.000000]
+                            size: [254.000000, 34.000000]
+                            noInput: true
+                            classes: "header4 text-color-white"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    topAnchor: -4.000000
+                                    bottomAnchorEnabled: true
+                                Background:
+                                    align: ["LEFT", "TOP"]
+                                UITextComponent:
+                                    text: "TanksByTypes"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    fitting: "FITTING_REDUCE"
+                                    align: ["HCENTER", "TOP"]
+                                    useRtlAlign: "DONT_USE"
+                    -   prototype: "Cell"
+                        name: "Cell_Heavy"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/ValueContainer/Value"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    horizontalValue: 100.000000
+                                Anchor:
+                                    leftAnchorEnabled: false
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                        -   path: "ContainerAligne/TextContainer"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    horizontalValue: 60.000000
+                            children: []
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    horizontalValue: 100.000000
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                UITextComponent:
+                                    text: "HeavyTanks"
+                    -   prototype: "Cell"
+                        name: "Cell_Medium"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/ValueContainer/Value"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    horizontalValue: 100.000000
+                                Anchor:
+                                    leftAnchorEnabled: false
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                        -   path: "ContainerAligne/TextContainer"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    horizontalValue: 60.000000
+                            children: []
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    horizontalValue: 100.000000
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                UITextComponent:
+                                    text: "MediumTanks"
+                    -   prototype: "Cell"
+                        name: "Cell_Light"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/ValueContainer/Value"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    horizontalValue: 100.000000
+                                Anchor:
+                                    leftAnchorEnabled: false
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                        -   path: "ContainerAligne/TextContainer"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    horizontalValue: 60.000000
+                            children: []
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    horizontalValue: 100.000000
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                UITextComponent:
+                                    text: "LightTanks"
+                    -   prototype: "Cell"
+                        name: "Cell_AT_SPG"
+                        components:
+                            Background:
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        children:
+                        -   path: "ContainerAligne/ValueContainer/Value"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    horizontalValue: 100.000000
+                                Anchor:
+                                    leftAnchorEnabled: false
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                        -   path: "ContainerAligne/TextContainer"
+                            components:
+                                SizePolicy:
+                                    horizontalValue: 60.000000
+                            children: []
+                        -   path: "ContainerAligne/TextContainer/Text"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    horizontalValue: 100.000000
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                UITextComponent:
+                                    text: "AT_SPGTanks"

@@ -1,0 +1,33 @@
+Header:
+    version: "16"
+ImportedPackages:
+- "~res:/UI/Styles/Lobby/BattleRating/BattleRatingStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "Value"
+    noInput: true
+    classes: "custom-number"
+    components:
+        LinearLayout:
+            orientation: "RightToLeft"
+            spacing: 4.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "Number"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Background:
+                sprite: "~res:/Gfx/UI/CommonUIElements/prem_hours/silver_numbers/normal/0"
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "Space"
+        size: [5.000000, 50.000000]
+        noInput: true

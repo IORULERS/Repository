@@ -1,0 +1,22 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+Prototypes:
+-   prototype: "StyledBackButton/StyledBackButton"
+    name: "BackButton"
+    classes: "button button-color-gray button-close-sound"
+    children:
+    -   prototype: "UnreadIcon/UnreadIcon"
+        name: "UnreadNews"
+        size: [32.000000, 32.000000]
+        classes: "header3 bg-color=tournament-unread-bg state=hide-unread-icon"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: -4.000000
+                topAnchorEnabled: true
+                topAnchor: -4.000000

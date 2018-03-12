@@ -1,0 +1,24 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/IconButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+StyleSheets:
+-   selector: ".checkbox #icon"
+    properties:
+        bg-frame: 0
+-   selector: ".checkbox:selected #icon"
+    properties:
+        bg-frame: 1
+Prototypes:
+-   prototype: "IconButton/IconButton"
+    name: "CheckBox"
+    size: [64.000000, 64.000000]
+    classes: "checkbox button-color-gray button-checkbox-sound"
+    children:
+    -   path: "icon"
+        components:
+            Anchor:
+                hCenterAnchor: 2.000000
+            Background:
+                sprite: "~res:/Gfx/UI/CommonUIElements/chekbox_icon.psd"

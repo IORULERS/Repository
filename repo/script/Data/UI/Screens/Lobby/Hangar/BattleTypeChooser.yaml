@@ -1,0 +1,178 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/Selection.yaml"
+- "~res:/UI/Screens/Lobby/Common/CheckMark.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+StyleSheets:
+-   selector: ".battleTypeChooser:selected #OrangeSelection, .battleTypeChooser:selected #CheckMark"
+    properties:
+        visible: true
+-   selector: ".battleTypeChooser #OrangeSelection, .battleTypeChooser #CheckMark"
+    properties:
+        visible: false
+-   selector: ".battleTypeChooser:disabled #BattleTypeIcon"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.588235]
+-   selector: ".battleTypeChooser:disabled #BattleType"
+    properties:
+        text-color: [1.000000, 1.000000, 1.000000, 0.588235]
+Prototypes:
+-   class: "UIControl"
+    name: "BattleChooserPrototype"
+    size: [220.000000, 185.000000]
+    exclusiveInput: true
+    classes: "battleTypeChooser"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            padding: 15.000000
+            dynamicSpacing: true
+        Anchor:
+            bottomAnchorEnabled: true
+        Sound:
+            touchUpInside: "GUI/buttons/choose"
+    children:
+    -   prototype: "Selection/Selection"
+        name: "OrangeSelection"
+        classes: "selection-color-orange"
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: -1.000000
+                rightAnchorEnabled: true
+                rightAnchor: -1.000000
+                topAnchorEnabled: true
+                topAnchor: -1.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: -1.000000
+            Background:
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "CheckMark/CheckMark"
+        name: "CheckMark"
+        components:
+            IgnoreLayout: {}
+            Background:
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "BattleTypeIcon"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/CommonUIElements/Battle_type.psd"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIStaticText"
+        name: "BattleType"
+        classes: "header3"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalValue: 90.000000
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+            UITextComponent:
+                text: "Battle type"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIStaticText"
+        name: "VehicleDescription"
+        size: [198.000000, 69.000000]
+        classes: "text2 availability-color=text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalValue: 90.000000
+            Anchor:
+                hCenterAnchorEnabled: true
+            UITextComponent:
+                text: "ratingBattles/vehicleType/any"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                align: ["HCENTER", "TOP"]
+Controls:
+-   class: "UIControl"
+    name: "MainControl"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Sound:
+            touchUpInside: "GUI/buttons/close"
+    children:
+    -   class: "UIControl"
+        name: "BattleTypeChooserLayout"
+        size: [440.000000, 201.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                horizontalPolicy: "PercentOfMaxChild"
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 165.000000
+            Background:
+                color: [0.000000, 0.000000, 0.000000, 0.498039]
+        children:
+        -   class: "UIControl"
+            name: "Triangle"
+            size: [32.000000, 16.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 128.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Hangar/Selection_back_0"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   class: "UIControl"
+            name: "HorizontalLayout"
+            noInput: false
+            components:
+                LinearLayout: {}
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/Hangar/Selection_back"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                    leftRightStretchCap: 10.000000
+                    topBottomStretchCap: 10.000000
+            children:
+            -   prototype: "BattleChooserPrototype"
+                name: "RegularBattleChooser"
+                tag: 1
+                children:
+                -   path: "BattleTypeIcon"
+                    components:
+                        Background:
+                            frame: 1
+                -   path: "BattleType"
+                    components:
+                        UITextComponent:
+                            text: "ratingBattles/battleType/regular"
+            -   prototype: "BattleChooserPrototype"
+                name: "RankingBattleChooser"
+                tag: 2
+                children:
+                -   path: "BattleType"
+                    components:
+                        UITextComponent:
+                            text: "ratingBattles/battleType/rating"
+                -   path: "VehicleDescription"
+                    components:
+                        UITextComponent:
+                            text: "Any vehicle"

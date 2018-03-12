@@ -1,0 +1,22 @@
+Header:
+    version: "10"
+StyleSheets:
+-   selector: ".white-bg-with-transition"
+    properties:
+        bg-color:
+            value: [1.000000, 1.000000, 1.000000, 1.000000]
+            transitionTime: 1.000000
+            transitionFunction: "EASE_IN_EASY_OUT"
+-   selector: ".white-bg-transparent"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.000000]
+Prototypes:
+-   class: "UIControl"
+    name: "ImageUrlView"
+    size: [32.000000, 32.000000]
+    noInput: true
+    classes: "loadStateStyle=#"
+    components:
+        Background:
+            drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"

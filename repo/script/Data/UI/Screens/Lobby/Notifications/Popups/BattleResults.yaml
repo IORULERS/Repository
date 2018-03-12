@@ -1,0 +1,387 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleInfo.yaml"
+- "~res:/UI/Screens/Lobby/Common/BattleRating.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+StyleSheets:
+-   selector: ".battle-type.rating #BattleTypeRegular, .battle-type.regular #BattleTypeRating"
+    properties:
+        visible: false
+-   selector: ".battle-type.regular #BattleTypeRegular, .battle-type.rating #BattleTypeRating"
+    properties:
+        visible: true
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UIBattleResultsNotification"
+    name: "BattleResults"
+    children:
+    -   prototype: "Notification/Content"
+        name: "Content"
+        classes: "battle-type"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                leftAnchor: 0.000000
+                rightAnchor: 0.000000
+        children:
+        -   class: "UIControl"
+            name: "divider"
+            position: [224.000000, 0.000000]
+            size: [2.000000, 84.000000]
+            noInput: true
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Notifications/NotificationBarDivider"
+        -   class: "UIControl"
+            name: "icon"
+            position: [7.000000, 10.000000]
+            size: [64.000000, 64.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 7.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Notifications/NotificationIcons"
+                    frame: 8
+        -   class: "UIStaticText"
+            name: "BattleResult"
+            position: [74.000000, 0.000000]
+            size: [150.000000, 76.000000]
+            noInput: true
+            classes: "header1 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 74.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -4.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "NEWS_NOTIFICATION_BATTLE_DRAW"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   prototype: "VehicleInfo/VehicleInfoBig"
+            name: "TankType"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 226.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -16.000000
+            children:
+            -   path: "LevelIcon"
+                components:
+                    Anchor:
+                        leftAnchor: 33.000000
+                        topAnchor: -1.000000
+                        bottomAnchorEnabled: false
+        -   class: "UIStaticText"
+            name: "TankName"
+            position: [294.000000, 12.500000]
+            size: [158.000000, 29.000000]
+            noInput: true
+            classes: "header3 text-color-blue"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 294.000000
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: -16.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -15.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "#germany_vehicles:DW_II"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    fitting: "FITTING_REDUCE"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "MapIcon"
+            position: [226.000000, 35.500000]
+            size: [46.000000, 43.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 226.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 15.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Notifications/NotificationIcons"
+                    frame: 9
+        -   class: "UIStaticText"
+            name: "MapName"
+            position: [294.000000, 42.500000]
+            size: [158.000000, 29.000000]
+            noInput: true
+            classes: "header3 text-color-blue"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 294.000000
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: -16.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 15.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "Hille"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    fitting: "FITTING_REDUCE"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "divider1"
+            position: [452.000000, 0.000000]
+            size: [2.000000, 84.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: -15.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Notifications/NotificationBarDivider"
+        -   class: "UIControl"
+            name: "BattleTypeRegular"
+            position: [458.000000, 0.000000]
+            size: [261.000000, 84.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: -10.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 217.000000
+            children:
+            -   class: "UIStaticText"
+                name: "Xp"
+                size: [211.000000, 29.000000]
+                noInput: true
+                classes: "header3 text-color-blue"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        rightAnchor: 50.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -15.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "HANGAR_NOTIFICATION_RECEIVED_XP"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+                children:
+                -   class: "UIStaticText"
+                    name: "Value"
+                    position: [111.000000, 0.000000]
+                    size: [100.000000, 29.000000]
+                    noInput: true
+                    classes: "header3 text-color-white"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: 0.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            text: "99 240"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            shadowOffset: [0.000000, 1.000000]
+                            shadowColor: [0.000000, 0.000000, 0.000000, 0.750000]
+                            align: ["RIGHT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+            -   class: "UIStaticText"
+                name: "Credits"
+                size: [211.000000, 29.000000]
+                noInput: true
+                classes: "header3 text-color-blue"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        rightAnchor: 50.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "HANGAR_NOTIFICATION_RECEIVED_CREDITS"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+                children:
+                -   class: "UIStaticText"
+                    name: "Value"
+                    position: [111.000000, 0.000000]
+                    size: [100.000000, 29.000000]
+                    noInput: true
+                    classes: "header3"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: 0.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            text: "8 640 000"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            align: ["RIGHT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "XpIcon"
+                position: [215.000000, 5.500000]
+                size: [46.000000, 43.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -15.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                        frame: 3
+                        align: ["LEFT", "VCENTER"]
+                children:
+                -   class: "UIStaticText"
+                    name: "multiplier"
+                    position: [0.000000, 6.500000]
+                    size: [46.000000, 30.000000]
+                    noInput: true
+                    classes: "header4 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 0.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        UITextComponent:
+                            text: "x3"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            fitting: "FITTING_REDUCE"
+                            align: ["RIGHT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "CreditsIcon"
+                position: [215.000000, 35.500000]
+                size: [46.000000, 43.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                        frame: 1
+                        align: ["LEFT", "VCENTER"]
+                children:
+                -   class: "UIStaticText"
+                    name: "multiplier"
+                    position: [0.000000, 6.500000]
+                    size: [47.000000, 30.000000]
+                    noInput: true
+                    classes: "header4 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: -1.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        UITextComponent:
+                            text: "x3"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            fitting: "FITTING_REDUCE"
+                            align: ["RIGHT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "BattleTypeRating"
+            position: [458.000000, 0.000000]
+            size: [261.000000, 84.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: -10.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 217.000000
+            children:
+            -   class: "UIStaticText"
+                name: "Title"
+                noInput: true
+                classes: "text-color-blue text1"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -15.000000
+                    UITextComponent:
+                        text: "NEWS_NOTIFICATION_BATTLE_RATING"
+                        align: ["LEFT", "VCENTER"]
+            -   prototype: "BattleRating/Rating"
+                name: "BattleRating"
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+        -   class: "UIControl"
+            name: "divider2"
+            position: [724.000000, 0.000000]
+            size: [2.000000, 84.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 210.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Notifications/NotificationBarDivider"
+    -   prototype: "StyledButton/StyledButton"
+        name: "DetailsButton"
+        size: [196.000000, 64.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 11.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -2.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "HANGAR_NOTIFICATIONS_DETAILS"

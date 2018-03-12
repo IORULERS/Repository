@@ -1,0 +1,5 @@
+1
+he_noricochet0.tex
+512 256
+1
+0 0 360 208 76 24 0 frame0

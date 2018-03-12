@@ -1,0 +1,779 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Lobby/BattleResults/BattleResultsCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/IconButton.yaml"
+- "~res:/UI/Styles/Lobby/BattleRating/BattleRatingStyles.yaml"
+- "~res:/UI/Screens/Common/PlayerNameWithTag.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".compliment #RateButton"
+    properties:
+        bg-color: [0.494118, 0.827451, 0.129412, 1.000000]
+-   selector: ".complaint #RateButton"
+    properties:
+        bg-spriteModification: ["FLIP_HORIZONTAL", "FLIP_VERTICAL"]
+        bg-color: [0.815686, 0.007843, 0.105882, 1.000000]
+-   selector: ".available #RateButton"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 1.000000]
+-   selector: ".unavailable #RateButton"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: ".self #RateButton, .no-karma #RateButton"
+    properties:
+        visible: false
+-   selector: "#CellRelations.self, #CellRelations.no-karma"
+    properties:
+        noInput: true
+-   selector: "#RateButton"
+    properties:
+        bg-spriteModification: []
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: "#Animation"
+    properties:
+        visible: false
+-   selector: ".animated.available #RateButton"
+    properties:
+        visible: false
+-   selector: ".animated.available #Animation"
+    properties:
+        visible: true
+-   selector: ".rating #RatingLabel, .rating #RatingIcon"
+    properties:
+        visible: true
+-   selector: ".regular #RatingLabel, .regular #RatingIcon"
+    properties:
+        visible: false
+-   selector: ".rating #Value"
+    properties:
+        sizePolicy-horizontalValue: 240.000000
+-   selector: ".regular #Value"
+    properties:
+        sizePolicy-horizontalValue: 200.000000
+-   selector: "UIStaticText.results-cell.player-cell"
+    properties:
+        text-color: [1.000000, 0.650980, 0.145098, 1.000000]
+-   selector: "#PlayerNameWithTag.name-with-tag.player-cell #name"
+    properties:
+        text-color: [1.000000, 0.650980, 0.145098, 1.000000]
+-   selector: "UIStaticText.results-cell.teammate-cell"
+    properties:
+        text-color: [0.933333, 0.776471, 0.462745, 1.000000]
+-   selector: "#PlayerNameWithTag.name-with-tag.teammate-cell #name"
+    properties:
+        text-color: [0.933333, 0.776471, 0.462745, 1.000000]
+-   selector: ".results-cell.player-cell #Squad"
+    properties:
+        bg-color: [1.000000, 0.650980, 0.145098, 1.000000]
+-   selector: ".results-cell.player-cell #TankName"
+    properties:
+        text-color: [1.000000, 0.650980, 0.145098, 1.000000]
+-   selector: ".results-cell.player-cell #PlayerNameWithTag #name"
+    properties:
+        text-color: [1.000000, 0.650980, 0.145098, 1.000000]
+-   selector: ".results-cell.player-cell #PlayerNameWithTag #tag"
+    properties:
+        text-color: [1.000000, 0.650980, 0.145098, 1.000000]
+-   selector: ".results-cell.player-cell #CurrentRating"
+    properties:
+        text-color: [1.000000, 0.650980, 0.145098, 1.000000]
+-   selector: ".results-cell.player-cell #Rating"
+    properties:
+        text-color: [1.000000, 0.650980, 0.145098, 1.000000]
+-   selector: ".results-cell.teammate-cell #Squad"
+    properties:
+        bg-color: [0.933333, 0.776471, 0.462745, 1.000000]
+-   selector: ".results-cell.teammate-cell #Rating"
+    properties:
+        text-color: [0.933333, 0.776471, 0.462745, 1.000000]
+-   selector: ".results-cell.teammate-cell #TankName"
+    properties:
+        text-color: [0.933333, 0.776471, 0.462745, 1.000000]
+-   selector: ".results-cell.teammate-cell #PlayerNameWithTag #name"
+    properties:
+        text-color: [0.933333, 0.776471, 0.462745, 1.000000]
+-   selector: ".results-cell.teammate-cell #PlayerNameWithTag #tag"
+    properties:
+        text-color: [0.933333, 0.776471, 0.462745, 1.000000]
+-   selector: ".results-cell.teammate-cell #CurrentRating"
+    properties:
+        text-color: [0.933333, 0.776471, 0.462745, 1.000000]
+-   selector: ".battle-rating.calibration #CalibrationIcon"
+    properties:
+        visible: true
+-   selector: ".battle-rating #CalibrationIcon"
+    properties:
+        visible: false
+-   selector: ".results-cell #PlayerNameWithTag #name"
+    properties:
+        text-color: [0.772549, 0.772549, 0.772549, 1.000000]
+-   selector: ".results-cell #PlayerNameWithTag #tag"
+    properties:
+        text-color: [0.772549, 0.772549, 0.772549, 1.000000]
+Prototypes:
+-   class: "UIControl"
+    customClass: "UITeamPageTableHeaderColumn"
+    name: "HeaderColumn"
+    size: [86.000000, 48.000000]
+    children:
+    -   class: "UIControl"
+        name: "Selected"
+        size: [86.000000, 48.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.623500, 0.725500, 0.807800, 1.000000]
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            size: [44.000000, 44.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/BattleResultsScreen/statIcon"
+                    color: [0.000000, 0.000000, 0.000000, 1.000000]
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   class: "UIControl"
+            name: "DirectionUp"
+            size: [12.000000, 12.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/BattleResultsScreen/arrow"
+                    color: [0.000000, 0.000000, 0.000000, 1.000000]
+        -   class: "UIControl"
+            name: "DirectionDown"
+            size: [12.000000, 12.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/BattleResultsScreen/arrow"
+                    spriteModification: ["FLIP_VERTICAL"]
+                    color: [0.000000, 0.000000, 0.000000, 1.000000]
+    -   class: "UIControl"
+        name: "Unselected"
+        size: [86.000000, 48.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.125500, 0.137300, 0.133300, 1.000000]
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            position: [21.000000, 2.000000]
+            size: [44.000000, 44.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/BattleResultsScreen/statIcon"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+-   class: "UIControl"
+    customClass: "UITable"
+    name: "Table"
+    size: [460.000000, 550.000000]
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "FixedSize"
+            horizontalValue: 460.000000
+            verticalPolicy: "PercentOfChildrenSum"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            vCenterAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "TableName"
+        size: [450.000000, 60.000000]
+        noInput: true
+        classes: "style=regular"
+        components:
+            LinearLayout: {}
+            SizePolicy:
+                horizontalPolicy: "Formula"
+                horizontalFormula: "parent - 10"
+                verticalPolicy: "FixedSize"
+                verticalValue: 60.000000
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+        children:
+        -   class: "UIStaticText"
+            name: "PanelLabel"
+            position: [0.000000, 15.000000]
+            size: [450.000000, 30.000000]
+            noInput: true
+            classes: "header1"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "Formula"
+                    horizontalFormula: "parentRest"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    shadowOffset: [0.000000, 1.000000]
+                    align: ["LEFT", "VCENTER"]
+        -   class: "UIStaticText"
+            name: "RatingLabel"
+            size: [0.000000, 30.000000]
+            classes: "header2"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 30.000000
+                    vCenterAnchorEnabled: true
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    shadowOffset: [0.000000, 1.000000]
+                    align: ["RIGHT", "VCENTER"]
+    -   prototype: "Common/BlueBoldLine"
+        name: "TopBlueBoldLine"
+        size: [460.000000, 2.000000]
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 2.000000
+    -   class: "UIControl"
+        name: "Header"
+        size: [460.000000, 48.000000]
+        components:
+            LinearLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 48.000000
+    -   class: "UIScrollView"
+        name: "Content"
+        size: [460.000000, 390.000000]
+        autoUpdate: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 390.000000
+        children:
+        -   class: "UIScrollViewContainer"
+            name: "scrollContainerControl"
+            size: [460.000000, 0.000000]
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+    -   prototype: "Common/BlueBoldLine"
+        name: "BottomBlueBoldLine"
+        size: [460.000000, 2.000000]
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalValue: 100.000000
+                verticalPolicy: "FixedSize"
+                verticalValue: 2.000000
+    -   class: "UIControl"
+        name: "Summary"
+        size: [460.000000, 48.000000]
+        noInput: true
+        classes: "style=regular"
+        components:
+            LinearLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 48.000000
+        children:
+        -   class: "UIStaticText"
+            name: "Key"
+            size: [260.000000, 48.000000]
+            classes: "header4"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                UITextComponent:
+                    text: "#battle_results:TeamPage/TotalDamage"
+                    align: ["LEFT", "VCENTER"]
+        -   class: "UIStaticText"
+            name: "Value"
+            classes: "header5"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "FixedSize"
+                    verticalPolicy: "PercentOfParent"
+                UITextComponent:
+                    text: "7076"
+                    align: ["LEFT", "VCENTER"]
+Controls:
+-   class: "UIControl"
+    name: "TableRow"
+    size: [500.000000, 55.000000]
+    exclusiveInput: true
+    components:
+        LinearLayout: {}
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "AliveBackground"
+        size: [500.000000, 54.000000]
+        noInput: true
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.235300, 0.000000, 0.000000, 0.502000]
+    -   class: "UIControl"
+        name: "Splitter"
+        position: [0.000000, 54.000000]
+        size: [500.000000, 1.000000]
+        noInput: true
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/TableLine"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+-   prototype: "HeaderColumn"
+    name: "HeaderName"
+    size: [100.000000, 48.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+    children:
+    -   path: "Selected/Icon"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 18.000000
+                hCenterAnchorEnabled: false
+            Background:
+                frame: 5
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   path: "Selected/DirectionUp"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 23.000000
+            Background:
+                align: ["LEFT", "VCENTER"]
+    -   path: "Selected/DirectionDown"
+        size: [27.000000, 12.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 23.000000
+            Background:
+                align: ["LEFT", "VCENTER"]
+    -   path: "Unselected/Icon"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 18.000000
+                hCenterAnchorEnabled: false
+            Background:
+                frame: 5
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+-   prototype: "HeaderColumn"
+    name: "HeaderDamage"
+    size: [56.000000, 48.000000]
+    children:
+    -   path: "Selected/Icon"
+        components:
+            Background:
+                frame: 3
+    -   path: "Unselected/Icon"
+        components:
+            Background:
+                frame: 3
+-   prototype: "HeaderColumn"
+    name: "HeaderKills"
+    size: [48.000000, 48.000000]
+    children:
+    -   path: "Selected/Icon"
+        components:
+            Background:
+                frame: 2
+    -   path: "Unselected/Icon"
+        components:
+            Background:
+                frame: 2
+-   prototype: "HeaderColumn"
+    name: "HeaderExperience"
+    size: [56.000000, 48.000000]
+    children:
+    -   path: "Selected/Icon"
+        components:
+            Background:
+                frame: 1
+    -   path: "Unselected/Icon"
+        components:
+            Background:
+                frame: 1
+-   prototype: "HeaderColumn"
+    name: "HeaderRating"
+    size: [90.000000, 48.000000]
+    children:
+    -   path: "Selected/Icon"
+        components:
+            Background:
+                frame: 6
+    -   path: "Unselected/Icon"
+        components:
+            Background:
+                frame: 6
+-   prototype: "HeaderColumn"
+    name: "HeaderRelations"
+    size: [48.000000, 48.000000]
+    noInput: true
+    children:
+    -   path: "Unselected/Icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/Likes_icon"
+-   class: "UIControl"
+    name: "CellName"
+    size: [100.000000, 50.000000]
+    noInput: true
+    classes: "results-cell"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIControl"
+        name: "Squad"
+        size: [30.000000, 48.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                topAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/vzvods"
+                frame: 2
+    -   class: "UIStaticText"
+        name: "TankName"
+        position: [30.000000, 3.000000]
+        size: [70.000000, 24.000000]
+        noInput: true
+        classes: "header4 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 30.000000
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 3.000000
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_POINTS"
+                align: ["LEFT", "TOP"]
+                useRtlAlign: "DONT_USE"
+    -   prototype: "PlayerNameWithTag/PlayerNameWithTag"
+        name: "PlayerNameWithTag"
+        position: [30.000000, 24.000000]
+        classes: "name-with-tag"
+        components:
+            SizePolicy:
+                horizontalPolicy: "Ignore"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 30.000000
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   path: "name"
+            classes: "text2-small"
+        -   path: "tag"
+            position: [32.000000, 0.000000]
+            classes: "text2-small"
+-   class: "UIStaticText"
+    name: "CellDamage"
+    size: [56.000000, 50.000000]
+    noInput: true
+    classes: "text2-small results-cell"
+    components:
+        Anchor: {}
+        UITextComponent:
+            colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIStaticText"
+    name: "CellKills"
+    size: [48.000000, 50.000000]
+    noInput: true
+    classes: "text2-small results-cell"
+    components:
+        UITextComponent:
+            colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIStaticText"
+    name: "CellExperience"
+    size: [56.000000, 50.000000]
+    noInput: true
+    classes: "text2-small results-cell"
+    components:
+        UITextComponent:
+            colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    name: "CellRating"
+    size: [90.000000, 50.000000]
+    noInput: true
+    classes: "battle-rating results-cell"
+    components:
+        LinearLayout:
+            dynamicPadding: true
+            spacing: 1.000000
+    children:
+    -   class: "UIStaticText"
+        name: "CurrentRating"
+        position: [6.000000, 0.000000]
+        size: [45.000000, 50.000000]
+        noInput: true
+        classes: "text2-small"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfParent"
+            UITextComponent:
+                text: "90 000"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_REDUCE"
+    -   class: "UIControl"
+        name: "CalibrationIcon"
+        size: [30.000000, 50.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 1.000000
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/league_small"
+                frame: 6
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "UpDownMark"
+        size: [14.000000, 50.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Background:
+                sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+    -   class: "UIStaticText"
+        name: "RatingDiff"
+        size: [17.000000, 50.000000]
+        classes: "text2-small"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfParent"
+            UITextComponent:
+                text: "99"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_REDUCE"
+                align: ["HCENTER", "VCENTER"]
+-   class: "UIStaticText"
+    name: "CellAchievements"
+    size: [48.000000, 50.000000]
+    noInput: false
+    classes: "text2-small results-cell"
+    components:
+        UITextComponent:
+            colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    name: "CellRelations"
+    size: [48.000000, 50.000000]
+    classes: "results-cell"
+    children:
+    -   class: "UIParticles"
+        name: "Animation"
+        effectPath: "~res:/3d/FX/UI/likes.sc2"
+        autoStart: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "RateButton"
+        noInput: true
+        exclusiveInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/Likes_icon"
+-   class: "UIControl"
+    name: "Page"
+    size: [960.000000, 640.000000]
+    noInput: true
+    classes: "limited-width"
+    components:
+        LinearLayout:
+            dynamicPadding: true
+            safeAreaPaddingInset: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Anchor:
+            hCenterAnchorEnabled: true
+            vCenterAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "LeftPanel"
+        position: [44.000000, -30.000000]
+        size: [436.000000, 688.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+        children:
+        -   prototype: "Table"
+            name: "Table"
+            position: [30.000000, 69.000000]
+            components:
+                Anchor:
+                    leftAnchor: 30.000000
+                    rightAnchor: 15.000000
+            children:
+            -   path: "TableName"
+                position: [0.000000, 0.000000]
+                children:
+                -   class: "UIControl"
+                    name: "RatingIcon"
+                    size: [32.000000, 32.000000]
+                    components:
+                        IgnoreLayout: {}
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: -41.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 4.000000
+                        Background:
+                            sprite: "~res:/Gfx/UI/BattleResultsScreen/statIcon"
+                            frame: 6
+                            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   path: "TableName/PanelLabel"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:TeamPage/TeamAlly"
+            -   path: "Header"
+                components:
+                    LinearLayout:
+                        dynamicSpacing: true
+            -   path: "Content"
+                position: [0.000000, 110.000000]
+                children: []
+            -   path: "Summary/Key"
+                position: [0.000000, 0.000000]
+    -   class: "UIControl"
+        name: "RightPanel"
+        position: [480.000000, -30.000000]
+        size: [436.000000, 688.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+        children:
+        -   prototype: "Table"
+            name: "Table"
+            components:
+                Anchor:
+                    leftAnchor: 15.000000
+                    rightAnchor: 30.000000
+            children:
+            -   path: "TableName"
+                components:
+                    LinearLayout:
+                        orientation: "RightToLeft"
+                    Anchor:
+                        rightAnchorEnabled: true
+                children: []
+            -   path: "TableName/PanelLabel"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:TeamPage/TeamEnemy"
+                        align: ["RIGHT", "VCENTER"]
+            -   path: "TableName/RatingLabel"
+                components:
+                    UITextComponent:
+                        align: ["LEFT", "VCENTER"]
+            -   path: "Header"
+                components:
+                    LinearLayout:
+                        dynamicSpacing: true
+            -   path: "Summary"
+                position: [0.000000, 502.000000]
+                children: []
+            -   path: "Summary/Key"
+                position: [0.000000, 0.000000]
+    -   class: "UIControl"
+        name: "TrainingNoteContainer"
+        size: [960.000000, 50.000000]
+        noInput: true
+        classes: "notch-tightly-bottom-inset"
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent: {}
+        children:
+        -   prototype: "BattleResultsCommon/TrainingNote"
+            name: "TrainingNote"
+            components:
+                IgnoreLayout: {}
+                SizePolicy:
+                    horizontalPolicy: "Ignore"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                DebugRender:
+                    enabled: false

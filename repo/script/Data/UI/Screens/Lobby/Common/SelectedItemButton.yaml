@@ -1,0 +1,51 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Tournament/TournamentButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Tournament/CellSelectionFrame.yaml"
+StyleSheets:
+-   selector: ".show-tip #TipText"
+    properties:
+        visible: true
+-   selector: ".hide-tip #TipText"
+    properties:
+        visible: false
+-   selector: ".show-tip #Caption"
+    properties:
+        visible: false
+-   selector: ".hide-tip #Caption"
+    properties:
+        visible: true
+Prototypes:
+-   prototype: "TournamentButton/Button"
+    name: "SelectedItemButton"
+    classes: "button tip-mode=show-tip selectable"
+    components:
+        Sound:
+            touchUpInside: "GUI/buttons/choose"
+    children:
+    -   path: "Caption"
+        fitting: ["POINTS"]
+        components:
+            Anchor:
+                leftAnchor: 5.000000
+                rightAnchor: 5.000000
+    -   class: "UIStaticText"
+        name: "TipText"
+        position: [5.000000, 0.000000]
+        size: [212.000000, 50.000000]
+        classes: "text1 text-color-blue"
+        fitting: ["POINTS"]
+        text: "text"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 5.000000
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+    -   prototype: "CellSelectionFrame/SelectionFrame"
+        name: "SelectionFrame"
+        noInput: true

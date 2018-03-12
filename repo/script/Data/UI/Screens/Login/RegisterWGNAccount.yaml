@@ -1,0 +1,221 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Login/LoginCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/StyledSmallButton.yaml"
+- "~res:/UI/Screens/Common/SmartTextField.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   prototype: "LoginCommon/ScreenBlank"
+    name: "Screen"
+    children:
+    -   path: "Background"
+        children:
+        -   class: "UIScrollView"
+            name: "Scroll"
+            size: [500.000000, 768.000000]
+            classes: "notch-tightly-bottom-inset"
+            autoUpdate: true
+            centerContent: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                children:
+                -   prototype: "Common/ResizableDialog"
+                    name: "Panel"
+                    children:
+                    -   path: "Top/TitleText"
+                        components:
+                            UITextComponent:
+                                text: "#wgnRegistration:dialog/header"
+                    -   path: "Middle"
+                        visible: true
+                        children: []
+                    -   path: "Middle/VerticalBox"
+                        children:
+                        -   prototype: "SmartTextField/SmartTextField"
+                            name: "LoginTextField"
+                            size: [460.000000, 62.000000]
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                            children:
+                            -   path: "VerticalBox/Background/TextField/Hint"
+                                components:
+                                    UITextComponent:
+                                        text: "HINT_TEXT_EMAIL"
+                            -   path: "VerticalBox/NoteText"
+                                components:
+                                    UITextComponent:
+                                        text: "NOTE_TEXT_EMAIL"
+                        -   prototype: "SmartTextField/SmartTextField"
+                            name: "NameTextField"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                            children:
+                            -   path: "VerticalBox/Background/TextField/Hint"
+                                components:
+                                    UITextComponent:
+                                        text: "HINT_TEXT_NICKNAME"
+                            -   path: "VerticalBox/NoteText"
+                                components:
+                                    UITextComponent:
+                                        text: "NOTE_TEXT_NICKNAME"
+                        -   prototype: "SmartTextField/SmartTextField"
+                            name: "PasswordTextField"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                            children:
+                            -   path: "VerticalBox/Background/TextField/Hint"
+                                components:
+                                    UITextComponent:
+                                        text: "HINT_TEXT_PASSWORD"
+                            -   path: "VerticalBox/NoteText"
+                                components:
+                                    UITextComponent:
+                                        text: "NOTE_TEXT_PASSWORD"
+                        -   class: "UIControl"
+                            name: "CaptchaPanel"
+                            size: [460.000000, 65.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                DebugRender:
+                                    enabled: false
+                            children:
+                            -   prototype: "StyledSmallButton/StyledSmallButton"
+                                name: "RefreshCaptchaButton"
+                                size: [82.000000, 64.000000]
+                                components:
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        leftAnchor: -3.000000
+                                        vCenterAnchorEnabled: true
+                                children:
+                                -   path: "icon"
+                                    components:
+                                        Background:
+                                            sprite: "~res:/Gfx/UI/CommonUIElements/IconsRefrash.psd"
+                                            frame: 1
+                            -   class: "UIControl"
+                                name: "CaptchaImage"
+                                size: [170.000000, 60.000000]
+                                noInput: true
+                                components:
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        leftAnchor: 74.000000
+                                        vCenterAnchorEnabled: true
+                                    Background:
+                                        drawType: "DRAW_SCALE_TO_RECT"
+                            -   class: "UIControl"
+                                name: "ArrowIcon"
+                                noInput: true
+                                components:
+                                    Anchor:
+                                        rightAnchorEnabled: true
+                                        rightAnchor: 185.000000
+                                        vCenterAnchorEnabled: true
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/CommonUIElements/IconBack.psd"
+                                        frame: 1
+                                        spriteModification: ["FLIP_HORIZONTAL"]
+                            -   prototype: "SmartTextField/SmartTextField"
+                                name: "CaptchaTextField"
+                                size: [160.000000, 62.000000]
+                                visible: true
+                                components:
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        leftAnchor: 300.000000
+                                        rightAnchorEnabled: true
+                                        vCenterAnchorEnabled: false
+                                children:
+                                -   path: "VerticalBox/Background/TextField/Hint"
+                                    components:
+                                        UITextComponent:
+                                            text: "HINT_TEXT_CAPTCHA"
+                        -   class: "UIStaticText"
+                            name: "CaptchaInfoText"
+                            size: [460.000000, 0.000000]
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                UITextComponent:
+                                    fontName: "WarHeliosCondC_21"
+                                    color: [1.000000, 0.305882, 0.000000, 1.000000]
+                                    multiline: "MULTILINE_ENABLED"
+                        -   class: "UIStaticText"
+                            name: "CaptchaNoteText"
+                            size: [460.000000, 26.000000]
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                UITextComponent:
+                                    text: "NOTE_TEXT_CAPTCHA"
+                                    fontName: "WarHeliosCondC_21"
+                                    color: [0.619608, 0.713726, 0.800000, 1.000000]
+                                    multiline: "MULTILINE_ENABLED"
+                        -   class: "UIStaticText"
+                            name: "CommonInfoText"
+                            size: [460.000000, 0.000000]
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                DebugRender:
+                                    enabled: false
+                                UITextComponent:
+                                    fontName: "WarHeliosCondC_21"
+                                    color: [1.000000, 0.305882, 0.000000, 1.000000]
+                                    multiline: "MULTILINE_ENABLED"
+                        -   prototype: "StyledButton/StyledButton"
+                            name: "RegisterButton"
+                            classes: "button button-color-green"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                            children:
+                            -   path: "Caption"
+                                components:
+                                    UITextComponent:
+                                        text: "#wgnRegistration:dialog/button"
+    -   path: "Background/BackButton"
+        visible: true
+        children: []
+    -   path: "Background/RegionSelector"
+        components:
+            Anchor:
+                bottomAnchor: 5.000000
+        children: []
+    -   path: "Background/EULANotice"
+        visible: false

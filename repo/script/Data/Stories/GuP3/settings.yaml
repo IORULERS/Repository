@@ -1,0 +1,21 @@
+name: "gup_event/Title"
+priority: 1
+stages:
+ GuP3_inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/GuP32017/Button_Inform.yaml"
+  info: "event-info"
+ GuP3_process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/GuP32017/Button_Process.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/GuP32017/GUP32017StoryTree.yaml"
+ GuP3_buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/GuP32017/Button_Buy.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/GuP32017/GUP32017StoryTree.yaml"
+currencyKeys:
+  prx_gup_bm: "common_event/Currencies/Cases/Terms"
+  prx_gup_pltn: "common_event/Currencies/PlatoonProxy/Terms"
+  prx_gup_win: "common_event/Currencies/BattlesProxy/Terms"

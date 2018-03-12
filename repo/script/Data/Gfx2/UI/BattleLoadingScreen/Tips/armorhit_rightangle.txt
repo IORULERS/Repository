@@ -1,0 +1,5 @@
+1
+armorhit_rightangle0.tex
+512 256
+1
+0 0 250 250 134 2 0 frame0

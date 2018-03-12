@@ -1,0 +1,190 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/VehicleInfo.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+StyleSheets:
+-   selector: ".japan #Nation"
+    properties:
+        bg-frame: 4
+-   selector: ".germany #Nation"
+    properties:
+        bg-frame: 1
+-   selector: ".ussr #Nation"
+    properties:
+        bg-frame: 2
+-   selector: ".china #Nation"
+    properties:
+        bg-frame: 5
+-   selector: ".uk #Nation"
+    properties:
+        bg-frame: 3
+-   selector: ".usa #Nation"
+    properties:
+        bg-frame: 0
+-   selector: ".france #Nation"
+    properties:
+        bg-frame: 6
+-   selector: ".other #Nation"
+    properties:
+        bg-frame: 7
+-   selector: "UIProfileTankListCell.china_region #Nation"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/China/SmallTankCellFlag"
+-   selector: "UIProfileTankListCell #Nation"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/Default/SmallTankCellFlag"
+Prototypes:
+-   class: "UIControl"
+    name: "Nation"
+    size: [198.000000, 80.000000]
+    noInput: true
+    components:
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "Icon"
+        position: [56.500000, 8.000000]
+        size: [85.000000, 64.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 0.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            Background:
+                drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+                sprite: "~res:/Gfx/UI/LobbyCommon/noImage"
+    -   class: "UIStaticText"
+        name: "Name"
+        position: [18.000000, 40.000000]
+        size: [167.000000, 30.000000]
+        noInput: true
+        classes: "header3"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 18.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 10.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowOffset: [0.000000, 1.000000]
+                shadowColor: [0.000000, 0.000000, 0.000000, 0.749000]
+                fitting: "FITTING_REDUCE"
+                align: ["LEFT", "BOTTOM"]
+                useRtlAlign: "DONT_USE"
+    -   prototype: "Selection/Selection"
+        name: "Selection"
+        classes: "selection-color-orange"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 11.000000
+                rightAnchorEnabled: true
+                rightAnchor: 11.000000
+                topAnchorEnabled: true
+                topAnchor: 7.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 7.000000
+    -   prototype: "VehicleInfo/VehicleInfo"
+        name: "VehicleInfo"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 19.000000
+                topAnchorEnabled: true
+                topAnchor: 10.000000
+Controls:
+-   class: "UIControl"
+    customClass: "UIProfileTankListCell"
+    name: "ProfileTankListCell"
+    position: [0.000000, 0.000000]
+    size: [469.000000, 82.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        size: [469.000000, 81.000000]
+        noInput: true
+        classes: "pane-bg"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            Background: {}
+    -   prototype: "Nation"
+        name: "Nation"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+    -   class: "UIStaticText"
+        name: "Battles"
+        position: [222.000000, 1.000000]
+        size: [90.000000, 80.000000]
+        noInput: true
+        classes: "header3"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 200.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIStaticText"
+        name: "Victories"
+        position: [314.000000, 1.000000]
+        size: [90.000000, 80.000000]
+        noInput: true
+        classes: "header3"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 292.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIStaticText"
+        name: "Experience"
+        position: [406.000000, 1.000000]
+        size: [44.000000, 80.000000]
+        noInput: true
+        classes: "header3"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 384.000000
+                rightAnchorEnabled: true
+                rightAnchor: 19.000000
+                vCenterAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"

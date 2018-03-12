@@ -1,0 +1,357 @@
+Lang_Independence_WarHeliosCondC_21_zh_hans:
+    name: "~res:/Fonts/XinGothic-SC-W6.otf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_21_ko:
+    name: "~res:/Fonts/CoreSans.ttf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_23:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 23.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_25_th:
+    name: "~res:/Fonts/SirichanaLT-Bold.ttf"
+    size: 27.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_21_vi:
+    name: "~res:/Fonts/cinecav_x_ui_bold.ttf"
+    size: 19.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_25:
+    name: "~res:/Fonts/WarHeliosCondCBold.ttf"
+    size: 25.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_14:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 14.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_25_vi:
+    name: "~res:/Fonts/cinecav_x_ui_bold.ttf"
+    size: 23.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_21_zh_hans:
+    name: "~res:/Fonts/XinGothic-SC-W6.otf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_25:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 25.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_21_th:
+    name: "~res:/Fonts/SirichanaLT-Bold.ttf"
+    size: 23.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_19:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 19.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_25_zh_hant:
+    name: "~res:/Fonts/XinGothic-TC-W6.otf"
+    size: 25.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_21:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_25_ja:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 25.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_21_zh_hant:
+    name: "~res:/Fonts/XinGothic-TC-W6.otf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_21_ar:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 0.650000
+    descendScale: 0.750000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_21_ja:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_25:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 25.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_21_zh_hant:
+    name: "~res:/Fonts/XinGothic-TC-W6.otf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_21_ko:
+    name: "~res:/Fonts/CoreSans.ttf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_25_ko:
+    name: "~res:/Fonts/CoreSans.ttf"
+    size: 25.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_21_th:
+    name: "~res:/Fonts/SirichanaLT-Regular.ttf"
+    size: 23.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_21_vi:
+    name: "~res:/Fonts/cinecav_x_ui.ttf"
+    size: 19.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_21:
+    name: "~res:/Fonts/WarHeliosCondCBold.ttf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_21_ar:
+    name: "~res:/Fonts/BadiyaLT-Bold.ttf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 0.650000
+    descendScale: 0.650000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_21_ja:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 20.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_25_ar:
+    name: "~res:/Fonts/BadiyaLT-Bold.ttf"
+    size: 25.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_17:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 17.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+Lang_Independence_WarHeliosCondC_Bold_25_zh_hans:
+    name: "~res:/Fonts/XinGothic-SC-W6.otf"
+    size: 25.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_16:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 16.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_17:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 16.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_21:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_10_markers:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 10.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_13:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 13.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_14:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 14.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_17_markers:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 15.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_19:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 19.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_19_markers:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 17.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_21:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 20.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_23:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 23.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_25_markers:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 25.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_30:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 30.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_50:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 50.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_70:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 70.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+arialmb_16:
+    name: "~res:/Fonts/arialmb.ttf"
+    size: 16.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+arialmb_17:
+    name: "~res:/Fonts/arialmb.ttf"
+    size: 17.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_17_news:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 16.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_25_news:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 25.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_21_news:
+    name: "~res:/Fonts/IwaGGoPro-Md.otf"
+    size: 21.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"
+WarHeliosCondC_Bold_17_news:
+    name: "~res:/Fonts/IwaGGoPro-Bd.otf"
+    size: 17.000000
+    verticalSpacing: 0
+    ascendScale: 1.000000
+    descendScale: 1.000000
+    type: "FTFont"

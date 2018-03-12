@@ -1,0 +1,270 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/SectionHeader3.yaml"
+- "~res:/UI/Screens/Lobby/Profile/Profile.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "tabStats"
+    size: [1027.000000, 768.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "tabStatsInside"
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                dynamicSpacing: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalMax: 1100.000000
+                verticalPolicy: "PercentOfParent"
+                verticalMax: 800.000000
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Top"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalMax: 1100.000000
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    hCenterAnchorEnabled: true
+            children:
+            -   prototype: "SectionHeader3/SectionHeader3"
+                name: "battleStatsHeader"
+                children:
+                -   class: "UIStaticText"
+                    name: "battleStatsTitle"
+                    classes: "header3 text-color-white"
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        UITextComponent:
+                            text: "#achievementScreen:Stats/BattleStats"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIControl"
+                name: "spacer"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 20.000000
+                    Anchor:
+                        topAnchorEnabled: true
+            -   class: "UIControl"
+                name: "stats"
+                size: [939.000000, 298.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        padding: 20.000000
+                        spacing: 1.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalMax: 1100.000000
+                        verticalPolicy: "PercentOfMaxChild"
+                        verticalMax: 1100.000000
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                        rightSafeInset: "INSET"
+                children:
+                -   class: "UIControl"
+                    name: "Left"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            spacing: 1.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            horizontalValue: 100.000000
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                    children:
+                    -   prototype: "Profile/Cell"
+                        name: "destroyedEnemies"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/DestroedEnimies"
+                    -   prototype: "Profile/Cell"
+                        name: "destroyedByEnemy"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/WasDestroyed"
+                    -   prototype: "Profile/Cell"
+                        name: "destructionCoeff"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/DestructionCoefficient"
+                    -   prototype: "Profile/Cell"
+                        name: "damageDealt"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/DamageDealt"
+                    -   prototype: "Profile/Cell"
+                        name: "damageReceived"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/DamageReceived"
+                    -   prototype: "Profile/Cell"
+                        name: "damageCoeff"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "Formula"
+                                verticalFormula: "max(childrenSum,parentRest)"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/DamageCoefficient"
+                -   class: "UIControl"
+                    name: "Right"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            spacing: 1.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            horizontalValue: 100.000000
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                    children:
+                    -   prototype: "Profile/Cell"
+                        name: "avgDestroyedVehicles"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/AvgDestroyed"
+                    -   prototype: "Profile/Cell"
+                        name: "maxFrags"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/MaxDestroyed"
+                    -   prototype: "Profile/Cell"
+                        name: "avgDamageDealt"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/AvgDamageDealt"
+                    -   prototype: "Profile/Cell"
+                        name: "avgDamageReceived"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/AvgDamageReceived"
+                    -   prototype: "Profile/Cell"
+                        name: "avgDetected"
+                        children:
+                        -   path: "horizontalAlign/text"
+                            components:
+                                UITextComponent:
+                                    text: "#achievementScreen:Stats/AvgSpotted"
+            -   class: "UIControl"
+                name: "spacer"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 20.000000
+        -   class: "UIControl"
+            name: "histograms"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalMax: 1100.000000
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   prototype: "SectionHeader3/SectionHeader3"
+                name: "histHeader"
+                children:
+                -   class: "UIStaticText"
+                    name: "histTitle"
+                    classes: "header3 text-color-white"
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        UITextComponent:
+                            text: "#achievementScreen:Stats/BattlesOnVehicles"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIControl"
+                name: "HistogramContainer"
+                classes: "notch-tightly-bottom-inset"
+                components:
+                    LinearLayout:
+                        dynamicPadding: true
+                        dynamicSpacing: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalMax: 1100.000000
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 40.000000
+                        bottomAnchorEnabled: true
+                    UIAnchorSafeAreaComponent: {}
+                children:
+                -   prototype: "Profile/HistogramElement"
+                    name: "type"
+                    children:
+                    -   path: "label"
+                        components:
+                            UITextComponent:
+                                text: "#achievementScreen:Stats/ByClass"
+                -   prototype: "Profile/HistogramElement"
+                    name: "nation"
+                    children:
+                    -   path: "label"
+                        components:
+                            UITextComponent:
+                                text: "#achievementScreen:Stats/ByNation"
+                -   prototype: "Profile/HistogramElement"
+                    name: "level"
+                    children:
+                    -   path: "label"
+                        components:
+                            UITextComponent:
+                                text: "#achievementScreen:Stats/ByLevel"

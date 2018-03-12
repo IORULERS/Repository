@@ -1,0 +1,1297 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryTreePrototypes.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Stories"
+    size: [960.000000, 440.000000]
+    noInput: true
+    children:
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_8"
+        position: [793.000000, 217.000000]
+        size: [28.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [23.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_7"
+        position: [639.000000, 219.000000]
+        size: [28.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [23.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [418.000000, 83.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [19.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [809.000000, 83.000000]
+        size: [35.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [30.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [29.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [93.000000, 83.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [19.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [201.000000, 83.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [19.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [310.000000, 83.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [19.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [526.000000, 353.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [24.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_1"
+        position: [809.000000, 353.000000]
+        size: [36.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [31.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [30.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [201.000000, 353.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [19.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [310.000000, 353.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [19.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [418.000000, 353.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [19.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow"
+        position: [93.000000, 353.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [19.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_9"
+        position: [526.000000, 84.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/StoryBigStep"
+        name: "41"
+        position: [665.000000, 165.000000]
+        children:
+        -   path: "ExpandedState"
+            position: [65.000000, 53.000000]
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [24.000000, 2.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 24.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 14
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 7
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "ExpandedState/Image"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    horizontalValue: 85.000000
+                    verticalPolicy: "PercentOfContent"
+                    verticalValue: 85.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: false
+                    topAnchor: 0.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 60.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/germany-PzV_IV.psd"
+        -   path: "NormalState"
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_TO_RECT"
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [25.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 25.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 14
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 7
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "NormalState/Image"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    horizontalValue: 80.000000
+                    verticalPolicy: "PercentOfContent"
+                    verticalValue: 80.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/germany-PzV_IV.psd"
+        -   path: "NormalState/Label"
+            position: [6.000000, 74.000000]
+            size: [118.000000, 28.000000]
+            components:
+                UITextComponent:
+                    text: "#germany_vehicles:PzV_PzIV"
+    -   prototype: "StoryTreePrototypes/StoryBigStep"
+        name: "43"
+        position: [821.000000, 165.000000]
+        children:
+        -   path: "ExpandedState"
+            position: [65.000000, 53.000000]
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [24.000000, 2.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 24.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 15
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 6
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "ExpandedState/Image"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    horizontalValue: 95.000000
+                    verticalPolicy: "PercentOfContent"
+                    verticalValue: 95.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: false
+                    topAnchor: 0.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 50.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/china-Type64.psd"
+        -   path: "NormalState"
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_TO_RECT"
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [25.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 25.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 15
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 6
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "NormalState/Image"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    horizontalValue: 80.000000
+                    verticalPolicy: "PercentOfContent"
+                    verticalValue: 80.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 10.000000
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/china-Type64.psd"
+        -   path: "NormalState/Label"
+            position: [6.000000, 74.000000]
+            size: [118.000000, 28.000000]
+            components:
+                UITextComponent:
+                    text: "#china_vehicles:Ch24_Type64"
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_2"
+        position: [93.000000, 219.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_3"
+        position: [201.000000, 219.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_4"
+        position: [310.000000, 219.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_5"
+        position: [418.000000, 219.000000]
+        size: [25.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [20.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_6"
+        position: [526.000000, 219.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+        -   path: "ArrowHead"
+            position: [24.000000, -2.000000]
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "42"
+        position: [843.000000, 49.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            position: [5.000000, 0.000000]
+            size: [90.000000, 65.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 5.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 5.000000
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 50.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                    align: ["VCENTER"]
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "44"
+        position: [843.000000, 318.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 5.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 5.000000
+                    topAnchor: 10.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 55.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Story/boost_icon"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    topAnchorEnabled: true
+                    topAnchor: 10.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 10.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Story/boost_icon"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                    align: ["VCENTER"]
+    -   prototype: "StoryTreePrototypes/VerticalLine"
+        name: "VerticalLine"
+        position: [543.000000, 15.000000]
+        size: [2.000000, 407.000000]
+    -   prototype: "StoryTreePrototypes/VerticalLine"
+        name: "VerticalLine_1"
+        position: [807.000000, 83.000000]
+        size: [2.000000, 272.000000]
+    -   prototype: "StoryTreePrototypes/VerticalLine"
+        name: "VerticalLine_1"
+        position: [651.000000, 16.000000]
+        size: [2.000000, 407.000000]
+    -   prototype: "StoryTreePrototypes/HorizontalLine"
+        name: "HorizontalLine"
+        position: [543.000000, 421.000000]
+        size: [110.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/HorizontalLine"
+        name: "HorizontalLine"
+        position: [544.000000, 15.000000]
+        size: [109.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "31"
+        position: [9.000000, 319.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 1
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 1
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "32"
+        position: [117.000000, 319.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 2
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -1.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 2
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "33"
+        position: [225.000000, 319.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 3
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 3
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "34"
+        position: [334.000000, 319.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 4
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 4
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "35"
+        position: [442.000000, 319.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "36"
+        position: [555.000000, 319.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 6
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_green"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 6
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "11"
+        position: [9.000000, 50.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 1
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 1
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "12"
+        position: [117.000000, 50.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 2
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 2
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "13"
+        position: [225.000000, 50.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 3
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 3
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "14"
+        position: [334.000000, 50.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 4
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 4
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "15"
+        position: [442.000000, 49.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "16"
+        position: [555.000000, 49.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 6
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_blue"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 6
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "21"
+        position: [9.000000, 185.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 1
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    topAnchorEnabled: true
+                    topAnchor: 35.000000
+                    vCenterAnchorEnabled: false
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -1.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 1
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "22"
+        position: [117.000000, 185.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 2
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    topAnchorEnabled: true
+                    topAnchor: 35.000000
+                    vCenterAnchorEnabled: false
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -1.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 2
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "23"
+        position: [225.000000, 185.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 3
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    topAnchorEnabled: true
+                    topAnchor: 35.000000
+                    vCenterAnchorEnabled: false
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -1.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 3
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "24"
+        position: [334.000000, 185.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 4
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    topAnchorEnabled: true
+                    topAnchor: 35.000000
+                    vCenterAnchorEnabled: false
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -1.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 4
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "25"
+        position: [442.000000, 185.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    topAnchorEnabled: true
+                    topAnchor: 35.000000
+                    vCenterAnchorEnabled: false
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: -1.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -1.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "26"
+        position: [555.000000, 185.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 6
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    topAnchorEnabled: true
+                    topAnchor: 35.000000
+                    vCenterAnchorEnabled: false
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Common/medal_yellow.psd"
+            children:
+            -   class: "UIControl"
+                name: "Number"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Story/Common/silver_number"
+                        frame: 6
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"

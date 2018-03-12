@@ -1,0 +1,43 @@
+Header:
+    version: "9"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Layout/IconContainer"
+        children:
+        -   class: "UIParticles"
+            name: "Fire"
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_info_fire.sc2"
+            autoStart: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+        -   class: "UIParticles"
+            name: "Glow"
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_info_glow.sc2"
+            autoStart: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+        -   class: "UIControl"
+            name: "Icon"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Background:
+                    sprite: "~res:/Gfx/UI/Lunar_NY/Dragon_info"
+    -   path: "Layout/TextContainer/Title"
+        text: "lunar_event/Title"

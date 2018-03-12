@@ -1,0 +1,71 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Layout"
+        components:
+            ClipContent: {}
+        children: []
+    -   path: "Layout/Footer/Type"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Story/coins_icon"
+    -   path: "Layout/IconContainer"
+        size: [90.000000, 74.000000]
+        children:
+        -   class: "UIParticles"
+            name: "Fire"
+            position: [55.000000, 37.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            visible: true
+            enabled: false
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_buy_fire.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Glow"
+            position: [55.000000, 37.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            visible: true
+            enabled: false
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_buy_glow.sc2"
+            autoStart: true
+        -   class: "UIControl"
+            name: "Icon"
+            visible: true
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 20.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -2.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/PersonalEventOneTwo/HangarIcon_2.psd"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   path: "Layout/TextContainer"
+        position: [90.000000, 0.000000]
+        children: []
+    -   path: "Layout/TextContainer/Title"
+        position: [-5.000000, 0.000000]
+        size: [140.000000, 50.000000]
+        textalign: ["RIGHT", "VCENTER"]
+        text: "personal_event/1/Title"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+            Background: {}
+    -   path: "Layout/TextContainer/ExpireTimer"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+        children: []

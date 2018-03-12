@@ -1,0 +1,19 @@
+name: "personal_event/2/Title"
+stages:
+ inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/PersonalEventThree/Button_Inform.yaml"
+  info: "p-event3-info"
+ process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/PersonalEventThree/Button_Process.yaml"
+  info: "p-event3-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/PersonalEventThree/PersonalEventThreeTree.yaml"
+ buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/PersonalEventThree/Button_Buy.yaml"
+  info: "p-event3-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/PersonalEventThree/PersonalEventThreeTree.yaml"
+currencyKeys:
+  pers_prx_bm-2: "personal_event/Currencies/BattleMissionCurrency/Terms"
+  pers_prx_btls: "personal_event/Currencies/BattleVictoriesCurrency/Terms"

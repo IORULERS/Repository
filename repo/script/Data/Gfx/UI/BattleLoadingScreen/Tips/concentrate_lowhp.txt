@@ -1,0 +1,5 @@
+1
+concentrate_lowhp0.tex
+256 128
+1
+0 0 245 111 11 10 0 frame0

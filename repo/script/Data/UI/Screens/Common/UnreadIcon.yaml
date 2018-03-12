@@ -1,0 +1,62 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".tournament-unread-bg"
+    properties:
+        bg-color: [0.266667, 0.662745, 0.945098, 1.000000]
+-   selector: ".unread-icon-bg"
+    properties:
+        bg-color: [0.768627, 0.023529, 0.043137, 1.000000]
+-   selector: ".squad-unread-bg"
+    properties:
+        bg-color: [0.580392, 0.768627, 0.003922, 1.000000]
+-   selector: ".show-unread-icon"
+    properties:
+        visible: true
+-   selector: ".hide-unread-icon"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIStaticText"
+    customClass: "UIUnreadIcon"
+    name: "UnreadIcon"
+    size: [30.000000, 32.000000]
+    noInput: true
+    classes: "header3 bg-color=unread-icon-bg state=show-unread-icon"
+    components:
+        Background:
+            sprite: "~res:/Gfx/UI/CommonUIElements/WhiteCircle"
+        UITextComponent:
+            colorInheritType: "COLOR_IGNORE_PARENT"
+            shadowOffset: [0.000000, 1.000000]
+            shadowColor: [0.000000, 0.000000, 0.000000, 0.752900]
+            fitting: "FITTING_REDUCE"
+-   class: "UIControl"
+    name: "Badge"
+    size: [16.000000, 16.000000]
+    noInput: true
+    classes: "bg-color=unread-icon-bg"
+    components:
+        Anchor:
+            rightAnchorEnabled: true
+            rightAnchor: 7.000000
+            topAnchorEnabled: true
+            topAnchor: 7.000000
+        Background:
+            drawType: "DRAW_SCALE_TO_RECT"
+            sprite: "~res:/Gfx/UI/CommonUIElements/WhiteCircle"
+-   class: "UIStaticText"
+    name: "UnreadBadge"
+    size: [32.000000, 32.000000]
+    noInput: true
+    classes: "header3 bg-color=unread-icon-bg"
+    components:
+        Background:
+            sprite: "~res:/Gfx/UI/CommonUIElements/WhiteCircle"
+        UITextComponent:
+            colorInheritType: "COLOR_IGNORE_PARENT"
+            shadowOffset: [0.000000, 1.000000]
+            shadowColor: [0.000000, 0.000000, 0.000000, 0.752900]
+            fitting: "FITTING_REDUCE"

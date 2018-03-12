@@ -1,0 +1,406 @@
+Header:
+    version: "18"
+ImportedPackages:
+- "~res:/UI/Screens/CommonStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/IconButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleInfo.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+StyleSheets:
+-   selector: ".germany ? ? #Nation"
+    properties:
+        bg-frame: 1
+-   selector: ".japan ? ? #Nation"
+    properties:
+        bg-frame: 4
+-   selector: ".ussr ? ? #Nation"
+    properties:
+        bg-frame: 2
+-   selector: ".uk ? ? #Nation"
+    properties:
+        bg-frame: 3
+-   selector: ".china ? ? #Nation"
+    properties:
+        bg-frame: 5
+-   selector: ".usa ? ? #Nation"
+    properties:
+        bg-frame: 0
+-   selector: ".france ? ? #Nation"
+    properties:
+        bg-frame: 6
+-   selector: ".other ? ? #Nation"
+    properties:
+        bg-frame: 7
+-   selector: ".unknown ? ? #Nation"
+    properties:
+        bg-frame: 8
+-   selector: "UIControl ? ? #Nation"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/Default/SmallTankCellFlag"
+-   selector: "UIControl.china_region ? ? #Nation"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/China/SmallTankCellFlag"
+-   selector: "#ReadyButton.ready"
+    properties:
+        sound-touchUpInside: "GUI/buttons/ok"
+-   selector: "#ReadyButton.not-ready"
+    properties:
+        sound-touchUpInside: "GUI/buttons/cancel"
+-   selector: ".player-template #StatusLine"
+    properties:
+        bg-frame: 0
+-   selector: ".player-template.ready #StatusLine"
+    properties:
+        bg-frame: 1
+-   selector: ".player-template #Box #TeammateStatus"
+    properties:
+        bg-frame: 0
+        text-color: [0.603922, 0.603922, 0.603922, 1.000000]
+-   selector: "#SquadStatus.not-connected"
+    properties:
+        bg-color: [0.600000, 0.600000, 0.600000, 1.000000]
+-   selector: "#SquadStatus.fully-compatible"
+    properties:
+        bg-color: [0.600000, 0.800000, 0.200000, 1.000000]
+-   selector: "#SquadStatus.one-level-mismatch"
+    properties:
+        bg-color: [1.000000, 0.819608, 0.000000, 1.000000]
+-   selector: "#HintText.incompatible"
+    properties:
+        text-color: [0.764706, 0.086275, 0.098039, 1.000000]
+-   selector: "#HintText.not-connected"
+    properties:
+        text-color: [0.600000, 0.600000, 0.600000, 1.000000]
+-   selector: "#HintText.fully-compatible"
+    properties:
+        text-color: [0.600000, 0.800000, 0.200000, 1.000000]
+-   selector: "#HintText.one-level-mismatch"
+    properties:
+        text-color: [1.000000, 0.819608, 0.000000, 1.000000]
+-   selector: "#HintText.banned"
+    properties:
+        text-color: [0.764706, 0.086275, 0.098039, 1.000000]
+-   selector: ".player-template #Box #Border"
+    properties:
+        bg-color: [0.603922, 0.603922, 0.603922, 1.000000]
+-   selector: ".player-template.ready #Box #Border"
+    properties:
+        bg-color: [0.992157, 1.000000, 1.000000, 1.000000]
+Prototypes:
+-   class: "UIControl"
+    name: "StatusLine"
+    size: [54.000000, 4.000000]
+    noInput: true
+    components:
+        Anchor:
+            vCenterAnchorEnabled: true
+        Background:
+            drawType: "DRAW_SCALE_TO_RECT"
+            sprite: "~res:/Gfx/UI/Hangar/IconSquadLine"
+-   class: "UIControl"
+    name: "PlayerTemplate"
+    position: [420.000000, 55.000000]
+    size: [236.000000, 124.000000]
+    noInput: true
+    classes: "player-template"
+    components:
+        LinearLayout:
+            orientation: "LeftToRight"
+            spacing: 2.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+        Anchor:
+            hCenterAnchorEnabled: true
+            topAnchorEnabled: true
+    children:
+    -   prototype: "StatusLine"
+        name: "StatusLine"
+    -   class: "UIControl"
+        name: "Box"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                spacing: 2.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfLastChild"
+                verticalPolicy: "PercentOfChildrenSum"
+        children:
+        -   class: "UIStaticText"
+            name: "PlayerName"
+            position: [-5.000000, 0.000000]
+            size: [190.000000, 50.000000]
+            noInput: true
+            classes: "header1"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "FixedSize"
+                    horizontalValue: 190.000000
+                    horizontalMax: 300.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 0.000000
+                    topAnchorEnabled: true
+                Background:
+                    align: ["RIGHT", "BOTTOM"]
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    fitting: "FITTING_POINTS"
+        -   class: "UIControl"
+            name: "TankContainer"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    hCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "Nation"
+                size: [180.000000, 72.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background: {}
+            -   class: "UIControl"
+                name: "Icon"
+                position: [47.500000, 4.000000]
+                size: [85.000000, 64.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: 0.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 0.000000
+                    Background:
+                        drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+                        sprite: "~res:/Gfx/UI/LobbyCommon/noImage"
+            -   class: "UIStaticText"
+                name: "Name"
+                position: [10.000000, 32.000000]
+                size: [164.000000, 30.000000]
+                noInput: true
+                classes: "header3"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 10.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 10.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "G. W. Panther"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        shadowOffset: [0.000000, 1.000000]
+                        shadowColor: [0.000000, 0.000000, 0.000000, 0.749000]
+                        fitting: "FITTING_REDUCE"
+                        align: ["LEFT", "BOTTOM"]
+                        useRtlAlign: "DONT_USE"
+            -   prototype: "VehicleInfo/VehicleInfo"
+                name: "VehicleInfo"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 19.000000
+                        topAnchorEnabled: true
+                        topAnchor: 9.000000
+-   class: "UIControl"
+    name: "Spacer"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+-   class: "UIControl"
+    name: "SquadDialog"
+    size: [670.000000, 265.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIControl"
+        name: "bg2"
+        size: [670.000000, 265.000000]
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+                verticalMin: 265.000000
+                verticalMax: 350.000000
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background:
+                drawType: "DRAW_STRETCH_BOTH"
+                sprite: "~res:/Gfx/UI/Hangar/PopupTile"
+                leftRightStretchCap: 10.000000
+                topBottomStretchCap: 10.000000
+    -   class: "UIControl"
+        name: "bg"
+        size: [670.000000, 265.000000]
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+                verticalMin: 265.000000
+                verticalMax: 350.000000
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background:
+                drawType: "DRAW_STRETCH_BOTH"
+                sprite: "~res:/Gfx/UI/Hangar/PopupTile"
+                color: [0.156863, 0.164706, 0.129412, 1.000000]
+                leftRightStretchCap: 10.000000
+                topBottomStretchCap: 10.000000
+        children:
+        -   prototype: "IconButton/IconButton"
+            name: "cancelSquadButton"
+            size: [64.000000, 64.000000]
+            classes: "button button-color-red button-open-sound"
+            components:
+                IgnoreLayout: {}
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                Sound:
+                    touchUpInside: "GUI/buttons/open"
+            children:
+            -   path: "icon"
+                components:
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                        frame: 32
+        -   prototype: "Spacer"
+            name: "Spacer"
+            noInput: true
+        -   class: "UIControl"
+            name: "Container"
+            components:
+                LinearLayout: {}
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+            children:
+            -   prototype: "PlayerTemplate"
+                name: "Teammate"
+                components:
+                    LinearLayout:
+                        orientation: "RightToLeft"
+                children:
+                -   path: "Box"
+                    children:
+                    -   prototype: "Selection/Selection"
+                        name: "Border"
+                        size: [172.000000, 64.000000]
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                vCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIStaticText"
+                            name: "TeammateStatus"
+                            position: [1.000000, 0.000000]
+                            size: [170.000000, 64.000000]
+                            noInput: true
+                            classes: "header3 text-color-white"
+                            components:
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    align: ["RIGHT", "BOTTOM"]
+                                    leftRightStretchCap: 5.000000
+                                    topBottomStretchCap: 3.000000
+                                UITextComponent:
+                                    text: "SQUAD_DIALOG_NOT_READY"
+                                    colorInheritType: "COLOR_MULTIPLY_ON_PARENT"
+                -   path: "Box/TankContainer/VehicleInfo/EliteIcon"
+                    visible: false
+            -   class: "UIControl"
+                name: "SquadStatusBg"
+                size: [70.000000, 190.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfParent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Hangar/IconSquad"
+                children:
+                -   class: "UIControl"
+                    name: "SquadStatus"
+                    size: [70.000000, 190.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 0.000000
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 0.000000
+                        Background:
+                            sprite: "~res:/Gfx/UI/Hangar/IconSquad"
+                            frame: 3
+            -   prototype: "PlayerTemplate"
+                name: "Player"
+                children:
+                -   path: "Box"
+                    children:
+                    -   prototype: "StyledButton/StyledButton"
+                        name: "ReadyButton"
+                        size: [172.000000, 64.000000]
+                        classes: "button color=button-color-green sound=button-ok-sound"
+                        children:
+                        -   path: "Caption"
+                            components:
+                                UITextComponent:
+                                    text: "SQUAD_DIALOG_READY"
+        -   class: "UIStaticText"
+            name: "HintText"
+            position: [38.000000, 197.500000]
+            size: [582.000000, 60.000000]
+            noInput: true
+            classes: "text1"
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfParent"
+                    verticalMin: 60.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: -6.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 3.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "SQUAD_DIALOG_TIP_NOT_READY_MATCH"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+        -   prototype: "Spacer"
+            name: "Spacer"
+            size: [670.000000, 7.500000]
+            components:
+                SizePolicy:
+                    verticalPolicy: "Ignore"

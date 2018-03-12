@@ -1,0 +1,10 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Styles/NetEaseStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIEULANotice"
+    name: "EULANotice"
+    size: [512.000000, 32.000000]
+    classes: "netease-hidden"

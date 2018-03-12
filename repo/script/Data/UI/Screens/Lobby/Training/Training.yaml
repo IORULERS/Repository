@@ -1,0 +1,47 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Hangar/HangarBaseScreen.yaml"
+Controls:
+-   prototype: "HangarBaseScreen/Screen"
+    name: "Screen"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+    children:
+    -   path: "Header/Layout"
+        components:
+            Anchor:
+                leftAnchor: 200.000000
+        children: []
+    -   path: "Header/Layout/leftContent"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 100.000000
+        children: []
+    -   path: "Header/Layout/leftContent/labels/primaryLabel"
+        components:
+            UITextComponent:
+                align: ["HCENTER", "VCENTER"]
+    -   path: "Header/Layout/leftContent/labels/secondaryLabel"
+        components:
+            UITextComponent:
+                align: ["HCENTER", "VCENTER"]
+    -   path: "Header/Layout/rightContent"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "FixedSize"
+                horizontalValue: 200.000000
+        children: []
+    -   path: "Header/Layout/rightContent/CurrencyPanel"
+        visible: false
+        children: []
+    -   path: "Content"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                enabled: false

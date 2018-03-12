@@ -1,0 +1,50 @@
+Header:
+    version: "20"
+Controls:
+-   class: "UIControl"
+    name: "Cell"
+    size: [120.000000, 64.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIStaticText"
+        name: "Text"
+        position: [20.000000, 6.000000]
+        size: [100.000000, 26.000000]
+        classes: "header3"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 20.000000
+                hCenterAnchorEnabled: false
+                rightAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -13.000000
+            UITextComponent:
+                text: "Text"
+                fontName: "WarHeliosCondC_Bold_21"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_POINTS"
+                align: ["LEFT", "VCENTER"]
+    -   class: "UIStaticText"
+        name: "Role"
+        size: [100.000000, 26.000000]
+        classes: "text2"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 20.000000
+                hCenterAnchorEnabled: false
+                rightAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 13.000000
+            UITextComponent:
+                text: "Role"
+                fontName: "WarHeliosCondC_19"
+                color: [0.647059, 0.725490, 0.800000, 1.000000]
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_POINTS"
+                align: ["LEFT", "VCENTER"]

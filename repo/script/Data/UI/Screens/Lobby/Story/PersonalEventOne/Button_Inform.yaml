@@ -1,0 +1,67 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryButtonPrototype.yaml"
+Controls:
+-   prototype: "StoryButtonPrototype/StoryButton"
+    name: "StoryButton"
+    children:
+    -   path: "Layout"
+        position: [0.000000, 0.000000]
+        components:
+            ClipContent: {}
+        children: []
+    -   path: "Layout/IconContainer"
+        children:
+        -   class: "UIParticles"
+            name: "Fire"
+            position: [55.000000, 37.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            visible: false
+            enabled: false
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_buy_fire.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Glow"
+            position: [55.000000, 37.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            visible: false
+            enabled: false
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Lunar_NY/Dragon_buy_glow.sc2"
+            autoStart: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: false
+                    vCenterAnchorEnabled: false
+        -   class: "UIControl"
+            name: "Icon"
+            visible: true
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 20.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -2.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/PersonalEventOneTwo/HangarIcon_0.psd"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   path: "Layout/TextContainer/Title"
+        position: [-5.000000, 0.000000]
+        textalign: ["RIGHT", "VCENTER"]
+        text: "personal_event/1/Title"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+    -   path: "Layout/TextContainer/ExpireTimer"
+        position: [57.000000, 50.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+        children: []

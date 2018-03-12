@@ -1,0 +1,5 @@
+1
+france-Somua_Sau_400.tex
+320 200
+1
+0 0 247 200 38 0 0 frame0

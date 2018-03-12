@@ -1,0 +1,69 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Common/Tab.yaml"
+Controls:
+-   class: "UIControl"
+    customClass: "UIBattleResultsDetailsPageControl"
+    name: "Page"
+    size: [1024.000000, 688.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "Tab/TabPane"
+        name: "DetailsTabs"
+        classes: "tab-pane-bg"
+        children:
+        -   prototype: "Tab/TextTab"
+            name: "StatisticsTab"
+            selected: true
+            tag: 0
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/StatisticPage"
+        -   prototype: "Tab/TextTab"
+            name: "EfficiencyTab"
+            tag: 1
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/EfficiencyPage"
+        -   prototype: "Tab/TextTab"
+            name: "CreditsTab"
+            tag: 2
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/CreditsPage"
+        -   prototype: "Tab/TextTab"
+            name: "ExperienceTab"
+            tag: 3
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: "#battle_results:DetailsPage/ExperiencePage"
+    -   class: "UIControl"
+        name: "Content"
+        position: [0.000000, 70.000000]
+        size: [1024.000000, 618.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 70.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000

@@ -1,0 +1,5 @@
+1
+traverse_hit0.tex
+512 256
+1
+0 0 248 248 135 4 0 frame0

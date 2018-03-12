@@ -1,0 +1,5 @@
+1
+camouflage_tank0.tex
+512 256
+1
+0 0 506 184 2 63 0 frame0

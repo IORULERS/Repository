@@ -1,0 +1,79 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Styles/SmartDLCStyles.yaml"
+Controls:
+-   class: "UIListCell"
+    customClass: "UIListCell"
+    name: "BuySlotCell"
+    size: [180.000000, 130.000000]
+    classes: "button"
+    components:
+        Background:
+            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        position: [3.000000, 4.000000]
+        size: [174.000000, 112.000000]
+        noInput: true
+        classes: "button-color-gray no-general-pack-disabled"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                dynamicPadding: true
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 4.000000
+            Background:
+                drawType: "DRAW_TILED_MULTILAYER"
+                mask: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+                detail: "~res:/Gfx/UI/CommonUIElements/Button/detail"
+                gradientMode: "Overlay"
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                leftRightStretchCap: 20.000000
+                topBottomStretchCap: 20.000000
+        children:
+        -   class: "UIStaticText"
+            name: "TitleText"
+            position: [6.000000, 28.000000]
+            size: [162.000000, 26.000000]
+            noInput: true
+            classes: "header3 text-color-white"
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 6.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 6.000000
+                    topAnchorEnabled: true
+                    topAnchor: 33.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "BUY_SLOT"
+                    multiline: "MULTILINE_ENABLED"
+        -   class: "UIStaticText"
+            name: "FreeSlotsText"
+            position: [0.000000, 54.000000]
+            size: [174.000000, 30.000000]
+            noInput: true
+            classes: "text2-small text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 54.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "FREE_SLOTS"
+                    multiline: "MULTILINE_ENABLED"

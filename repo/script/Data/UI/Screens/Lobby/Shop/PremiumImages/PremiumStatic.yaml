@@ -1,0 +1,31 @@
+Header:
+    version: "15"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/PremDays.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "Image"
+    size: [240.000000, 274.000000]
+    noInput: true
+    components:
+        Anchor:
+            hCenterAnchorEnabled: true
+            vCenterAnchorEnabled: true
+        Background:
+            sprite: "~res:/Gfx/UI/ShopScreen/ImagePremAnim.psd"
+            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    children:
+    -   prototype: "PremDays/PremNumber"
+        name: "PremNumber"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/icon_premium_wreath.psd"
+        children:
+        -   path: "Numbers"
+            components:
+                Anchor:
+                    vCenterAnchor: -14.000000
+            children: []

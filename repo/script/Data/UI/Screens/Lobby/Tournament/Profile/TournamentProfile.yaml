@@ -1,0 +1,859 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Lobby/Clan/ClanCommon.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/CommonStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Tournament/TournamentBackground.yaml"
+- "~res:/UI/Screens/Lobby/Tournament/IndependenceFonts.yaml"
+- "~res:/UI/Screens/Lobby/Tournament/TournamentButton.yaml"
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Lobby/Tournament/TournamentBackButton.yaml"
+- "~res:/UI/Screens/Common/IconButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/ImageUrlView.yaml"
+- "~res:/UI/Screens/Lobby/Tournament/TournamentParticipateLabel.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/SafeAreaSpacer.yaml"
+StyleSheets:
+-   selector: ".back-image-placeholder"
+    properties:
+        bg-drawType: "DRAW_SCALE_TO_RECT"
+-   selector: ".back-image-crop"
+    properties:
+        bg-drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+-   selector: ".media-link.youtube"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Tournament/youtube.txt"
+-   selector: ".media-link.twitch"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Tournament/twitch.txt"
+-   selector: ".media-link.portal"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Tournament/blitz_portal.txt"
+-   selector: ".media-link.custom"
+    properties:
+        bg-drawType: "DRAW_SCALE_PROPORTIONAL"
+-   selector: ".tournament-show-status #Status"
+    properties:
+        visible: true
+-   selector: ".tournament-show-status #QuickTournamentStatus"
+    properties:
+        visible: false
+-   selector: ".tournament-show-status .time-ui"
+    properties:
+        visible: false
+-   selector: ".tournament-hide-status #Status"
+    properties:
+        visible: false
+-   selector: ".quick-tournament-status #QuickTournamentStatus"
+    properties:
+        visible: true
+-   selector: ".quick-tournament-status #Status"
+    properties:
+        visible: false
+-   selector: ".quick-tournament-status .time-ui"
+    properties:
+        visible: false
+-   selector: ".quick-tournament-status .time-ui-reg"
+    properties:
+        visible: false
+-   selector: ".time-ui"
+    properties: {}
+-   selector: ".time-ui-hide-all #Status"
+    properties:
+        visible: false
+-   selector: ".time-ui-hide-all #QuickTournamentStatus"
+    properties:
+        visible: false
+-   selector: ".time-ui-hide-all .time-ui"
+    properties:
+        visible: false
+-   selector: ".time-ui-registration-start #RegistrationEndLabel"
+    properties:
+        visible: false
+-   selector: ".time-ui-registration-end #RegistrationStartLabel"
+    properties:
+        visible: false
+-   selector: ".time-ui-registration-start #Status"
+    properties:
+        visible: false
+-   selector: ".time-ui-registration-start #QuickTournamentStatus"
+    properties:
+        visible: false
+-   selector: ".time-ui-registration-end #Status"
+    properties:
+        visible: false
+-   selector: ".time-ui-registration-end #QuickTournamentStatus"
+    properties:
+        visible: false
+-   selector: ".time-ui-registration-start #NextRoundLabel"
+    properties:
+        visible: false
+-   selector: ".time-ui-registration-end #NextRoundLabel"
+    properties:
+        visible: false
+-   selector: ".time-ui-next-round #Status"
+    properties:
+        visible: false
+-   selector: ".time-ui-next-round #QuickTournamentStatus"
+    properties:
+        visible: false
+-   selector: ".time-ui-next-round .time-ui-reg"
+    properties:
+        visible: false
+-   selector: ".time-ui-reg"
+    properties: {}
+Controls:
+-   class: "UIControl"
+    name: "MediaLink"
+    size: [92.000000, 52.000000]
+    pivot: [0.500000, 0.500000]
+    classes: "button media-link media-link-tag=portal"
+    components:
+        SizePolicy:
+            horizontalPolicy: "FixedSize"
+            horizontalValue: 92.000000
+            verticalPolicy: "FixedSize"
+            verticalValue: 52.000000
+        Anchor:
+            hCenterAnchorEnabled: true
+            vCenterAnchorEnabled: true
+        Background: {}
+-   class: "UIControl"
+    name: "ScreenContainer"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "TopPanel"
+        position: [0.000000, 0.000000]
+        classes: "backType=back-image-placeholder"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                hCenterAnchorEnabled: false
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                bottomAnchorEnabled: false
+            Background:
+                sprite: "~res:/Gfx/UI/Tournament/placeholder"
+        children:
+        -   prototype: "ImageUrlView/ImageUrlView"
+            name: "LoadedImage"
+            position: [0.000000, 0.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+        -   class: "UIControl"
+            name: "TitleShadow"
+            position: [0.000000, 0.000000]
+            size: [1024.000000, 102.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    vCenterAnchorEnabled: false
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/Tournament/gradient"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                    leftRightStretchCap: 1.000000
+        -   class: "UIControl"
+            name: "ButtonsContainer"
+            position: [162.000000, 240.000000]
+            size: [700.000000, 124.000000]
+            classes: ""
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    enabled: true
+                    leftAnchorEnabled: false
+                    hCenterAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 20.000000
+            children:
+            -   class: "UIControl"
+                name: "ButtonsContainerCenter"
+                position: [80.000000, 0.000000]
+                size: [540.000000, 64.000000]
+                classes: ""
+                components:
+                    LinearLayout:
+                        dynamicPadding: true
+                        spacing: 10.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        leftAnchorEnabled: false
+                        hCenterAnchorEnabled: true
+                        rightAnchorEnabled: false
+                        bottomAnchorEnabled: false
+                children:
+                -   prototype: "StyledButton/DefaultStyledButton"
+                    name: "ParticipateButton"
+                    size: [220.000000, 64.000000]
+                    classes: "button button-color-green button-open-sound"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            hCenterAnchorEnabled: false
+                            vCenterAnchorEnabled: false
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Caption"
+                        size: [220.000000, 64.000000]
+                        classes: "header4 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                text: "tournaments/Button/Participate"
+                -   prototype: "StyledButton/DefaultStyledButton"
+                    name: "MyTeamButton"
+                    size: [220.000000, 64.000000]
+                    classes: "button button-color-green button-open-sound"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            hCenterAnchorEnabled: false
+                            vCenterAnchorEnabled: false
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Caption"
+                        size: [220.000000, 64.000000]
+                        classes: "header4 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                text: "tournaments/Button/MyTeam"
+                -   prototype: "IconButton/IconButton"
+                    name: "TicketsButton"
+                    size: [80.000000, 64.000000]
+                    classes: "button button-color-gray button-open-sound"
+                    children:
+                    -   path: "icon"
+                        components:
+                            Background:
+                                sprite: "~res:/Gfx/UI/Tournament/large_ticket"
+            -   class: "UIControl"
+                name: "ButtonsContainerTable"
+                position: [0.000000, 74.000000]
+                size: [700.000000, 50.000000]
+                components:
+                    LinearLayout:
+                        dynamicPadding: true
+                        spacing: 2.000000
+                    SizePolicy:
+                        horizontalPolicy: "FixedSize"
+                        horizontalValue: 700.000000
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        leftAnchorEnabled: false
+                        hCenterAnchorEnabled: true
+                children:
+                -   prototype: "TournamentButton/Button"
+                    name: "TeamsButton"
+                    classes: "button button-open-sound"
+                    components:
+                        LinearLayout:
+                            dynamicPadding: true
+                            spacing: 10.000000
+                    children:
+                    -   path: "Caption"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfParent"
+                            UITextComponent:
+                                text: "tournaments/CurrentTournaments/Table/Teams"
+                    -   class: "UIStaticText"
+                        name: "TeamsCount"
+                        classes: "header4 text-color-white"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfParent"
+                            UITextComponent:
+                                text: "1024/512"
+                                fitting: "FITTING_ENLARGE"
+                -   prototype: "TournamentButton/Button"
+                    name: "TableButton"
+                    classes: "button button-open-sound"
+                    children:
+                    -   path: "Caption"
+                        components:
+                            UITextComponent:
+                                text: "tournaments/CurrentTournaments/Table/Brackets"
+                -   prototype: "TournamentButton/Button"
+                    name: "QuickBriefButton"
+                    classes: "button button-open-sound"
+                    children:
+                    -   path: "Caption"
+                        components:
+                            UITextComponent:
+                                text: "tournaments/CurrentTournaments/Table/Overview"
+                -   prototype: "TournamentButton/Button"
+                    name: "RewardButton"
+                    classes: "button button-open-sound"
+                    children:
+                    -   path: "Caption"
+                        classes: "header4 hacked-font text-color-white"
+                        components:
+                            UITextComponent:
+                                text: "tournaments/CurrentTournaments/Table/Rewards"
+        -   class: "UIControl"
+            name: "TitleContainer"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    padding: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "TournamentTitle"
+                classes: "header1 lang_independece"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+            -   class: "UIControl"
+                name: "RoundContainer"
+                size: [107.000000, 21.000000]
+                classes: "stageType=none"
+                components:
+                    LinearLayout:
+                        spacing: 5.000000
+                        useRtl: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "StageTitle"
+                    classes: "text2-small time-ui time-ui-reg"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "#training_rooms:RoomScreen/StageTour/Qualification"
+                -   class: "UIStaticText"
+                    name: "RoundText"
+                    classes: "text2-small time-ui time-ui-reg"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+            -   class: "UIControl"
+                name: "TimeContainer"
+                size: [93.000000, 21.000000]
+                classes: "textType=time-ui-next-round"
+                components:
+                    LinearLayout:
+                        spacing: 4.000000
+                        useRtl: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "RegistrationEndLabel"
+                    classes: "text2-small time-ui time-ui-reg"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "tournaments/FutureTournaments/Status/RegistrationEnd"
+                -   class: "UIStaticText"
+                    name: "RegistrationStartLabel"
+                    classes: "text2-small time-ui time-ui-reg"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "tournaments/FutureTournaments/Status/TeamRegistrationStart"
+                -   class: "UIStaticText"
+                    name: "NextRoundLabel"
+                    classes: "text2-small time-ui"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "tournaments/DescrScreen/BattleStart"
+                -   class: "UIStaticText"
+                    name: "Time"
+                    classes: "text2-small time-ui"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                -   class: "UIStaticText"
+                    name: "Status"
+                    classes: "text2-small"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "tournaments/CurrentTournaments/Status/CurrentBattles"
+                -   class: "UIControl"
+                    name: "QuickTournamentStatus"
+                    size: [127.000000, 46.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfMaxChild"
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   class: "UIControl"
+                        name: "QuickTournamentText1"
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                spacing: 5.000000
+                                dynamicSpacing: true
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            RichContent:
+                                text: "<Timer1/>"
+                                baseClasses: "text2-small text-color-white"
+                            RichContentAliases0:
+                                aliases: "Timer1,<object name=\"timer1\" path=\"~res:/UI/Screens/Lobby/Tournament/TournamentTimer.yaml\" prototype=\"UITournamentRoomTimer\" />;"
+                    -   class: "UIControl"
+                        name: "QuickTournamentText2"
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                spacing: 5.000000
+                                dynamicSpacing: true
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            RichContent:
+                                text: "<Timer2/>"
+                                baseClasses: "text2-small text-color-white"
+                            RichContentAliases0:
+                                aliases: "Timer2,<object name=\"timer2\" path=\"~res:/UI/Screens/Lobby/Tournament/TournamentTimer.yaml\" prototype=\"UITournamentRoomTimer\" />;"
+        -   class: "UIControl"
+            name: "RightPanel"
+            position: [755.000000, 8.000000]
+            size: [270.000000, 102.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    skipInvisible: true
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -1.000000
+                    topAnchorEnabled: true
+                    topAnchor: 8.000000
+            children:
+            -   class: "UIControl"
+                name: "IsQuick"
+                visible: true
+                noInput: true
+                components:
+                    LinearLayout:
+                        padding: 15.000000
+                        spacing: 10.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 70.000000
+                children:
+                -   class: "UIControl"
+                    name: "LabelBack"
+                    noInput: true
+                    components:
+                        IgnoreLayout: {}
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfParent"
+                        Background:
+                            drawType: "DRAW_STRETCH_BOTH"
+                            sprite: "~res:/Gfx/UI/Tournament/white_flag.psd"
+                            spriteModification: ["FLIP_HORIZONTAL"]
+                            color: [0.000000, 0.580392, 0.835294, 1.000000]
+                            leftRightStretchCap: 20.000000
+                -   class: "UIControl"
+                    name: "ForSpacing"
+                    size: [0.000000, 32.000000]
+                    noInput: true
+                -   class: "UIControl"
+                    name: "SpineAnimation"
+                    position: [45.000000, 31.000000]
+                    pivot: [0.500000, 0.500000]
+                    noInput: true
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "FixedSize"
+                            horizontalValue: 40.000000
+                            verticalPolicy: "FixedSize"
+                            verticalValue: 40.000000
+                        Anchor:
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: -4.000000
+                        Background:
+                            drawType: "DRAW_BATCH"
+                            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        UISpineComponent:
+                            skeletonPath: "~res:/UI/Screens/Lobby/Tournament/Profile/Quick_tournaments_icon.json"
+                            atlasPath: "~res:/Gfx/UI/Tournament/Spine/Quick_tournaments_icon.atlas"
+                            animationName: "animation"
+                            animationState: "Played"
+                            skinName: ""
+                            loopedPlayback: true
+                -   class: "UIStaticText"
+                    name: "Text"
+                    size: [139.000000, 26.000000]
+                    classes: "header3 text-color-white"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: -4.000000
+                        UITextComponent:
+                            text: "tournaments/Sign/QuickTournament"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            multiline: "MULTILINE_ENABLED"
+                            fitting: "FITTING_REDUCE"
+                            align: ["LEFT", "VCENTER"]
+                -   prototype: "SafeAreaSpacer/SafeAreaSpacer"
+                    name: "SafeAreaSpacer"
+                    size: [31.000000, 70.000000]
+                    components:
+                        SizePolicy:
+                            horizontalFormula: "safeAreaInsets.right-13"
+            -   prototype: "TournamentParticipateLabel/ParticipateLabel"
+                name: "ParticipateLabel"
+                components:
+                    LinearLayout:
+                        padding: 6.000000
+                    Anchor:
+                        leftAnchorEnabled: false
+                        rightAnchorEnabled: true
+                        topAnchor: 20.000000
+                    Background:
+                        spriteModification: ["FLIP_HORIZONTAL"]
+                children:
+                -   prototype: "SafeAreaSpacer/SafeAreaSpacer"
+                    name: "SafeAreaSpacer"
+                    size: [31.000000, 32.000000]
+                    components:
+                        SizePolicy:
+                            horizontalFormula: "safeAreaInsets.right-13"
+    -   class: "UIControl"
+        name: "BottomPanel"
+        position: [0.000000, 384.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                hCenterAnchorEnabled: false
+                rightAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   prototype: "TournamentBackground/EffectsContainer"
+            name: "EffectsContainer"
+        -   class: "UIControl"
+            name: "PrizeContainer"
+            position: [0.000000, -4.000000]
+            size: [1024.000000, 40.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "FixedSize"
+                    verticalValue: 40.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: -4.000000
+            children:
+            -   class: "UIControl"
+                name: "Lenta"
+                size: [1024.000000, 40.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        topAnchorEnabled: true
+                        topAnchor: 0.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                children:
+                -   class: "UIControl"
+                    name: "RightImagePart"
+                    position: [512.000000, 0.000000]
+                    size: [512.000000, 40.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 0.000000
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/bgMedalsRight"
+                            color: [1.000000, 1.000000, 1.000000, 0.900000]
+                            colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                -   class: "UIControl"
+                    name: "LeftImagePart"
+                    size: [512.000000, 40.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: 0.000000
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/bgMedalsLeft"
+                            color: [1.000000, 1.000000, 1.000000, 0.900000]
+                            colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "TextContainer"
+                position: [367.500000, 4.500000]
+                noInput: true
+                classes: ""
+                components:
+                    LinearLayout:
+                        spacing: 10.000000
+                        useRtl: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        leftAnchorEnabled: false
+                        hCenterAnchorEnabled: true
+                        rightAnchorEnabled: false
+                        vCenterAnchorEnabled: true
+                        bottomAnchorEnabled: false
+                children:
+                -   class: "UIStaticText"
+                    name: "PrizeText"
+                    position: [0.000000, -1.000000]
+                    size: [279.000000, 31.000000]
+                    classes: "header1"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: -1.000000
+                        UITextComponent:
+                            text: "tournaments/CurrentTournaments/PrizeFund"
+                            align: ["LEFT", "VCENTER"]
+                -   class: "UIControl"
+                    name: "RewardContainer"
+                    position: [289.000000, 15.500000]
+                    noInput: true
+                    classes: ""
+                    components:
+                        LinearLayout:
+                            spacing: 10.000000
+                            useRtl: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfChildrenSum"
+                            verticalPolicy: "PercentOfMaxChild"
+                        Anchor:
+                            vCenterAnchorEnabled: true
+        -   class: "UIControl"
+            name: "DescriptionContainer"
+            position: [102.399994, 90.000000]
+            size: [819.200012, 230.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 80.000000
+                    horizontalMax: 1100.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 90.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 64.000000
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.207843, 0.274510, 0.325490, 0.250980]
+            children:
+            -   class: "UIControl"
+                name: "Padding"
+                size: [819.200012, 15.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 15.000000
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+            -   class: "UIStaticText"
+                name: "DescriptionText"
+                classes: "text1 lang_independece"
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfParent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                    ClipContent: {}
+                    UITextComponent:
+                        text: "Test"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["LEFT", "TOP"]
+            -   class: "UIControl"
+                name: "More"
+                size: [819.200012, 46.000000]
+                classes: "button button-open-sound"
+                components:
+                    SizePolicy:
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 46.000000
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background: {}
+                    Sound: {}
+                children:
+                -   class: "UIControl"
+                    name: ""
+                    size: [819.200012, 46.000000]
+                    noInput: true
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfParent"
+                        Background:
+                            drawType: "DRAW_FILL"
+                            color: [0.207843, 0.274510, 0.325490, 0.501961]
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   class: "UIStaticText"
+                    name: "Caption"
+                    size: [819.200012, 46.000000]
+                    classes: "header4 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        UITextComponent:
+                            text: "tournaments/Button/Expand"
+            -   class: "UIControl"
+                name: "Shadow"
+                size: [819.200012, 56.000000]
+                noInput: true
+                components:
+                    IgnoreLayout: {}
+                    SizePolicy:
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 45.000000
+                    Background:
+                        drawType: "DRAW_TILED"
+                        sprite: "~res:/Gfx/UI/Tournament/gradient_text"
+        -   class: "UIControl"
+            name: "Media"
+            size: [1024.000000, 64.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    dynamicPadding: true
+                    spacing: 5.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "FixedSize"
+                    verticalValue: 64.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    bottomAnchorEnabled: true
+    -   prototype: "TournamentBackButton/BackButton"
+        name: "BackButton"

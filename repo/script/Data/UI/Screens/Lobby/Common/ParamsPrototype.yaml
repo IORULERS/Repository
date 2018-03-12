@@ -1,0 +1,389 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader1.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+StyleSheets:
+-   selector: ".number-param-prototype ? ? #deltaValueUpDown"
+    properties:
+        visible: false
+-   selector: ".invisible-spacer-bottom ? #Line"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIControl"
+    name: "NumberParamPrototype"
+    size: [150.000000, 38.000000]
+    noInput: true
+    classes: "number-param-prototype"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            verticalPolicy: "PercentOfChildrenSum"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        Background:
+            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        noInput: true
+        classes: "pane-bg"
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            Background: {}
+    -   class: "UIControl"
+        name: "Spacer"
+        size: [150.000000, 5.000000]
+        visible: true
+        noInput: true
+    -   class: "UIControl"
+        name: "TextContainer"
+        noInput: true
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfFirstChild"
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   class: "UIStaticText"
+            name: "name"
+            position: [7.000000, 0.000000]
+            noInput: true
+            tag: 1
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfContent"
+                    verticalMin: 26.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 7.000000
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 10.000000
+                    rightAnchorEnabled: false
+                    vCenterAnchorEnabled: true
+                UITextComponent:
+                    fontName: "WarHeliosCondC_21"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "ValueContainer"
+            size: [54.000000, 26.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "LeftToRight"
+                    padding: 7.000000
+                    spacing: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "FixedSize"
+                    verticalValue: 26.000000
+                Anchor:
+                    leftAnchorEnabled: false
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    rightAnchor: 7.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "deltaValue"
+                size: [0.000000, 26.000000]
+                noInput: true
+                classes: "header3"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfParent"
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "deltaValueUpDown"
+                size: [10.000000, 26.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfParent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+                        colorInherit: "COLOR_IGNORE_PARENT"
+            -   class: "UIStaticText"
+                name: "value"
+                position: [17.000000, 0.000000]
+                size: [30.000000, 26.000000]
+                noInput: true
+                classes: "header3"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        horizontalMin: 30.000000
+                        verticalPolicy: "PercentOfParent"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+    -   class: "UIControl"
+        name: "SpacerBottom"
+        size: [150.000000, 7.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+-   class: "UIControl"
+    name: "BarParamPrototype"
+    size: [311.000000, 70.000000]
+    noInput: true
+    classes: "number-param-prototype"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Background:
+            color: [0.168600, 0.168600, 0.168600, 1.000000]
+            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    children:
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        components:
+            LinearLayout:
+                padding: 7.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                leftAnchorEnabled: true
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        children:
+        -   class: "UIControl"
+            name: "Background"
+            noInput: true
+            classes: "pane-bg"
+            components:
+                IgnoreLayout: {}
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 1.000000
+                Background: {}
+        -   class: "UIControl"
+            name: "icon"
+            size: [64.000000, 64.000000]
+            noInput: true
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/Icons"
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    align: ["HCENTER", "BOTTOM"]
+        -   class: "UIControl"
+            name: "Right"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 98.000000
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "ProgressString"
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "LeftToRight"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfFirstChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "name"
+                    size: [145.220001, 30.000000]
+                    noInput: true
+                    classes: "text2 text-color-blue"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            fitting: "FITTING_REDUCE"
+                            align: ["LEFT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+                -   class: "UIControl"
+                    name: "ValueContainer"
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            padding: 5.000000
+                            spacing: 10.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfChildrenSum"
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            rightAnchorEnabled: true
+                    children:
+                    -   class: "UIStaticText"
+                        name: "deltaValue"
+                        size: [0.000000, 30.000000]
+                        noInput: true
+                        classes: "header3"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfParent"
+                            Background:
+                                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                                align: ["LEFT", "TOP"]
+                            UITextComponent:
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                align: ["RIGHT", "VCENTER"]
+                                useRtlAlign: "DONT_USE"
+                    -   class: "UIControl"
+                        name: "deltaValueUpDown"
+                        size: [10.000000, 30.000000]
+                        noInput: true
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfParent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                vCenterAnchorEnabled: true
+                            Background:
+                                sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+                                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   class: "UIControl"
+                    name: "Spacer"
+                    size: [10.000000, 10.000000]
+                    noInput: true
+                -   class: "UIStaticText"
+                    name: "value"
+                    size: [0.000000, 30.000000]
+                    noInput: true
+                    classes: "header3"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: 5.000000
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            align: ["RIGHT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                customClass: "UIHangarTankBaseParamBar"
+                name: "progressBar"
+                size: [185.220001, 7.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                    Background:
+                        drawType: "DRAW_FILL"
+                        align: ["LEFT", "VCENTER"]
+        -   class: "UIControl"
+            name: "Spacer"
+            size: [44.000000, 32.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "Formula"
+                    horizontalFormula: "safeAreaInsets.left"
+-   class: "UIControl"
+    name: "HeaderPrototype"
+    size: [311.000000, 36.000000]
+    visible: true
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        Background:
+            align: ["LEFT", "VCENTER"]
+    children:
+    -   class: "UIControl"
+        name: "bg"
+        noInput: true
+        classes: "section-header1"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+            Anchor:
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                align: ["LEFT", "VCENTER"]
+        children:
+        -   class: "UIStaticText"
+            name: "title"
+            position: [10.000000, 0.000000]
+            size: [257.000000, 35.000000]
+            noInput: true
+            classes: "header3"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 10.000000
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+                Background:
+                    color: [0.752900, 0.752900, 0.752900, 1.000000]
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["HCENTER", "VCENTER"]
+                    useRtlAlign: "DONT_USE"

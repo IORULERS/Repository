@@ -1,0 +1,43 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIStrangeHMTimer"
+    name: "Timer"
+    size: [44.000000, 23.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            skipInvisible: false
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+    children:
+    -   class: "UIStaticText"
+        name: "Hours"
+        position: [0.000000, 0.000000]
+        size: [19.000000, 23.000000]
+        classes: "text2"
+        textalign: ["RIGHT", "VCENTER"]
+        text: "11"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+    -   class: "UIStaticText"
+        name: "ColonHM"
+        position: [19.000000, 0.000000]
+        size: [6.000000, 23.000000]
+        classes: "text2"
+        text: ":"
+    -   class: "UIStaticText"
+        name: "Minutes"
+        position: [25.000000, 0.000000]
+        size: [19.000000, 23.000000]
+        classes: "text2"
+        textalign: ["LEFT", "VCENTER"]
+        text: "47"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"

@@ -1,0 +1,377 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Shop/BaseShopTab.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Lobby/Shop/VehicleInfo.yaml"
+- "~res:/UI/Screens/Lobby/Shop/BaseIAPTab.yaml"
+- "~res:/UI/Screens/Lobby/Shop/BoostersPackCell.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+- "~res:/UI/Screens/Lobby/Shop/BoostersPackInfoView.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".packages"
+    properties:
+        linearLayout-enabled: true
+        flowLayout-enabled: false
+        sizePolicy-horizontalPolicy: "PercentOfChildrenSum"
+        sizePolicy-verticalPolicy: "PercentOfParent"
+-   selector: ".packages.Desktop"
+    properties:
+        linearLayout-enabled: false
+        flowLayout-enabled: true
+        sizePolicy-horizontalPolicy: "PercentOfParent"
+        sizePolicy-verticalPolicy: "PercentOfChildrenSum"
+-   selector: ".info.packages"
+    properties:
+        visible: true
+-   selector: ".info.packages.Desktop"
+    properties:
+        visible: false
+-   selector: ".pack-description"
+    properties:
+        visible: false
+-   selector: ".pack-description.Desktop"
+    properties:
+        visible: true
+Prototypes:
+-   class: "UIControl"
+    name: "PlusSign"
+    size: [32.000000, 32.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfChildrenSum"
+        Anchor:
+            vCenterAnchorEnabled: true
+    children:
+    -   class: "UIStaticText"
+        name: "PlusSignText"
+        size: [32.000000, 32.000000]
+        classes: "text1 text-color-blue"
+        components:
+            UITextComponent:
+                text: "+"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+-   prototype: "BoostersPackInfoView/BoosterDescription"
+    name: "BoosterDescription"
+    components:
+        LinearLayout:
+            spacing: 6.000000
+    children:
+    -   path: "Header"
+        components:
+            SizePolicy:
+                verticalPolicy: "FixedSize"
+                verticalValue: 24.000000
+        children: []
+    -   path: "Header/Text"
+        classes: "header4 text-color-white"
+    -   path: "Description"
+        classes: "text2-small text-color-blue"
+Controls:
+-   prototype: "BaseShopTab/Tab"
+    name: "Tab"
+    noInput: true
+    children:
+    -   path: "Footer"
+        components:
+            Background: {}
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "BuyButton"
+            size: [250.000000, 64.000000]
+            classes: "button button-color-green"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "shop/Buy"
+        -   class: "UIControl"
+            name: "BoostersDescription"
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 5.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+            children:
+            -   prototype: "StyledButton/DefaultStyledButton"
+                name: "InfoButton"
+                size: [60.000000, 61.000000]
+                classes: "button button-color-gray info packages"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        vCenterAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_ALIGNED"
+                        sprite: "~res:/Gfx/UI/ShopScreen/ButtonInfo"
+            -   class: "UIControl"
+                name: "PackBoosters"
+                size: [444.000000, 60.000000]
+                components:
+                    LinearLayout:
+                        spacing: 5.000000
+                    Anchor:
+                        vCenterAnchorEnabled: true
+        -   class: "UIControl"
+            name: "PriceContainer"
+            position: [441.000000, 12.000000]
+            size: [211.000000, 30.000000]
+            components:
+                LinearLayout: {}
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 284.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -20.000000
+            children:
+            -   class: "UIControl"
+                name: "Spacer"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+            -   class: "UIStaticText"
+                name: "Label"
+                noInput: true
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfParent"
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 495.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "#common:Cost"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   prototype: "DiscountLabel/DiscountLabel"
+                name: "Discount"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 493.000000
+                        topAnchorEnabled: false
+        -   class: "UIControl"
+            name: "GoldImage"
+            position: [626.000000, 47.000000]
+            size: [30.000000, 30.000000]
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 280.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 15.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+        -   class: "UIStaticText"
+            name: "PriceText"
+            position: [440.999969, 47.000000]
+            size: [180.000031, 30.000000]
+            noInput: true
+            classes: "header1"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 315.000000
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 15.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "0"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["RIGHT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+    -   path: "Content"
+        components:
+            LinearLayout:
+                enabled: true
+                dynamicSpacing: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+            Anchor:
+                leftAnchorEnabled: false
+                hCenterAnchorEnabled: true
+                rightAnchorEnabled: false
+        children:
+        -   class: "UIScrollView"
+            name: "ContentScrollView"
+            autoUpdate: true
+            centerContent: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                classes: "packages"
+                components:
+                    LinearLayout:
+                        safeAreaPaddingInset: true
+                    FlowLayout:
+                        hDynamicPadding: true
+                        useRtl: true
+                    SizePolicy: {}
+            -   prototype: "Common/VerticalScrollBar"
+                name: "VerticalScrollBar"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+            -   prototype: "Common/HorizontalScrollBar"
+                name: "HorizontalScrollBar"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        bottomAnchorEnabled: true
+        -   class: "UIControl"
+            name: "Description"
+            size: [450.000000, 503.000000]
+            classes: "pack-description"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 10.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 10.000000
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.070588, 0.125490, 0.160784, 0.850980]
+            children:
+            -   class: "UIScrollView"
+                name: "ContentScrollView"
+                autoUpdate: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            rightAnchor: 10.000000
+                        UIAnchorSafeAreaComponent:
+                            rightSafeInset: "INSET"
+                    children:
+                    -   class: "UIControl"
+                        name: "Box"
+                        noInput: true
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfFirstChild"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                                topAnchor: 300.000000
+                        children:
+                        -   class: "UIControl"
+                            name: "PackContent"
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                    spacing: 10.000000
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 15.000000
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                        -   class: "UIStaticText"
+                            name: "ItemInfoDescription"
+                            classes: "text2-small text-color-blue"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 200.000000
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    topAnchor: -250.000000
+                                UITextComponent:
+                                    text: "Description"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    multiline: "MULTILINE_ENABLED"
+                                    align: ["LEFT", "VCENTER"]
+                        -   class: "UIStaticText"
+                            name: "ItemInfoName"
+                            size: [371.000000, 55.000000]
+                            noInput: true
+                            classes: "header1"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 15.000000
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 10.000000
+                                    topAnchorEnabled: true
+                                    topAnchor: -300.000000
+                                Background:
+                                    align: ["LEFT", "TOP"]
+                                UITextComponent:
+                                    text: "Header"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["LEFT", "VCENTER"]
+                                    useRtlAlign: "USE_BY_SYSTEM"
+                    -   class: "UIControl"
+                        name: "CellWrapper"
+                        size: [202.500000, 300.000000]
+                        noInput: true
+                        children:
+                        -   prototype: "BoostersPackCell/ItemCell"
+                            name: "ItemCell"
+                            scale: [0.750000, 0.750000]
+                            pivot: [0.500000, 0.000000]
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: -34.000000
+                                    vCenterAnchorEnabled: false
+                                    useRtl: true
+                -   prototype: "ScrollBar/VerticalScrollBar"
+                    name: "VerticalScrollBar"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                        ScrollBarDelegate:
+                            delegate: ".."

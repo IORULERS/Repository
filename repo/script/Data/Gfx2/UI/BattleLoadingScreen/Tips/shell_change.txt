@@ -1,0 +1,5 @@
+1
+shell_change0.tex
+512 256
+1
+0 0 442 123 35 108 0 frame0

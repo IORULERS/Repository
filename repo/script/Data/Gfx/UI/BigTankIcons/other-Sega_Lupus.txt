@@ -1,0 +1,5 @@
+1
+other-Sega_Lupus0.tex
+160 100
+1
+0 0 143 100 9 0 0 frame0

@@ -1,0 +1,75 @@
+Header:
+    version: "15"
+ImportedPackages:
+- "~res:/UI/Styles/Clans/ClansStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".name-with-tag #spacer"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIPlayerNameWithTag"
+    name: "PlayerNameWithTag"
+    size: [100.000000, 26.000000]
+    noInput: true
+    classes: "name-with-tag"
+    components:
+        LinearLayout: {}
+        SizePolicy:
+            horizontalPolicy: "FixedSize"
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "spacer"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+    -   class: "UIStaticText"
+        name: "name"
+        size: [58.000000, 26.000000]
+        classes: "header4"
+        textcolorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+        fitting: ["POINTS"]
+        textalign: ["LEFT", "VCENTER"]
+        text: "PlayerName"
+        components:
+            SizePolicy:
+                horizontalPolicy: "Formula"
+                horizontalFormula: "min(parentRest, content)"
+            Anchor:
+                vCenterAnchorEnabled: true
+    -   class: "UIStaticText"
+        name: "tag"
+        size: [42.000000, 26.000000]
+        classes: "header4 clan-tag"
+        textcolorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+        fitting: []
+        textalign: ["LEFT", "VCENTER"]
+        text: "[TAG]"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+            Anchor:
+                vCenterAnchorEnabled: true
+-   prototype: "PlayerNameWithTag"
+    name: "PlayerNameWithTagHeader1"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+    children:
+    -   path: "name"
+        classes: "header1"
+        text: "PlayerName1234567890ABCDEF"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                horizontalMax: 200.000000
+                verticalPolicy: "PercentOfContent"
+    -   path: "tag"
+        classes: "header1 clan-tag"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfContent"

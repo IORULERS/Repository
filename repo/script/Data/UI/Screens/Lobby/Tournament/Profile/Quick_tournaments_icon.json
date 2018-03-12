@@ -1,0 +1,85 @@
+{
+"skeleton": { "hash": "ZRby3+5/sIA0jvouQYE81mtMmTQ", "spine": "3.5.51", "width": 78, "height": 78, "images": "./untitled folder 9/" },
+"bones": [
+	{ "name": "root", "scaleX": 0.5, "scaleY": 0.5 },
+	{ "name": "bone", "parent": "root" },
+	{ "name": "bone2", "parent": "root" },
+	{ "name": "bone4", "parent": "root" },
+	{ "name": "bone5", "parent": "root" },
+	{ "name": "bone6", "parent": "root" }
+],
+"slots": [
+	{ "name": "8", "bone": "bone6", "attachment": "Layer 3" },
+	{ "name": "7", "bone": "bone5", "attachment": "Layer 4" },
+	{ "name": "6", "bone": "bone4", "attachment": "Layer 4" },
+	{ "name": "3", "bone": "bone2", "attachment": "Layer 4" },
+	{ "name": "2", "bone": "bone", "attachment": "Layer 2" },
+	{ "name": "1", "bone": "root", "attachment": "Ellipse 1" }
+],
+"skins": {
+	"default": {
+		"1": {
+			"Ellipse 1": { "width": 78, "height": 78 }
+		},
+		"2": {
+			"Layer 2": { "width": 76, "height": 76 }
+		},
+		"3": {
+			"Layer 4": { "width": 71, "height": 68 }
+		},
+		"6": {
+			"Layer 4": { "width": 71, "height": 68 }
+		},
+		"7": {
+			"Layer 4": { "width": 71, "height": 68 }
+		},
+		"8": {
+			"Layer 3": { "width": 74, "height": 74 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"bones": {
+			"bone2": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": -33.87 },
+					{ "time": 0.5, "x": 5.74, "y": 1.72 },
+					{ "time": 0.7667, "x": 8.11, "y": 15.8 },
+					{ "time": 1, "x": -0.57, "y": 28.13 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0.05, "y": 0.05 },
+					{ "time": 0.5, "x": 1, "y": 1, "curve": "stepped" },
+					{ "time": 0.7667, "x": 1, "y": 1 },
+					{ "time": 1, "x": 0.05, "y": 0.05 }
+				]
+			},
+			"bone4": {
+				"translate": [
+					{ "time": 0, "x": -9.76, "y": -24.68 },
+					{ "time": 0.5, "x": -15.21, "y": -8.61 },
+					{ "time": 1, "x": -14.92, "y": 10.33 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0.05, "y": 0.05 },
+					{ "time": 0.5, "x": 0.7, "y": 0.7 },
+					{ "time": 1, "x": 0.05, "y": 0.05 }
+				]
+			},
+			"bone5": {
+				"translate": [
+					{ "time": 0, "x": 9.18, "y": -28.13 },
+					{ "time": 0.5, "x": 18.94, "y": -13.2 },
+					{ "time": 1, "x": 21.81, "y": 8.04 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0.05, "y": 0.05 },
+					{ "time": 0.5, "x": 1, "y": 1 },
+					{ "time": 1, "x": 0.5, "y": 0.5 }
+				]
+			}
+		}
+	}
+}
+}

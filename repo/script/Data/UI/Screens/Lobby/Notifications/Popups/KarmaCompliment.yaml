@@ -1,0 +1,13 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Notifications/Popups/KarmaRich.yaml"
+Controls:
+-   prototype: "KarmaRich/KarmaRich"
+    customClass: "UIKarmaComplimentNotification"
+    name: "KarmaCompliment"
+    children:
+    -   path: "ActionButton/Caption"
+        components:
+            UITextComponent:
+                text: "HANGAR_NOTIFICATIONS_CHAT_BUTTON"

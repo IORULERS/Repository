@@ -1,0 +1,24 @@
+Header:
+    version: "18"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "RichText"
+    size: [234.000000, 32.000000]
+    noInput: true
+    classes: "text-color-ignore-parent"
+    components:
+        FlowLayout:
+            hPadding: 5.000000
+            hSpacing: 5.000000
+        Background: {}
+        RichContent: {}
+        RichContentAliases0:
+            aliases: "text_blue,<span class=\"text-color-blue text1\" />;timer,<object name=\"ExpireTimer\" path=\"~res:/UI/Screens/Lobby/ExpireTimer.yaml\" prototype=\"ExpireTimer\" />;price,<object class=\"gold\" name=\"Price\" path=\"~res:/UI/Screens/Lobby/Common/Price.yaml\" prototype=\"Price\" />;player_name_with_tag,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTag\" />;player_teams_header_text,<span class=\"header1\" />;clan_name_with_tag,<object path=\"~res:/UI/Screens/Common/ClanNameWithTag.yaml\" prototype=\"ClanNameWithTag\" />;player_name_with_tag_header1,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTagHeader1\" />;clan_name_with_tag_header1,<object path=\"~res:/UI/Screens/Common/ClanNameWithTag.yaml\" prototype=\"ClanNameWithTagHeader1\" />;elite_vehicle_icon,<object control=\"EliteIcon\" path=\"~res:/UI/Screens/Lobby/Common/CommonIcons.yaml\" />;elite_premium_vehicle_icon,<object control=\"ElitePremiumIcon\" path=\"~res:/UI/Screens/Lobby/Common/CommonIcons.yaml\" />;"
+        RichContentAliases1:
+            aliases: "text1,<span class=\"text1\" />;text2_blue,<span class=\"text-color-blue text2\" />;text2_white_bold,<span class=\"text-color-white header4\" />;"
+        RichContentAliases2:
+            aliases: "header3,<span class=\"header3\" />;"
+        RichContentAliases3:
+            aliases: "text_white_bold,<span class=\"text-color-white header3\" />;text_mono,<span class=\"text-mono\" />;text_white,<span class=\"text-color-white text1\" />;"

@@ -1,0 +1,493 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyHeader.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/Footer.yaml"
+- "~res:/UI/Screens/Common/KarmaCommon.yaml"
+StyleSheets:
+-   selector: ".header-button"
+    properties:
+        bg-color: [0.627451, 0.725490, 0.800000, 1.000000]
+-   selector: ".header-button:selected"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 1.000000]
+-   selector: ".tab #selected"
+    properties:
+        visible: false
+-   selector: ".tab:selected #selected"
+    properties:
+        visible: true
+-   selector: ".tab #unselected"
+    properties:
+        visible: true
+-   selector: ".tab:selected #unselected"
+    properties:
+        visible: false
+-   selector: ".header3.de"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_17"
+-   selector: ".header3.es"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_17"
+Prototypes:
+-   class: "UIControl"
+    name: "line"
+    size: [100.000000, 1.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: -10.000000
+            rightAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.647059, 0.725490, 0.803922, 0.235294]
+-   class: "UIControl"
+    name: "tab"
+    noInput: true
+    classes: "tab"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Anchor:
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "selected"
+        size: [0.000000, 0.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_TILED"
+                sprite: "~res:/Gfx/UI/CommonUIElements/TabActiveTile"
+                frame: 0
+        children:
+        -   class: "UIStaticText"
+            name: "text"
+            size: [0.000000, 0.000000]
+            noInput: true
+            classes: "header3 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/ProfileScreen/tab-profile"
+                    align: ["HCENTER", "TOP"]
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["HCENTER", "BOTTOM"]
+                    useRtlAlign: "DONT_USE"
+    -   class: "UIStaticText"
+        name: "unselected"
+        size: [0.000000, 0.000000]
+        noInput: true
+        classes: "header3 text-color-blue"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                sprite: "~res:/Gfx/UI/ProfileScreen/tab-profile"
+                align: ["HCENTER", "TOP"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                align: ["HCENTER", "BOTTOM"]
+                useRtlAlign: "DONT_USE"
+-   class: "UIControl"
+    name: "spacer"
+    size: [100.000000, 15.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "FixedSize"
+            verticalValue: 15.000000
+-   class: "UIControl"
+    name: "Cell"
+    size: [100.000000, 27.000000]
+    noInput: true
+    classes: "pane-bg"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            dynamicPadding: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfChildrenSum"
+            verticalMax: 80.000000
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "spacer"
+        size: [100.000000, 5.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 5.000000
+    -   class: "UIControl"
+        name: "horizontalAlign"
+        noInput: true
+        components:
+            LinearLayout:
+                padding: 15.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfMaxChild"
+                verticalMax: 80.000000
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "text"
+            position: [15.000000, 7.500000]
+            size: [0.000000, 0.000000]
+            noInput: true
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   prototype: "spacer"
+            name: "spacer"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "FixedSize"
+                    horizontalValue: 50.000000
+        -   class: "UIStaticText"
+            name: "value"
+            noInput: true
+            classes: "header3 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    horizontalMin: 100.000000
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    vCenterAnchorEnabled: true
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["RIGHT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   prototype: "spacer"
+            name: "spacer"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "FixedSize"
+                    horizontalValue: 0.000000
+        -   class: "UIStaticText"
+            name: "percent"
+            position: [85.000000, -7.500000]
+            size: [60.000000, 30.000000]
+            visible: false
+            noInput: true
+            classes: "text1 text-color-gold"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: 0.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["RIGHT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+    -   class: "UIControl"
+        name: "spacer"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 7.000000
+-   class: "UIControl"
+    name: "HistogramElement"
+    size: [0.000000, 285.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfFirstChild"
+        Anchor:
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "BarsContainer"
+        components:
+            LinearLayout:
+                orientation: "LeftToRight"
+                spacing: 10.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                topAnchorEnabled: true
+                topAnchor: 30.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 65.000000
+    -   class: "UIControl"
+        name: "line"
+        position: [0.000000, 233.000000]
+        size: [0.000000, 22.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+            Anchor:
+                bottomAnchorEnabled: true
+                bottomAnchor: 30.000000
+            Background:
+                drawType: "DRAW_TILED"
+                sprite: "~res:/Gfx/UI/ProfileScreen/GraphLineTile"
+                leftRightStretchCap: 12.000000
+    -   class: "UIStaticText"
+        name: "label"
+        size: [0.000000, 35.000000]
+        noInput: true
+        classes: "text1 text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+            Anchor:
+                bottomAnchorEnabled: true
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    name: "ElementSort"
+    position: [2.000000, 0.000000]
+    size: [68.000000, 74.000000]
+    selected: false
+    noInput: false
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.000000, 0.000000, 0.000000, 1.000000]
+    children:
+    -   class: "UIControl"
+        name: "ElementSortContainer"
+        size: [68.000000, 74.000000]
+        selected: false
+        classes: "header-button"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/IconTabs"
+                frame: 1
+        children:
+        -   class: "UIControl"
+            name: "sortDirImage"
+            position: [26.500000, 56.000000]
+            size: [15.000000, 15.000000]
+            visible: false
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 3.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+Controls:
+-   class: "UIControl"
+    name: "Screen"
+    size: [960.000000, 640.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "LobbyHeader/Header"
+        name: "Header"
+        size: [960.000000, 80.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+    -   class: "UIControl"
+        customClass: "UITabSwitcher"
+        name: "Tabs"
+        position: [340.000000, 0.000000]
+        size: [620.000000, 78.000000]
+        components:
+            LinearLayout:
+                spacing: 2.000000
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+        children:
+        -   prototype: "tab"
+            name: "briefTab"
+            children:
+            -   path: "selected/text"
+                classes: "header4 text-color-white"
+                components:
+                    UITextComponent:
+                        text: "#achievementScreen:Header/Brief"
+                        fitting: "FITTING_POINTS"
+            -   path: "unselected"
+                classes: "header4 text-color-blue"
+                components:
+                    UITextComponent:
+                        text: "#achievementScreen:Header/Brief"
+                        fitting: "FITTING_POINTS"
+        -   prototype: "tab"
+            name: "ratingTab"
+            tag: 1
+            children:
+            -   path: "selected/text"
+                classes: "header4 text-color-white"
+                components:
+                    Background:
+                        frame: 4
+                    UITextComponent:
+                        text: "#achievementScreen:BattleRating/Button"
+                        fitting: "FITTING_POINTS"
+            -   path: "unselected"
+                classes: "header4 text-color-blue"
+                components:
+                    Background:
+                        frame: 4
+                    UITextComponent:
+                        text: "#achievementScreen:BattleRating/Button"
+                        fitting: "FITTING_POINTS"
+        -   prototype: "tab"
+            name: "medalsTab"
+            tag: 2
+            children:
+            -   path: "selected"
+                components:
+                    Background:
+                        frame: 0
+                children: []
+            -   path: "selected/text"
+                classes: "header4 text-color-white"
+                components:
+                    Background:
+                        frame: 1
+                    UITextComponent:
+                        text: "#achievementScreen:Header/Medals"
+                        fitting: "FITTING_POINTS"
+            -   path: "unselected"
+                classes: "header4 text-color-blue"
+                components:
+                    Background:
+                        frame: 1
+                    UITextComponent:
+                        text: "#achievementScreen:Header/Medals"
+                        fitting: "FITTING_POINTS"
+        -   prototype: "tab"
+            name: "statsTab"
+            tag: 3
+            children:
+            -   path: "selected"
+                components:
+                    Background:
+                        frame: 0
+                children: []
+            -   path: "selected/text"
+                classes: "header4 text-color-white"
+                components:
+                    Background:
+                        frame: 2
+                    UITextComponent:
+                        text: "#achievementScreen:Header/Statistics"
+                        fitting: "FITTING_POINTS"
+            -   path: "unselected"
+                classes: "header4 text-color-blue"
+                components:
+                    Background:
+                        frame: 2
+                    UITextComponent:
+                        text: "#achievementScreen:Header/Statistics"
+                        fitting: "FITTING_POINTS"
+        -   prototype: "tab"
+            name: "tanksTab"
+            tag: 4
+            children:
+            -   path: "selected"
+                components:
+                    Background:
+                        frame: 0
+                children: []
+            -   path: "selected/text"
+                classes: "header4 text-color-white"
+                components:
+                    Background:
+                        frame: 3
+                    UITextComponent:
+                        text: "#achievementScreen:Header/Tanks"
+                        fitting: "FITTING_POINTS"
+            -   path: "unselected"
+                classes: "header4 text-color-blue"
+                components:
+                    Background:
+                        frame: 3
+                    UITextComponent:
+                        text: "#achievementScreen:Header/Tanks"
+                        fitting: "FITTING_POINTS"
+    -   class: "UIControl"
+        name: "Content"
+        position: [0.000000, 80.000000]
+        size: [960.000000, 560.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: 80.000000
+                bottomAnchorEnabled: true

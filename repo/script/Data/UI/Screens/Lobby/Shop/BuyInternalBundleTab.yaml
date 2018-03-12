@@ -1,0 +1,160 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Shop/BaseIAPTab.yaml"
+- "~res:/UI/Screens/Lobby/Shop/ShopItemCell.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Shop/BaseShopTab.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+Controls:
+-   prototype: "BaseIAPTab/Tab"
+    customClass: "UIIAPTabControl"
+    name: "Tab"
+    children:
+    -   path: "Footer"
+        children:
+        -   class: "UIWebView"
+            name: "ShortDescription"
+            size: [356.000000, 80.000000]
+            classes: "footer"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 100.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 480.000000
+                    vCenterAnchorEnabled: true
+        -   prototype: "StyledButton/DefaultStyledButton"
+            name: "InfoButton"
+            size: [60.000000, 61.000000]
+            classes: "button footer"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/ShopScreen/ButtonInfo"
+    -   path: "Content/ShopContent"
+        children:
+        -   class: "UIControl"
+            name: "Description"
+            size: [450.000000, 503.000000]
+            classes: "description"
+            components:
+                Anchor:
+                    topAnchorEnabled: true
+                    topAnchor: 10.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 10.000000
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.070588, 0.125490, 0.160784, 0.850980]
+            children:
+            -   class: "UIStaticText"
+                name: "ItemInfoName"
+                size: [425.000000, 50.000000]
+                noInput: true
+                classes: "header1"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 15.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "A-32 + 1 SLOT + 1 WEEK"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+                        useRtlAlign: "USE_BY_SYSTEM"
+            -   prototype: "ShopItemCell/ItemCell"
+                name: "ItemCell"
+                position: [145.000000, 0.000000]
+                size: [270.000000, 380.000000]
+                scale: [0.750000, 0.750000]
+                pivot: [0.500000, 0.000000]
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -34.000000
+                        useRtl: true
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                children:
+                -   path: "description"
+                    visible: false
+            -   class: "UIControl"
+                name: "Container"
+                size: [337.000000, 243.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 15.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        topAnchorEnabled: true
+                        topAnchor: 260.000000
+                        bottomAnchorEnabled: true
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                        rightSafeInset: "INSET"
+                children:
+                -   class: "UIStaticText"
+                    name: "ItemInfoExpires"
+                    classes: "header3 text-color-red"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            useRtl: true
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            text: "expires"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            align: ["LEFT", "TOP"]
+                            useRtlAlign: "DONT_USE"
+                -   class: "UIWebView"
+                    name: "ItemInfoDescription"
+                    noInput: false
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+            -   class: "UIWebView"
+                name: "ItemInfoShortDescription"
+                size: [152.000000, 163.000000]
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 200.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        topAnchorEnabled: true
+                        topAnchor: 50.000000
+                        useRtl: true
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                        rightSafeInset: "INSET"
+    -   path: "LoadingControl/FadeBackground"
+        position: [10.000000, 0.000027]
+-   prototype: "ShopItemCell/ItemCell"
+    name: "ItemCell"
+    children:
+    -   path: "description"
+        components:
+            UITextComponent:
+                fitting: "FITTING_REDUCE"

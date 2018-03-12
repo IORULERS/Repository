@@ -1,0 +1,38 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Dialogs.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+Controls:
+-   prototype: "Dialogs/ErrorDialogWithoutCaption"
+    name: "ErrorRichTextDialogWithoutCaption"
+    children:
+    -   path: "Dialog/Middle"
+        children:
+        -   prototype: "RichText/RichText"
+            name: "RichDialogText"
+            size: [460.000000, 190.000000]
+            classes: ""
+            components:
+                FlowLayout:
+                    hPadding: 0.000000
+                    hDynamicInLinePadding: true
+                    vDynamicPadding: true
+                    vSpacing: 5.000000
+                    useRtl: true
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    topAnchorEnabled: true
+                    topAnchor: 10.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 100.000000
+                RichContent:
+                    baseClasses: "text-color-blue text1"
+                RichContentAliases0:
+                    aliases: "text_blue,<span class=\"text-color-blue text1\" />;text_white_bold,<span class=\"text-color-white header3\" />;text_mono,<span class=\"text-mono\" />;timer,<object path=\"~res:/UI/Screens/Dialogs.yaml\" prototype=\"ExpireTimer\" />;price,<object control=\"PriceContainer\" name=\"price\" path=\"~res:/UI/Screens/Dialogs.yaml\" />;player_name_with_tag,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTag\" />;player_teams_header_text,<span class=\"header1\" />;clan_name_with_tag,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTag\" />;player_name_with_tag_header1,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTagHeader1\" />;clan_name_with_tag_header1,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTagHeader1\" />;elite_vehicle_icon,<object control=\"EliteIcon\" path=\"~res:/UI/Screens/Lobby/Common/CommonIcons.yaml\" />;elite_premium_vehicle_icon,<object control=\"ElitePremiumIcon\" path=\"~res:/UI/Screens/Lobby/Common/CommonIcons.yaml\" />;"
+    -   path: "Dialog/Middle/DialogText"
+        visible: false

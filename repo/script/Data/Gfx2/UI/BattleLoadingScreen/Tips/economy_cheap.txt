@@ -1,0 +1,5 @@
+1
+economy_cheap0.tex
+512 256
+1
+0 0 438 105 42 115 0 frame0

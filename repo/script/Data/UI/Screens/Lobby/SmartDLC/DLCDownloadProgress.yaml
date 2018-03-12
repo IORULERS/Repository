@@ -1,0 +1,378 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".level-cell.loaded"
+    properties:
+        bg-color: [0.329412, 0.517647, 0.164706, 1.000000]
+-   selector: ".level-cell.loading"
+    properties:
+        bg-color: [0.984314, 0.529412, 0.247059, 1.000000]
+-   selector: ".download-progress.download-loading #PauseButton #Icon"
+    properties:
+        bg-frame: 0
+-   selector: ".download-progress.download-paused #PauseButton #Icon"
+    properties:
+        bg-frame: 1
+-   selector: ".download-progress.maximized"
+    properties:
+        linearLayout-spacing: 5.000000
+        sizePolicy-horizontalValue: 480.000000
+        sizePolicy-verticalValue: 100.000000
+        sound-touchUpInside: "GUI/buttons/filter_close"
+-   selector: ".download-progress.maximized #Holder #StateRow"
+    properties:
+        linearLayout-padding: 20.000000
+        linearLayout-dynamicPadding: false
+        linearLayout-dynamicSpacing: true
+        anchor-rightAnchor: 40.000000
+-   selector: ".download-progress.maximized #Holder #StateRow #DownloadState"
+    properties:
+        linearLayout-padding: 0.000000
+-   selector: ".download-progress.maximized #Arrow"
+    properties:
+        bg-spriteModification: ["FLIP_VERTICAL"]
+-   selector: ".download-progress.maximized #Holder #TutorialCaption"
+    properties:
+        visible: false
+-   selector: ".download-progress.minimized"
+    properties:
+        sizePolicy-horizontalValue: 240.000000
+        sizePolicy-verticalValue: 84.000000
+        sound-touchUpInside: "GUI/buttons/filter_open"
+-   selector: ".download-progress.minimized #Holder #StateRow"
+    properties:
+        linearLayout-dynamicPadding: true
+        sizePolicy-horizontalPolicy: "PercentOfParent"
+        anchor-rightAnchor: 0.000000
+-   selector: ".download-progress.minimized #Holder #StateRow #DownloadState, .download-progress.tutorial #Holder #StateRow #DownloadState"
+    properties:
+        linearLayout-dynamicPadding: true
+-   selector: ".download-progress.minimized #Holder #TutorialCaption"
+    properties:
+        visible: false
+-   selector: ".download-progress.minimized #PauseButton, .download-progress.minimized #Holder #LevelsRow #LevelsCaption"
+    properties:
+        visible: false
+-   selector: ".download-progress.tutorial"
+    properties:
+        sizePolicy-horizontalValue: 300.000000
+        sizePolicy-verticalValue: 80.000000
+        anchor-rightAnchor: 0.000000
+-   selector: ".download-progress.tutorial #Holder #StateRow"
+    properties:
+        linearLayout-dynamicPadding: true
+        sizePolicy-horizontalPolicy: "PercentOfParent"
+        anchor-rightAnchor: 10.000000
+-   selector: ".download-progress.tutorial #Holder #LevelsRow, .download-progress.tutorial #Arrow, .download-progress.tutorial ? #SpacerTop, .download-progress.tutorial ? #SpacerDown"
+    properties:
+        visible: false
+-   selector: ".download-progress.tutorial ? #Arrow, .download-progress.tutorial #PauseButton, .download-progress.tutorial ? #LevelsCaption"
+    properties:
+        visible: false
+-   selector: ".download-progress.download-error ? ? ? #Caption"
+    properties:
+        text-color: [1.000000, 0.000000, 0.000000, 1.000000]
+-   selector: ".download-progress.maximized.download-error #PauseButton, .download-progress.maximized.download-error ? #SpacerTop"
+    properties:
+        visible: false
+-   selector: ".download-progress.download-error ? ? ? #Status, .download-progress.download-error ? #TutorialCaption, .download-progress.download-error ? #SpacerTop"
+    properties:
+        visible: false
+-   selector: ".download-progress.download-paused ? ? #Caption"
+    properties:
+        text-color: [1.000000, 0.000000, 0.000000, 1.000000]
+-   selector: ".download-progress.minimized.download-paused ? ? ? #Status"
+    properties:
+        visible: false
+-   selector: ".download-progress ? ? ? #Caption"
+    properties:
+        text-color: [0.627451, 0.725490, 0.800000, 1.000000]
+-   selector: ".level-cell.default"
+    properties:
+        bg-color: [0.352941, 0.352941, 0.352941, 1.000000]
+-   selector: ".download-progress.maximized #Holder #LevelsRow"
+    properties:
+        anchor-leftAnchorEnabled: true
+        anchor-leftAnchor: 10.000000
+-   selector: ".download-progress.minimized #Holder #LevelsRow"
+    properties:
+        linearLayout-dynamicPadding: true
+        anchor-hCenterAnchorEnabled: true
+-   selector: ".download-progress.maximized #Holder #SpacerTop, .download-progress.minimized #SpacerDown"
+    properties:
+        visible: true
+-   selector: ".download-progress.minimized #Holder #SpacerTop, .download-progress.maximized #SpacerDown"
+    properties:
+        visible: false
+-   selector: ".size-number"
+    properties:
+        sizePolicy-horizontalValue: 18.000000
+        sizePolicy-verticalValue: 20.000000
+-   selector: ".size-number.ko, .size-number.zh-Hant, .size-number.zh-Hans, .size-number.ja"
+    properties:
+        sizePolicy-horizontalValue: 18.000000
+        sizePolicy-verticalValue: 14.000000
+-   selector: ".vertical-aligning"
+    properties:
+        anchor-vCenterAnchor: 0.000000
+-   selector: ".vertical-aligning.ru, .vertical-aligning.en"
+    properties:
+        anchor-vCenterAnchor: -2.000000
+Prototypes:
+-   class: "UIControl"
+    name: "TankLevelsStatusBar"
+    size: [0.000000, 0.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfFirstChild"
+            verticalPolicy: "PercentOfMaxChild"
+        Anchor:
+            hCenterAnchorEnabled: true
+        Background:
+            colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    children:
+    -   class: "UIControl"
+        name: "Levels"
+        size: [0.000000, 0.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                spacing: 1.000000
+                useRtl: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+-   class: "UIControl"
+    name: "DownloadProgress"
+    pivot: [0.500000, 0.500000]
+    noInput: true
+    classes: ".download-progress maximized download-error"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfLastChild"
+            verticalPolicy: "PercentOfLastChild"
+        Anchor: {}
+        Background:
+            drawType: "DRAW_STRETCH_BOTH"
+            sprite: "~res:/Gfx/UI/Hangar/PopupTile"
+            leftRightStretchCap: 10.000000
+            topBottomStretchCap: 10.000000
+    children:
+    -   class: "UIControl"
+        name: "Content"
+        classes: "download-progress appearance=maximized download-state=download-loading"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                dynamicPadding: true
+                useRtl: true
+            SizePolicy:
+                horizontalPolicy: "FixedSize"
+                verticalPolicy: "FixedSize"
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background: {}
+            Sound: {}
+        children:
+        -   class: "UIControl"
+            name: "Holder"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 3.000000
+                    useRtl: true
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    hCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "SpacerTop"
+                size: [32.000000, 5.000000]
+                noInput: true
+            -   class: "UIControl"
+                name: "StateRow"
+                noInput: true
+                components:
+                    LinearLayout:
+                        padding: 10.000000
+                        spacing: 3.000000
+                        useRtl: true
+                    SizePolicy:
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "DownloadState"
+                    size: [420.000000, 21.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            spacing: 5.000000
+                            useRtl: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfMaxChild"
+                        Anchor:
+                            leftAnchorEnabled: true
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Caption"
+                        size: [36.000000, 21.000000]
+                        classes: "text2-small"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "Formula"
+                                horizontalFormula: "min(parentRest, content)"
+                                verticalPolicy: "PercentOfContent"
+                            UITextComponent:
+                                text: "Text1"
+                                colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                                multiline: "MULTILINE_ENABLED"
+                                useRtlAlign: "USE_BY_SYSTEM"
+                    -   class: "UIStaticText"
+                        name: "Status"
+                        size: [36.000000, 21.000000]
+                        classes: "text2-small text-color-white"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfContent"
+                            Background:
+                                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                            UITextComponent:
+                                text: "Text2"
+                                colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                                fitting: "FITTING_REDUCE"
+                                useRtlAlign: "USE_BY_SYSTEM"
+            -   class: "UIControl"
+                name: "TutorialCaption"
+                noInput: true
+                classes: "text2-small text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 10.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        useRtl: true
+                    UITextComponent:
+                        text: "dlc/Download/Downloading/AwaitCompleteDownload"
+                        colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        fitting: "FITTING_REDUCE"
+            -   class: "UIControl"
+                name: "LevelsRow"
+                noInput: true
+                components:
+                    LinearLayout:
+                        spacing: 3.000000
+                        useRtl: true
+                    SizePolicy:
+                        horizontalPolicy: "Formula"
+                        horizontalFormula: "parent-20"
+                        verticalPolicy: "PercentOfLastChild"
+                    Anchor:
+                        useRtl: true
+                children:
+                -   class: "UIStaticText"
+                    name: "LevelsCaption"
+                    position: [0.000000, 0.000000]
+                    classes: "text2-small text-color-blue vertical-aligning"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "Formula"
+                            horizontalFormula: "min(parentRest, content)"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            vCenterAnchorEnabled: true
+                            useRtl: true
+                        UITextComponent:
+                            text: "dlc/Download/Dowloading/AvailableLevels"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                            fitting: "FITTING_REDUCE"
+                            useRtlAlign: "USE_BY_SYSTEM"
+        -   class: "UIControl"
+            name: "SpacerDown"
+            size: [32.000000, 5.000000]
+            noInput: true
+        -   class: "UIControl"
+            name: "Arrow"
+            size: [32.000000, 12.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/CommonUIElements/IconArrowDropDownMenu"
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIControl"
+            name: "PauseButton"
+            size: [50.000000, 60.000000]
+            components:
+                IgnoreLayout: {}
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 40.000000
+                    useRtl: true
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            children:
+            -   class: "UIControl"
+                name: "Icon"
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        topAnchorEnabled: true
+                        topAnchor: 10.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/stop_play_btn.psd"
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+-   class: "UIControl"
+    name: "Level"
+    noInput: true
+    classes: "level-cell state=default"
+    components:
+        SizePolicy:
+            horizontalPolicy: "FixedSize"
+            horizontalValue: 18.000000
+            verticalPolicy: "FixedSize"
+            verticalValue: 20.000000
+        Background:
+            drawType: "DRAW_SCALE_TO_RECT"
+            sprite: "~res:/Gfx/UI/LobbyCommon/levels_gradient.psd"
+            colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    children:
+    -   class: "UIStaticText"
+        name: "Number"
+        classes: "text3-small text-color-white size-number"
+        components:
+            SizePolicy:
+                horizontalPolicy: "FixedSize"
+                verticalPolicy: "FixedSize"
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_REDUCE"

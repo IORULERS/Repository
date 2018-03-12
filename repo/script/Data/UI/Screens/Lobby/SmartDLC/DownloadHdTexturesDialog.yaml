@@ -1,0 +1,12 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Screens/Dialogs.yaml"
+Controls:
+-   prototype: "Dialogs/WarningDialogWithoutCaption"
+    name: "WarningDialogWithoutCaption"
+    children:
+    -   path: "Dialog/Middle/DialogText"
+        text: "#settings:Graphics/HDTexturesUpload/Notification"
+    -   path: "Dialog/Middle/ButtonHolder/OkButton/Caption"
+        text: "dlc/Download/Button"

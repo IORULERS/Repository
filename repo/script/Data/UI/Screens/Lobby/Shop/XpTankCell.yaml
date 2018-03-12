@@ -1,0 +1,143 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleInfo.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/CheckBox.yaml"
+- "~res:/UI/Screens/Lobby/LobbyStyles.yaml"
+Controls:
+-   class: "UIControl"
+    customClass: "XpTankCell"
+    name: "cell"
+    size: [270.000000, 100.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        UIAnchorSafeAreaComponent:
+            leftSafeInset: "INSET"
+    children:
+    -   prototype: "CheckBox/CheckBox"
+        name: "CheckBox"
+        noInput: true
+        classes: "checkbox button-color-gray"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 12.000000
+                vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "bg"
+        position: [85.000000, 17.500000]
+        size: [173.000000, 65.000000]
+        noInput: true
+        classes: "button-state-tag=button-color-green"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 85.000000
+                vCenterAnchorEnabled: true
+            Background:
+                drawType: "DRAW_TILED_MULTILAYER"
+                mask: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+                detail: "~res:/Gfx/UI/CommonUIElements/Button/detail"
+                gradientMode: "Overlay"
+                leftRightStretchCap: 20.000000
+                topBottomStretchCap: 20.000000
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            position: [36.000000, 4.000000]
+            size: [97.000000, 60.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: -2.000000
+                    topAnchorEnabled: true
+                    topAnchor: 4.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 1.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/germany-Lowe"
+        -   prototype: "VehicleInfo/VehicleInfo"
+            name: "VehicleInfo"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 3.000000
+                    topAnchorEnabled: true
+                    topAnchor: 1.000000
+        -   class: "UIStaticText"
+            name: "Name"
+            noInput: true
+            classes: "header5"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 8.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 30.000000
+                    vCenterAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 4.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "LOWE"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    fitting: "FITTING_REDUCE"
+                    align: ["LEFT", "BOTTOM"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIControl"
+            name: "Experience"
+            position: [44.000000, 3.000000]
+            size: [125.000000, 25.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 4.000000
+                    topAnchorEnabled: true
+                    topAnchor: 3.000000
+            children:
+            -   class: "UIStaticText"
+                name: "Value"
+                position: [0.000000, -1.000000]
+                size: [101.000000, 26.000000]
+                noInput: true
+                classes: "header5"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 24.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "999"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        shadowOffset: [0.000000, 1.000000]
+                        shadowColor: [0.000000, 0.000000, 0.000000, 0.749000]
+                        fitting: "FITTING_REDUCE"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "Currency"
+                position: [103.000000, 1.500000]
+                size: [22.000000, 22.000000]
+                noInput: true
+                classes: "currency-icon-small currency-elite-xp"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 0.000000
+                    Background: {}

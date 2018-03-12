@@ -1,0 +1,21 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/News/NewsCell.yaml"
+Controls:
+-   prototype: "NewsCell/NewsCellProto"
+    name: "NewsCell"
+    size: [480.000000, 140.000000]
+    children:
+    -   path: "Background/Container/Title"
+        components:
+            SizePolicy:
+                verticalMax: 62.000000
+    -   path: "Background/Container/Description"
+        components:
+            SizePolicy:
+                verticalMax: 62.000000
+    -   path: "Date"
+        components:
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"

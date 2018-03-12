@@ -1,0 +1,402 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Styles/Lobby/Inventory/InventoryBigStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/ParamsPrototype.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleParamsTable.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader1.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".inventory-item-slot #icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/InventoryScreen/EmptySlot.txt"
+-   selector: ".inventory-item-slot #Selection"
+    properties:
+        visible: false
+-   selector: ".inventory-item-slot:selected #Selection"
+    properties:
+        visible: true
+-   selector: ".inventory-item-slot:pressed_inside"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.588235]
+-   selector: ".number-param-prototype"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIControl"
+    name: "Slot"
+    size: [100.000000, 100.000000]
+    selected: false
+    exclusiveInput: true
+    classes: "inventory-item-slot"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 20.000000
+        UIAnchorSafeAreaComponent:
+            leftSafeInset: "INSET"
+        Background:
+            drawType: "DRAW_TILED_MULTILAYER"
+            mask: "~res:/Gfx/UI/LobbyCommon/Button/mask.psd"
+            detail: "~res:/Gfx/UI/LobbyCommon/Button/detail.psd"
+            gradient: "~res:/Gfx/UI/LobbyCommon/Button/gradient.psd"
+            contour: "~res:/Gfx/UI/LobbyCommon/Button/countur.psd"
+            gradientMode: "Overlay"
+            leftRightStretchCap: 20.000000
+            topBottomStretchCap: 20.000000
+    children:
+    -   class: "UIControl"
+        name: "icon"
+        size: [80.000000, 80.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   prototype: "Selection/Selection"
+        name: "Selection"
+        classes: "selection-color-orange"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+-   class: "UIControl"
+    name: "SlotSeparator"
+    position: [0.000000, 124.000000]
+    size: [140.000000, 2.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 0.000000
+            rightAnchorEnabled: true
+            rightAnchor: 0.000000
+            vCenterAnchorEnabled: true
+            vCenterAnchor: -65.000000
+    children:
+    -   class: "UIControl"
+        name: "Left"
+        size: [70.000000, 2.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/LobbyCommon/Divider"
+    -   class: "UIControl"
+        name: "Right"
+        position: [70.000000, 0.000000]
+        size: [70.000000, 2.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/LobbyCommon/Divider"
+                spriteModification: ["FLIP_HORIZONTAL"]
+Controls:
+-   class: "UIControl"
+    customClass: "UIInventoryEquipmentInfo"
+    name: "InventoryEquipmentInfo"
+    size: [960.000000, 400.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_ALIGNED"
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        size: [162.000000, 400.000000]
+        noInput: true
+        classes: "pane-bg"
+        components:
+            SizePolicy:
+                horizontalPolicy: "Formula"
+                horizontalFormula: "safeAreaInsets.left+140"
+            Anchor:
+                leftAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background: {}
+    -   class: "UIControl"
+        name: "Slots"
+        position: [0.000000, 0.000000]
+        size: [162.000000, 400.000000]
+        classes: "selected0"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                padding: 20.000000
+                spacing: 30.000000
+            SizePolicy:
+                horizontalPolicy: "Formula"
+                horizontalFormula: "safeAreaInsets.left+140"
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                vCenterAnchorEnabled: true
+            Background: {}
+        children:
+        -   prototype: "Slot"
+            name: "Slot0"
+        -   prototype: "Slot"
+            name: "Slot1"
+        -   prototype: "Slot"
+            name: "Slot2"
+    -   class: "UIScrollView"
+        name: "Info"
+        position: [588.000000, 0.000000]
+        size: [372.000000, 400.000000]
+        autoUpdate: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "Formula"
+                horizontalFormula: "safeAreaInsets.left+350"
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIScrollViewContainer"
+            name: "scrollContainerControl"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "Formula"
+                    verticalFormula: "max(parent, childrenSum)"
+                Background: {}
+            children:
+            -   class: "UIControl"
+                name: "HorizontalLayout"
+                size: [372.000000, 100.000000]
+                noInput: true
+                classes: "section-header1"
+                components:
+                    LinearLayout:
+                        orientation: "LeftToRight"
+                        padding: 10.000000
+                        spacing: 10.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "FixedSize"
+                    Background: {}
+                children:
+                -   class: "UIControl"
+                    name: "icon"
+                    position: [10.000000, 10.000000]
+                    size: [80.000000, 80.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 10.000000
+                            topAnchorEnabled: true
+                            topAnchor: 10.000000
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                -   class: "UIStaticText"
+                    name: "Title"
+                    position: [100.000000, 10.000000]
+                    size: [240.000000, 80.000000]
+                    noInput: true
+                    classes: "header3 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 100.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 10.000000
+                            topAnchorEnabled: true
+                            topAnchor: 10.000000
+                        UIAnchorSafeAreaComponent:
+                            rightSafeInset: "INSET"
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            multiline: "MULTILINE_ENABLED"
+                            fitting: "FITTING_REDUCE"
+                            align: ["LEFT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "Spacer"
+                size: [372.000000, 1.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+            -   class: "UIControl"
+                name: "Container"
+                size: [372.000000, 10.000000]
+                noInput: true
+                classes: "pane-bg"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        padding: 5.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Background: {}
+                children:
+                -   class: "UIStaticText"
+                    name: "Description"
+                    position: [10.000000, 5.000000]
+                    size: [330.000000, 0.000000]
+                    noInput: true
+                    classes: "text1 text-color-blue"
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 10.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 10.000000
+                            vCenterAnchorEnabled: true
+                        UIAnchorSafeAreaComponent:
+                            rightSafeInset: "INSET"
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            multiline: "MULTILINE_ENABLED"
+                            align: ["LEFT", "TOP"]
+                            useRtlAlign: "USE_BY_CONTENT"
+            -   prototype: "VehicleParamsTable/VehicleParamsTable"
+                name: "VehicleParamsTable"
+                children:
+                -   path: "BaseParam"
+                    visible: false
+                    children: []
+                -   path: "DetalesParam/MobilityParams/HeaderMobility"
+                    size: [372.000000, 37.000000]
+                    children: []
+                -   path: "DetalesParam/MobilityParams/HeaderMobility/bg"
+                    components:
+                        Anchor:
+                            topAnchor: 1.000000
+                    children: []
+            -   class: "UIControl"
+                name: "Spacer"
+                noInput: true
+                classes: "pane-bg"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfParent"
+                    Background: {}
+        -   class: "UIScrollBar"
+            name: "InfoScrollBar"
+            size: [6.000000, 400.000000]
+            classes: "notch-tightly-right-inset"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "FixedSize"
+                    horizontalValue: 6.000000
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+            children:
+            -   class: "UIControl"
+                name: "slider"
+                size: [6.000000, 20.000000]
+                components:
+                    Background:
+                        drawType: "DRAW_STRETCH_VERTICAL"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                        topBottomStretchCap: 4.000000
+    -   class: "UIControl"
+        name: "CentralContainer"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 140.000000
+                rightAnchorEnabled: true
+                rightAnchor: 350.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+        children:
+        -   class: "UIScrollView"
+            name: "Purchase"
+            position: [0.000000, 0.000000]
+            size: [426.000000, 400.000000]
+            autoUpdate: true
+            centerContent: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                size: [426.000000, 10.000000]
+                components:
+                    FlowLayout:
+                        hDynamicInLinePadding: true
+                        hDynamicSpacing: true
+                        vPadding: 5.000000
+                        vSpacing: 30.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalMax: 800.000000
+                        verticalPolicy: "PercentOfChildrenSum"
+        -   class: "UIScrollBar"
+            name: "ScrollBar"
+            position: [422.000000, 0.000000]
+            size: [4.000000, 400.000000]
+            noInput: true
+            orientation: "ORIENTATION_VERTICAL"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_TO_RECT"
+            children:
+            -   class: "UIControl"
+                name: "slider"
+                size: [4.000000, 8.000000]
+                noInput: true
+                components:
+                    Background:
+                        drawType: "DRAW_STRETCH_VERTICAL"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                        topBottomStretchCap: 2.000000

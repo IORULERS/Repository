@@ -1,0 +1,37 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Dialogs.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/ExpireTimer.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+Prototypes:
+-   prototype: "Dialogs/WarningDialog"
+    name: "WarningDialog"
+    children:
+    -   path: "Dialog/Middle"
+        children:
+        -   class: "UIControl"
+            name: "DialogRichText"
+            size: [460.000000, 200.000000]
+            components:
+                FlowLayout:
+                    enabled: true
+                    hDynamicInLinePadding: true
+                    hSpacing: 5.000000
+                    vDynamicPadding: true
+                    useRtl: true
+                Anchor:
+                    enabled: true
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    topAnchorEnabled: true
+                    topAnchor: 70.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 100.000000
+                RichContent:
+                    text: "<text_blue><timer/> left until the level </text_blue><text_white_bold>%(slotLevel) %(slotName)</text_white_bold><text_blue> slot is unlocked. If you stop the unlocking, </text_blue><price/><text_blue> will be returned to the Storage.\nStop unlocking?</text_blue>"
+                RichContentAliases0:
+                    aliases: "text_blue,<span class=\"text-color-blue text1\" />;timer,<object path=\"~res:/UI/Screens/Lobby/ExpireTimer.yaml\" prototype=\"ExpireTimerForText\" />;price,<object control=\"ResourceContainer\" name=\"price\" path=\"~res:/UI/Screens/Lobby/Common/Resource/ResourceContainer.yaml\" />;text_white_bold,<span class=\"text-color-white header3\" />;"

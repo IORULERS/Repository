@@ -1,0 +1,5 @@
+1
+vertical_angle0.tex
+256 128
+1
+0 0 210 105 21 21 0 frame0

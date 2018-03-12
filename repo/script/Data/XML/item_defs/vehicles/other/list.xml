@@ -1,0 +1,125 @@
+<root>
+	<Strv_74A2>
+		<id>2</id>
+		<userString>#other_vehicles:Strv_74A2</userString>
+		<shortUserString>#other_vehicles:Strv_74A2_short</shortUserString>
+		<price>3000<gold/>
+		</price>
+		<enrichmentPermanentCost>0</enrichmentPermanentCost>
+		<notInShop>true</notInShop>
+		<tags>mediumTank enhancedTorsions3t_user wetCombatPack_class1_user</tags>
+		<level>6</level>
+		<configurationModes>production development supertest</configurationModes>
+	</Strv_74A2>
+	<Sega_Edelweiss>
+		<id>3</id>
+		<userString>#other_vehicles:Sega_Edelweiss</userString>
+		<shortUserString>#other_vehicles:Sega_Edelweiss_short</shortUserString>
+		<price>4900<gold/>
+		</price>
+		<enrichmentPermanentCost>0</enrichmentPermanentCost>
+		<notInShop>true</notInShop>
+		<tags>mediumTank enhancedTorsions5t_user mediumCaliberTankRammer_user wetCombatPack_class1_user</tags>
+		<level>7</level>
+		<configurationModes>production development supertest</configurationModes>
+	</Sega_Edelweiss>
+	<Sega_Nameless>
+		<id>5</id>
+		<userString>#other_vehicles:Sega_Nameless</userString>
+		<shortUserString>#other_vehicles:Sega_Nameless_short</shortUserString>
+		<price>5000<gold/>			
+		</price>
+		<enrichmentPermanentCost>0</enrichmentPermanentCost>
+		<notInShop>true</notInShop>
+		<tags>heavyTank enhancedTorsions5t_user largeCaliberTankRammer_user wetCombatPack_class2_user</tags>
+		<level>7</level>
+		<configurationModes>production development supertest</configurationModes>
+	</Sega_Nameless>
+	<Van_Helsing>
+		<id>6</id>
+		<userString>#other_vehicles:Van_Helsing</userString>
+		<shortUserString>#other_vehicles:Van_Helsing_short</shortUserString>
+		<price>4900<gold/>
+		</price>
+		<enrichmentPermanentCost>0</enrichmentPermanentCost>
+		<notInShop>true</notInShop>
+		<tags>AT-SPG secret InGame mediumAT-SPG wetCombatPack_class1_user</tags>
+		<level>7</level>
+		<configurationModes>production development supertest</configurationModes>
+	</Van_Helsing>
+	<Akawara>
+		<id>7</id>
+		<userString>#other_vehicles:Akawara</userString>
+		<shortUserString>#other_vehicles:Akawara_short</shortUserString>
+		<price>7300<gold/>
+		</price>
+		<enrichmentPermanentCost>0</enrichmentPermanentCost>
+		<notInShop>true</notInShop>
+		<tags>mediumTank enhancedTorsions3t_user mediumCaliberTankRammer_user wetCombatPack_class1_user aimingStabilizer_Mk1_user</tags>
+		<level>8</level>
+		<configurationModes>production development supertest</configurationModes>
+	</Akawara>
+	<WZ-135G_FT>
+		<id>8</id>
+		<userString>#other_vehicles:WZ-135G_FT</userString>
+		<shortUserString>#other_vehicles:WZ-135G_FT_short</shortUserString>
+		<price>5000<gold/> 
+		</price>
+		<enrichmentPermanentCost>0</enrichmentPermanentCost>
+		<notInShop>true</notInShop>
+		<tags>AT-SPG lightAT-SPG secret InGame mediumCaliberTankRammer_user wetCombatPack_class1_user enhancedTorsions1t_user</tags>
+		<level>7</level>
+		<configurationModes>production development supertest</configurationModes>
+	</WZ-135G_FT>
+	<AMX_dracula>
+		<id>248</id>
+		<userString>#other_vehicles:AMX_dracula</userString>
+		<shortUserString>#other_vehicles:AMX_dracula_short</shortUserString>
+		<description>#other_vehicles:AMX_dracula_descr</description>
+		<price>4900<gold/>
+		</price>
+		<enrichmentPermanentCost>0</enrichmentPermanentCost>
+		<notInShop>true</notInShop>
+		<tags>mediumTank secret InGame enhancedTorsions3t_user mediumCaliberTankRammer_user wetCombatPack_class1_user</tags>
+		<level>7</level>
+		<configurationModes>production development supertest</configurationModes>
+	</AMX_dracula>
+	<Oth06_Sega_Lupus>
+		<id>14</id>
+		<userString>#other_vehicles:Sega_Lupus</userString>
+		<shortUserString>#other_vehicles:Sega_Lupus_short</shortUserString>
+		<price>5000<gold/>
+		</price>
+		<enrichmentPermanentCost>0</enrichmentPermanentCost>
+		<notInShop>true</notInShop>
+		<tags>heavyTank enhancedTorsions5t_user largeCaliberTankRammer_user wetCombatPack_class2_user aimingStabilizer_Mk2_user</tags>
+		<level>7</level>
+		<configurationModes>production development supertest</configurationModes>
+	</Oth06_Sega_Lupus>
+	<Oth08_WH_Vindicator>
+		<id>0</id>
+		<userString>#other_vehicles:Oth08_WH_Vindicator</userString>
+		<shortUserString>#other_vehicles:Oth08_WH_Vindicator_short</shortUserString>
+		<description>#other_vehicles:Oth08_WH_Vindicator_descr</description>
+		<price>5000<gold/>
+		</price>
+		<enrichmentPermanentCost>0</enrichmentPermanentCost>
+		<notInShop>true</notInShop>
+		<tags>AT-SPG secret InGame eventCamouflage_user heavyAT-SPG enhancedTorsions5t_user largeCaliberTankRammer_user wetCombatPack_class2_user</tags>
+		<level>7</level>
+		<configurationModes>production development supertest</configurationModes>
+	</Oth08_WH_Vindicator>
+	<Oth09_WH_Predator>
+		<id>4</id>
+		<userString>#other_vehicles:Oth09_WH_Predator</userString>
+		<shortUserString>#other_vehicles:Oth09_WH_Predator_short</shortUserString>
+		<description>#other_vehicles:Oth09_WH_Predator_descr</description>
+		<price>5000<gold/>
+		</price>
+		<enrichmentPermanentCost>0</enrichmentPermanentCost>
+		<notInShop>true</notInShop>
+		<tags>heavyTank secret InGame eventCamouflage_user enhancedTorsions5t_user largeCaliberTankRammer_user wetCombatPack_class2_user aimingStabilizer_Mk2_user</tags>
+		<level>7</level>
+		<configurationModes>production development supertest</configurationModes>
+	</Oth09_WH_Predator>
+</root>

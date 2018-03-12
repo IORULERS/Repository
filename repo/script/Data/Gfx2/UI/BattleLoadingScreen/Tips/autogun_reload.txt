@@ -1,0 +1,5 @@
+1
+autogun_reload0.tex
+512 256
+1
+0 0 442 123 34 107 0 frame0

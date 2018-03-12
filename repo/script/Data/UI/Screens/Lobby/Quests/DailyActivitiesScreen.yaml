@@ -1,0 +1,45 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Hangar/HangarBaseScreen.yaml"
+- "~res:/UI/Screens/Common/Tab.yaml"
+Controls:
+-   prototype: "HangarBaseScreen/Screen"
+    name: "Screen"
+    children:
+    -   path: "Content"
+        children:
+        -   prototype: "Tab/TabPane"
+            name: "TabPane"
+            classes: "tab-color"
+            components:
+                Background:
+                    drawType: "DRAW_FILL"
+            children:
+            -   prototype: "Tab/TextTabWithBadge"
+                name: "QuestsTab"
+                selected: true
+                children:
+                -   path: "Text"
+                    components:
+                        UITextComponent:
+                            text: "#quests:HomeScreen/Header"
+            -   prototype: "Tab/TextTabWithBadge"
+                name: "ChestsTab"
+                tag: 1
+                children:
+                -   path: "Text"
+                    components:
+                        UITextComponent:
+                            text: "activities/BonusContainers/Title"
+        -   class: "UIControl"
+            name: "TabContent"
+            size: [1024.000000, 614.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 74.000000
+                    bottomAnchorEnabled: true

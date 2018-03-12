@@ -1,0 +1,203 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Showcase/ShowcasePrototypes.yaml"
+- "~res:/UI/Screens/Lobby/Common/GradientPane.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Showcase"
+    size: [1024.000000, 768.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 0.000000
+            rightAnchorEnabled: true
+            rightAnchor: 0.000000
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+        Background:
+            color: [0.000000, 0.000000, 0.000000, 0.800000]
+    children:
+    -   class: "UIControl"
+        name: "DealInfoContainer"
+        position: [0.000000, 768.000000]
+        size: [1024.000000, 260.000000]
+        pivot: [0.000000, 1.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   prototype: "GradientPane/GradientPane"
+            name: "ErrorTextConteiner"
+            size: [1024.000000, 60.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "ErrorText"
+                size: [936.000000, 60.000000]
+                noInput: true
+                classes: "text1 text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                        rightSafeInset: "INSET"
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "To unlock this tank upgrade the previous one in the tree."
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        shadowOffset: [0.000000, 1.000000]
+                        multiline: "MULTILINE_ENABLED"
+                        fitting: "FITTING_REDUCE"
+        -   class: "UIControl"
+            name: "Details"
+            size: [1024.000000, 120.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   prototype: "GradientPane/GradientPane"
+                name: "GradientPane"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "Control"
+                    size: [32.000000, 32.000000]
+                    noInput: true
+            -   prototype: "ShowcasePrototypes/DetailsLine"
+                name: "DetailsLine1"
+                components:
+                    Anchor:
+                        bottomAnchorEnabled: false
+                        bottomAnchor: 0.000000
+            -   prototype: "ShowcasePrototypes/DetailsLine"
+                name: "DetailsLine2"
+                components:
+                    Anchor:
+                        topAnchorEnabled: true
+                        topAnchor: 40.000000
+                        bottomAnchorEnabled: false
+                        bottomAnchor: 0.000000
+            -   prototype: "ShowcasePrototypes/DetailsLine"
+                name: "DetailsLine3"
+                components:
+                    Anchor:
+                        topAnchorEnabled: true
+                        topAnchor: 80.000000
+                        bottomAnchorEnabled: false
+                        bottomAnchor: 0.000000
+            -   class: "UIControl"
+                name: "MessageContainer"
+                size: [936.000000, 80.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                        rightSafeInset: "INSET"
+                    Background:
+                        drawType: "DRAW_SCALE_TO_RECT"
+                children:
+                -   class: "UIStaticText"
+                    name: "Message"
+                    position: [0.000000, 0.000000]
+                    size: [936.000000, 80.000000]
+                    visible: true
+                    noInput: true
+                    classes: "text1 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 0.000000
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 0.000000
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            text: "msg"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            shadowOffset: [1.000000, 1.000000]
+                            fitting: "FITTING_REDUCE"
+        -   class: "UIControl"
+            name: "Prices"
+            position: [0.000000, 180.000000]
+            size: [1024.000000, 80.000000]
+            noInput: true
+            classes: "footer-background"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+                Background: {}
+            children:
+            -   prototype: "ShowcasePrototypes/PriceLine"
+                name: "PriceLine1"
+            -   prototype: "ShowcasePrototypes/PriceLine"
+                name: "PriceLine2"
+                components:
+                    Anchor:
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+            -   prototype: "ShowcasePrototypes/DetailsLine"
+                name: "PriceLineBig"
+                position: [44.000000, 0.000000]
+                size: [936.000000, 80.000000]
+                components:
+                    Anchor:
+                        bottomAnchor: 0.000000
+    -   prototype: "StyledButton/StyledButton"
+        name: "GetTankButton"
+        size: [179.000000, 64.000000]
+        classes: "button color=button-color-green"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 8.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                Anchor:
+                    leftAnchor: 10.000000
+                    rightAnchor: 10.000000
+                UITextComponent:
+                    text: "Get Tank"
+                    fitting: "FITTING_REDUCE"

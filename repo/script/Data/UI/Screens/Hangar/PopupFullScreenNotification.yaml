@@ -1,0 +1,840 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Lobby/Hangar/HangarTankCell.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Dialogs.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/StyledMenuButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/PremDays.yaml"
+- "~res:/UI/Screens/Lobby/Common/CustomNumbers.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Styles/Lobby/BattleRating/BattleRatingStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Hangar/BasePopup.yaml"
+- "~res:/UI/Styles/NetEaseStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".battle-rating #BattleRatingFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_big.sc2"
+-   selector: ".battle-rating.bronze #BattleRatingFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_bronze_big.sc2"
+-   selector: ".battle-rating.silver #BattleRatingFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_silver_big.sc2"
+-   selector: ".battle-rating.gold #BattleRatingFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_gold_big.sc2"
+-   selector: ".battle-rating.platinum #BattleRatingFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_platinum_big.sc2"
+-   selector: ".battle-rating.diamond #BattleRatingFx"
+    properties:
+        particleEffect-effectPath: "~res:/3d/FX/UI/player_profile_icon_diamond_big.sc2"
+-   selector: ".body-league-changed #RatingValue, .body-calibration-completed #RatingValue, .body-calibration-completed #TitleDescRich, .body-recalibration #RatingValue"
+    properties:
+        visible: true
+-   selector: ".body-calibration-start #RatingValue, .body-reset-rating #RatingValue, .body-league-changed #TitleDescRich, .body-reset-rating #TitleDescRich, .body-calibration-start #TitleDescRich, .body-calibration-completed #DescriptionContainer #TitleDesc, .body-recalibration #TitleDescRich"
+    properties:
+        visible: false
+-   selector: ".body-calibration-start #LeagueBanner"
+    properties:
+        bg-frame: 6
+-   selector: ".body-recalibration #LeagueBanner"
+    properties:
+        bg-frame: 0
+Prototypes:
+-   prototype: "BasePopup/BasePopup"
+    name: "PremiumBase"
+    children:
+    -   path: "Content"
+        children:
+        -   class: "UIControl"
+            name: "ContainerAlign"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                    verticalMax: 600.000000
+                Anchor:
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "body"
+                size: [600.000000, 300.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: 0.000000
+                        topAnchorEnabled: true
+                        topAnchor: 223.000000
+                children:
+                -   class: "UIStaticText"
+                    name: "descr"
+                    size: [440.000000, 287.000000]
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 160.000000
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 13.000000
+                            bottomAnchorEnabled: true
+                        DebugRender:
+                            enabled: false
+                            drawColor: [1.000000, 0.000000, 0.000000, 1.000000]
+                        UITextComponent:
+                            text: "shop/Congrats/Description"
+                            fontName: "WarHeliosCondC_21"
+                            color: [0.627451, 0.725490, 0.800000, 1.000000]
+                            multiline: "MULTILINE_ENABLED"
+                            align: ["LEFT", "TOP"]
+                -   class: "UIControl"
+                    name: "iconPlaceholder"
+                    size: [140.000000, 155.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            hCenterAnchorEnabled: false
+                            hCenterAnchor: -300.000000
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                        DebugRender:
+                            enabled: false
+                            drawColor: [1.000000, 0.000000, 0.000000, 1.000000]
+                -   class: "UIStaticText"
+                    name: "congrats"
+                    size: [500.000000, 60.000000]
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: 0.000000
+                            topAnchorEnabled: true
+                            topAnchor: -150.000000
+                        UITextComponent:
+                            text: "shop/Congrats/Title"
+                            fontName: "WarHeliosCondC_Bold_25"
+                            color: [1.000000, 1.000000, 1.000000, 1.000000]
+                -   class: "UIStaticText"
+                    name: "titleDesc"
+                    size: [700.000000, 30.000000]
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: -100.000000
+                        DebugRender:
+                            enabled: false
+                            drawColor: [1.000000, 0.000000, 0.000000, 1.000000]
+                        UITextComponent:
+                            text: "shop/Congrats/Description"
+                            fontName: "WarHeliosCondC_21"
+                            color: [0.627451, 0.725490, 0.800000, 1.000000]
+-   class: "UIControl"
+    name: "DeclineForever"
+    size: [171.000000, 27.600000]
+    classes: "button button-ok-sound"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfLastChild"
+            verticalPolicy: "PercentOfMaxChild"
+            verticalValue: 120.000000
+        Sound: {}
+    children:
+    -   class: "UIControl"
+        name: "UnderLine"
+        position: [0.000000, 24.000000]
+        size: [171.000000, 1.000000]
+        classes: "color-link"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   class: "UIStaticText"
+        name: "Text"
+        classes: "text2 text-color-link"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "rateApp/Button/DoNotAskAgain"
+                colorInheritType: "COLOR_MULTIPLY_ON_PARENT"
+Controls:
+-   prototype: "PremiumBase"
+    name: "PremiumBought"
+    noInput: true
+    children:
+    -   path: "Content/ContainerAlign"
+        noInput: true
+        children: []
+    -   path: "Content/ContainerAlign/body/descr"
+        components:
+            UITextComponent:
+                text: "shop/Congrats/Premium"
+                useRtlAlign: "USE_BY_CONTENT"
+    -   path: "Content/ContainerAlign/body/iconPlaceholder"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/icon_premium_wreath.psd"
+        children:
+        -   prototype: "PremDays/PremNumber"
+            name: "PremiumDays"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "Numbers/Hundred"
+                classes: "digit digit-type=digit-3"
+            -   path: "Numbers/Ten"
+                classes: "digit digit-type=digit-6"
+            -   path: "Numbers/One"
+                classes: "digit digit-type=digit-8"
+        -   prototype: "PremDays/PremiumHours"
+            name: "PremiumHours"
+            scale: [0.580000, 0.500000]
+            components:
+                SizePolicy:
+                    horizontalValue: 58.000000
+                    verticalValue: 50.000000
+            children:
+            -   path: "Separator"
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: false
+-   prototype: "PremiumBase"
+    name: "PremiumVehicle"
+    noInput: true
+    children:
+    -   path: "Content/ContainerAlign"
+        noInput: true
+        children: []
+    -   path: "Content/ContainerAlign/body/descr"
+        components:
+            Anchor:
+                topAnchor: 0.000000
+            UITextComponent:
+                text: "shop/Congrats/PremiumVehicle/Description"
+                useRtlAlign: "USE_BY_CONTENT"
+    -   path: "Content/ContainerAlign/body/iconPlaceholder"
+        children:
+        -   prototype: "HangarTankCell/HangarTankCell"
+            name: "HangarTankCell"
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: -40.000000
+            children:
+            -   path: "bg"
+                components:
+                    Background:
+                        drawType: "DRAW_ALIGNED"
+            -   path: "x2"
+                visible: false
+                children: []
+            -   path: "squadMatchBg"
+                visible: false
+                children: []
+            -   path: "blockedBg"
+                visible: false
+                children: []
+            -   path: "blockedBg/Background"
+                visible: true
+                children: []
+            -   path: "favorite"
+                visible: false
+            -   path: "fade"
+                visible: false
+                noInput: true
+-   prototype: "BasePopup/BasePopup"
+    name: "HangarTutorialComplete"
+    children:
+    -   path: "Content"
+        classes: "notch-tightly-bottom-inset"
+        components:
+            UIAnchorSafeAreaComponent: {}
+        children:
+        -   class: "UIControl"
+            name: "body"
+            size: [1024.000000, 588.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 100.000000
+            children:
+            -   class: "UIStaticText"
+                name: "descr"
+                size: [1024.000000, 30.000000]
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: false
+                        topAnchor: 13.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 0.000000
+                    DebugRender:
+                        enabled: false
+                        drawColor: [1.000000, 0.000000, 0.000000, 1.000000]
+                    UITextComponent:
+                        text: "#hangar_tutorial:hangar/x2/hint3"
+                        fontName: "WarHeliosCondC_21"
+                        color: [0.627451, 0.725490, 0.800000, 1.000000]
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["HCENTER", "VCENTER"]
+            -   class: "UIControl"
+                name: "iconPlaceholder"
+                size: [240.000000, 270.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: false
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: 0.000000
+                        topAnchorEnabled: false
+                        topAnchor: 100.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -20.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/HangarTutorial/ImageGold05"
+                    DebugRender:
+                        enabled: false
+                        drawColor: [1.000000, 0.000000, 0.000000, 1.000000]
+            -   class: "UIStaticText"
+                name: "congrats"
+                size: [500.000000, 60.000000]
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: 0.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -250.000000
+                    UITextComponent:
+                        text: "#hangar_tutorial:hangar/congrats/header"
+                        fontName: "WarHeliosCondC_Bold_25"
+                        color: [1.000000, 1.000000, 1.000000, 1.000000]
+            -   class: "UIStaticText"
+                name: "titleDesc"
+                size: [700.000000, 60.000000]
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -200.000000
+                    DebugRender:
+                        enabled: false
+                        drawColor: [1.000000, 0.000000, 0.000000, 1.000000]
+                    UITextComponent:
+                        text: "#hangar_tutorial:hangar/congrats/descr"
+                        fontName: "WarHeliosCondC_21"
+                        color: [0.627451, 0.725490, 0.800000, 1.000000]
+            -   class: "UIControl"
+                name: "PriceLabel"
+                position: [0.000000, 492.000000]
+                size: [1024.000000, -76.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 0.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        topAnchorEnabled: false
+                        topAnchor: 370.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 160.000000
+                        bottomAnchorEnabled: false
+                        bottomAnchor: -26.000000
+                children:
+                -   class: "UIStaticText"
+                    name: "reward"
+                    size: [1024.000000, -76.000000]
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 0.000000
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 0.000000
+                        DebugRender:
+                            enabled: false
+                            drawColor: [1.000000, 0.000000, 0.000000, 1.000000]
+                        UITextComponent:
+                            text: "#hangar_tutorial:hangar/task_reward"
+                            fontName: "WarHeliosCondC_Bold_21"
+                            color: [0.627451, 0.725490, 0.800000, 1.000000]
+                            multiline: "MULTILINE_ENABLED"
+                            align: ["HCENTER", "VCENTER"]
+                -   class: "UIControl"
+                    name: "Image"
+                    position: [984.000000, 0.000000]
+                    size: [40.000000, -76.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: false
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 0.000000
+                        Background:
+                            drawType: "DRAW_ALIGNED"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                            frame: 0
+        -   prototype: "StyledButton/StyledButton"
+            name: "QuestsButton"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 10.000000
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#quests:Hangar/ButtonTitle"
+-   prototype: "BasePopup/BasePopup"
+    name: "TankBirthday"
+    children:
+    -   path: "Content"
+        children:
+        -   class: "UIControl"
+            name: "DecoratedResizableDialog"
+            position: [0.000000, 0.000000]
+            size: [1024.000000, 688.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    color: [0.070588, 0.090196, 0.113725, 0.784314]
+            children:
+            -   class: "UIControl"
+                name: "Dialog"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfFirstChild"
+                        verticalPolicy: "PercentOfFirstChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -40.000000
+                children:
+                -   class: "UIControl"
+                    name: "Content"
+                    size: [500.000000, 395.000000]
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            padding: 20.000000
+                            spacing: 10.000000
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Background:
+                            drawType: "DRAW_STRETCH_BOTH"
+                            sprite: "~res:/Gfx/UI/CommonUIElements/PopupBackMiddle"
+                            leftRightStretchCap: 4.000000
+                            topBottomStretchCap: 4.000000
+                    children:
+                    -   class: "UIControl"
+                        name: "Padding"
+                        size: [0.000000, 80.000000]
+                    -   class: "UIStaticText"
+                        name: "Title"
+                        classes: "header1"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            UITextComponent:
+                                text: "#vehicle_birthday:Congratulations/Title"
+                    -   class: "UIControl"
+                        name: "DescriptionContainer"
+                        components:
+                            LinearLayout:
+                                orientation: "TopDown"
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfMaxChild"
+                                verticalPolicy: "PercentOfChildrenSum"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIStaticText"
+                            name: "DescriptionPrefix"
+                            size: [450.000000, 92.000000]
+                            classes: "text2 text-color-blue"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                UITextComponent:
+                                    text: "#vehicle_birthday:Congratulations/ListOfVehicles"
+                                    multiline: "MULTILINE_ENABLED"
+                        -   class: "UIStaticText"
+                            name: "DescriptionList"
+                            size: [450.000000, 0.000000]
+                            classes: "header3"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfContent"
+                                    verticalMax: 150.000000
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                UITextComponent:
+                                    multiline: "MULTILINE_ENABLED"
+                                    fitting: "FITTING_REDUCE"
+                        -   class: "UIStaticText"
+                            name: "DescriptionPostfix"
+                            size: [450.000000, 0.000000]
+                            classes: "text2 text-color-blue"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                UITextComponent:
+                                    multiline: "MULTILINE_ENABLED"
+                    -   class: "UIControl"
+                        name: "BonusContainer"
+                        size: [150.000000, 48.000000]
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIControl"
+                            name: "Money"
+                            size: [48.000000, 48.000000]
+                            components:
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 25.000000
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsHuge"
+                                    frame: 1
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Label"
+                                classes: "header1"
+                                components:
+                                    Anchor:
+                                        rightAnchorEnabled: true
+                                        rightAnchor: -7.000000
+                                        vCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "x5"
+                        -   class: "UIControl"
+                            name: "Exp"
+                            position: [0.000000, 0.000000]
+                            size: [48.000000, 48.000000]
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsHuge"
+                                    frame: 3
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Label"
+                                classes: "header1"
+                                components:
+                                    Anchor:
+                                        rightAnchorEnabled: true
+                                        rightAnchor: -7.000000
+                                        vCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "x5"
+                    -   class: "UIControl"
+                        name: "ButtonHolder"
+                        components:
+                            LinearLayout:
+                                orientation: "RightToLeft"
+                                padding: 20.000000
+                                spacing: 20.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                bottomAnchorEnabled: true
+                                bottomAnchor: 20.000000
+                        children:
+                        -   prototype: "StyledButton/StyledButton"
+                            name: "OkButton"
+                            classes: "button button-color-green"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                            children:
+                            -   path: "Caption"
+                                components:
+                                    UITextComponent:
+                                        text: "#common:DialogButton/OK"
+                -   class: "UIParticles"
+                    name: "GlowEffect"
+                    position: [250.000000, 25.000000]
+                    size: [0.000000, 0.000000]
+                    effectPath: "~res:/3d/FX/UI/Birthday/glow.sc2"
+                    autoStart: true
+                -   class: "UIControl"
+                    name: "Decoration"
+                    position: [162.500000, -70.000000]
+                    size: [175.000000, 190.000000]
+                    components:
+                        Anchor:
+                            topAnchorEnabled: true
+                            topAnchor: -70.000000
+                        Background:
+                            sprite: "~res:/Gfx/UI/Hangar/Happy_B_big"
+                            frame: 0
+-   prototype: "BasePopup/BasePopup"
+    name: "PremiumizationEnded"
+    children:
+    -   path: "Content"
+        children:
+        -   prototype: "Dialogs/ErrorDialogWithoutCaption"
+            name: "Dialog"
+            classes: ""
+            components:
+                ModalInput:
+                    enabled: false
+            children:
+            -   path: "Dialog"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                        verticalPolicy: "PercentOfMaxChild"
+                children:
+                -   class: "UIControl"
+                    name: "Control"
+                    size: [32.000000, 32.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            topAnchorEnabled: true
+                        Background:
+                            sprite: "~res:/Gfx/UI/LobbyCommon/finish_premilisation"
+            -   path: "Dialog/Middle"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        padding: 20.000000
+                        spacing: 10.000000
+                    SizePolicy:
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        enabled: true
+                        topAnchorEnabled: false
+                        bottomAnchorEnabled: false
+                children:
+                -   class: "UIControl"
+                    name: "Padding"
+                    size: [0.000000, 70.000000]
+                -   class: "UIControl"
+                    name: "DescriptionContainer"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfMaxChild"
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                    children:
+                    -   class: "UIStaticText"
+                        name: "DescriptionPrefix"
+                        size: [450.000000, 130.000000]
+                        classes: "header3 text-color-white"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            UITextComponent:
+                                text: "premialization/Notification/Finish"
+                                multiline: "MULTILINE_ENABLED"
+                    -   class: "UIStaticText"
+                        name: "DescriptionList"
+                        size: [450.000000, 0.000000]
+                        classes: "header3"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfContent"
+                                verticalMax: 150.000000
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            UITextComponent:
+                                multiline: "MULTILINE_ENABLED"
+                                fitting: "FITTING_REDUCE"
+                    -   class: "UIStaticText"
+                        name: "DescriptionPostfix"
+                        size: [450.000000, 0.000000]
+                        classes: "text2 text-color-blue"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfContent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                            UITextComponent:
+                                multiline: "MULTILINE_ENABLED"
+                -   class: "UIControl"
+                    name: "Padding"
+                    size: [0.000000, 90.000000]
+            -   path: "Dialog/Middle/DialogText"
+                visible: false
+            -   path: "Dialog/Middle/ButtonHolder"
+                components:
+                    IgnoreLayout: {}
+                children: []
+-   prototype: "BasePopup/BasePopup"
+    name: "LeagueChangedPopup"
+    children:
+    -   path: "Content"
+        children:
+        -   class: "UIControl"
+            name: "Body"
+            size: [1024.000000, 588.000000]
+            noInput: true
+            classes: "battle-rating"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 100.000000
+            children:
+            -   class: "UIParticles"
+                name: "BattleRatingFx"
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                autoStart: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+            -   class: "UIControl"
+                name: "LeagueBanner"
+                size: [240.000000, 270.000000]
+                noInput: true
+                classes: "battle-rating gold"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: false
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 20.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/ProfileScreen/league_big.psd"
+            -   class: "UIControl"
+                name: "DescriptionContainer"
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        spacing: 7.000000
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -280.000000
+                children:
+                -   class: "UIStaticText"
+                    name: "Congrats"
+                    size: [500.000000, 60.000000]
+                    classes: "header1"
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: -250.000000
+                        UITextComponent:
+                            text: "ratingBattles/leagueChanged/Title"
+                -   class: "UIStaticText"
+                    name: "TitleDesc"
+                    size: [700.000000, 26.000000]
+                    classes: "text1 text-color-blue"
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: -200.000000
+                        UITextComponent:
+                            text: "ratingBattles/leagueIncreased/bronze"
+                            multiline: "MULTILINE_ENABLED"
+            -   prototype: "RichText/RichText"
+                name: "TitleDescRich"
+                position: [162.000000, 64.000000]
+                size: [700.000000, 60.000000]
+                components:
+                    FlowLayout:
+                        hDynamicPadding: true
+                        hDynamicInLinePadding: true
+                        vDynamicPadding: true
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -200.000000
+                    RichContent:
+                        text: "ratingBattles/calibrationCompleted/Description"
+            -   prototype: "CustomNumbers/Value"
+                name: "RatingValue"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 200.000000
+                children:
+                -   path: "Number"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/CommonUIElements/prem_hours/silver_numbers/big/0.psd"
+                -   path: "Space"
+                    size: [9.000000, 100.000000]
+    -   prototype: "StyledButton/StyledButton"
+        name: "LeaderboardButton"
+        classes: "button button-color-green button-ok-sound netease-hidden"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                topAnchorEnabled: true
+                topAnchor: 8.000000
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "NOTIFICATIONS_TO_TANK"

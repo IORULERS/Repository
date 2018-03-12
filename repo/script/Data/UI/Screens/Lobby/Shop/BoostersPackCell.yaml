@@ -1,0 +1,51 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Shop/ShopItemCell.yaml"
+StyleSheets:
+-   selector: ".selected #Selection"
+    properties:
+        visible: true
+-   selector: "#Selection"
+    properties:
+        visible: false
+Prototypes:
+-   prototype: "ShopItemCell/ItemCell"
+    name: "ItemCell"
+    components:
+        Anchor:
+            vCenterAnchorEnabled: true
+    children:
+    -   path: "ImageHolder"
+        size: [230.000000, 267.000000]
+        components:
+            Background:
+                drawType: "DRAW_ALIGNED"
+            ClipContent:
+                enabled: true
+    -   path: "description"
+        components:
+            UITextComponent:
+                fitting: "FITTING_REDUCE"
+    -   path: "Sale"
+        visible: false
+        children: []
+    -   path: "RibbonNew"
+        visible: false
+    -   path: "RibbonHot"
+        visible: false
+    -   path: "ExpireTimer"
+        visible: false
+        children: []
+    -   path: "VehicleInfo"
+        visible: false
+        children: []
+    -   class: "UIStaticText"
+        name: "BoostersNumber"
+        position: [71.000000, 270.000000]
+        size: [168.000000, 53.000000]
+        classes: "header0"
+        components:
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                align: ["RIGHT", "BOTTOM"]

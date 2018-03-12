@@ -1,0 +1,284 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Shop/BaseShopTab.yaml"
+- "~res:/UI/Screens/Common/Settings/SettingsCommon.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Lobby/Shop/VehicleInfo.yaml"
+- "~res:/UI/Screens/Lobby/Shop/ShopItemCell.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".packages"
+    properties:
+        flowLayout-enabled: false
+        sizePolicy-horizontalPolicy: "PercentOfChildrenSum"
+        linearLayout-enabled: true
+        sizePolicy-verticalPolicy: "PercentOfParent"
+-   selector: ".packages.Desktop"
+    properties:
+        flowLayout-enabled: true
+        sizePolicy-horizontalPolicy: "PercentOfParent"
+        linearLayout-enabled: false
+        sizePolicy-verticalPolicy: "PercentOfChildrenSum"
+-   selector: ".has-tanks #Content #EmptyContent, .has-no-tanks #Content #ContentScrollView"
+    properties:
+        visible: false
+-   selector: ".has-tanks #Content #ContentScrollView, .has-no-tanks #Content #EmptyContent"
+    properties:
+        visible: true
+Controls:
+-   prototype: "BaseShopTab/Tab"
+    name: "Tab"
+    children:
+    -   path: "Footer"
+        children:
+        -   class: "UIControl"
+            name: "Content"
+            size: [936.000000, 94.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "BuyButton"
+                size: [250.000000, 64.000000]
+                classes: "button button-color-green"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 20.000000
+                        vCenterAnchorEnabled: true
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "shop/Buy"
+            -   prototype: "StyledButton/DefaultStyledButton"
+                name: "InfoButton"
+                size: [60.000000, 61.000000]
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        vCenterAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_ALIGNED"
+                        sprite: "~res:/Gfx/UI/ShopScreen/ButtonInfo"
+            -   prototype: "VehicleInfo/VehicleInfo"
+                name: "VehicleInfo"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 90.000000
+                        vCenterAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "Name"
+                    size: [44.000000, 32.000000]
+                    classes: "text1 text-color-blue"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 75.000000
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "Text1"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "PriceContainer"
+                position: [441.000000, 12.000000]
+                size: [211.000000, 30.000000]
+                components:
+                    LinearLayout: {}
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 284.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -20.000000
+                children:
+                -   class: "UIControl"
+                    name: "Spacer"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                -   class: "UIStaticText"
+                    name: "Label"
+                    noInput: true
+                    classes: "text1 text-color-blue"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: 495.000000
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            text: "#common:Cost"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            align: ["RIGHT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+                -   prototype: "DiscountLabel/DiscountLabel"
+                    name: "Discount"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: 493.000000
+                            topAnchorEnabled: false
+            -   class: "UIControl"
+                name: "GoldImage"
+                position: [626.000000, 47.000000]
+                size: [30.000000, 30.000000]
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 280.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+            -   class: "UIStaticText"
+                name: "PremiumPriceText"
+                position: [335.000000, 47.000000]
+                size: [286.000000, 30.000000]
+                noInput: true
+                classes: "header1"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 315.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "0"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+    -   path: "Content"
+        classes: "limited-width notch-tightly-bottom-inset"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+            Anchor:
+                leftAnchorEnabled: false
+                hCenterAnchorEnabled: true
+                rightAnchorEnabled: false
+        children:
+        -   class: "UIScrollView"
+            name: "ContentScrollView"
+            autoUpdate: true
+            centerContent: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                classes: "packages"
+                components:
+                    LinearLayout:
+                        safeAreaPaddingInset: true
+                    FlowLayout:
+                        hDynamicPadding: true
+                        useRtl: true
+                    SizePolicy: {}
+            -   prototype: "Common/VerticalScrollBar"
+                name: "VerticalScrollBar"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+            -   prototype: "Common/HorizontalScrollBar"
+                name: "HorizontalScrollBar"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        bottomAnchorEnabled: true
+        -   class: "UIControl"
+            name: "EmptyContent"
+            size: [1024.000000, 332.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 35.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "Icon"
+                size: [177.000000, 140.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/ShopScreen/prem_tanks_end"
+            -   class: "UIStaticText"
+                name: "Message"
+                size: [921.599976, 52.000000]
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalValue: 90.000000
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "shop/Buy/Vehicles/NothingAvailable"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+            -   prototype: "StyledButton/StyledButton"
+                name: "ToBundles"
+                position: [388.777771, 262.000000]
+                size: [246.444489, 70.000000]
+                classes: "button button-color-green"
+                components:
+                    SizePolicy: {}
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   path: "Caption"
+                    position: [0.000000, 0.000000]
+                    size: [246.444489, 70.000000]
+                    components:
+                        UITextComponent:
+                            text: "#common:DialogButton/Packages"
+-   prototype: "ShopItemCell/ItemCell"
+    name: "ItemCell"
+    components:
+        Anchor:
+            vCenterAnchorEnabled: true
+    children:
+    -   path: "VehicleInfo"
+        components:
+            Background:
+                colorInherit: "COLOR_IGNORE_PARENT"
+        children: []

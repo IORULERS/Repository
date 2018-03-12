@@ -1,0 +1,19 @@
+ignore_dirs:
+    - BigTankIcons/
+    - BattleScreenHUD/SmallTankIcons/
+    - BattleScreenHUD/minimap/
+    - InventoryIcons/Normal
+    - CommonUIElements/IconsRegion
+textures:
+    BattleScreenHUD/AutoAim/texture0: '512,512'
+    BattleScreenHUD/StatusEffectIcons/texture0: '1024,128'
+    BattleScreenHUD/markers/texture0: '1024,1024'
+    BattleScreenHUD/texture0: '2048,2048'
+    BattleScreenHUD/tournament_hud/texture0: '2048,256'
+    CommonUIElements/Button/texture0: '1024,512'
+    CommonUIElements/texture0: '1024,256'
+    CommonUIElements/IconsRegion/texture0: '1024,256'
+    DamagedModules/texture0: '2048,64'
+    Tutorial/KeyboardMouse/texture0: '1024,256'
+    Tutorial/texture0: '2048,2048'
+    CommonUIElements/Selection/texture0: '1024,128'

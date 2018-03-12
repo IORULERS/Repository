@@ -1,0 +1,64 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/Lobby/BattleRating/BattleRatingStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "Rating"
+    position: [0.000000, 0.000000]
+    size: [105.000000, 20.000000]
+    noInput: true
+    classes: "battle-rating"
+    components:
+        LinearLayout:
+            spacing: 2.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+    children:
+    -   class: "UIStaticText"
+        name: "CurrentRating"
+        size: [48.000000, 20.000000]
+        classes: "header3 text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfParent"
+            UITextComponent:
+                text: "3 234"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIControl"
+        name: "LeagueBanner"
+        size: [30.000000, 20.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 1.000000
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/league_small"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "UpDownMark"
+        size: [10.000000, 20.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfParent"
+            Background:
+                sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+    -   class: "UIStaticText"
+        name: "RatingDiff"
+        size: [11.000000, 20.000000]
+        classes: "header3"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfParent"
+            UITextComponent:
+                text: "8"
+                colorInheritType: "COLOR_IGNORE_PARENT"

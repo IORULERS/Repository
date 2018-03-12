@@ -1,0 +1,5 @@
+1
+moving_target0.tex
+256 128
+1
+0 0 125 125 67 2 0 frame0

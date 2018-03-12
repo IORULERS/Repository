@@ -1,0 +1,308 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Lobby/Clan/ClanCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/CheckBox.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+Controls:
+-   class: "UIControl"
+    customClass: "UIClanLanguageSelect"
+    name: "LanguageSelect"
+    size: [1024.000000, 688.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "Common/Dialog"
+        name: "Dialog"
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Middle"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    padding: 20.000000
+                    spacing: 20.000000
+                Anchor:
+                    topAnchor: 56.000000
+            children:
+            -   class: "UIStaticText"
+                name: "Comment"
+                position: [20.000000, 20.000000]
+                size: [460.000000, 23.000000]
+                classes: "text2 text-color-blue"
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        hCenterAnchorEnabled: false
+                        rightAnchorEnabled: true
+                        rightAnchor: 20.000000
+                    UITextComponent:
+                        text: "#clans:LanguageScreen/Comment"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+            -   class: "UIScrollView"
+                name: "SelectLanguageView"
+                position: [2.000000, 63.000000]
+                size: [496.000000, 277.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfParent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 2.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 2.000000
+                        topAnchorEnabled: true
+                        topAnchor: 130.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 114.000000
+                children:
+                -   class: "UIControl"
+                    name: "botomLine"
+                    position: [0.000000, 276.000000]
+                    size: [496.000000, 1.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: false
+                            bottomAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_FILL"
+                            color: [1.000000, 1.000000, 1.000000, 0.141176]
+                            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    size: [496.000000, 70.000000]
+                    pivot: [0.000000, 0.000000]
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            hCenterAnchorEnabled: false
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: false
+                            vCenterAnchorEnabled: false
+                            bottomAnchorEnabled: false
+                    children:
+                    -   class: "UIControl"
+                        name: "ResetButton"
+                        position: [2.000000, 0.000000]
+                        size: [492.000000, 70.000000]
+                        visible: false
+                        classes: "language-select-bg"
+                        components:
+                            LinearLayout:
+                                padding: 15.000000
+                                spacing: 0.000000
+                                dynamicSpacing: true
+                                skipInvisible: true
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 2.000000
+                                rightAnchorEnabled: true
+                                rightAnchor: 2.000000
+                            Background:
+                                color: [0.200000, 0.274510, 0.321569, 0.000000]
+                        children:
+                        -   class: "UIControl"
+                            name: "botomLine"
+                            size: [492.000000, 1.000000]
+                            noInput: true
+                            components:
+                                IgnoreLayout: {}
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                                Background:
+                                    drawType: "DRAW_FILL"
+                                    color: [1.000000, 1.000000, 1.000000, 0.141176]
+                                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        -   class: "UIStaticText"
+                            name: "LocalizedName"
+                            classes: "header4 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                Anchor:
+                                    leftAnchorEnabled: false
+                                    leftAnchor: 15.000000
+                                    rightAnchorEnabled: false
+                                    rightAnchor: 85.000000
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                                UITextComponent:
+                                    text: "#clans:SearchScreen/NameSearch/LanguageFilterTable/AnyLanguage"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["LEFT", "VCENTER"]
+                    -   class: "UIControl"
+                        customClass: "UIClanLanguageOption"
+                        name: "LanguageOption"
+                        position: [0.000000, 0.000000]
+                        size: [496.000000, 70.000000]
+                        classes: "language-select-bg button-choose-sound button"
+                        components:
+                            LinearLayout:
+                                padding: 15.000000
+                                spacing: 20.000000
+                                dynamicSpacing: true
+                                skipInvisible: true
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                            Sound: {}
+                        children:
+                        -   class: "UIControl"
+                            name: "botomLine"
+                            size: [496.000000, 1.000000]
+                            noInput: true
+                            components:
+                                IgnoreLayout:
+                                    enabled: true
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                                Background:
+                                    drawType: "DRAW_FILL"
+                                    color: [1.000000, 1.000000, 1.000000, 0.141176]
+                                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        -   class: "UIStaticText"
+                            name: "LocalizedName"
+                            position: [15.000000, 0.000000]
+                            size: [188.000000, 70.000000]
+                            classes: "header4"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                Anchor:
+                                    leftAnchorEnabled: false
+                                    leftAnchor: 15.000000
+                                    rightAnchorEnabled: false
+                                    rightAnchor: 85.000000
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                                UITextComponent:
+                                    text: "Text"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    fitting: "FITTING_REDUCE"
+                                    align: ["LEFT", "VCENTER"]
+                        -   class: "UIStaticText"
+                            name: "NativeName"
+                            position: [223.000000, 0.000000]
+                            visible: true
+                            classes: "text2 text-color-blue"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    verticalPolicy: "PercentOfParent"
+                                UITextComponent:
+                                    text: "Name"
+                                    fontName: "WarHeliosCondC_19"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    fitting: "FITTING_REDUCE"
+                                    align: ["RIGHT", "VCENTER"]
+                                    forceBiDiSupport: true
+                        -   prototype: "CheckBox/CheckBox"
+                            name: "Check"
+                            size: [50.000000, 50.000000]
+                            visible: true
+                            components:
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                -   class: "UIControl"
+                    name: "botomLine"
+                    position: [0.000000, 0.000000]
+                    size: [496.000000, 1.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: false
+                        Background:
+                            drawType: "DRAW_FILL"
+                            color: [1.000000, 1.000000, 1.000000, 0.141176]
+                            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                -   prototype: "Common/VerticalScrollBar"
+                    name: "SearchScrollBar"
+                    size: [10.000000, 277.000000]
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: false
+                            rightAnchorEnabled: true
+                            rightAnchor: 2.000000
+                            topAnchorEnabled: true
+                            topAnchor: 0.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 0.000000
+                        ScrollBarDelegate:
+                            delegate: ".."
+            -   class: "UIControl"
+                name: "ButtonHolder"
+                position: [0.000000, 360.000000]
+                size: [500.000000, 64.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        padding: 20.000000
+                        spacing: 20.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 20.000000
+                children:
+                -   prototype: "StyledButton/StyledButton"
+                    name: "Cancel"
+                    classes: "button button-color-gray button-cancel-sound"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                    children:
+                    -   path: "Caption"
+                        components:
+                            UITextComponent:
+                                text: "#clans:CreationScreen/InsertDescription/Cancel"
+                -   prototype: "StyledButton/StyledButton"
+                    name: "Submit"
+                    classes: "button button-color-green button-ok-sound"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                    children:
+                    -   path: "Caption"
+                        components:
+                            UITextComponent:
+                                text: "#clans:CreationScreen/InsertDescription/OK"
+        -   path: "Top"
+            noInput: true
+            children: []
+        -   path: "Top/TitleText"
+            components:
+                UITextComponent:
+                    text: "#clans:LanguageScreen/Header"

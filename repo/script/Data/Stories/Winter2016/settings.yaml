@@ -1,0 +1,31 @@
+name: "winter_event/Title"
+stages:
+ winter2016_inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/Winter2016/Button_Inform.yaml"
+  priority: 1
+  info: "event-info"
+ winter2016_process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/Winter2016/Button_Process.yaml"
+  priority: 1
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/Winter2016/StoryTree.yaml"
+  web:
+   buttonName: "winter_event/GoToWeb/Button"
+   buttonDescription: ""
+   eventUrl: "/%s/fair"
+ winter2016_buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/Winter2016/Button_Buy.yaml"
+  priority: 1
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/Winter2016/StoryTree.yaml"
+  web:
+   buttonName: "winter_event/GoToWeb/Button"
+   buttonDescription: ""
+   eventUrl: "/%s/fair"
+currencyKeys:
+  ticket: "winter_event/Currencies/tickets/Terms"
+  snowflake: "winter_event/Currencies/cases/Terms"
+  star: "winter_event/Currencies/streamers/Terms"

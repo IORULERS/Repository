@@ -1,0 +1,685 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Crew/ScreenBlank.yaml"
+- "~res:/UI/Screens/Lobby/Crew/CrewCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader1.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader3.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Common/AnnotatedButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/Price.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+StyleSheets:
+-   selector: ".enough-resources #XpPrice, .not-enough-resources #NotEnoughText"
+    properties:
+        visible: true
+-   selector: ".enough-resources #NotEnoughText, .not-enough-resources #XpPrice"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIControl"
+    name: "TrainingType"
+    size: [256.000000, 160.000000]
+    noInput: true
+    classes: "selectable"
+    components:
+        Anchor:
+            topAnchorEnabled: true
+            topAnchor: 25.000000
+    children:
+    -   class: "UIControl"
+        name: "Button"
+        classes: "button button-color-gray button-ok-sound"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Background:
+                drawType: "DRAW_TILED_MULTILAYER"
+                mask: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+                detail: "~res:/Gfx/UI/CommonUIElements/Button/detail"
+                gradientMode: "Overlay"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                leftRightStretchCap: 20.000000
+                topBottomStretchCap: 20.000000
+            Sound: {}
+        children:
+        -   class: "UIControl"
+            name: "FXP"
+            position: [79.000000, 34.000000]
+            size: [98.000000, 58.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 34.000000
+            children:
+            -   class: "UIControl"
+                name: "Icon"
+                position: [18.500000, 0.000000]
+                size: [61.000000, 58.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/green_star.psd"
+                        frame: 4
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIStaticText"
+                name: "Text"
+                position: [0.000000, 42.000000]
+                size: [98.000000, 38.000000]
+                classes: "header0 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 42.000000
+                    UITextComponent:
+                        text: "150 000"
+        -   class: "UIControl"
+            name: "ValueContainer"
+            position: [0.000000, 115.000000]
+            size: [256.000000, 45.000000]
+            noInput: true
+            components:
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/counter_back.psd"
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    leftRightStretchCap: 3.000000
+                    topBottomStretchCap: 3.000000
+            children:
+            -   prototype: "RichText/RichText"
+                name: "RichText"
+                components:
+                    FlowLayout:
+                        hDynamicPadding: true
+                        vDynamicPadding: true
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 4.000000
+                    RichContent:
+                        baseClasses: "text-color-blue"
+                        classesInheritance: true
+        -   prototype: "Selection/Selection"
+            name: "Selection"
+            position: [0.000000, 0.000000]
+            classes: "selection-color-orange"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+    -   class: "UIControl"
+        name: "Price"
+        position: [17.000000, 162.000000]
+        size: [222.000000, 30.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                dynamicPadding: true
+                spacing: 14.000000
+                dynamicSpacing: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                hCenterAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: -32.000000
+        children:
+        -   prototype: "Price/Price"
+            name: "PriceEliteXP"
+            position: [0.000000, 0.000000]
+            classes: "currency=eliteXP"
+            components:
+                LinearLayout:
+                    spacing: 5.000000
+            children:
+            -   path: "Text"
+                classes: "header3"
+                components:
+                    UITextComponent:
+                        text: "500 000"
+        -   prototype: "Price/Price"
+            name: "PriceSilverGold"
+            position: [118.000000, 0.000000]
+            classes: "currency=gold"
+            components:
+                LinearLayout:
+                    spacing: 5.000000
+            children:
+            -   path: "Text"
+                classes: "header3"
+                components:
+                    UITextComponent:
+                        text: "200 000"
+    -   class: "UIControl"
+        name: "IconUndaerlayer"
+        size: [256.000000, 55.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: -25.000000
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/skills50.psd"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "Icon"
+        size: [82.000000, 54.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                topAnchor: -25.000000
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/CrewSkills_icon.psd"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "DiscountLabel/DiscountLabel"
+        name: "DiscountLabel"
+        position: [193.000000, 0.000000]
+        components:
+            LinearLayout:
+                spacing: 5.000000
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+    -   class: "UIControl"
+        name: "effects"
+        position: [1.000000, 1.000000]
+        size: [254.000000, 158.000000]
+        noInput: true
+        components:
+            ClipContent: {}
+        children:
+        -   class: "UIParticles"
+            name: "sparks"
+            position: [63.000000, 174.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            autoStart: true
+        -   class: "UIParticles"
+            name: "line"
+            position: [-9.000000, 166.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            autoStart: true
+Controls:
+-   prototype: "ScreenBlank/Screen"
+    name: "Screen"
+    size: [960.000000, 558.000000]
+    children:
+    -   path: "Content"
+        position: [0.000000, 0.000000]
+        size: [960.000000, 464.000000]
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                dynamicPadding: true
+                spacing: 45.000000
+        children:
+        -   class: "UIControl"
+            name: "SkillProgress"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 20.000000
+                SizePolicy:
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "Text"
+                position: [0.000000, 0.000000]
+                size: [960.000000, 63.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "Header"
+                    classes: "header1 text-color-white"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "#crew:skills/forceTraining/chooseOption/header"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   prototype: "RichText/RichText"
+                    name: "Description"
+                    position: [50.000000, 31.000000]
+                    components:
+                        FlowLayout:
+                            hDynamicInLinePadding: true
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 50.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 50.000000
+                        RichContent:
+                            text: "#crew:skills/forceTraining/chooseOption/description"
+                            baseClasses: "text1 text-color-blue"
+                        RichContentAliases0:
+                            aliases: "text_blue,<span class=\"text-color-blue text1\" />;text_white_bold,<span class=\"text-color-white header3\" />;text_mono,<span class=\"text-mono\" />;timer,<object name=\"ExpireTimer\" path=\"~res:/UI/Screens/Lobby/ExpireTimer.yaml\" prototype=\"ExpireTimer\" />;price,<object class=\"gold\" name=\"Price\" path=\"~res:/UI/Screens/Lobby/Common/Price.yaml\" prototype=\"Price\" />;player_name_with_tag,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTag\" />;player_teams_header_text,<span class=\"header1\" />;clan_name_with_tag,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTag\" />;player_name_with_tag_header1,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTagHeader1\" />;clan_name_with_tag_header1,<object path=\"~res:/UI/Screens/Common/PlayerNameWithTag.yaml\" prototype=\"PlayerNameWithTagHeader1\" />;elite_experience_icon,<object control=\"EliteIcon\" path=\"~res:/UI/Screens/Lobby/Crew/EliteIcon.yaml\" />;"
+            -   prototype: "CrewCommon/ShortSkillDescription"
+                name: "SkillPanel"
+                position: [0.000000, 83.000000]
+                components:
+                    LinearLayout:
+                        spacing: -15.000000
+                    DebugRender:
+                        enabled: false
+                children:
+                -   path: "Header"
+                    position: [383.500000, 0.000000]
+                    classes: ""
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfChildrenSum"
+                            verticalMin: 40.000000
+                            verticalMax: 50.000000
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_ALIGNED"
+                    children: []
+                -   path: "Header/Icon"
+                    components:
+                        Background:
+                            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                    children: []
+                -   path: "Header/Icon/Particle"
+                    effectPath: "~res:/3d/FX/UI/LvlUpPerk.sc2"
+                -   path: "Header/Icon/Level"
+                    components:
+                        Background:
+                            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                -   path: "Header/Spacer"
+                    visible: false
+                -   path: "Header/NameAndStatus"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfChildrenSum"
+                    children: []
+                -   path: "Header/NameAndStatus/Name"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                -   path: "Header/NameAndStatus/Status"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                -   path: "Header/NumberProgress"
+                    visible: false
+                    children: []
+                -   path: "Header/NumberProgress/Value"
+                    visible: false
+                -   path: "Header/NumberProgress/Icon"
+                    visible: false
+                -   path: "Progress"
+                    position: [180.000000, 35.000000]
+                    classes: ""
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "FixedSize"
+                            horizontalValue: 600.000000
+                            verticalPolicy: "FixedSize"
+                            verticalValue: 60.000000
+                        Anchor:
+                            leftAnchorEnabled: false
+                            hCenterAnchorEnabled: true
+                            rightAnchorEnabled: false
+                        Background:
+                            drawType: "DRAW_ALIGNED"
+                    children:
+                    -   class: "UIControl"
+                        name: "XpChange"
+                        position: [523.000000, 0.000000]
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                spacing: 5.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                        children:
+                        -   class: "UIControl"
+                            name: "Arrow"
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                                    vCenterAnchor: 2.000000
+                                Background:
+                                    sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+                        -   class: "UIStaticText"
+                            name: "Value"
+                            position: [15.000000, 0.000000]
+                            classes: "header4 text-color-green"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfContent"
+                                UITextComponent:
+                                    text: "150 000"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    -   class: "UIControl"
+                        name: "NumberProgress"
+                        size: [189.000000, 32.000000]
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                spacing: 2.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfChildrenSum"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                                bottomAnchor: -5.000000
+                        children:
+                        -   class: "UIStaticText"
+                            name: "Value"
+                            position: [0.000000, 0.000000]
+                            size: [155.000000, 32.000000]
+                            classes: "header3 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfParent"
+                                UITextComponent:
+                                    text: "100 500 / 200 000"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIControl"
+                            name: "Icon"
+                            size: [32.000000, 32.000000]
+                            noInput: true
+                            components:
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                                    frame: 4
+                -   path: "Progress/Value"
+                    size: [0.000000, 57.000000]
+                    visible: false
+                -   path: "Progress/ProgressBarAnimated"
+                    components:
+                        Anchor:
+                            leftAnchor: 0.000000
+                            rightAnchor: 0.000000
+                    children: []
+                -   path: "Price"
+                    visible: false
+                    children: []
+        -   class: "UIControl"
+            name: "TrainingTypesContaner"
+            position: [51.000000, 235.500000]
+            size: [858.000000, 216.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 45.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    hCenterAnchorEnabled: true
+            children:
+            -   prototype: "TrainingType"
+                name: "TrainingTypeFree"
+                position: [0.000000, 25.000000]
+                children:
+                -   path: "Button"
+                    position: [0.000000, 0.000000]
+                    children: []
+                -   path: "Button/ValueContainer/RichText"
+                    components:
+                        RichContent:
+                            text: "#crew:skills/forceTraining/trainingX1"
+                -   path: "Button/Selection"
+                    position: [0.000000, 0.000000]
+                -   path: "Price/PriceSilverGold"
+                    visible: false
+                    children: []
+                -   path: "effects"
+                    visible: false
+                    children: []
+            -   prototype: "TrainingType"
+                name: "TrainingTypeCredits"
+                tag: 1
+                children:
+                -   path: "Button/ValueContainer/RichText"
+                    components:
+                        RichContent:
+                            text: "#crew:skills/forceTraining/trainingX2"
+                -   path: "IconUndaerlayer"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/LobbyCommon/skills75.psd"
+                -   path: "Icon"
+                    components:
+                        Background:
+                            frame: 1
+                -   path: "effects/sparks"
+                    position: [63.000000, 174.000000]
+                    effectPath: "~res:/3d/FX/UI/crew_silver_sparks.sc2"
+                -   path: "effects/line"
+                    effectPath: "~res:/3d/FX/UI/crew_silver_line.sc2"
+            -   prototype: "TrainingType"
+                name: "TrainingTypeGold"
+                position: [602.000000, 25.000000]
+                tag: 2
+                children:
+                -   path: "Button"
+                    classes: "button button-color-orange button-ok-sound"
+                    children: []
+                -   path: "Button/ValueContainer/RichText"
+                    components:
+                        RichContent:
+                            text: "#crew:skills/forceTraining/trainingX3"
+                            baseClasses: "text-color-orange"
+                -   path: "Button/Selection"
+                    position: [0.000000, 0.000000]
+                -   path: "IconUndaerlayer"
+                    position: [0.000000, -25.000000]
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/LobbyCommon/skills100.psd"
+                -   path: "Icon"
+                    components:
+                        Background:
+                            frame: 2
+                -   path: "effects/sparks"
+                    effectPath: "~res:/3d/FX/UI/crew_gold_sparks.sc2"
+                -   path: "effects/line"
+                    effectPath: "~res:/3d/FX/UI/crew_gold_line.sc2"
+    -   path: "Footer"
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "TrainButton"
+            size: [222.000000, 64.000000]
+            classes: "button button-color-green button-ok-sound"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 10.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#crew:skills/skillDescription/train"
+        -   class: "UIControl"
+            name: "Balance"
+            position: [20.000000, 0.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 240.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "EliteXp"
+                noInput: true
+                components:
+                    LinearLayout:
+                        spacing: 5.000000
+                        useRtl: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "Description"
+                    size: [126.000000, 32.000000]
+                    classes: "text1 text-color-blue"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                        UITextComponent:
+                            text: "#crew:skills/forceTraining/eliteExp"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   prototype: "Price/Price"
+                    name: "XpValue"
+                    classes: "currency=eliteXP"
+                    components:
+                        LinearLayout:
+                            spacing: 5.000000
+                    children:
+                    -   path: "Text"
+                        classes: "header3"
+            -   class: "UIControl"
+                name: "XpPrice"
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "FreePrice"
+                    position: [0.000000, 0.000000]
+                    size: [177.000000, 32.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            spacing: 5.000000
+                            useRtl: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            rightAnchorEnabled: true
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Text"
+                        size: [95.000000, 32.000000]
+                        classes: "text1 text-color-blue"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfContent"
+                                verticalPolicy: "PercentOfParent"
+                            UITextComponent:
+                                text: "#common:Cost"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                    -   prototype: "Price/Price"
+                        name: "Price"
+                        classes: "currency=eliteXP"
+                        components:
+                            LinearLayout:
+                                spacing: 5.000000
+                        children:
+                        -   path: "Text"
+                            position: [0.000000, 0.000000]
+                            classes: "header3"
+                -   prototype: "Price/Price"
+                    name: "Price"
+                    components:
+                        LinearLayout:
+                            spacing: 5.000000
+                        Anchor:
+                            rightAnchorEnabled: true
+                    children:
+                    -   path: "Text"
+                        classes: "header3"
+            -   class: "UIStaticText"
+                name: "NotEnoughText"
+                size: [267.000000, 26.000000]
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "#crew:skills/hint/notEnoughItems"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    name: "EliteIcon"
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfContent"
+            verticalPolicy: "PercentOfContent"
+        Background:
+            sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+            frame: 7

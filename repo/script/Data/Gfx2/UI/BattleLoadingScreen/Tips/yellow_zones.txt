@@ -1,0 +1,5 @@
+1
+yellow_zones0.tex
+512 256
+1
+0 0 250 250 130 3 0 frame0

@@ -1,0 +1,30 @@
+name: "goose_event/Title"
+stages:
+ goose_inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/Goose2017/Button_Inform.yaml"
+  info: "event-info"
+ goose_process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/Goose2017/Button_Process.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/Goose2017/Goose2017StoryTree.yaml"
+  web:
+   buttonName: "goose_event/GoToWeb/Header"
+   buttonDescription: "goose_event/GoToWeb/Comment"
+   eventUrl: "/%s/ironEagles" 
+ goose_buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/Goose2017/Button_Buy.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/Goose2017/Goose2017StoryTree.yaml"
+  web:
+   buttonName: "goose_event/GoToWeb/Header"
+   buttonDescription: "goose_event/GoToWeb/Comment"
+   eventUrl: "/%s/ironEagles" 
+currencyKeys:
+  trophy: "goose_event/Currencies/trophies/Terms"
+  bond1: "goose_event/Currencies/redTickets/Terms"
+  bond2: "goose_event/Currencies/blueTickets/Terms"
+  sign1: "goose_event/Currencies/medallion/Terms"
+  sign2: "goose_event/Currencies/doubleMedallion/Terms"

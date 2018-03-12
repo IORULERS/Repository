@@ -1,0 +1,5 @@
+1
+leaderboards0.tex
+512 256
+1
+0 0 374 186 69 62 0 frame0

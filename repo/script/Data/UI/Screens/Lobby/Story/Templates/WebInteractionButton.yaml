@@ -1,0 +1,84 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/SafeAreaSpacer.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "WebInteraction"
+    noInput: true
+    components:
+        LinearLayout:
+            spacing: 10.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfMaxChild"
+        Background:
+            drawType: "DRAW_SCALE_TO_RECT"
+            sprite: "~res:/Gfx/UI/Hangar/BlackGradTile"
+    children:
+    -   class: "UIControl"
+        name: "CaptionsLayout"
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                horizontalPolicy: "PercentOfMaxChild"
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "ButtonTitle"
+            classes: "text1 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    horizontalMax: 250.000000
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                UITextComponent:
+                    text: "Button Title"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["RIGHT"]
+        -   class: "UIStaticText"
+            name: "ButtonDescription"
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    horizontalMax: 250.000000
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                UITextComponent:
+                    text: "Button Description"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["RIGHT"]
+    -   prototype: "StyledButton/StyledButton"
+        name: "Button"
+        size: [85.000000, 70.000000]
+        classes: "button button-color-green"
+        components:
+            Anchor:
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Icon"
+            size: [0.000000, 0.000000]
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/Web_btn"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   prototype: "SafeAreaSpacer/SafeAreaSpacer"
+        name: "SafeAreaSpacer"

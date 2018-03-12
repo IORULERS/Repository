@@ -1,0 +1,24 @@
+Header:
+    version: "10"
+StyleSheets:
+-   selector: ".selection-color-orange"
+    properties:
+        bg-color: [1.000000, 0.588235, 0.000000, 1.000000]
+-   selector: ".selection-color-green"
+    properties:
+        bg-color: [0.168627, 0.592157, 0.294118, 1.000000]
+Prototypes:
+-   class: "UIControl"
+    name: "Selection"
+    size: [260.000000, 45.000000]
+    noInput: true
+    components:
+        Background:
+            drawType: "DRAW_TILED_MULTILAYER"
+            mask: "~res:/Gfx/UI/CommonUIElements/Selection/mask"
+            detail: "~res:/Gfx/UI/CommonUIElements/Selection/detail"
+            gradient: "~res:/Gfx/UI/CommonUIElements/Selection/gradient"
+            contour: "~res:/Gfx/UI/CommonUIElements/Selection/contour"
+            gradientMode: "Alpha blend"
+            leftRightStretchCap: 20.000000
+            topBottomStretchCap: 20.000000

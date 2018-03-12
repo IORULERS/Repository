@@ -1,0 +1,100 @@
+Header:
+    version: "13"
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIScalableKeyArt"
+    name: "HeaderBackground"
+    size: [1024.000000, 184.000000]
+    clip: true
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Holder"
+        size: [1136.000000, 184.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "SpriteLayer1"
+            size: [1136.000000, 184.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+                    sprite: "~res:/Gfx/UI/QueueScreen/Background/Queue_Background"
+            children:
+            -   class: "UIParticles"
+                name: "Glow1"
+                position: [649.000000, 4.000000]
+                size: [32.000000, 32.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                effectPath: "~res:/3d/FX/UI/Queue/glow1.3.sc2"
+                autoStart: true
+            -   class: "UIParticles"
+                name: "Sparks1"
+                position: [836.000000, 92.000000]
+                size: [32.000000, 32.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                effectPath: "~res:/3d/FX/UI/Queue/sparks1.5.sc2"
+                autoStart: true
+        -   class: "UIControl"
+            name: "SpriteLayer2"
+            size: [1136.000000, 184.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL_ONE"
+                    sprite: "~res:/Gfx/UI/QueueScreen/Background/Queue_Background"
+                    frame: 1
+            children:
+            -   class: "UIParticles"
+                name: "Glow2"
+                position: [649.000000, 4.000000]
+                size: [32.000000, 32.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                effectPath: "~res:/3d/FX/UI/Queue/glow2.3.sc2"
+                autoStart: true
+            -   class: "UIParticles"
+                name: "Glow3"
+                position: [512.000000, 16.000000]
+                size: [32.000000, 32.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                effectPath: "~res:/3d/FX/UI/Queue/glow_environment2.4.sc2"
+                autoStart: true
+            -   class: "UIParticles"
+                name: "Sparks2"
+                position: [549.000000, 187.000000]
+                size: [32.000000, 32.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                effectPath: "~res:/3d/FX/UI/Queue/sparks2.7.sc2"
+                autoStart: true
+            -   class: "UIParticles"
+                name: "Smoke"
+                position: [1008.000000, 92.000000]
+                size: [32.000000, 32.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                effectPath: "~res:/3d/FX/UI/Queue/big_smoke2.5.sc2"
+                autoStart: true

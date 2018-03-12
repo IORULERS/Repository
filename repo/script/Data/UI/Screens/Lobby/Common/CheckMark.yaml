@@ -1,0 +1,15 @@
+Header:
+    version: "9"
+Prototypes:
+-   class: "UIControl"
+    name: "CheckMark"
+    size: [32.000000, 32.000000]
+    noInput: true
+    components:
+        Anchor:
+            rightAnchorEnabled: true
+            rightAnchor: -4.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: -4.000000
+        Background:
+            sprite: "~res:/Gfx/UI/LobbyCommon/mark"

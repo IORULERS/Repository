@@ -1,0 +1,507 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/LobbyHeader.yaml"
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/BoosterParamsTable.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceLarge.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceStyle.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader1.yaml"
+- "~res:/UI/Styles/SlotStyles.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".slot.empty #FilledSlot"
+    properties:
+        visible: false
+-   selector: ".slot.empty.add #EmptySlot #EmptySlotContent #AddButton"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Boster/add_btn.psd"
+-   selector: ".slot.empty.buy #EmptySlot #EmptySlotContent #AddButton"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Boster/shop_btn.psd"
+-   selector: ".slot.installed #EmptySlot #EmptySlotContent"
+    properties:
+        visible: false
+-   selector: ".empty-slot ? #Image"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.500000]
+-   selector: ".empty-slot.premium ? #Image"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 1.000000]
+-   selector: ".boosters-group.collapsed #Header #Icon"
+    properties:
+        bg-spriteModification: ["FLIP_VERTICAL"]
+-   selector: ".boosters-group.collapsed #Contents"
+    properties:
+        visible: false
+-   selector: ".empty-slot #EmptySlotContent"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: ".empty-slot:disabled"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 1.000000]
+-   selector: ".empty-slot:pressed_inside ? #AddButton, .empty-slot:pressed_inside ? #Image, .empty-slot:pressed_inside ? #ItemCount"
+    properties:
+        bg-colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+Prototypes:
+-   class: "UIControl"
+    name: "BoosterGroup"
+    noInput: true
+    classes: "boosters-group"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfChildrenSum"
+    children:
+    -   class: "UIControl"
+        name: "Header"
+        size: [0.000000, 50.000000]
+        classes: "section-header1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "TitleContainer"
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 10.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 10.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 40.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+            children:
+            -   class: "UIStaticText"
+                name: "Title"
+                classes: "header2"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 10.000000
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "Universal"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+        -   class: "UIControl"
+            name: "Icon"
+            size: [30.000000, 50.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 5.000000
+                Background:
+                    sprite: "~res:/Gfx/UI/CommonUIElements/IconArrowDropDownMenu"
+                    frame: 0
+    -   class: "UIControl"
+        name: "Contents"
+        position: [44.000000, 50.000000]
+        components:
+            FlowLayout:
+                enabled: true
+                hSpacing: 15.000000
+                vPadding: 15.000000
+                vSpacing: 15.000000
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+-   class: "UIControl"
+    name: "ItemPrototype"
+    size: [100.000000, 120.000000]
+    noInput: true
+    classes: "slot"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfMaxChild"
+            verticalPolicy: "PercentOfMaxChild"
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "EmptySlot"
+        position: [0.000000, 0.000000]
+        size: [100.000000, 120.000000]
+        classes: "button empty-slot"
+        components:
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "EmptySlotContent"
+            size: [100.000000, 120.000000]
+            noInput: true
+            components:
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            children:
+            -   class: "UIControl"
+                name: "Background"
+                position: [0.000000, 0.000000]
+                size: [100.000000, 120.000000]
+                noInput: true
+                classes: "slot-bg uninstalled"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_TILED_MULTILAYER"
+                        mask: "~res:/Gfx/UI/LobbyCommon/Button/mask.psd"
+                        detail: "~res:/Gfx/UI/LobbyCommon/Button/detail.psd"
+                        gradient: "~res:/Gfx/UI/LobbyCommon/Button/gradient.psd"
+                        contour: "~res:/Gfx/UI/LobbyCommon/Button/countur.psd"
+                        gradientMode: "Overlay"
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                        leftRightStretchCap: 15.000000
+                        topBottomStretchCap: 15.000000
+            -   class: "UIControl"
+                name: "Image"
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background: {}
+            -   class: "UIControl"
+                name: "AddButton"
+                size: [53.000000, 53.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                    Background: {}
+            -   class: "UIControl"
+                name: "ItemCount"
+                size: [17.000000, 21.000000]
+                noInput: true
+                classes: "resource-count"
+                components:
+                    LinearLayout:
+                        padding: 4.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        horizontalValue: 100.000000
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 4.000000
+                        topAnchorEnabled: true
+                        topAnchor: 4.000000
+                    Background: {}
+                children:
+                -   class: "UIStaticText"
+                    name: "Label"
+                    size: [9.000000, 21.000000]
+                    classes: "text2-small text-color-white"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "0"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "FilledSlot"
+        size: [100.000000, 120.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+Controls:
+-   class: "UIControl"
+    name: "Boosters"
+    size: [1024.000000, 688.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   prototype: "LobbyHeader/Header"
+        name: "Header"
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        components:
+            LinearLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIScrollView"
+            name: "ItemsScroll"
+            autoUpdate: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 100.000000
+                    verticalPolicy: "PercentOfParent"
+                    verticalValue: 100.000000
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    FlowLayout:
+                        hPadding: 20.000000
+                        hSpacing: 20.000000
+                        vPadding: 20.000000
+                        vSpacing: 20.000000
+                        vSafeAreaPaddingInset: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                children:
+                -   prototype: "BoosterGroup"
+                    name: "economic"
+                    children:
+                    -   path: "Header/TitleContainer/Title"
+                        components:
+                            UITextComponent:
+                                text: "boosters/Economical/Title"
+                    -   path: "Contents"
+                        position: [44.000000, 50.000000]
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "Ignore"
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                            UIAnchorSafeAreaComponent:
+                                leftSafeInset: "INSET"
+                        children:
+                        -   prototype: "ItemPrototype"
+                            name: "PremBooster"
+                            tag: -1
+                            classes: "slot"
+                            children:
+                            -   path: "EmptySlot"
+                                classes: "empty-slot button premium"
+                                children: []
+                            -   path: "EmptySlot/EmptySlotContent/Image"
+                                size: [80.000000, 80.000000]
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/Boster/no_prem"
+                            -   path: "EmptySlot/EmptySlotContent/ItemCount"
+                                visible: false
+                                children: []
+                            -   path: "FilledSlot"
+                                children:
+                                -   prototype: "ResourceLarge/ResourceLarge"
+                                    name: "ActivePremium"
+                                    exclusiveInput: true
+                                    classes: "resource resource-type=resource-stuff quantity=quantity-off marked=marked-off have-badge=have-badge-off button"
+                                    children:
+                                    -   path: "IconContainer"
+                                        components:
+                                            Background:
+                                                sprite: "~res:/Gfx/UI/Boster/prem"
+                                    -   class: "UIStaticText"
+                                        name: "TimeText"
+                                        size: [56.000000, 38.000000]
+                                        classes: "text-color-premium header0"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                topAnchorEnabled: true
+                                                topAnchor: 35.000000
+                                            UITextComponent:
+                                                text: "24 h."
+                                                colorInheritType: "COLOR_MULTIPLY_ON_PARENT"
+                        -   prototype: "ItemPrototype"
+                            name: "XpBooster"
+                            children:
+                            -   path: "EmptySlot/EmptySlotContent/Image"
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/Boster/boster_experience1"
+                        -   prototype: "ItemPrototype"
+                            name: "FreeXpBooster"
+                            tag: 1
+                            children:
+                            -   path: "EmptySlot/EmptySlotContent/Image"
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/Boster/boster_experience0"
+                        -   prototype: "ItemPrototype"
+                            name: "CrewXpBooster"
+                            tag: 2
+                            children:
+                            -   path: "EmptySlot/EmptySlotContent/Image"
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/Boster/boster_experience2"
+                        -   prototype: "ItemPrototype"
+                            name: "CreditsBooster"
+                            tag: 3
+                            children:
+                            -   path: "EmptySlot/EmptySlotContent/Image"
+                                tag: 3
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/Boster/boster_credit.psd"
+                        -   prototype: "ItemPrototype"
+                            name: "PartsBooster"
+                            tag: 4
+                            children:
+                            -   path: "EmptySlot/EmptySlotContent/Image"
+                                tag: 3
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/Boster/boster_details"
+                -   prototype: "BoosterGroup"
+                    name: "battle"
+                    tag: 1
+                    children:
+                    -   path: "Header/TitleContainer/Title"
+                        components:
+                            UITextComponent:
+                                text: "boosters/Battle/Title"
+                    -   path: "Contents"
+                        children:
+                        -   prototype: "ItemPrototype"
+                            name: "Crewbooster"
+                            children:
+                            -   path: "EmptySlot/EmptySlotContent/Image"
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/Boster/boster_battle0"
+            -   class: "UIScrollBar"
+                name: "VerticalScrollbar"
+                noInput: true
+                orientation: "ORIENTATION_VERTICAL"
+                components:
+                    SizePolicy:
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 10.000000
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 10.000000
+                children:
+                -   class: "UIControl"
+                    name: "slider"
+                    size: [10.000000, 20.000000]
+                    noInput: true
+                    components:
+                        Background:
+                            drawType: "DRAW_STRETCH_VERTICAL"
+                            sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                            topBottomStretchCap: 10.000000
+        -   class: "UIScrollView"
+            name: "TableScroll"
+            autoUpdate: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfParent"
+                Background: {}
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        safeAreaPaddingInset: true
+                        spacing: 1.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "Formula"
+                        verticalFormula: "max(parent, firstChild)"
+                children:
+                -   prototype: "BoosterParamsTable/Table"
+                    name: "Table"
+                    noInput: true
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Background: {}
+                -   class: "UIControl"
+                    name: "Spacer"
+                    size: [394.000000, 0.000000]
+                    noInput: true
+                    classes: "pane-bg"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "Formula"
+                            verticalFormula: "parentRest"
+                        Background: {}
+            -   class: "UIScrollBar"
+                name: "VerticalScrollbar"
+                noInput: true
+                classes: "notch-tightly-right-inset"
+                orientation: "ORIENTATION_VERTICAL"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "FixedSize"
+                        horizontalValue: 10.000000
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UIAnchorSafeAreaComponent: {}
+                children:
+                -   class: "UIControl"
+                    name: "slider"
+                    size: [10.000000, 20.000000]
+                    noInput: true
+                    components:
+                        Background:
+                            drawType: "DRAW_STRETCH_VERTICAL"
+                            sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                            topBottomStretchCap: 10.000000
+-   class: "UIControl"
+    name: "HeaderLeft"
+    size: [98.000000, 32.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIStaticText"
+        name: "Label"
+        classes: "header1 text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                leftAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "boosters/Title"
+                colorInheritType: "COLOR_IGNORE_PARENT"

@@ -1,0 +1,40 @@
+Header:
+    version: "8"
+Prototypes:
+-   class: "UIScrollBar"
+    name: "HorizontalScrollBar"
+    size: [30.000000, 10.000000]
+    noInput: true
+    orientation: "ORIENTATION_HORIZONTAL"
+    components:
+        Background:
+            drawType: "DRAW_ALIGNED"
+            topBottomStretchCap: 10.000000
+    children:
+    -   class: "UIControl"
+        name: "slider"
+        size: [20.000000, 10.000000]
+        noInput: true
+        components:
+            Background:
+                drawType: "DRAW_STRETCH_HORIZONTAL"
+                sprite: "~res:/Gfx/UI/CommonUIElements/HorizontalScroll"
+                leftRightStretchCap: 10.000000
+-   class: "UIScrollBar"
+    name: "VerticalScrollBar"
+    size: [10.000000, 30.000000]
+    noInput: true
+    components:
+        Background:
+            drawType: "DRAW_ALIGNED"
+            topBottomStretchCap: 10.000000
+    children:
+    -   class: "UIControl"
+        name: "slider"
+        size: [10.000000, 20.000000]
+        noInput: true
+        components:
+            Background:
+                drawType: "DRAW_STRETCH_VERTICAL"
+                sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                topBottomStretchCap: 10.000000

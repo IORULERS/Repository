@@ -1,0 +1,127 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Chat/ChatMessageStyle.yaml"
+Controls:
+-   class: "UIControl"
+    name: "ChatCell"
+    size: [466.000000, 40.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIControl"
+        name: "chatMsgCellBg"
+        size: [466.000000, 40.000000]
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "REVERSE"
+            Background:
+                drawType: "DRAW_FILL"
+                color: [1.000000, 1.000000, 1.000000, 0.047059]
+    -   class: "UIStaticText"
+        name: "fromName"
+        position: [30.000000, 0.000000]
+        size: [136.000000, 40.000000]
+        noInput: true
+        classes: "textColor=chat-nick-text-color"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 30.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UITextComponent:
+                text: "UIStaticText1"
+                fontName: "WarHeliosCondC_Bold_21"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_POINTS"
+                align: ["RIGHT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+    -   class: "UIStaticText"
+        name: "msgText"
+        position: [182.000000, 0.000000]
+        size: [204.000000, 40.000000]
+        noInput: true
+        classes: "textColor=chat-msg-text-color"
+        components:
+            UITextComponent:
+                text: "UIStaticText1"
+                fontName: "WarHeliosCondC_21"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+    -   class: "UIStaticText"
+        name: "timeText"
+        position: [386.000000, 0.000000]
+        size: [80.000000, 40.000000]
+        noInput: true
+        classes: "textColor=chat-date-text-color"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UITextComponent:
+                text: "15:03"
+                fontName: "WarHeliosCondC_21"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                align: ["HCENTER", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+-   class: "UIControl"
+    name: "DateSeparatorCell"
+    size: [466.000000, 40.000000]
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIControl"
+        name: "chatMsgCellBg"
+        size: [466.000000, 40.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "REVERSE"
+            Background:
+                drawType: "DRAW_FILL"
+                color: [1.000000, 1.000000, 1.000000, 0.047100]
+    -   class: "UIStaticText"
+        name: "timeText"
+        position: [30.000000, 0.000000]
+        size: [406.000000, 40.000000]
+        noInput: true
+        classes: "textColor=chat-nick-text-color"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 30.000000
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UITextComponent:
+                text: "UIStaticText1"
+                fontName: "WarHeliosCondC_Bold_21"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                fitting: "FITTING_POINTS"
+                align: ["HCENTER", "VCENTER"]
+                useRtlAlign: "DONT_USE"

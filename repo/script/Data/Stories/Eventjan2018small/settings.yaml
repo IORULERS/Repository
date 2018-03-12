@@ -1,0 +1,20 @@
+name: "small_january_event/Header"
+priority: 1
+stages:
+ info-sm:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/Baraholka2018/Button_Inform.yaml"
+  info: "event-info-sm"
+ progress-sm:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/Baraholka2018/Button_Process.yaml"
+  info: "event-progress-sm"
+  tree: "~res:/UI/Screens/Lobby/Story/Baraholka2018/Baraholka2018StoryTree.yaml"
+ buy-sm:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/Baraholka2018/Button_Buy.yaml"
+  info: "event-progress-sm"
+  tree: "~res:/UI/Screens/Lobby/Story/Baraholka2018/Baraholka2018StoryTree.yaml"
+currencyKeys:
+  coin1_sm: "common_event/Currencies/Cases/Terms"
+  coin2_sm: "goose_event/Currencies/medallion/Terms"

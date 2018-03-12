@@ -1,0 +1,62 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Quests/Cards/BaseQuestImage.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+Controls:
+-   prototype: "BaseQuestImage/QuestImage"
+    name: "QuestImage"
+    children:
+    -   path: "Layer1"
+        components:
+            Background:
+                sprite: ""
+        children:
+        -   class: "UIParticles"
+            name: "dust1.4"
+            position: [5.000000, 45.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.656250, 1.906250]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Quests/Cards/card_esport/dust1.4.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "fire1.5"
+            position: [62.000000, 110.000000]
+            size: [32.000000, 32.000000]
+            pivot: [2.437500, 3.937500]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Quests/Cards/card_esport/fire_big1.5.sc2"
+            autoStart: true
+    -   path: "Layer0"
+        components:
+            Background:
+                sprite: ""
+        children:
+        -   class: "UIParticles"
+            name: "dust2.1"
+            position: [3.000000, 125.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.593750, 4.406250]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Quests/Cards/card_esport/dust2.1.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "gun"
+            position: [74.000000, 84.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/Quests/Cards/card_esport/gunM1.sc2"
+            autoStart: true
+    -   class: "UIStaticText"
+        name: "Header1"
+        size: [150.000000, 32.000000]
+        classes: "header1 text-color-white"
+        textcolorInheritType: "COLOR_IGNORE_PARENT"
+        multiline: "MULTILINE_ENABLED"
+        text: "Image has been deleted."
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true

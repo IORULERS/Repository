@@ -1,0 +1,5 @@
+1
+china-Type97_Chi_Ha0.tex
+320 200
+1
+0 0 282 200 19 0 0 frame0

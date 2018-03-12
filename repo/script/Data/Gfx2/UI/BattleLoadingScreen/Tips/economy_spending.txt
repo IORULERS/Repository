@@ -1,0 +1,5 @@
+1
+economy_spending0.tex
+512 256
+1
+0 0 419 166 44 79 0 frame0

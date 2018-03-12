@@ -1,0 +1,32 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UIQuestCompensationNotification"
+    name: "QuestCompensationNotification"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                frame: 4
+    -   prototype: "Notification/Content"
+        name: "Content"
+        components:
+            Anchor:
+                topAnchorEnabled: true
+                topAnchor: 5.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 10.000000
+        children:
+        -   class: "UIStaticText"
+            name: "Text"
+            classes: "header3"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"

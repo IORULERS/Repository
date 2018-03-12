@@ -1,0 +1,5 @@
+1
+premuim_elite0.tex
+512 256
+1
+0 0 408 93 53 147 0 frame0

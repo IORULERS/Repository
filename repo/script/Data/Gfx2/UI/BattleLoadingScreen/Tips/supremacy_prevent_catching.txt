@@ -1,0 +1,5 @@
+1
+supremacy_prevent_catching0.tex
+512 256
+1
+0 0 442 224 20 29 0 frame0

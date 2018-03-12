@@ -1,0 +1,10 @@
+Header:
+    version: "9"
+Prototypes:
+-   class: "UITextField"
+    name: "NumericTextField"
+    size: [140.000000, 50.000000]
+    font: "WarHeliosCondC_Bold_25"
+    keyboardType: "KEYBOARD_TYPE_NUMBER_PAD"
+    components:
+        Focus: {}

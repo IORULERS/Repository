@@ -1,0 +1,219 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader1.yaml"
+StyleSheets:
+-   selector: "#Play.play"
+    properties:
+        bg-frame: 1
+-   selector: "#Play.pause"
+    properties:
+        bg-frame: 2
+Prototypes:
+-   prototype: "StyledButton/StyledButton"
+    name: "ContextMenuItem"
+    position: [0.000000, 0.000000]
+    size: [292.000000, 30.000000]
+    exclusiveInput: false
+    classes: "button button-color-orange"
+    components:
+        Anchor:
+            enabled: true
+            hCenterAnchorEnabled: true
+    children:
+    -   path: "Caption"
+        size: [292.000000, 30.000000]
+        classes: "header4 text-color-white"
+        components:
+            Anchor:
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+            UITextComponent:
+                text: "Some Action"
+                color: [1.000000, 1.000000, 1.000000, 1.000000]
+                colorInheritType: "COLOR_IGNORE_PARENT"
+-   prototype: "SectionHeader1/SectionHeader1"
+    name: "ContextMenu"
+    size: [300.000000, 80.000000]
+    noInput: false
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            padding: 5.000000
+            spacing: 5.000000
+        SizePolicy:
+            horizontalPolicy: "FixedSize"
+            horizontalValue: 300.000000
+            verticalPolicy: "PercentOfChildrenSum"
+        Background:
+            align: ["LEFT", "HCENTER", "RIGHT", "TOP"]
+        DebugRender:
+            enabled: false
+        ClipContent:
+            enabled: false
+    children:
+    -   class: "UIStaticText"
+        name: "Caption"
+        position: [0.000000, 5.000000]
+        size: [300.000000, 70.000000]
+        classes: "header5 text-color-white"
+        components:
+            Anchor:
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "LoginScreen/Screen/Background/Scroll/scrollContainerControl/Panel/Middle/VerticalBox/ButtonsPanel/LoginButton"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+Controls:
+-   class: "UIControl"
+    customClass: "DraggableDialog"
+    name: "RecordingGroup"
+    position: [0.000000, 707.999817]
+    size: [349.061401, 60.000179]
+    noInput: false
+    components:
+        LinearLayout:
+            padding: 10.000000
+            spacing: 10.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.000000, 0.000000, 0.000000, 0.392157]
+        DebugRender:
+            enabled: false
+            drawColor: [0.000000, 0.000000, 0.000000, 1.000000]
+    children:
+    -   class: "UIControl"
+        name: "Controls"
+        position: [10.000000, 0.000000]
+        size: [106.000000, 60.000179]
+        noInput: true
+        children:
+        -   class: "UIControl"
+            name: "Playback"
+            size: [80.000000, 60.000179]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: ""
+            children:
+            -   class: "UIControl"
+                name: "Play"
+                position: [0.000000, 14.000090]
+                size: [32.000000, 32.000000]
+                enabled: true
+                noInput: false
+                classes: "button mode=play"
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/CommonUIElements/play_icon"
+            -   class: "UIControl"
+                name: "Step"
+                position: [48.000000, 14.000090]
+                size: [32.000000, 32.000000]
+                noInput: false
+                classes: "button"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/CommonUIElements/play_icon"
+        -   class: "UIControl"
+            name: "RecButton"
+            position: [0.274452, 8.000090]
+            size: [105.451096, 44.000000]
+            noInput: false
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "Icon"
+                position: [7.517610, 5.999999]
+                size: [32.000000, 32.000000]
+                visible: true
+                noInput: false
+                components:
+                    Background:
+                        sprite: "~res:/Gfx/UI/CommonUIElements/IconUnread"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+                        colorInherit: "COLOR_IGNORE_PARENT"
+            -   class: "UIStaticText"
+                name: "Label"
+                position: [44.517609, 5.200000]
+                size: [57.297783, 32.000000]
+                visible: true
+                enabled: true
+                noInput: true
+                classes: "header1 text-color-white"
+                components:
+                    UITextComponent:
+                        text: "REC"
+                        color: [1.000000, 0.000000, 0.000000, 1.000000]
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIControl"
+        name: "Recorded"
+        size: [170.000000, 32.000000]
+        noInput: true
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "ModeButton"
+            position: [0.000000, 30.497938]
+            size: [80.000000, 29.015070]
+            visible: true
+            enabled: true
+            classes: "button button-color-green"
+            children:
+            -   path: "Caption"
+                size: [80.000000, 29.015070]
+                components:
+                    UITextComponent:
+                        text: "Play"
+        -   prototype: "StyledButton/StyledButton"
+            name: "ClearButton"
+            position: [90.000000, 30.497938]
+            size: [80.000000, 29.015062]
+            enabled: true
+            classes: "button button-color-orange"
+            children:
+            -   path: "Caption"
+                position: [0.000000, 0.000000]
+                size: [80.000000, 29.015062]
+                components:
+                    UITextComponent:
+                        text: "Delete"
+        -   class: "UIStaticText"
+            name: "LastRecordingDescr"
+            size: [170.000000, 32.000000]
+            classes: "header4 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                UITextComponent:
+                    text: "16-02-17 15:23"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    fitting: "FITTING_REDUCE"
+    -   class: "UIControl"
+        name: "Handle"
+        position: [306.000000, 19.000088]
+        size: [33.061417, 22.000002]
+        noInput: true
+        components:
+            Background:
+                drawType: "DRAW_TILED"
+                sprite: "~res:/Gfx/UI/BattleScreenHUD/FreeCameraZoneCursor"
+                color: [1.000000, 1.000000, 1.000000, 0.588235]

@@ -1,0 +1,13 @@
+Header:
+    version: "9"
+ImportedPackages:
+- "~res:/UI/Screens/DialogView.yaml"
+Controls:
+-   prototype: "DialogView/WarningDialog"
+    name: "WarningDialog"
+    children:
+    -   path: "Dialog/Content/Buttons/OkButton"
+        classes: "button button-color-red"
+        children: []
+    -   path: "Dialog/Content/Buttons/OkButton/Caption"
+        text: "#hangar_showcase:SellButton"

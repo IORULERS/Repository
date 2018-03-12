@@ -1,0 +1,159 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/CommonStyles.yaml"
+- "~res:/UI/Screens/Common/Switch.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+StyleSheets:
+-   selector: "UISettingsSelector .selector-highlight"
+    properties:
+        bg-topBottomStretchCap: 5.000000
+        bg-leftRightStretchCap: 5.000000
+        bg-drawType: "DRAW_STRETCH_BOTH"
+        bg-sprite: "~res:/Gfx/UI/SettingsScreen/over_button_tab_bar"
+        bg-color: [1.000000, 1.000000, 1.000000, 1.000000]
+-   selector: "UISettingsSelector .selector-option #Text"
+    properties:
+        text-color:
+            value: [0.620000, 0.720000, 0.800000, 1.000000]
+            transitionTime: 0.100000
+            transitionFunction: "LINEAR"
+        text-fontName: "WarHeliosCondC_Bold_19"
+-   selector: "UISettingsSelector .selector-option:selected #Text"
+    properties:
+        text-color: [1.000000, 1.000000, 1.000000, 1.000000]
+-   selector: "UISettingsSelector:disabled .selector-option #Text, UISettingsSelector .selector-option:disabled #Text"
+    properties:
+        text-color:
+            value: [0.619608, 0.721569, 0.800000, 0.200000]
+            transitionTime: 0.100000
+            transitionFunction: "LINEAR"
+-   selector: "UISettingsSelector:disabled .selector-option:selected #Text"
+    properties:
+        text-color: [1.000000, 1.000000, 1.000000, 0.200000]
+-   selector: "UISettingsSelector:disabled .selector-highlight"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.498039]
+Prototypes:
+-   class: "UIControl"
+    name: "EditorRow"
+    size: [400.000000, 80.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "FixedSize"
+            verticalValue: 80.000000
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        noInput: true
+        classes: "pane-bg"
+        components:
+            LinearLayout:
+                padding: 10.000000
+                safeAreaPaddingInset: true
+                spacing: 5.000000
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.500000
+                rightAnchorEnabled: true
+                rightAnchor: 0.500000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_FILL"
+        children:
+        -   class: "UIControl"
+            name: "NameAndDescription"
+            size: [320.000000, 80.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    dynamicPadding: true
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+            children:
+            -   class: "UIStaticText"
+                name: "Name"
+                noInput: true
+                classes: "header4 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        useRtl: true
+                    UITextComponent:
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        fitting: "FITTING_REDUCE"
+                        align: ["LEFT", "BOTTOM"]
+                        useRtlAlign: "USE_BY_SYSTEM"
+            -   class: "UIStaticText"
+                name: "Description"
+                noInput: true
+                classes: "text2-small text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        useRtl: true
+                    UITextComponent:
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+                        fitting: "FITTING_REDUCE"
+                        align: ["LEFT", "TOP"]
+                        useRtlAlign: "USE_BY_SYSTEM"
+        -   class: "UIControl"
+            name: "Editor"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "Formula"
+                    horizontalFormula: "maxChild+10"
+                    verticalPolicy: "PercentOfParent"
+-   prototype: "EditorRow"
+    name: "Selector"
+    children:
+    -   path: "Background/Editor"
+        children:
+        -   class: "UIControl"
+            customClass: "UISettingsSelector"
+            name: "Selector"
+            position: [0.000000, 10.000000]
+            size: [600.000000, 60.000000]
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 10.000000
+                    topAnchorEnabled: true
+                    topAnchor: 10.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 10.000000
+                Background:
+                    color: [0.000000, 0.000000, 0.000000, 1.000000]
+                Sound:
+                    valueChanged: "GUI/buttons/choose"
+-   prototype: "EditorRow"
+    name: "Switch"
+    components:
+        SizePolicy:
+            horizontalValue: 50.000000
+    children:
+    -   path: "Background/Editor"
+        children:
+        -   prototype: "Switch/Switch"
+            name: "Switch"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Sound:
+                    valueChanged: "GUI/buttons/checkbox"

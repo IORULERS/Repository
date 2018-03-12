@@ -1,0 +1,710 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryTreePrototypes.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+StyleSheets:
+-   selector: ".unique"
+    properties:
+        bg-color: [0.549020, 0.023529, 0.803922, 1.000000]
+-   selector: ".common"
+    properties:
+        bg-color: [0.517647, 0.521569, 0.525490, 1.000000]
+-   selector: ".step.selected.readyToComplete #NormalState #Image #ToCompleteUnderLocal, .step.readyToComplete #ExpandedState #Image #ToCompleteUnderLocal, .step #NormalState #Image #ToCompleteUnderLocal, .step #ExpandedState #Image #ToCompleteUnderLocal"
+    properties:
+        visible: false
+-   selector: ".step.readyToComplete #NormalState #Image #ToCompleteUnderLocal, .step.selected.readyToComplete #ExpandedState #Image #ToCompleteUnderLocal"
+    properties:
+        visible: true
+Prototypes:
+-   class: "UIControl"
+    name: "StoryStepLocal"
+    size: [86.000000, 70.000000]
+    noInput: true
+    classes: "step"
+    components:
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "ExpandedState"
+        position: [43.000000, 35.000000]
+        size: [100.000000, 115.000000]
+        pivot: [0.500000, 0.500000]
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "SelectionInside"
+            position: [0.000000, 0.000000]
+            size: [58.823502, 39.500000]
+            scale: [1.700000, 1.700000]
+            noInput: true
+            components:
+                Background:
+                    drawType: "DRAW_TILED_MULTILAYER"
+                    mask: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+                    detail: "~res:/Gfx/UI/CommonUIElements/Button/detail"
+                    gradient: "~res:/Gfx/UI/CommonUIElements/Button/gray_gradient"
+                    contour: "~res:/Gfx/UI/CommonUIElements/Button/gray_contour"
+                    gradientMode: "Overlay"
+                    color: [0.400000, 0.400000, 0.400000, 1.000000]
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    leftRightStretchCap: 10.000000
+        -   class: "UIControl"
+            name: "Image"
+            position: [0.000000, 2.000000]
+            size: [100.000000, 66.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 2.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Storage/Items_back.psd"
+                    colorInherit: "COLOR_REPLACE_ALPHA_ONLY"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            children:
+            -   class: "UIParticles"
+                name: "ToCompleteUnderLocal"
+                size: [0.000000, 0.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                effectPath: "~res:/3d/FX/UI/steps_event_glow.sc2"
+                autoStart: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 33.000000
+                        vCenterAnchorEnabled: false
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "Icon"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   prototype: "StoryTreePrototypes/ExpandedStateButton"
+            name: "Button"
+            components:
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+            children:
+            -   path: "Background"
+                components:
+                    Background:
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_FORCED"
+        -   class: "UIControl"
+            name: "Selection"
+            size: [100.000000, 115.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/dynamic_control"
+                    frame: 1
+                    color: [0.325490, 0.572549, 0.160784, 1.000000]
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    leftRightStretchCap: 6.000000
+                    topBottomStretchCap: 6.000000
+    -   class: "UIControl"
+        name: "NormalState"
+        size: [85.000000, 70.000000]
+        noInput: true
+        components:
+            Background: {}
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "Button"
+            size: [85.000000, 70.000000]
+            classes: "button button-color-gray"
+            components:
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_FORCED"
+            children:
+            -   path: "Caption"
+                visible: false
+                enabled: false
+                components:
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   class: "UIControl"
+            name: "Image"
+            size: [83.000000, 83.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/Storage/Items_back.psd"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            children:
+            -   class: "UIParticles"
+                name: "ToCompleteUnderLocal"
+                size: [0.000000, 0.000000]
+                pivot: [0.500000, 0.500000]
+                noInput: true
+                effectPath: "~res:/3d/FX/UI/steps_event_glow.sc2"
+                autoStart: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "Icon"
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIControl"
+            name: "Highlight"
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: -2.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: -2.000000
+                    topAnchorEnabled: true
+                    topAnchor: -2.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: -2.000000
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/Story/btn_glow"
+                    color: [0.325490, 0.572549, 0.160784, 1.000000]
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                    leftRightStretchCap: 9.000000
+                    topBottomStretchCap: 9.000000
+        -   class: "UIParticles"
+            name: "ToCompleteOver"
+            position: [42.500000, 35.000000]
+            size: [0.000000, 0.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/steps_event_unlock.sc2"
+            autoStart: true
+            startDelay: 0.005000
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   class: "UIControl"
+            name: "CheckMark"
+            position: [66.000000, 51.000000]
+            size: [24.000000, 24.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: -5.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: -5.000000
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/mark"
+                    frame: 5
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+Controls:
+-   class: "UIControl"
+    name: "Stories"
+    position: [0.000000, 0.000000]
+    size: [906.000000, 350.000000]
+    noInput: true
+    children:
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_1"
+        position: [126.000000, 174.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_2"
+        position: [242.000000, 174.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_3"
+        position: [358.000000, 174.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_4"
+        position: [474.000000, 174.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_5"
+        position: [590.000000, 174.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_6"
+        position: [706.000000, 174.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_7"
+        position: [315.000000, 140.000000]
+        size: [30.000000, 2.000000]
+        angle: -90.000000
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_8"
+        position: [358.000000, 74.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_9"
+        position: [548.000000, 210.000000]
+        size: [30.000000, 2.000000]
+        angle: 90.000000
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryTreePrototypes/Arrow"
+        name: "Arrow_10"
+        position: [590.000000, 274.000000]
+        size: [30.000000, 2.000000]
+        children:
+        -   path: "HorizontalLine"
+            position: [0.000000, 0.000000]
+            size: [25.000000, 2.000000]
+    -   prototype: "StoryStepLocal"
+        name: "41"
+        position: [273.000000, 40.000000]
+        classes: "step common"
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "common"
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_battle0.psd"
+        -   path: "NormalState/Image"
+            classes: "common"
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_battle0.psd"
+    -   prototype: "StoryStepLocal"
+        name: "42"
+        position: [388.000000, 40.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            classes: "unique"
+            children: []
+        -   path: "ExpandedState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience1.psd"
+        -   path: "NormalState/Image"
+            classes: "unique"
+            children: []
+        -   path: "NormalState/Image/Icon"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/Boosters/boster_experience1.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "21"
+        position: [40.000000, 140.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "22"
+        position: [156.000000, 140.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "23"
+        position: [272.000000, 140.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "24"
+        position: [388.000000, 140.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "25"
+        position: [504.000000, 140.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "26"
+        position: [620.000000, 140.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+    -   prototype: "StoryTreePrototypes/StoryBigStep"
+        name: "27"
+        position: [736.000000, 122.000000]
+        children:
+        -   path: "ExpandedState"
+            position: [65.000000, 53.000000]
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [24.000000, 2.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 24.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 17
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 0.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 7
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   path: "ExpandedState/Image"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    horizontalValue: 90.000000
+                    verticalPolicy: "PercentOfContent"
+                    verticalValue: 90.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: false
+                    topAnchor: 0.000000
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 55.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/ussr-T44-100_P.psd"
+        -   path: "NormalState"
+            position: [0.000000, 0.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_TO_RECT"
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [25.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 25.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 17
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 7
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class"
+                position: [0.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "NormalState/Image"
+            position: [1.000000, 0.000000]
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    horizontalValue: 80.000000
+                    verticalPolicy: "PercentOfContent"
+                    verticalValue: 80.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/ussr-T44-100_P.psd"
+        -   path: "NormalState/Label"
+            position: [6.000000, 74.000000]
+            size: [118.000000, 28.000000]
+            components:
+                UITextComponent:
+                    text: "#ussr_vehicles:R127_T44_100_P"
+                    fontName: "WarHeliosCondC_Bold_21"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "31"
+        position: [504.000000, 240.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+                    frame: 0
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "32"
+        position: [620.000000, 240.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [85.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+        -   path: "NormalState/Image"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    vCenterAnchorEnabled: false
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+                    frame: 0

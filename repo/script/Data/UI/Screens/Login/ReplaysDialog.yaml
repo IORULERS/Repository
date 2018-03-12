@@ -1,0 +1,147 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/CheckBox.yaml"
+StyleSheets:
+-   selector: ".cell:selected"
+    properties:
+        bg-color: [0.400000, 0.800000, 0.400000, 1.000000]
+-   selector: ".cell"
+    properties:
+        bg-color: [0.400000, 0.400000, 0.400000, 0.329412]
+Prototypes:
+-   class: "UIListCell"
+    name: "ReplayCellItem"
+    position: [0.000000, 1.000000]
+    size: [480.000000, 49.000000]
+    selected: false
+    classes: "cell"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Background:
+            drawType: "DRAW_FILL"
+    children:
+    -   class: "UIControl"
+        customClass: "ListItemsDivider"
+        name: "Divider"
+        position: [0.000000, 47.000000]
+        size: [480.000000, 2.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/LobbyCommon/GradientDivider"
+    -   class: "UIStaticText"
+        name: "Title"
+        position: [10.000000, 5.000000]
+        size: [460.000000, 39.000000]
+        classes: "header4"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 10.000000
+                rightAnchorEnabled: true
+                rightAnchor: 10.000000
+                topAnchorEnabled: true
+                topAnchor: 5.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 5.000000
+            Background:
+                align: ["LEFT", "VCENTER"]
+            UITextComponent:
+                text: "Title Title Title Title TitleTitle Title Title Title TitleTitle Title Title Title TitleTitle Title Title Title TitleTitle Title Title Title Title"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+-   prototype: "CheckBox/CheckBox"
+    name: "CheckBox"
+    classes: "checkbox button-color-gray"
+Controls:
+-   class: "UIControl"
+    customClass: "DraggableDialog"
+    name: "ReplaysDialog"
+    position: [-310.000000, -250.000000]
+    size: [620.000000, 530.000000]
+    components:
+        Anchor:
+            hCenterAnchorEnabled: true
+            vCenterAnchorEnabled: true
+        Background:
+            drawType: "DRAW_STRETCH_BOTH"
+            sprite: "~res:/Gfx/UI/CommonUIElements/PopupBackMiddle"
+            leftRightStretchCap: 5.000000
+            topBottomStretchCap: 5.000000
+    children:
+    -   class: "UIList"
+        name: "replaysList"
+        position: [15.000000, 40.000000]
+        size: [590.000000, 390.000000]
+        orientation: "ORIENTATION_VERTICAL"
+        components:
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+    -   class: "UIStaticText"
+        name: "titleText"
+        size: [620.000000, 40.000000]
+        noInput: true
+        classes: "header4"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "Open Replay"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   prototype: "StyledButton/StyledButton"
+        name: "cancelButton"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 15.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 15.000000
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "Cancel"
+    -   prototype: "StyledButton/StyledButton"
+        name: "okButton"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 15.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 15.000000
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "OK"
+-   prototype: "ReplayCellItem"
+    name: "MyReplayCellItem"
+    children:
+    -   path: "Title"
+        components:
+            Anchor:
+                rightAnchor: 70.000000
+            UITextComponent:
+                align: ["LEFT", "VCENTER"]
+    -   prototype: "CheckBox"
+        name: "favoriteBtn"
+        size: [45.000000, 45.000000]
+        selected: false
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 12.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -1.000000

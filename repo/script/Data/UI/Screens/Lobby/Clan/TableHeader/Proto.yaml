@@ -1,0 +1,16 @@
+Header:
+    version: "20"
+StyleSheets:
+-   selector: ".table-header-separator-line-bg"
+    properties:
+        bg-color: [0.000000, 0.000000, 0.000000, 0.301961]
+Prototypes:
+-   class: "UIControl"
+    name: "HeaderLine"
+    size: [1.000000, 1.000000]
+    noInput: true
+    classes: "table-header-separator-line-bg"
+    components:
+        Background:
+            drawType: "DRAW_FILL"
+            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"

@@ -1,0 +1,5 @@
+1
+elite_tanks0.tex
+256 128
+1
+0 0 87 94 85 24 0 frame0

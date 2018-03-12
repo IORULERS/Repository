@@ -1,0 +1,7 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Shop/BundleAnimations/animation_chest.yaml"
+Controls:
+-   prototype: "animation_chest/Image"
+    name: "Image"

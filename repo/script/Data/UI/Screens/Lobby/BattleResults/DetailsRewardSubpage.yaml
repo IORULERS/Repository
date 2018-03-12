@@ -1,0 +1,463 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/Footer.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".total.boosters #Label"
+    properties:
+        visible: false
+-   selector: ".total.boosters #LabelBoosters"
+    properties:
+        visible: true
+-   selector: ".total #LabelBoosters"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIControl"
+    name: "RewardControl"
+    size: [185.000000, 30.000000]
+    noInput: true
+    components:
+        Anchor:
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "Icon"
+        position: [163.000000, 4.000000]
+        size: [22.000000, 22.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+                frame: 1
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   class: "UIStaticText"
+        name: "Value"
+        position: [99.000000, 0.000000]
+        size: [62.000000, 30.000000]
+        noInput: true
+        classes: "header4"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 24.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                align: ["RIGHT", "VCENTER"]
+            UITextComponent:
+                text: "999 999"
+                align: ["RIGHT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+-   class: "UIControl"
+    name: "RewardCell"
+    position: [0.000000, 0.000000]
+    size: [370.000000, 32.000000]
+    noInput: true
+    components:
+        Anchor:
+            hCenterAnchorEnabled: true
+            vCenterAnchorEnabled: true
+    children:
+    -   prototype: "RewardControl"
+        name: "WithPrem"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                rightAnchorEnabled: true
+    -   prototype: "RewardControl"
+        name: "WithoutPrem"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                hCenterAnchorEnabled: true
+-   class: "UIControl"
+    name: "RewardRow"
+    size: [740.000000, 32.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            verticalPolicy: "PercentOfMaxChild"
+    children:
+    -   class: "UIStaticText"
+        name: "Label"
+        size: [370.000000, 32.000000]
+        noInput: true
+        classes: "text1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+            UITextComponent:
+                fontName: "WarHeliosCondC_21"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                align: ["LEFT", "VCENTER"]
+                useRtlAlign: "DONT_USE"
+    -   class: "UIControl"
+        name: "VerticalBox"
+        position: [555.000000, 0.000000]
+        size: [370.000000, 0.000000]
+        pivot: [0.500000, 0.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                hCenterAnchorEnabled: true
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+    -   class: "UIControl"
+        name: "Splitter"
+        position: [0.000000, 31.000000]
+        size: [740.000000, 1.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/BattleResultsScreen/TableLine"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+-   prototype: "RewardRow"
+    name: "RewardSubRow"
+    children:
+    -   path: "Label"
+        components:
+            Anchor:
+                leftAnchor: 30.000000
+            UITextComponent:
+                color: [0.627451, 0.725490, 0.800000, 1.000000]
+-   class: "UIControl"
+    customClass: "UIDetailsRewardPageControl"
+    name: "Page"
+    size: [1024.000000, 618.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Content"
+        size: [1024.000000, 524.000000]
+        noInput: true
+        classes: "notch-tightly-bottom-inset"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 94.000000
+            UIAnchorSafeAreaComponent: {}
+        children:
+        -   class: "UIScrollBar"
+            name: "VerticalScrollbar"
+            position: [1014.000000, 0.000000]
+            size: [10.000000, 524.000000]
+            noInput: true
+            orientation: "ORIENTATION_VERTICAL"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+            children:
+            -   class: "UIControl"
+                name: "slider"
+                size: [10.000000, 20.000000]
+                noInput: true
+                components:
+                    Background:
+                        drawType: "DRAW_STRETCH_VERTICAL"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/VerticalScroll"
+                        topBottomStretchCap: 10.000000
+        -   class: "UIScrollView"
+            name: "UIScrollView"
+            position: [142.000000, 0.000000]
+            size: [740.000000, 524.000000]
+            noInput: true
+            autoUpdate: true
+            centerContent: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    hCenterAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                size: [740.000000, 66.000000]
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        dynamicPadding: true
+                    SizePolicy:
+                        verticalPolicy: "PercentOfFirstChild"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "Container"
+                    position: [0.000000, 0.000000]
+                    size: [740.000000, 66.000000]
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   class: "UIControl"
+                        name: "Header"
+                        size: [740.000000, 30.000000]
+                        noInput: true
+                        components:
+                            Anchor: {}
+                        children:
+                        -   class: "UIControl"
+                            name: "WithoutPrem"
+                            position: [370.000000, 0.000000]
+                            size: [185.000000, 30.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 0.000000
+                                Background: {}
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Value"
+                                size: [185.000000, 30.000000]
+                                noInput: true
+                                classes: "header3"
+                                components:
+                                    Anchor:
+                                        topAnchorEnabled: true
+                                        bottomAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "#battle_results:Without_Premium"
+                                        colorInheritType: "COLOR_MULTIPLY_ON_PARENT"
+                                        align: ["RIGHT", "VCENTER"]
+                                        useRtlAlign: "DONT_USE"
+                        -   class: "UIControl"
+                            name: "WithPrem"
+                            position: [555.000000, 0.000000]
+                            size: [185.000000, 30.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 0.000000
+                                Background: {}
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Value"
+                                size: [185.000000, 30.000000]
+                                noInput: true
+                                classes: "header3"
+                                components:
+                                    Anchor:
+                                        topAnchorEnabled: true
+                                        bottomAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "#battle_results:With_Premium"
+                                        colorInheritType: "COLOR_MULTIPLY_ON_PARENT"
+                                        align: ["RIGHT", "VCENTER"]
+                                        useRtlAlign: "DONT_USE"
+                    -   prototype: "Common/BlueBoldLine"
+                        name: "TopBlueBoldLine"
+                        size: [740.000000, 2.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                    -   class: "UIControl"
+                        name: "Table"
+                        size: [740.000000, 0.000000]
+                        components:
+                            LinearLayout:
+                                orientation: "TopDown"
+                            SizePolicy:
+                                verticalPolicy: "PercentOfChildrenSum"
+                    -   prototype: "Common/BlueBoldLine"
+                        name: "BottomBlueBoldLine"
+                        size: [740.000000, 2.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                    -   class: "UIControl"
+                        name: "Total"
+                        size: [740.000000, 32.000000]
+                        noInput: true
+                        classes: "total"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfMaxChild"
+                        children:
+                        -   class: "UIStaticText"
+                            name: "Label"
+                            size: [370.000000, 32.000000]
+                            noInput: true
+                            classes: "header3"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    hCenterAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                UITextComponent:
+                                    text: "#battle_results:DetailsPage/CreditsExperiencePage/Total"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["RIGHT", "VCENTER"]
+                                    useRtlAlign: "DONT_USE"
+                        -   class: "UIStaticText"
+                            name: "LabelBoosters"
+                            size: [370.000000, 32.000000]
+                            noInput: true
+                            classes: "header3"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    hCenterAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                UITextComponent:
+                                    text: "#battle_results:DetailsPage/ExperiencePage/TotalWithBoosters"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["RIGHT", "VCENTER"]
+                                    useRtlAlign: "DONT_USE"
+                        -   class: "UIControl"
+                            name: "VerticalBox"
+                            position: [555.000000, 0.000000]
+                            size: [370.000000, 0.000000]
+                            pivot: [0.500000, 0.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 0.000000
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+    -   prototype: "Footer/Footer"
+        name: "Banner"
+        size: [936.000000, 94.000000]
+        children:
+        -   path: "FooterBackground"
+            classes: "footer-background notch-tightly-bottom-inset"
+        -   class: "UIControl"
+            name: "PremiumBanner"
+            size: [783.000000, 94.000000]
+            noInput: true
+            classes: "notch-tightly-bottom-inset"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "REVERSE"
+                Background:
+                    sprite: "~res:/Gfx/UI/BuyPremiumBanner/Banner"
+        -   prototype: "StyledButton/StyledButton"
+            name: "BuyPremiumButton"
+            size: [250.000000, 70.000000]
+            classes: "button button-color-green"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "shop/Buy"
+        -   class: "UIControl"
+            name: "PremiumIcon"
+            size: [174.000000, 74.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 25.000000
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/BuyPremiumBanner/Banner+50"
+        -   class: "UIStaticText"
+            name: "PremiumPromo"
+            size: [250.000000, 36.000000]
+            noInput: true
+            classes: "header0"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 199.000000
+                    topAnchorEnabled: true
+                    topAnchor: 12.000000
+                Background:
+                    align: ["LEFT", "VCENTER"]
+                UITextComponent:
+                    text: "shop/BannerText"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+        -   class: "UIStaticText"
+            name: "PremiumPromoAdditional"
+            size: [212.000000, 35.000000]
+            noInput: true
+            classes: "header0"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 199.000000
+                    topAnchorEnabled: true
+                    topAnchor: 42.000000
+                Background:
+                    align: ["LEFT", "VCENTER"]
+                UITextComponent:
+                    text: "shop/BannerText2"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"

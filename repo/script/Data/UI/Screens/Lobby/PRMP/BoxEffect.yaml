@@ -1,0 +1,106 @@
+Header:
+    version: "16"
+Controls:
+-   class: "UIControl"
+    name: "box"
+    size: [270.000000, 400.000000]
+    noInput: true
+    components:
+        Background: {}
+    children:
+    -   class: "UIControl"
+        name: "background"
+        position: [-314.000000, -100.000000]
+        size: [818.000000, 500.000000]
+        noInput: true
+        exclusiveInput: false
+    -   class: "UIParticles"
+        name: "glow_left1"
+        position: [57.000000, 263.000000]
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        effectPath: "~res:/3d/FX/UI/PRMP_offers/sparks_test3.sc2"
+        autoStart: true
+    -   class: "UIParticles"
+        name: "sparks_test4"
+        position: [101.000000, 205.000000]
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        effectPath: "~res:/3d/FX/UI/PRMP_offers/sparks_test4.sc2"
+        autoStart: true
+    -   class: "UIParticles"
+        name: "glow_left1"
+        position: [488.000000, 384.000000]
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        effectPath: "~res:/3d/FX/UI/PRMP_offers/glow_left1.sc2"
+        autoStart: true
+    -   class: "UIParticles"
+        name: "glow_left2"
+        position: [138.000000, 384.000000]
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        effectPath: "~res:/3d/FX/UI/PRMP_offers/glow_left2.sc2"
+        autoStart: true
+    -   class: "UIParticles"
+        name: "sparks_left1"
+        position: [25.000000, 205.000000]
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        effectPath: "~res:/3d/FX/UI/PRMP_offers/sparks_left1.sc2"
+        autoStart: true
+    -   class: "UIParticles"
+        name: "sparks_test2"
+        position: [359.000000, 384.000000]
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        effectPath: "~res:/3d/FX/UI/PRMP_offers/sparks_test2.sc2"
+        autoStart: true
+    -   class: "UIParticles"
+        name: "sparks_left2"
+        position: [57.000000, 263.000000]
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        effectPath: "~res:/3d/FX/UI/PRMP_offers/sparks_left2.sc2"
+        autoStart: true
+    -   class: "UIControl"
+        name: "background"
+        position: [-314.000000, -100.000000]
+        size: [818.000000, 500.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/PRMP_offers/box"
+        children:
+        -   class: "UIParticles"
+            name: "glow_top"
+            position: [367.000000, 266.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/PRMP_offers/glow_top.sc2"
+            autoStart: true
+    -   class: "UIControl"
+        name: "background"
+        position: [-314.000000, -100.000000]
+        size: [818.000000, 500.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/PRMP_offers/box"
+                frame: 1
+    -   class: "UIParticles"
+        name: "sparks_test1"
+        position: [488.000000, 384.000000]
+        size: [32.000000, 32.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        effectPath: "~res:/3d/FX/UI/PRMP_offers/sparks_test1.sc2"
+        autoStart: true

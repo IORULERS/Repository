@@ -1,0 +1,594 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyBaseScreen.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Common/Tab.yaml"
+- "~res:/UI/Screens/Lobby/Common/HeaderWithLines.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+StyleSheets:
+-   selector: ".card #BlockText #ImgStar"
+    properties:
+        bg-color: [0.486275, 0.466667, 1.000000, 1.000000]
+-   selector: ".card.favorite #BlockText #ImgStar"
+    properties:
+        bg-color: [0.286275, 1.000000, 0.427451, 1.000000]
+-   selector: ".card.editing #BlockText #ImgStar"
+    properties:
+        visible: false
+-   selector: ".card.win #ImageVideo #SubstrateStatus #StatusVideo"
+    properties:
+        text-color: [0.494118, 0.827451, 0.129412, 1.000000]
+-   selector: ".card.lost #ImageVideo #SubstrateStatus #StatusVideo"
+    properties:
+        text-color: [0.960784, 0.000000, 0.000000, 1.000000]
+-   selector: ".card.draw #ImageVideo #SubstrateStatus #StatusVideo"
+    properties:
+        text-color: [0.992157, 0.807843, 0.000000, 1.000000]
+-   selector: ".card.owner #BlockText #NameAutor"
+    properties:
+        text-color: [0.862745, 0.807843, 0.729412, 1.000000]
+-   selector: ".card.sent #BlockText #NameAutor\n"
+    properties:
+        text-color: [1.000000, 1.000000, 1.000000, 1.000000]
+-   selector: "error"
+    properties:
+        visible: true
+Prototypes:
+-   class: "UIControl"
+    name: "MyBattle"
+    size: [240.000000, 318.000000]
+    noInput: true
+    classes: "card owner"
+    components:
+        Anchor:
+            vCenterAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.000000, 0.082353, 0.121569, 1.000000]
+    children:
+    -   prototype: "Selection/Selection"
+        name: "Highlight"
+        position: [-2.578829, -2.500000]
+        size: [245.157654, 323.000000]
+        components:
+            Background:
+                color: [0.333333, 1.000000, 0.498039, 1.000000]
+    -   class: "UIControl"
+        name: "BlockText"
+        position: [-0.000004, 180.000122]
+        size: [240.000000, 137.999878]
+        noInput: true
+        components:
+            Anchor:
+                topAnchorEnabled: false
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                gradientMode: "Alpha blend"
+                color: [0.000000, 0.000000, 0.000000, 0.196078]
+        children:
+        -   class: "UIStaticText"
+            name: "Data"
+            position: [15.000000, 100.999878]
+            size: [105.000000, 32.000000]
+            classes: "text2-small text-color-blue"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 5.000000
+                UITextComponent:
+                    text: "Data"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "HCENTER", "VCENTER"]
+        -   class: "UIStaticText"
+            name: "NameVideo"
+            position: [15.000000, 5.000000]
+            size: [210.000000, 63.999939]
+            classes: "header3 text-color-white"
+            components:
+                Anchor:
+                    enabled: true
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    topAnchorEnabled: true
+                    topAnchor: 5.000000
+                UITextComponent:
+                    text: "NameVideo"
+                    fontName: "WarHeliosCondC_Bold_19"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    fitting: "FITTING_NONE"
+                    align: ["LEFT", "TOP"]
+        -   class: "UIStaticText"
+            name: "NameAutor"
+            position: [15.000000, 80.999878]
+            size: [105.000000, 32.000000]
+            classes: "text2 text-color-white"
+            components:
+                Anchor:
+                    enabled: true
+                    leftAnchorEnabled: true
+                    leftAnchor: 15.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 25.000000
+                UITextComponent:
+                    text: "NameAutor"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["LEFT", "HCENTER", "VCENTER"]
+        -   class: "UIControl"
+            name: "ImgStar"
+            position: [195.000000, 92.999878]
+            size: [30.000000, 30.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 15.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 15.000000
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/ReplayLobby/Liked_stars"
+                    frame: 0
+    -   class: "UIControl"
+        name: "ImageVideo"
+        position: [-0.000008, 0.000000]
+        size: [240.000000, 180.000000]
+        noInput: true
+        components:
+            Anchor:
+                topAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.419608, 0.419608, 0.419608, 1.000000]
+        children:
+        -   class: "UIControl"
+            name: "SubstrateTime"
+            position: [176.000000, 147.000000]
+            size: [59.000000, 28.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 5.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 5.000000
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/Hangar/PingBack"
+                    color: [0.349020, 0.349020, 0.349020, 1.000000]
+                    topBottomStretchCap: 20.000000
+            children:
+            -   class: "UIStaticText"
+                name: "Time"
+                position: [0.000000, 0.000000]
+                size: [59.000000, 28.000000]
+                classes: "text1 text-color-white"
+                components:
+                    Anchor:
+                        enabled: false
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        bottomAnchorEnabled: false
+                    UITextComponent:
+                        text: "04:32"
+                        fontName: ""
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "SubstrateStatus"
+            position: [0.000000, 0.000000]
+            size: [240.000000, 36.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    hCenterAnchorEnabled: false
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_TO_RECT"
+                    sprite: "~res:/Gfx/UI/Hangar/BlackGradTile"
+                    spriteModification: ["FLIP_HORIZONTAL"]
+            children:
+            -   class: "UIStaticText"
+                name: "StatusVideo"
+                position: [15.000000, 5.000000]
+                size: [119.666611, 23.200001]
+                classes: "header3"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 15.000000
+                        topAnchorEnabled: true
+                        topAnchor: 5.000000
+                    Background: {}
+                    UITextComponent:
+                        text: "STATUSVIDEO"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+        -   class: "UIControl"
+            name: "SubstrateForPlay"
+            position: [80.000000, 50.000000]
+            size: [80.000000, 80.000000]
+            noInput: false
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/ReplayLobby/play_icon_back"
+                    color: [0.152941, 0.152941, 0.152941, 1.000000]
+            children:
+            -   class: "UIControl"
+                name: "Control"
+                position: [24.000000, 24.000000]
+                size: [32.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_ALIGNED"
+                        sprite: "~res:/Gfx/UI/ReplayCommon/play_icon"
+                        frame: 1
+-   class: "UIControl"
+    name: "Page"
+    size: [960.000000, 487.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIStaticText"
+        name: "EmptyListText"
+        size: [900.000000, 64.000000]
+        classes: "text1 text-color-blue"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 30.000000
+                rightAnchorEnabled: true
+                rightAnchor: 30.000000
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                text: "Здесь текст на каждой вкладке свой"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+    -   class: "UIControl"
+        name: "ListContainer"
+        size: [960.000000, 487.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Alert"
+            size: [840.000000, 60.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 60.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 60.000000
+                    topAnchorEnabled: true
+                    topAnchor: 25.000000
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.478431, 0.000000, 0.000000, 1.000000]
+            children:
+            -   class: "UIStaticText"
+                name: "TextAlert"
+                classes: "text2 text-color-white"
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfContent"
+                        verticalValue: 105.000000
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 80.000000
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "replays/Notification/Warning"
+                        fontName: "WarHeliosCondC_19"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+            -   class: "UIControl"
+                name: "Close"
+                position: [760.000000, 0.000000]
+                size: [80.000000, 60.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/InputClear"
+        -   class: "UIList"
+            name: "List"
+            position: [0.000000, 0.000000]
+            size: [960.000000, 487.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+        -   prototype: "Common/VerticalScrollBar"
+            name: "VerticalScrollBar"
+            position: [950.000000, 0.000000]
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                ScrollBarDelegate:
+                    delegate: "../List"
+        -   class: "UIStaticText"
+            name: "ListFooter"
+            size: [900.000000, 64.000000]
+            classes: "text1 text-color-blue"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 30.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 30.000000
+                UITextComponent:
+                    text: "Здесь текст на каждой вкладке свой"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+    -   class: "UIControl"
+        name: "EditorPanel"
+        size: [960.000000, 78.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                dynamicPadding: true
+                dynamicSpacing: true
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.000000, 0.000000, 0.000000, 1.000000]
+        children:
+        -   class: "UIControl"
+            name: "ButtonEdit"
+            size: [40.000000, 40.000000]
+            enabled: true
+            noInput: false
+            classes: "button"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/ReplayLobby/text_icon"
+        -   class: "UIControl"
+            name: "ButtonShare"
+            size: [40.000000, 40.000000]
+            noInput: false
+            classes: "button"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/ReplayLobby/share_icon"
+        -   class: "UIControl"
+            name: "ButtonDel"
+            position: [710.000000, 19.000000]
+            size: [40.000000, 40.000000]
+            noInput: false
+            classes: "button"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/ReplayLobby/delete_icon"
+                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+Controls:
+-   prototype: "LobbyBaseScreen/Screen"
+    name: "Screen"
+    size: [960.000000, 720.000000]
+    children:
+    -   path: "Header/Layout/CustomContent"
+        position: [80.000000, 0.000000]
+        children:
+        -   class: "UIControl"
+            name: "Control"
+            size: [776.000000, 32.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    rightAnchor: 96.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Header1"
+                size: [101.000000, 32.000000]
+                classes: "header1 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "hangar menu replays"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+        -   prototype: "StyledButton/StyledButton"
+            name: "Button"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 5.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "replays/Button/Choose"
+    -   path: "Content"
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+        children:
+        -   prototype: "Tab/TabPane"
+            name: "TextTabPane"
+            enabled: true
+            selected: false
+            classes: "tab-pane-bg"
+            children:
+            -   prototype: "Tab/TextTab"
+                name: "RecentTab"
+                selected: true
+                tag: 0
+                children:
+                -   path: "Text"
+                    components:
+                        UITextComponent:
+                            text: "replays/Last/Title"
+                -   prototype: "UnreadIcon/UnreadIcon"
+                    name: "badgeSmallRedLast"
+                    size: [16.000000, 16.000000]
+                    classes: "header3 bg-color=unread-icon-bg state=hide-unread-icon"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: -2.000000
+                            topAnchorEnabled: true
+                            topAnchor: -2.000000
+                        Background:
+                            drawType: "DRAW_STRETCH_BOTH"
+            -   prototype: "Tab/TextTab"
+                name: "FavoriteTab"
+                position: [328.666656, 4.000000]
+                selected: false
+                tag: 1
+                children:
+                -   path: "Text"
+                    components:
+                        UITextComponent:
+                            text: "replays/Favorite/Title"
+            -   prototype: "Tab/TextTab"
+                name: "ReceivedTab"
+                tag: 2
+                children:
+                -   path: "Text"
+                    components:
+                        UITextComponent:
+                            text: "replays/Uploaded/Title"
+                -   prototype: "UnreadIcon/UnreadIcon"
+                    name: "badgeSmallRedCome"
+                    size: [16.000000, 16.000000]
+                    classes: "header3 bg-color=unread-icon-bg state=hide-unread-icon"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: -2.000000
+                            topAnchorEnabled: true
+                            topAnchor: -2.000000
+                        Background:
+                            drawType: "DRAW_STRETCH_BOTH"
+        -   class: "UIControl"
+            name: "Pages"
+            position: [0.000027, 74.000000]
+            size: [960.000000, 566.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+            children:
+            -   prototype: "Page"
+                name: "RecentPage"
+                children:
+                -   path: "EmptyListText"
+                    components:
+                        UITextComponent:
+                            text: "replays/Last/EmptyList/Description"
+                -   path: "ListContainer/ListFooter"
+                    components:
+                        UITextComponent:
+                            text: "replays/Last/Description"
+            -   prototype: "Page"
+                name: "FavoritePage"
+                children:
+                -   path: "EmptyListText"
+                    components:
+                        UITextComponent:
+                            text: "replays/Favorite/EmptyList/Description"
+                -   path: "ListContainer/ListFooter"
+                    components:
+                        UITextComponent:
+                            text: "replays/Favorite/Description"
+            -   prototype: "Page"
+                name: "ReceivedPage"
+                position: [0.000000, 0.000000]
+                children:
+                -   path: "EmptyListText"
+                    components:
+                        UITextComponent:
+                            text: "replays/Received/EmptyList/Description"
+                -   path: "ListContainer/ListFooter"
+                    components:
+                        UITextComponent:
+                            text: "replays/Uploaded/Description"
+-   class: "UIListCell"
+    name: "CellPrototype"
+    size: [960.000000, 333.899994]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfChildrenSum"
+    children:
+    -   class: "UIControl"
+        name: "Row"
+        position: [0.000000, 0.000000]
+        size: [960.000000, 333.899994]
+        components:
+            LinearLayout:
+                dynamicPadding: true
+                dynamicSpacing: true
+                skipInvisible: false
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfFirstChild"
+                verticalValue: 105.000000
+        children:
+        -   prototype: "MyBattle"
+            name: "MyBattle"
+        -   prototype: "MyBattle"
+            name: "MyBattle"
+        -   prototype: "MyBattle"
+            name: "MyBattle"

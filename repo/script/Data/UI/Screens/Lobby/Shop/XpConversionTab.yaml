@@ -1,0 +1,728 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Lobby/Shop/BaseShopTab.yaml"
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/CheckBox.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader3.yaml"
+- "~res:/UI/Screens/Lobby/LobbyStyles.yaml"
+StyleSheets:
+-   selector: ".size-hint-text"
+    properties:
+        sizePolicy-horizontalPolicy: "FixedSize"
+        sizePolicy-horizontalValue: 400.000000
+-   selector: ".size-hint-text.Desktop"
+    properties:
+        sizePolicy-horizontalPolicy: "PercentOfParent"
+        sizePolicy-horizontalValue: 90.000000
+Controls:
+-   class: "UIControl"
+    customClass: "UIXpConversionTabControl"
+    name: "Tab"
+    size: [1024.000000, 617.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"
+            color: [1.000000, 1.000000, 1.000000, 0.000000]
+    children:
+    -   class: "UIControl"
+        name: "TankListContainer"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "Formula"
+                horizontalFormula: "safeAreaInsets.left+270"
+            Anchor:
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   prototype: "Common/VerticalScrollBar"
+            name: "ScrollBar"
+            classes: "notch-tightly-bottom-inset"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 94.000000
+                UIAnchorSafeAreaComponent: {}
+        -   class: "UIList"
+            name: "TankList"
+            classes: "pane-bg notch-tightly-bottom-inset"
+            orientation: "ORIENTATION_VERTICAL"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 94.000000
+                UIAnchorSafeAreaComponent: {}
+                Background: {}
+        -   class: "UIControl"
+            name: "SelectAll"
+            size: [314.000000, 94.000000]
+            visible: true
+            classes: "notch-tightly-bottom-inset"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+            children:
+            -   class: "UIControl"
+                name: "SelectAllButtonBG"
+                size: [314.000000, 115.000000]
+                noInput: true
+                classes: "footer-background"
+                components:
+                    SizePolicy: {}
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UIAnchorSafeAreaComponent:
+                        bottomSafeInset: "REVERSE"
+                    Background: {}
+            -   prototype: "CheckBox/CheckBox"
+                name: "SelectAllButton"
+                classes: "checkbox button-color-gray"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 10.000000
+                        vCenterAnchorEnabled: true
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                children:
+                -   class: "UIStaticText"
+                    name: "SelectAllText"
+                    position: [90.000000, 17.000000]
+                    size: [194.000000, 30.000000]
+                    noInput: true
+                    classes: "text1 text-color-blue"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 90.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            text: "shop/SelectAll"
+                            color: [0.627451, 0.725490, 0.803922, 1.000000]
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            align: ["LEFT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+        -   class: "UIStaticText"
+            name: "NoXpToConvertLabel"
+            size: [250.000000, 30.000000]
+            visible: false
+            noInput: true
+            classes: "text1 text-color-blue"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 150.000000
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "shop/NoXPTanks"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    fitting: "FITTING_REDUCE"
+    -   prototype: "BaseShopTab/Tab"
+        name: "Tab"
+        noInput: true
+        children:
+        -   path: "Footer"
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "ConvertButton"
+                size: [250.000000, 64.000000]
+                classes: "button button-color-green"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 20.000000
+                        vCenterAnchorEnabled: true
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "shop/XPConvert"
+            -   class: "UIControl"
+                name: "IncomeContainer"
+                position: [232.000000, 12.000000]
+                size: [211.000000, 30.000000]
+                components:
+                    LinearLayout: {}
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 493.000000
+                children:
+                -   class: "UIControl"
+                    name: "Spacer"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                -   class: "UIStaticText"
+                    name: "WillAchieveLabel"
+                    noInput: true
+                    classes: "text1 text-color-blue"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            rightAnchorEnabled: true
+                            rightAnchor: 495.000000
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            text: "shop/WillAchieve"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            align: ["RIGHT", "VCENTER"]
+                            useRtlAlign: "DONT_USE"
+                -   prototype: "DiscountLabel/DiscountLabel"
+                    name: "Discount"
+            -   class: "UIControl"
+                name: "DividerImage"
+                position: [480.000000, 8.000000]
+                size: [46.000000, 78.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 410.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 0.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/Slash"
+            -   class: "UIStaticText"
+                name: "GoldLeftLabel"
+                position: [494.000000, 12.000000]
+                size: [157.000000, 30.000000]
+                noInput: true
+                classes: "text1"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 285.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: -20.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "shop/Balance"
+                        color: [0.627451, 0.725490, 0.800000, 1.000000]
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "GoldImage"
+                position: [626.000000, 47.000000]
+                size: [30.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 280.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+            -   class: "UIStaticText"
+                name: "GoldAfterConversionText"
+                position: [421.000000, 47.000000]
+                size: [200.000000, 30.000000]
+                noInput: true
+                classes: "header1 color=text-color-white"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 315.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                        leftRightStretchCap: 7.000000
+                    UITextComponent:
+                        text: "0"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+            -   class: "UIControl"
+                name: "FreeXpImage"
+                position: [416.000000, 47.000000]
+                size: [30.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 490.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                        frame: 2
+            -   class: "UIStaticText"
+                name: "FreeXpAfterConversionText"
+                position: [152.000000, 47.000000]
+                size: [259.000000, 30.000000]
+                noInput: true
+                classes: "header1 text-color-white"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        rightAnchor: 525.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 15.000000
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "0"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["RIGHT", "VCENTER"]
+                        useRtlAlign: "DONT_USE"
+        -   path: "Content"
+            children:
+            -   prototype: "StyledButton/DefaultStyledButton"
+                name: "SwitchTankListButton"
+                size: [55.000000, 70.000000]
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 10.000000
+                        vCenterAnchorEnabled: true
+                        vCenterAnchor: 10.000000
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                children:
+                -   class: "UIControl"
+                    name: "Icon"
+                    position: [27.500000, 35.000000]
+                    size: [30.000000, 30.000000]
+                    pivot: [0.500000, 0.500000]
+                    angle: 90.000206
+                    noInput: true
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            hCenterAnchor: 0.000000
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 0.000000
+                        Background:
+                            sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                            frame: 8
+            -   class: "UIControl"
+                name: "ConstrainedContent"
+                noInput: true
+                classes: "limited-width"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        dynamicPadding: true
+                        safeAreaPaddingInset: true
+                        dynamicSpacing: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalMax: 1100.000000
+                        verticalPolicy: "Formula"
+                        verticalFormula: "min(590, parentRest)+safeAreaInsets.bottom"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "ConversionRateContainer"
+                    position: [277.000000, 37.000000]
+                    size: [470.000000, 70.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_STRETCH_HORIZONTAL"
+                            leftRightStretchCap: 4.000000
+                    children:
+                    -   prototype: "SectionHeader3/SectionHeader3"
+                        name: "Gradient"
+                        size: [470.000000, 40.000000]
+                        components:
+                            Anchor:
+                                vCenterAnchorEnabled: true
+                    -   class: "UIControl"
+                        name: "Container"
+                        components:
+                            LinearLayout:
+                                dynamicPadding: true
+                                spacing: 5.000000
+                                useRtl: true
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfParent"
+                            Anchor:
+                                topAnchorEnabled: true
+                        children:
+                        -   class: "UIStaticText"
+                            name: "ConversionRateLabel"
+                            noInput: true
+                            classes: "header1 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfParent"
+                                UITextComponent:
+                                    text: "shop/ExchangeRate"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["RIGHT", "VCENTER"]
+                                    useRtlAlign: "USE_BY_CONTENT"
+                        -   class: "UIStaticText"
+                            name: "ConversionDiscretionText1"
+                            size: [13.000000, 70.000000]
+                            noInput: true
+                            classes: "header1 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfParent"
+                                UITextComponent:
+                                    text: "0"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["LEFT", "VCENTER"]
+                                    useRtlAlign: "DONT_USE"
+                        -   class: "UIControl"
+                            name: "XpImage"
+                            size: [30.000000, 70.000000]
+                            noInput: true
+                            classes: "currency-icon-big currency-elite-xp"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfParent"
+                                Background: {}
+                        -   class: "UIStaticText"
+                            name: "xLabel"
+                            size: [20.000000, 70.000000]
+                            noInput: true
+                            classes: "header1 text-color-white"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfParent"
+                                UITextComponent:
+                                    text: "x"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIStaticText"
+                            name: "ConversionCostText"
+                            size: [13.000000, 70.000000]
+                            noInput: true
+                            classes: "header1 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfParent"
+                                UITextComponent:
+                                    text: "0"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["LEFT", "VCENTER"]
+                                    useRtlAlign: "DONT_USE"
+                        -   class: "UIControl"
+                            name: "goldImage"
+                            size: [30.000000, 70.000000]
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfParent"
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                        -   class: "UIStaticText"
+                            name: "EqualsLabel"
+                            size: [20.000000, 70.000000]
+                            noInput: true
+                            classes: "header1 text-color-white"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfParent"
+                                Background:
+                                    align: ["LEFT", "TOP"]
+                                UITextComponent:
+                                    text: "="
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIStaticText"
+                            name: "ConversionDiscretionText2"
+                            position: [357.500000, 0.000000]
+                            size: [13.000000, 70.000000]
+                            noInput: true
+                            classes: "header1 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfParent"
+                                UITextComponent:
+                                    text: "0"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["LEFT", "VCENTER"]
+                                    useRtlAlign: "DONT_USE"
+                        -   class: "UIControl"
+                            name: "XpImage"
+                            size: [30.000000, 70.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 0.000000
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                                    frame: 2
+                -   class: "UIControl"
+                    name: "Converter"
+                    position: [0.000000, 144.000000]
+                    size: [1024.000000, 210.000000]
+                    noInput: true
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                    children:
+                    -   class: "UIStaticText"
+                        name: "TotalTankXpLabel"
+                        position: [160.500000, 75.000000]
+                        size: [163.000000, 30.000000]
+                        noInput: true
+                        classes: "header1 text-color-white"
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: -270.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: -15.000000
+                            Background:
+                                align: ["LEFT", "TOP"]
+                            UITextComponent:
+                                text: "shop/Available"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                align: ["RIGHT", "VCENTER"]
+                                useRtlAlign: "DONT_USE"
+                    -   class: "UIControl"
+                        name: "CurlyBrace"
+                        position: [328.500000, 72.500000]
+                        size: [31.000000, 85.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: -168.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: 10.000000
+                            Background:
+                                sprite: "~res:/Gfx/UI/ShopScreen/IconSum"
+                    -   class: "UIStaticText"
+                        name: "TotalTankXpText"
+                        position: [157.500000, 115.000000]
+                        size: [139.000000, 30.000000]
+                        noInput: true
+                        classes: "header1 text-color-white"
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: -285.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: 25.000000
+                            Background:
+                                align: ["LEFT", "TOP"]
+                            UITextComponent:
+                                text: "100"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                align: ["RIGHT", "VCENTER"]
+                                useRtlAlign: "DONT_USE"
+                    -   class: "UIControl"
+                        name: "XpImage"
+                        position: [299.000000, 115.000000]
+                        size: [30.000000, 30.000000]
+                        noInput: true
+                        classes: "currency-icon-big currency-elite-xp"
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: -198.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: 25.000000
+                            Background: {}
+                    -   class: "UIControl"
+                        name: "FreeXpImage"
+                        position: [362.000000, 55.000000]
+                        size: [30.000000, 30.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: -135.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: -35.000000
+                            Background:
+                                sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsHuge"
+                                frame: 2
+                    -   class: "UIControl"
+                        name: "ToConvertXpLabel"
+                        position: [421.500000, 6.000000]
+                        size: [211.000000, 30.000000]
+                        noInput: true
+                        components:
+                            LinearLayout: {}
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 15.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: -84.000000
+                        children:
+                        -   class: "UIStaticText"
+                            name: "Label"
+                            size: [173.000000, 30.000000]
+                            noInput: true
+                            classes: "header1 text-color-white"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                Background:
+                                    align: ["LEFT", "TOP"]
+                                UITextComponent:
+                                    text: "shop/ToTransferXP"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["LEFT", "VCENTER"]
+                                    useRtlAlign: "USE_BY_CONTENT"
+                        -   prototype: "DiscountLabel/DiscountLabel"
+                            name: "Discount"
+                            components:
+                                Anchor:
+                                    rightAnchorEnabled: false
+                                    topAnchorEnabled: false
+                                    vCenterAnchorEnabled: true
+                    -   class: "UIControl"
+                        name: "GoldImage"
+                        position: [362.000000, 155.000000]
+                        size: [30.000000, 30.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: -135.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: 65.000000
+                            Background:
+                                sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsHuge"
+                    -   class: "UIStaticText"
+                        name: "ToPayLabel"
+                        position: [421.500000, 106.000000]
+                        size: [211.000000, 30.000000]
+                        noInput: true
+                        classes: "header1 text-color-white"
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 15.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: 16.000000
+                            Background:
+                                align: ["LEFT", "TOP"]
+                            UITextComponent:
+                                text: "shop/ToPay"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                align: ["LEFT", "VCENTER"]
+                                useRtlAlign: "DONT_USE"
+                    -   class: "UIControl"
+                        customClass: "UINumericSpinner"
+                        name: "GoldSpinner"
+                        position: [405.500000, 138.000000]
+                        size: [213.000000, 64.000000]
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 0.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: 65.000000
+                            Background:
+                                drawType: "DRAW_FILL"
+                        children:
+                        -   class: "UITextField"
+                            name: "GoldTextField"
+                            position: [10.000000, 0.000000]
+                            size: [153.000000, 64.000000]
+                            text: "0"
+                            font: "WarHeliosCondC_23"
+                            keyboardType: "KEYBOARD_TYPE_NUMBER_PAD"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 10.000000
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 50.000000
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 0.000000
+                                Focus: {}
+                    -   class: "UIControl"
+                        customClass: "UINumericSpinner"
+                        name: "FreeXpSpinner"
+                        position: [405.500000, 38.000000]
+                        size: [213.000000, 64.000000]
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                hCenterAnchor: 0.000000
+                                vCenterAnchorEnabled: true
+                                vCenterAnchor: -35.000000
+                            Background:
+                                drawType: "DRAW_FILL"
+                        children:
+                        -   class: "UITextField"
+                            name: "FreeXpTextField"
+                            position: [10.000000, 0.000000]
+                            size: [153.000000, 64.000000]
+                            text: "0"
+                            font: "WarHeliosCondC_23"
+                            keyboardType: "KEYBOARD_TYPE_NUMBER_PAD"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 10.000000
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 50.000000
+                                    topAnchorEnabled: true
+                                    topAnchor: 0.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: 0.000000
+                                Focus: {}
+                -   class: "UIStaticText"
+                    name: "Hint"
+                    size: [400.000000, 95.000000]
+                    pivot: [0.500000, 0.500000]
+                    noInput: true
+                    classes: "size-hint-text text1 text-color-blue"
+                    components:
+                        SizePolicy: {}
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        Background:
+                            align: ["LEFT", "TOP"]
+                        UITextComponent:
+                            text: "shop/Hint/XP"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            multiline: "MULTILINE_ENABLED"
+                            fitting: "FITTING_REDUCE"
+                            align: ["HCENTER", "BOTTOM"]
+                            useRtlAlign: "DONT_USE"

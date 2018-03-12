@@ -1,0 +1,5 @@
+1
+premium_tanks0.tex
+512 256
+1
+0 0 340 241 79 0 0 frame0

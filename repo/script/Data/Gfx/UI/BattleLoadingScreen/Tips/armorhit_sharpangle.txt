@@ -1,0 +1,5 @@
+1
+armorhit_sharpangle0.tex
+256 128
+1
+0 0 125 126 67 1 0 frame0

@@ -1,0 +1,5 @@
+1
+rating_battles0.tex
+512 256
+1
+0 0 395 196 58 59 0 frame0

@@ -1,0 +1,108 @@
+Header:
+    version: "13"
+ImportedPackages:
+- "~res:/UI/Screens/Hangar/UIStrangeHMTimer.yaml"
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIShopExpireTimer"
+    name: "ExpireTimerForText"
+    size: [58.000000, 28.000000]
+    noInput: true
+    components:
+        LinearLayout: {}
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "FixedSize"
+            verticalValue: 28.000000
+        Background:
+            colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    children:
+    -   class: "UIControl"
+        name: "Shadow"
+        noInput: true
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: ""
+    -   class: "UIControl"
+        name: "Icon"
+        size: [16.000000, 16.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/timer_icon"
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "Spacer"
+        size: [5.000000, 5.000000]
+        noInput: true
+    -   prototype: "UIStrangeHMTimer/Timer"
+        name: "Timer"
+        position: [0.000000, 2.000000]
+        visible: false
+        components:
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+    -   class: "UIStaticText"
+        name: "Label"
+        position: [21.000000, 0.000000]
+        size: [37.000000, 26.000000]
+        visible: true
+        classes: "text2"
+        textcolorInheritType: "COLOR_IGNORE_PARENT"
+        textalign: ["LEFT", "VCENTER"]
+        text: "15 д."
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 26.000000
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+-   prototype: "ExpireTimerForText"
+    customClass: "UIShopExpireTimer"
+    name: "ExpireTimer"
+    size: [58.000000, 23.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            verticalPolicy: "PercentOfMaxChild"
+            verticalValue: 100.000000
+    children:
+    -   path: "Shadow"
+        components:
+            Anchor:
+                leftAnchor: -10.000000
+                rightAnchor: -10.000000
+                topAnchor: -10.000000
+                bottomAnchor: -10.000000
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/TextShadow"
+    -   path: "Icon"
+        components:
+            Anchor:
+                vCenterAnchor: 0.000000
+    -   path: "Timer"
+        position: [0.000000, 0.000000]
+        children: []
+    -   path: "Label"
+        size: [37.000000, 23.000000]
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfContent"
+                verticalValue: 100.000000

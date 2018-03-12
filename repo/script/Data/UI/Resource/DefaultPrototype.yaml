@@ -1,0 +1,13 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceMedium.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourcePreview.yaml"
+Controls:
+-   prototype: "ResourceSmall/ResourceSmall"
+    name: "ResourceSmall"
+-   prototype: "ResourceMedium/ResourceMedium"
+    name: "ResourceMedium"
+-   prototype: "ResourcePreview/ResourcePreview"
+    name: "ResourcePreview"

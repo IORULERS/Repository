@@ -1,0 +1,18 @@
+Header:
+    version: "16"
+StyleSheets:
+-   selector: ".section-header1"
+    properties:
+        bg-drawType: "DRAW_FILL"
+        bg-color: [0.227451, 0.388235, 0.509804, 0.501961]
+-   selector: ".section-header1:pressed_inside"
+    properties:
+        bg-color: [0.227451, 0.388235, 0.509804, 0.250980]
+Prototypes:
+-   class: "UIControl"
+    name: "SectionHeader1"
+    size: [32.000000, 30.000000]
+    noInput: true
+    classes: "section-header1"
+    components:
+        Background: {}

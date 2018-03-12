@@ -1,0 +1,780 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Story/StoryTreePrototypes.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Stories"
+    position: [0.000000, 0.000000]
+    size: [960.000000, 200.000000]
+    noInput: true
+    children:
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "1"
+        position: [21.000000, 65.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+        -   path: "NormalState"
+            children:
+            -   prototype: "ResourceSmall/ResourceSmall"
+                name: "ResourceSmall"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchor: 52.000000
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                children:
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "10"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Grade"
+                    visible: false
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Story/TopUp2017/little_dragon.psd"
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "DiscountLabel/Image"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel/Value"
+                    components:
+                        UITextComponent:
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   path: "NormalState/Button"
+            classes: "button button-color-orange"
+            children: []
+        -   path: "NormalState/Highlight"
+            components:
+                Background:
+                    color: [1.000000, 0.819608, 0.000000, 1.000000]
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Tournament/silvericon.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "2"
+        position: [127.000000, 65.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Tournament/goldicon.psd"
+        -   path: "NormalState"
+            children:
+            -   prototype: "ResourceSmall/ResourceSmall"
+                name: "ResourceSmall"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchor: 52.000000
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                children:
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "45"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Grade"
+                    visible: false
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Story/TopUp2017/little_dragon.psd"
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "DiscountLabel/Image"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel/Value"
+                    components:
+                        UITextComponent:
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   path: "NormalState/Button"
+            classes: "button button-color-orange"
+            children: []
+        -   path: "NormalState/Highlight"
+            components:
+                Background:
+                    color: [1.000000, 0.819608, 0.000000, 1.000000]
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Tournament/goldicon.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "3"
+        position: [233.000000, 65.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/boost_icon"
+        -   path: "NormalState"
+            children:
+            -   prototype: "ResourceSmall/ResourceSmall"
+                name: "ResourceSmall"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchor: 52.000000
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                children:
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "75"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Grade"
+                    visible: false
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Story/TopUp2017/little_dragon.psd"
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "DiscountLabel/Image"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel/Value"
+                    components:
+                        UITextComponent:
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   path: "NormalState/Button"
+            classes: "button button-color-orange"
+            children: []
+        -   path: "NormalState/Highlight"
+            components:
+                Background:
+                    color: [1.000000, 0.819608, 0.000000, 1.000000]
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Story/boost_icon"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "4"
+        position: [339.000000, 65.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/BigStar.psd"
+        -   path: "NormalState"
+            children:
+            -   prototype: "ResourceSmall/ResourceSmall"
+                name: "ResourceSmall"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchor: 52.000000
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                children:
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "160"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Grade"
+                    visible: false
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Story/TopUp2017/little_dragon.psd"
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "DiscountLabel/Image"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel/Value"
+                    components:
+                        UITextComponent:
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   path: "NormalState/Button"
+            classes: "button button-color-orange"
+            children: []
+        -   path: "NormalState/Highlight"
+            components:
+                Background:
+                    color: [1.000000, 0.819608, 0.000000, 1.000000]
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/BigStar.psd"
+    -   prototype: "StoryTreePrototypes/StoryBigStep"
+        name: "5"
+        position: [445.000000, 47.000000]
+        children:
+        -   path: "ExpandedState"
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [27.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 27.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 14
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class_1"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 8
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "ExpandedState/Image"
+            size: [130.000000, 106.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/ussr-KV-220.psd"
+        -   path: "NormalState"
+            position: [0.000000, 0.000000]
+            children:
+            -   prototype: "ResourceSmall/ResourceSmall"
+                name: "ResourceSmall"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchor: 70.000000
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                children:
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "290"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Grade"
+                    visible: false
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Story/TopUp2017/little_dragon.psd"
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "DiscountLabel/Image"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel/Value"
+                    components:
+                        UITextComponent:
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+            -   class: "UIControl"
+                name: "level"
+                position: [27.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 27.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 14
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class_1"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 8
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "NormalState/Button"
+            classes: "button button-color-orange"
+            children: []
+        -   path: "NormalState/Highlight"
+            components:
+                Background:
+                    color: [1.000000, 0.819608, 0.000000, 1.000000]
+        -   path: "NormalState/Image"
+            size: [130.000000, 106.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/ussr-KV-220.psd"
+        -   path: "NormalState/Label"
+            classes: "header3 text-color=text-color-white"
+            components:
+                UITextComponent:
+                    text: "#ussr_vehicles:KV-220_test_short"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "6"
+        position: [595.000000, 65.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/BigStar.psd"
+        -   path: "NormalState"
+            children:
+            -   prototype: "ResourceSmall/ResourceSmall"
+                name: "ResourceSmall"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchor: 52.000000
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                children:
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "415"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Grade"
+                    visible: false
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Story/TopUp2017/little_dragon.psd"
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "DiscountLabel/Image"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel/Value"
+                    components:
+                        UITextComponent:
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   path: "NormalState/Button"
+            classes: "button button-color-orange"
+            children: []
+        -   path: "NormalState/Highlight"
+            components:
+                Background:
+                    color: [1.000000, 0.819608, 0.000000, 1.000000]
+        -   path: "NormalState/Image"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/BigStar.psd"
+    -   prototype: "StoryTreePrototypes/StoryStep"
+        name: "7"
+        position: [701.000000, 65.000000]
+        children:
+        -   path: "ExpandedState/Image"
+            size: [86.000000, 70.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+        -   path: "NormalState"
+            children:
+            -   prototype: "ResourceSmall/ResourceSmall"
+                name: "ResourceSmall"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchor: 52.000000
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                children:
+                -   path: "Value"
+                    position: [0.000000, 16.000000]
+                    components:
+                        UITextComponent:
+                            text: "745"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Grade"
+                    visible: false
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Story/TopUp2017/little_dragon.psd"
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "DiscountLabel/Image"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel/Value"
+                    components:
+                        UITextComponent:
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   path: "NormalState/Button"
+            classes: "button button-color-orange"
+            children: []
+        -   path: "NormalState/Highlight"
+            components:
+                Background:
+                    color: [1.000000, 0.819608, 0.000000, 1.000000]
+        -   path: "NormalState/Image"
+            size: [86.000000, 70.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/StorageItemIcons/OptionalDeviceCurrency.psd"
+    -   prototype: "StoryTreePrototypes/StoryBigStep"
+        name: "8"
+        position: [807.000000, 47.000000]
+        children:
+        -   path: "ExpandedState"
+            children:
+            -   class: "UIControl"
+                name: "level"
+                position: [27.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 27.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 16
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class_1"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 6
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "ExpandedState/Image"
+            size: [130.000000, 106.000000]
+            components:
+                Anchor:
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/china-Type62_dragon.psd"
+        -   path: "NormalState"
+            children:
+            -   prototype: "ResourceSmall/ResourceSmall"
+                name: "ResourceSmall"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchor: 70.000000
+                    Background:
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                children:
+                -   path: "Value"
+                    components:
+                        UITextComponent:
+                            text: "1260"
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Grade"
+                    visible: false
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "Back/Icon"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Story/TopUp2017/little_dragon.psd"
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                    children: []
+                -   path: "DiscountLabel/Image"
+                    components:
+                        Background:
+                            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                -   path: "DiscountLabel/Value"
+                    components:
+                        UITextComponent:
+                            colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+            -   class: "UIControl"
+                name: "level"
+                position: [27.000000, 3.000000]
+                size: [34.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 27.000000
+                        topAnchorEnabled: true
+                        topAnchor: 3.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankLevelsNew"
+                        frame: 16
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIControl"
+                name: "class"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 5
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+            -   class: "UIControl"
+                name: "class_1"
+                position: [-1.000000, 2.000000]
+                size: [36.000000, 32.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: -1.000000
+                        topAnchorEnabled: true
+                        topAnchor: 2.000000
+                    Background:
+                        sprite: "~res:/Gfx/UI/LobbyCommon/TankTypesSmall"
+                        frame: 6
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+        -   path: "NormalState/Button"
+            classes: "button button-color-orange"
+            children: []
+        -   path: "NormalState/Highlight"
+            components:
+                Background:
+                    color: [1.000000, 0.819608, 0.000000, 1.000000]
+        -   path: "NormalState/Image"
+            size: [130.000000, 106.000000]
+            components:
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/BigTankIcons/china-Type62_dragon.psd"
+        -   path: "NormalState/Label"
+            classes: "header3 text-color=text-color-white"
+            components:
+                UITextComponent:
+                    text: "#china_vehicles:Ch02_Type62_Dragon"
+    -   class: "UIControl"
+        name: "Arrow_1"
+        position: [107.000000, 65.000000]
+        size: [20.000000, 70.000000]
+        children:
+        -   prototype: "StoryTreePrototypes/Arrow"
+            name: "Arrow"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "Arrow_2"
+        position: [213.000000, 65.000000]
+        size: [20.000000, 70.000000]
+        children:
+        -   prototype: "StoryTreePrototypes/Arrow"
+            name: "Arrow"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "Arrow_3"
+        position: [319.000000, 65.000000]
+        size: [20.000000, 70.000000]
+        children:
+        -   prototype: "StoryTreePrototypes/Arrow"
+            name: "Arrow"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "Arrow_4"
+        position: [425.000000, 65.000000]
+        size: [20.000000, 70.000000]
+        children:
+        -   prototype: "StoryTreePrototypes/Arrow"
+            name: "Arrow"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "Arrow_5"
+        position: [575.000000, 65.000000]
+        size: [20.000000, 70.000000]
+        children:
+        -   prototype: "StoryTreePrototypes/Arrow"
+            name: "Arrow"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "Arrow_6"
+        position: [681.000000, 65.000000]
+        size: [20.000000, 70.000000]
+        children:
+        -   prototype: "StoryTreePrototypes/Arrow"
+            name: "Arrow"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "Arrow_7"
+        position: [787.000000, 65.000000]
+        size: [20.000000, 70.000000]
+        children:
+        -   prototype: "StoryTreePrototypes/Arrow"
+            name: "Arrow"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Anchor:
+                    vCenterAnchorEnabled: true

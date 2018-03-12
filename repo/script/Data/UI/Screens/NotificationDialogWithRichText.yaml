@@ -1,0 +1,38 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Dialogs.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+Controls:
+-   prototype: "Dialogs/ErrorDialog"
+    name: "NotificationDialogWithRichText"
+    children:
+    -   path: "Dialog/Middle"
+        children:
+        -   class: "UIControl"
+            name: "RichDialogText"
+            noInput: true
+            components:
+                FlowLayout:
+                    hDynamicInLinePadding: true
+                    hSpacing: 5.000000
+                    vDynamicPadding: true
+                    vSpacing: 5.000000
+                    useRtl: true
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 20.000000
+                    topAnchorEnabled: true
+                    topAnchor: 70.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 100.000000
+                RichContent: {}
+                RichContentAliases0:
+                    aliases: "price,<object control=\"PriceContainer\" name=\"price\" path=\"~res:/UI/Screens/Dialogs.yaml\" />;timer,<object path=\"~res:/UI/Screens/Dialogs.yaml\" prototype=\"ExpireTimer\" />;text_blue,<span class=\"text-color-blue text1\" />;text_white,<span class=\"text-color-white text1\" />;"
+    -   path: "Dialog/Top/TitleText"
+        components:
+            UITextComponent:
+                text: "Warning"

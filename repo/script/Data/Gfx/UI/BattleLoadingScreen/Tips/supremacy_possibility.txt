@@ -1,0 +1,5 @@
+1
+supremacy_possibility0.tex
+256 128
+1
+0 0 173 104 46 20 0 frame0

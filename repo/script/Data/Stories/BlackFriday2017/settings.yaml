@@ -1,0 +1,8 @@
+name: "black_friday_event/Title"
+priority: 1
+stages:
+ inform:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/BlackFriday2017/Button_Inform.yaml"
+  info: "event-info"
+currencyKeys:

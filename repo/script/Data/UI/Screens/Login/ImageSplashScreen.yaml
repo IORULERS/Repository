@@ -1,0 +1,36 @@
+Header:
+    version: "17"
+Controls:
+-   class: "UIControl"
+    customClass: "UIScalableKeyArt"
+    name: "SplashScreen"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Holder"
+        size: [1364.000000, 768.000000]
+        pivot: [0.500000, 0.500000]
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "SplashImage"
+            size: [1364.000000, 768.000000]
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_TO_RECT"
+                    color: [1.000000, 1.000000, 1.000000, 0.000000]

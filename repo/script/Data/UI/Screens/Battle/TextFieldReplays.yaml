@@ -1,0 +1,55 @@
+Header:
+    version: "11"
+Controls:
+-   class: "UIControl"
+    name: "TextField"
+    size: [1200.000000, 90.000000]
+    components:
+        LinearLayout:
+            padding: 20.000000
+            dynamicPadding: true
+            spacing: 10.000000
+        SizePolicy:
+            verticalPolicy: "FixedSize"
+            verticalValue: 90.000000
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 5.000000
+            rightAnchorEnabled: true
+            rightAnchor: 5.000000
+        Background:
+            drawType: "DRAW_STRETCH_BOTH"
+            sprite: "~res:/Gfx/UI/BattleScreenHUD/TextChatBg"
+            leftRightStretchCap: 5.000000
+            topBottomStretchCap: 5.000000
+    children:
+    -   class: "UITextField"
+        name: "TextMessage"
+        font: "WarHeliosCondC_21"
+        textcolor: [0.129400, 0.149000, 0.207800, 1.000000]
+        startEditPolicy: "WhenFocused"
+        stopEditPolicy: "WhenFocusLost"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 44.000000
+            Anchor:
+                vCenterAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.921600, 0.964700, 1.000000, 0.588200]
+            Focus: {}
+        children:
+        -   class: "UIControl"
+            name: "Clear"
+            size: [50.000000, 50.000000]
+            noInput: false
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/LobbyCommon/InputClear"
+                    frame: 0

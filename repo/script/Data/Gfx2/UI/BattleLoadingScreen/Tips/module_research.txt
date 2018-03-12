@@ -1,0 +1,5 @@
+1
+module_research0.tex
+512 256
+1
+0 0 365 203 73 50 0 frame0

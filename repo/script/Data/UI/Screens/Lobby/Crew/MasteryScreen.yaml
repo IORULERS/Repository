@@ -1,0 +1,553 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Crew/TrainingType.yaml"
+- "~res:/UI/Screens/Lobby/Crew/CrewScreenBlank.yaml"
+- "~res:/UI/Screens/Lobby/Common/CrewParamsTable.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader1.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+StyleSheets:
+-   selector: ".number-param-prototype.up ? ? #deltaValueUpDown, .number-param-prototype.down ? ? #deltaValueUpDown"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+        visible: true
+-   selector: ".number-param-prototype.up.worse ? ? #deltaValueUpDown"
+    properties:
+        bg-frame: 1
+        bg-spriteModification: ["FLIP_VERTICAL"]
+-   selector: ".number-param-prototype.down.worse ? ? #deltaValueUpDown"
+    properties:
+        bg-frame: 1
+-   selector: ".number-param-prototype.up.better ? ? #deltaValueUpDown"
+    properties:
+        bg-frame: 0
+        bg-spriteModification: []
+-   selector: ".number-param-prototype.down.better ? ? #deltaValueUpDown"
+    properties:
+        bg-frame: 0
+        bg-spriteModification: ["FLIP_VERTICAL"]
+-   selector: ".number-param-prototype.worse ? ? #deltaValue"
+    properties:
+        text-color: [1.000000, 0.000000, 0.000000, 1.000000]
+-   selector: ".number-param-prototype.better ? ? #deltaValue"
+    properties:
+        text-color: [0.494118, 0.827451, 0.129412, 1.000000]
+-   selector: ".number-param-prototype.down, .number-param-prototype.up"
+    properties:
+        visible: true
+Controls:
+-   class: "UIControl"
+    name: "ParamPrototype"
+    position: [0.000000, 0.000000]
+    size: [300.000000, 32.000000]
+    noInput: true
+    components:
+        Background:
+            drawType: "DRAW_ALIGNED"
+            colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    children:
+    -   class: "UIStaticText"
+        name: "Name"
+        position: [10.000000, 0.000000]
+        size: [299.000000, 32.000000]
+        noInput: true
+        classes: "text1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 10.000000
+            Background:
+                drawType: "DRAW_ALIGNED"
+                color: [0.752900, 0.752900, 0.752900, 1.000000]
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "Name"
+                shadowOffset: [1.000000, 1.000000]
+                shadowColor: [0.000000, 0.000000, 0.000000, 0.752900]
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "TOP"]
+    -   class: "UIStaticText"
+        name: "Value"
+        position: [88.000000, 0.000000]
+        size: [207.000000, 32.000000]
+        noInput: true
+        classes: "header3 text-color-white"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+            Background:
+                drawType: "DRAW_ALIGNED"
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "val"
+                shadowOffset: [1.000000, 1.000000]
+                shadowColor: [0.000000, 0.000000, 0.000000, 0.752900]
+                align: ["RIGHT", "TOP"]
+        children:
+        -   class: "UIStaticText"
+            name: "DeltaValue"
+            position: [7.000000, 0.000000]
+            size: [100.000000, 32.000000]
+            noInput: true
+            classes: "header3 text-color-white"
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "delta"
+                    shadowOffset: [1.000000, 1.000000]
+                    shadowColor: [0.000000, 0.000000, 0.000000, 0.752900]
+                    align: ["RIGHT", "TOP"]
+        -   class: "UIControl"
+            name: "DeltaValueUpDown"
+            position: [105.000000, 7.000000]
+            size: [22.000000, 12.000000]
+            components:
+                Background:
+                    drawType: "DRAW_ALIGNED"
+                    sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+-   prototype: "CrewScreenBlank/Screen"
+    customClass: "UICrewMasteryControl"
+    name: "Screen"
+    size: [960.000000, 640.000000]
+    children:
+    -   path: "Content"
+        position: [0.000000, 0.000000]
+        components:
+            Anchor:
+                bottomAnchor: 95.000000
+        children: []
+    -   path: "Content/LeftPart"
+        components:
+            Anchor:
+                rightAnchor: 426.000000
+        children: []
+    -   path: "Content/LeftPart/Title"
+        visible: false
+        children: []
+    -   path: "Content/LeftPart/Title/Icon"
+        components:
+            Background:
+                frame: 1
+    -   path: "Content/LeftPart/Title/Label"
+        components:
+            UITextComponent:
+                text: "#crew:mastery/mastery"
+    -   path: "Content/LeftPart/Content"
+        components:
+            Anchor:
+                topAnchor: 0.000000
+        children:
+        -   class: "UIControl"
+            name: "ContainerInside"
+            position: [0.000000, 22.500000]
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    dynamicPadding: true
+                    dynamicSpacing: true
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalMax: 1140.000000
+                    verticalPolicy: "PercentOfParent"
+                    verticalMax: 500.000000
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "ProgressPanel"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        padding: 10.000000
+                        spacing: -10.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "Label"
+                    position: [20.000000, 10.000000]
+                    size: [494.000000, 60.000000]
+                    classes: "header1 text-color-white"
+                    components:
+                        SizePolicy: {}
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 20.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 20.000000
+                        UITextComponent:
+                            text: "#crew:mastery/masteryProgress"
+                            align: ["HCENTER", "VCENTER"]
+                -   class: "UIControl"
+                    name: "Progress"
+                    size: [480.600006, 30.000000]
+                    components:
+                        LinearLayout:
+                            dynamicPadding: true
+                            dynamicSpacing: true
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            horizontalValue: 90.000000
+                            horizontalMax: 574.000000
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 48.000000
+                    children:
+                    -   class: "UIControl"
+                        customClass: "UIHangarTankBaseParamBar"
+                        name: "Bar"
+                        size: [410.600006, 6.000000]
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                topAnchorEnabled: false
+                                vCenterAnchorEnabled: true
+                            Background:
+                                drawType: "DRAW_FILL"
+                            ClipContent: {}
+                    -   class: "UIStaticText"
+                        name: "Value"
+                        size: [70.000000, 30.000000]
+                        classes: "header1 text-color-white"
+                        components:
+                            Anchor:
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                text: "100%"
+                                fitting: "FITTING_REDUCE"
+                                align: ["RIGHT", "VCENTER"]
+            -   class: "UIControl"
+                name: "Title"
+                position: [0.000000, 170.500000]
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalMax: 574.000000
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "Label"
+                    position: [0.000000, 0.000000]
+                    size: [534.000000, 50.000000]
+                    classes: "header1 text-color-white"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                        UITextComponent:
+                            text: "#crew:mastery/train"
+                            align: ["HCENTER", "VCENTER"]
+                -   class: "UIStaticText"
+                    name: "Comment"
+                    size: [534.000000, 23.000000]
+                    classes: "text2"
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                        UITextComponent:
+                            text: "#crew:mastery/tip"
+                            color: [0.627500, 0.725500, 0.800000, 1.000000]
+                            multiline: "MULTILINE_ENABLED"
+                            align: ["HCENTER", "VCENTER"]
+                            useRtlAlign: "USE_BY_SYSTEM"
+            -   class: "UIControl"
+                name: "Train"
+                position: [0.000000, 278.750000]
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        spacing: 10.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        horizontalMax: 574.000000
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "SchoolType"
+                    components:
+                        LinearLayout:
+                            dynamicPadding: true
+                            dynamicSpacing: true
+                        SizePolicy:
+                            verticalPolicy: "PercentOfFirstChild"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: false
+                            vCenterAnchorEnabled: true
+                            vCenterAnchor: 20.000000
+                            bottomAnchorEnabled: false
+                    children:
+                    -   prototype: "TrainingType/TrainingType"
+                        name: "School"
+                        components:
+                            Anchor:
+                                vCenterAnchorEnabled: true
+                        children:
+                        -   path: "PriceLabel/CostText"
+                            components:
+                                UITextComponent:
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   path: "IconBackground"
+                            components:
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/skills75.psd"
+                        -   path: "effects/sparks"
+                            effectPath: "~res:/3d/FX/UI/crew_silver_sparks.sc2"
+                        -   path: "effects/line"
+                            effectPath: "~res:/3d/FX/UI/crew_silver_line.sc2"
+                    -   prototype: "TrainingType/TrainingType"
+                        name: "Academy"
+                        position: [278.000000, 0.000000]
+                        tag: 100
+                        components:
+                            Anchor:
+                                vCenterAnchorEnabled: true
+                            Background:
+                                frame: 0
+                        children:
+                        -   path: "Bg"
+                            components:
+                                Background:
+                                    frame: 2
+                        -   path: "Button"
+                            classes: "button button-color-orange button-ok-sound"
+                            children: []
+                        -   path: "TypeText"
+                            components:
+                                UITextComponent:
+                                    text: "AVATAR_TANK_ACADEMY_TEXT"
+                        -   path: "PriceLabel/CostText"
+                            components:
+                                UITextComponent:
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   path: "PriceLabel/Image"
+                            components:
+                                Background:
+                                    frame: 0
+                        -   path: "LevelText"
+                            components:
+                                UITextComponent:
+                                    text: "100%"
+                        -   path: "IconBackground"
+                            components:
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/skills100.psd"
+                        -   path: "Icon"
+                            components:
+                                Background:
+                                    frame: 3
+                        -   path: "effects/sparks"
+                            effectPath: "~res:/3d/FX/UI/crew_gold_sparks.sc2"
+                        -   path: "effects/line"
+                            effectPath: "~res:/3d/FX/UI/crew_gold_line.sc2"
+    -   path: "Content/RightPart"
+        size: [425.000000, 545.000000]
+        children:
+        -   class: "UIControl"
+            name: "TankNameTitle"
+            position: [0.000000, 0.000000]
+            size: [425.000000, 40.000000]
+            noInput: true
+            classes: "section-header1"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                Background: {}
+            children:
+            -   class: "UIStaticText"
+                name: "Label"
+                classes: "header1 text-color-white"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background:
+                        align: ["HCENTER", "VCENTER"]
+                    UITextComponent:
+                        text: "Tank %(tankName)"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+    -   path: "Content/RightPart/Title"
+        size: [425.000000, 35.000000]
+        visible: false
+        components:
+            Anchor:
+                topAnchor: 0.000000
+        children: []
+    -   path: "Content/RightPart/Title/Label"
+        components:
+            UITextComponent:
+                text: "tank base params"
+    -   path: "Content/RightPart/Content"
+        position: [0.000000, 41.000000]
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            Anchor:
+                topAnchor: 41.000000
+        children:
+        -   class: "UIControl"
+            name: "VerticalScrollView"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+            children:
+            -   class: "UIScrollView"
+                name: "ScrollArea"
+                autoUpdate: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   prototype: "CrewParamsTable/CrewParamsTable"
+                        name: "CrewParamsTable"
+                        children:
+                        -   path: "MainParamsTitle/Label"
+                            classes: "header3 text-color-white"
+                        -   path: "ChassiRotationSpeed/Spacer"
+                            size: [250.000000, 7.000000]
+                        -   path: "ChassiRotationSpeed/TextContainer/name"
+                            components:
+                                UITextComponent:
+                                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+                        -   path: "TurretRotationSpeed/Spacer"
+                            size: [250.000000, 7.000000]
+                        -   path: "TurretRotationSpeed/TextContainer/name"
+                            components:
+                                UITextComponent:
+                                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+                        -   path: "FireRate/Spacer"
+                            size: [250.000000, 7.000000]
+                        -   path: "FireRate/TextContainer/name"
+                            position: [7.000000, 0.000000]
+                            components:
+                                UITextComponent:
+                                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+                        -   path: "GunAimingTime/Spacer"
+                            size: [250.000000, 7.000000]
+                        -   path: "GunAimingTime/TextContainer/name"
+                            components:
+                                UITextComponent:
+                                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+                        -   path: "GunShotDispersionAngle/Spacer"
+                            size: [250.000000, 7.000000]
+                        -   path: "GunShotDispersionAngle/TextContainer/name"
+                            components:
+                                UITextComponent:
+                                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+                        -   path: "CircularVisionRadius/Spacer"
+                            size: [250.000000, 7.000000]
+                        -   path: "CircularVisionRadius/TextContainer/name"
+                            components:
+                                UITextComponent:
+                                    color: [1.000000, 1.000000, 1.000000, 1.000000]
+                -   class: "UIControl"
+                    name: "Spacer"
+                    noInput: true
+                    classes: "pane-bg"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfParent"
+                            verticalFormula: "parentRest"
+                        Background: {}
+            -   prototype: "ScrollBar/VerticalScrollBar"
+                name: "VerticalScrollBar"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    ScrollBarDelegate:
+                        delegate: "../ScrollArea"
+    -   path: "Footer"
+        size: [960.000000, 94.000000]
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "TrainAvatarButton"
+            size: [246.000000, 64.000000]
+            classes: "button button-color-green"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 10.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#hangar_showcase:TrainAvatar"
+        -   prototype: "StyledButton/StyledButton"
+            name: "SkillsButton"
+            size: [246.000000, 64.000000]
+            classes: "button button-color-gray"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 10.000000
+                    vCenterAnchorEnabled: true
+            children:
+            -   path: "Caption"
+                components:
+                    UITextComponent:
+                        text: "#crew:mastery/skills"
+        -   class: "UIControl"
+            name: "SchoolPrice"
+            size: [428.000000, 94.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 266.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 266.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background: {}

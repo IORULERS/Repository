@@ -1,0 +1,1660 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/SectionHeader3.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/Lobby/BattleRating/BattleRatingStyles.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/FlatIconButtonWithArrow.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+- "~res:/UI/Screens/Lobby/Common/Footer.yaml"
+- "~res:/UI/Styles/NetEaseStyles.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Common/Tab.yaml"
+- "~res:/UI/Screens/Common/ProgressBar.yaml"
+- "~res:/UI/Styles/ColorStyles.yaml"
+- "~res:/UI/Screens/Lobby/Profile/BattleRatingLarge.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/RichText.yaml"
+StyleSheets:
+-   selector: ".calibration.calibration-active #CalibrationWarning"
+    properties:
+        text-color: [1.000000, 0.000000, 0.000000, 1.000000]
+-   selector: ".calibration.calibration-active #CalibrationBattles"
+    properties:
+        visible: true
+-   selector: ".calibration.calibration-inactive #CalibrationBattles"
+    properties:
+        visible: false
+-   selector: ".calibration.calibration-inactive #CalibrationWarning"
+    properties:
+        text-color: [0.960784, 0.650980, 0.137255, 1.000000]
+-   selector: ".calibration.calibration-critical #CalibrationWarning"
+    properties:
+        text-color: [1.000000, 0.000000, 0.000000, 1.000000]
+-   selector: ".calibration.calibration-critical #CalibrationBattles"
+    properties:
+        visible: false
+Controls:
+-   class: "UIControl"
+    name: "tabRating"
+    size: [960.000000, 560.000000]
+    noInput: true
+    components:
+        SizePolicy:
+            verticalPolicy: "PercentOfParent"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        UIAnchorSafeAreaComponent:
+            leftSafeInset: "INSET"
+            rightSafeInset: "INSET"
+    children:
+    -   prototype: "Tab/TabPane"
+        name: "TextTabPane"
+        visible: false
+        classes: "tab-pane-bg"
+        children:
+        -   prototype: "Tab/TextTab"
+            name: "CurrentSeason"
+            selected: true
+            tag: 0
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: ""
+        -   prototype: "Tab/TextTab"
+            name: "AllTime"
+            tag: 1
+            children:
+            -   path: "Text"
+                components:
+                    UITextComponent:
+                        text: ""
+    -   class: "UIControl"
+        name: "Body"
+        position: [0.000000, 0.000000]
+        noInput: true
+        classes: "limited-width"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIScrollView"
+            name: "ScrollArea"
+            autoUpdate: true
+            centerContent: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+            children:
+            -   class: "UIScrollViewContainer"
+                name: "scrollContainerControl"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        spacing: 10.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "TopPart"
+                    size: [960.000000, 236.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                    children:
+                    -   prototype: "SectionHeader3/SectionHeader3"
+                        name: "RatingChangeHeader"
+                        size: [960.000000, 36.000000]
+                        children:
+                        -   class: "UIStaticText"
+                            name: "Header3"
+                            classes: "header3 text-color-white"
+                            components:
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                                UITextComponent:
+                                    text: "PROFILE_RATING_CHANGE"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    -   class: "UIControl"
+                        name: "ProgressContainer"
+                        size: [960.000000, 180.000000]
+                        noInput: true
+                        components:
+                            LinearLayout: {}
+                            SizePolicy:
+                                verticalPolicy: "FixedSize"
+                                verticalValue: 180.000000
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                        children:
+                        -   prototype: "BattleRatingLarge/RatingLarge"
+                            name: "StartRating"
+                            size: [170.000000, 180.000000]
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                    padding: 10.000000
+                                SizePolicy:
+                                    horizontalPolicy: "Ignore"
+                                    verticalPolicy: "PercentOfParent"
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 15.000000
+                            children:
+                            -   path: "PlayerProfileFx"
+                                components:
+                                    IgnoreLayout: {}
+                            -   path: "LeagueBanner"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        horizontalValue: 85.000000
+                                        verticalPolicy: "PercentOfContent"
+                                        verticalValue: 85.000000
+                                    Anchor:
+                                        topAnchorEnabled: false
+                                    Background:
+                                        drawType: "DRAW_SCALE_PROPORTIONAL"
+                            -   path: "Value"
+                                classes: "header0 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        bottomAnchorEnabled: false
+                                    UITextComponent:
+                                        text: "2 583"
+                            -   class: "UIStaticText"
+                                name: "txt"
+                                classes: "text2 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "PROFILE_RATING_CALIBRATION"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIControl"
+                            name: "RatingProgress"
+                            size: [620.000000, 180.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    verticalPolicy: "PercentOfParent"
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 15.000000
+                            children:
+                            -   class: "UIControl"
+                                name: "Levels"
+                                size: [620.000000, 32.000000]
+                                noInput: true
+                                components:
+                                    LinearLayout: {}
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "FixedSize"
+                                        verticalValue: 32.000000
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                children:
+                                -   class: "UIControl"
+                                    name: "Vll"
+                                    size: [155.000000, 32.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIStaticText"
+                                        name: "lvl1"
+                                        size: [21.000000, 26.000000]
+                                        classes: "header3 text-color-white"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                            UITextComponent:
+                                                text: "Vll"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                -   class: "UIControl"
+                                    name: "Vlll"
+                                    size: [155.000000, 32.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIStaticText"
+                                        name: "lvl2"
+                                        size: [25.000000, 26.000000]
+                                        classes: "header3 text-color-white"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                            UITextComponent:
+                                                text: "Vlll"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                -   class: "UIControl"
+                                    name: "lX"
+                                    size: [155.000000, 32.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIStaticText"
+                                        name: "lvl3"
+                                        size: [17.000000, 26.000000]
+                                        classes: "header3 text-color-white"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                            UITextComponent:
+                                                text: "lX"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                -   class: "UIControl"
+                                    name: "X"
+                                    size: [155.000000, 32.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIStaticText"
+                                        name: "lvl4"
+                                        size: [12.000000, 26.000000]
+                                        classes: "header3 text-color-white"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                            UITextComponent:
+                                                text: "X"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                            -   class: "UIControl"
+                                name: "BarsPositive"
+                                size: [620.000000, 74.000000]
+                                noInput: true
+                                components:
+                                    LinearLayout: {}
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "FixedSize"
+                                        verticalValue: 74.000000
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                children:
+                                -   class: "UIControl"
+                                    name: "7"
+                                    size: [155.000000, 74.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.000000, 23.680000]
+                                        noInput: true
+                                        classes: "color-green"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "FixedSize"
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 32.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                                bottomAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_STRETCH_BOTH"
+                                                sprite: "~res:/Gfx/UI/ProfileScreen/gradient.psd"
+                                -   class: "UIControl"
+                                    name: "8"
+                                    size: [155.000000, 74.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.000000, 31.080000]
+                                        noInput: true
+                                        classes: "color-green"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "FixedSize"
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 42.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                                bottomAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_STRETCH_BOTH"
+                                                sprite: "~res:/Gfx/UI/ProfileScreen/gradient.psd"
+                                -   class: "UIControl"
+                                    name: "9"
+                                    size: [155.000000, 74.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.000000, 54.759998]
+                                        noInput: true
+                                        classes: "color-green"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "FixedSize"
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 74.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                                bottomAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_STRETCH_BOTH"
+                                                sprite: "~res:/Gfx/UI/ProfileScreen/gradient.psd"
+                                -   class: "UIControl"
+                                    name: "10"
+                                    size: [155.000000, 74.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.000000, 23.680000]
+                                        noInput: true
+                                        classes: "color-green"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "FixedSize"
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 32.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                                bottomAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_STRETCH_BOTH"
+                                                sprite: "~res:/Gfx/UI/ProfileScreen/gradient.psd"
+                            -   class: "UIControl"
+                                name: "Axis"
+                                size: [620.000000, 32.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfMaxChild"
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                children:
+                                -   class: "UIControl"
+                                    name: "AxisBG"
+                                    position: [0.000000, 0.000000]
+                                    size: [620.000000, 32.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfContent"
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                        Background:
+                                            drawType: "DRAW_TILED"
+                                            sprite: "~res:/Gfx/UI/ProfileScreen/back_arrow.psd"
+                                            color: [1.000000, 1.000000, 1.000000, 0.607843]
+                                            leftRightStretchCap: 10.000000
+                                            topBottomStretchCap: 10.000000
+                                -   class: "UIControl"
+                                    name: "Segments"
+                                    size: [620.000000, 32.000000]
+                                    noInput: true
+                                    components:
+                                        LinearLayout: {}
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "FixedSize"
+                                            verticalValue: 32.000000
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "7"
+                                        size: [155.000000, 32.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 25.000000
+                                                verticalPolicy: "PercentOfParent"
+                                        children:
+                                        -   class: "UIControl"
+                                            name: "BG"
+                                            position: [0.000000, 0.000000]
+                                            size: [155.000000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfParent"
+                                                    horizontalValue: 100.000000
+                                                    verticalPolicy: "PercentOfParent"
+                                                Background:
+                                                    sprite: "~res:/Gfx/UI/ProfileScreen/front_arrow.psd"
+                                        -   class: "UIControl"
+                                            name: "Rating"
+                                            size: [58.000000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                LinearLayout: {}
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfChildrenSum"
+                                                    verticalPolicy: "PercentOfMaxChild"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                    hCenterAnchor: -5.000000
+                                            children:
+                                            -   class: "UIControl"
+                                                name: "UpDownMark"
+                                                size: [20.000000, 32.000000]
+                                                noInput: true
+                                                components:
+                                                    LinearLayout:
+                                                        padding: 5.000000
+                                                    SizePolicy:
+                                                        horizontalPolicy: "PercentOfContent"
+                                                    Background:
+                                                        sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+                                                        frame: 1
+                                            -   class: "UIStaticText"
+                                                name: "Rating"
+                                                size: [38.000000, 31.000000]
+                                                classes: "header1 text-color-black"
+                                                components:
+                                                    SizePolicy:
+                                                        horizontalPolicy: "PercentOfContent"
+                                                        verticalPolicy: "PercentOfContent"
+                                                    UITextComponent:
+                                                        text: "320"
+                                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                    -   class: "UIControl"
+                                        name: "8"
+                                        size: [155.000000, 32.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 25.000000
+                                                verticalPolicy: "PercentOfParent"
+                                        children:
+                                        -   class: "UIControl"
+                                            name: "BG"
+                                            position: [0.000000, 0.000000]
+                                            size: [155.000000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfParent"
+                                                    horizontalValue: 100.000000
+                                                    verticalPolicy: "PercentOfParent"
+                                                Background:
+                                                    sprite: "~res:/Gfx/UI/ProfileScreen/front_arrow.psd"
+                                        -   class: "UIControl"
+                                            name: "Rating"
+                                            size: [58.000000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                LinearLayout: {}
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfChildrenSum"
+                                                    verticalPolicy: "PercentOfMaxChild"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                    hCenterAnchor: -5.000000
+                                            children:
+                                            -   class: "UIControl"
+                                                name: "UpDownMark"
+                                                size: [20.000000, 32.000000]
+                                                noInput: true
+                                                components:
+                                                    LinearLayout:
+                                                        padding: 5.000000
+                                                    SizePolicy:
+                                                        horizontalPolicy: "PercentOfContent"
+                                                    Background:
+                                                        sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+                                                        frame: 0
+                                            -   class: "UIStaticText"
+                                                name: "Rating"
+                                                size: [38.000000, 31.000000]
+                                                classes: "header1 text-color-black"
+                                                components:
+                                                    SizePolicy:
+                                                        horizontalPolicy: "PercentOfContent"
+                                                        verticalPolicy: "PercentOfContent"
+                                                    UITextComponent:
+                                                        text: "342"
+                                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                    -   class: "UIControl"
+                                        name: "9"
+                                        size: [155.000000, 32.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 25.000000
+                                                verticalPolicy: "PercentOfParent"
+                                        children:
+                                        -   class: "UIControl"
+                                            name: "BG"
+                                            position: [0.000000, 0.000000]
+                                            size: [155.000000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfParent"
+                                                    horizontalValue: 100.000000
+                                                    verticalPolicy: "PercentOfParent"
+                                                Background:
+                                                    sprite: "~res:/Gfx/UI/ProfileScreen/front_arrow.psd"
+                                        -   class: "UIControl"
+                                            name: "Rating"
+                                            size: [58.000000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                LinearLayout: {}
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfChildrenSum"
+                                                    verticalPolicy: "PercentOfMaxChild"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                    hCenterAnchor: -5.000000
+                                            children:
+                                            -   class: "UIControl"
+                                                name: "UpDownMark"
+                                                size: [20.000000, 32.000000]
+                                                noInput: true
+                                                components:
+                                                    LinearLayout:
+                                                        padding: 5.000000
+                                                    SizePolicy:
+                                                        horizontalPolicy: "PercentOfContent"
+                                                    Background:
+                                                        sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+                                                        frame: 0
+                                            -   class: "UIStaticText"
+                                                name: "Rating"
+                                                size: [38.000000, 31.000000]
+                                                classes: "header1 text-color-black"
+                                                components:
+                                                    SizePolicy:
+                                                        horizontalPolicy: "PercentOfContent"
+                                                        verticalPolicy: "PercentOfContent"
+                                                    UITextComponent:
+                                                        text: "528"
+                                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                    -   class: "UIControl"
+                                        name: "10"
+                                        size: [155.000000, 32.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 25.000000
+                                                verticalPolicy: "PercentOfParent"
+                                        children:
+                                        -   class: "UIControl"
+                                            name: "BG"
+                                            position: [0.000000, 0.000000]
+                                            size: [155.000000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfParent"
+                                                    horizontalValue: 100.000000
+                                                    verticalPolicy: "PercentOfParent"
+                                                Background:
+                                                    sprite: "~res:/Gfx/UI/ProfileScreen/front_arrow.psd"
+                                        -   class: "UIControl"
+                                            name: "Rating"
+                                            size: [58.000000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                LinearLayout: {}
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfChildrenSum"
+                                                    verticalPolicy: "PercentOfMaxChild"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                    hCenterAnchor: -5.000000
+                                            children:
+                                            -   class: "UIControl"
+                                                name: "UpDownMark"
+                                                size: [20.000000, 32.000000]
+                                                noInput: true
+                                                components:
+                                                    LinearLayout:
+                                                        padding: 5.000000
+                                                    SizePolicy:
+                                                        horizontalPolicy: "PercentOfContent"
+                                                    Background:
+                                                        sprite: "~res:/Gfx/UI/Hangar/CharacterArrow"
+                                                        frame: 0
+                                            -   class: "UIStaticText"
+                                                name: "Rating"
+                                                size: [38.000000, 31.000000]
+                                                classes: "header1 text-color-black"
+                                                components:
+                                                    SizePolicy:
+                                                        horizontalPolicy: "PercentOfContent"
+                                                        verticalPolicy: "PercentOfContent"
+                                                    UITextComponent:
+                                                        text: "256"
+                                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                            -   class: "UIControl"
+                                name: "BarsNegative"
+                                size: [620.000000, 42.000000]
+                                noInput: true
+                                components:
+                                    LinearLayout: {}
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "FixedSize"
+                                        verticalValue: 42.000000
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                children:
+                                -   class: "UIControl"
+                                    name: "7"
+                                    size: [155.000000, 42.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.000000, 13.440000]
+                                        noInput: true
+                                        classes: "color-red"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "FixedSize"
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 32.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                                topAnchorEnabled: true
+                                                bottomAnchorEnabled: false
+                                            Background:
+                                                drawType: "DRAW_STRETCH_BOTH"
+                                                sprite: "~res:/Gfx/UI/ProfileScreen/gradient.psd"
+                                                spriteModification: ["FLIP_VERTICAL"]
+                                -   class: "UIControl"
+                                    name: "8"
+                                    size: [155.000000, 42.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.000000, 13.440000]
+                                        noInput: true
+                                        classes: "color-red"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "FixedSize"
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 32.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                                topAnchorEnabled: true
+                                                bottomAnchorEnabled: false
+                                            Background:
+                                                drawType: "DRAW_STRETCH_BOTH"
+                                                sprite: "~res:/Gfx/UI/ProfileScreen/gradient.psd"
+                                                spriteModification: ["FLIP_VERTICAL"]
+                                -   class: "UIControl"
+                                    name: "9"
+                                    size: [155.000000, 42.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.000000, 13.440000]
+                                        noInput: true
+                                        classes: "color-red"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "FixedSize"
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 32.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                                topAnchorEnabled: true
+                                                bottomAnchorEnabled: false
+                                            Background:
+                                                drawType: "DRAW_STRETCH_BOTH"
+                                                sprite: "~res:/Gfx/UI/ProfileScreen/gradient.psd"
+                                                spriteModification: ["FLIP_VERTICAL"]
+                                -   class: "UIControl"
+                                    name: "10"
+                                    size: [155.000000, 42.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.000000, 13.440000]
+                                        noInput: true
+                                        classes: "color-red"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "FixedSize"
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 32.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                hCenterAnchor: -5.000000
+                                                topAnchorEnabled: true
+                                                bottomAnchorEnabled: false
+                                            Background:
+                                                drawType: "DRAW_STRETCH_BOTH"
+                                                sprite: "~res:/Gfx/UI/ProfileScreen/gradient.psd"
+                                                spriteModification: ["FLIP_VERTICAL"]
+                        -   prototype: "BattleRatingLarge/RatingLarge"
+                            name: "CurrentRating"
+                            size: [170.000000, 180.000000]
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                    padding: 10.000000
+                                SizePolicy:
+                                    horizontalPolicy: "Ignore"
+                                    verticalPolicy: "PercentOfParent"
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 15.000000
+                            children:
+                            -   path: "PlayerProfileFx"
+                                components:
+                                    IgnoreLayout: {}
+                            -   path: "LeagueBanner"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        horizontalValue: 85.000000
+                                        verticalPolicy: "PercentOfContent"
+                                        verticalValue: 85.000000
+                                    Anchor:
+                                        topAnchorEnabled: false
+                                    Background:
+                                        drawType: "DRAW_SCALE_PROPORTIONAL"
+                            -   path: "Value"
+                                classes: "header0 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        bottomAnchorEnabled: false
+                                    UITextComponent:
+                                        text: "2 583"
+                            -   class: "UIStaticText"
+                                name: "txt"
+                                classes: "text2 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "PROFILE_RATING_CURRENT"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                    -   class: "UIControl"
+                        name: "TxtContainer"
+                        size: [960.000000, 20.000000]
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                orientation: "TopDown"
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfChildrenSum"
+                        children:
+                        -   class: "UIControl"
+                            name: "Spacer"
+                            size: [20.000000, 20.000000]
+                            noInput: true
+                            components:
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                        -   class: "UIStaticText"
+                            name: "Warning"
+                            size: [0.000000, 0.000000]
+                            visible: false
+                            classes: "text2 text-color-orange"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                UITextComponent:
+                                    text: ""
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIControl"
+                            name: "TimerContainer"
+                            size: [0.000000, 32.000000]
+                            visible: false
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    useRtl: true
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Txt"
+                                size: [0.000000, 32.000000]
+                                classes: "text2 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                    UITextComponent:
+                                        text: ""
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                            -   class: "UIStaticText"
+                                name: "TimeLeft"
+                                size: [0.000000, 32.000000]
+                                classes: "text2 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                    UITextComponent:
+                                        text: ""
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "CalibrationPart"
+                    size: [960.000000, 64.000000]
+                    classes: "calibration state=not-player"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   class: "UIControl"
+                        name: "CalibrationWarning"
+                        size: [960.000000, 32.000000]
+                        noInput: true
+                        classes: "text2"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                            UITextComponent:
+                                fitting: "FITTING_REDUCE"
+                    -   prototype: "RichText/RichText"
+                        name: "CalibrationBattles"
+                        size: [960.000000, 32.000000]
+                        components:
+                            FlowLayout:
+                                hPadding: 0.000000
+                                hDynamicPadding: true
+                                vDynamicPadding: true
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                -   class: "UIControl"
+                    name: "BottomPart"
+                    position: [0.000000, 320.000000]
+                    size: [960.000000, 181.000000]
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                    children:
+                    -   prototype: "SectionHeader3/SectionHeader3"
+                        name: "VehicleBattlesHeader"
+                        size: [960.000000, 36.000000]
+                        children:
+                        -   class: "UIStaticText"
+                            name: "Header3"
+                            classes: "header3 text-color-white"
+                            components:
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                                UITextComponent:
+                                    text: "PROFILE_RATING_BATTLES"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    -   class: "UIControl"
+                        name: "StatsContainer"
+                        size: [960.000000, 145.000000]
+                        noInput: true
+                        components:
+                            LinearLayout: {}
+                            SizePolicy:
+                                verticalPolicy: "FixedSize"
+                                verticalValue: 145.000000
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                        children:
+                        -   class: "UIControl"
+                            name: "FavTank"
+                            size: [170.000000, 145.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                    padding: 10.000000
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfParent"
+                                Anchor:
+                                    topAnchorEnabled: true
+                            children:
+                            -   class: "UIControl"
+                                name: "Img"
+                                position: [13.000000, 10.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        horizontalValue: 90.000000
+                                        verticalPolicy: "PercentOfContent"
+                                        verticalValue: 90.000000
+                                    Anchor:
+                                        enabled: true
+                                        hCenterAnchorEnabled: true
+                                        vCenterAnchorEnabled: false
+                                    Background:
+                                        drawType: "DRAW_SCALE_PROPORTIONAL"
+                                        sprite: "~res:/Gfx/UI/LobbyCommon/covered_tank.psd"
+                            -   class: "UIStaticText"
+                                name: "Battles"
+                                classes: "header0 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "15 788"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                            -   class: "UIStaticText"
+                                name: "txt"
+                                classes: "text2 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "PROFILE_RATING_FAVORITE_VEHICLE"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIControl"
+                            name: "Graph"
+                            size: [620.000000, 145.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    verticalPolicy: "PercentOfParent"
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 8.000000
+                            children:
+                            -   class: "UIControl"
+                                name: "Spacer"
+                                size: [620.000000, 20.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "FixedSize"
+                                        verticalValue: 20.000000
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                            -   class: "UIControl"
+                                name: "Bars"
+                                size: [620.000000, 67.000000]
+                                noInput: true
+                                components:
+                                    LinearLayout: {}
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "FixedSize"
+                                        verticalValue: 67.000000
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                children:
+                                -   class: "UIControl"
+                                    name: "7"
+                                    size: [155.000000, 67.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.750000, 21.440001]
+                                        noInput: true
+                                        classes: "color-orange"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 65.000000
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 32.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                bottomAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_FILL"
+                                -   class: "UIControl"
+                                    name: "8"
+                                    size: [155.000000, 67.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.750000, 28.139999]
+                                        noInput: true
+                                        classes: "color-orange"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 65.000000
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 42.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                bottomAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_FILL"
+                                -   class: "UIControl"
+                                    name: "9"
+                                    size: [155.000000, 67.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.750000, 44.889999]
+                                        noInput: true
+                                        classes: "color-orange"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 65.000000
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 67.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                bottomAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_FILL"
+                                -   class: "UIControl"
+                                    name: "10"
+                                    size: [155.000000, 67.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfParent"
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Graph"
+                                        size: [100.750000, 21.440001]
+                                        noInput: true
+                                        classes: "color-orange"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 65.000000
+                                                verticalPolicy: "PercentOfParent"
+                                                verticalValue: 32.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                bottomAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_FILL"
+                            -   class: "UIControl"
+                                name: "Axis"
+                                size: [620.000000, 32.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfMaxChild"
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                children:
+                                -   class: "UIControl"
+                                    name: "AxisBG"
+                                    position: [0.000000, 16.000000]
+                                    size: [620.000000, 0.000000]
+                                    noInput: true
+                                    components:
+                                        LinearLayout: {}
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "PercentOfContent"
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                            vCenterAnchorEnabled: true
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "Left"
+                                        size: [103.333336, 2.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 25.000000
+                                                verticalPolicy: "FixedSize"
+                                                verticalValue: 2.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                vCenterAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_STRETCH_HORIZONTAL"
+                                                sprite: "~res:/Gfx/UI/ProfileScreen/white_line.psd"
+                                    -   class: "UIControl"
+                                        name: "Center"
+                                        size: [413.333344, 2.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 100.000000
+                                                verticalPolicy: "FixedSize"
+                                                verticalValue: 2.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                vCenterAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_FILL"
+                                    -   class: "UIControl"
+                                        name: "Right"
+                                        size: [103.333336, 2.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 25.000000
+                                                verticalPolicy: "FixedSize"
+                                                verticalValue: 2.000000
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                                vCenterAnchorEnabled: true
+                                            Background:
+                                                drawType: "DRAW_STRETCH_HORIZONTAL"
+                                                sprite: "~res:/Gfx/UI/ProfileScreen/white_line.psd"
+                                                spriteModification: ["FLIP_HORIZONTAL"]
+                                -   class: "UIControl"
+                                    name: "Segments"
+                                    size: [620.000000, 32.000000]
+                                    noInput: true
+                                    components:
+                                        LinearLayout: {}
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            verticalPolicy: "FixedSize"
+                                            verticalValue: 32.000000
+                                        Anchor:
+                                            hCenterAnchorEnabled: true
+                                    children:
+                                    -   class: "UIControl"
+                                        name: "7"
+                                        size: [155.000000, 32.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 25.000000
+                                                verticalPolicy: "PercentOfParent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                        children:
+                                        -   class: "UIControl"
+                                            name: "BG"
+                                            position: [27.125000, 0.000000]
+                                            size: [100.750000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfParent"
+                                                    horizontalValue: 65.000000
+                                                    verticalPolicy: "PercentOfParent"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                Background:
+                                                    drawType: "DRAW_FILL"
+                                        -   class: "UIStaticText"
+                                            name: "Battles"
+                                            size: [38.000000, 31.000000]
+                                            classes: "header1 text-color-black"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                UITextComponent:
+                                                    text: "320"
+                                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    -   class: "UIControl"
+                                        name: "8"
+                                        size: [155.000000, 32.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 25.000000
+                                                verticalPolicy: "PercentOfParent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                        children:
+                                        -   class: "UIControl"
+                                            name: "BG"
+                                            position: [27.125000, 0.000000]
+                                            size: [100.750000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfParent"
+                                                    horizontalValue: 65.000000
+                                                    verticalPolicy: "PercentOfParent"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                Background:
+                                                    drawType: "DRAW_FILL"
+                                        -   class: "UIStaticText"
+                                            name: "Battles"
+                                            size: [50.000000, 31.000000]
+                                            classes: "header1 text-color-black"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                UITextComponent:
+                                                    text: "1536"
+                                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    -   class: "UIControl"
+                                        name: "9"
+                                        size: [155.000000, 32.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 25.000000
+                                                verticalPolicy: "PercentOfParent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                        children:
+                                        -   class: "UIControl"
+                                            name: "BG"
+                                            position: [27.125000, 0.000000]
+                                            size: [100.750000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfParent"
+                                                    horizontalValue: 65.000000
+                                                    verticalPolicy: "PercentOfParent"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                Background:
+                                                    drawType: "DRAW_FILL"
+                                        -   class: "UIStaticText"
+                                            name: "Battles"
+                                            size: [50.000000, 31.000000]
+                                            classes: "header1 text-color-black"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                UITextComponent:
+                                                    text: "2750"
+                                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    -   class: "UIControl"
+                                        name: "10"
+                                        size: [155.000000, 32.000000]
+                                        noInput: true
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfParent"
+                                                horizontalValue: 25.000000
+                                                verticalPolicy: "PercentOfParent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                        children:
+                                        -   class: "UIControl"
+                                            name: "BG"
+                                            position: [27.125000, 0.000000]
+                                            size: [100.750000, 32.000000]
+                                            noInput: true
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfParent"
+                                                    horizontalValue: 65.000000
+                                                    verticalPolicy: "PercentOfParent"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                Background:
+                                                    drawType: "DRAW_FILL"
+                                        -   class: "UIStaticText"
+                                            name: "Battles"
+                                            size: [37.000000, 31.000000]
+                                            classes: "header1 text-color-black"
+                                            components:
+                                                SizePolicy:
+                                                    horizontalPolicy: "PercentOfContent"
+                                                    verticalPolicy: "PercentOfContent"
+                                                Anchor:
+                                                    hCenterAnchorEnabled: true
+                                                UITextComponent:
+                                                    text: "874"
+                                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                            -   class: "UIControl"
+                                name: "Levels"
+                                size: [620.000000, 26.000000]
+                                noInput: true
+                                components:
+                                    LinearLayout: {}
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "FixedSize"
+                                        verticalValue: 26.000000
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                children:
+                                -   class: "UIControl"
+                                    name: "Vll"
+                                    size: [155.000000, 26.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfMaxChild"
+                                    children:
+                                    -   class: "UIStaticText"
+                                        name: "lvl1"
+                                        size: [21.000000, 26.000000]
+                                        classes: "header3 text-color-white"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                            UITextComponent:
+                                                text: "Vll"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                -   class: "UIControl"
+                                    name: "Vlll"
+                                    size: [155.000000, 26.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfMaxChild"
+                                    children:
+                                    -   class: "UIStaticText"
+                                        name: "lvl2"
+                                        size: [25.000000, 26.000000]
+                                        classes: "header3 text-color-white"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                            UITextComponent:
+                                                text: "Vlll"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                -   class: "UIControl"
+                                    name: "lX"
+                                    size: [155.000000, 26.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfMaxChild"
+                                    children:
+                                    -   class: "UIStaticText"
+                                        name: "lvl3"
+                                        size: [17.000000, 26.000000]
+                                        classes: "header3 text-color-white"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                            UITextComponent:
+                                                text: "lX"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                                -   class: "UIControl"
+                                    name: "X"
+                                    size: [155.000000, 26.000000]
+                                    noInput: true
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfParent"
+                                            horizontalValue: 25.000000
+                                            verticalPolicy: "PercentOfMaxChild"
+                                    children:
+                                    -   class: "UIStaticText"
+                                        name: "lvl4"
+                                        size: [12.000000, 26.000000]
+                                        classes: "header3 text-color-white"
+                                        components:
+                                            SizePolicy:
+                                                horizontalPolicy: "PercentOfContent"
+                                                verticalPolicy: "PercentOfContent"
+                                            Anchor:
+                                                hCenterAnchorEnabled: true
+                                            UITextComponent:
+                                                text: "X"
+                                                colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIControl"
+                            name: "Battles"
+                            size: [170.000000, 145.000000]
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                    padding: 10.000000
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfParent"
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    topAnchor: 8.000000
+                            children:
+                            -   class: "UIControl"
+                                name: "Img"
+                                position: [45.000000, 10.000000]
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        enabled: true
+                                        hCenterAnchorEnabled: true
+                                    Background:
+                                        drawType: "DRAW_SCALE_PROPORTIONAL"
+                                        sprite: "~res:/Gfx/UI/CommonUIElements/Battle_type.psd"
+                            -   class: "UIStaticText"
+                                name: "Battles"
+                                classes: "header0 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "15 788"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                            -   class: "UIStaticText"
+                                name: "txt"
+                                position: [43.500000, 120.000000]
+                                classes: "text2 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        hCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "PROFILE_RATING_BATTLES_COUNT"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "BG"
+                    position: [168.000000, 511.000000]
+                    size: [624.000000, 0.000000]
+                    noInput: true
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            horizontalValue: 65.000000
+                            verticalPolicy: "PercentOfParent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_FILL"
+        -   prototype: "ScrollBar/VerticalScrollBar"
+            name: "VerticalScrollBar"
+            classes: "notch-tightly-right-inset"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+                ScrollBarDelegate:
+                    delegate: "../ScrollArea"
+CustomData:
+    Guides:
+        tabRating:
+            Vertical:
+            - -638.000000

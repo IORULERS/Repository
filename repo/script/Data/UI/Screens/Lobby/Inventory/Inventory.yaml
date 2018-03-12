@@ -1,0 +1,186 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/LobbyHeader.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/ShopFooter.yaml"
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/Tab.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "InventoryTab"
+    position: [0.000000, 0.000000]
+    size: [340.000000, 70.000000]
+    noInput: true
+    classes: "tab"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Anchor:
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+        Background:
+            drawType: "DRAW_STRETCH_HORIZONTAL"
+    children:
+    -   class: "UIControl"
+        name: "invisible"
+        size: [340.000000, 70.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.000000, 0.000000, 0.000000, 1.000000]
+    -   class: "UIStaticText"
+        name: "selected"
+        size: [340.000000, 70.000000]
+        noInput: true
+        classes: "header1 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "TANK_EQUIPMENT"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIStaticText"
+        name: "unselected"
+        size: [340.000000, 70.000000]
+        noInput: true
+        classes: "header1 text-color-blue"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.000000, 0.000000, 0.000000, 1.000000]
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "TANK_EQUIPMENT"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+Controls:
+-   class: "UIControl"
+    name: "Screen"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "LobbyHeader/Header"
+        name: "Header"
+        size: [1024.000000, 80.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+    -   class: "UIControl"
+        name: "Content"
+        position: [0.000000, 80.000000]
+        size: [1024.000000, 688.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 80.000000
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "tabs"
+            size: [1024.000000, 74.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                ClipContent: {}
+            children:
+            -   prototype: "Tab/TabPane"
+                name: "tabsContainer"
+                classes: "tab-pane-bg"
+                components:
+                    LinearLayout:
+                        safeAreaPaddingInset: true
+                children:
+                -   prototype: "Tab/TextTab"
+                    name: "Consumables"
+                    selected: true
+                    classes: "tab tab-inventory-color"
+                    children:
+                    -   path: "Text"
+                        components:
+                            UITextComponent:
+                                text: "#lobby:MainScreen/Consumables/Title"
+                -   prototype: "Tab/TextTab"
+                    name: "Provisions"
+                    tag: 1
+                    classes: "tab tab-inventory-color"
+                    children:
+                    -   path: "Text"
+                        components:
+                            UITextComponent:
+                                text: "#lobby:MainScreen/Provisions/Title"
+                -   prototype: "Tab/TextTab"
+                    name: "Ammunition"
+                    tag: 2
+                    classes: "tab tab-inventory-color"
+                    children:
+                    -   path: "Text"
+                        components:
+                            UITextComponent:
+                                text: "#lobby:MainScreen/Ammunition/Title"
+        -   class: "UIControl"
+            name: "Content"
+            position: [0.000000, 74.000000]
+            size: [1024.000000, 520.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 74.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 94.000000
+                Background:
+                    color: [0.035300, 0.086300, 0.121600, 0.909800]
+                ClipContent: {}
+        -   prototype: "ShopFooter/ShopFooter"
+            name: "Footer"

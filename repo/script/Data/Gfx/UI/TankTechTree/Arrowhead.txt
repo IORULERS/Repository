@@ -1,0 +1,6 @@
+1
+texture0.tex
+6 6
+2
+92 0 5 6 1 0 0 frame0
+99 0 5 6 1 0 0 frame1

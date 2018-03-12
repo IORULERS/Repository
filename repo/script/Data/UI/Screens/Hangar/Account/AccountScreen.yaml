@@ -1,0 +1,929 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Hangar/StatsInfo.yaml"
+- "~res:/UI/Screens/Hangar/Account/SocialNetworks.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/CommonStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader1.yaml"
+- "~res:/UI/Styles/NetEaseStyles.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "GoldBlockParam"
+    size: [200.000000, 40.000000]
+    components:
+        LinearLayout:
+            padding: 10.000000
+            useRtl: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIStaticText"
+        name: "Label"
+        classes: "header3"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                align: ["LEFT", "VCENTER"]
+    -   class: "UIStaticText"
+        name: "Value"
+        size: [0.000000, 0.000000]
+        classes: "header2"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+            Background:
+                align: ["LEFT", "VCENTER"]
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowOffset: [0.000000, 1.000000]
+                shadowColor: [0.000000, 0.000000, 0.000000, 0.749000]
+                align: ["RIGHT", "VCENTER"]
+    -   class: "UIControl"
+        name: "Icon"
+        position: [160.000000, 0.000000]
+        size: [30.000000, 40.000000]
+        components:
+            Anchor:
+                vCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+-   class: "UIControl"
+    name: "AccountScreenBlockBase"
+    size: [200.000000, 200.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            spacing: 1.000000
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfChildrenSum"
+-   prototype: "AccountScreenBlockBase"
+    name: "AccountScreenBlock"
+-   class: "UIControl"
+    name: "CurrencyRow"
+    position: [0.000000, 0.000000]
+    size: [366.000000, 40.000000]
+    noInput: true
+    classes: "pane-bg"
+    components:
+        LinearLayout:
+            padding: 20.000000
+            safeAreaPaddingInset: true
+            useRtl: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+        Background: {}
+    children:
+    -   class: "UIStaticText"
+        name: "Header3"
+        size: [79.333336, 32.000000]
+        classes: "text1 text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+            Anchor:
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -2.000000
+            UITextComponent:
+                text: "purchased"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                align: ["LEFT", "VCENTER"]
+    -   class: "UIControl"
+        name: "Gold"
+        position: [143.333344, 0.000000]
+        size: [79.333336, 40.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "LeftToRight"
+                useRtl: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIStaticText"
+            name: "Value"
+            size: [49.333336, 40.000000]
+            classes: "header2 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                UITextComponent:
+                    text: "0"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["RIGHT", "VCENTER"]
+                    useRtlAlign: "USE_BY_SYSTEM"
+        -   class: "UIControl"
+            name: "Icon"
+            position: [49.333336, 0.000000]
+            size: [30.000000, 40.000000]
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+    -   class: "UIControl"
+        name: "Credits"
+        size: [79.333336, 40.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                useRtl: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIStaticText"
+            name: "Value"
+            size: [49.333336, 40.000000]
+            classes: "header2 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+                UITextComponent:
+                    text: "0"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    align: ["RIGHT", "VCENTER"]
+                    useRtlAlign: "USE_BY_SYSTEM"
+        -   class: "UIControl"
+            name: "Icon"
+            position: [49.333336, 0.000000]
+            size: [30.000000, 40.000000]
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                    frame: 1
+-   class: "UIControl"
+    name: "SubHeader"
+    size: [200.000000, 50.000000]
+    noInput: true
+    classes: "section-header1"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        Background: {}
+    children:
+    -   class: "UIStaticText"
+        name: "Title"
+        size: [180.000000, 50.000000]
+        classes: "header3 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 20.000000
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UITextComponent:
+                text: "Header1"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                align: ["LEFT", "VCENTER"]
+Controls:
+-   class: "UIControl"
+    name: "Screen"
+    size: [960.000000, 840.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIScrollView"
+        name: "Scroll"
+        position: [0.000000, 0.000000]
+        autoUpdate: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIScrollViewContainer"
+            name: "scrollContainerControl"
+            position: [0.000000, 0.000000]
+            components:
+                SizePolicy:
+                    verticalPolicy: "Formula"
+                    verticalFormula: "max(parent, maxChild)"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "Right"
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        spacing: 1.000000
+                    SizePolicy:
+                        verticalPolicy: "Formula"
+                        verticalFormula: "max(parent, childrenSum)"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        hCenterAnchor: 1.000000
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                children:
+                -   prototype: "AccountScreenBlock"
+                    name: "MobilePhone"
+                    classes: "netease-content"
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   path: "Content"
+                        classes: "pane-bg"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "PercentOfLastChild"
+                                verticalMin: 80.000000
+                            Background: {}
+                        children:
+                        -   class: "UIStaticText"
+                            name: "Description"
+                            classes: "text1 text-color-blue"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 20.000000
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 210.000000
+                                    vCenterAnchorEnabled: true
+                                UIAnchorSafeAreaComponent:
+                                    rightSafeInset: "INSET"
+                                UITextComponent:
+                                    text: "#account:Blocks/MobilePhone/NotLinked/Title"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    multiline: "MULTILINE_ENABLED"
+                                    align: ["LEFT", "VCENTER"]
+                        -   prototype: "StyledButton/StyledButton"
+                            name: "ButtonBind"
+                            size: [180.000000, 64.000000]
+                            classes: "button button-color-gray button-ok-sound"
+                            components:
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                                    vCenterAnchorEnabled: true
+                                UIAnchorSafeAreaComponent:
+                                    rightSafeInset: "INSET"
+                            children:
+                            -   path: "Caption"
+                                components:
+                                    UITextComponent:
+                                        text: "#account:Blocks/MobilePhone/Link/Button"
+                            -   prototype: "UnreadIcon/Badge"
+                                name: "Badge"
+                                components:
+                                    Anchor:
+                                        rightAnchor: -2.000000
+                                        topAnchor: -2.000000
+                                    Background:
+                                        perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                        -   prototype: "StyledButton/StyledButton"
+                            name: "ButtonReBind"
+                            size: [180.000000, 64.000000]
+                            visible: false
+                            classes: "button button-color-gray button-ok-sound"
+                            components:
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                                    vCenterAnchorEnabled: true
+                                UIAnchorSafeAreaComponent:
+                                    rightSafeInset: "INSET"
+                            children:
+                            -   path: "Caption"
+                                position: [0.000000, 0.000000]
+                                components:
+                                    UITextComponent:
+                                        text: "#account:Blocks/MobilePhone/ReLink/Button"
+                        -   class: "UIControl"
+                            name: "PhoneInfo"
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                    padding: 5.000000
+                                    dynamicPadding: true
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 20.000000
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 210.000000
+                                    vCenterAnchorEnabled: true
+                                UIAnchorSafeAreaComponent:
+                                    rightSafeInset: "INSET"
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Description"
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        rightAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "#account:Blocks/MobilePhone/Linked/Title"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT", "VCENTER"]
+                            -   class: "UIStaticText"
+                                name: "PhoneNumber"
+                                classes: "header3 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        rightAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "+81 1234567890"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        align: ["LEFT", "VCENTER"]
+                -   prototype: "AccountScreenBlock"
+                    name: "NicknameBlock"
+                    components:
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   path: "Content"
+                        position: [0.000000, 0.000000]
+                        classes: "pane-bg"
+                        components:
+                            SizePolicy:
+                                verticalPolicy: "FixedSize"
+                                verticalValue: 80.000000
+                            Background: {}
+                        children:
+                        -   class: "UIStaticText"
+                            name: "Nickname"
+                            size: [205.000000, 30.000000]
+                            classes: "header3 text-color-important"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: 20.000000
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 210.000000
+                                    vCenterAnchorEnabled: true
+                                UIAnchorSafeAreaComponent:
+                                    rightSafeInset: "INSET"
+                                Background: {}
+                                UITextComponent:
+                                    text: "Nickname"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    shadowColor: [0.000000, 0.000000, 0.000000, 1.000000]
+                                    fitting: "FITTING_POINTS"
+                                    align: ["LEFT", "VCENTER"]
+                        -   prototype: "StyledButton/StyledButton"
+                            name: "ChangeNickname"
+                            size: [180.000000, 64.000000]
+                            classes: "button button-color-gray"
+                            components:
+                                Anchor:
+                                    rightAnchorEnabled: true
+                                    rightAnchor: 20.000000
+                                    vCenterAnchorEnabled: true
+                                UIAnchorSafeAreaComponent:
+                                    rightSafeInset: "INSET"
+                                Background:
+                                    perPixelAccuracy: "PER_PIXEL_ACCURACY_FORCED"
+                            children:
+                            -   path: "Caption"
+                                components:
+                                    UITextComponent:
+                                        text: "#account:Blocks/Nickname/Button"
+                -   prototype: "AccountScreenBlock"
+                    name: "ExternalsBlock"
+                    position: [0.000000, 132.000000]
+                    classes: "netease-hidden"
+                    components:
+                        LinearLayout:
+                            orientation: "BottomUp"
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   path: "Content"
+                        position: [0.000000, 51.000000]
+                        children:
+                        -   prototype: "SocialNetworks/SocialNetworks"
+                            name: "SocialNetworks"
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                    -   prototype: "SubHeader"
+                        name: "SubHeader_1"
+                        children:
+                        -   path: "Title"
+                            components:
+                                UITextComponent:
+                                    text: "#account:Blocks/Externals/Header"
+                -   class: "UIControl"
+                    name: "UserCenterButtonContainer"
+                    size: [479.000000, 84.000000]
+                    noInput: true
+                    classes: "pane-bg netease-content"
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            padding: 10.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfMaxChild"
+                        Background: {}
+                    children:
+                    -   prototype: "StyledButton/StyledButton"
+                        name: "UserCenterButton"
+                        classes: "button button-color-gray button-open-sound"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 15.000000
+                                rightAnchorEnabled: true
+                                rightAnchor: 15.000000
+                            UIAnchorSafeAreaComponent:
+                                leftSafeInset: "INSET"
+                                rightSafeInset: "INSET"
+                        children:
+                        -   path: "Caption"
+                            position: [0.000000, 0.000000]
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                UITextComponent:
+                                    text: "#account:Blocks/NetEase/UserCenter"
+                        -   prototype: "UnreadIcon/Badge"
+                            name: "Badge"
+                            components:
+                                Anchor:
+                                    rightAnchor: -2.000000
+                                    topAnchor: -2.000000
+                -   class: "UIControl"
+                    name: "Spacer"
+                    noInput: true
+                    classes: "pane-bg"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "Formula"
+                            verticalFormula: "parentRest"
+                        Background: {}
+    -   prototype: "Common/VerticalScrollBar"
+        name: "ScrollBar"
+        classes: "notch-tightly-right-inset"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent: {}
+    -   class: "UIControl"
+        name: "Left"
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                spacing: 1.000000
+            SizePolicy:
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                leftAnchorEnabled: true
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   prototype: "AccountScreenBlockBase"
+            name: "CurrencyBlock"
+            size: [480.000000, 180.000000]
+            visible: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   path: "Content"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        spacing: 1.000000
+                    SizePolicy:
+                        verticalPolicy: "PercentOfParent"
+                children:
+                -   prototype: "CurrencyRow"
+                    name: "Purchased"
+                    children:
+                    -   path: "Header3"
+                        components:
+                            UITextComponent:
+                                text: "#account:CurrencyInfo/Purchased"
+                -   prototype: "CurrencyRow"
+                    name: "Received"
+                    classes: "pane-bg"
+                    children:
+                    -   path: "Header3"
+                        components:
+                            UITextComponent:
+                                text: "#account:CurrencyInfo/Received"
+                -   prototype: "CurrencyRow"
+                    name: "Total"
+                    children:
+                    -   path: "Header3"
+                        components:
+                            UITextComponent:
+                                text: "#account:CurrencyInfo/Total"
+        -   prototype: "AccountScreenBlock"
+            name: "WargamingBlock"
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfParent"
+                    verticalValue: 440.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+            children:
+            -   path: "Content"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "Ignore"
+                        verticalPolicy: "PercentOfParent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                    UIAnchorSafeAreaComponent:
+                        leftSafeInset: "INSET"
+                        rightSafeInset: "INSET"
+                children:
+                -   class: "UIControl"
+                    name: "Highlight"
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                    children:
+                    -   class: "UIControl"
+                        name: "Left"
+                        size: [3.000000, 552.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                topAnchorEnabled: true
+                                topAnchor: 3.000000
+                                bottomAnchorEnabled: true
+                                bottomAnchor: 3.000000
+                            Background:
+                                drawType: "DRAW_FILL"
+                                color: [0.960784, 0.650980, 0.137255, 0.498039]
+                    -   class: "UIControl"
+                        name: "Right"
+                        size: [3.000000, 552.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: false
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                                topAnchor: 3.000000
+                                bottomAnchorEnabled: true
+                                bottomAnchor: 3.000000
+                            Background:
+                                drawType: "DRAW_FILL"
+                                color: [0.960784, 0.650980, 0.137255, 0.498039]
+                    -   class: "UIControl"
+                        name: "Top"
+                        size: [392.000000, 3.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                            Background:
+                                drawType: "DRAW_FILL"
+                                color: [0.960784, 0.650980, 0.137255, 0.498039]
+                    -   class: "UIControl"
+                        name: "Bottom"
+                        size: [392.000000, 3.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            Background:
+                                drawType: "DRAW_FILL"
+                                color: [0.960784, 0.650980, 0.137255, 0.498039]
+                -   class: "UIControl"
+                    name: "CompletionInfo"
+                    size: [392.000000, 64.000000]
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                    children:
+                    -   class: "UIControl"
+                        name: "Border"
+                        size: [392.000000, 1.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            Background:
+                                drawType: "DRAW_FILL"
+                                color: [1.000000, 1.000000, 1.000000, 0.301961]
+                                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                -   class: "UIControl"
+                    name: "UserLogin"
+                    size: [352.000000, 66.000000]
+                    visible: false
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 20.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 20.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 102.000000
+                        Background:
+                            drawType: "DRAW_TILED"
+                            sprite: "~res:/Gfx/UI/AccountScreen/FieldBorders"
+                            leftRightStretchCap: 9.000000
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Text"
+                        classes: "header1"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 20.000000
+                                rightAnchorEnabled: true
+                                rightAnchor: 120.000000
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                shadowColor: [0.000000, 0.000000, 0.000000, 1.000000]
+                                fitting: "FITTING_POINTS"
+                                align: ["LEFT", "VCENTER"]
+                    -   class: "UIControl"
+                        name: "Lock"
+                        size: [30.000000, 30.000000]
+                        components:
+                            Anchor:
+                                rightAnchorEnabled: true
+                                rightAnchor: 20.000000
+                                vCenterAnchorEnabled: true
+                            Background:
+                                sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                                frame: 39
+                -   prototype: "StyledButton/StyledButton"
+                    name: "CompleteButton"
+                    classes: "button button-color-green"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 20.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 20.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 20.000000
+                    children:
+                    -   path: "Caption"
+                        components:
+                            UITextComponent:
+                                text: "#account:Blocks/Wargaming/Button/Complete"
+                -   prototype: "StyledButton/StyledButton"
+                    name: "ChangePasswordButton"
+                    classes: "button button-color-gray"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 20.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 20.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 20.000000
+                    children:
+                    -   path: "Caption"
+                        components:
+                            UITextComponent:
+                                text: "#account:Blocks/Wargaming/Button/ChangePwd"
+                -   class: "UIControl"
+                    name: "Wargaming"
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: 70.000000
+                            bottomAnchorEnabled: true
+                            bottomAnchor: 140.000000
+                    children:
+                    -   class: "UIControl"
+                        name: "Container"
+                        size: [392.000000, 180.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                vCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIControl"
+                            name: "Logo"
+                            size: [302.000000, 80.000000]
+                            components:
+                                Anchor:
+                                    hCenterAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                Background:
+                                    sprite: "~res:/Gfx/UI/AccountScreen/logo_wargaming"
+                        -   class: "UIControl"
+                            name: "Games"
+                            noInput: true
+                            classes: "netease-hidden"
+                            components:
+                                LinearLayout:
+                                    dynamicPadding: true
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfMaxChild"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                                Background: {}
+                            children:
+                            -   class: "UIControl"
+                                name: "WoT"
+                                size: [80.000000, 80.000000]
+                                noInput: true
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/AccountScreen/logo_wot"
+                                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                            -   class: "UIControl"
+                                name: "WoWP"
+                                size: [142.000000, 80.000000]
+                                noInput: true
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/AccountScreen/logo_wowp"
+                                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+                            -   class: "UIControl"
+                                name: "WoWS"
+                                size: [80.000000, 80.000000]
+                                noInput: true
+                                components:
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/AccountScreen/logo_wos"
+                                        colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+        -   class: "UIControl"
+            name: "BonusCodeBlock"
+            position: [44.000000, 740.000000]
+            size: [392.000000, 100.000000]
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    leftSafeInset: "INSET"
+                    rightSafeInset: "INSET"
+            children:
+            -   prototype: "StyledButton/StyledButton"
+                name: "BonusCodeButton"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 20.000000
+                        vCenterAnchorEnabled: true
+                children:
+                -   path: "Caption"
+                    components:
+                        UITextComponent:
+                            text: "#bonus_code:Profile_Update_Dialog/Activate"
+-   class: "UIControl"
+    name: "AccountHeaderRight"
+    size: [400.000000, 80.000000]
+    noInput: true
+    components:
+        Anchor:
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_ALIGNED"
+    children:
+    -   class: "UIStaticText"
+        name: "CreationDate"
+        size: [380.000000, 25.000000]
+        classes: "text1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                rightAnchor: 20.000000
+                topAnchorEnabled: false
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -20.000000
+            UITextComponent:
+                text: ""
+                color: [0.615686, 0.709804, 0.800000, 1.000000]
+                align: ["RIGHT", "VCENTER"]
+    -   class: "UIControl"
+        name: "RegionContainer"
+        position: [261.000000, 34.000000]
+        size: [122.000000, 46.000000]
+        components:
+            LinearLayout:
+                spacing: 5.000000
+                useRtl: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 17.000000
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "UserId"
+            classes: "text1 text-color-blue netease-content"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -3.000000
+                UITextComponent:
+                    text: "ID:"
+        -   class: "UIStaticText"
+            name: "Region"
+            size: [65.000000, 25.000000]
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -3.000000
+                UITextComponent:
+                    text: "#account:Screen/Header/Region"
+                    align: ["RIGHT", "VCENTER"]
+        -   class: "UIControl"
+            name: "RegionIcon"
+            size: [52.000000, 40.000000]
+            classes: "region-flag"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background: {}

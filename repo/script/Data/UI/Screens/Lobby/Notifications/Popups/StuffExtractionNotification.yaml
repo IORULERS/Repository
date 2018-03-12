@@ -1,0 +1,80 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UIStuffExtractionNotification"
+    name: "StuffExtractionNotification"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                frame: 4
+    -   prototype: "Notification/Content"
+        name: "Content"
+        components:
+            LinearLayout:
+                spacing: 5.000000
+            Anchor:
+                topAnchorEnabled: true
+                topAnchor: 5.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 10.000000
+        children:
+        -   class: "UIStaticText"
+            name: "Extracted"
+            position: [0.000000, 20.000000]
+            size: [81.000000, 29.000000]
+            classes: "header2 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+                UITextComponent:
+                    text: "NEWS_NOTIFICATION_INVOICE_DEBITED"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "ResourceContainer"
+            size: [71.000000, 32.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 10.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    vCenterAnchorEnabled: true
+            children:
+            -   prototype: "ResourceSmall/ResourceSmall"
+                name: "ResourceSmall"
+        -   class: "UIStaticText"
+            name: "Awarded"
+            size: [104.000000, 32.000000]
+            classes: "header2 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+                UITextComponent:
+                    text: "NEWS_NOTIFICATION_INVOICE_ACCRUED"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "AwardedContainer"
+            size: [0.000000, 0.000000]
+            noInput: true
+            components:
+                LinearLayout: {}
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    vCenterAnchorEnabled: true

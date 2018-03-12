@@ -1,0 +1,10 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Shop/BundleAnimations/chest_back_to_school_one.yaml"
+Controls:
+-   prototype: "chest_back_to_school_one/Image"
+    name: "Image"
+    components:
+        Background:
+            sprite: "~res:/Gfx/UI/ShopScreen/chest_back_to_school_cards/chest_backtoscool_two.psd"

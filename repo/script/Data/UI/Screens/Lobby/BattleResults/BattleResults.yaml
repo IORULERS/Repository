@@ -1,0 +1,200 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/PlayerNameWithTag.yaml"
+StyleSheets:
+-   selector: ".tab #selected"
+    properties:
+        visible: false
+-   selector: ".tab:selected #selected"
+    properties:
+        visible: true
+-   selector: ".tab #unselected"
+    properties:
+        visible: true
+-   selector: ".tab:selected #unselected"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIControl"
+    name: "TabControl"
+    size: [120.000000, 77.000000]
+    noInput: true
+    classes: "tab"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Anchor:
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+    children:
+    -   class: "UIControl"
+        name: "selected"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_STRETCH_HORIZONTAL"
+                sprite: "~res:/Gfx/UI/CommonUIElements/TabActiveTile"
+        children:
+        -   class: "UIStaticText"
+            name: "text"
+            noInput: true
+            classes: "text-color-white header5"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/Hangar/SidebarIcons"
+                    frame: 2
+                    align: ["HCENTER", "TOP"]
+                UITextComponent:
+                    align: ["HCENTER", "BOTTOM"]
+                    useRtlAlign: "DONT_USE"
+    -   class: "UIStaticText"
+        name: "unselected"
+        noInput: true
+        classes: "text-color-blue header5"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/Hangar/SidebarIcons"
+                frame: 2
+                color: [0.745100, 0.800000, 0.807800, 1.000000]
+                align: ["HCENTER", "TOP"]
+            UITextComponent:
+                align: ["HCENTER", "BOTTOM"]
+                useRtlAlign: "DONT_USE"
+Controls:
+-   class: "UIControl"
+    customClass: "UITabSwitcher"
+    name: "TabsPanel"
+    size: [520.000000, 77.000000]
+    components:
+        LinearLayout:
+            spacing: 2.000000
+        Anchor:
+            rightAnchorEnabled: true
+            rightAnchor: 0.000000
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+    children:
+    -   prototype: "TabControl"
+        name: "PersonalTab"
+        children:
+        -   path: "selected/text"
+            components:
+                UITextComponent:
+                    text: "#battle_results:PersonalPage"
+        -   path: "unselected"
+            components:
+                UITextComponent:
+                    text: "#battle_results:PersonalPage"
+    -   prototype: "TabControl"
+        name: "TeamTab"
+        position: [130.500000, 0.000000]
+        tag: 1
+        children:
+        -   path: "selected/text"
+            components:
+                Background:
+                    frame: 13
+                UITextComponent:
+                    text: "#battle_results:TeamPage"
+        -   path: "unselected"
+            components:
+                Background:
+                    frame: 13
+                UITextComponent:
+                    text: "#battle_results:TeamPage"
+    -   prototype: "TabControl"
+        name: "DetailsTab"
+        position: [261.000000, 0.000000]
+        tag: 2
+        children:
+        -   path: "selected/text"
+            components:
+                Background:
+                    frame: 4
+                UITextComponent:
+                    text: "#battle_results:DetailsPage"
+        -   path: "unselected"
+            components:
+                Background:
+                    frame: 4
+                UITextComponent:
+                    text: "#battle_results:DetailsPage"
+    -   prototype: "TabControl"
+        name: "AchivmentTab"
+        position: [391.500000, 0.000000]
+        tag: 3
+        children:
+        -   path: "selected/text"
+            components:
+                Background:
+                    frame: 3
+                UITextComponent:
+                    text: "#battle_results:AchivmientsPage"
+        -   path: "unselected"
+            components:
+                Background:
+                    frame: 3
+                UITextComponent:
+                    text: "#battle_results:AchivmientsPage"
+-   class: "UIControl"
+    name: "HeaderLeftContent"
+    position: [0.000000, 0.000000]
+    size: [300.000000, 80.000000]
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            dynamicPadding: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIStaticText"
+        name: "Title"
+        position: [0.000000, 14.500000]
+        size: [300.000000, 25.000000]
+        classes: "header1"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            UITextComponent:
+                text: "LABEL"
+                align: ["LEFT", "VCENTER"]
+    -   prototype: "PlayerNameWithTag/PlayerNameWithTag"
+        name: "PlayerNameWithTag"
+        components:
+            SizePolicy:
+                horizontalPolicy: "Ignore"
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   path: "name"
+            classes: "header1 text-color-important"
+        -   path: "tag"
+            classes: "header1 clan-tag"

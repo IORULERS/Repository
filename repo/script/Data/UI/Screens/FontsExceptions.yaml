@@ -1,0 +1,35 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".header5.news.Phone.zh-Hans"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_25_news"
+-   selector: ".text2-small.news.Phone.zh-Hans"
+    properties:
+        text-fontName: "WarHeliosCondC_21_news"
+-   selector: ".text2-small.news.zh-Hans"
+    properties:
+        text-fontName: "WarHeliosCondC_17_news"
+-   selector: ".header5.news.zh-Hans"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_17_news"
+-   selector: ".header5.news.Phone"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_25"
+-   selector: ".text2-small.news.Phone"
+    properties:
+        text-fontName: "WarHeliosCondC_21"
+-   selector: ".header5.netease.news.Phone.zh-Hans"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_25"
+-   selector: ".text2-small.netease.news.Phone.zh-Hans"
+    properties:
+        text-fontName: "WarHeliosCondC_21"
+-   selector: ".text2-small.netease.news.zh-Hans"
+    properties:
+        text-fontName: "WarHeliosCondC_17"
+-   selector: ".header5.netease.news.zh-Hans"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_17"

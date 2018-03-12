@@ -1,0 +1,623 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Lobby/Clan/ClanEmblem.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Common/SmartTextField.yaml"
+- "~res:/UI/Screens/Common/EULANotice.yaml"
+- "~res:/UI/Screens/Common/Selection.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Create"
+    size: [1524.000000, 688.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_ALIGNED"
+    children:
+    -   class: "UIScrollView"
+        name: "Scroll"
+        position: [512.000000, 0.000000]
+        size: [500.000000, 688.000000]
+        autoUpdate: true
+        centerContent: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIScrollViewContainer"
+            name: "scrollContainerControl"
+            position: [0.000000, 84.000000]
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfMaxChild"
+            children:
+            -   prototype: "Common/Dialog"
+                customClass: "CreateClanDialog"
+                name: "CreateDialog"
+                size: [500.000000, 370.000000]
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    ModalInput: {}
+                children:
+                -   path: "Middle"
+                    children:
+                    -   class: "UIControl"
+                        name: "priceLabel"
+                        position: [0.000000, 62.000000]
+                        size: [500.000000, 40.000000]
+                        noInput: true
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                                topAnchor: 62.000000
+                    -   prototype: "SmartTextField/SmartTextField"
+                        customClass: "UIClanCreateTextField"
+                        name: "ClanName"
+                        size: [460.000000, 75.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 20.000000
+                                hCenterAnchorEnabled: false
+                                rightAnchorEnabled: true
+                                rightAnchor: 20.000000
+                                topAnchorEnabled: true
+                                topAnchor: 110.000000
+                                vCenterAnchorEnabled: true
+                            DebugRender:
+                                enabled: false
+                        children:
+                        -   path: "VerticalBox"
+                            components:
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                            children: []
+                        -   path: "VerticalBox/Background"
+                            size: [460.000000, 60.000000]
+                            children: []
+                        -   path: "VerticalBox/Background/TextField"
+                            font: "WarHeliosCondC_19"
+                            maxLength: 25
+                            autoCapitalizationType: "AUTO_CAPITALIZATION_TYPE_SENTENCES"
+                            keyboardType: "KEYBOARD_TYPE_DEFAULT"
+                            children: []
+                        -   path: "VerticalBox/Background/TextField/Hint"
+                            components:
+                                UITextComponent:
+                                    text: "#clans:CreationScreen/InsertName"
+                                    fontName: "WarHeliosCondC_19"
+                                    color: [0.627451, 0.725490, 0.800000, 1.000000]
+                            children:
+                            -   class: "UIStaticText"
+                                name: "AdditionalHint"
+                                components:
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        rightAnchorEnabled: true
+                                        rightAnchor: 6.000000
+                                        topAnchorEnabled: true
+                                        bottomAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "#clans:CreationScreen/InsertName/Comment"
+                                        fontName: "WarHeliosCondC_17"
+                                        color: [0.600000, 0.600000, 0.600000, 1.000000]
+                                        align: ["HCENTER", "RIGHT", "VCENTER"]
+                    -   prototype: "SmartTextField/SmartTextField"
+                        customClass: "UIClanCreateTextField"
+                        name: "ClanTag"
+                        size: [460.000000, -5.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 20.000000
+                                hCenterAnchorEnabled: false
+                                rightAnchorEnabled: true
+                                rightAnchor: 20.000000
+                                topAnchorEnabled: true
+                                topAnchor: 190.000000
+                                vCenterAnchorEnabled: true
+                            DebugRender:
+                                enabled: false
+                        children:
+                        -   path: "VerticalBox"
+                            components:
+                                Anchor:
+                                    hCenterAnchorEnabled: false
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                            children: []
+                        -   path: "VerticalBox/Background"
+                            size: [460.000000, 60.000000]
+                            children: []
+                        -   path: "VerticalBox/Background/TextField"
+                            font: "WarHeliosCondC_19"
+                            maxLength: 5
+                            autoCapitalizationType: "AUTO_CAPITALIZATION_TYPE_ALL_CHARS"
+                            keyboardType: "KEYBOARD_TYPE_DEFAULT"
+                            children: []
+                        -   path: "VerticalBox/Background/TextField/Hint"
+                            components:
+                                UITextComponent:
+                                    text: "#clans:CreationScreen/InsertTag"
+                                    fontName: "WarHeliosCondC_19"
+                                    color: [0.627451, 0.725490, 0.800000, 1.000000]
+                            children:
+                            -   class: "UIStaticText"
+                                name: "AdditionalHint"
+                                components:
+                                    Anchor:
+                                        leftAnchorEnabled: true
+                                        rightAnchorEnabled: true
+                                        rightAnchor: 6.000000
+                                        topAnchorEnabled: true
+                                        bottomAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "#clans:CreationScreen/InsertName/Comment"
+                                        fontName: "WarHeliosCondC_17"
+                                        color: [0.600000, 0.600000, 0.600000, 1.000000]
+                                        align: ["HCENTER", "RIGHT", "VCENTER"]
+                    -   class: "UIStaticText"
+                        name: "Error"
+                        size: [500.000000, 160.000000]
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                topAnchorEnabled: true
+                                topAnchor: 390.000000
+                            UITextComponent:
+                                text: "Test Error"
+                                fontName: "WarHeliosCondC_21"
+                                color: [1.000000, 0.000000, 0.000000, 1.000000]
+                                multiline: "MULTILINE_ENABLED"
+                                fitting: "FITTING_REDUCE"
+                                align: ["HCENTER", "TOP"]
+                    -   class: "UIControl"
+                        name: "ButtonHolder"
+                        components:
+                            LinearLayout:
+                                orientation: "RightToLeft"
+                                padding: 20.000000
+                                spacing: 20.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                bottomAnchorEnabled: true
+                                bottomAnchor: 20.000000
+                        children:
+                        -   prototype: "StyledButton/StyledButton"
+                            name: "Submit"
+                            classes: "button button-color-green"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                            children:
+                            -   path: "Caption"
+                                components:
+                                    UITextComponent:
+                                        text: "#clans:CreationScreen/OKButton"
+                        -   prototype: "StyledButton/StyledButton"
+                            name: "Cancel"
+                            children:
+                            -   path: "Caption"
+                                components:
+                                    UITextComponent:
+                                        text: "#clans:CreationScreen/InsertDescription/CancelButton"
+                -   path: "Top/TitleText"
+                    components:
+                        UITextComponent:
+                            text: "#clans:CreationScreen/Header"
+            -   prototype: "Common/Dialog"
+                customClass: "CreateClanDescriptionDialog"
+                name: "CreateDescriptionDialog"
+                size: [500.000000, 520.000000]
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    ModalInput: {}
+                children:
+                -   path: "Middle"
+                    children:
+                    -   prototype: "SmartTextField/SmartTextField"
+                        customClass: "UIClanCreateTextField"
+                        name: "Motto"
+                        size: [460.000000, 60.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 20.000000
+                                hCenterAnchorEnabled: false
+                                rightAnchorEnabled: true
+                                rightAnchor: 20.000000
+                                topAnchorEnabled: true
+                                topAnchor: 160.000000
+                                vCenterAnchorEnabled: false
+                            DebugRender:
+                                enabled: false
+                        children:
+                        -   path: "VerticalBox"
+                            components:
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                            children: []
+                        -   path: "VerticalBox/Background"
+                            size: [460.000000, 60.000000]
+                            children: []
+                        -   path: "VerticalBox/Background/TextField"
+                            font: "WarHeliosCondC_19"
+                            maxLength: 100
+                            autoCapitalizationType: "AUTO_CAPITALIZATION_TYPE_SENTENCES"
+                            keyboardType: "KEYBOARD_TYPE_DEFAULT"
+                            children: []
+                        -   path: "VerticalBox/Background/TextField/Hint"
+                            components:
+                                Anchor:
+                                    leftAnchor: -10.000000
+                                    rightAnchor: 0.000000
+                                UITextComponent:
+                                    text: "#clans:CreationScreen/InsertDescription/CreateSlogan"
+                                    fontName: "WarHeliosCondC_19"
+                                    color: [0.627451, 0.725490, 0.800000, 1.000000]
+                                    align: ["HCENTER", "VCENTER"]
+                    -   prototype: "SmartTextField/SmartTextField"
+                        customClass: "UIClanCreateTextField"
+                        name: "Description"
+                        size: [460.000000, 160.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 20.000000
+                                hCenterAnchorEnabled: false
+                                rightAnchorEnabled: true
+                                rightAnchor: 20.000000
+                                topAnchorEnabled: true
+                                topAnchor: 240.000000
+                                vCenterAnchorEnabled: false
+                            DebugRender:
+                                enabled: false
+                        children:
+                        -   path: "VerticalBox"
+                            components:
+                                Anchor:
+                                    topAnchorEnabled: true
+                                    bottomAnchorEnabled: true
+                                DebugRender:
+                                    enabled: false
+                                    drawColor: [1.000000, 0.000000, 1.000000, 1.000000]
+                            children: []
+                        -   path: "VerticalBox/Background"
+                            size: [460.000000, 160.000000]
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                Background:
+                                    drawType: "DRAW_STRETCH_BOTH"
+                                    topBottomStretchCap: 5.000000
+                                DebugRender:
+                                    enabled: false
+                                    drawColor: [0.000000, 1.000000, 0.000000, 1.000000]
+                            children: []
+                        -   path: "VerticalBox/Background/TextField"
+                            font: "WarHeliosCondC_19"
+                            textalign: ["LEFT", "TOP"]
+                            maxLength: 1000
+                            isMultiline: true
+                            autoCapitalizationType: "AUTO_CAPITALIZATION_TYPE_SENTENCES"
+                            keyboardType: "KEYBOARD_TYPE_DEFAULT"
+                            components:
+                                DebugRender:
+                                    enabled: false
+                                    drawColor: [1.000000, 1.000000, 0.000000, 1.000000]
+                            children: []
+                        -   path: "VerticalBox/Background/TextField/Hint"
+                            components:
+                                Anchor:
+                                    leftAnchor: -10.000000
+                                    rightAnchor: 0.000000
+                                UITextComponent:
+                                    text: "#clans:CreationScreen/InsertDescription/CreateDescription"
+                                    fontName: "WarHeliosCondC_17"
+                                    color: [0.627451, 0.725490, 0.800000, 1.000000]
+                                    align: ["HCENTER", "VCENTER"]
+                    -   prototype: "ClanEmblem/ClanEmblem"
+                        name: "Emblem"
+                        size: [64.000000, 64.000000]
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                leftAnchor: 20.000000
+                                topAnchorEnabled: true
+                                topAnchor: 75.000000
+                            Background:
+                                drawType: "DRAW_SCALE_TO_RECT"
+                        children:
+                        -   path: "BorderTop"
+                            components:
+                                Anchor:
+                                    leftAnchor: 1.000000
+                                    rightAnchor: 1.000000
+                                    topAnchor: 1.000000
+                        -   path: "BorderBottom"
+                            components:
+                                Anchor:
+                                    leftAnchor: 1.000000
+                                    rightAnchor: 1.000000
+                                    bottomAnchor: 1.000000
+                        -   path: "BorderLeft"
+                            components:
+                                Anchor:
+                                    leftAnchor: 1.000000
+                                    topAnchor: 1.000000
+                                    bottomAnchor: 1.000000
+                        -   path: "BorderRight"
+                            components:
+                                Anchor:
+                                    rightAnchor: 1.000000
+                                    topAnchor: 1.000000
+                                    bottomAnchor: 1.000000
+                    -   class: "UIStaticText"
+                        name: "Error"
+                        size: [500.000000, 160.000000]
+                        visible: false
+                        enabled: true
+                        components:
+                            Anchor:
+                                hCenterAnchorEnabled: true
+                                topAnchorEnabled: true
+                                topAnchor: 520.000000
+                            UITextComponent:
+                                text: "Test Error"
+                                fontName: "WarHeliosCondC_21"
+                                color: [1.000000, 0.000000, 0.000000, 1.000000]
+                                multiline: "MULTILINE_ENABLED"
+                                fitting: "FITTING_REDUCE"
+                                align: ["HCENTER", "TOP"]
+                    -   prototype: "StyledButton/StyledButton"
+                        name: "ChooseEmblem"
+                        position: [107.000000, 75.000000]
+                        size: [373.000000, 64.000000]
+                        components:
+                            Anchor:
+                                hCenterAnchor: 54.000000
+                                rightAnchorEnabled: true
+                                rightAnchor: 20.000000
+                                topAnchorEnabled: true
+                                topAnchor: 75.000000
+                        children:
+                        -   path: "Caption"
+                            components:
+                                UITextComponent:
+                                    text: "#clans:CreationScreen/InsertDescription/ChooseIcon/Button"
+                    -   class: "UIControl"
+                        name: "ButtonHolder"
+                        components:
+                            LinearLayout:
+                                orientation: "RightToLeft"
+                                padding: 20.000000
+                                spacing: 20.000000
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                bottomAnchorEnabled: true
+                                bottomAnchor: 20.000000
+                        children:
+                        -   prototype: "StyledButton/StyledButton"
+                            name: "Submit"
+                            classes: "button button-color-green"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                            children:
+                            -   path: "Caption"
+                                components:
+                                    UITextComponent:
+                                        text: "#clans:CreationScreen/InsertDescription/OKButton"
+                        -   prototype: "StyledButton/StyledButton"
+                            name: "Cancel"
+                            children:
+                            -   path: "Caption"
+                                components:
+                                    UITextComponent:
+                                        text: "#clans:CreationScreen/InsertDescription/CancelButton"
+                -   path: "Top/TitleText"
+                    components:
+                        UITextComponent:
+                            text: "#clans:CreationScreen/InsertDescription/Header"
+    -   prototype: "Common/Dialog"
+        customClass: "SelectClanEmblemDialog"
+        name: "SelectEmblemDialog"
+        size: [500.000000, 520.000000]
+        visible: false
+        components:
+            Anchor:
+                leftAnchorEnabled: false
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            ModalInput: {}
+        children:
+        -   path: "Middle"
+            children:
+            -   class: "UIScrollView"
+                name: "SelectEmblemView"
+                noInput: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 23.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 23.000000
+                        topAnchorEnabled: true
+                        topAnchor: 60.000000
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 110.000000
+                    DebugRender:
+                        enabled: false
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    size: [454.000000, 100.000000]
+                    pivot: [0.000000, 0.000000]
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            hCenterAnchorEnabled: false
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: false
+                            vCenterAnchorEnabled: false
+                            bottomAnchorEnabled: false
+                        DebugRender:
+                            enabled: false
+            -   class: "UIControl"
+                name: "ButtonHolder"
+                components:
+                    LinearLayout:
+                        orientation: "RightToLeft"
+                        padding: 20.000000
+                        spacing: 20.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        bottomAnchorEnabled: true
+                        bottomAnchor: 20.000000
+                children:
+                -   prototype: "StyledButton/StyledButton"
+                    name: "Submit"
+                    classes: "button button-color-green"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                    children:
+                    -   path: "Caption"
+                        components:
+                            UITextComponent:
+                                text: "#clans:CreationScreen/InsertDescription/OK"
+                -   prototype: "StyledButton/StyledButton"
+                    name: "Cancel"
+                    children:
+                    -   path: "Caption"
+                        components:
+                            UITextComponent:
+                                text: "#clans:CreationScreen/InsertDescription/CancelButton"
+        -   path: "Top/TitleText"
+            components:
+                UITextComponent:
+                    text: "#clans:CreationScreen/InsertDescription/ChooseIcon"
+    -   prototype: "EULANotice/EULANotice"
+        customClass: "UIEULANoticeClans"
+        name: "EULANotice"
+        visible: false
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 2.000000
+            UIAnchorSafeAreaComponent:
+                bottomSafeInset: "INSET"
+-   class: "UIControl"
+    customClass: "UIClanEmblemView"
+    name: "EmblemPrototype"
+    size: [128.000000, 128.000000]
+    children:
+    -   class: "UIControl"
+        name: "image"
+        size: [100.000000, 100.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                color: [1.000000, 1.000000, 1.000000, 1.000000]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_FORCED"
+    -   prototype: "Selection/Selection"
+        name: "Selection"
+        classes: "selection-color-orange"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 5.000000
+                rightAnchorEnabled: true
+                rightAnchor: 5.000000
+                topAnchorEnabled: true
+                topAnchor: 5.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 5.000000
+    -   class: "UIControl"
+        name: "BorderControll"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 8.000000
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                topAnchorEnabled: true
+                topAnchor: 8.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 8.000000
+        children:
+        -   class: "UIControl"
+            name: "BorderTop"
+            size: [112.000000, 1.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.313726, 0.384314, 0.423529, 1.000000]
+        -   class: "UIControl"
+            name: "BorderBottom"
+            size: [112.000000, 1.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.313726, 0.384314, 0.423529, 1.000000]
+        -   class: "UIControl"
+            name: "BorderLeft"
+            size: [1.000000, 112.000000]
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.313726, 0.384314, 0.423529, 1.000000]
+        -   class: "UIControl"
+            name: "BorderRight"
+            size: [1.000000, 112.000000]
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.313726, 0.384314, 0.423529, 1.000000]

@@ -1,0 +1,23 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/FooterPriceControl.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "BaseFooter"
+    position: [0.000000, 594.000000]
+    size: [1024.000000, 94.000000]
+    noInput: true
+    classes: "footer-background"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "FixedSize"
+            verticalValue: 94.000000
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background: {}

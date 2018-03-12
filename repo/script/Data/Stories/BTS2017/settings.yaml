@@ -1,0 +1,34 @@
+name: "rocketPlaywar_event/Title"
+stages:
+ BTS2017_inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/BTS2017/Button_Inform.yaml"
+  info: "event-info"
+ BTS2017_process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/BTS2017/Button_Process.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/BTS2017/Bts2017StoryTree.yaml"
+  web:
+   buttonName: "rocketPlaywar_event/GoToLeaderboard/Comment"
+   buttonDescription: ""
+   eventUrl: "/%s/missile-exercises/?id=%s"
+  leaderboard:
+   processHint: "template_event/ProgressStage/RocketPlaywar/DamageTask"
+   apiUrl: "/%s/missile-exercises/user/%s/"
+ BTS2017_buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/BTS2017/Button_Buy.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/BTS2017/Bts2017StoryTree.yaml"
+  web:
+   buttonName: "rocketPlaywar_event/GoToLeaderboard/Comment"
+   buttonDescription: ""
+   eventUrl: "/%s/missile-exercises/?id=%s"
+  leaderboard:
+   buyHint: "template_event/ProgressStage/RocketPlaywar/DamageTask"
+   buy: "template_event/ProgressStage/RocketPlaywar/Error/TimeIsOver"
+   apiUrl: "/%s/missile-exercises/user/%s/"
+currencyKeys:
+  proxy_bmbts: "rocketPlaywar_event/Currencies/QuestCurrency/Terms"
+  proxy_ldbrd: "rocketPlaywar_event/Currencies/DamageCurrency/Terms"

@@ -1,0 +1,18 @@
+Header:
+    version: "19"
+StyleSheets:
+-   selector: ".text3-small-battle"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_13"
+-   selector: ".bold-text-loading-small"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_14"
+-   selector: ".text-arena-state"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_50"
+-   selector: ".text-countdown-before-battle"
+    properties:
+        text-fontName: "WarHeliosCondC_Bold_70"
+-   selector: ".text-arialmb"
+    properties:
+        text-fontName: "arialmb_16"

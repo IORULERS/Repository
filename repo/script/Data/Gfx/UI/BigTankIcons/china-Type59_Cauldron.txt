@@ -1,0 +1,5 @@
+1
+china-Type59_Cauldron0.tex
+160 100
+1
+0 0 151 100 5 0 0 frame0

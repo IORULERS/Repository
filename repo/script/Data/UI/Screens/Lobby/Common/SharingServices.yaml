@@ -1,0 +1,199 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Common/StyledMenuButton.yaml"
+- "~res:/UI/Screens/Common.yaml"
+StyleSheets:
+-   selector: ".sharing-service-button:pressed_inside"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: ".sharing-service-button.weixin-timeline #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/China/china_social.psd"
+        bg-frame: 2
+-   selector: ".sharing-service-button.weixin-friend #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/China/china_social.psd"
+        bg-frame: 0
+-   selector: ".sharing-service-button.weibo #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/China/china_social.psd"
+        bg-frame: 1
+-   selector: ".sharing-service-button.weixin-timeline.big #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/China/china_social_big.psd"
+-   selector: ".sharing-service-button.weixin-friend.big #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/China/china_social_big.psd"
+-   selector: ".sharing-service-button.weibo.big #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/LobbyCommon/China/china_social_big.psd"
+-   selector: ".sharing-service-button.fb.big #Icon"
+    properties:
+        bg-sprite: "~res:/Gfx/UI/CommonUIElements/IconsSocialBigOn.psd"
+        bg-frame: 0
+-   selector: ".big"
+    properties:
+        sizePolicy-horizontalValue: 64.000000
+        sizePolicy-verticalValue: 64.000000
+-   selector: ".small"
+    properties:
+        sizePolicy-horizontalValue: 50.000000
+        sizePolicy-verticalValue: 50.000000
+Prototypes:
+-   prototype: "StyledMenuButton/StyledMenuButton"
+    name: "ServiceListButton"
+    size: [64.000000, 64.000000]
+    classes: "button button-color-gray button-close-sound"
+    components:
+        Anchor:
+            leftAnchor: 0.000000
+            topAnchor: 0.000000
+    children:
+    -   path: "icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall.psd"
+                frame: 41
+    -   path: "UnreadNews"
+        visible: false
+-   class: "UIControl"
+    name: "SharingServiceListPopUp"
+    noInput: false
+    classes: "button-close-sound"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+        Sound: {}
+    children:
+    -   class: "UIControl"
+        name: "PopUp"
+        pivot: [0.500000, 1.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                horizontalPolicy: "PercentOfMaxChild"
+                verticalPolicy: "PercentOfChildrenSum"
+        children:
+        -   class: "UIControl"
+            name: "SharingServiceList"
+            size: [64.000000, 12.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    padding: 6.000000
+                    spacing: 3.000000
+                SizePolicy:
+                    horizontalPolicy: "FixedSize"
+                    horizontalValue: 64.000000
+                    verticalPolicy: "PercentOfChildrenSum"
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/CommonUIElements/popup_new"
+                    leftRightStretchCap: 14.000000
+                    topBottomStretchCap: 14.000000
+        -   class: "UIControl"
+            name: "Arrow"
+            size: [32.000000, 20.000000]
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/CommonUIElements/popup_triangle"
+                    spriteModification: ["FLIP_VERTICAL"]
+                    align: ["HCENTER", "TOP", "VCENTER"]
+-   class: "UIControl"
+    name: "SharingServiceList"
+    noInput: true
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfFirstChild"
+            verticalPolicy: "PercentOfFirstChild"
+    children:
+    -   prototype: "ServiceListButton"
+        name: "ShowServiceListButton"
+        classes: "button button-color-gray button-open-sound"
+    -   class: "UIControl"
+        name: "SingleButtonList"
+        size: [0.000000, 0.000000]
+        noInput: true
+        components:
+            LinearLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "RewardWithHighlight"
+        size: [0.000000, 0.000000]
+        pivot: [0.500000, 0.500000]
+        visible: true
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfLastChild"
+                verticalPolicy: "PercentOfLastChild"
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: -5.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: -5.000000
+            Background: {}
+        children:
+        -   class: "UIParticles"
+            name: "Highlight"
+            position: [0.000000, 0.000000]
+            size: [46.000000, 46.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            effectPath: "~res:/3d/FX/UI/currency_glowS1.sc2"
+            autoStart: true
+            startDelay: 0.500000
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+        -   class: "UIControl"
+            name: "RewardContainer"
+            size: [0.000000, 0.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfMaxChild"
+-   class: "UIControl"
+    name: "SharingServiceIcon"
+    classes: "button-open-sound sharing-service-button service=fb size=small button-color-gray"
+    components:
+        SizePolicy:
+            horizontalPolicy: "FixedSize"
+            verticalPolicy: "FixedSize"
+        Anchor:
+            hCenterAnchorEnabled: true
+        Background:
+            drawType: "DRAW_TILED_MULTILAYER"
+            mask: "~res:/Gfx/UI/CommonUIElements/Button/mask.psd"
+            detail: "~res:/Gfx/UI/CommonUIElements/Button/detail.psd"
+            gradientMode: "Overlay"
+            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        Sound: {}
+    children:
+    -   class: "UIControl"
+        name: "Icon"
+        size: [32.000000, 32.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background:
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"

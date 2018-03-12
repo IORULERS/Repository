@@ -1,0 +1,5 @@
+1
+supremacy_watch_points0.tex
+512 256
+1
+0 0 353 213 80 37 0 frame0

@@ -1,0 +1,5 @@
+1
+france-AMX_50B_veteran0.tex
+160 100
+1
+0 0 160 99 0 1 0 frame0

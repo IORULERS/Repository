@@ -1,0 +1,182 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Story/StoryRewardPrototypes.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader3.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Content"
+    size: [1027.000000, 768.000000]
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"
+            color: [0.070588, 0.125490, 0.160784, 0.850980]
+    children:
+    -   prototype: "StoryRewardPrototypes/StepScrollView"
+        name: "StepScrollView"
+        children:
+        -   path: "scrollContainerControl"
+            children:
+            -   class: "UIControl"
+                name: "Header"
+                size: [1027.000000, 70.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                    ClipContent: {}
+                children:
+                -   class: "UIControl"
+                    name: "Left"
+                    position: [0.000000, 0.000000]
+                    size: [513.500000, 70.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            hCenterAnchorEnabled: true
+                            topAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/bgMedalsLeft"
+                            align: ["RIGHT", "VCENTER"]
+                -   class: "UIControl"
+                    name: "Right"
+                    position: [513.500000, 0.000000]
+                    size: [513.500000, 70.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/bgMedalsRight"
+                            align: ["LEFT", "VCENTER"]
+                -   class: "UIControl"
+                    name: "Content"
+                    noInput: true
+                    components:
+                        Anchor:
+                            leftAnchorEnabled: true
+                            rightAnchorEnabled: true
+                            topAnchorEnabled: true
+                            bottomAnchorEnabled: true
+                -   class: "UIStaticText"
+                    name: "RewardTitle"
+                    classes: "header1"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "template_event/CompleteStep/StepScreen/Reward"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+            -   prototype: "StoryRewardPrototypes/Rewards"
+                name: "Rewards"
+            -   class: "UIControl"
+                name: "CurrencyDescriptionContainer"
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   prototype: "SectionHeader3/SectionHeader3"
+                    name: "ConditionsHeader"
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Label"
+                        classes: "header3 text-color-white"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                text: "template_event/CompleteStep/StepScreen/Currencies"
+                                colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "CurrenciesDescription"
+                    position: [0.000000, 40.000000]
+                    size: [900.000000, 20.000000]
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            padding: 10.000000
+                            spacing: 20.000000
+                        SizePolicy:
+                            verticalPolicy: "PercentOfChildrenSum"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+-   class: "UIControl"
+    name: "CurrencyDescription"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            spacing: 10.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfChildrenSum"
+        Anchor:
+            leftAnchorEnabled: true
+            topAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "ResourceCointainer"
+        noInput: true
+        components:
+            LinearLayout:
+                spacing: 10.000000
+                useRtl: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                leftAnchorEnabled: true
+                useRtl: true
+        children:
+        -   prototype: "ResourceSmall/ResourceSmall"
+            name: "ResourceSmall"
+            classes: "reward reward-type=reward-stuff quantity=quantity-hide"
+        -   class: "UIStaticText"
+            name: "ResourceName"
+            classes: "text1 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIStaticText"
+        name: "Description"
+        classes: "text2 text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                topAnchorEnabled: true
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                align: ["LEFT", "TOP"]
+                useRtlAlign: "USE_BY_SYSTEM"

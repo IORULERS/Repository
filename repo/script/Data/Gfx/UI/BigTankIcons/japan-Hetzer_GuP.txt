@@ -1,0 +1,5 @@
+1
+japan-Hetzer_GuP0.tex
+160 100
+1
+0 0 123 97 18 0 0 frame0

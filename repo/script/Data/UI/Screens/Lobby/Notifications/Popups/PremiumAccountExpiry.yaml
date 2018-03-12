@@ -1,0 +1,37 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UIPremiumAccountExpiryNotification"
+    name: "PremiumAccountExpiry"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                frame: 2
+    -   prototype: "Notification/Content"
+        name: "Content"
+        components:
+            Anchor:
+                rightAnchor: 220.000000
+    -   prototype: "StyledButton/StyledButton"
+        name: "ProlongButton"
+        size: [196.000000, 64.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 11.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -2.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "NOTIFICATIONS_PREMIUM_PROLONG"

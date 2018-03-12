@@ -1,0 +1,5 @@
+1
+capture_reset0.tex
+512 256
+1
+0 0 363 233 68 16 0 frame0

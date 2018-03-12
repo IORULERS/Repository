@@ -1,0 +1,142 @@
+Header:
+    version: "17"
+ImportedPackages:
+- "~res:/UI/Screens/Hangar/PopupFullScreenNotification.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/LobbyCommon.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "RateAppDialog"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   prototype: "LobbyCommon/DialogBackground"
+        name: "DialogBackground"
+        enabled: false
+        children:
+        -   path: "Darkness"
+            noInput: true
+    -   class: "UIControl"
+        name: "Content"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            DebugRender:
+                enabled: false
+        children:
+        -   class: "UIControl"
+            name: "Dialog"
+            position: [256.000000, 243.000000]
+            size: [512.000000, 282.000000]
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    padding: 20.000000
+                    spacing: 20.000000
+                SizePolicy:
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_STRETCH_BOTH"
+                    sprite: "~res:/Gfx/UI/CommonUIElements/PopupBackMiddle"
+                    leftRightStretchCap: 4.000000
+                    topBottomStretchCap: 4.000000
+            children:
+            -   class: "UIControl"
+                name: "LogoContainer"
+                position: [106.000000, 20.000000]
+                size: [300.000000, 60.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        topAnchorEnabled: true
+                children:
+                -   class: "UIControl"
+                    name: "logo"
+                    size: [300.000000, 230.000000]
+                    noInput: true
+                    components:
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                            topAnchorEnabled: true
+                            topAnchor: -145.000000
+                        Background:
+                            drawType: "DRAW_SCALE_TO_RECT"
+                            sprite: "~res:/Gfx/UI/LobbyCommon/BlitzLogo"
+                            align: ["HCENTER", "BOTTOM"]
+            -   class: "UIControl"
+                name: "TextContainer"
+                size: [472.000000, 78.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 20.000000
+                children:
+                -   class: "UIStaticText"
+                    name: "RateAppText"
+                    classes: "header3 text-color-white"
+                    textcolorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    text: "rateApp/Notification/GoToStore/Description"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+            -   class: "UIControl"
+                name: "ButtonHolder"
+                position: [0.000000, 198.000000]
+                size: [512.000000, 64.000000]
+                noInput: true
+                components:
+                    LinearLayout:
+                        padding: 20.000000
+                        spacing: 20.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   prototype: "StyledButton/StyledButton"
+                    name: "Decline"
+                    classes: "button button-color-gray button-ok-sound"
+                    children:
+                    -   path: "Caption"
+                        text: "rateApp/Button/NotNow"
+                -   prototype: "StyledButton/StyledButton"
+                    name: "Accept"
+                    classes: "button button-color-green button-ok-sound"
+                    children:
+                    -   path: "Caption"
+                        text: "rateApp/Button/Rate"
+        -   prototype: "PopupFullScreenNotification/DeclineForever"
+            name: "DeclineForever"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 25.000000

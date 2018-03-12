@@ -1,0 +1,41 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+StyleSheets:
+-   selector: ".aligning-in-rich-text-xp"
+    properties:
+        anchor-vCenterAnchor: -2.000000
+-   selector: ".aligning-in-rich-text-xp.vi"
+    properties:
+        anchor-vCenterAnchor: -5.000000
+Prototypes:
+-   class: "UIControl"
+    name: "UndistributedXP"
+    noInput: true
+    classes: "aligning-in-rich-text-xp"
+    components:
+        LinearLayout: {}
+        SizePolicy:
+            horizontalPolicy: "PercentOfChildrenSum"
+            verticalPolicy: "PercentOfLastChild"
+        Anchor: {}
+    children:
+    -   class: "UIStaticText"
+        name: "value"
+        noInput: true
+        classes: "header3"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfParent"
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIControl"
+        name: "icon"
+        size: [30.000000, 30.000000]
+        noInput: true
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+                frame: 4

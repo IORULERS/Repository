@@ -1,0 +1,58 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledBackButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "XpTimerHelpScreen"
+    size: [1024.000000, 768.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Content"
+        size: [1024.000000, 768.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "LabelContainer"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "HeaderLabel"
+                noInput: true
+                classes: "header3"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "FixedSize"
+                        verticalValue: 40.000000
+                    Anchor: {}
+                    UITextComponent:
+                        text: "#hangar:Info/Counter_x2/Header"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "TOP"]
+                        useRtlAlign: "DONT_USE"
+    -   prototype: "StyledBackButton/StyledBackButton"
+        name: "BackButton"
+        classes: "button button-color-gray button-close-sound"

@@ -1,0 +1,23 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/IconButton.yaml"
+Prototypes:
+-   prototype: "IconButton/IconButton"
+    name: "StyledBackButton"
+    size: [80.000000, 64.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 8.000000
+            topAnchorEnabled: true
+            topAnchor: 8.000000
+        UIAnchorSafeAreaComponent:
+            leftSafeInset: "INSET"
+    children:
+    -   path: "icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/CommonUIElements/IconBack.psd"
+                frame: 1
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"

@@ -1,0 +1,104 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/FooterPriceControl.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/Footer.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "Showcase"
+    size: [1024.000000, 768.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 0.000000
+            rightAnchorEnabled: true
+            rightAnchor: 0.000000
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+        Background:
+            color: [0.000000, 0.000000, 0.000000, 0.800000]
+    children:
+    -   class: "UIControl"
+        name: "CongratsDialog"
+        position: [0.000000, 674.000000]
+        size: [1024.000000, 94.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   prototype: "Footer/Footer"
+            name: "ButtonInTop"
+            size: [1024.000000, 94.000000]
+            components:
+                LinearLayout:
+                    orientation: "RightToLeft"
+                    padding: 10.000000
+                    spacing: 10.000000
+            children:
+            -   path: "FooterBackground"
+                components:
+                    IgnoreLayout: {}
+            -   prototype: "StyledButton/StyledButton"
+                name: "ToTopButton"
+                classes: "button button-color-green button-ok-sound"
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   path: "Caption"
+                    components:
+                        Anchor:
+                            leftAnchor: 6.000000
+                            rightAnchor: 6.000000
+                        UITextComponent:
+                            text: "#modules_tech_tree:Top/Button"
+                            fitting: "FITTING_REDUCE"
+            -   prototype: "FooterPriceControl/FooterPriceControl"
+                name: "FooterPriceControl"
+                position: [604.000000, 14.000000]
+                components:
+                    Anchor:
+                        vCenterAnchorEnabled: true
+        -   prototype: "StyledButton/StyledButton"
+            name: "ToHangarButton"
+            classes: "button button-color-gray notch-tightly-bottom-inset"
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 100.000000
+                UIAnchorSafeAreaComponent: {}
+                Sound:
+                    touchUpInside: "GUI/buttons/close"
+            children:
+            -   path: "Caption"
+                position: [0.000000, 0.000000]
+                components:
+                    UITextComponent:
+                        text: "#hangar_showcase:ToTankButton"
+    -   class: "UIControl"
+        name: "SocialNetworkSharingSection"
+        size: [0.000000, 0.000000]
+        classes: "button notch-tightly-bottom-inset"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfFirstChild"
+                verticalPolicy: "PercentOfFirstChild"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 10.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 15.000000
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"

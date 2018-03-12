@@ -1,0 +1,265 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Common/UnreadIcon.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Screens/CommonStyles.yaml"
+- "~res:/UI/Styles/Clans/ClansStyles.yaml"
+StyleSheets:
+-   selector: ".arrow-button:pressed_inside"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: ".blue-button-like:pressed_inside"
+    properties:
+        bg-color: [0.200000, 0.274510, 0.321569, 0.501961]
+        bg-drawType: "DRAW_FILL"
+        exclusiveInput: true
+-   selector: ".blue-button-like"
+    properties:
+        bg-color: [0.200000, 0.274510, 0.321569, 1.000000]
+        bg-drawType: "DRAW_FILL"
+        exclusiveInput: true
+-   selector: ".blue-button-like-light"
+    properties:
+        bg-color: [0.254902, 0.313726, 0.364706, 1.000000]
+        bg-drawType: "DRAW_FILL"
+        exclusiveInput: true
+Prototypes:
+-   prototype: "Common/WhiteLine"
+    name: "ListLine"
+    components:
+        IgnoreLayout: {}
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            bottomAnchorEnabled: true
+        Background:
+            color: [1.000000, 1.000000, 1.000000, 0.141176]
+            perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+-   class: "UIControl"
+    name: "ContentSection"
+    size: [1024.000000, 50.000000]
+    classes: "button-color-gray"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        Background:
+            drawType: "DRAW_TILED_MULTILAYER"
+            mask: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+            detail: "~res:/Gfx/UI/CommonUIElements/Button/detail"
+            gradientMode: "Overlay"
+            leftRightStretchCap: 9.000000
+        ClipContent: {}
+    children:
+    -   prototype: "UnreadIcon/UnreadIcon"
+        name: "messagesCount"
+        size: [33.000000, 33.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 15.000000
+                vCenterAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+    -   class: "UIControl"
+        name: "title"
+        size: [40.000000, 50.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                spacing: 10.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "text"
+            classes: "header4 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+        -   class: "UIControl"
+            name: "arrow"
+            size: [30.000000, 50.000000]
+            noInput: true
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/CommonUIElements/IconArrowDropDownMenu"
+-   class: "UIControl"
+    customClass: "UIClanControllerTitle"
+    name: "HeaderTitle"
+    size: [400.000000, 76.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Center"
+        size: [233.000000, 76.000000]
+        classes: "arrow-button"
+        components:
+            LinearLayout:
+                spacing: 10.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                hCenterAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Vertical"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Title"
+                classes: "header1 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "#clans:ProfileScreen/Header"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIStaticText"
+                name: "SubTitle"
+                visible: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: ""
+                        fontName: "WarHeliosCondC_Bold_19"
+                        color: [0.647059, 0.725490, 0.800000, 1.000000]
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "Button"
+            size: [45.000000, 45.000000]
+            noInput: true
+            classes: "button-color-gray"
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_TILED_MULTILAYER"
+                    mask: "~res:/Gfx/UI/CommonUIElements/Button/mask"
+                    detail: "~res:/Gfx/UI/CommonUIElements/Button/detail"
+                    gradientMode: "Overlay"
+                    colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+                    leftRightStretchCap: 4.000000
+                    topBottomStretchCap: 4.000000
+            children:
+            -   class: "UIControl"
+                name: "Arrow"
+                size: [30.000000, 30.000000]
+                noInput: true
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        sprite: "~res:/Gfx/UI/CommonUIElements/IconArrowDropDownMenu"
+                        colorInherit: "COLOR_MULTIPLY_ON_PARENT"
+-   class: "UIControl"
+    name: "BigIconFrame"
+    size: [64.000000, 64.000000]
+    noInput: true
+    children:
+    -   class: "UIControl"
+        name: "BorderRight"
+        size: [2.000000, 64.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: false
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.313726, 0.384314, 0.423529, 1.000000]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "BorderTop"
+        size: [64.000000, 2.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.313726, 0.384314, 0.423529, 1.000000]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "BorderBottom"
+        size: [64.000000, 2.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: false
+                bottomAnchorEnabled: true
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.313726, 0.384314, 0.423529, 1.000000]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "BorderLeft"
+        size: [2.000000, 64.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: false
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_FILL"
+                color: [0.313726, 0.384314, 0.423529, 1.000000]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+-   class: "UIControl"
+    name: "Header"
+    size: [1024.000000, 60.000000]
+    classes: "table-header-background"
+    components:
+        LinearLayout:
+            safeAreaPaddingInset: true
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        Background: {}

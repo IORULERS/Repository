@@ -1,0 +1,142 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/LoadingSpinner.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/FontsExceptions.yaml"
+StyleSheets:
+-   selector: ".cell #Background"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.109804]
+-   selector: ".cell:selected #Background"
+    properties:
+        bg-color: [0.235294, 0.596078, 1.000000, 0.301961]
+Prototypes:
+-   class: "UIControl"
+    customClass: "NewsCell"
+    name: "NewsCellProto"
+    position: [0.000000, 0.000000]
+    size: [384.000000, 100.000000]
+    classes: "cell"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+        Sound:
+            touchUpInside: "GUI/buttons/ok"
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        noInput: true
+        components:
+            LinearLayout:
+                padding: 5.000000
+                safeAreaPaddingInset: true
+                spacing: 5.000000
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            Background:
+                drawType: "DRAW_FILL"
+        children:
+        -   class: "UIControl"
+            name: "Unread"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "FixedSize"
+                    horizontalValue: 16.000000
+                    verticalPolicy: "PercentOfParent"
+                Background:
+                    sprite: "~res:/Gfx/UI/NewsScreen/IconAlert"
+                    color: [1.000000, 0.180400, 0.192200, 1.000000]
+        -   class: "UIControl"
+            name: "Image"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "FixedSize"
+                    horizontalValue: 140.000000
+                    verticalPolicy: "PercentOfParent"
+                    verticalValue: 95.000000
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    drawType: "DRAW_SCALE_PROPORTIONAL"
+                    sprite: "~res:/Gfx/UI/NewsScreen/Logotype"
+        -   class: "UIControl"
+            name: "Container"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    dynamicPadding: true
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 100.000000
+                    verticalPolicy: "PercentOfParent"
+                    verticalValue: 95.000000
+                Anchor:
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Title"
+                noInput: true
+                classes: "header5 news"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "Formula"
+                        horizontalFormula: "parent - 68"
+                        verticalPolicy: "PercentOfContent"
+                        verticalMax: 42.000000
+                    Background:
+                        align: ["LEFT", "VCENTER"]
+                    ClipContent: {}
+                    UITextComponent:
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+                        fitting: "FITTING_POINTS"
+                        align: ["LEFT"]
+                        useRtlAlign: "USE_BY_CONTENT"
+            -   class: "UIStaticText"
+                name: "Description"
+                noInput: true
+                classes: "text-color-blue text2-small news"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfContent"
+                        verticalMax: 42.000000
+                    Background:
+                        align: ["LEFT", "VCENTER"]
+                    ClipContent: {}
+                    UITextComponent:
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        multiline: "MULTILINE_ENABLED"
+                        fitting: "FITTING_POINTS"
+                        align: ["LEFT"]
+                        useRtlAlign: "USE_BY_CONTENT"
+    -   class: "UIStaticText"
+        name: "Date"
+        noInput: true
+        classes: "text3-small text-color-white"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 7.000000
+                topAnchorEnabled: true
+                topAnchor: 5.000000
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "99.99 99:99"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+Controls:
+-   prototype: "NewsCellProto"
+    name: "NewsCell"

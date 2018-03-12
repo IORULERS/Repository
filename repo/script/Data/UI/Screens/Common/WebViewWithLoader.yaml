@@ -1,0 +1,26 @@
+Header:
+    version: "11"
+ImportedPackages:
+- "~res:/UI/Screens/Common/LoadingSpinner.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+- "~res:/UI/Screens/Common/LoadingControl.yaml"
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIWebViewWithLoader"
+    name: "WebViewWithLoader"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIWebView"
+        name: "WebView"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+    -   prototype: "LoadingControl/LoadingControl"
+        name: "LoadingControl"
+        visible: false
+        components:
+            IgnoreLayout: {}

@@ -1,0 +1,86 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/Lobby/Storage/StorageStyles.yaml"
+Prototypes:
+-   class: "UIControl"
+    name: "Rarity"
+    size: [409.600006, 48.000000]
+    noInput: true
+    classes: "grade"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+        Background:
+            drawType: "DRAW_FILL"
+    children:
+    -   class: "UIStaticText"
+        name: "Common"
+        position: [0.000000, 0.000000]
+        size: [387.600006, 44.000000]
+        classes: "text1 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 4.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            UITextComponent:
+                text: "#common:Grade/Standard"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIStaticText"
+        name: "Rare"
+        position: [0.000000, 0.000000]
+        size: [387.600006, 44.000000]
+        classes: "text1 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 4.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            UITextComponent:
+                text: "#common:Grade/Rare"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIStaticText"
+        name: "Unique"
+        position: [0.000000, 0.000000]
+        size: [387.600006, 44.000000]
+        classes: "text1 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 4.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            UITextComponent:
+                text: "#common:Grade/Special"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+    -   class: "UIStaticText"
+        name: "Legendary"
+        position: [0.000000, 0.000000]
+        size: [387.600006, 44.000000]
+        classes: "text1 text-color-white"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 4.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+            UITextComponent:
+                text: "#common:Grade/Legendary"
+                colorInheritType: "COLOR_IGNORE_PARENT"

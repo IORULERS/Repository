@@ -1,0 +1,370 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/ExpireTimer.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+StyleSheets:
+-   selector: ".button-chest"
+    properties:
+        bg-gradient: "~res:/Gfx/UI/LobbyCommon/Button/daily_chest_gradient"
+        bg-contour: "~res:/Gfx/UI/LobbyCommon/Button/daily_chest_contour"
+-   selector: "#OpenChestPanel #OpenPriceLine"
+    properties:
+        visible: false
+-   selector: ".chest-slot #ChestButton #Clipper .timer, .chest-slot #ChestButton #Clipper .unlock-effect"
+    properties:
+        visible: false
+-   selector: "#Clipper #Captions, #Clipper #Captions #RemainingChestsLine"
+    properties:
+        visible: false
+-   selector: ".chest-count #ChestButton #Clipper #Captions #RemainingChestsLine"
+    properties:
+        visible: true
+-   selector: ".chest-price #OpenChestPanel #OpenPriceLine"
+    properties:
+        visible: true
+-   selector: ".chest-slot.locked #ChestButton #Clipper .timer"
+    properties:
+        visible: true
+-   selector: ".chest-slot.unlocked #ChestButton #Clipper .unlock-effect"
+    properties:
+        visible: true
+-   selector: ".chest-slot.unlocked #ChestButton #Clipper #Captions"
+    properties:
+        visible: true
+-   selector: ".chest-slot.unlocked #ChestButton #Clipper .timer"
+    properties:
+        visible: false
+Prototypes:
+-   prototype: "StyledButton/StyledButton"
+    name: "ChestButton"
+    size: [240.000000, 264.000000]
+    classes: "button button-chest button-ok-sound"
+    components:
+        Background:
+            mask: "~res:/Gfx/UI/LobbyCommon/Button/daily_chest_mask"
+            detail: "~res:/Gfx/UI/LobbyCommon/Button/daily_chest_detail"
+            gradient: "~res:/Gfx/UI/LobbyCommon/Button/daily_chest_gradient"
+            contour: "~res:/Gfx/UI/LobbyCommon/Button/daily_chest_contour"
+            gradientMode: "Alpha blend"
+    children:
+    -   path: "Caption"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                leftAnchor: 12.000000
+                rightAnchor: 12.000000
+                topAnchor: 20.000000
+                bottomAnchorEnabled: false
+            UITextComponent:
+                text: "Super Container of universal awesomeness"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+                align: ["HCENTER", "TOP"]
+    -   class: "UIControl"
+        name: "InfoNotification"
+        position: [207.000000, 14.000000]
+        noInput: true
+        components:
+            IgnoreLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfContent"
+                verticalPolicy: "PercentOfContent"
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 14.000000
+                topAnchorEnabled: true
+                topAnchor: 14.000000
+            Background:
+                sprite: "~res:/Gfx/UI/Story/info_icon"
+                color: [0.450980, 0.462745, 0.486275, 1.000000]
+                perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+    -   class: "UIControl"
+        name: "Clipper"
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 6.000000
+                rightAnchorEnabled: true
+                rightAnchor: 6.000000
+                topAnchorEnabled: true
+                topAnchor: 6.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 6.000000
+            ClipContent: {}
+        children:
+        -   class: "UIParticles"
+            name: "Sparks"
+            position: [31.000000, 232.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            classes: "unlock-effect"
+            effectPath: "~res:/3d/FX/UI/daily_bonus/sparks.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Glow1"
+            position: [-1.000000, 269.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            classes: "unlock-effect"
+            effectPath: "~res:/3d/FX/UI/daily_bonus/glow1.sc2"
+            autoStart: true
+        -   class: "UIParticles"
+            name: "Glow2"
+            position: [115.000000, 132.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            classes: "unlock-effect"
+            effectPath: "~res:/3d/FX/UI/daily_bonus/glow2.sc2"
+            autoStart: true
+        -   class: "UIControl"
+            name: "ChestImage"
+            noInput: true
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/Quests/DailyChests/daily_chest_medium.psd"
+                    perPixelAccuracy: "PER_PIXEL_ACCURACY_ENABLED"
+        -   class: "UIParticles"
+            name: "Glow3"
+            position: [123.000000, 184.000000]
+            size: [32.000000, 32.000000]
+            pivot: [0.500000, 0.500000]
+            noInput: true
+            classes: "unlock-effect"
+            effectPath: "~res:/3d/FX/UI/daily_bonus/glow3.sc2"
+            autoStart: true
+        -   class: "UIControl"
+            name: "TimerContainer"
+            noInput: true
+            classes: "timer"
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfMaxChild"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 12.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 12.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 20.000000
+            children:
+            -   class: "UIStaticText"
+                name: "TimerCaption"
+                classes: "text1 text-color-blue"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "activities/BonusContainers/Timer"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   prototype: "ExpireTimer/ExpireTimer"
+                name: "OpenTimer"
+                classes: "view=detailed"
+                components:
+                    Anchor:
+                        hCenterAnchorEnabled: true
+        -   class: "UIControl"
+            name: "Captions"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    padding: 7.000000
+                SizePolicy:
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 20.000000
+            children:
+            -   class: "UIControl"
+                name: "BackgroundLeftFragment"
+                noInput: true
+                components:
+                    IgnoreLayout: {}
+                    Anchor:
+                        leftAnchorEnabled: true
+                        hCenterAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_SCALE_TO_RECT"
+                        sprite: "~res:/Gfx/UI/Hangar/BlackGradTile"
+            -   class: "UIControl"
+                name: "BackgroundRightFragment"
+                noInput: true
+                components:
+                    IgnoreLayout: {}
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_SCALE_TO_RECT"
+                        sprite: "~res:/Gfx/UI/Hangar/BlackGradTile"
+                        spriteModification: ["FLIP_HORIZONTAL"]
+            -   class: "UIStaticText"
+                name: "AvailabilityCaption"
+                classes: "header3 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        enabled: true
+                        hCenterAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "activities/BonusContainers/Status/Available"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+            -   class: "UIControl"
+                name: "RemainingChestsLine"
+                noInput: true
+                classes: "availability"
+                components:
+                    LinearLayout:
+                        dynamicPadding: true
+                        spacing: 4.000000
+                        useRtl: true
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   class: "UIStaticText"
+                    name: "Caption"
+                    classes: "text1 text-color-blue"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "activities/BonusContainers/ContainersLeft"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIStaticText"
+                    name: "Number"
+                    classes: "header2 text-color-white"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfContent"
+                            verticalPolicy: "PercentOfContent"
+                        Anchor:
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "7"
+                            colorInheritType: "COLOR_IGNORE_PARENT"
+-   class: "UIControl"
+    name: "OpenChestPanel"
+    noInput: true
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            spacing: 4.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfMaxChild"
+            verticalPolicy: "PercentOfChildrenSum"
+            verticalMin: 100.000000
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+    children:
+    -   prototype: "StyledButton/StyledButton"
+        name: "OpenButton"
+        size: [228.000000, 64.000000]
+        classes: "button button-color-green button-ok-sound"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "#common:DialogButton/Open"
+    -   class: "UIControl"
+        name: "OpenPriceLine"
+        noInput: true
+        components:
+            LinearLayout:
+                dynamicPadding: true
+                spacing: 4.000000
+                useRtl: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                hCenterAnchorEnabled: true
+        children:
+        -   class: "UIStaticText"
+            name: "Caption"
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+                UITextComponent:
+                    text: "#common:Cost"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+        -   class: "UIControl"
+            name: "ResourceViewContainer"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfChildrenSum"
+            children:
+            -   prototype: "ResourceSmall/ResourceSmall"
+                name: "ResourceSmall"
+-   class: "UIControl"
+    name: "ChestFrame"
+    noInput: true
+    classes: "chest-slot"
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            spacing: 16.000000
+        SizePolicy:
+            horizontalPolicy: "PercentOfFirstChild"
+            verticalPolicy: "PercentOfChildrenSum"
+    children:
+    -   prototype: "ChestButton"
+        name: "ChestButton"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "Bottomless Chest of Unlimited Awesomeness"
+        -   path: "Clipper/TimerContainer/OpenTimer"
+            components:
+                LinearLayout:
+                    useRtl: true
+            children: []
+    -   prototype: "OpenChestPanel"
+        name: "OpenChestPanel"

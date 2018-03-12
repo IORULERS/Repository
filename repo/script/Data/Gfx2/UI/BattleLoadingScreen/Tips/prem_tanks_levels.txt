@@ -1,0 +1,5 @@
+1
+prem_tanks_levels0.tex
+512 256
+1
+0 0 379 242 68 14 0 frame0

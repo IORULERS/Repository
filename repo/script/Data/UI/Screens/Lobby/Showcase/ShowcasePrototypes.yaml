@@ -1,0 +1,273 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Common/DiscountLabel.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonStyle.yaml"
+- "~res:/UI/Screens/Lobby/Common/ShopFooter.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleInfo.yaml"
+- "~res:/UI/Screens/Lobby/Common/GradientPane.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".fullscreen-on #PreviewButton"
+    properties:
+        anchor-topAnchor:
+            value: 7.000000
+            transitionTime: 0.160000
+            transitionFunction: "LINEAR"
+-   selector: ".fullscreen-off #PreviewButton"
+    properties:
+        anchor-topAnchor:
+            value: 87.000000
+            transitionTime: 0.160000
+            transitionFunction: "LINEAR"
+-   selector: ".fullscreen-on #PreviewButton #icon"
+    properties:
+        bg-frame: 1
+-   selector: ".fullscreen-off #PreviewButton #icon"
+    properties:
+        bg-frame: 0
+-   selector: ".allow-fullscreen #PreviewButton"
+    properties:
+        visible: true
+-   selector: ".price-line.credits #Icon"
+    properties:
+        bg-frame: 1
+-   selector: ".price-line.gold #Icon"
+    properties:
+        bg-frame: 0
+-   selector: ".price-line.free-xp #Icon"
+    properties:
+        bg-frame: 2
+-   selector: ".price-line.xp #Icon"
+    properties:
+        bg-frame: 3
+-   selector: ".price-line.crew-xp #Icon"
+    properties:
+        bg-frame: 4
+Prototypes:
+-   class: "UIControl"
+    name: "TankName"
+    position: [0.000000, 98.000000]
+    size: [1024.000000, 50.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            topAnchor: 18.000000
+    children:
+    -   prototype: "GradientPane/GradientPane"
+        name: "GradientPane"
+    -   class: "UIControl"
+        name: "BackgroundRight"
+        position: [512.000000, 0.000000]
+        size: [512.000000, 50.000000]
+        noInput: true
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 0.000000
+                rightAnchorEnabled: true
+                rightAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/Hangar/BlackGradTile"
+                spriteModification: ["FLIP_HORIZONTAL"]
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "BackgroundLeft"
+        size: [512.000000, 50.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 0.000000
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 0.000000
+                topAnchorEnabled: true
+                topAnchor: 0.000000
+                bottomAnchorEnabled: true
+                bottomAnchor: 0.000000
+            Background:
+                drawType: "DRAW_SCALE_TO_RECT"
+                sprite: "~res:/Gfx/UI/Hangar/BlackGradTile"
+                colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "NameContainer"
+        position: [512.000000, 25.000000]
+        size: [142.000000, 43.000000]
+        pivot: [0.500000, 0.500000]
+        noInput: true
+        components:
+            LinearLayout: {}
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+        children:
+        -   prototype: "VehicleInfo/VehicleInfoBig"
+            name: "VehicleInfo"
+            size: [74.000000, 43.000000]
+            children:
+            -   path: "LevelIcon"
+                components:
+                    Anchor:
+                        leftAnchor: 37.000000
+                        topAnchor: -15.000000
+        -   class: "UIStaticText"
+            name: "Text"
+            size: [68.000000, 26.000000]
+            classes: "header3 text-color-tag=text-color-premium"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    vCenterAnchorEnabled: true
+                UITextComponent:
+                    text: "Header3"
+                    colorInheritType: "COLOR_MULTIPLY_ALPHA_ONLY"
+-   class: "UIControl"
+    name: "DetailsLine"
+    position: [0.000000, 0.000000]
+    size: [1024.000000, 40.000000]
+    noInput: true
+    classes: "price-line"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 0.000000
+            rightAnchorEnabled: true
+            rightAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 40.000000
+        UIAnchorSafeAreaComponent:
+            leftSafeInset: "INSET"
+            rightSafeInset: "INSET"
+        Background:
+            drawType: "DRAW_SCALE_TO_RECT"
+    children:
+    -   class: "UIControl"
+        name: "LabelContainer"
+        position: [195.000000, 5.000000]
+        size: [468.000000, 30.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                spacing: 5.000000
+                useRtl: true
+            SizePolicy:
+                horizontalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 195.000000
+                rightAnchorEnabled: true
+                rightAnchor: 361.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+                useRtl: true
+        children:
+        -   class: "UIStaticText"
+            name: "Label"
+            position: [0.000000, 2.000000]
+            size: [35.000000, 26.000000]
+            noInput: true
+            classes: "text1 text-color-white"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                UITextComponent:
+                    text: "msg"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    shadowOffset: [1.000000, 1.000000]
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "USE_BY_SYSTEM"
+    -   class: "UIControl"
+        name: "Icon"
+        position: [785.000000, 7.000000]
+        size: [30.000000, 26.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 209.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+                useRtl: true
+            Background:
+                sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsSmall"
+    -   class: "UIStaticText"
+        name: "Value"
+        position: [616.000000, 7.000000]
+        size: [167.000000, 26.000000]
+        noInput: true
+        classes: "header3"
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                hCenterAnchor: 104.000000
+                rightAnchorEnabled: true
+                rightAnchor: 241.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: 0.000000
+                useRtl: true
+            Background:
+                align: ["LEFT", "TOP"]
+            UITextComponent:
+                text: "1 000 000"
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                shadowOffset: [1.000000, 1.000000]
+                align: ["RIGHT", "VCENTER"]
+                useRtlAlign: "USE_BY_SYSTEM"
+-   prototype: "DetailsLine"
+    name: "PriceLine"
+    children:
+    -   path: "LabelContainer"
+        children:
+        -   prototype: "DiscountLabel/DiscountLabel"
+            name: "Discount"
+-   prototype: "StyledButton/StyledButton"
+    name: "GetTankButton"
+    size: [179.000000, 64.000000]
+    classes: "button color=button-color-green notch-tightly-bottom-inset"
+    components:
+        Anchor:
+            rightAnchorEnabled: true
+            rightAnchor: 10.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 5.000000
+        UIAnchorSafeAreaComponent: {}
+    children:
+    -   path: "Caption"
+        components:
+            UITextComponent:
+                text: "#hangar_showcase:BuyXPButton"
+-   prototype: "StyledButton/DefaultStyledButton"
+    name: "PreviewButton"
+    size: [64.000000, 64.000000]
+    classes: "button preview_hide button-color-gray"
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 7.000000
+            topAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Icon"
+        pivot: [0.500000, 0.500000]
+        components:
+            Anchor:
+                hCenterAnchorEnabled: true
+                vCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/CamouflagesShop/icon_camouflage_preview"
+                colorInherit: "COLOR_MULTIPLY_ON_PARENT"

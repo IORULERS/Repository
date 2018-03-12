@@ -1,0 +1,10 @@
+name: "Way_of_Dragon_event/Title"
+priority: 1
+stages:
+ buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/TopUp2017/Button_Buy.yaml"
+  info: "event-progress-topup"
+  tree: "~res:/UI/Screens/Lobby/Story/TopUp2017/TopUpStoryTree.yaml"
+currencyKeys:
+  prx_bnd: "Way_of_Dragon_event/Currency/Pioneers_Emblem/Terms"

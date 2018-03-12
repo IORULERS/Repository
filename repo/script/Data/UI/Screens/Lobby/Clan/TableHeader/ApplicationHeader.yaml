@@ -1,0 +1,54 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/Clans/ClansStyles.yaml"
+- "~res:/UI/Screens/Lobby/Clan/TableHeader/Proto.yaml"
+Prototypes:
+-   class: "UIControl"
+    customClass: "UIPlayerStatsTableHeaderColumn"
+    name: "Header"
+    size: [110.000000, 60.000000]
+    components:
+        Anchor:
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+    children:
+    -   class: "UIStaticText"
+        name: "Text"
+        size: [81.000000, 42.000000]
+        classes: "text2-small text-color-blue"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 12.000000
+                hCenterAnchorEnabled: false
+                rightAnchorEnabled: true
+                rightAnchor: 17.000000
+                vCenterAnchorEnabled: true
+            UITextComponent:
+                colorInheritType: "COLOR_IGNORE_PARENT"
+                multiline: "MULTILINE_ENABLED"
+    -   class: "UIControl"
+        name: "SortDirImage"
+        position: [92.000000, 22.000000]
+        size: [16.000000, 16.000000]
+        noInput: true
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 2.000000
+                vCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/Clan/sort_icon"
+                frame: 0
+    -   prototype: "Proto/HeaderLine"
+        name: "Line"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: -1.000000
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true

@@ -1,0 +1,5 @@
+1
+supremacy_get_score0.tex
+256 128
+1
+0 0 214 105 14 21 0 frame0

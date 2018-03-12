@@ -1,0 +1,5 @@
+1
+supremacy_recapture_available0.tex
+256 128
+1
+0 0 161 86 45 38 0 frame0

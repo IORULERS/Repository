@@ -1,0 +1,41 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Shop/BaseIAPTab.yaml"
+- "~res:/UI/Screens/Lobby/Shop/ShopItemCell.yaml"
+Controls:
+-   prototype: "BaseIAPTab/Tab"
+    customClass: "UIIAPTabControl"
+    name: "Tab"
+    children:
+    -   path: "Footer"
+        children:
+        -   class: "UIStaticText"
+            name: "Hint"
+            position: [10.000000, 7.000000]
+            size: [540.000000, 80.000000]
+            noInput: true
+            classes: "text1 text-color-blue"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 10.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 430.000000
+                    vCenterAnchorEnabled: true
+                Background:
+                    align: ["LEFT", "TOP"]
+                UITextComponent:
+                    text: "shop/Hint/Gold"
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    multiline: "MULTILINE_ENABLED"
+                    fitting: "FITTING_REDUCE"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "USE_BY_CONTENT"
+-   prototype: "ShopItemCell/ItemCell"
+    name: "ItemCell"
+    children:
+    -   path: "description"
+        components:
+            UITextComponent:
+                fitting: "FITTING_REDUCE"

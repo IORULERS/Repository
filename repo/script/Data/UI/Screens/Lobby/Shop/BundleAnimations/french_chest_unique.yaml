@@ -1,0 +1,18 @@
+Header:
+    version: "10"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Shop/BundleAnimations/animation_chest.yaml"
+Prototypes:
+-   prototype: "animation_chest/Image"
+    name: "Image"
+    components:
+        Background:
+            sprite: "~res:/Gfx/UI/ShopScreen/french_chest_cards/chest_purple_1"
+    children:
+    -   path: "Effects/Glow"
+        effectPath: "~res:/3d/FX/UI/Shop/bandle/purple_glow.sc2"
+    -   path: "Effects/Flow"
+        effectPath: "~res:/3d/FX/UI/Shop/bandle/purple_flow.sc2"
+Controls:
+-   prototype: "Image"
+    name: "Image"

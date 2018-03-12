@@ -1,0 +1,373 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/BaseFooter.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/IconButton.yaml"
+- "~res:/UI/Screens/Common/ProgressBar.yaml"
+- "~res:/UI/Screens/Lobby/Common/Resource/ResourceSmall.yaml"
+- "~res:/UI/Screens/Common/StyledInfoButton.yaml"
+- "~res:/UI/Screens/Lobby/Common/Footer.yaml"
+StyleSheets:
+-   selector: ".sotry_footer.has_gold_cost #Caption #Buy, .story_footer.enough #Caption #General #Label #Enough, .story_footer.enough_many #Caption #General #Label #EnoughMany, .story_footer.not_enough.buy.singular #Caption #General #Label #NotEnoughBuySingular, .story_footer.not_enough.buy.plural #Caption #General #Label #NotEnoughBuyPlural, .story_footer.not_enough.process #Caption #General #Label #NotEnoughProcess"
+    properties:
+        visible: true
+-   selector: ".story_footer.inactive #Caption, .story_footer.enough #Caption #General #Currencies, .story_footer.enough #Caption #Buy, .story_footer #Caption #General #Label ?, .story_footer.enough_many #Caption #General #Currencies, .story_footer.enough_many #Caption #Buy, .story_footer.no_gold_cost #Caption #Buy"
+    properties:
+        visible: false
+-   selector: ".story_footer.enough #Caption #General #Label #Enough, .story_footer.enough_many #Caption #General #Label #EnoughMany, .story_footer.not_enough.buy.singular #Caption #General #Label #NotEnoughBuySingular, .story_footer.not_enough.buy.plural #Caption #General #Label #NotEnoughBuyPlural, .story_footer.not_enough.process #Caption #General #Label #NotEnoughProcess"
+    properties:
+        visible: true
+-   selector: ".info_footer.no_selection #InfoContainer #Label #NoSelection, .info_footer.step_completed #InfoContainer #Label #StepCompleted, .info_footer.selected.process #InfoContainer #Label ? #SelectedProcess, .info_footer.selected.buy #InfoContainer #Label ? #SelectedBuy, .info_footer.selected #InfoContainer #CurrencyBarsContainer, .info_footer.selected.has_gold_cost #InfoContainer #Label #Gold, .info_footer.selected.no_gold_cost #InfoContainer #Label #NoGold"
+    properties:
+        visible: true
+-   selector: ".info_footer.step_completed #InfoContainer #CurrencyBarsContainer, .info_footer.no_selection #InfoButton, .info_footer #InfoContainer #CurrencyBarsContainer, .info_footer.step_completed #InfoButton, .info_fotter.selected.has_gold_cost #InfoContainer #Label #NoGold, .info_fotter.selected.no_gold_cost #InfoContainer #Label #Gold, .info_footer #InfoContainer #Label #Gold ?, .info_footer #InfoContainer #Label #NoGold ?, .info_footer #InfoContainer #Label ?"
+    properties:
+        visible: false
+-   selector: ".story_footer.buy #Caption #Buy #LabelLayout #BuyLabel, .story_footer.process #Caption #Buy #LabelLayout #ProcessLabel"
+    properties:
+        visible: true
+-   selector: ".story_footer #Caption #Buy #LabelLayout #BuyLabel, .story_footer #Caption #Buy #LabelLayout #ProcessLabel"
+    properties:
+        visible: false
+Prototypes:
+-   class: "UIStaticText"
+    name: "InfoLabel"
+    classes: "text-color-blue text1"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfContent"
+            verticalPolicy: "PercentOfContent"
+        UITextComponent:
+            colorInheritType: "COLOR_IGNORE_PARENT"
+            align: ["RIGHT", "VCENTER"]
+Controls:
+-   prototype: "Footer/Footer"
+    name: "StoryTreeFooter"
+    classes: "story_footer"
+    children:
+    -   prototype: "StyledInfoButton/StyledInfoButton"
+        name: "InfoButton"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 20.000000
+                vCenterAnchorEnabled: true
+    -   prototype: "StyledButton/StyledButton"
+        name: "Button"
+        size: [250.000000, 64.000000]
+        classes: "button mode=button-payment"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 20.000000
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "#common:DialogButton/Complete"
+    -   class: "UIControl"
+        name: "Caption"
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+            SizePolicy:
+                horizontalPolicy: "PercentOfMaxChild"
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 286.000000
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "General"
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 20.000000
+                    useRtl: true
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "Label"
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   prototype: "InfoLabel"
+                    name: "Enough"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "template_event/ProgressStage/EnoughCurrenciesToCompleteStep"
+                -   prototype: "InfoLabel"
+                    name: "EnoughMany"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "template_event/ProgressStage/EnoughCurrenciesToCompleteSteps"
+                -   prototype: "InfoLabel"
+                    name: "NotEnoughProcess"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "template_event/ProgressStage/LackingCurrency/Line1"
+                -   prototype: "InfoLabel"
+                    name: "NotEnoughBuySingular"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "template_event/ProgressStage/LackingCurrency"
+                -   prototype: "InfoLabel"
+                    name: "NotEnoughBuyPlural"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "template_event/ProgressStage/LackingCurrencies"
+            -   class: "UIControl"
+                name: "Currencies"
+                noInput: true
+                components:
+                    LinearLayout:
+                        spacing: 10.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+        -   class: "UIControl"
+            name: "Buy"
+            noInput: true
+            components:
+                LinearLayout:
+                    spacing: 20.000000
+                    useRtl: true
+                SizePolicy:
+                    horizontalPolicy: "PercentOfChildrenSum"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    rightAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "LabelLayout"
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfMaxChild"
+                        verticalPolicy: "PercentOfParent"
+                children:
+                -   prototype: "InfoLabel"
+                    name: "ProcessLabel"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "template_event/ProgressStage/LackingCurrency/Line2"
+                -   prototype: "InfoLabel"
+                    name: "BuyLabel"
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "#common:Cost"
+            -   class: "UIControl"
+                name: "ResourceContainer"
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfChildrenSum"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        vCenterAnchorEnabled: true
+                children:
+                -   prototype: "ResourceSmall/ResourceSmall"
+                    name: "ResourceSmall"
+-   prototype: "BaseFooter/BaseFooter"
+    name: "InfoFooter"
+    classes: "info_footer"
+    components:
+        Background:
+            drawType: "DRAW_STRETCH_HORIZONTAL"
+            sprite: "~res:/Gfx/UI/Story/Footer"
+            color: [1.000000, 1.000000, 1.000000, 1.000000]
+    children:
+    -   class: "UIControl"
+        name: "InfoContainer"
+        size: [944.000000, 0.000000]
+        components:
+            LinearLayout:
+                orientation: "TopDown"
+                spacing: 10.000000
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfChildrenSum"
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 40.000000
+                rightAnchorEnabled: true
+                rightAnchor: 40.000000
+                vCenterAnchorEnabled: true
+        children:
+        -   class: "UIControl"
+            name: "Label"
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 100.000000
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    hCenterAnchorEnabled: true
+            children:
+            -   prototype: "InfoLabel"
+                name: "NoSelection"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "template_event/ProgressStage/StepTree/Hint"
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["HCENTER", "VCENTER"]
+            -   prototype: "InfoLabel"
+                name: "StepCompleted"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                    UITextComponent:
+                        text: "template_event/ProgressStage/Hint/StepCompleted"
+                        multiline: "MULTILINE_ENABLED"
+                        align: ["HCENTER", "VCENTER"]
+            -   class: "UIControl"
+                name: "Gold"
+                size: [944.000000, 26.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   prototype: "InfoLabel"
+                    name: "SelectedBuy"
+                    position: [0.000000, 0.000000]
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "template_event/FinalStage/Hint/BuyCurrenciesForGold"
+                            multiline: "MULTILINE_ENABLED"
+                            align: ["HCENTER", "VCENTER"]
+                -   prototype: "InfoLabel"
+                    name: "SelectedProcess"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "template_event/ProgressStage/Hint/Currency"
+                            multiline: "MULTILINE_ENABLED"
+                            align: ["HCENTER", "VCENTER"]
+            -   class: "UIControl"
+                name: "NoGold"
+                size: [944.000000, 26.000000]
+                noInput: true
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfMaxChild"
+                    Anchor:
+                        hCenterAnchorEnabled: true
+                children:
+                -   prototype: "InfoLabel"
+                    name: "SelectedBuy"
+                    position: [0.000000, 0.000000]
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            multiline: "MULTILINE_ENABLED"
+                            align: ["HCENTER", "VCENTER"]
+                -   prototype: "InfoLabel"
+                    name: "SelectedProcess"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                        Anchor:
+                            hCenterAnchorEnabled: true
+                        UITextComponent:
+                            text: "template_event/ProgressStage/Hint/NoGold"
+                            multiline: "MULTILINE_ENABLED"
+                            align: ["HCENTER", "VCENTER"]
+        -   class: "UIControl"
+            name: "CurrencyBarsContainer"
+            components:
+                LinearLayout:
+                    dynamicPadding: true
+                    spacing: 40.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfMaxChild"
+    -   class: "UIControl"
+        name: "InfoButton"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "FixedSize"
+                verticalValue: 70.000000
+        children:
+        -   class: "UIControl"
+            name: "InfoIcon"
+            size: [64.000000, 64.000000]
+            scale: [0.500000, 0.500000]
+            pivot: [1.000000, 0.000000]
+            noInput: true
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+                Background:
+                    sprite: "~res:/Gfx/UI/LobbyCommon/IconsSmall"
+                    frame: 26
+-   prototype: "ProgressBar/ProgressBarCaption"
+    name: "ProgressBarCaption"
+    components:
+        SizePolicy:
+            horizontalMax: 320.000000

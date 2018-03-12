@@ -1,0 +1,28 @@
+name: "halloween2017_event/Title"
+priority: 1
+stages:
+ inform:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/Warhammer2017/Button_Inform.yaml"
+  info: "event-info"
+ process:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/Warhammer2017/Button_Process.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/Warhammer2017/Warhammer2017StoryTree.yaml"
+  leaderboard:
+    processHint: "halloween2017_event/ProgressStage/DamageTask"
+    progress1:
+      labelKey: "halloween2017_event/ProgressStage/Victories"
+ buy:
+  timer_hint: "template_event/AnyStage/Finish"
+  button: "~res:/UI/Screens/Lobby/Story/Warhammer2017/Button_Buy.yaml"
+  info: "event-progress"
+  tree: "~res:/UI/Screens/Lobby/Story/Warhammer2017/Warhammer2017StoryTree.yaml"
+  leaderboard:
+    buyHint: "halloween2017_event/ProgressStage/DamageTask"
+    buy: "template_event/ProgressStage/RocketPlaywar/Error/TimeIsOver"
+currencyKeys:
+  prx_wh_1: "halloween2017_event/Currencies/BlueSigns/Terms"
+  prx_wh_2: "halloween2017_event/Currencies/YellowSigns/Terms"
+  prx_wh_3: "halloween2017_event/Currencies/GreenSigns/Terms"

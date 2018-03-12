@@ -1,0 +1,105 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Styles/ButtonSoundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Quests/DailyChestSlot.yaml"
+- "~res:/UI/Styles/DesktopStyles.yaml"
+Controls:
+-   class: "UIControl"
+    name: "ChestsTab"
+    size: [1024.000000, 688.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Content"
+        position: [62.000000, 0.000000]
+        size: [900.000000, 688.000000]
+        noInput: true
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                leftAnchor: 40.000000
+                rightAnchorEnabled: true
+                rightAnchor: 40.000000
+                topAnchorEnabled: true
+                vCenterAnchorEnabled: true
+                bottomAnchorEnabled: true
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+        children:
+        -   class: "UIControl"
+            name: "ChestsContainer"
+            noInput: true
+            classes: "limited-width"
+            components:
+                LinearLayout:
+                    padding: 20.000000
+                    dynamicSpacing: true
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   prototype: "DailyChestSlot/ChestFrame"
+                name: "ChestSlot0"
+                children:
+                -   path: "ChestButton/Caption"
+                    components:
+                        UITextComponent:
+                            text: "activities/BonusContainers/Container1"
+                -   path: "ChestButton/Clipper/ChestImage"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Quests/DailyChests/daily_chest_small.psd"
+            -   prototype: "DailyChestSlot/ChestFrame"
+                name: "ChestSlot1"
+                children:
+                -   path: "ChestButton/Caption"
+                    components:
+                        UITextComponent:
+                            text: "activities/BonusContainers/Container2"
+                -   path: "ChestButton/Clipper/ChestImage"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Quests/DailyChests/daily_chest_medium.psd"
+            -   prototype: "DailyChestSlot/ChestFrame"
+                name: "ChestSlot2"
+                children:
+                -   path: "ChestButton/Caption"
+                    components:
+                        UITextComponent:
+                            text: "activities/BonusContainers/Container3"
+                -   path: "ChestButton/Clipper/ChestImage"
+                    components:
+                        Background:
+                            sprite: "~res:/Gfx/UI/Quests/DailyChests/daily_chest_big.psd"
+        -   class: "UIStaticText"
+            name: "Description"
+            position: [64.000000, 16.000000]
+            size: [772.000000, 26.000000]
+            classes: "text1 text-color-blue"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfContent"
+                    verticalPolicy: "PercentOfContent"
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 64.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 64.000000
+                    topAnchorEnabled: true
+                    topAnchor: 16.000000
+                UITextComponent:
+                    text: "activities/BonusContainers/Description"
+                    colorInheritType: "COLOR_IGNORE_PARENT"

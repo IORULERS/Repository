@@ -1,0 +1,369 @@
+Header:
+    version: "19"
+ImportedPackages:
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+StyleSheets:
+-   selector: ".text-offset.ar"
+    properties:
+        anchor-vCenterAnchor: 2.000000
+Prototypes:
+-   class: "UIControl"
+    name: "Row"
+    noInput: true
+    components:
+        LinearLayout:
+            spacing: 10.000000
+            useRtl: true
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+            verticalPolicy: "PercentOfMaxChild"
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 20.000000
+            rightAnchorEnabled: true
+            rightAnchor: 20.000000
+    children:
+    -   class: "UIControl"
+        name: "TextContainer"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfMaxChild"
+                verticalPolicy: "PercentOfMaxChild"
+            Anchor:
+                vCenterAnchorEnabled: true
+    -   class: "UIControl"
+        name: "Spacer"
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+Controls:
+-   class: "UIControl"
+    name: "ResearchDialog"
+    size: [1024.000000, 700.000000]
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "bg"
+        noInput: true
+        classes: "screen-background"
+        components:
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "DialogControl"
+            size: [500.000000, 348.000000]
+            components:
+                SizePolicy:
+                    verticalPolicy: "PercentOfMaxChild"
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+                    vCenterAnchor: -6.000000
+                Background:
+                    leftRightStretchCap: 5.000000
+                    topBottomStretchCap: 5.000000
+            children:
+            -   class: "UIControl"
+                name: "Middle"
+                noInput: true
+                components:
+                    LinearLayout:
+                        orientation: "TopDown"
+                        padding: 20.000000
+                        spacing: 20.000000
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfParent"
+                        verticalPolicy: "PercentOfChildrenSum"
+                    Background:
+                        drawType: "DRAW_STRETCH_BOTH"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/PopupBackMiddle"
+                        leftRightStretchCap: 4.000000
+                        topBottomStretchCap: 4.000000
+                children:
+                -   class: "UIControl"
+                    name: "Holder"
+                    noInput: true
+                    components:
+                        LinearLayout:
+                            orientation: "TopDown"
+                            padding: 20.000000
+                            spacing: 10.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   prototype: "Row"
+                        name: "researchPrice"
+                        children:
+                        -   path: "TextContainer"
+                            children:
+                            -   class: "UIStaticText"
+                                name: "researchPriceLabel"
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "RESEARCH_PRICE"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIStaticText"
+                            name: "researchPriceText"
+                            noInput: true
+                            classes: "header3 text-offset"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    align: ["LEFT"]
+                                UITextComponent:
+                                    text: "0"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["RIGHT", "VCENTER"]
+                                    useRtlAlign: "USE_BY_SYSTEM"
+                        -   class: "UIControl"
+                            name: "researchPriceIcon"
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                                    frame: 3
+                    -   prototype: "Row"
+                        name: "tankExperience"
+                        children:
+                        -   path: "TextContainer"
+                            children:
+                            -   class: "UIStaticText"
+                                name: "tankExperienceLabel"
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "RESEARCH_TANK_EXPERIENCE"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIStaticText"
+                            name: "tankExperienceText"
+                            noInput: true
+                            classes: "header3 text-offset"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    align: ["LEFT", "TOP"]
+                                UITextComponent:
+                                    text: "0"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["RIGHT", "VCENTER"]
+                                    useRtlAlign: "USE_BY_SYSTEM"
+                        -   class: "UIControl"
+                            name: "tankExperienceIcon"
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                                    frame: 3
+                    -   prototype: "Row"
+                        name: "freeExperience"
+                        children:
+                        -   path: "TextContainer"
+                            children:
+                            -   class: "UIStaticText"
+                                name: "freeExperienceLabel"
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                    UITextComponent:
+                                        text: "RESEARCH_FREE_EXPERIENCE"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        -   class: "UIStaticText"
+                            name: "freeExperienceText"
+                            noInput: true
+                            classes: "header3 text-offset"
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    align: ["LEFT", "TOP"]
+                                UITextComponent:
+                                    text: "0"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                                    align: ["RIGHT", "VCENTER"]
+                                    useRtlAlign: "USE_BY_SYSTEM"
+                        -   class: "UIControl"
+                            name: "freeExperienceIcon"
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfContent"
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                                Background:
+                                    sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                                    frame: 2
+                    -   class: "UIControl"
+                        name: "notEnoughContainer"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfChildrenSum"
+                        children:
+                        -   prototype: "Row"
+                            name: "Row_3"
+                            children:
+                            -   path: "TextContainer"
+                                children:
+                                -   class: "UIStaticText"
+                                    name: "freeExperienceLabel"
+                                    classes: "text1 text-color-red"
+                                    components:
+                                        SizePolicy:
+                                            horizontalPolicy: "PercentOfContent"
+                                            verticalPolicy: "PercentOfContent"
+                                        Anchor:
+                                            vCenterAnchorEnabled: true
+                                        UITextComponent:
+                                            text: "RESEARCH_YOU_NEED"
+                                            colorInheritType: "COLOR_IGNORE_PARENT"
+                            -   class: "UIStaticText"
+                                name: "youNeedText"
+                                noInput: true
+                                classes: "header3 text-color-red text-offset"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                    Background:
+                                        align: ["LEFT", "TOP"]
+                                    UITextComponent:
+                                        text: "0"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        align: ["RIGHT", "VCENTER"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+                            -   class: "UIControl"
+                                name: "Icon"
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        vCenterAnchorEnabled: true
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/LobbyCommon/CurrencyIconsBig"
+                                        frame: 3
+                        -   class: "UIStaticText"
+                            name: "notEnoughLabel"
+                            noInput: true
+                            classes: "text1 text-color-red"
+                            components:
+                                SizePolicy:
+                                    verticalPolicy: "PercentOfContent"
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    rightAnchorEnabled: true
+                                    topAnchorEnabled: true
+                                    topAnchor: 35.000000
+                                Background:
+                                    align: ["LEFT", "TOP"]
+                                UITextComponent:
+                                    text: "RESEARCH_NOT_ENOUGH_EXP"
+                                    colorInheritType: "COLOR_IGNORE_PARENT"
+                -   class: "UIControl"
+                    name: "ButtonHolder"
+                    components:
+                        LinearLayout:
+                            orientation: "RightToLeft"
+                            padding: 20.000000
+                            spacing: 20.000000
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfMaxChild"
+                    children:
+                    -   prototype: "StyledButton/StyledButton"
+                        name: "researchButton"
+                        classes: "button button-color-green"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                        children:
+                        -   path: "Caption"
+                            components:
+                                UITextComponent:
+                                    text: "RESEARCH"
+                        -   class: "UIControl"
+                            name: "highlight"
+                            position: [110.000000, 32.531635]
+                            pivot: [0.500000, 0.506329]
+                            visible: false
+                            noInput: true
+                            components:
+                                Anchor:
+                                    leftAnchorEnabled: true
+                                    leftAnchor: -10.000000
+                                    rightAnchorEnabled: true
+                                    rightAnchor: -10.000000
+                                    topAnchorEnabled: true
+                                    topAnchor: -10.000000
+                                    bottomAnchorEnabled: true
+                                    bottomAnchor: -10.000000
+                                Background:
+                                    drawType: "DRAW_STRETCH_BOTH"
+                                    sprite: "~res:/Gfx/UI/HangarTutorial/HighlightTile"
+                                    leftRightStretchCap: 15.000000
+                                    topBottomStretchCap: 15.000000
+                    -   prototype: "StyledButton/StyledButton"
+                        name: "cancelButton"
+                        components:
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                        children:
+                        -   path: "Caption"
+                            components:
+                                UITextComponent:
+                                    text: "#common:DialogButton/Cancel"

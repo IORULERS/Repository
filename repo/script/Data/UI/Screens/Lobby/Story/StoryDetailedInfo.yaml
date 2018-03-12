@@ -1,0 +1,129 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Hangar/BasePopup.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+Controls:
+-   prototype: "BasePopup/BasePopup"
+    name: "DetailedInfo"
+    children:
+    -   path: "DialogBackground"
+        classes: ""
+        children: []
+    -   path: "Content"
+        classes: "notch-tightly-bottom-inset"
+        components:
+            UIAnchorSafeAreaComponent:
+                leftSafeInset: "INSET"
+                rightSafeInset: "INSET"
+        children:
+        -   class: "UIControl"
+            name: "VerticalScrollView"
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+            children:
+            -   class: "UIScrollView"
+                name: "ScrollArea"
+                autoUpdate: true
+                centerContent: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfMaxChild"
+                    children:
+                    -   class: "UIControl"
+                        name: "Container"
+                        noInput: true
+                        components:
+                            LinearLayout:
+                                dynamicPadding: true
+                            SizePolicy:
+                                horizontalPolicy: "PercentOfParent"
+                                verticalPolicy: "PercentOfMaxChild"
+                            Anchor:
+                                vCenterAnchorEnabled: true
+                        children:
+                        -   class: "UIControl"
+                            name: "IconContainer"
+                            noInput: true
+                            components:
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfMaxChild"
+                                    verticalPolicy: "PercentOfMaxChild"
+                                Anchor:
+                                    topAnchorEnabled: true
+                            children:
+                            -   class: "UIControl"
+                                name: "Icon"
+                                noInput: true
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfContent"
+                                        verticalPolicy: "PercentOfContent"
+                                    Anchor:
+                                        rightAnchorEnabled: true
+                                        rightAnchor: 10.000000
+                                    Background:
+                                        sprite: "~res:/Gfx/UI/BattleResultsScreen/bag.psd"
+                        -   class: "UIControl"
+                            name: "TextContainer"
+                            noInput: true
+                            components:
+                                LinearLayout:
+                                    orientation: "TopDown"
+                                SizePolicy:
+                                    horizontalPolicy: "PercentOfParent"
+                                    horizontalValue: 60.000000
+                                    verticalPolicy: "PercentOfChildrenSum"
+                                Anchor:
+                                    vCenterAnchorEnabled: true
+                            children:
+                            -   class: "UIStaticText"
+                                name: "Title"
+                                classes: "header1 text-color-white"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfContent"
+                                    UITextComponent:
+                                        text: "Lorem ipsum dolor sit amet"
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        align: ["LEFT", "VCENTER"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+                            -   class: "UIStaticText"
+                                name: "Description"
+                                classes: "text1 text-color-blue"
+                                components:
+                                    SizePolicy:
+                                        horizontalPolicy: "PercentOfParent"
+                                        verticalPolicy: "PercentOfContent"
+                                    UITextComponent:
+                                        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu ipsum lobortis, dapibus tortor non, varius diam. In ipsum justo, consequat eget elit sed, porttitor convallis leo. Etiam malesuada sapien a nibh aliquet dapibus. Donec vestibulum risus leo, eu varius nunc mattis quis. Integer erat ex, venenatis tincidunt ex ut, scelerisque consectetur elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc ornare volutpat nulla at ultricies. Nam purus turpis, ultricies eu ullamcorper sit amet, euismod vel nibh. Donec blandit rutrum sem et sodales. Maecenas tincidunt dolor mi, at ultricies sapien tincidunt vitae. Duis egestas venenatis dignissim. Nam sem augue, elementum eu sapien sed, placerat efficitur tellus."
+                                        colorInheritType: "COLOR_IGNORE_PARENT"
+                                        multiline: "MULTILINE_ENABLED"
+                                        align: ["LEFT", "VCENTER"]
+                                        useRtlAlign: "USE_BY_SYSTEM"
+            -   prototype: "ScrollBar/VerticalScrollBar"
+                name: "VerticalScrollBar"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    ScrollBarDelegate:
+                        delegate: "../ScrollArea"

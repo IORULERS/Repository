@@ -1,0 +1,23 @@
+name: "july_event/Title"
+stages:
+ july_inform_1:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/4july2017/Button_Inform1.yaml"
+  info: "event-info-1"
+ july_inform_2:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/4july2017/Button_Inform2.yaml"
+  info: "event-info-1"  
+ july_inform_3:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/4july2017/Button_Inform3.yaml"
+  info: "event-info-1"
+ july_inform_4:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/4july2017/Button_Inform4.yaml"
+  info: "event-info-1"
+ july_inform_5:
+  timer_hint: "template_event/AnyStage/Start"
+  button: "~res:/UI/Screens/Lobby/Story/4july2017/Button_Buy.yaml"
+  info: "event-info-1"
+currencyKeys:

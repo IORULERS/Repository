@@ -1,0 +1,75 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UITournamentTeamInviteNotification"
+    name: "TournamentTeamInviteNotification"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+    -   prototype: "Notification/Content"
+        name: "Content"
+        components:
+            SizePolicy:
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                rightAnchor: 420.000000
+        children:
+        -   class: "UIStaticText"
+            name: "InvitationText"
+            position: [0.000000, 10.000000]
+            size: [441.000000, 64.000000]
+            noInput: true
+            classes: "header3 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    topAnchor: 10.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 10.000000
+                Background:
+                    align: ["LEFT", "VCENTER"]
+                UITextComponent:
+                    colorInheritType: "COLOR_IGNORE_PARENT"
+                    shadowColor: [0.000000, 0.000000, 0.000000, 0.294100]
+                    multiline: "MULTILINE_ENABLED"
+                    align: ["LEFT", "VCENTER"]
+                    useRtlAlign: "DONT_USE"
+    -   prototype: "StyledButton/StyledButton"
+        name: "AcceptButton"
+        size: [196.000000, 64.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 11.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -2.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "tournaments/Button/ToTeam"
+    -   prototype: "StyledButton/StyledButton"
+        name: "DeclineButton"
+        size: [196.000000, 64.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 215.000000
+                vCenterAnchorEnabled: true
+                vCenterAnchor: -2.000000
+            UIAnchorSafeAreaComponent:
+                rightSafeInset: "INSET"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "tournaments/Button/Decline"

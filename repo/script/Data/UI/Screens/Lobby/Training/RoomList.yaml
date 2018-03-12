@@ -1,0 +1,667 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Common.yaml"
+- "~res:/UI/Screens/Common/StyledButton.yaml"
+- "~res:/UI/Screens/CommonStyles.yaml"
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Common/BattleButton.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Screens/Lobby/Common/SectionHeader1.yaml"
+- "~res:/UI/Screens/Lobby/Common/SafeAreaSpacer.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".blue-button-like"
+    properties:
+        bg-color: [0.200000, 0.274510, 0.321569, 1.000000]
+        bg-drawType: "DRAW_FILL"
+-   selector: ".blue-button-like:pressed_inside"
+    properties:
+        bg-color: [0.200000, 0.274510, 0.321569, 0.501961]
+        bg-drawType: "DRAW_FILL"
+-   selector: ".blue-button-like-light"
+    properties:
+        bg-color: [0.254902, 0.313726, 0.364706, 1.000000]
+        bg-drawType: "DRAW_FILL"
+-   selector: ".pointsearnedentity:pressed_inside"
+    properties:
+        bg-color: [0.000000, 0.000000, 0.000000, 0.125490]
+        bg-drawType: "DRAW_FILL"
+-   selector: ".transparent-on-press:pressed_inside"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.058824]
+-   selector: ".pointsearnedentity"
+    properties:
+        bg-drawType: "DRAW_ALIGNED"
+-   selector: ".header1:disabled"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: ".no-results #Loading"
+    properties:
+        visible: false
+-   selector: ".no-results #NoData"
+    properties:
+        visible: true
+-   selector: "#NoData"
+    properties:
+        visible: false
+-   selector: "#battleButton:disabled #EffectsContainer"
+    properties:
+        visible: false
+-   selector: ".loading #Loading"
+    properties:
+        visible: true
+-   selector: ".loading #NoData"
+    properties:
+        visible: false
+-   selector: ".battleButton:disabled"
+    properties:
+        bg-drawType: "DRAW_TILED_MULTILAYER"
+        bg-mask: "~res:/Gfx/UI/CommonUIElements/Button/mask.psd"
+        bg-detail: "~res:/Gfx/UI/CommonUIElements/Button/detail.psd"
+        bg-gradient: "~res:/Gfx/UI/CommonUIElements/Button/gray_gradient.psd"
+        bg-topBottomStretchCap: 20.000000
+        bg-contour: "~res:/Gfx/UI/CommonUIElements/Button/gray_contour.psd"
+        bg-gradientMode: "Overlay"
+        bg-leftRightStretchCap: 20.000000
+-   selector: ".battleButton"
+    properties:
+        bg-frame: 0
+-   selector: "#battleButton:disabled #Caption"
+    properties:
+        text-color: [0.607843, 0.607843, 0.607843, 1.000000]
+-   selector: ".battleButton:pressed_inside"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: "#TrainingRoomEntry:pressed_inside ?"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 0.501961]
+-   selector: "#TrainingRoomEntry ?"
+    properties:
+        bg-color: [1.000000, 1.000000, 1.000000, 1.000000]
+-   selector: ".leftSafeAreaSpacer"
+    properties:
+        sizePolicy-horizontalPolicy: "Formula"
+        sizePolicy-horizontalValue: 0.000000
+-   selector: ".RightScrollInset"
+    properties: {}
+Controls:
+-   class: "UIControl"
+    customClass: "UITrainingRoomList"
+    name: "Content"
+    size: [1024.000000, 688.000000]
+    components:
+        LinearLayout:
+            orientation: "TopDown"
+            spacing: 1.000000
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+            topAnchorEnabled: true
+            bottomAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "TopHeader"
+        size: [1024.000000, 80.000000]
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+        children:
+        -   prototype: "StyledButton/StyledButton"
+            name: "RefreshButton"
+            size: [64.000000, 64.000000]
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    rightAnchor: 8.000000
+                    vCenterAnchorEnabled: true
+                UIAnchorSafeAreaComponent:
+                    rightSafeInset: "INSET"
+            children:
+            -   path: "Caption"
+                size: [64.000000, 64.000000]
+                components:
+                    Background:
+                        sprite: "~res:/Gfx/UI/Training/icon_refresh"
+        -   class: "UIControl"
+            customClass: "UISearchTextField"
+            name: "SearchTextField"
+            size: [480.000000, 70.000000]
+            components:
+                Anchor:
+                    hCenterAnchorEnabled: true
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIControl"
+                name: "Background"
+                size: [480.000000, 50.000000]
+                components:
+                    LinearLayout:
+                        useRtl: true
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        vCenterAnchorEnabled: true
+                    Background:
+                        drawType: "DRAW_STRETCH_BOTH"
+                        sprite: "~res:/Gfx/UI/CommonUIElements/search_back"
+                        leftRightStretchCap: 4.000000
+                        topBottomStretchCap: 4.000000
+                children:
+                -   class: "UIControl"
+                    name: "SearchIcon"
+                    size: [50.000000, 70.000000]
+                    visible: true
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "FixedSize"
+                            horizontalValue: 50.000000
+                        Anchor:
+                            leftAnchorEnabled: false
+                            leftAnchor: 0.000000
+                            hCenterAnchorEnabled: false
+                            topAnchorEnabled: false
+                            topAnchor: 0.000000
+                            vCenterAnchorEnabled: true
+                            bottomAnchorEnabled: false
+                        Background:
+                            sprite: "~res:/Gfx/UI/CommonUIElements/search_icon"
+                -   class: "UITextField"
+                    customClass: "UITextFieldWithHint"
+                    name: "TextField"
+                    size: [380.000000, 50.000000]
+                    font: "WarHeliosCondC_19"
+                    textalign: ["LEFT", "VCENTER"]
+                    maxLength: 25
+                    returnKeyType: "RETURN_KEY_SEARCH"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                        Anchor:
+                            leftAnchorEnabled: true
+                            leftAnchor: 50.000000
+                            rightAnchorEnabled: true
+                            rightAnchor: 60.000000
+                            topAnchorEnabled: false
+                            vCenterAnchorEnabled: true
+                        Focus: {}
+                    children:
+                    -   class: "UIStaticText"
+                        name: "Hint"
+                        classes: "text2 text-color-blue"
+                        components:
+                            Anchor:
+                                leftAnchorEnabled: true
+                                rightAnchorEnabled: true
+                                rightAnchor: 60.000000
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                            UITextComponent:
+                                text: "#training_rooms:HomeScreen/SearchHint"
+                                align: ["HCENTER", "VCENTER"]
+                -   class: "UIControl"
+                    name: "Clear"
+                    position: [430.000000, 0.000000]
+                    size: [50.000000, 50.000000]
+                    noInput: false
+                    components:
+                        Anchor:
+                            rightAnchorEnabled: true
+                            vCenterAnchorEnabled: true
+                        Background:
+                            drawType: "DRAW_ALIGNED"
+                            sprite: "~res:/Gfx/UI/CommonUIElements/InputClear"
+                            frame: 0
+    -   class: "UIControl"
+        name: "ListTitle"
+        size: [1024.000000, 50.000000]
+        components:
+            LinearLayout:
+                safeAreaPaddingInset: true
+                spacing: 1.000000
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+        children:
+        -   prototype: "SafeAreaSpacer/SafeAreaTitleSpacerLeft"
+            name: "SpacerLeft"
+            size: [44.000000, 50.000000]
+            components:
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.227451, 0.388235, 0.509804, 0.501961]
+        -   class: "UIControl"
+            name: "Name"
+            position: [44.000000, 0.000000]
+            size: [406.500000, 50.000000]
+            noInput: true
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.227451, 0.388235, 0.509804, 0.501961]
+            children:
+            -   class: "UIStaticText"
+                name: "Label"
+                size: [376.500000, 50.000000]
+                classes: "text2 text-color-blue"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background: {}
+                    UITextComponent:
+                        text: "#training_rooms:HomeScreen/Table/RoomTitle"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        fitting: "FITTING_POINTS"
+                        align: ["LEFT", "VCENTER"]
+        -   class: "UIControl"
+            name: "Map"
+            size: [203.250000, 50.000000]
+            noInput: true
+            classes: "section-header1"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 50.000000
+                    horizontalMin: 200.000000
+                Background: {}
+            children:
+            -   class: "UIStaticText"
+                name: "Label"
+                size: [173.250000, 50.000000]
+                classes: "text2 text-color-blue"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background: {}
+                    UITextComponent:
+                        text: "#training_rooms:HomeScreen/Table/Map"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        fitting: "FITTING_POINTS"
+                        align: ["LEFT", "VCENTER"]
+        -   class: "UIControl"
+            name: "CreatedBy"
+            size: [203.250000, 50.000000]
+            noInput: true
+            classes: "section-header1"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    horizontalValue: 50.000000
+                    horizontalMin: 200.000000
+                Background: {}
+            children:
+            -   class: "UIStaticText"
+                name: "Label"
+                size: [173.250000, 50.000000]
+                classes: "text2 text-color-blue"
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UITextComponent:
+                        text: "#training_rooms:HomeScreen/Table/Creator"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        fitting: "FITTING_POINTS"
+                        align: ["LEFT", "VCENTER"]
+        -   class: "UIStaticText"
+            name: "Level"
+            size: [120.000000, 50.000000]
+            visible: false
+            classes: "section-header1 text2 text-color-blue"
+            components:
+                Background: {}
+                UITextComponent:
+                    text: "AVATAR_SCREEN_VEHICLE"
+        -   class: "UIStaticText"
+            name: "Players"
+            size: [120.000000, 50.000000]
+            classes: "section-header1 text2 text-color-blue"
+            components:
+                Background: {}
+                UITextComponent:
+                    text: "#training_rooms:HomeScreen/Table/Players"
+        -   prototype: "SafeAreaSpacer/SafeAreaTitleSpacerRight"
+            name: "SpacerRight"
+            size: [44.000000, 50.000000]
+            components:
+                Background:
+                    drawType: "DRAW_FILL"
+                    color: [0.227451, 0.388235, 0.509804, 0.501961]
+    -   class: "UIControl"
+        name: "ListContainer"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+        children:
+        -   class: "UIList"
+            name: "RoomList"
+            components:
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfParent"
+        -   prototype: "Common/VerticalScrollBar"
+            name: "ScrollBar"
+            classes: "notch-tightly-right-inset"
+            components:
+                Anchor:
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UIAnchorSafeAreaComponent: {}
+-   class: "UIControl"
+    customClass: "UITrainingRoomEntry"
+    name: "TrainingRoomEntry"
+    size: [1024.000000, 60.000000]
+    classes: "pane-bg-cell touchable"
+    components:
+        LinearLayout:
+            safeAreaPaddingInset: true
+            spacing: 1.000000
+        Anchor:
+            leftAnchorEnabled: true
+            rightAnchorEnabled: true
+    children:
+    -   class: "UIControl"
+        name: "Background"
+        noInput: true
+        components:
+            IgnoreLayout: {}
+            Anchor:
+                leftAnchorEnabled: true
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+                bottomAnchor: 1.000000
+            Background: {}
+    -   class: "UIControl"
+        name: "NameWrap"
+        position: [44.000000, 0.000000]
+        size: [406.500000, 60.000000]
+        noInput: true
+        components:
+            LinearLayout:
+                orientation: "LeftToRight"
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            Anchor:
+                vCenterAnchorEnabled: true
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "Text"
+            size: [370.500000, 2.000000]
+            noInput: true
+            components:
+                LinearLayout:
+                    orientation: "TopDown"
+                    spacing: 2.000000
+                SizePolicy:
+                    horizontalPolicy: "PercentOfParent"
+                    verticalPolicy: "PercentOfChildrenSum"
+                Anchor:
+                    vCenterAnchorEnabled: true
+            children:
+            -   class: "UIStaticText"
+                name: "Name"
+                size: [340.500000, 0.000000]
+                classes: "header4 text-color-white"
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                    UITextComponent:
+                        fitting: "FITTING_POINTS"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIStaticText"
+                name: "Description"
+                classes: "text2 text-color-blue"
+                components:
+                    SizePolicy:
+                        verticalPolicy: "PercentOfContent"
+                    Anchor:
+                        leftAnchorEnabled: true
+                        leftAnchor: 20.000000
+                        rightAnchorEnabled: true
+                        rightAnchor: 10.000000
+                    UITextComponent:
+                        fitting: "FITTING_POINTS"
+                        align: ["LEFT", "VCENTER"]
+        -   class: "UIControl"
+            name: "PasswordLock"
+            size: [36.000000, 32.000000]
+            noInput: true
+            components:
+                Anchor:
+                    vCenterAnchorEnabled: true
+                Background:
+                    sprite: "~res:/Gfx/UI/Training/icon_lock"
+                    colorInherit: "COLOR_MULTIPLY_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "Map"
+        size: [203.250000, 60.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalValue: 50.000000
+                horizontalMin: 200.000000
+            Background: {}
+        children:
+        -   class: "UIStaticText"
+            name: "MapName"
+            size: [173.250000, 60.000000]
+            classes: "header4 text-color-white"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 10.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UITextComponent:
+                    text: "#training_rooms:RoomScreen/Map"
+                    fitting: "FITTING_POINTS"
+                    align: ["LEFT", "VCENTER"]
+    -   class: "UIControl"
+        name: "CreatedBy"
+        size: [203.250000, 60.000000]
+        noInput: true
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                horizontalValue: 50.000000
+                horizontalMin: 200.000000
+            Background: {}
+        children:
+        -   class: "UIStaticText"
+            name: "CreatorName"
+            size: [173.250000, 60.000000]
+            classes: "header4 text-color-important"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 20.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 10.000000
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                UITextComponent:
+                    fitting: "FITTING_POINTS"
+                    align: ["LEFT", "VCENTER"]
+    -   class: "UIStaticText"
+        name: "Level"
+        size: [120.000000, 60.000000]
+        visible: false
+        classes: "header4 text-color-white"
+        components:
+            Background: {}
+            UITextComponent:
+                colorInheritType: "COLOR_REPLACE_ALPHA_ONLY"
+    -   class: "UIControl"
+        name: "PlayersHolder"
+        size: [120.000000, 60.000000]
+        noInput: true
+        components:
+            Background: {}
+        children:
+        -   class: "UIStaticText"
+            name: "Players"
+            size: [120.000000, 60.000000]
+            classes: "header4 text-color-white"
+            components:
+                Background: {}
+                UITextComponent:
+                    text: ""
+-   class: "UIListCell"
+    name: "LoadingCell"
+    size: [0.000000, 60.000000]
+    classes: "textType=loading"
+    components:
+        SizePolicy:
+            horizontalPolicy: "PercentOfParent"
+    children:
+    -   class: "UIStaticText"
+        name: "Loading"
+        classes: "text1 text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            UITextComponent:
+                text: "Loading..."
+    -   class: "UIStaticText"
+        name: "NoData"
+        classes: "text1 text-color-blue"
+        components:
+            SizePolicy:
+                horizontalPolicy: "PercentOfParent"
+                verticalPolicy: "PercentOfParent"
+            UITextComponent:
+                text: "XChatSearchNoResult"
+-   class: "UIControl"
+    customClass: "UITrainingRoomHeader"
+    name: "HeaderRight"
+    size: [300.000000, 80.000000]
+    noInput: true
+    components:
+        Anchor:
+            rightAnchorEnabled: true
+    children:
+    -   prototype: "StyledButton/StyledButton"
+        name: "JoinRoomButton"
+        size: [220.000000, 64.000000]
+        classes: "button button-color-green"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "#training_rooms:RoomScreen/JoinRoom"
+    -   prototype: "BattleButton/OldBattleButton"
+        name: "battleButton"
+        size: [192.000000, 64.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                vCenterAnchorEnabled: true
+            Background:
+                sprite: "~res:/Gfx/UI/Hangar/OldPlayButton"
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    shadowOffset: [0.000000, 0.000000]
+        -   path: "EffectsContainer"
+            components:
+                Anchor:
+                    leftAnchor: -5.000000
+                    rightAnchor: -5.000000
+            children: []
+    -   prototype: "StyledButton/StyledButton"
+        name: "ToMyRoomButton"
+        size: [300.000000, 64.000000]
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "#training_rooms:HomeScreen/MyRoomButton"
+    -   prototype: "StyledButton/StyledButton"
+        name: "CreateRoomButton"
+        size: [250.000000, 64.000000]
+        classes: "button button-color-green"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "#training_rooms:HomeScreen/CreateButton"
+    -   prototype: "StyledButton/StyledButton"
+        name: "LeaveRoomButton"
+        size: [64.000000, 64.000000]
+        components:
+            Anchor:
+                leftAnchorEnabled: false
+                hCenterAnchorEnabled: false
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Caption"
+            components:
+                Background:
+                    sprite: "~res:/Gfx/UI/Hangar/SidebarIcons"
+                    frame: 6
+    -   prototype: "StyledButton/StyledButton"
+        name: "DisbandRoomButton"
+        size: [260.000000, 64.000000]
+        visible: true
+        noInput: false
+        classes: "button button-color-red"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                rightAnchor: 8.000000
+                vCenterAnchorEnabled: true
+        children:
+        -   path: "Caption"
+            components:
+                UITextComponent:
+                    text: "#training_rooms:SettingsScreen/DissolveButton"

@@ -1,0 +1,18 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Fonts.yaml"
+- "~res:/UI/Screens/Lobby/Notifications/Popups/Notification.yaml"
+Controls:
+-   prototype: "Notification/Notification"
+    customClass: "UIClanApplicationAcceptedNotification"
+    name: "ClanApplicationAcceptedNotification"
+    children:
+    -   prototype: "Notification/icon"
+        name: "icon"
+        components:
+            Background:
+                sprite: "~res:/Gfx/UI/Hangar/SidebarIcons"
+                frame: 13
+    -   prototype: "Notification/Content"
+        name: "Content"

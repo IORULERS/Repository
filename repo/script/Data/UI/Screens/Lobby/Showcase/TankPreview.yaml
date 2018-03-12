@@ -1,0 +1,178 @@
+Header:
+    version: "20"
+ImportedPackages:
+- "~res:/UI/Screens/Lobby/Showcase/Showcase.yaml"
+- "~res:/UI/Screens/Lobby/Common/VehicleParamsTable.yaml"
+- "~res:/UI/Screens/Common/ScrollBar.yaml"
+- "~res:/UI/Styles/BackgroundStyles.yaml"
+- "~res:/UI/Styles/SafeAreaStyles.yaml"
+StyleSheets:
+-   selector: ".fullscreen-on ? #Showcase #TankInfo"
+    properties:
+        anchor-rightAnchor:
+            value: -425.000000
+            transitionTime: 0.160000
+            transitionFunction: "LINEAR"
+-   selector: ".fullscreen-off ? #Showcase #TankInfo"
+    properties:
+        anchor-rightAnchor:
+            value: 0.000000
+            transitionTime: 0.160000
+            transitionFunction: "LINEAR"
+Controls:
+-   class: "UIControl"
+    name: "Showcase"
+    size: [1024.000000, 768.000000]
+    noInput: true
+    components:
+        Anchor:
+            leftAnchorEnabled: true
+            leftAnchor: 0.000000
+            rightAnchorEnabled: true
+            rightAnchor: 0.000000
+            topAnchorEnabled: true
+            topAnchor: 0.000000
+            bottomAnchorEnabled: true
+            bottomAnchor: 0.000000
+        Background:
+            color: [0.000000, 0.000000, 0.000000, 0.800000]
+    children:
+    -   class: "UIControl"
+        name: "TankInfo"
+        position: [599.000000, 0.000000]
+        size: [425.000000, 768.000000]
+        visible: true
+        noInput: true
+        classes: "screen-background"
+        components:
+            Anchor:
+                rightAnchorEnabled: true
+                topAnchorEnabled: true
+                bottomAnchorEnabled: true
+            Background: {}
+        children:
+        -   class: "UIControl"
+            name: "Pane"
+            size: [425.000000, 768.000000]
+            noInput: true
+            classes: "pane-bg"
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    rightAnchorEnabled: true
+                    topAnchorEnabled: true
+                    bottomAnchorEnabled: true
+                Background: {}
+        -   class: "UIControl"
+            name: "Header"
+            position: [0.000000, 0.000000]
+            size: [425.000000, 40.000000]
+            noInput: true
+            classes: "section-header1"
+            components:
+                LinearLayout:
+                    padding: 10.000000
+                    spacing: 10.000000
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 0.000000
+                Background:
+                    align: ["RIGHT", "BOTTOM"]
+            children:
+            -   class: "UIStaticText"
+                name: "ItemTypeName"
+                position: [10.000000, 0.000000]
+                size: [47.000000, 40.000000]
+                noInput: true
+                classes: "header1 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "Tank"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        align: ["LEFT", "VCENTER"]
+            -   class: "UIStaticText"
+                name: "ItemName"
+                position: [67.000000, 0.000000]
+                size: [125.000000, 40.000000]
+                noInput: true
+                classes: "header1 text-color-white"
+                components:
+                    SizePolicy:
+                        horizontalPolicy: "PercentOfContent"
+                    Background:
+                        align: ["LEFT", "TOP"]
+                    UITextComponent:
+                        text: "TNK-MDL-01"
+                        colorInheritType: "COLOR_IGNORE_PARENT"
+                        fitting: "FITTING_REDUCE"
+                        align: ["VCENTER"]
+        -   class: "UIControl"
+            name: "Stats"
+            noInput: true
+            components:
+                Anchor:
+                    leftAnchorEnabled: true
+                    leftAnchor: 0.000000
+                    rightAnchorEnabled: true
+                    rightAnchor: 0.000000
+                    topAnchorEnabled: true
+                    topAnchor: 41.000000
+                    vCenterAnchor: 0.000000
+                    bottomAnchorEnabled: true
+                    bottomAnchor: 0.000000
+            children:
+            -   class: "UIScrollView"
+                name: "StatsContainer"
+                autoUpdate: true
+                components:
+                    Anchor:
+                        leftAnchorEnabled: true
+                        rightAnchorEnabled: true
+                        rightAnchor: 0.000000
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    Background: {}
+                children:
+                -   class: "UIScrollViewContainer"
+                    name: "scrollContainerControl"
+                    components:
+                        SizePolicy:
+                            horizontalPolicy: "PercentOfParent"
+                            verticalPolicy: "PercentOfChildrenSum"
+                    children:
+                    -   prototype: "VehicleParamsTable/VehicleParamsTable"
+                        name: "VehicleParamsTable"
+                        noInput: false
+                        components:
+                            Anchor:
+                                topAnchorEnabled: true
+                                bottomAnchorEnabled: true
+                        children:
+                        -   path: "DetalesParam/ProtectabilityParams"
+                            noInput: true
+                            children: []
+                        -   path: "DetalesParam/MobilityParams"
+                            noInput: true
+                            children: []
+                        -   path: "DetalesParam/GunParams"
+                            noInput: true
+                            children: []
+            -   prototype: "ScrollBar/VerticalScrollBar"
+                name: "VerticalScrollBar"
+                classes: "notch-tightly-right-inset"
+                components:
+                    Anchor:
+                        rightAnchorEnabled: true
+                        topAnchorEnabled: true
+                        bottomAnchorEnabled: true
+                    UIAnchorSafeAreaComponent: {}
+                    ScrollBarDelegate:
+                        delegate: "../StatsContainer"
