@@ -10,6 +10,10 @@
 			<string>4.7.0:aw</string>
 			<key>4호 구축전차 스킨:jagd_0</key>
 			<string>4.7.0:aw</string>
+			<key>M3 스튜어트 일본 육군 노획형 스킨:m3ll_0</key>
+			<string>4.7.0:aw</string>
+			<key>T34 호랑이 사냥꾼 스킨:t34h_0</key>
+			<string>4.7.0:aw</string>
 		</dict>
 		<key>Graphic:gfx</key>
 		<dict>
@@ -31,9 +35,9 @@
 	<dict>
 		<key>Skin:skin</key>
 		<dict>
-			<key>test1:t1</key>
+			<key>슈싱 짭전설:t26sp_0</key>
 			<string>4.7.0:aw</string>
-			<key>test2:t2</key>
+			<key>Obj140 스켈레톤 스킨:obj140_0</key>
 			<string>4.7.0:aw</string>
 		</dict>
 		<key>Graphic:gfx</key>
@@ -44,6 +48,16 @@
 		<key>Sound:sfx</key>
 		<dict>
 			<key>test4:t4</key>
+			<string>4.7.0:aw</string>
+		</dict>
+	</dict>
+	<key>MAP CLAN MOD:map</key>
+	<dict>
+		<key>Skin:skin</key>
+		<dict>
+			<key>test1:t1</key>
+			<string>4.7.0:aw</string>
+			<key>test2:t2</key>
 			<string>4.7.0:aw</string>
 		</dict>
 	</dict>
